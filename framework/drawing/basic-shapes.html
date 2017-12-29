@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="drawing_api">
         <title>Drawing of Basic Shapes | Kendo UI Drawing API</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to draw basic forms by using the Kendo UI Drawing API.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("framework/drawing/basic-shapes.html")
         });
         </script>
@@ -201,22 +201,22 @@ var draw = kendo.drawing;
 <p>The <code>kendo.geometry</code> namespace contains primitives, such as:</p>
 
 <ul>
-<li><a href="/api/javascript/geometry/point"><code>Point</code></a></li>
-<li><a href="/api/javascript/geometry/rect"><code>Rect</code></a></li>
-<li><a href="/api/javascript/geometry/size"><code>Size</code></a></li>
+<li><a href="/docs-kendo-china/api/javascript/geometry/point"><code>Point</code></a></li>
+<li><a href="/docs-kendo-china/api/javascript/geometry/rect"><code>Rect</code></a></li>
+<li><a href="/docs-kendo-china/api/javascript/geometry/size"><code>Size</code></a></li>
 </ul>
 
 <p>The <code>kendo.drawing</code> namespace contains elements, such as:</p>
 
 <ul>
-<li><a href="/api/javascript/dataviz/drawing/path"><code>Path</code></a></li>
-<li><a href="/api/javascript/dataviz/drawing/image"><code>Image</code></a></li>
-<li><a href="/api/javascript/dataviz/drawing/group"><code>Group</code></a></li>
+<li><a href="/docs-kendo-china/api/javascript/dataviz/drawing/path"><code>Path</code></a></li>
+<li><a href="/docs-kendo-china/api/javascript/dataviz/drawing/image"><code>Image</code></a></li>
+<li><a href="/docs-kendo-china/api/javascript/dataviz/drawing/group"><code>Group</code></a></li>
 </ul>
 
 <h3 id="draw-the-path"><a href="#draw-the-path">Draw the Path</a></h3>
 
-<p>A <a href="/api/javascript/drawing/path"><code>Path</code></a> element is used to draw straight lines, curves, or a combination of both.</p>
+<p>A <a href="/docs-kendo-china/api/javascript/drawing/path"><code>Path</code></a> element is used to draw straight lines, curves, or a combination of both.</p>
 
 <p>Set the stroke (line) color and width to match the picture, as demonstrated in the example below.</p>
 
@@ -230,7 +230,7 @@ var draw = kendo.drawing;
 });
 </code></pre>
 
-<p>The <a href="/api/javascript/drawing/path#configuration"><code>configuration</code></a> object can contain other appearance options as well.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/drawing/path#configuration"><code>configuration</code></a> object can contain other appearance options as well.</p>
 
 <p>Now construct the path by issuing the commands shown below.</p>
 
@@ -241,9 +241,9 @@ var draw = kendo.drawing;
     .close();
 </code></pre>
 
-<p>Set the line initial position with a <a href="/api/javascript/drawing/path#methods-moveTo"><code>moveTo</code></a> command. The three sides are drawn by using the <a href="/api/javascript/drawing/path#methods-lineTo"><code>lineTo</code></a> commands. The last command <a href="/api/javascript/drawing/path#methods-close"><code>closes</code></a> the path, drawing a straight line to the initial position.</p>
+<p>Set the line initial position with a <a href="/docs-kendo-china/api/javascript/drawing/path#methods-moveTo"><code>moveTo</code></a> command. The three sides are drawn by using the <a href="/docs-kendo-china/api/javascript/drawing/path#methods-lineTo"><code>lineTo</code></a> commands. The last command <a href="/docs-kendo-china/api/javascript/drawing/path#methods-close"><code>closes</code></a> the path, drawing a straight line to the initial position.</p>
 
-<p>Since this is a rectangle, use the alternative <a href="/api/javascript/drawing/path#fromrect"><code>fromRect</code></a> static method, as demonstrated below.</p>
+<p>Since this is a rectangle, use the alternative <a href="/docs-kendo-china/api/javascript/drawing/path#fromrect"><code>fromRect</code></a> static method, as demonstrated below.</p>
 
 <h6>Example</h6>
 
@@ -261,7 +261,7 @@ var path = draw.Path.fromRect(borderRect, {
 
 <h3 id="draw-the-image"><a href="#draw-the-image">Draw the Image</a></h3>
 
-<p>The <a href="/api/javascript/drawing/image"><code>Image</code></a> element draws a bitmap image from a given URL. The image position and size is defined as a <a href="/api/javascript/geometry/rect"><code>Rect</code></a>.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/drawing/image"><code>Image</code></a> element draws a bitmap image from a given URL. The image position and size is defined as a <a href="/docs-kendo-china/api/javascript/geometry/rect"><code>Rect</code></a>.</p>
 
 <h6>Example</h6>
 
@@ -294,7 +294,7 @@ var image = new draw.Image(imageUrl, imageRect);
 
 <h3 id="draw-the-text"><a href="#draw-the-text">Draw the Text</a></h3>
 
-<p>The <a href="/api/javascript/drawing/text"><code>Text</code></a> element draws a single line of text. Appearance options, such as the font, are set through <a href="/api/javascript/drawing/text#configuration"><code>configuration</code></a>.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/drawing/text"><code>Text</code></a> element draws a single line of text. Appearance options, such as the font, are set through <a href="/docs-kendo-china/api/javascript/drawing/text#configuration"><code>configuration</code></a>.</p>
 
 <h6>Example</h6>
 
@@ -309,7 +309,7 @@ var image = new draw.Image(imageUrl, imageRect);
 
 <h3 id="group-the-shapes"><a href="#group-the-shapes">Group the Shapes</a></h3>
 
-<p>It is convenient to treat a group of shapes as a single entity. In this case, use a group to set the position of all elements at once. Create a <a href="/api/javascript/drawing/group"><code>Group</code></a> element and append the rest of the elements as children, as demonstrated in the example below.</p>
+<p>It is convenient to treat a group of shapes as a single entity. In this case, use a group to set the position of all elements at once. Create a <a href="/docs-kendo-china/api/javascript/drawing/group"><code>Group</code></a> element and append the rest of the elements as children, as demonstrated in the example below.</p>
 
 <h6>Example</h6>
 
@@ -328,7 +328,7 @@ var image = new draw.Image(imageUrl, imageRect);
 
 <h3 id="render-the-scene"><a href="#render-the-scene">Render the Scene</a></h3>
 
-<p>The <a href="/api/javascript/drawing/surface#create"><code>Surface.create</code></a> method, as demonstrated in the example below, chooses an implementation that matches the capabilities of the browser.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/drawing/surface#create"><code>Surface.create</code></a> method, as demonstrated in the example below, chooses an implementation that matches the capabilities of the browser.</p>
 
 <h6>Example</h6>
 
@@ -346,16 +346,16 @@ var image = new draw.Image(imageUrl, imageRect);
 <p>Other articles on Kendo UI Drawing API:</p>
 
 <ul>
-<li><a href="/framework/drawing/overview">Overview of the Drawing API</a></li>
-<li><a href="/framework/drawing/pdf-output">Export a Drawing in PDF</a></li>
-<li><a href="/framework/drawing/drawing-dom">Drawing of HTML Elements</a></li>
-<li><a href="/framework/drawing/drawing-dom">Supported Browsers for Kendo UI Drawing API</a></li>
+<li><a href="/docs-kendo-china/framework/drawing/overview">Overview of the Drawing API</a></li>
+<li><a href="/docs-kendo-china/framework/drawing/pdf-output">Export a Drawing in PDF</a></li>
+<li><a href="/docs-kendo-china/framework/drawing/drawing-dom">Drawing of HTML Elements</a></li>
+<li><a href="/docs-kendo-china/framework/drawing/drawing-dom">Supported Browsers for Kendo UI Drawing API</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -420,7 +420,7 @@ var image = new draw.Image(imageUrl, imageRect);
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="dropdownlist">
         <title>Bind Objects to ngModel | Kendo UI DropDownList</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to bind objects to ngModel instead of to primitive values in the Kendo UI DropDownList widget.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("controls/editors/dropdownlist/how-to/AngularJS/bind-to-ngmodel.html")
         });
         </script>
@@ -123,24 +123,24 @@
 
 <p>To bind an object to the <code>ngModel</code> in a Kendo UI DropDownList, use <code>k-ng-model</code>.</p>
 
-<p>The <code>k-ng-model</code> binding does not update the internal <code>$dirty</code> and <code>$pristine</code> properties that are used by the built-in AngularJS validation. This approach also works for the <a href="/controls/editors/combobox/overview">Kendo UI ComboBox</a> widget.</p>
+<p>The <code>k-ng-model</code> binding does not update the internal <code>$dirty</code> and <code>$pristine</code> properties that are used by the built-in AngularJS validation. This approach also works for the <a href="/docs-kendo-china/controls/editors/combobox/overview">Kendo UI ComboBox</a> widget.</p>
 
-<p>For more information on the differences between the <code>ng-model</code> and <code>k-ng-model</code> bindings, refer to the section on <a href="/AngularJS/introduction#scope-bindings">scope bindings</a>.</p>
+<p>For more information on the differences between the <code>ng-model</code> and <code>k-ng-model</code> bindings, refer to the section on <a href="/docs-kendo-china/AngularJS/introduction#scope-bindings">scope bindings</a>.</p>
 
-<p>For more information on how to alternatively use the Kendo UI Validator, refer to the <a href="http://demos.telerik.com/kendo-ui/validator/angular">runnable example on validation</a> and to the <a href="/controls/editors/validator/overview">introductory article of the Validator</a>.</p>
+<p>For more information on how to alternatively use the Kendo UI Validator, refer to the <a href="http://demos.telerik.com/kendo-ui/validator/angular">runnable example on validation</a> and to the <a href="/docs-kendo-china/controls/editors/validator/overview">introductory article of the Validator</a>.</p>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <ul>
-<li><a href="/api/javascript/ui/dropdownlist">DropDownList JavaScript API Reference</a></li>
-<li><a href="/controls/editors/dropdownlist/how-to/appearance/auto-adjust-the-width">How to Automatically Adjust the Width of a DropDownList</a></li>
-<li><a href="/controls/editors/dropdownlist/how-to/appearance/create-dropdownlist-with-long-items">How to Create DropDownLists with Long Items</a></li>
-<li><a href="/controls/editors/dropdownlist/how-to/event-handling/detect-wrapper-focus-event">How to Detect Wrapper Focus Events</a></li>
-<li><a href="/controls/editors/dropdownlist/how-to/appearance/group-label-on-top-of-the-items">How to Move the Group Label on Top of Items</a></li>
-<li><a href="/controls/editors/dropdownlist/how-to/appearance/prevent-close-on-scroll">How to Prevent Popup Closure on Scroll</a></li>
-<li><a href="/controls/editors/dropdownlist/how-to/editing/remove-items">How to Remove Items</a></li>
-<li><a href="/controls/editors/dropdownlist/how-to/binding/set-datasource-dynamically">How to Set DataSource Dynamically</a></li>
-<li><a href="/controls/editors/dropdownlist/how-to/binding/update-model-on-load">How to Update MVVM Bound Models on Load</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/dropdownlist">DropDownList JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/controls/editors/dropdownlist/how-to/appearance/auto-adjust-the-width">How to Automatically Adjust the Width of a DropDownList</a></li>
+<li><a href="/docs-kendo-china/controls/editors/dropdownlist/how-to/appearance/create-dropdownlist-with-long-items">How to Create DropDownLists with Long Items</a></li>
+<li><a href="/docs-kendo-china/controls/editors/dropdownlist/how-to/event-handling/detect-wrapper-focus-event">How to Detect Wrapper Focus Events</a></li>
+<li><a href="/docs-kendo-china/controls/editors/dropdownlist/how-to/appearance/group-label-on-top-of-the-items">How to Move the Group Label on Top of Items</a></li>
+<li><a href="/docs-kendo-china/controls/editors/dropdownlist/how-to/appearance/prevent-close-on-scroll">How to Prevent Popup Closure on Scroll</a></li>
+<li><a href="/docs-kendo-china/controls/editors/dropdownlist/how-to/editing/remove-items">How to Remove Items</a></li>
+<li><a href="/docs-kendo-china/controls/editors/dropdownlist/how-to/binding/set-datasource-dynamically">How to Set DataSource Dynamically</a></li>
+<li><a href="/docs-kendo-china/controls/editors/dropdownlist/how-to/binding/update-model-on-load">How to Update MVVM Bound Models on Load</a></li>
 </ul>
 
 <p>For more runnable examples on the Kendo UI DropDownList, browse its <strong>How To</strong> documentation folder.</p> 
@@ -148,7 +148,7 @@
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -213,7 +213,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

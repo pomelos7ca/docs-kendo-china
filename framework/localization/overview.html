@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Overview | Kendo UI Localization</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to use the Kendo UI localization files in order to change the default messages of widgets.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("framework/localization/overview.html")
         });
         </script>
@@ -156,7 +156,7 @@
 <blockquote>
 <p><strong>Important</strong></p>
 
-<p>Currently, translations are not available for every language and some of the localization files may be incomplete. For more information on where to find the full list of available translations, refer to the <a href="/framework/localization/overview#contribution">section on contributing</a>.</p>
+<p>Currently, translations are not available for every language and some of the localization files may be incomplete. For more information on where to find the full list of available translations, refer to the <a href="/docs-kendo-china/framework/localization/overview#contribution">section on contributing</a>.</p>
 </blockquote>
 
 <h3 id="configuration-Create"><a href="#configuration-Create">Create New Localization File</a></h3>
@@ -191,7 +191,7 @@ $.extend(true, kendo.ui.&lt;Widget-name&gt;.prototype.options.messages,{
 <h3 id="localize-widgets-rendered-by-server-side-wrappers"><a href="#localize-widgets-rendered-by-server-side-wrappers">Localize Widgets Rendered by Server-Side Wrappers</a></h3>
 
 <p>The server-side wrappers render some of the needed widgets' markup (and the respective messages) from the server; applying the UI localization on the client side may not work as expected.
-Currently, the ASP.NET MVC wrappers come with localization resource files, which work with the default localization mechanism provided by ASP.NET MVC. For more details, check the <a href="/aspnet-mvc/globalization#localized-user-interface">ASP.NET MVC Globalization article</a>.</p>
+Currently, the ASP.NET MVC wrappers come with localization resource files, which work with the default localization mechanism provided by ASP.NET MVC. For more details, check the <a href="/docs-kendo-china/aspnet-mvc/globalization#localized-user-interface">ASP.NET MVC Globalization article</a>.</p>
 
 <h3 id="change-widget-language-at-runtime-in-angularjs-applications"><a href="#change-widget-language-at-runtime-in-angularjs-applications">Change Widget Language at Runtime in AngularJS Applications</a></h3>
 
@@ -206,15 +206,15 @@ Currently, the ASP.NET MVC wrappers come with localization resource files, which
 <p>Articles on the localization of Kendo UI widgets:</p>
 
 <ul>
-<li><a href="/controls/data-management/grid/localization">Localize the Grid Widget</a></li>
-<li><a href="/aspnet-mvc/globalization">Globalization and Localization in Telerik UI for ASP.NET MVC</a></li>
-<li><a href="/api/jsp/upload/localization">JSP API Reference on Localization of the Upload Widget</a></li>
+<li><a href="/docs-kendo-china/controls/data-management/grid/localization">Localize the Grid Widget</a></li>
+<li><a href="/docs-kendo-china/aspnet-mvc/globalization">Globalization and Localization in Telerik UI for ASP.NET MVC</a></li>
+<li><a href="/docs-kendo-china/api/jsp/upload/localization">JSP API Reference on Localization of the Upload Widget</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -279,7 +279,7 @@ Currently, the ASP.NET MVC wrappers come with localization resource files, which
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Building the Hybrid UI Sushi Application | Kendo UI Hybrid Components</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Build the Sushi single-page application by using the Kendo UI hybrid components in AngularJS.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("AngularJS/tutorials/sushi-angular-tutorial.html")
         });
         </script>
@@ -152,7 +152,7 @@
 
 <h3 id="setting-up"><a href="#setting-up">Setting Up</a></h3>
 
-<p>Create a new empty HTML file and include jQuery, AngularJS, and Kendo UI. In this article you are going to <a href="/intro/installation/cdn-service">load the prerequisites from CDN</a>. Alternatively, you may <a href="/intro/installation/getting-started">download and host Kendo UI in your project</a>.</p>
+<p>Create a new empty HTML file and include jQuery, AngularJS, and Kendo UI. In this article you are going to <a href="/docs-kendo-china/intro/installation/cdn-service">load the prerequisites from CDN</a>. Alternatively, you may <a href="/docs-kendo-china/intro/installation/getting-started">download and host Kendo UI in your project</a>.</p>
 
 <h6>Example</h6>
 
@@ -243,7 +243,7 @@
 
 <h3 id="making-the-application-seo-friendly"><a href="#making-the-application-seo-friendly">Making the Application SEO-Friendly</a></h3>
 
-<p>To <a href="http://googlewebmastercentral.blogspot.com/2009/10/proposal-for-making-ajax-crawlable.html">create a SEO (Search Engine Optimization)-friendly</a> mobile application, all you need to do is turn on the <a href="/api/javascript/mobile/application#configuration-hashBang"><code>hashBang</code></a> configuration. The configuration can also be set directly <a href="/AngularJS/introduction#widget-options-in-html">in the markup</a>.</p>
+<p>To <a href="http://googlewebmastercentral.blogspot.com/2009/10/proposal-for-making-ajax-crawlable.html">create a SEO (Search Engine Optimization)-friendly</a> mobile application, all you need to do is turn on the <a href="/docs-kendo-china/api/javascript/mobile/application#configuration-hashBang"><code>hashBang</code></a> configuration. The configuration can also be set directly <a href="/docs-kendo-china/AngularJS/introduction#widget-options-in-html">in the markup</a>.</p>
 
 <h6>Example</h6>
 
@@ -252,7 +252,7 @@
 
 <h2 id="displaying-list-of-data"><a href="#displaying-list-of-data">Displaying List of Data</a></h2>
 
-<p>Now you have a very basic mobile application running,so it is time to add some data. You are going to create a controller for the index View, a <a href="/framework/datasource/overview">DataSource</a> that will be responsible for loading the data, and a <a href="/mobile/listview/overview">hybrid mobile ListView</a> widget that will be responsible for displaying it.</p>
+<p>Now you have a very basic mobile application running,so it is time to add some data. You are going to create a controller for the index View, a <a href="/docs-kendo-china/framework/datasource/overview">DataSource</a> that will be responsible for loading the data, and a <a href="/docs-kendo-china/mobile/listview/overview">hybrid mobile ListView</a> widget that will be responsible for displaying it.</p>
 
 <h3 id="adding-the-view-controller"><a href="#adding-the-view-controller">Adding the View Controller</a></h3>
 
@@ -356,7 +356,7 @@
 
 <h2 id="adding-the-layout"><a href="#adding-the-layout">Adding the Layout</a></h2>
 
-<p>Now, create the application <a href="/controls/hybrid/styles/layout">layout</a>. To define a Layout, add a <code>&lt;kendo-mobile-layout&gt;</code> tag to the page and set its <code>id</code> option.</p>
+<p>Now, create the application <a href="/docs-kendo-china/controls/hybrid/styles/layout">layout</a>. To define a Layout, add a <code>&lt;kendo-mobile-layout&gt;</code> tag to the page and set its <code>id</code> option.</p>
 
 <h6>Example</h6>
 
@@ -425,7 +425,7 @@
 
 <h2 id="using-event-handlers"><a href="#using-event-handlers">Using Event Handlers</a></h2>
 
-<p>Now you are going to configure the ListView located in the <strong>Home</strong> View to display only the featured products and the ListView located in <strong>Our Menu</strong> View to display a list of all products grouped by their first letter and ordered alphabetically. To do that, use the <a href="/api/javascript/data/datasource#methods">DataSource API</a> and the <a href="/api/javascript/mobile/ui/view#events-beforeShow"><code>beforeShow</code></a> event of the mobile View.</p>
+<p>Now you are going to configure the ListView located in the <strong>Home</strong> View to display only the featured products and the ListView located in <strong>Our Menu</strong> View to display a list of all products grouped by their first letter and ordered alphabetically. To do that, use the <a href="/docs-kendo-china/api/javascript/data/datasource#methods">DataSource API</a> and the <a href="/docs-kendo-china/api/javascript/mobile/ui/view#events-beforeShow"><code>beforeShow</code></a> event of the mobile View.</p>
 
 <p>Add the <code>k-on-before-show</code> attribute to the View elements and specify the event handler name.</p>
 
@@ -495,7 +495,7 @@
 <blockquote>
 <p><strong>Important</strong></p>
 
-<p>It is important to note that this is still a Kendo UI Template, so you <a href="/framework/templates/overview#template-syntax">must escape the <code>#</code> symbols</a>.</p>
+<p>It is important to note that this is still a Kendo UI Template, so you <a href="/docs-kendo-china/framework/templates/overview#template-syntax">must escape the <code>#</code> symbols</a>.</p>
 </blockquote>
 
 <p>Before you are able to pass the template to the widgets, assign it to the View controller's scope. Create a service that is going to hold a reference to the template.</p>
@@ -578,7 +578,7 @@
 &lt;/kendo-mobile-view&gt;
 </code></pre>
 
-<p>In the <code>show</code> event handler set the cart's <code>currentItem</code> and the framework is going to automatically evaluate the template expressions. You are able to obtain the item ID through the query string parameters of the View, then use the DataSource <a href="/api/framework/datasource#methods-get"><code>get</code> method</a> to get the <code>dataItem</code> that corresponds to the ID parameter.</p>
+<p>In the <code>show</code> event handler set the cart's <code>currentItem</code> and the framework is going to automatically evaluate the template expressions. You are able to obtain the item ID through the query string parameters of the View, then use the DataSource <a href="/docs-kendo-china/api/framework/datasource#methods-get"><code>get</code> method</a> to get the <code>dataItem</code> that corresponds to the ID parameter.</p>
 
 <h6>Example</h6>
 
@@ -904,9 +904,9 @@ this.checkout = function() {
 
 <p>Create a folder named <code>content</code> and an empty <code>html</code> file inside it called <code>about-angular.html</code>. In the remote View file, include only the View's markup without any <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, or <code>&lt;body&gt;</code> tags. Keep in mind that the content of the remote View is going to be injected in the application via Ajax, so there is no need to include any JavaScript dependencies in the file.</p>
 
-<p>For more information on the hybrid mobile Kendo UI View, refer to <a href="/controls/hybrid/application#remote-views">this article</a>.</p>
+<p>For more information on the hybrid mobile Kendo UI View, refer to <a href="/docs-kendo-china/controls/hybrid/application#remote-views">this article</a>.</p>
 
-<p>In the about View, include header with a title and a <strong>Back</strong> button, and a ListView with <a href="/controls/hybrid/application##link-to-external-pages">external links</a>.</p>
+<p>In the about View, include header with a title and a <strong>Back</strong> button, and a ListView with <a href="/docs-kendo-china/controls/hybrid/application##link-to-external-pages">external links</a>.</p>
 
 <h6>Example</h6>
 
@@ -940,8 +940,8 @@ this.checkout = function() {
 
 <ul>
 <li>
-<a href="/troubleshoot/troubleshooting-js-errors">Check for JavaScript errors</a>.</li>
-<li>Check if the issue you encounter is not already described in the <a href="/troubleshoot/troubleshooting-common-issues">troubleshooting article on common issues</a>.</li>
+<a href="/docs-kendo-china/troubleshoot/troubleshooting-js-errors">Check for JavaScript errors</a>.</li>
+<li>Check if the issue you encounter is not already described in the <a href="/docs-kendo-china/troubleshoot/troubleshooting-common-issues">troubleshooting article on common issues</a>.</li>
 <li>Check <a href="http://blogs.telerik.com/kendoui/posts/13-01-02/screencast_debugging_kendo_ui_applications">this screen cast</a> as it provides a brief overview of how to easily debug Kendo UI Applications.</li>
 </ul>
 
@@ -950,15 +950,15 @@ this.checkout = function() {
 <p>Other articles on the integration of Kendo UI hybrid components:</p>
 
 <ul>
-<li><a href="/controls/hybrid/support/regular-usage">Integration with Kendo UI for the Web</a></li>
-<li><a href="/controls/hybrid/support/mvvm">MVVM Integration</a></li>
-<li><a href="/AngularJS/angular-hybrid">AngularJS Support for the Hybrid UI</a></li>
+<li><a href="/docs-kendo-china/controls/hybrid/support/regular-usage">Integration with Kendo UI for the Web</a></li>
+<li><a href="/docs-kendo-china/controls/hybrid/support/mvvm">MVVM Integration</a></li>
+<li><a href="/docs-kendo-china/AngularJS/angular-hybrid">AngularJS Support for the Hybrid UI</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -1023,7 +1023,7 @@ this.checkout = function() {
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

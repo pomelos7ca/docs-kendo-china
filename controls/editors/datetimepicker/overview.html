@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Overview | Kendo UI DateTimePicker</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to initialize the Kendo UI DateTimePicker widget, configure its options and define the interval between values int he time drop-down list.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("controls/editors/datetimepicker/overview.html")
         });
         </script>
@@ -159,7 +159,7 @@
 <li>Interval definition between predefined values in the time drop-down list</li>
 </ul>
 
-<p>The first day of the week in the Calendar view depends on the applied <a href="/framework/globalization/definecultureinfo">culture</a>.</p>
+<p>The first day of the week in the Calendar view depends on the applied <a href="/docs-kendo-china/framework/globalization/definecultureinfo">culture</a>.</p>
 
 <h3 id="configuration-Selected,"><a href="#configuration-Selected,">Selected, Min, and Max Datetime</a></h3>
 
@@ -324,11 +324,11 @@
 <p>The widget is designed to keep the input value unchanged, even when the typed date is invalid. This is due the following facts:</p>
 
 <ul>
-<li>The widget allows different date parse formats, which require unrestricted user input. For more information, refer to the <a href="/api/javascript/ui/datetimepicker#configuration-parseFormats"><code>parseFormats</code></a> option.</li>
+<li>The widget allows different date parse formats, which require unrestricted user input. For more information, refer to the <a href="/docs-kendo-china/api/javascript/ui/datetimepicker#configuration-parseFormats"><code>parseFormats</code></a> option.</li>
 <li>The widget does not update automatically the typed text when it is invalid. Such a change in the input value that is made by the widget, leads to unexpected behavior.</li>
 </ul>
 
-<p>The best way to validate the DateTimePicker widget is to use a client-validation framework such as the <a href="/controls/editors/validator/overview">Kendo UI Validator</a>. In this way, you can provide a meaningful error message to the end user that prompts the right actions for them to resolve the issue. For more details, refer to the <a href="http://demos.telerik.com/kendo-ui/validator/custom-validation">online custom validation demos</a>.</p>
+<p>The best way to validate the DateTimePicker widget is to use a client-validation framework such as the <a href="/docs-kendo-china/controls/editors/validator/overview">Kendo UI Validator</a>. In this way, you can provide a meaningful error message to the end user that prompts the right actions for them to resolve the issue. For more details, refer to the <a href="http://demos.telerik.com/kendo-ui/validator/custom-validation">online custom validation demos</a>.</p>
 
 <h2 id="calendar-types"><a href="#calendar-types">Calendar Types</a></h2>
 
@@ -341,46 +341,46 @@
 <p>Other articles on the Kendo UI DateTimePicker:</p>
 
 <ul>
-<li><a href="/controls/editors/datetimepicker/how-to/prevent-invalid-values">How to Prevent Invalid Values</a></li>
-<li><a href="/controls/editors/datetimepicker/how-to/custom-date-validation">How to Validate Custom Dates</a></li>
-<li><a href="/controls/editors/datetimepicker/how-to/limit-datetimepicker-navigation-to-months">How to Limit Navigation to Months</a></li>
-<li><a href="/controls/editors/datetimepicker/how-to/override-hours">How to Override Hours in the Popup</a></li>
-<li><a href="/aspnet-mvc/helpers/datetimepicker/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the DateTimePicker Widget</a></li>
-<li><a href="/jsp/tags/datetimepicker/overview">Overview of the DateTimePicker JSP Tag</a></li>
-<li><a href="/php/widgets/datetimepicker/overview">Overview of the DateTimePicker PHP Class</a></li>
-<li><a href="/api/javascript/ui/datetimepicker">DateTimePicker JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/controls/editors/datetimepicker/how-to/prevent-invalid-values">How to Prevent Invalid Values</a></li>
+<li><a href="/docs-kendo-china/controls/editors/datetimepicker/how-to/custom-date-validation">How to Validate Custom Dates</a></li>
+<li><a href="/docs-kendo-china/controls/editors/datetimepicker/how-to/limit-datetimepicker-navigation-to-months">How to Limit Navigation to Months</a></li>
+<li><a href="/docs-kendo-china/controls/editors/datetimepicker/how-to/override-hours">How to Override Hours in the Popup</a></li>
+<li><a href="/docs-kendo-china/aspnet-mvc/helpers/datetimepicker/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the DateTimePicker Widget</a></li>
+<li><a href="/docs-kendo-china/jsp/tags/datetimepicker/overview">Overview of the DateTimePicker JSP Tag</a></li>
+<li><a href="/docs-kendo-china/php/widgets/datetimepicker/overview">Overview of the DateTimePicker PHP Class</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/datetimepicker">DateTimePicker JavaScript API Reference</a></li>
 </ul>
 
 <p>Articles on the Kendo UI Calendar:</p>
 
 <ul>
-<li><a href="/controls/scheduling/calendar/overview">Overview of the Calendar Widget</a></li>
-<li><a href="/controls/scheduling/calendar/how-to/control-header-format-based-on-selected-culture">How to Control the Header Format</a></li>
-<li><a href="/api/javascript/ui/calendar">Calendar JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/controls/scheduling/calendar/overview">Overview of the Calendar Widget</a></li>
+<li><a href="/docs-kendo-china/controls/scheduling/calendar/how-to/control-header-format-based-on-selected-culture">How to Control the Header Format</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/calendar">Calendar JavaScript API Reference</a></li>
 </ul>
 
 <p>Articles on the Kendo UI DatePicker:</p>
 
 <ul>
-<li><a href="/controls/editors/datepicker/overview">Overview of the DatePicker Widget</a></li>
-<li><a href="/controls/editors/datepicker/how-to/AngularJS/set-first-day-of-week">How to Set the First Weekday</a></li>
-<li><a href="/controls/editors/datepicker/how-to/date-masking-using-maskedtextbox">How to Create Date Masking</a></li>
-<li><a href="/controls/editors/datepicker/how-to/persist-entered-date">How to Persist Entered Dates</a></li>
-<li><a href="/controls/editors/datepicker/how-to/resize-calendar-based-on-input-width">How to Resize Calendar Based on Input Width</a></li>
-<li><a href="/api/javascript/ui/datepicker">DatePicker JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/controls/editors/datepicker/overview">Overview of the DatePicker Widget</a></li>
+<li><a href="/docs-kendo-china/controls/editors/datepicker/how-to/AngularJS/set-first-day-of-week">How to Set the First Weekday</a></li>
+<li><a href="/docs-kendo-china/controls/editors/datepicker/how-to/date-masking-using-maskedtextbox">How to Create Date Masking</a></li>
+<li><a href="/docs-kendo-china/controls/editors/datepicker/how-to/persist-entered-date">How to Persist Entered Dates</a></li>
+<li><a href="/docs-kendo-china/controls/editors/datepicker/how-to/resize-calendar-based-on-input-width">How to Resize Calendar Based on Input Width</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/datepicker">DatePicker JavaScript API Reference</a></li>
 </ul>
 
 <p>Articles on the Kendo UI TimePicker:</p>
 
 <ul>
-<li><a href="/controls/editors/timepicker/overview">Overview of the TimePicker Widget</a></li>
-<li><a href="/api/javascript/ui/timepicker">TimePicker JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/controls/editors/timepicker/overview">Overview of the TimePicker Widget</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/timepicker">TimePicker JavaScript API Reference</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -445,7 +445,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

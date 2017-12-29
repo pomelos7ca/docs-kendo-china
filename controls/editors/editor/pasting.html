@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="editor">
         <title>Pasting Content | Kendo UI Editor</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Paste content from HTML and MS Word documents to the Kendo UI Editor widget.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("controls/editors/editor/pasting.html")
         });
         </script>
@@ -129,33 +129,33 @@
 
 <p>The Editor facilitates the DOM clipboard events. Any content that is pasted is first processed by the browser.</p>
 
-<p>After the browser processes the content, the <a href="/api/javascript/ui/editor#configuration-pasteCleanup"><code>pasteCleanup</code></a> options are applied to help you control what is going to be pasted.</p>
+<p>After the browser processes the content, the <a href="/docs-kendo-china/api/javascript/ui/editor#configuration-pasteCleanup"><code>pasteCleanup</code></a> options are applied to help you control what is going to be pasted.</p>
 
 <h2 id="common-scenarios"><a href="#common-scenarios">Common Scenarios</a></h2>
 
 <h3 id="clean-html-on-paste"><a href="#clean-html-on-paste">Clean HTML on Paste</a></h3>
 
-<p>The built-in <a href="/api/javascript/ui/editor#configuration-pasteCleanup"><code>pasteCleanup</code></a> options are:</p>
+<p>The built-in <a href="/docs-kendo-china/api/javascript/ui/editor#configuration-pasteCleanup"><code>pasteCleanup</code></a> options are:</p>
 
 <ul>
 <li>
-<a href="/api/javascript/ui/editor#configuration-pasteCleanup.none"><code>none</code></a>—Disables all options, meaning that none of the <code>pasteCleanup</code> options will be executed. The option is disabled by default.</li>
+<a href="/docs-kendo-china/api/javascript/ui/editor#configuration-pasteCleanup.none"><code>none</code></a>—Disables all options, meaning that none of the <code>pasteCleanup</code> options will be executed. The option is disabled by default.</li>
 <li>
-<a href="/api/javascript/ui/editor#configuration-pasteCleanup.all"><code>all</code></a>—Strips all HTML tags and leaves only plain text; disabled by default.</li>
+<a href="/docs-kendo-china/api/javascript/ui/editor#configuration-pasteCleanup.all"><code>all</code></a>—Strips all HTML tags and leaves only plain text; disabled by default.</li>
 <li>
-<a href="/api/javascript/ui/editor#configuration-pasteCleanup.keepNewLines"><code>keepNewLines</code></a>—Removes all HTML elements, such as the <code>all</code> option, but preserves new lines; disabled by default.</li>
+<a href="/docs-kendo-china/api/javascript/ui/editor#configuration-pasteCleanup.keepNewLines"><code>keepNewLines</code></a>—Removes all HTML elements, such as the <code>all</code> option, but preserves new lines; disabled by default.</li>
 <li>
-<a href="/api/javascript/ui/editor#configuration-pasteCleanup.span"><code>span</code></a>—Removes the <code>span</code> elements from the copied content; disabled by default.</li>
+<a href="/docs-kendo-china/api/javascript/ui/editor#configuration-pasteCleanup.span"><code>span</code></a>—Removes the <code>span</code> elements from the copied content; disabled by default.</li>
 <li>
-<a href="/api/javascript/ui/editor#configuration-pasteCleanup.css"><code>css</code></a>—Removes the <code>style</code> and <code>class</code> attributes out of all HTML elements from the copied content; disabled by default.</li>
+<a href="/docs-kendo-china/api/javascript/ui/editor#configuration-pasteCleanup.css"><code>css</code></a>—Removes the <code>style</code> and <code>class</code> attributes out of all HTML elements from the copied content; disabled by default.</li>
 <li>
-<a href="/api/javascript/ui/editor#configuration-pasteCleanup.msTags"><code>msTags</code></a>—Strips the MS Word specific tags when pasting content and cleans up extra metadata. The option is enabled by default.</li>
+<a href="/docs-kendo-china/api/javascript/ui/editor#configuration-pasteCleanup.msTags"><code>msTags</code></a>—Strips the MS Word specific tags when pasting content and cleans up extra metadata. The option is enabled by default.</li>
 <li>
-<a href="/api/javascript/ui/editor#configuration-pasteCleanup.msAllFormatting"><code>msAllFormatting</code></a>—Strips the MS Word specific tags and removes the font-name and font-size decoration derived from MS Word; disabled by default.</li>
+<a href="/docs-kendo-china/api/javascript/ui/editor#configuration-pasteCleanup.msAllFormatting"><code>msAllFormatting</code></a>—Strips the MS Word specific tags and removes the font-name and font-size decoration derived from MS Word; disabled by default.</li>
 <li>
-<a href="/api/javascript/ui/editor#configuration-pasteCleanup.msConvertLists"><code>msConvertLists</code></a>—Converts MS Word lists to HTML lists; enabled by default.</li>
+<a href="/docs-kendo-china/api/javascript/ui/editor#configuration-pasteCleanup.msConvertLists"><code>msConvertLists</code></a>—Converts MS Word lists to HTML lists; enabled by default.</li>
 <li>
-<a href="/api/javascript/ui/editor#configuration-pasteCleanup.custom"><code>custom</code></a>—Uses a callback function to create <a href="#create-your-own-pastecleanup-fucntion">s custom <code>pasteCleanup</code> option</a>.</li>
+<a href="/docs-kendo-china/api/javascript/ui/editor#configuration-pasteCleanup.custom"><code>custom</code></a>—Uses a callback function to create <a href="#create-your-own-pastecleanup-fucntion">s custom <code>pasteCleanup</code> option</a>.</li>
 </ul>
 
 <p>The following example demonstrates how to copy the HTML content above the Editor and paste it in the content area. Because of the enabled <code>span</code> option, the <code>span</code> tags are removed.</p>
@@ -225,21 +225,21 @@
 <p>Other articles on the Kendo UI Editor:</p>
 
 <ul>
-<li><a href="/controls/editors/editor/overview">Overview of the Editor Widget</a></li>
-<li><a href="/controls/editors/editor/imagebrowser">Image Browser</a></li>
-<li><a href="/controls/editors/editor/post-process">Post-Process Content</a></li>
-<li><a href="/controls/editors/editor/working-with-selection">Set Selections</a></li>
-<li><a href="/controls/editors/editor/preventing-xss">Prevent Cross-Site Scripting</a></li>
-<li><a href="/controls/editors/editor/troubleshoot/troubleshooting">Troubleshooting</a></li>
-<li><a href="/api/javascript/ui/editor">Editor JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/controls/editors/editor/overview">Overview of the Editor Widget</a></li>
+<li><a href="/docs-kendo-china/controls/editors/editor/imagebrowser">Image Browser</a></li>
+<li><a href="/docs-kendo-china/controls/editors/editor/post-process">Post-Process Content</a></li>
+<li><a href="/docs-kendo-china/controls/editors/editor/working-with-selection">Set Selections</a></li>
+<li><a href="/docs-kendo-china/controls/editors/editor/preventing-xss">Prevent Cross-Site Scripting</a></li>
+<li><a href="/docs-kendo-china/controls/editors/editor/troubleshoot/troubleshooting">Troubleshooting</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/editor">Editor JavaScript API Reference</a></li>
 </ul>
 
-<p>For how-to examples on the Kendo UI Editor widget, browse its <a href="/controls/editors/editor/how-to/AngularJS/handle-blur-and-focus-events-angular"><strong>How To</strong> documentation folder</a>.</p> 
+<p>For how-to examples on the Kendo UI Editor widget, browse its <a href="/docs-kendo-china/controls/editors/editor/how-to/AngularJS/handle-blur-and-focus-events-angular"><strong>How To</strong> documentation folder</a>.</p> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -304,7 +304,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="spreadsheet">
         <title>Configuration, methods and events of Kendo UI Spreadsheet</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Code examples for Spreadsheet UI widget configuration. Learn how to use methods and which events to set once the Spreadsheet UI widget is initialized.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("api/javascript/ui/spreadsheet.html")
         });
         </script>
@@ -123,7 +123,7 @@
             
              <h1 id="kendouispreadsheet"><a href="#kendouispreadsheet">kendo.ui.Spreadsheet</a></h1>
 
-<p>Represents the Kendo UI Spreadsheet widget. Inherits from <a href="/api/javascript/ui/widget">Widget</a>.</p>
+<p>Represents the Kendo UI Spreadsheet widget. Inherits from <a href="/docs-kendo-china/api/javascript/ui/widget">Widget</a>.</p>
 
 <h2 id="configuration"><a href="#configuration">Configuration</a></h2>
 
@@ -954,12 +954,12 @@ the proxy should set the "Content-Disposition" header to <code>inline; filename=
 <p>The width of the column in pixels. Defaults to <a href="#configuration-columnWidth">columnWidth</a>.</p>
 
 <h3 id="configuration-sheets.dataSource">
-<a href="#configuration-sheets.dataSource">sheets.dataSource </a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<a href="#configuration-sheets.dataSource">sheets.dataSource </a><a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h3>
 
 <p>The data source instance for this sheet.</p>
 
-<p>See <a href="/web/spreadsheet/import-and-export-data/bind-to-data-source">Bind to Data Source</a>.</p>
+<p>See <a href="/docs-kendo-china/web/spreadsheet/import-and-export-data/bind-to-data-source">Bind to Data Source</a>.</p>
 
 <h3 id="configuration-sheets.filter">
 <a href="#configuration-sheets.filter">sheets.filter </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
@@ -1855,7 +1855,7 @@ the proxy should set the "Content-Disposition" header to <code>inline; filename=
 <p>Clears the spreadsheets and populates it with data from the specified Excel (.xlsx) file.</p>
 
 <blockquote>
-<p>Requires Internet Explorer 10 or a recent version of other browsers. The JSZip library is a <a href="/intro/installation/prerequisites#jszip-library"><code>prerequisite</code></a> for the import from file functionality.</p>
+<p>Requires Internet Explorer 10 or a recent version of other browsers. The JSZip library is a <a href="/docs-kendo-china/intro/installation/prerequisites#jszip-library"><code>prerequisite</code></a> for the import from file functionality.</p>
 </blockquote>
 
 <h4>Parameters</h4>
@@ -2054,7 +2054,7 @@ the proxy should set the "Content-Disposition" header to <code>inline; filename=
 
 <p>The header column width in pixels.</p>
 
-<h5>options.dataSource  <a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<h5>options.dataSource  <a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h5>
 
 <p>The data source for this sheet.</p>
@@ -2062,7 +2062,7 @@ the proxy should set the "Content-Disposition" header to <code>inline; filename=
 <h5>options.data <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
 </h5>
 
-<p>The sheet state and data as <code>Object</code>.  The schema follows the same structure as the <a href="/api/javascript/ui/spreadsheet#configuration">widget configuration</a>.</p>
+<p>The sheet state and data as <code>Object</code>.  The schema follows the same structure as the <a href="/docs-kendo-china/api/javascript/ui/spreadsheet#configuration">widget configuration</a>.</p>
 
 <h4>Returns</h4>
 
@@ -2566,7 +2566,7 @@ the proxy should set the "Content-Disposition" header to <code>inline; filename=
 <h5>e.range <code>kendo.spreadsheet.Range</code>
 </h5>
 
-<p>The <a href="/api/javascript/spreadsheet/range">Range</a> that is selected.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/spreadsheet/range">Range</a> that is selected.</p>
 
 <h3 id="events-changeFormat"><a href="#events-changeFormat">changeFormat</a></h3>
 
@@ -2582,7 +2582,7 @@ the proxy should set the "Content-Disposition" header to <code>inline; filename=
 <h5>e.range <code>kendo.spreadsheet.Range</code>
 </h5>
 
-<p>The <a href="/api/javascript/spreadsheet/range">Range</a> which format is changed.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/spreadsheet/range">Range</a> which format is changed.</p>
 
 <h3 id="events-change"><a href="#events-change">change</a></h3>
 
@@ -2598,7 +2598,7 @@ the proxy should set the "Content-Disposition" header to <code>inline; filename=
 <h5>e.range <code>kendo.spreadsheet.Range</code>
 </h5>
 
-<p>The <a href="/api/javascript/spreadsheet/range">Range</a> that has triggered the change.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/spreadsheet/range">Range</a> that has triggered the change.</p>
 
 <h3 id="events-render"><a href="#events-render">render</a></h3>
 
@@ -2630,7 +2630,7 @@ the proxy should set the "Content-Disposition" header to <code>inline; filename=
 <h5>e.workbook <code>kendo.ooxml.Workbook</code>
 </h5>
 
-<p>The Excel <a href="/api/javascript/ooxml/workbook#configuration">workbook configuration object</a>. Used to initialize a <code>kendo.ooxml.Workbook</code> class. Modifications of the workbook will reflect in the output Excel document.</p>
+<p>The Excel <a href="/docs-kendo-china/api/javascript/ooxml/workbook#configuration">workbook configuration object</a>. Used to initialize a <code>kendo.ooxml.Workbook</code> class. Modifications of the workbook will reflect in the output Excel document.</p>
 
 <h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h5>
@@ -2721,7 +2721,7 @@ the proxy should set the "Content-Disposition" header to <code>inline; filename=
 <p>The promise <a href="http://api.jquery.com/deferred.progress/">progress handler</a> will be called periodically with the following arguments:</p>
 
 <ul>
-<li>sheet - The current sheet. An instance of <a href="/api/javascript/spreadsheet/sheet">kendo.spreadsheet.Sheet</a>
+<li>sheet - The current sheet. An instance of <a href="/docs-kendo-china/api/javascript/spreadsheet/sheet">kendo.spreadsheet.Sheet</a>
 </li>
 <li>progress - Number if the range 0 to 1, indicating the progress of the current import operation</li>
 </ul>
@@ -2796,7 +2796,7 @@ the proxy should set the "Content-Disposition" header to <code>inline; filename=
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -2861,7 +2861,7 @@ the proxy should set the "Content-Disposition" header to <code>inline; filename=
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

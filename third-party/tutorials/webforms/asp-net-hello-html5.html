@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Part 3 - Hello HTML5 | Kendo UI Third-Party Frameworks</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn in theory and in practice how to implement HTML5 in Visual Studio and build an HTML application in ASP.NET.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("third-party/tutorials/webforms/asp-net-hello-html5.html")
         });
         </script>
@@ -173,7 +173,7 @@
 
 <p><strong>Figure 1: A new Web Form</strong></p>
 
-<p><img src="/images/webforms/hello-html5-new-web-form.png" alt="New Web Form"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-html5-new-web-form.png" alt="New Web Form"></p>
 
 <p>When the <code>Default.aspx</code> file is added, it opens in the designer. If it does not, open the file. Make sure you are viewing the HTML source of the Web Form and not the code behind.</p>
 
@@ -198,9 +198,9 @@
 
 <p><strong>Figure 2: Removing the unnecessary xmlns attribute</strong></p>
 
-<p><img src="/images/webforms/hello-html5-xmlns.png" alt="xmlns"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-html5-xmlns.png" alt="xmlns"></p>
 
-<p><img src="/images/webforms/hello-html5-no-xmlns.png" alt="No XMLNS"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-html5-no-xmlns.png" alt="No XMLNS"></p>
 
 <p>Some of HTML5 involves simplifying the web development experience and removing all of the unnecessary and confusing configuration attributes.</p>
 
@@ -210,13 +210,13 @@
 
 <p><strong>Figure 3: Adding of the semantic tags</strong></p>
 
-<p><img src="/images/webforms/hello-html5-semantic-tags.png" alt="Semantic Tags"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-html5-semantic-tags.png" alt="Semantic Tags"></p>
 
 <p>Note that Visual Studio IntelliSense recognizes these as valid tags. Ensure that the schema validation selection is set to <code>HTML5</code>.</p>
 
 <p><strong>Figure 4: The validation of the HTML5 Schema</strong></p>
 
-<p><img src="/images/webforms/hello-html5-html5-schema-validation.png" alt="HTML5 Schema Validation"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-html5-html5-schema-validation.png" alt="HTML5 Schema Validation"></p>
 
 <p>If <strong>HTML5</strong> is not available in the select box, ensure that you are running at least Visual Studio 2008 SP 1. If you cannot run at least Visual Studio 2008 SP1, you can get support for HTML5 schema validation in Visual Studio by downloading these packages:</p>
 
@@ -228,7 +228,7 @@
 
 <p><strong>Figure 6: Adding a text</strong></p>
 
-<p><img src="/images/webforms/hello-html5-lorem-ipsum.png" alt="Lorem Ipsum"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-html5-lorem-ipsum.png" alt="Lorem Ipsum"></p>
 
 <h4>Test the application</h4>
 
@@ -236,13 +236,13 @@
 
 <p><strong>Figure 7: Output of the added text</strong></p>
 
-<p><img src="/images/webforms/hello-html5-f5-no-style.png" alt="F5 No Style"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-html5-f5-no-style.png" alt="F5 No Style"></p>
 
 <p>Press <code>F12</code> to open the IE Developer Tools. Change the rendering mode from IE 9 to IE 7. Observe that there is virtually no change in the display.</p>
 
 <p><strong>Figure 8: Internet Explorer 7 browser mode</strong></p>
 
-<p><img src="/images/webforms/hello-html5-browser-mode-ie-7-no-style.png" alt="Browser Mode IE 7 No Style"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-html5-browser-mode-ie-7-no-style.png" alt="Browser Mode IE 7 No Style"></p>
 
 <h3 id="display-html5-in-older-browsers"><a href="#display-html5-in-older-browsers">Display HTML5 in Older Browsers</a></h3>
 
@@ -250,7 +250,7 @@
 
 <p><strong>Figure 9: Linking the stylesheet</strong></p>
 
-<p><img src="/images/webforms/hello-html5-link-stylesheet.png" alt="Link Stylesheet"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-html5-link-stylesheet.png" alt="Link Stylesheet"></p>
 
 <p>Open <code>site.css</code> and add some style to change the background color of the article to <code>salmon</code>, as demonstrated in the example below.</p>
 
@@ -275,7 +275,7 @@
 
 <p><strong>Figure 10: Modernizr</strong></p>
 
-<p><img src="/images/webforms/hello-html5-modernizr.png" alt="Modernizr"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-html5-modernizr.png" alt="Modernizr"></p>
 
 <p>Add <strong>Modernizr</strong> to the head of the page by dragging it from the scripts folder into the <strong>Default.aspx</strong> page and drop it directly below the stylesheet reference.</p>
 
@@ -298,16 +298,16 @@
 <p>Tutorials on how to build an HTML application in ASP.NET:</p>
 
 <ul>
-<li><a href="/third-party/tutorials/webforms/asp-net-hello-jquery">Part 1 - Hello jQuery</a></li>
-<li><a href="/third-party/tutorials/webforms/asp-net-hello-services">Part 2 - Hello Services</a></li>
-<li><a href="/third-party/tutorials/webforms/asp-net-hello-kendo-ui-part-1">Part 4 - Hello Kendo UI</a></li>
-<li><a href="/third-party/tutorials/webforms/asp-net-hello-kendo-ui-part-2">Part 5 - Hello Kendo UI Grid CRUD Operations</a></li>
+<li><a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-jquery">Part 1 - Hello jQuery</a></li>
+<li><a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-services">Part 2 - Hello Services</a></li>
+<li><a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-kendo-ui-part-1">Part 4 - Hello Kendo UI</a></li>
+<li><a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-kendo-ui-part-2">Part 5 - Hello Kendo UI Grid CRUD Operations</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -372,7 +372,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

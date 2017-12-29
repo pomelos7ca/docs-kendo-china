@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Overview | Kendo UI Class</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to use the Kendo UI class category and get the basics of doing JavaScript inheritance with Kendo UI.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("framework/class/inheritance.html")
         });
         </script>
@@ -155,7 +155,7 @@ person.sayHello();
 
 <p><strong>Figure 1: Create a new object</strong></p>
 
-<p><img src="/images/inheritance/8c23-capture.png" alt="Capture"></p>
+<p><img src="/docs-kendo-china/images/inheritance/8c23-capture.png" alt="Capture"></p>
 
 <h3 id="add-constructors"><a href="#add-constructors">Add Constructors</a></h3>
 
@@ -183,7 +183,7 @@ person.sayHello();
 
 <p><strong>Figure 2: Set the name of the new person</strong></p>
 
-<p><img src="/images/inheritance/8c23-nh5.png" alt="nh5"></p>
+<p><img src="/docs-kendo-china/images/inheritance/8c23-nh5.png" alt="nh5"></p>
 
 <h3 id="instantiate-new-parent-object"><a href="#instantiate-new-parent-object">Instantiate New Parent Object</a></h3>
 
@@ -204,11 +204,11 @@ alert(myDad.isAPrettyCoolPerson);
 
 <p><strong>Figure 3: Instantiate a parent</strong></p>
 
-<p><img src="/images/inheritance/8c23-nh1_1.png" alt="nh1"></p>
+<p><img src="/docs-kendo-china/images/inheritance/8c23-nh1_1.png" alt="nh1"></p>
 
 <p><strong>Figure 4: Toggle on a quality</strong></p>
 
-<p><img src="/images/inheritance/8c23-nh2.png" alt="nh2"></p>
+<p><img src="/docs-kendo-china/images/inheritance/8c23-nh2.png" alt="nh2"></p>
 
 <h3 id="inherit-parent-properties"><a href="#inherit-parent-properties">Inherit Parent Properties</a></h3>
 
@@ -225,11 +225,11 @@ alert(me.isPrettyCoolPerson);
 
 <p><strong>Figure 5: Inherit some parent properties</strong></p>
 
-<p><img src="/images/inheritance/8c23-nh3.png" alt="nh3"></p>
+<p><img src="/docs-kendo-china/images/inheritance/8c23-nh3.png" alt="nh3"></p>
 
 <p><strong>Figure 6: Try to inherit more parent properties</strong></p>
 
-<p><img src="/images/inheritance/8c23-nh4.png" alt="nh4"></p>
+<p><img src="/docs-kendo-china/images/inheritance/8c23-nh4.png" alt="nh4"></p>
 
 <h3 id="understand-parent-objects"><a href="#understand-parent-objects">Understand Parent Objects</a></h3>
 
@@ -302,17 +302,17 @@ log("Cool? " + me.isPrettyCoolPerson);
 <p>Other articles on Kendo UI generic implementation:</p>
 
 <ul>
-<li><a href="/intro/installation/getting-started">Get Started with Kendo UI</a></li>
-<li><a href="/intro/widget-basics/wrapper-element">Widget Wrapper and Element References</a></li>
-<li><a href="/intro/widget-basics/data-attribute-initialization">Data Attributes Configuration</a></li>
-<li><a href="/intro/widget-basics/events-and-methods">Widget Methods and Events</a></li>
-<li><a href="/intro/widget-basics/destroy">Destroy Widgets</a></li>
+<li><a href="/docs-kendo-china/intro/installation/getting-started">Get Started with Kendo UI</a></li>
+<li><a href="/docs-kendo-china/intro/widget-basics/wrapper-element">Widget Wrapper and Element References</a></li>
+<li><a href="/docs-kendo-china/intro/widget-basics/data-attribute-initialization">Data Attributes Configuration</a></li>
+<li><a href="/docs-kendo-china/intro/widget-basics/events-and-methods">Widget Methods and Events</a></li>
+<li><a href="/docs-kendo-china/intro/widget-basics/destroy">Destroy Widgets</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -377,7 +377,7 @@ log("Cool? " + me.isPrettyCoolPerson);
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

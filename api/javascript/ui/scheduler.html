@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="scheduler">
         <title>Configuration, methods and events of Kendo UI Scheduler</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="How to configure and control methods in Scheduler UI widget, which events to use to open, close, change, select.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("api/javascript/ui/scheduler.html")
         });
         </script>
@@ -123,7 +123,7 @@
             
              <h1 id="kendouischeduler"><a href="#kendouischeduler">kendo.ui.Scheduler</a></h1>
 
-<p>Represents the Kendo UI Scheduler widget. Inherits from <a href="/api/javascript/ui/widget">Widget</a>.</p>
+<p>Represents the Kendo UI Scheduler widget. Inherits from <a href="/docs-kendo-china/api/javascript/ui/widget">Widget</a>.</p>
 
 <h2 id="configuration"><a href="#configuration">Configuration</a></h2>
 
@@ -131,7 +131,7 @@
 <a href="#configuration-allDayEventTemplate">allDayEventTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the "all day" scheduler events.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the "all day" scheduler events.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -216,7 +216,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-autoBind">autoBind </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
 </h3>
 
-<p>If set to <code>false</code> the widget will not bind to the data source during initialization. In this case data binding will occur when the <a href="/api/javascript/data/datasource#events-change">change</a> event of the
+<p>If set to <code>false</code> the widget will not bind to the data source during initialization. In this case data binding will occur when the <a href="/docs-kendo-china/api/javascript/data/datasource#events-change">change</a> event of the
 data source is fired. By default the widget will bind to the data source specified in the configuration.</p>
 
 <blockquote>
@@ -288,7 +288,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-currentTimeMarker.useLocalTimezone">currentTimeMarker.useLocalTimezone </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
 </h3>
 
-<p>If set to <code>false</code> the "current time" marker would be displayed using the scheduler <a href="/api/javascript/ui/scheduler#configuration-timezone">timezone</a>.</p>
+<p>If set to <code>false</code> the "current time" marker would be displayed using the scheduler <a href="/docs-kendo-china/api/javascript/ui/scheduler#configuration-timezone">timezone</a>.</p>
 
 <h4>Example - set "current time" marker to use scheduler timezone</h4>
 
@@ -311,12 +311,12 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-dataSource">dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><code>kendo.data.SchedulerDataSource</code>
 </h3>
 
-<p>The data source of the widget which contains the scheduler events. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/api/javascript/data/schedulerdatasource">kendo.data.SchedulerDataSource</a>
+<p>The data source of the widget which contains the scheduler events. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/docs-kendo-china/api/javascript/data/schedulerdatasource">kendo.data.SchedulerDataSource</a>
 instance.</p>
 
-<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/api/javascript/data/schedulerdatasource">kendo.data.SchedulerDataSource</a> instance using that value as data source configuration.</p>
+<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/docs-kendo-china/api/javascript/data/schedulerdatasource">kendo.data.SchedulerDataSource</a> instance using that value as data source configuration.</p>
 
-<p>If the <code>dataSource</code> option is an existing <a href="/api/javascript/data/schedulerdatasource">kendo.data.SchedulerDataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
+<p>If the <code>dataSource</code> option is an existing <a href="/docs-kendo-china/api/javascript/data/schedulerdatasource">kendo.data.SchedulerDataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
 
 <blockquote>
 <p>The Kendo UI Scheduler widget can be bound <em>only</em> to a <code>kendo.data.SchedulerDataSource</code>. An exception will be thrown if the <code>dataSource</code> option is set to a <code>kendo.data.DataSource</code> instance.</p>
@@ -444,7 +444,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-dateHeaderTemplate">dateHeaderTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the date header cells.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the date header cells.</p>
 
 <p>By default the scheduler renders the date using a custom date format - "ddd M/dd".
 The "ddd" specifier represents the abbreviated name of the week day and will be localized using the current Kendo UI culture.
@@ -714,13 +714,13 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-editable.template">editable.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the editor.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the editor.</p>
 
 <p>The template should contain elements whose <code>name</code> HTML attributes are set as the editable fields. This is how the Scheduler will know
-which field to update. The other option is to use <a href="/framework/mvvm/overview">MVVM</a> bindings in order to bind HTML elements to data item fields.</p>
+which field to update. The other option is to use <a href="/docs-kendo-china/framework/mvvm/overview">MVVM</a> bindings in order to bind HTML elements to data item fields.</p>
 
 <blockquote>
-<p>Use the <code>role</code> data attribute to initialize Kendo UI widgets in the template. Check <a href="/data-attribute-initialization">data attribute initialization</a> for more info.</p>
+<p>Use the <code>role</code> data attribute to initialize Kendo UI widgets in the template. Check <a href="/docs-kendo-china/data-attribute-initialization">data attribute initialization</a> for more info.</p>
 </blockquote>
 
 <h4>Example - customize the popup editor</h4>
@@ -831,7 +831,7 @@ $("#scheduler").kendoScheduler({
 
 <p>Configures the Kendo UI Window instance, which is used when the Grid edit mode is <code>"popup"</code>. The configuration is optional.</p>
 
-<p>For more information, please refer to the <a href="/api/javascript/ui/window">Window configuration API</a>.</p>
+<p>For more information, please refer to the <a href="/docs-kendo-china/api/javascript/ui/window">Window configuration API</a>.</p>
 
 <h4>Example - Scheduler popup Window configuration</h4>
 
@@ -897,7 +897,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-eventTemplate">eventTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the scheduler events.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the scheduler events.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -1054,7 +1054,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-groupHeaderTemplate">groupHeaderTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the group headers of scheduler day, week, workWeek and timeline views.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the group headers of scheduler day, week, workWeek and timeline views.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -1253,7 +1253,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-majorTimeHeaderTemplate">majorTimeHeaderTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the major ticks.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the major ticks.</p>
 
 <p>By default the scheduler renders the time using the current culture time format.</p>
 
@@ -3684,7 +3684,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-minorTimeHeaderTemplate">minorTimeHeaderTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the minor ticks.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the minor ticks.</p>
 
 <p>By default the scheduler renders a <code>"&amp;nbsp;"</code>.</p>
 
@@ -4233,15 +4233,15 @@ $("#scheduler").kendoScheduler({
 </code></pre>
 
 <h3 id="configuration-resources.dataSource">
-<a href="#configuration-resources.dataSource">resources.dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<a href="#configuration-resources.dataSource">resources.dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h3>
 
-<p>The data source which contains resource data items.  Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/api/javascript/data/datasource">kendo.data.DataSource</a>
+<p>The data source which contains resource data items.  Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/docs-kendo-china/api/javascript/data/datasource">kendo.data.DataSource</a>
 instance.</p>
 
-<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/api/javascript/data/datasource">kendo.data.DataSource</a> instance using that value as data source configuration.</p>
+<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/docs-kendo-china/api/javascript/data/datasource">kendo.data.DataSource</a> instance using that value as data source configuration.</p>
 
-<p>If the <code>dataSource</code> option is an existing <a href="/api/javascript/data/datasource">kendo.data.DataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
+<p>If the <code>dataSource</code> option is an existing <a href="/docs-kendo-china/api/javascript/data/datasource">kendo.data.DataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
 
 <h4>Example - set the resource data source</h4>
 
@@ -4706,7 +4706,7 @@ That way all users would see the same dates and times no matter their configured
 <blockquote>
 <p>The <strong>kendo.timezones.min.js</strong> file must be included in order to use timezones other than "Etc/UTC".</p>
 
-<p>The <strong>timezone</strong> option will not affect events if the widget's data source is initialized separately. In this case set the <a href="/api/javascript/data/schedulerdatasource#configuration-schema.timezone">schema.timezone</a> option directly.</p>
+<p>The <strong>timezone</strong> option will not affect events if the widget's data source is initialized separately. In this case set the <a href="/docs-kendo-china/api/javascript/data/schedulerdatasource#configuration-schema.timezone">schema.timezone</a> option directly.</p>
 </blockquote>
 
 <h4>Example - set the timezone</h4>
@@ -4879,7 +4879,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-views.allDayEventTemplate">views.allDayEventTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the "all day" scheduler events.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the "all day" scheduler events.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -4977,7 +4977,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-views.allDaySlotTemplate">views.allDaySlotTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the all day slot cell.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the all day slot cell.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -5088,7 +5088,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-views.dateHeaderTemplate">views.dateHeaderTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the date header cells.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the date header cells.</p>
 
 <p>By default the scheduler renders the date using a custom date format - "ddd M/dd".
 The "ddd" specifier, a.k.a abbreviated name of the week day, will be localized using the current Kendo UI culture.
@@ -5132,7 +5132,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-views.dayTemplate">views.dayTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the day slots in month view.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the day slots in month view.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -5366,7 +5366,7 @@ $("#scheduler").kendoScheduler({
 
 <h3 id="configuration-views.eventDateTemplate"><a href="#configuration-views.eventDateTemplate">views.eventDateTemplate</a></h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> used by the agenda view to render the date of the scheduler events.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used by the agenda view to render the date of the scheduler events.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -5441,7 +5441,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-views.eventTemplate">views.eventTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> used by the view to render the scheduler events.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used by the view to render the scheduler events.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -5500,7 +5500,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-views.eventTimeTemplate">views.eventTimeTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> used by the agenda view to render the time of the scheduler events.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used by the agenda view to render the time of the scheduler events.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -5702,7 +5702,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-views.majorTimeHeaderTemplate">views.majorTimeHeaderTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the major ticks.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the major ticks.</p>
 
 <p>By default the scheduler renders the time using the current culture time format.</p>
 
@@ -5778,7 +5778,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-views.minorTimeHeaderTemplate">views.minorTimeHeaderTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the minor ticks.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the minor ticks.</p>
 
 <p>By default the scheduler renders a <code>"&amp;nbsp;"</code>.</p>
 
@@ -5882,7 +5882,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-views.selectedDateFormat">views.selectedDateFormat </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
 </h3>
 
-<p>The format used to display the selected date. Uses <a href="/api/javascript/kendo#methods-format">kendo.format</a>.</p>
+<p>The format used to display the selected date. Uses <a href="/docs-kendo-china/api/javascript/kendo#methods-format">kendo.format</a>.</p>
 
 <p>Contains two placeholders - "{0}" and "{1}" which represent the start and end date displayed by the view.</p>
 
@@ -5914,7 +5914,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-views.selectedShortDateFormat">views.selectedShortDateFormat </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
 </h3>
 
-<p>The format used to display the selected date when viewport is narrow, and the date is displayed in short ("d") format by default. Uses <a href="/api/javascript/kendo#methods-format">kendo.format</a>.</p>
+<p>The format used to display the selected date when viewport is narrow, and the date is displayed in short ("d") format by default. Uses <a href="/docs-kendo-china/api/javascript/kendo#methods-format">kendo.format</a>.</p>
 
 <h3 id="configuration-views.showWorkHours">
 <a href="#configuration-views.showWorkHours">views.showWorkHours </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
@@ -5949,7 +5949,7 @@ $("#scheduler").kendoScheduler({
 <a href="#configuration-views.slotTemplate">views.slotTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the time slot cells.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the time slot cells.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -6311,7 +6311,7 @@ $("#scheduler").kendoScheduler({
 <a href="#fields-dataSource">dataSource </a><code>kendo.data.SchedulerDataSource</code>
 </h3>
 
-<p>The <a href="/api/javascript/data/schedulerdatasource">data source</a> of the widget. Configured via the <a href="#configuration-dataSource">dataSource</a> option.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/data/schedulerdatasource">data source</a> of the widget. Configured via the <a href="#configuration-dataSource">dataSource</a> option.</p>
 
 <blockquote>
 <p>Changes of the data source will be reflected in the widget.</p>
@@ -6387,7 +6387,7 @@ scheduler.dataSource.remove(event);
 <a href="#fields-calendar">calendar </a><code>kendo.ui.Calendar</code>
 </h3>
 
-<p>The <a href="/api/javascript/ui/calendar">Calendar widget</a> of the Scheduler. The toolbar Calendar widget allows navigation directly to the chosen date. It will only be available after it has been opened for the first time.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/ui/calendar">Calendar widget</a> of the Scheduler. The toolbar Calendar widget allows navigation directly to the chosen date. It will only be available after it has been opened for the first time.</p>
 
 <h4>Example - get the Calendar selected value</h4>
 
@@ -6576,7 +6576,7 @@ scheduler.editEvent(event);
 
 <h3 id="methods-items"><a href="#methods-items">items</a></h3>
 
-<p>Obtains an Array of the DOM elements, which correspond to the data items from the Kendo UI DataSource <a href="/api/javascript/data/datasource#methods-view">view</a>.</p>
+<p>Obtains an Array of the DOM elements, which correspond to the data items from the Kendo UI DataSource <a href="/docs-kendo-china/api/javascript/data/datasource#methods-view">view</a>.</p>
 
 <h4>Returns</h4>
 
@@ -6584,7 +6584,7 @@ scheduler.editEvent(event);
 
 <h3 id="methods-occurrenceByUid"><a href="#methods-occurrenceByUid">occurrenceByUid</a></h3>
 
-<p>Gets the event occurrence with the specified <a href="/api/javascript/data/model#fields-uid">uid</a>.</p>
+<p>Gets the event occurrence with the specified <a href="/docs-kendo-china/api/javascript/data/model#fields-uid">uid</a>.</p>
 
 <blockquote>
 <p>This method can return an occurrence (not part of the data source's data) part of a recurring series.</p>
@@ -6847,7 +6847,7 @@ scheduler.saveEvent();
 <h5>events <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
 </h5>
 
-<p>The Uids of events which should be selected. List of the available events can be get using the <a href="/api/javascript/ui/scheduler#methods-select">data</a> method.</p>
+<p>The Uids of events which should be selected. List of the available events can be get using the <a href="/docs-kendo-china/api/javascript/ui/scheduler#methods-select">data</a> method.</p>
 
 <h5>options <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
 </h5>
@@ -6855,7 +6855,7 @@ scheduler.saveEvent();
 <h5>options.events <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
 </h5>
 
-<p>The Uids of events which should be selected. List of the available events can be get using the <a href="/api/javascript/ui/scheduler#methods-select">data</a> method.</p>
+<p>The Uids of events which should be selected. List of the available events can be get using the <a href="/docs-kendo-china/api/javascript/ui/scheduler#methods-select">data</a> method.</p>
 
 <h5>options.resources <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
 </h5>
@@ -7237,7 +7237,7 @@ scheduler.bind("cancel", scheduler_cancel);
 <h5>e.events <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
 </h5>
 
-<p>A list of the selected <a href="/api/javascript/data/schedulerevent">scheduler events</a>.</p>
+<p>A list of the selected <a href="/docs-kendo-china/api/javascript/data/schedulerevent">scheduler events</a>.</p>
 
 <h5>e.slots <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
 </h5>
@@ -8322,7 +8322,7 @@ scheduler.bind("save", scheduler_save);
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -8387,7 +8387,7 @@ scheduler.bind("save", scheduler_save);
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="editor">
         <title>Immutable Elements | Kendo UI Editor</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="The immutable feature enables you to add HTML elements which cannot be edited by the user to a Kendo UI Editor.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("controls/editors/editor/immutable-elements.html")
         });
         </script>
@@ -127,7 +127,7 @@
 
 <h3 id="configuration-Enable"><a href="#configuration-Enable">Enable and Add Immutable Elements</a></h3>
 
-<p>To define the immutable elements in the content area, set the <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/contentEditable"><code>contenteditable</code></a> DOM attribute to <code>false</code>. To make the Editor prevent the user from editing this element, you also need to enable the <a href="/api/javascript/ui/editor#configuration-immutables"><code>immutables</code></a> option.</p>
+<p>To define the immutable elements in the content area, set the <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/contentEditable"><code>contenteditable</code></a> DOM attribute to <code>false</code>. To make the Editor prevent the user from editing this element, you also need to enable the <a href="/docs-kendo-china/api/javascript/ui/editor#configuration-immutables"><code>immutables</code></a> option.</p>
 
 <h6>Example</h6>
 
@@ -145,7 +145,7 @@
 
 <h3 id="configuration-Serialize"><a href="#configuration-Serialize">Serialize Immutables</a></h3>
 
-<p>The <a href="/api/javascript/ui/editor#configuration-immutables.serialization"><code>immutables.serialization</code></a> option enables you to control the HTML representation of the immutable elements in the <strong>viewHtml</strong> dialog.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/ui/editor#configuration-immutables.serialization"><code>immutables.serialization</code></a> option enables you to control the HTML representation of the immutable elements in the <strong>viewHtml</strong> dialog.</p>
 
 <p>The <code>immutables.serialization</code> configuration option accepts the following parameters:</p>
 
@@ -174,7 +174,7 @@
 </code></pre>
 </li>
 <li>
-<p><a href="/framework/templates/overview">Kendo UI Template</a>—In it, the immutable DOM element is <code>data</code>.</p>
+<p><a href="/docs-kendo-china/framework/templates/overview">Kendo UI Template</a>—In it, the immutable DOM element is <code>data</code>.</p>
 
 <h6>Example</h6>
 
@@ -226,7 +226,7 @@
 
 <h3 id="configuration-Deserialize"><a href="#configuration-Deserialize">Deserialize Immutables</a></h3>
 
-<p>The <a href="/api/javascript/ui/editor#configuration-immutables.deserialization"><code>immutables.deserialization</code></a> does the opposite of the <code>immutables.serialization</code> one—it takes the HTML representation from the <strong>viewHtml</strong> dialog and alters the immutable DOM element based on the logic implemented in the callback function.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/ui/editor#configuration-immutables.deserialization"><code>immutables.deserialization</code></a> does the opposite of the <code>immutables.serialization</code> one—it takes the HTML representation from the <strong>viewHtml</strong> dialog and alters the immutable DOM element based on the logic implemented in the callback function.</p>
 
 <p>The following example demonstrates how to use the <code>immutables.serialization</code> and <code>immutables.deserialization</code> options to expose the CSS <code>text-align</code> property in the <strong>viewHtml</strong> dialog so that the user is able to change it from the HTML code.</p>
 
@@ -254,9 +254,9 @@
 
 <p>To decorate all <code>contenteditable="false"</code> elements and improve user experience (UX), use a CSS rule.</p>
 
-<p>If you use the <a href="/controls/editors/editor/overview#classic-mode">classic mode</a>, add the CSS rule to an external CSS file adjoined to the <a href="/api/javascript/ui/editor#configuration-stylesheets">stylesheet collection</a> of the Editor.</p>
+<p>If you use the <a href="/docs-kendo-china/controls/editors/editor/overview#classic-mode">classic mode</a>, add the CSS rule to an external CSS file adjoined to the <a href="/docs-kendo-china/api/javascript/ui/editor#configuration-stylesheets">stylesheet collection</a> of the Editor.</p>
 
-<p>If you use the <a href="/controls/editors/editor/overview#inline-mode">inline mode</a>, place the CSS rule on the page as demonstrated in the following example.</p>
+<p>If you use the <a href="/docs-kendo-china/controls/editors/editor/overview#inline-mode">inline mode</a>, place the CSS rule on the page as demonstrated in the following example.</p>
 
 <h6>Example</h6>
 
@@ -282,21 +282,21 @@
 <p>Other articles on the Kendo UI Editor:</p>
 
 <ul>
-<li><a href="/controls/editors/editor/overview">Overview of the Editor Widget</a></li>
-<li><a href="/controls/editors/editor/imagebrowser">Image Browser</a></li>
-<li><a href="/controls/editors/editor/post-process">Post-Process Content</a></li>
-<li><a href="/controls/editors/editor/working-with-selection">Set Selections</a></li>
-<li><a href="/controls/editors/editor/preventing-xss">Prevent Cross-Site Scripting</a></li>
-<li><a href="/controls/editors/editor/troubleshoot/troubleshooting">Troubleshooting</a></li>
-<li><a href="/api/javascript/ui/editor">Editor JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/controls/editors/editor/overview">Overview of the Editor Widget</a></li>
+<li><a href="/docs-kendo-china/controls/editors/editor/imagebrowser">Image Browser</a></li>
+<li><a href="/docs-kendo-china/controls/editors/editor/post-process">Post-Process Content</a></li>
+<li><a href="/docs-kendo-china/controls/editors/editor/working-with-selection">Set Selections</a></li>
+<li><a href="/docs-kendo-china/controls/editors/editor/preventing-xss">Prevent Cross-Site Scripting</a></li>
+<li><a href="/docs-kendo-china/controls/editors/editor/troubleshoot/troubleshooting">Troubleshooting</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/editor">Editor JavaScript API Reference</a></li>
 </ul>
 
-<p>For how-to examples on the Kendo UI Editor widget, browse its <a href="/controls/editors/editor/how-to/AngularJS/handle-blur-and-focus-events-angular"><strong>How To</strong> documentation folder</a>.</p> 
+<p>For how-to examples on the Kendo UI Editor widget, browse its <a href="/docs-kendo-china/controls/editors/editor/how-to/AngularJS/handle-blur-and-focus-events-angular"><strong>How To</strong> documentation folder</a>.</p> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -361,7 +361,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>AngularJS Integration | AngularJS Directives"</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn more about the AngularJS integration of Kendo UI controls and find out how to use the widgets in AngularJS applications.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("AngularJS/introduction.html")
         });
         </script>
@@ -132,7 +132,7 @@
 <blockquote>
 <p><strong>Important</strong></p>
 
-<p>The initialization of Kendo UI widgets in AngularJS projects is not designed to be combined with the Kendo UI server wrappers. Using wrappers is equivalent to <a href="/intro/installation/jquery-initialization">jQuery plugin syntax initialization</a>. To create Kendo UI widget instances with AngularJS, do not use server wrappers for these instances. Also, the two frameworks have some overlapping features, such as Angular binding and Kendo UI MVVM, which must not be mixed.</p>
+<p>The initialization of Kendo UI widgets in AngularJS projects is not designed to be combined with the Kendo UI server wrappers. Using wrappers is equivalent to <a href="/docs-kendo-china/intro/installation/jquery-initialization">jQuery plugin syntax initialization</a>. To create Kendo UI widget instances with AngularJS, do not use server wrappers for these instances. Also, the two frameworks have some overlapping features, such as Angular binding and Kendo UI MVVM, which must not be mixed.</p>
 </blockquote>
 
 <h2 id="angularjs-kendo-ui-bindings"><a href="#angularjs-kendo-ui-bindings">AngularJS-Kendo UI Bindings</a></h2>
@@ -424,7 +424,7 @@
 
 <p>As of the Kendo UI Q3 2014 (2014.3.1119) release, the <code>k-value-primitive</code> attribute has been introduced for the DropDownList, ComboBox, MultiSelect, and AutoComplete widgets.</p>
 
-<p>The <code>k-value-primitive</code> option enables you to set the widget to either use primitive or object values. It works in a similar way as the <code>data-value-primitive</code> option in the <a href="/framework/mvvm/bindings/value#use-the-value-binding-with-a-select-widget-to-update-the-view-model-field-with-the-value-field-when-the-initial-value-is-null">MVVM value binding</a>. By using this option you can always apply the <code>k-ng-model</code> attribute no matter if you are using primitive or non-primitive values. By default, the attribute is set to <code>false</code>.</p>
+<p>The <code>k-value-primitive</code> option enables you to set the widget to either use primitive or object values. It works in a similar way as the <code>data-value-primitive</code> option in the <a href="/docs-kendo-china/framework/mvvm/bindings/value#use-the-value-binding-with-a-select-widget-to-update-the-view-model-field-with-the-value-field-when-the-initial-value-is-null">MVVM value binding</a>. By using this option you can always apply the <code>k-ng-model</code> attribute no matter if you are using primitive or non-primitive values. By default, the attribute is set to <code>false</code>.</p>
 
 <h4>Setting to false</h4>
 
@@ -932,21 +932,21 @@ $http({ method: "GET", url: "customers.json" })
 <p>Other articles on AngularJS directives and integration with Kendo UI:</p>
 
 <ul>
-<li><a href="/AngularJS/global-events">Global Events</a></li>
-<li><a href="/AngularJS/the-grid-widget">Grid Settings</a></li>
-<li><a href="/AngularJS/data-source">Directives with DataSource</a></li>
-<li><a href="/AngularJS/Troubleshooting/notes-on-ng-repeat">ng-* Directives in Widget Markup</a></li>
-<li><a href="/AngularJS/Troubleshooting/leak">Memory Leaks</a></li>
-<li><a href="/AngularJS/how-to/window-service">How to Load View in Window</a></li>
-<li><a href="/AngularJS/how-to/nesting-widgets">How to Nest Widgets</a></li>
-<li><a href="/AngularJS/Troubleshooting/common-issues">Troubleshooting: Common Issues</a></li>
+<li><a href="/docs-kendo-china/AngularJS/global-events">Global Events</a></li>
+<li><a href="/docs-kendo-china/AngularJS/the-grid-widget">Grid Settings</a></li>
+<li><a href="/docs-kendo-china/AngularJS/data-source">Directives with DataSource</a></li>
+<li><a href="/docs-kendo-china/AngularJS/Troubleshooting/notes-on-ng-repeat">ng-* Directives in Widget Markup</a></li>
+<li><a href="/docs-kendo-china/AngularJS/Troubleshooting/leak">Memory Leaks</a></li>
+<li><a href="/docs-kendo-china/AngularJS/how-to/window-service">How to Load View in Window</a></li>
+<li><a href="/docs-kendo-china/AngularJS/how-to/nesting-widgets">How to Nest Widgets</a></li>
+<li><a href="/docs-kendo-china/AngularJS/Troubleshooting/common-issues">Troubleshooting: Common Issues</a></li>
 <li><a href="http://ngmigrate.telerik.com/">Angular 2 Migration Guide</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -1011,7 +1011,7 @@ $http({ method: "GET", url: "customers.json" })
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="map">
         <title>Configuration, methods and events of Kendo UI DataViz Map</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to configure Kendo UI Javascript chart widget in a few easy steps, use and change methods and events.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("api/javascript/dataviz/ui/map.html")
         });
         </script>
@@ -129,12 +129,12 @@
 <a href="#fields-layers">layers </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/dataviz/map/layer">Map layers</a> ordered by index.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/dataviz/map/layer">Map layers</a> ordered by index.</p>
 
 <h2 id="configuration"><a href="#configuration">Configuration</a></h2>
 
 <h3 id="configuration-center">
-<a href="#configuration-center">center </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
+<a href="#configuration-center">center </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/docs-kendo-china/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
 </h3>
 
 <p>The map center. Coordinates are listed as <code>[Latitude, Longitude]</code>.</p>
@@ -841,7 +841,7 @@ versions, so it is advisable to always use the <a href="#iframe">iframe configur
 <a href="#configuration-layerDefaults.marker.tooltip.template">layerDefaults.marker.tooltip.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><code>Template</code>
 </h3>
 
-<p>The <a href="/api/framework/kendo#methods-template">template</a> which renders the tooltip content.</p>
+<p>The <a href="/docs-kendo-china/api/framework/kendo#methods-template">template</a> which renders the tooltip content.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -2476,7 +2476,7 @@ The layer type is determined by the value of the type field.</p>
 <a href="#configuration-layers.autoBind">layers.autoBind </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
 </h3>
 
-<p>If set to <code>false</code> the layer will not bind to the data source during initialization. In this case data binding will occur when the <a href="/api/framework/datasource#events-change">change</a> event of the
+<p>If set to <code>false</code> the layer will not bind to the data source during initialization. In this case data binding will occur when the <a href="/docs-kendo-china/api/framework/datasource#events-change">change</a> event of the
 data source is fired. By default the widget will bind to the data source specified in the configuration.</p>
 
 <blockquote>
@@ -2523,10 +2523,10 @@ data source is fired. By default the widget will bind to the data source specifi
 </code></pre>
 
 <h3 id="configuration-layers.dataSource">
-<a href="#configuration-layers.dataSource">layers.dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<a href="#configuration-layers.dataSource">layers.dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h3>
 
-<p>The data source of the layer. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/api/framework/datasource">kendo.data.DataSource</a>
+<p>The data source of the layer. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/docs-kendo-china/api/framework/datasource">kendo.data.DataSource</a>
 instance.</p>
 
 <h4>Example - binding to inline GeoJSON data</h4>
@@ -2594,7 +2594,7 @@ instance.</p>
 </code></pre>
 
 <h3 id="configuration-layers.extent">
-<a href="#configuration-layers.extent">layers.extent </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/dataviz/map/extent" class="type-link"><code>kendo.dataviz.map.Extent</code></a>
+<a href="#configuration-layers.extent">layers.extent </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/docs-kendo-china/api/javascript/dataviz/map/extent" class="type-link"><code>kendo.dataviz.map.Extent</code></a>
 </h3>
 
 <p>Specifies the extent of the region covered by this layer.
@@ -3139,7 +3139,7 @@ versions, so it is advisable to always use the <a href="#iframe">iframe configur
 <a href="#configuration-layers.tooltip.template">layers.tooltip.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><code>Template</code>
 </h3>
 
-<p>The <a href="/api/framework/kendo#methods-template">template</a> which renders the tooltip content.</p>
+<p>The <a href="/docs-kendo-china/api/framework/kendo#methods-template">template</a> which renders the tooltip content.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -4489,7 +4489,7 @@ versions, so it is advisable to always use the <a href="#iframe">iframe configur
 <a href="#configuration-markerDefaults.tooltip.template">markerDefaults.tooltip.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><code>Template</code>
 </h3>
 
-<p>The <a href="/api/framework/kendo#methods-template">template</a> which renders the tooltip content.</p>
+<p>The <a href="/docs-kendo-china/api/framework/kendo#methods-template">template</a> which renders the tooltip content.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -4774,7 +4774,7 @@ versions, so it is advisable to always use the <a href="#iframe">iframe configur
 </code></pre>
 
 <h3 id="configuration-markers.location">
-<a href="#configuration-markers.location">markers.location </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
+<a href="#configuration-markers.location">markers.location </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/docs-kendo-china/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
 </h3>
 
 <p>The marker location on the map. Coordinates are listed as <code>[Latitude, Longitude]</code>.</p>
@@ -5194,7 +5194,7 @@ versions, so it is advisable to always use the <a href="#iframe">iframe configur
 <a href="#configuration-markers.tooltip.template">markers.tooltip.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><code>Template</code>
 </h3>
 
-<p>The <a href="/api/framework/kendo#methods-template">template</a> which renders the tooltip content.</p>
+<p>The <a href="/docs-kendo-china/api/framework/kendo#methods-template">template</a> which renders the tooltip content.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -5583,7 +5583,7 @@ The setter is chainable, i.e. returns the map instance.</p>
 
 <h4>Parameters</h4>
 
-<h5>center <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
+<h5>center <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/docs-kendo-china/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
 </h5>
 
 <p>The location of the new map center.
@@ -5591,7 +5591,7 @@ An array argument is assumed to be in [Latitude, Longitude] order.</p>
 
 <h4>Returns</h4>
 
-<p><a href="/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a> The current map center.</p>
+<p><a href="/docs-kendo-china/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a> The current map center.</p>
 
 <h4>Example - set the map center and zoom level</h4>
 
@@ -5651,7 +5651,7 @@ Offset coordinates are not synchronized to a particular location on the map.</p>
 
 <h4>Returns</h4>
 
-<p><a href="/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a> The event coordinates relative to the map element.</p>
+<p><a href="/docs-kendo-china/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a> The event coordinates relative to the map element.</p>
 
 <h4>Example - position elements over widget on click</h4>
 
@@ -5699,7 +5699,7 @@ Layer coordinates are absolute and change only when the zoom level is changed.</
 
 <h4>Returns</h4>
 
-<p><a href="/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a> The projected (layer) coordinates that correspond to this mouse event.</p>
+<p><a href="/docs-kendo-china/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a> The projected (layer) coordinates that correspond to this mouse event.</p>
 
 <h4>Example - retrieve projected coordinates</h4>
 
@@ -5734,7 +5734,7 @@ Layer coordinates are absolute and change only when the zoom level is changed.</
 
 <h4>Returns</h4>
 
-<p><a href="/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a> The geographic location that correspond to this mouse event.</p>
+<p><a href="/docs-kendo-china/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a> The geographic location that correspond to this mouse event.</p>
 
 <h4>Example - place marker on clicked location</h4>
 
@@ -5777,7 +5777,7 @@ Layer elements positioned on these coordinates will appear under the mouse curso
 
 <h4>Returns</h4>
 
-<p><a href="/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a> The relative (view) coordinates that correspond to this mouse event.</p>
+<p><a href="/docs-kendo-china/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a> The relative (view) coordinates that correspond to this mouse event.</p>
 
 <h4>Example - position elements over map on click</h4>
 
@@ -5813,19 +5813,19 @@ Layer elements positioned on these coordinates will appear under the mouse curso
 
 <h3 id="methods-extent"><a href="#methods-extent">extent</a></h3>
 
-<p>Gets or sets the <a href="/api/dataviz/map/extent">map extent</a> or visible area.
+<p>Gets or sets the <a href="/docs-kendo-china/api/dataviz/map/extent">map extent</a> or visible area.
 The setter is chainable, i.e. returns the map instance.</p>
 
 <h4>Parameters</h4>
 
-<h5>extent <a href="/api/javascript/dataviz/map/extent" class="type-link"><code>kendo.dataviz.map.Extent</code></a>
+<h5>extent <a href="/docs-kendo-china/api/javascript/dataviz/map/extent" class="type-link"><code>kendo.dataviz.map.Extent</code></a>
 </h5>
 
 <p>The new extent of the map.</p>
 
 <h4>Returns</h4>
 
-<p><a href="/api/javascript/dataviz/map/extent" class="type-link"><code>kendo.dataviz.map.Extent</code></a> The current map extent.</p>
+<p><a href="/docs-kendo-china/api/javascript/dataviz/map/extent" class="type-link"><code>kendo.dataviz.map.Extent</code></a> The current map extent.</p>
 
 <h4>Example - get the map extent</h4>
 
@@ -5875,7 +5875,7 @@ The setter is chainable, i.e. returns the map instance.</p>
 
 <h4>Parameters</h4>
 
-<h5>point <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a>
+<h5>point <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/docs-kendo-china/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a>
 </h5>
 
 <p>The layer (projected) coordinates.
@@ -5888,7 +5888,7 @@ An array argument is assumed to be in x, y order.</p>
 
 <h4>Returns</h4>
 
-<p><a href="/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a> The geographic location that corresponds to the layer coordinates.</p>
+<p><a href="/docs-kendo-china/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a> The geographic location that corresponds to the layer coordinates.</p>
 
 <h4>Example - retrieve location of NW corner (Array)</h4>
 
@@ -5937,7 +5937,7 @@ An array argument is assumed to be in x, y order.</p>
 
 <h4>Parameters</h4>
 
-<h5>location <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
+<h5>location <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/docs-kendo-china/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
 </h5>
 
 <p>The geographic location.
@@ -5950,7 +5950,7 @@ An array argument is assumed to be in [Latitude, Longitude] order.</p>
 
 <h4>Returns</h4>
 
-<p><a href="/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a> The layer (projected) coordinates.</p>
+<p><a href="/docs-kendo-china/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a> The layer (projected) coordinates.</p>
 
 <h4>Example - retrieve the projected coordinates of a location (Array)</h4>
 
@@ -5999,7 +5999,7 @@ An array argument is assumed to be in [Latitude, Longitude] order.</p>
 
 <h4>Parameters</h4>
 
-<h5>location <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
+<h5>location <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/docs-kendo-china/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
 </h5>
 
 <p>The geographic location.
@@ -6007,7 +6007,7 @@ An array argument is assumed to be in [Latitude, Longitude] order.</p>
 
 <h4>Returns</h4>
 
-<p><a href="/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a> The view coordinates that correspond to a geographical location.</p>
+<p><a href="/docs-kendo-china/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a> The view coordinates that correspond to a geographical location.</p>
 
 <h4>Retrieves the view coordinates of the map center (Array)</h4>
 
@@ -6147,7 +6147,7 @@ An array argument is assumed to be in [Latitude, Longitude] order.</p>
 
 <h4>Parameters</h4>
 
-<h5>point <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a>
+<h5>point <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/docs-kendo-china/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a>
 </h5>
 
 <p>The view coordinates.
@@ -6160,7 +6160,7 @@ An array argument is assumed to be in x, y order.</p>
 
 <h4>Returns</h4>
 
-<p><a href="/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a> The geographic location that corresponds to the view coordinates.</p>
+<p><a href="/docs-kendo-china/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a> The geographic location that corresponds to the view coordinates.</p>
 
 <h4>Example - retrieve location corresponding to view center (Array)</h4>
 
@@ -6261,7 +6261,7 @@ This event is typically used for cleanup by layer implementers.</p>
 
 <h4>Event Data</h4>
 
-<h5>e.location <a href="/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
+<h5>e.location <a href="/docs-kendo-china/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
 </h5>
 
 <p>The location of the clicked point.</p>
@@ -6327,12 +6327,12 @@ This event is typically used for cleanup by layer implementers.</p>
 
 <h4>Event Data</h4>
 
-<h5>e.marker <a href="/api/javascript/dataviz/map/marker" class="type-link"><code>kendo.dataviz.map.Marker</code></a>
+<h5>e.marker <a href="/docs-kendo-china/api/javascript/dataviz/map/marker" class="type-link"><code>kendo.dataviz.map.Marker</code></a>
 </h5>
 
 <p>The marker instance.</p>
 
-<h5>e.layer <a href="/api/javascript/dataviz/map/marker" class="type-link"><code>kendo.dataviz.map.Marker</code></a>
+<h5>e.layer <a href="/docs-kendo-china/api/javascript/dataviz/map/marker" class="type-link"><code>kendo.dataviz.map.Marker</code></a>
 </h5>
 
 <p>The marker layer instance.</p>
@@ -6379,12 +6379,12 @@ Cancelling the event will prevent the marker from being shown.</p>
 
 <h4>Event Data</h4>
 
-<h5>e.marker <a href="/api/javascript/dataviz/map/marker" class="type-link"><code>kendo.dataviz.map.Marker</code></a>
+<h5>e.marker <a href="/docs-kendo-china/api/javascript/dataviz/map/marker" class="type-link"><code>kendo.dataviz.map.Marker</code></a>
 </h5>
 
 <p>The marker instance.</p>
 
-<h5>e.layer <a href="/api/javascript/dataviz/map/marker" class="type-link"><code>kendo.dataviz.map.Marker</code></a>
+<h5>e.layer <a href="/docs-kendo-china/api/javascript/dataviz/map/marker" class="type-link"><code>kendo.dataviz.map.Marker</code></a>
 </h5>
 
 <p>The marker layer instance.</p>
@@ -6425,12 +6425,12 @@ Cancelling the event will prevent the marker from being shown.</p>
 
 <h4>Event Data</h4>
 
-<h5>e.marker <a href="/api/javascript/dataviz/map/marker" class="type-link"><code>kendo.dataviz.map.Marker</code></a>
+<h5>e.marker <a href="/docs-kendo-china/api/javascript/dataviz/map/marker" class="type-link"><code>kendo.dataviz.map.Marker</code></a>
 </h5>
 
 <p>The marker instance.</p>
 
-<h5>e.layer <a href="/api/javascript/dataviz/map/marker" class="type-link"><code>kendo.dataviz.map.Marker</code></a>
+<h5>e.layer <a href="/docs-kendo-china/api/javascript/dataviz/map/marker" class="type-link"><code>kendo.dataviz.map.Marker</code></a>
 </h5>
 
 <p>The marker layer instance.</p>
@@ -6446,12 +6446,12 @@ Cancelling the event will prevent the marker from being shown.</p>
 
 <h4>Event Data</h4>
 
-<h5>e.origin <a href="/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
+<h5>e.origin <a href="/docs-kendo-china/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
 </h5>
 
 <p>The map origin (top left or NW corner).</p>
 
-<h5>e.center <a href="/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
+<h5>e.center <a href="/docs-kendo-china/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
 </h5>
 
 <p>The current map center.</p>
@@ -6512,12 +6512,12 @@ Cancelling the event will prevent the marker from being shown.</p>
 
 <h4>Event Data</h4>
 
-<h5>e.origin <a href="/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
+<h5>e.origin <a href="/docs-kendo-china/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
 </h5>
 
 <p>The map origin (top left or NW corner).</p>
 
-<h5>e.center <a href="/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
+<h5>e.center <a href="/docs-kendo-china/api/javascript/dataviz/map/location" class="type-link"><code>kendo.dataviz.map.Location</code></a>
 </h5>
 
 <p>The map center.</p>
@@ -6630,12 +6630,12 @@ This typically occurs on initial load and after a zoom/center change.</p>
 
 <h4>Event Data</h4>
 
-<h5>e.layer <a href="/api/javascript/dataviz/map/layer/shape" class="type-link"><code>kendo.dataviz.map.layer.Shape</code></a>
+<h5>e.layer <a href="/docs-kendo-china/api/javascript/dataviz/map/layer/shape" class="type-link"><code>kendo.dataviz.map.layer.Shape</code></a>
 </h5>
 
 <p>The parent layer instance.</p>
 
-<h5>e.shape <a href="/api/javascript/drawing/element" class="type-link"><code>kendo.drawing.Element</code></a>
+<h5>e.shape <a href="/docs-kendo-china/api/javascript/drawing/element" class="type-link"><code>kendo.drawing.Element</code></a>
 </h5>
 
 <p>The the shape instance.</p>
@@ -6696,12 +6696,12 @@ This typically occurs on initial load and after a zoom/center change.</p>
 
 <h4>Event Data</h4>
 
-<h5>e.layer <a href="/api/javascript/dataviz/map/layer/shape" class="type-link"><code>kendo.dataviz.map.layer.Shape</code></a>
+<h5>e.layer <a href="/docs-kendo-china/api/javascript/dataviz/map/layer/shape" class="type-link"><code>kendo.dataviz.map.layer.Shape</code></a>
 </h5>
 
 <p>The parent layer instance.</p>
 
-<h5>e.shape <a href="/api/javascript/drawing/element" class="type-link"><code>kendo.drawing.Element</code></a>
+<h5>e.shape <a href="/docs-kendo-china/api/javascript/drawing/element" class="type-link"><code>kendo.drawing.Element</code></a>
 </h5>
 
 <p>The shape instance.</p>
@@ -6765,12 +6765,12 @@ This typically occurs on initial load and after a zoom/center change.</p>
 
 <p>The original data item for this Feature. Members include <code>geometries</code> and <code>properties</code>.</p>
 
-<h5>e.layer <a href="/api/javascript/dataviz/map/layer/shape" class="type-link"><code>kendo.dataviz.map.layer.Shape</code></a>
+<h5>e.layer <a href="/docs-kendo-china/api/javascript/dataviz/map/layer/shape" class="type-link"><code>kendo.dataviz.map.layer.Shape</code></a>
 </h5>
 
 <p>The parent layer instance.</p>
 
-<h5>e.group <a href="/api/javascript/drawing/group" class="type-link"><code>kendo.drawing.Group</code></a>
+<h5>e.group <a href="/docs-kendo-china/api/javascript/drawing/group" class="type-link"><code>kendo.drawing.Group</code></a>
 </h5>
 
 <p>The group containing feature shape instances.</p>
@@ -6836,12 +6836,12 @@ The opacity can still be set to 0 so the shapes appear to have no fill.</p>
 
 <h4>Event Data</h4>
 
-<h5>e.layer <a href="/api/javascript/dataviz/map/layer/shape" class="type-link"><code>kendo.dataviz.map.layer.Shape</code></a>
+<h5>e.layer <a href="/docs-kendo-china/api/javascript/dataviz/map/layer/shape" class="type-link"><code>kendo.dataviz.map.layer.Shape</code></a>
 </h5>
 
 <p>The parent layer instance.</p>
 
-<h5>e.shape <a href="/api/javascript/drawing/element" class="type-link"><code>kendo.drawing.Element</code></a>
+<h5>e.shape <a href="/docs-kendo-china/api/javascript/drawing/element" class="type-link"><code>kendo.drawing.Element</code></a>
 </h5>
 
 <p>The the shape instance.</p>
@@ -6983,12 +6983,12 @@ The opacity can still be set to 0 so the shapes appear to have no fill.</p>
 
 <h4>Event Data</h4>
 
-<h5>e.layer <a href="/api/javascript/dataviz/map/layer/shape" class="type-link"><code>kendo.dataviz.map.layer.Shape</code></a>
+<h5>e.layer <a href="/docs-kendo-china/api/javascript/dataviz/map/layer/shape" class="type-link"><code>kendo.dataviz.map.layer.Shape</code></a>
 </h5>
 
 <p>The parent layer instance.</p>
 
-<h5>e.shape <a href="/api/javascript/drawing/element" class="type-link"><code>kendo.drawing.Element</code></a>
+<h5>e.shape <a href="/docs-kendo-china/api/javascript/drawing/element" class="type-link"><code>kendo.drawing.Element</code></a>
 </h5>
 
 <p>The the shape instance.</p>
@@ -7212,7 +7212,7 @@ Cancelling the event will prevent the user action.</p>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -7277,7 +7277,7 @@ Cancelling the event will prevent the user action.</p>
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

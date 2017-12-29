@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="spa">
         <title>View | Kendo UI Single-Page Application</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to handle the view class in a Kendo UI Single-Page Application.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("framework/spa/view.html")
         });
         </script>
@@ -196,7 +196,7 @@
 
 <h2 id="mvvm-integration"><a href="#mvvm-integration">MVVM Integration</a></h2>
 
-<p>If an <code>observable</code> object is passed as a <code>model</code> configuration option to the <code>view</code> constructor, the view binds it to the element when instantiated. If no <code>model</code> is present, the content will be processed using <a href="/intro/installation/markup"><code>data</code> attribute initialization</a>.</p>
+<p>If an <code>observable</code> object is passed as a <code>model</code> configuration option to the <code>view</code> constructor, the view binds it to the element when instantiated. If no <code>model</code> is present, the content will be processed using <a href="/docs-kendo-china/intro/installation/markup"><code>data</code> attribute initialization</a>.</p>
 
 <h3 id="mvvm-bound-view"><a href="#mvvm-bound-view">MVVM-Bound View</a></h3>
 
@@ -212,7 +212,7 @@
 &lt;/script&gt;
 </code></pre>
 
-<p>Note that if the view <code>evalTemplate</code> configuration option is set to <code>true</code>, the template is treated as a <a href="/framework/templates/overview">Kendo UI Template</a> and evaluated against the passed model instance when the view is rendered initially.</p>
+<p>Note that if the view <code>evalTemplate</code> configuration option is set to <code>true</code>, the template is treated as a <a href="/docs-kendo-china/framework/templates/overview">Kendo UI Template</a> and evaluated against the passed model instance when the view is rendered initially.</p>
 
 <blockquote>
 <p><strong>Important</strong></p>
@@ -253,15 +253,15 @@
 <p>Other articles on Kendo UI Single-Page Application:</p>
 
 <ul>
-<li><a href="/framework/spa/overview">Single-Page Application Overview</a></li>
-<li><a href="/framework/spa/router">SPA Router</a></li>
-<li><a href="/framework/spa/layout">SPA Layout</a></li>
+<li><a href="/docs-kendo-china/framework/spa/overview">Single-Page Application Overview</a></li>
+<li><a href="/docs-kendo-china/framework/spa/router">SPA Router</a></li>
+<li><a href="/docs-kendo-china/framework/spa/layout">SPA Layout</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -326,7 +326,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

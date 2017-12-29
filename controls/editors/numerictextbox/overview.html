@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="numerictextbox">
         <title>Overview | Kendo UI NumericTextBox</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to initialize the Kendo UI NumericTextBox widget and configure its behaviors.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("controls/editors/numerictextbox/overview.html")
         });
         </script>
@@ -161,7 +161,7 @@
 <li>Number format (any valid number format is allowed)</li>
 </ul>
 
-<p>For more information on its methods and configuration options, review the <a href="/api/javascript/ui/numerictextbox">API Reference of the NumericTextBox</a>.</p>
+<p>For more information on its methods and configuration options, review the <a href="/docs-kendo-china/api/javascript/ui/numerictextbox">API Reference of the NumericTextBox</a>.</p>
 
 <h3 id="configuration-Defaults"><a href="#configuration-Defaults">Defaults</a></h3>
 
@@ -216,24 +216,24 @@
 
 <h3 id="configuration-Precision"><a href="#configuration-Precision">Precision of Numbers</a></h3>
 
-<p>The widget controls the precision of the entered number by using the value of the <a href="/api/javascript/ui/numerictextbox#configuration-decimals"><code>decimals</code></a> option. The number is limited to the <code>decimals</code> length.</p>
+<p>The widget controls the precision of the entered number by using the value of the <a href="/docs-kendo-china/api/javascript/ui/numerictextbox#configuration-decimals"><code>decimals</code></a> option. The number is limited to the <code>decimals</code> length.</p>
 
-<p>By default, the widget does not restrict the length of the typed value. To enforce a specific fraction length during editing, set the <a href="/api/javascript/ui/numerictextbox#configuration-restrictDecimals"><code>restrictDecimals</code></a> option to <code>true</code>.</p>
+<p>By default, the widget does not restrict the length of the typed value. To enforce a specific fraction length during editing, set the <a href="/docs-kendo-china/api/javascript/ui/numerictextbox#configuration-restrictDecimals"><code>restrictDecimals</code></a> option to <code>true</code>.</p>
 
 <h3 id="configuration-Rounding"><a href="#configuration-Rounding">Rounding of Numbers</a></h3>
 
-<p>The widget controls the precision of the entered number using the half-up rounding technique. To disable this functionality, use the <a href="/api/javascript/ui/numerictextbox#configuration-round"><code>round</code></a> configuration option. Once you turn off the rounding, the value is truncated up to the desired precision length without rounding it.</p>
+<p>The widget controls the precision of the entered number using the half-up rounding technique. To disable this functionality, use the <a href="/docs-kendo-china/api/javascript/ui/numerictextbox#configuration-round"><code>round</code></a> configuration option. Once you turn off the rounding, the value is truncated up to the desired precision length without rounding it.</p>
 
 <h3 id="configuration-Range"><a href="#configuration-Range">Range Validation</a></h3>
 
 <p>You can restrict the value of the NumericTextBox to a specific range by using either of the following approaches:</p>
 
 <ul>
-<li>Restrict the input value between a specific <a href="/api/javascript/ui/numerictextbox#configuration-min"><code>min</code></a> and <a href="/api/javascript/ui/numerictextbox#configuration-max"><code>max</code></a> range. The typed value gets modified to fit the range on <code>blur</code>.</li>
+<li>Restrict the input value between a specific <a href="/docs-kendo-china/api/javascript/ui/numerictextbox#configuration-min"><code>min</code></a> and <a href="/docs-kendo-china/api/javascript/ui/numerictextbox#configuration-max"><code>max</code></a> range. The typed value gets modified to fit the range on <code>blur</code>.</li>
 <li>
 <p>Use a custom Kendo UI Validator rule to restrict the input value. The invalid value keeps unchanged and the user is notified for the incorrect input with a friendly error message.</p>
 
-<p>For more details, refer to the article on the <a href="/controls/editors/validator/overview#custom-rules-for-validation">custom validation rules</a> of the Validator.</p>
+<p>For more details, refer to the article on the <a href="/docs-kendo-china/controls/editors/validator/overview#custom-rules-for-validation">custom validation rules</a> of the Validator.</p>
 
 <p>To see the suggested implementation in action, navigate to the online demo on <a href="http://demos.telerik.com/kendo-ui/numerictextbox/validation">range validation</a>.</p>
 </li>
@@ -251,7 +251,7 @@
 
 <p>This limitation comes from JavaScript itself and you cannot work around it in a feasible way. You are recommended to use an <code>&lt;input&gt;</code> element with server validation because some server languages can parse long numbers.</p>
 
-<p>On the other hand, if the user enters a number with a greater precision than is currently configured through the <code>decimals</code> property, the widget value will be rounded. For more details and examples, refer to the <a href="/api/javascript/ui/numerictextbox#configuration-decimals">API documentation on <code>decimals</code></a>.</p>
+<p>On the other hand, if the user enters a number with a greater precision than is currently configured through the <code>decimals</code> property, the widget value will be rounded. For more details and examples, refer to the <a href="/docs-kendo-china/api/javascript/ui/numerictextbox#configuration-decimals">API documentation on <code>decimals</code></a>.</p>
 
 <h3 id="input-type"><a href="#input-type">Input Type</a></h3>
 
@@ -262,7 +262,7 @@
 <p>To render a numeric software keyboard, use either of the following workarounds:</p>
 
 <ul>
-<li>Use a plain numeric input for mobile devices and add a <a href="/web/appearance-styling#primitives"><code>k-textbox</code></a> CSS class to apply Kendo UI styling.</li>
+<li>Use a plain numeric input for mobile devices and add a <a href="/docs-kendo-china/web/appearance-styling#primitives"><code>k-textbox</code></a> CSS class to apply Kendo UI styling.</li>
 <li>Change the input type back to <code>number</code> after the NumericTextBox initializes. This is possible only for cultures that use a dot (<code>.</code>) as a decimal separator.</li>
 </ul>
 
@@ -286,24 +286,24 @@
 <p>Other articles and how-to examples on the Kendo UI NumericTextBox:</p>
 
 <ul>
-<li><a href="/controls/editors/numerictextbox/how-to/add-title-attribute">How to Add Title Attribute</a></li>
-<li><a href="/controls/editors/numerictextbox/how-to/change-text-color">How to Change Text Color</a></li>
-<li><a href="/controls/editors/numerictextbox/how-to/focus-on-label-click">How to Focus Widget on Label Click</a></li>
-<li><a href="/controls/editors/numerictextbox/how-to/persist-old-value">How to Persist Old Value</a></li>
-<li><a href="/controls/editors/numerictextbox/how-to/select-all-on-focus">How to Select All Text on Focus</a></li>
-<li><a href="/controls/editors/numerictextbox/how-to/AngularJS/update-value-on-keyup">How to Update Value on Keyup</a></li>
-<li><a href="/controls/editors/numerictextbox/how-to/AngularJS/update-value-on-spin">How to Update Value on Spin</a></li>
-<li><a href="/controls/editors/numerictextbox/how-to/use-custom-culture">How to Use Custom Culture Script</a></li>
-<li><a href="/aspnet-mvc/helpers/numerictextbox/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the NumericTextBox Widget</a></li>
-<li><a href="/jsp/tags/numerictextbox/overview">Overview of the NumericTextBox JSP Tag</a></li>
-<li><a href="/php/widgets/numerictextbox/overview">Overview of the NumericTextBox PHP Class</a></li>
-<li><a href="/api/javascript/ui/numerictextbox">NumericTextBox JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/controls/editors/numerictextbox/how-to/add-title-attribute">How to Add Title Attribute</a></li>
+<li><a href="/docs-kendo-china/controls/editors/numerictextbox/how-to/change-text-color">How to Change Text Color</a></li>
+<li><a href="/docs-kendo-china/controls/editors/numerictextbox/how-to/focus-on-label-click">How to Focus Widget on Label Click</a></li>
+<li><a href="/docs-kendo-china/controls/editors/numerictextbox/how-to/persist-old-value">How to Persist Old Value</a></li>
+<li><a href="/docs-kendo-china/controls/editors/numerictextbox/how-to/select-all-on-focus">How to Select All Text on Focus</a></li>
+<li><a href="/docs-kendo-china/controls/editors/numerictextbox/how-to/AngularJS/update-value-on-keyup">How to Update Value on Keyup</a></li>
+<li><a href="/docs-kendo-china/controls/editors/numerictextbox/how-to/AngularJS/update-value-on-spin">How to Update Value on Spin</a></li>
+<li><a href="/docs-kendo-china/controls/editors/numerictextbox/how-to/use-custom-culture">How to Use Custom Culture Script</a></li>
+<li><a href="/docs-kendo-china/aspnet-mvc/helpers/numerictextbox/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the NumericTextBox Widget</a></li>
+<li><a href="/docs-kendo-china/jsp/tags/numerictextbox/overview">Overview of the NumericTextBox JSP Tag</a></li>
+<li><a href="/docs-kendo-china/php/widgets/numerictextbox/overview">Overview of the NumericTextBox PHP Class</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/numerictextbox">NumericTextBox JavaScript API Reference</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -368,7 +368,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

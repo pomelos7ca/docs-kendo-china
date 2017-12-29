@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Widget</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("api/javascript/ui/widget.html")
         });
         </script>
@@ -123,7 +123,7 @@
             
              <h1 id="kendouiwidget"><a href="#kendouiwidget">kendo.ui.Widget</a></h1>
 
-<p>Base class of all Kendo UI widgets. Inherits from <a href="/api/javascript/observable">Observable</a>.</p>
+<p>Base class of all Kendo UI widgets. Inherits from <a href="/docs-kendo-china/api/javascript/observable">Observable</a>.</p>
 
 <h2 id="fields"><a href="#fields">Fields</a></h2>
 
@@ -133,7 +133,7 @@
 
 <p>The element, from which the widget is initialized. Depending on the widget, it may be visible, such as in the AutoComplete, Calendar, DatePicker, inline Editor and others, or hidden, such as in the DropDownList, classic Editor and Upload. A reference to this element is also returned by the initialization statement.</p>
 
-<p>See <a href="/intro/widget-basics/wrapper-element">Widget DOM Elements</a> for more information.</p>
+<p>See <a href="/docs-kendo-china/intro/widget-basics/wrapper-element">Widget DOM Elements</a> for more information.</p>
 
 <h4>Example</h4>
 
@@ -156,7 +156,7 @@
 
 <p>The outermost element, which is part of the widget. Depending on the widget and the exact scenario, the wrapper and the element may match. For example, if the Grid is initialized from a <code>&lt;div&gt;</code>, the two references match. But if the Grid is initialized from a <code>&lt;table&gt;</code>, then element points to the <code>&lt;table&gt;</code>, while wrapper points to the wrapper <code>&lt;div&gt;</code>.</p>
 
-<p>See <a href="/intro/widget-basics/wrapper-element">Widget DOM Elements</a> for more information.</p>
+<p>See <a href="/docs-kendo-china/intro/widget-basics/wrapper-element">Widget DOM Elements</a> for more information.</p>
 
 <h4>Example</h4>
 
@@ -174,7 +174,7 @@
 
 <h3 id="methods-bind"><a href="#methods-bind">bind</a></h3>
 
-<p>Attaches a handler to an event. Examples and more info can be found in the <a href="/api/javascript/observable#bind">bind</a> section of the <code>kendo.Observable</code> API reference.</p>
+<p>Attaches a handler to an event. Examples and more info can be found in the <a href="/docs-kendo-china/api/javascript/observable#bind">bind</a> section of the <code>kendo.Observable</code> API reference.</p>
 
 <h3 id="methods-destroy"><a href="#methods-destroy">destroy</a></h3>
 
@@ -182,12 +182,12 @@
 
 <h3 id="methods-one"><a href="#methods-one">one</a></h3>
 
-<p>Attaches a handler to an event. The handler is executed only once. Examples and more info can be found in the <a href="/api/javascript/observable#methods-one">one</a> section of the
+<p>Attaches a handler to an event. The handler is executed only once. Examples and more info can be found in the <a href="/docs-kendo-china/api/javascript/observable#methods-one">one</a> section of the
 <code>kendo.Observable</code> API reference.</p>
 
 <h3 id="methods-resize"><a href="#methods-resize">resize</a></h3>
 
-<p>Readjusts the layout of the widget. For more information, refer to the article on <a href="/styles-and-layout/using-kendo-in-responsive-web-pages">responsive web design</a>.</p>
+<p>Readjusts the layout of the widget. For more information, refer to the article on <a href="/docs-kendo-china/styles-and-layout/using-kendo-in-responsive-web-pages">responsive web design</a>.</p>
 
 <h3 id="methods-setOptions"><a href="#methods-setOptions">setOptions</a></h3>
 
@@ -227,18 +227,18 @@ $(function(){
 
 <h3 id="methods-trigger"><a href="#methods-trigger">trigger</a></h3>
 
-<p>Executes all handlers attached to the given event. More info can be found in the <a href="/api/javascript/observable#methods-trigger">trigger</a> section of the
+<p>Executes all handlers attached to the given event. More info can be found in the <a href="/docs-kendo-china/api/javascript/observable#methods-trigger">trigger</a> section of the
 <code>kendo.Observable</code> API reference.</p>
 
 <h3 id="methods-unbind"><a href="#methods-unbind">unbind</a></h3>
 
-<p>Remove a previously attached event handler. More info can be found in the <a href="/api/javascript/observable#methods-unbind">unbind</a> section of the
+<p>Remove a previously attached event handler. More info can be found in the <a href="/docs-kendo-china/api/javascript/observable#methods-unbind">unbind</a> section of the
 <code>kendo.Observable</code> API reference.</p> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -303,7 +303,7 @@ $(function(){
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

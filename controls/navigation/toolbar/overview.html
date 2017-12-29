@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="toolbar">
         <title>Overview | Kendo UI ToolBar</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to initialize the Kendo UI ToolBar widget and configure its command types and behaviors.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("controls/navigation/toolbar/overview.html")
         });
         </script>
@@ -125,7 +125,7 @@
 
 <p>The ToolBar consists of three main areas: ToolBar wrapper, overflow anchor, and command overflow popup. The wrapper holds all commands that can be placed within the available container width. The ones for which there is no space to fit in are moved to the command overflow popup.</p>
 
-<p><img src="/controls/navigation/toolbar/toolbar-areas.png" alt="ToolBar areas"></p>
+<p><img src="/docs-kendo-china/controls/navigation/toolbar/toolbar-areas.png" alt="ToolBar areas"></p>
 
 <h2 id="getting-started"><a href="#getting-started">Getting Started</a></h2>
 
@@ -618,7 +618,7 @@
 
 <p>For more information on the mobile rendering feature, refer to the <a href="http://demos.telerik.com/kendo-ui/m/index#navbar/index">demo page on the ToolBar acting as ActionBar</a>.</p>
 
-<p>The mobile view of the Toolbar exposes an additional option for aligning tools to the left or to the right side of the widget. This behavior is achieved by using the <code>items.align</code> configuration. For more information, refer to the article on <a href="/controls/navigation/toolbar/how-to/use-mobile-view-toolbar">using the mobile view of the ToolBar</a>.</p>
+<p>The mobile view of the Toolbar exposes an additional option for aligning tools to the left or to the right side of the widget. This behavior is achieved by using the <code>items.align</code> configuration. For more information, refer to the article on <a href="/docs-kendo-china/controls/navigation/toolbar/how-to/use-mobile-view-toolbar">using the mobile view of the ToolBar</a>.</p>
 
 <h2 id="toolbar-api"><a href="#toolbar-api">ToolBar API</a></h2>
 
@@ -643,7 +643,7 @@
 
 <p>You are also able to attach <code>click</code> and <code>toggle</code> event handlers to the buttons through the configuration options.</p>
 
-<p>For more information on the configuration options Kendo UI ToolBar supports, refer to the <a href="/api/javascript/ui/toolbar">ToolBar API</a>.</p>
+<p>For more information on the configuration options Kendo UI ToolBar supports, refer to the <a href="/docs-kendo-china/api/javascript/ui/toolbar">ToolBar API</a>.</p>
 
 <p>The example below demonstrates how to use ToolBar events.</p>
 
@@ -686,18 +686,18 @@
 
 <ul>
 <li><a href="http://docs.telerik.com/aspnet-mvc/helpers/toolbar/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the ToolBar Widget</a></li>
-<li><a href="/jsp/tags/toolbar/overview">Overview of the ToolBar JSP Tag</a></li>
-<li><a href="/php/widgets/toolbar/overview">Overview of the ToolBar PHP Class</a></li>
-<li><a href="/controls/navigation/toolbar/how-to/close-toolbar-popup-from-template">How to Close ToolBar Popup Manually</a></li>
-<li><a href="/controls/navigation/toolbar/how-to/custom-tool">How to Develop and Register Custom ToolBar Tools</a></li>
-<li><a href="/controls/navigation/toolbar/how-to/use-font-awesome-icons">How to Use FontAwesome Icons</a></li>
-<li><a href="/api/javascript/ui/toolbar">ToolBar JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/jsp/tags/toolbar/overview">Overview of the ToolBar JSP Tag</a></li>
+<li><a href="/docs-kendo-china/php/widgets/toolbar/overview">Overview of the ToolBar PHP Class</a></li>
+<li><a href="/docs-kendo-china/controls/navigation/toolbar/how-to/close-toolbar-popup-from-template">How to Close ToolBar Popup Manually</a></li>
+<li><a href="/docs-kendo-china/controls/navigation/toolbar/how-to/custom-tool">How to Develop and Register Custom ToolBar Tools</a></li>
+<li><a href="/docs-kendo-china/controls/navigation/toolbar/how-to/use-font-awesome-icons">How to Use FontAwesome Icons</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/toolbar">ToolBar JavaScript API Reference</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -762,7 +762,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

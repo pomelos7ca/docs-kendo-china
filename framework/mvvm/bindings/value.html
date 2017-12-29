@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="mvvm">
         <title>Value | Kendo UI MVVM</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to keep the value of a DOM widget and the value of a View-Model field in sync by using the value binding in Kendo UI MVVM.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("framework/mvvm/bindings/value.html")
         });
         </script>
@@ -133,7 +133,7 @@
 
 <p>If you want to set the text or HTML content of a DOM element, use the <code>text</code> or <code>html</code> bindings instead of the <code>value</code> binding.</p>
 
-<p>Checkboxes (<code>&lt;input type="checkbox" /&gt;</code>) and radio buttons (<code>&lt;input type="radio" /&gt;</code>) should use the <a href="/framework/mvvm/bindings/checked"><code>checked</code></a> binding instead.</p>
+<p>Checkboxes (<code>&lt;input type="checkbox" /&gt;</code>) and radio buttons (<code>&lt;input type="radio" /&gt;</code>) should use the <a href="/docs-kendo-china/framework/mvvm/bindings/checked"><code>checked</code></a> binding instead.</p>
 
 <h2 id="value-binding-of-elements-input-and-textarea"><a href="#value-binding-of-elements-input-and-textarea">Value Binding of Elements: input and textarea</a></h2>
 
@@ -240,7 +240,7 @@ kendo.bind($("select"), viewModel);
 
 <h3 id="select-with-options-created-by-source-binding"><a href="#select-with-options-created-by-source-binding">Select with Options Created by Source Binding</a></h3>
 
-<p>When the <code>select</code> element options are created by the <a href="/framework/mvvm/bindings/source"><code>source</code> binding</a>, Kendo UI MVVM selects the <code>option</code> which corresponds to the View-Model value specified by the <code>value</code> binding. The <code>data-value-field</code> attribute specifies the field of the current item to which the <code>option</code> value is bound.</p>
+<p>When the <code>select</code> element options are created by the <a href="/docs-kendo-china/framework/mvvm/bindings/source"><code>source</code> binding</a>, Kendo UI MVVM selects the <code>option</code> which corresponds to the View-Model value specified by the <code>value</code> binding. The <code>data-value-field</code> attribute specifies the field of the current item to which the <code>option</code> value is bound.</p>
 
 <p>The example below demonstrates how to use the <code>value</code> binding with a <code>select</code> element, whose options are created by the <code>source</code> binding.</p>
 
@@ -292,13 +292,13 @@ kendo.bind($("select"), viewModel);
 
 <h2 id="data-bound-widgets-and-value-binding"><a href="#data-bound-widgets-and-value-binding">Data-Bound Widgets and Value Binding</a></h2>
 
-<p>Kendo UI <code>select</code> widgets, such as <code>AutoComplete</code>, <code>DropDownList</code>, <code>ComboBox</code>, and <code>MultiSelect</code>, have a built-in <a href="/api/javascript/ui/dropdownlist#configuration-autoBind">auto-binding</a> feature that defers the data loading. The <code>value</code> binding honors that option and behaves differently when the widget is forced to defer its loading.</p>
+<p>Kendo UI <code>select</code> widgets, such as <code>AutoComplete</code>, <code>DropDownList</code>, <code>ComboBox</code>, and <code>MultiSelect</code>, have a built-in <a href="/docs-kendo-china/api/javascript/ui/dropdownlist#configuration-autoBind">auto-binding</a> feature that defers the data loading. The <code>value</code> binding honors that option and behaves differently when the widget is forced to defer its loading.</p>
 
 <p>There are two basic cases based on the <code>autoBind</code> configuration value—<code>autoBind: true</code> (default) and <code>autoBind: false</code>.</p>
 
 <h3 id="basic-caseautobind-true"><a href="#basic-caseautobind-true">Basic Case—autoBind: true</a></h3>
 
-<p>The <code>autoBind: true</code> is the default basic case configuration. When the <a href="/api/javascript/ui/dropdownlist#configuration-autoBind"><code>autoBind</code> option</a> is set to <code>true</code>, the <code>value</code> binding sets the widget value using its <a href="/api/javascript/ui/dropdownlist#methods-value"><code>value</code></a> method. If the data is not loaded, then the widget first loads the data.</p>
+<p>The <code>autoBind: true</code> is the default basic case configuration. When the <a href="/docs-kendo-china/api/javascript/ui/dropdownlist#configuration-autoBind"><code>autoBind</code> option</a> is set to <code>true</code>, the <code>value</code> binding sets the widget value using its <a href="/docs-kendo-china/api/javascript/ui/dropdownlist#methods-value"><code>value</code></a> method. If the data is not loaded, then the widget first loads the data.</p>
 
 <h6>Example</h6>
 
@@ -329,7 +329,7 @@ kendo.bind($("select"), viewModel);
 
 <h3 id="basic-caseautobind-false"><a href="#basic-caseautobind-false">Basic Case—autoBind: false</a></h3>
 
-<p>When the <a href="/api/javascript/ui/dropdownlist#configuration-autoBind"><code>autoBind</code> option</a> is set to <code>false</code>, the <code>value</code> binding does not force the data loading, unless the <code>model</code> field is a <a href="#use-the-value-binding-with-a-select-widget-to-update-the-view-model-field-with-the-value-field-when-the-initial-value-is-null">primitive value</a>. In other words, if the <code>model</code> field, bound to the widget, is a complex object, then the <code>value</code> binding retrieves the <a href="/api/javascript/ui/dropdownlist#configuration-dataTextField"><code>dataValueField</code></a> and <a href="/api/javascript/ui/dropdownlist#configuration-dataValueField"><code>dataTextField</code></a> values without forcing the widget to request its data. If the <code>model</code> field is a primitive value, however, then the binding forces the data loading, it calls the widget's <a href="/api/javascript/ui/dropdownlist#methods-value"><code>value</code></a> method.</p>
+<p>When the <a href="/docs-kendo-china/api/javascript/ui/dropdownlist#configuration-autoBind"><code>autoBind</code> option</a> is set to <code>false</code>, the <code>value</code> binding does not force the data loading, unless the <code>model</code> field is a <a href="#use-the-value-binding-with-a-select-widget-to-update-the-view-model-field-with-the-value-field-when-the-initial-value-is-null">primitive value</a>. In other words, if the <code>model</code> field, bound to the widget, is a complex object, then the <code>value</code> binding retrieves the <a href="/docs-kendo-china/api/javascript/ui/dropdownlist#configuration-dataTextField"><code>dataValueField</code></a> and <a href="/docs-kendo-china/api/javascript/ui/dropdownlist#configuration-dataValueField"><code>dataTextField</code></a> values without forcing the widget to request its data. If the <code>model</code> field is a primitive value, however, then the binding forces the data loading, it calls the widget's <a href="/docs-kendo-china/api/javascript/ui/dropdownlist#methods-value"><code>value</code></a> method.</p>
 
 <h4>Object Value Not Forcing Binding</h4>
 
@@ -422,7 +422,7 @@ kendo.bind($("select"), viewModel);
 </code></pre>
 
 <p>By default, the <code>value</code> binding for the <code>select</code> widgets—<code>AutoComplete</code>, <code>DropDownList</code>, <code>ComboBox</code>, <code>MultiSelect</code>—uses the selected item from the data to update the View-Model field when the initial value is <code>null</code>.
-The <code>data-value-primitive</code> attribute, that sets <a href="/api/javascript/ui/dropdownlist#configuration-valuePrimitive">valuePrimitive</a> option, can be used to specify that the View-Model field should be updated with the item value field instead.</p>
+The <code>data-value-primitive</code> attribute, that sets <a href="/docs-kendo-china/api/javascript/ui/dropdownlist#configuration-valuePrimitive">valuePrimitive</a> option, can be used to specify that the View-Model field should be updated with the item value field instead.</p>
 
 <h2 id="multiple-selections"><a href="#multiple-selections">Multiple Selections</a></h2>
 
@@ -554,27 +554,27 @@ kendo.bind($("select"), viewModel);
 <p>Other articles on the Kendo UI MVVM component and bindings:</p>
 
 <ul>
-<li><a href="/framework/mvvm/overview">MVVM Overview</a></li>
-<li><a href="/framework/mvvm/bindings/attr">Overview of the Attribute Binding</a></li>
-<li><a href="/framework/mvvm/bindings/checked">Overview of the Checked Binding</a></li>
-<li><a href="/framework/mvvm/bindings/click">Overview of the Click Binding</a></li>
-<li><a href="/framework/mvvm/bindings/css">Overview of the CSS Binding</a></li>
-<li><a href="/framework/mvvm/bindings/custom">Overview of the Custom Binding</a></li>
-<li><a href="/framework/mvvm/bindings/disabled">Overview of the Disabled Binding</a></li>
-<li><a href="/framework/mvvm/bindings/enabled">Overview of the Enabled Binding</a></li>
-<li><a href="/framework/mvvm/bindings/events">Overview of the Events Binding</a></li>
-<li><a href="/framework/mvvm/bindings/html">Overview of the HTML Binding</a></li>
-<li><a href="/framework/mvvm/bindings/invisible">Overview of the Invisible Binding</a></li>
-<li><a href="/framework/mvvm/bindings/source">Overview of the Source Binding</a></li>
-<li><a href="/framework/mvvm/bindings/style">Overview of the Style Binding</a></li>
-<li><a href="/framework/mvvm/bindings/text">Overview of the Text Binding</a></li>
-<li><a href="/framework/mvvm/bindings/visible">Overview of the Visible Binding</a></li>
+<li><a href="/docs-kendo-china/framework/mvvm/overview">MVVM Overview</a></li>
+<li><a href="/docs-kendo-china/framework/mvvm/bindings/attr">Overview of the Attribute Binding</a></li>
+<li><a href="/docs-kendo-china/framework/mvvm/bindings/checked">Overview of the Checked Binding</a></li>
+<li><a href="/docs-kendo-china/framework/mvvm/bindings/click">Overview of the Click Binding</a></li>
+<li><a href="/docs-kendo-china/framework/mvvm/bindings/css">Overview of the CSS Binding</a></li>
+<li><a href="/docs-kendo-china/framework/mvvm/bindings/custom">Overview of the Custom Binding</a></li>
+<li><a href="/docs-kendo-china/framework/mvvm/bindings/disabled">Overview of the Disabled Binding</a></li>
+<li><a href="/docs-kendo-china/framework/mvvm/bindings/enabled">Overview of the Enabled Binding</a></li>
+<li><a href="/docs-kendo-china/framework/mvvm/bindings/events">Overview of the Events Binding</a></li>
+<li><a href="/docs-kendo-china/framework/mvvm/bindings/html">Overview of the HTML Binding</a></li>
+<li><a href="/docs-kendo-china/framework/mvvm/bindings/invisible">Overview of the Invisible Binding</a></li>
+<li><a href="/docs-kendo-china/framework/mvvm/bindings/source">Overview of the Source Binding</a></li>
+<li><a href="/docs-kendo-china/framework/mvvm/bindings/style">Overview of the Style Binding</a></li>
+<li><a href="/docs-kendo-china/framework/mvvm/bindings/text">Overview of the Text Binding</a></li>
+<li><a href="/docs-kendo-china/framework/mvvm/bindings/visible">Overview of the Visible Binding</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -639,7 +639,7 @@ kendo.bind($("select"), viewModel);
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

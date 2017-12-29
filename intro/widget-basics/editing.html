@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Editing Functionality | Kendo UI Getting Started</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Configure the editing functionality in Kendo UI widgets such as the Grid, Scheduler, and ListView.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("intro/widget-basics/editing.html")
         });
         </script>
@@ -121,16 +121,16 @@
             
              <h1 id="editing-functionality"><a href="#editing-functionality">Editing Functionality</a></h1>
 
-<p>Some Kendo UI widgets provide an editing functionality that is implemented with a specific editor element or form bound to the model by using the <a href="/framework/mvvm/overview">Kendo UI MVVM</a> bindings.</p>
+<p>Some Kendo UI widgets provide an editing functionality that is implemented with a specific editor element or form bound to the model by using the <a href="/docs-kendo-china/framework/mvvm/overview">Kendo UI MVVM</a> bindings.</p>
 
 <p>These Kendo UI widgets are:</p>
 
 <ul>
-<li>The <a href="/controls/data-management/grid/overview">Kendo UI Grid</a>.</li>
-<li>The <a href="/controls/data-management/listview/overview">Kendo UI ListView</a>.</li>
-<li>The <a href="/controls/data-management/treelist/overview">Kendo UI TreeList</a>.</li>
-<li>The <a href="/controls/scheduling/scheduler/overview">Kendo UI Scheduler</a>.</li>
-<li>The <a href="/controls/scheduling/gantt/overview">Kendo UI Gantt</a>.</li>
+<li>The <a href="/docs-kendo-china/controls/data-management/grid/overview">Kendo UI Grid</a>.</li>
+<li>The <a href="/docs-kendo-china/controls/data-management/listview/overview">Kendo UI ListView</a>.</li>
+<li>The <a href="/docs-kendo-china/controls/data-management/treelist/overview">Kendo UI TreeList</a>.</li>
+<li>The <a href="/docs-kendo-china/controls/scheduling/scheduler/overview">Kendo UI Scheduler</a>.</li>
+<li>The <a href="/docs-kendo-china/controls/scheduling/gantt/overview">Kendo UI Gantt</a>.</li>
 </ul>
 
 <h2 id="getting-started"><a href="#getting-started">Getting Started</a></h2>
@@ -143,7 +143,7 @@
 
 <ul>
 <li>
-<code>editable</code>—Controls whether the editing is enabled or not. For instance, the editing functionality in the Kendo UI Grid widget is disabled by default. For detailed information, refer to <a href="/api/javascript/ui/grid#configuration-editable">the API article on editing of the Grid</a>.</li>
+<code>editable</code>—Controls whether the editing is enabled or not. For instance, the editing functionality in the Kendo UI Grid widget is disabled by default. For detailed information, refer to <a href="/docs-kendo-china/api/javascript/ui/grid#configuration-editable">the API article on editing of the Grid</a>.</li>
 <li>
 <code>editable.template</code>—Allows you to define a custom editor template.</li>
 </ul>
@@ -151,7 +151,7 @@
 <blockquote>
 <p><strong>Important</strong></p>
 
-<p>Some widgets provide additional <code>editable</code> options. For more details, see the particular widget API documentation. For example, the Grid widget can disable the <code>remove</code> functionality by using the <a href="/api/javascript/ui/grid#configuration-editable.destroy"><code>editable.destroy</code></a> option.</p>
+<p>Some widgets provide additional <code>editable</code> options. For more details, see the particular widget API documentation. For example, the Grid widget can disable the <code>remove</code> functionality by using the <a href="/docs-kendo-china/api/javascript/ui/grid#configuration-editable.destroy"><code>editable.destroy</code></a> option.</p>
 </blockquote>
 
 <h3 id="events"><a href="#events">Events</a></h3>
@@ -171,7 +171,7 @@
 <p><strong>Important</strong></p>
 
 <ul>
-<li>Only the Scheduler widget supports prevention of the <a href="/api/javascript/ui/scheduler#events-edit"><code>edit</code></a>, <a href="/api/javascript/ui/scheduler#events-edit"><code>save</code></a>, and <a href="/api/javascript/ui/scheduler#events-edit"><code>remove</code></a> events.</li>
+<li>Only the Scheduler widget supports prevention of the <a href="/docs-kendo-china/api/javascript/ui/scheduler#events-edit"><code>edit</code></a>, <a href="/docs-kendo-china/api/javascript/ui/scheduler#events-edit"><code>save</code></a>, and <a href="/docs-kendo-china/api/javascript/ui/scheduler#events-edit"><code>remove</code></a> events.</li>
 <li>The widget uses only one editor form. It applies the same editor template for the <code>create</code> and <code>update</code> actions.</li>
 </ul>
 </blockquote>
@@ -181,18 +181,18 @@
 <p>To enable the editing functionality of the widget, perform the following steps:</p>
 
 <ol>
-<li>Configure the <a href="/framework/datasource/crud">CRUD</a> (Create, Read, Update, Destroy) data operation actions of the DataSource.</li>
-<li>Define the model fields by using the <a href="/api/javascript/data/datasource#configuration-schema.model"><code>schema.model</code></a> option.</li>
+<li>Configure the <a href="/docs-kendo-china/framework/datasource/crud">CRUD</a> (Create, Read, Update, Destroy) data operation actions of the DataSource.</li>
+<li>Define the model fields by using the <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-schema.model"><code>schema.model</code></a> option.</li>
 <li>Enable the <code>editable</code> option.</li>
 </ol>
 
-<p>For more information on how to set up the editing functionality in Kendo UI widgets, refer to the <a href="/controls/data-management/grid/editing">article on editing of the Grid</a>. The approaches are largely applicable, with minor differences, to the other Kendo UI widgets which support the editing functionality.</p>
+<p>For more information on how to set up the editing functionality in Kendo UI widgets, refer to the <a href="/docs-kendo-china/controls/data-management/grid/editing">article on editing of the Grid</a>. The approaches are largely applicable, with minor differences, to the other Kendo UI widgets which support the editing functionality.</p>
 
 <h2 id="basic-concepts"><a href="#basic-concepts">Basic Concepts</a></h2>
 
 <h3 id="building-editor-forms"><a href="#building-editor-forms">Building Editor Forms</a></h3>
 
-<p>A Kendo UI widget builds an editor form dynamically based on the <a href="/api/javascript/data/model#methods-Model.define"><code>schema.model</code></a> structure and more specifically the <code>fields</code> collection, as demonstrated in the example below.</p>
+<p>A Kendo UI widget builds an editor form dynamically based on the <a href="/docs-kendo-china/api/javascript/data/model#methods-Model.define"><code>schema.model</code></a> structure and more specifically the <code>fields</code> collection, as demonstrated in the example below.</p>
 
 <h6>Example</h6>
 
@@ -213,15 +213,15 @@
 <blockquote>
 <p><strong>Important</strong></p>
 
-<p>The Kendo UI Scheduler has <a href="/api/javascript/data/schedulerevent#fields">a static model structure</a> and it follows only the predefined model fields list. If you want to edit additional fields, use <a href="/controls/scheduling/scheduler/how-to/editing/custom-edit-and-event-templates">a custom editor template</a>.</p>
+<p>The Kendo UI Scheduler has <a href="/docs-kendo-china/api/javascript/data/schedulerevent#fields">a static model structure</a> and it follows only the predefined model fields list. If you want to edit additional fields, use <a href="/docs-kendo-china/controls/scheduling/scheduler/how-to/editing/custom-edit-and-event-templates">a custom editor template</a>.</p>
 </blockquote>
 
-<p>The auto-generated editor form is bound to the model through the <a href="/framework/mvvm/overview">Kendo UI MVVM pattern</a>. The widget also allows you to override this form by using a custom editor template.</p>
+<p>The auto-generated editor form is bound to the model through the <a href="/docs-kendo-china/framework/mvvm/overview">Kendo UI MVVM pattern</a>. The widget also allows you to override this form by using a custom editor template.</p>
 
 <p>Once the form is created, the widget performs the following actions:</p>
 
 <ol>
-<li>It <a href="/api/javascript/kendo#methods-bind">binds</a> the editor fields to the model.</li>
+<li>It <a href="/docs-kendo-china/api/javascript/kendo#methods-bind">binds</a> the editor fields to the model.</li>
 <li>Triggers the <code>edit</code> event.</li>
 <li>Shows the editor form.</li>
 <li>Updates the model based on the changes made in the editors.</li>
@@ -236,14 +236,14 @@
 
 <h3 id="binding-specific-models-to-editor-forms"><a href="#binding-specific-models-to-editor-forms">Binding Specific Models to Editor Forms</a></h3>
 
-<p>When the <code>edit</code> event is triggered, the widget gets the corresponding model and binds the generated or custom editor form to it through the <a href="/framework/mvvm/overview">Kendo UI MVVM pattern</a>. The connection between the model fields and the form editors is done by using the <a href="/framework/mvvm/bindings/value"><code>value</code> binding</a>.</p>
+<p>When the <code>edit</code> event is triggered, the widget gets the corresponding model and binds the generated or custom editor form to it through the <a href="/docs-kendo-china/framework/mvvm/overview">Kendo UI MVVM pattern</a>. The connection between the model fields and the form editors is done by using the <a href="/docs-kendo-china/framework/mvvm/bindings/value"><code>value</code> binding</a>.</p>
 
 <p>This connection respects the following rules:</p>
 
 <ul>
 <li>On initial load, the editor form is populated using the model values.</li>
 <li>The model is updated when the related <code>editor</code> triggers a <code>change</code> event. The <code>value binding</code> gets its value and populates the model field.</li>
-<li>The form editors are updated when the <a href="/api/javascript/data/observableobject"><code>ObservableObject</code> API</a> is used. Use the <a href="/api/javascript/data/observableobject#methods-set"><code>set</code> method</a> if you want to update the corresponding UI editors. If this API is omitted, the editors do not change.</li>
+<li>The form editors are updated when the <a href="/docs-kendo-china/api/javascript/data/observableobject"><code>ObservableObject</code> API</a> is used. Use the <a href="/docs-kendo-china/api/javascript/data/observableobject#methods-set"><code>set</code> method</a> if you want to update the corresponding UI editors. If this API is omitted, the editors do not change.</li>
 </ul>
 
 <h2 id="common-scenarios"><a href="#common-scenarios">Common Scenarios</a></h2>
@@ -255,8 +255,8 @@
 <p>The following rules apply to the editor template:</p>
 
 <ul>
-<li>The template uses the <a href="/framework/templates/overview">Kendo UI template syntax</a>.</li>
-<li>The editor is bound to a specific <code>model</code> field through the <a href="/framework/mvvm/bindings/value">MVVM <code>value</code> binding</a>.</li>
+<li>The template uses the <a href="/docs-kendo-china/framework/templates/overview">Kendo UI template syntax</a>.</li>
+<li>The editor is bound to a specific <code>model</code> field through the <a href="/docs-kendo-china/framework/mvvm/bindings/value">MVVM <code>value</code> binding</a>.</li>
 </ul>
 
 <blockquote>
@@ -294,7 +294,7 @@
 
 <p>You are able to access a particular editor element from the editor form by using the <code>edit</code> event of the widget.</p>
 
-<p>For a sample demo which demonstrates how to accomplish this task, refer to <a href="/controls/data-management/grid/how-to/Editing/access-editor-control">this runnable example</a>.</p>
+<p>For a sample demo which demonstrates how to accomplish this task, refer to <a href="/docs-kendo-china/controls/data-management/grid/how-to/Editing/access-editor-control">this runnable example</a>.</p>
 
 <h3 id="updating-models-by-using-specific-editors"><a href="#updating-models-by-using-specific-editors">Updating Models by Using Specific Editors</a></h3>
 
@@ -303,7 +303,7 @@
 <blockquote>
 <p><strong>Important</strong></p>
 
-<p>The Kendo UI widgets have their own <a href="/api/javascript/observable#methods-trigger"><code>trigger</code> method</a>, which must be used to trigger the <code>change</code> event.</p>
+<p>The Kendo UI widgets have their own <a href="/docs-kendo-china/api/javascript/observable#methods-trigger"><code>trigger</code> method</a>, which must be used to trigger the <code>change</code> event.</p>
 </blockquote>
 
 <h3 id="adding-additional-editors-without-using-kendo-ui-mvvm-bindings"><a href="#adding-additional-editors-without-using-kendo-ui-mvvm-bindings">Adding Additional Editors without Using Kendo UI MVVM Bindings</a></h3>
@@ -332,7 +332,7 @@
 <p>The Kendo UI MVVM bindings cannot be used anymore and the model binding should be handled manually.</p>
 </blockquote>
 
-<p>For a sample demo that demonstrates how to add a control to the editor form, refer to <a href="/controls/scheduling/scheduler/how-to/editing/add-control-to-customeditor">this runnable example</a>.</p>
+<p>For a sample demo that demonstrates how to add a control to the editor form, refer to <a href="/docs-kendo-china/controls/scheduling/scheduler/how-to/editing/add-control-to-customeditor">this runnable example</a>.</p>
 
 <h3 id="accessing-models-before-editing"><a href="#accessing-models-before-editing">Accessing Models before Editing</a></h3>
 
@@ -348,16 +348,16 @@
 <blockquote>
 <p><strong>Important</strong></p>
 
-<p>The Scheduler passes the <code>e.event</code> field instead of the <code>model</code> one. The event is an instance of the <a href="/api/javascript/data/schedulerevent"><code>SchedulerEvent</code></a> class. For more details, see the corresponding <code>edit</code> event API documentation of the respective Kendo UI widget.</p>
+<p>The Scheduler passes the <code>e.event</code> field instead of the <code>model</code> one. The event is an instance of the <a href="/docs-kendo-china/api/javascript/data/schedulerevent"><code>SchedulerEvent</code></a> class. For more details, see the corresponding <code>edit</code> event API documentation of the respective Kendo UI widget.</p>
 </blockquote>
 
 <h3 id="accessing-models-by-uid"><a href="#accessing-models-by-uid">Accessing Models by UID</a></h3>
 
-<p>Every model has a unique identifier. It is applied to the HTML element that holds the editor form. You are able to recognize that element by the <code>data-uid</code> HTML attribute. Use that <code>uid</code> value to get the model from the DataSource of the widget by using <a href="/api/javascript/data/datasource#methods-getByUid"><code>getByUid</code> method</a>.</p>
+<p>Every model has a unique identifier. It is applied to the HTML element that holds the editor form. You are able to recognize that element by the <code>data-uid</code> HTML attribute. Use that <code>uid</code> value to get the model from the DataSource of the widget by using <a href="/docs-kendo-china/api/javascript/data/datasource#methods-getByUid"><code>getByUid</code> method</a>.</p>
 
 <h3 id="finding-out-if-models-are-new"><a href="#finding-out-if-models-are-new">Finding Out If Models Are New</a></h3>
 
-<p>If you need to differentiate between <code>create</code> and <code>update</code> actions, use the <a href="/api/javascript/data/model#methods-isNew"><code>Model.isNew()</code> method</a>.</p>
+<p>If you need to differentiate between <code>create</code> and <code>update</code> actions, use the <a href="/docs-kendo-china/api/javascript/data/model#methods-isNew"><code>Model.isNew()</code> method</a>.</p>
 
 <h2 id="troubleshooting"><a href="#troubleshooting">Troubleshooting</a></h2>
 
@@ -370,39 +370,39 @@
 <p>Here are the actions that are taken during a model update and which create the issue:</p>
 
 <ol>
-<li>A model field is updated using the <a href="/api/javascript/data/observableobject#methods-set"><code>set</code> method</a>.</li>
+<li>A model field is updated using the <a href="/docs-kendo-china/api/javascript/data/observableobject#methods-set"><code>set</code> method</a>.</li>
 <li>The model gets the new value, compares it to the current one and, if they are different, the new value is ready to be set.</li>
 <li>UI validation is triggered. Note that it uses the editor element value to perform the validation check. However, it is invalid and hence the new value that we try to set is ignored.</li>
 </ol>
 
 <p><strong>Solution</strong></p>
 
-<p>Define a valid <code>defaulValue</code> by using the <a href="/api/javascript/data/model#methods-Model.define"><code>schema.model.fields.defaultValue</code> option</a>.</p>
+<p>Define a valid <code>defaulValue</code> by using the <a href="/docs-kendo-china/api/javascript/data/model#methods-Model.define"><code>schema.model.fields.defaultValue</code> option</a>.</p>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <p>Other articles on Kendo UI widget basics:</p>
 
 <ul>
-<li><a href="/intro/installation/getting-started">Get Started with Kendo UI</a></li>
-<li><a href="/intro/installation/cdn-service">Kendo UI CDN Services</a></li>
-<li><a href="/intro/installation/what-you-need">Include Only What You Need</a></li>
-<li><a href="/intro/installation/prerequisites">JavaScript Prerequisites</a></li>
-<li><a href="/intro/installation/jquery-initialization">Initialize Widgets Using jQuery Plug-Ins</a></li>
-<li><a href="/intro/installation/markup">Initialize Widgets Using Markup</a></li>
-<li><a href="/intro/widget-basics/wrapper-element">Access Widget DOM Elements: wrapper and element</a></li>
-<li><a href="/intro/widget-basics/data-attribute-initialization">Set Data Attributes</a></li>
-<li><a href="/intro/widget-basics/events-and-methods">Widget Methods and Events</a></li>
-<li><a href="/intro/widget-basics/destroy">Destroy Widgets</a></li>
-<li><a href="/intro/widget-basics/create-custom-kendo-widget">Create Custom Widgets</a></li>
-<li><a href="/intro/installation/bower-install">Bower Packages</a></li>
-<li><a href="/intro/installation/nuget-install">NuGet Packages</a></li>
+<li><a href="/docs-kendo-china/intro/installation/getting-started">Get Started with Kendo UI</a></li>
+<li><a href="/docs-kendo-china/intro/installation/cdn-service">Kendo UI CDN Services</a></li>
+<li><a href="/docs-kendo-china/intro/installation/what-you-need">Include Only What You Need</a></li>
+<li><a href="/docs-kendo-china/intro/installation/prerequisites">JavaScript Prerequisites</a></li>
+<li><a href="/docs-kendo-china/intro/installation/jquery-initialization">Initialize Widgets Using jQuery Plug-Ins</a></li>
+<li><a href="/docs-kendo-china/intro/installation/markup">Initialize Widgets Using Markup</a></li>
+<li><a href="/docs-kendo-china/intro/widget-basics/wrapper-element">Access Widget DOM Elements: wrapper and element</a></li>
+<li><a href="/docs-kendo-china/intro/widget-basics/data-attribute-initialization">Set Data Attributes</a></li>
+<li><a href="/docs-kendo-china/intro/widget-basics/events-and-methods">Widget Methods and Events</a></li>
+<li><a href="/docs-kendo-china/intro/widget-basics/destroy">Destroy Widgets</a></li>
+<li><a href="/docs-kendo-china/intro/widget-basics/create-custom-kendo-widget">Create Custom Widgets</a></li>
+<li><a href="/docs-kendo-china/intro/installation/bower-install">Bower Packages</a></li>
+<li><a href="/docs-kendo-china/intro/installation/nuget-install">NuGet Packages</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -467,7 +467,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

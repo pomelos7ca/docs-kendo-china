@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Less-Based Themes | Kendo UI Styles and Appearance</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to define CSS classes in the Kendo UI desktop widgets to change their appearance and customize their style further.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("styles-and-layout/appearance-styling.html")
         });
         </script>
@@ -125,13 +125,13 @@
 
 <p><strong>Figure 1: Kendo UI themes for the Web</strong></p>
 
-<p><img src="/styles-and-layout/web-themes.png" alt="Kendo UI Web Themes"></p>
+<p><img src="/docs-kendo-china/styles-and-layout/web-themes.png" alt="Kendo UI Web Themes"></p>
 
 <p>This is how the same themes are rendered in widgets that visualize data, such as Gauges, Charts, Barcodes, Diagrams, and Maps.</p>
 
 <p><strong>Figure 2: Kendo UI themes for widgets rendering data visualization</strong></p>
 
-<p><img src="/styles-and-layout/dataviz-themes.png" alt="Kendo UI DataViz Themes"></p>
+<p><img src="/docs-kendo-china/styles-and-layout/dataviz-themes.png" alt="Kendo UI DataViz Themes"></p>
 
 <h2 id="getting-started"><a href="#getting-started">Getting Started</a></h2>
 
@@ -227,7 +227,7 @@
 <li>
 <code>/ThemeName/</code>—This is the folder, which contains all images required by the used Kendo UI theme. The folder name matches the theme name, e.g. <code>Default</code>, <code>Bootstrap</code>, <code>Silver</code>, etc. The theme image folders for unused themes can be removed.</li>
 <li>
-<code>/fonts/</code>—This is where the <code>KendoUIGlyphs</code> and <code>DejaVu</code> font files reside. The <code>KendoUIGlyphs</code> font describes the Kendo UI font icons used by the web widgets. The <code>DejaVu</code> font is used by default during <a href="/framework/drawing/drawing-dom">PDF export</a>.</li>
+<code>/fonts/</code>—This is where the <code>KendoUIGlyphs</code> and <code>DejaVu</code> font files reside. The <code>KendoUIGlyphs</code> font describes the Kendo UI font icons used by the web widgets. The <code>DejaVu</code> font is used by default during <a href="/docs-kendo-china/framework/drawing/drawing-dom">PDF export</a>.</li>
 <li>
 <code>/images/</code>—This where the Kendo UI font icons for the mobile widgets reside.</li>
 <li>
@@ -546,7 +546,7 @@
 <li>
 <code>kendo.custom.css</code>—The custom theme for most widgets. You can use this theme instead of any <code>kendo.[theme].css</code> one.</li>
 <li>
-<code>kendo.custom.json</code>—The custom theme for widgets that use <code>SVG</code>/<code>Canvas</code> rendering (charting widgets). Use the contents of this file to <a href="/controls/charts/how-to/appearance/customize-chart-theme">create a custom Chart theme</a>. Set a custom theme name by using the <a href="/api/javascript/dataviz/ui/chart#configuration-theme"><code>theme</code></a>  configuration option.</li>
+<code>kendo.custom.json</code>—The custom theme for widgets that use <code>SVG</code>/<code>Canvas</code> rendering (charting widgets). Use the contents of this file to <a href="/docs-kendo-china/controls/charts/how-to/appearance/customize-chart-theme">create a custom Chart theme</a>. Set a custom theme name by using the <a href="/docs-kendo-china/api/javascript/dataviz/ui/chart#configuration-theme"><code>theme</code></a>  configuration option.</li>
 <li>
 <code>kendo.custom.less</code>—The <a href="http://lesscss.org/">Less</a> that includes the custom theme. Use this file when you compile the theme dynamically.</li>
 </ul>
@@ -557,7 +557,7 @@
 <p><strong>Important</strong></p>
 
 <ul>
-<li>Always register the <a href="/styles-and-layout/appearance-styling#common-css-files">common CSS file</a> on the page, even when using Theme Builder-generated custom themes.</li>
+<li>Always register the <a href="/docs-kendo-china/styles-and-layout/appearance-styling#common-css-files">common CSS file</a> on the page, even when using Theme Builder-generated custom themes.</li>
 <li>Use the common CSS file, which corresponds to the Kendo UI theme that is used as a base for your custom theme. For example, if you have created a custom theme from
 the built-in Material theme, then register <code>kendo.common-material.min.css</code>.</li>
 <li>When you deploy your themed application to an internal network, the images in the Theme Builder output are inferred from the page. If you are using the Theme Builder through the Kendo UI page, the images are located on the Kendo UI CDN and may be blocked if your customers are within an internal network without access to the CDN. In such cases, copy the image resources locally and change the references in the CSS or Less output.</li>
@@ -581,26 +581,26 @@ the built-in Material theme, then register <code>kendo.common-material.min.css</
 
 <h3 id="version-compatibility"><a href="#version-compatibility">Version Compatibility</a></h3>
 
-<p>The Theme Builder generates CSS, Less, and JS code which is compatible with the current official Kendo UI version. If your project requires a custom theme for an older Kendo UI version, implement it through <a href="/styles-and-layout/appearance-styling#customize-appearance">manual coding or overrides</a>.</p>
+<p>The Theme Builder generates CSS, Less, and JS code which is compatible with the current official Kendo UI version. If your project requires a custom theme for an older Kendo UI version, implement it through <a href="/docs-kendo-china/styles-and-layout/appearance-styling#customize-appearance">manual coding or overrides</a>.</p>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <p>Other articles on styling, appearance, and rendering of Kendo UI widgets:</p>
 
 <ul>
-<li><a href="/styles-and-layout/sass-themes#sass-theme-builder">Sass ThemeBuilder Overview</a></li>
-<li><a href="/styles-and-layout/using-kendo-in-responsive-web-pages">Responsive Web Design</a></li>
-<li><a href="/styles-and-layout/icons-web">Web Font Icons</a></li>
-<li><a href="/styles-and-layout/how-to/change-themes-on-the-client">How to Change Themes on the Client</a></li>
-<li><a href="/styles-and-layout/rendering">Rendering Modes for Data Visualization</a></li>
-<li><a href="/styles-and-layout/troubleshoot/troubleshooting">Troubleshooting</a></li>
-<li><a href="/controls/hybrid/styling">Themes and Appearance of the Kendo UI Hybrid Widgets</a></li>
+<li><a href="/docs-kendo-china/styles-and-layout/sass-themes#sass-theme-builder">Sass ThemeBuilder Overview</a></li>
+<li><a href="/docs-kendo-china/styles-and-layout/using-kendo-in-responsive-web-pages">Responsive Web Design</a></li>
+<li><a href="/docs-kendo-china/styles-and-layout/icons-web">Web Font Icons</a></li>
+<li><a href="/docs-kendo-china/styles-and-layout/how-to/change-themes-on-the-client">How to Change Themes on the Client</a></li>
+<li><a href="/docs-kendo-china/styles-and-layout/rendering">Rendering Modes for Data Visualization</a></li>
+<li><a href="/docs-kendo-china/styles-and-layout/troubleshoot/troubleshooting">Troubleshooting</a></li>
+<li><a href="/docs-kendo-china/controls/hybrid/styling">Themes and Appearance of the Kendo UI Hybrid Widgets</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -665,7 +665,7 @@ the built-in Material theme, then register <code>kendo.common-material.min.css</
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

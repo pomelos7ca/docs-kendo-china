@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="data_source">
         <title>CRUD Data Operations | Kendo UI Data Source</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to use the Kendo UI DataSource component for CRUD data operations.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("framework/datasource/crud.html")
         });
         </script>
@@ -131,7 +131,7 @@
 
 <p>The DataSource component can work with local data or remote data. In both cases the CRUD operations are managed by the Kendo UI DataSource <code>transport</code>. This is a JavaScript object that can be configured to execute predefined functions or make requests to predefined URLs on certain events.</p>
 
-<p>For detailed information on the DataSource <code>transport</code>, refer to the <a href="/api/javascript/data/datasource#configuration-transport">DataSource API documentation</a>.</p>
+<p>For detailed information on the DataSource <code>transport</code>, refer to the <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-transport">DataSource API documentation</a>.</p>
 
 <blockquote>
 <p><strong>Important</strong></p>
@@ -151,7 +151,7 @@
 
 <p>You must configure the first two settings no matter whether local or remote CRUD operations are used. The only case when they are not needed is for scenarios when all data fields are of the string type and there is no editing.</p>
 
-<p>For detailed information on the DataSource <code>schema</code>, refer to the <a href="/api/javascript/data/datasource#configuration-schema">DataSource API documentation</a>.</p>
+<p>For detailed information on the DataSource <code>schema</code>, refer to the <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-schema">DataSource API documentation</a>.</p>
 
 <h2 id="local-or-custom-transport-crud-operations"><a href="#local-or-custom-transport-crud-operations">Local or Custom Transport CRUD Operations</a></h2>
 
@@ -186,7 +186,7 @@
 
 <p>Executing the <code>success</code> method of the <code>read</code> function argument populates the DataSource instance and fire its <code>change</code> event. Executing the <code>error</code> method fires the <code>error</code> event of the DataSource, which can be handled.</p>
 
-<p>For more information on handling errors in such scenarios, refer to the section about <a href="/framework/datasource/crud#local-or-custom-transport-error-handling">error handling with local transport</a>.</p>
+<p>For more information on handling errors in such scenarios, refer to the section about <a href="/docs-kendo-china/framework/datasource/crud#local-or-custom-transport-error-handling">error handling with local transport</a>.</p>
 
 <h3 id="update-local"><a href="#update-local">Update (Local)</a></h3>
 
@@ -223,8 +223,8 @@
 <ul>
 <li>The Kendo UI DataSource uses the ID value to determine whether a data item is new or existing.</li>
 <li>If the ID value is <code>zero</code>, it is assumed that the data item is new, so the <code>create</code> function is executed.</li>
-<li>If you need to use zero ID values, then change the <a href="/api/javascript/data/model#methods-Model.define"><code>defaultValue</code></a> of the ID field to -1 in
-<a href="/api/javascript/data/datasource#configuration-schema.model"><code>schema.model.fields</code></a>.</li>
+<li>If you need to use zero ID values, then change the <a href="/docs-kendo-china/api/javascript/data/model#methods-Model.define"><code>defaultValue</code></a> of the ID field to -1 in
+<a href="/docs-kendo-china/api/javascript/data/datasource#configuration-schema.model"><code>schema.model.fields</code></a>.</li>
 </ul>
 </blockquote>
 
@@ -235,7 +235,7 @@
 <ul>
 <li>The newly created data items have no ID, so they must be added by the function script or returned by the remote service.</li>
 <li>The newly created data items must be returned in the <code>success</code> method with their IDs assigned. Otherwise, the DataSource instance is going to operate with incorrect data and subsequent data operations can fail.</li>
-<li>If the <a href="/api/javascript/data/datasource#configuration-schema.data"><code>schema.data</code></a> configuration is set, the <code>success</code> method should receive the created data item in an object <em>with the same structure</em> as the object that is passed to the <code>success</code> method of the <code>read</code> function. See the example below.</li>
+<li>If the <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-schema.data"><code>schema.data</code></a> configuration is set, the <code>success</code> method should receive the created data item in an object <em>with the same structure</em> as the object that is passed to the <code>success</code> method of the <code>read</code> function. See the example below.</li>
 </ul>
 
 <h6>Example</h6>
@@ -266,7 +266,7 @@
 
 <!--*-->
 
-<p>Also, check the notes on IDs in the above <a href="/framework/datasource/crud#update-local">Update (Local)</a> section.</p>
+<p>Also, check the notes on IDs in the above <a href="/docs-kendo-china/framework/datasource/crud#update-local">Update (Local)</a> section.</p>
 
 <h3 id="destroy-local"><a href="#destroy-local">Destroy (Local)</a></h3>
 
@@ -317,7 +317,7 @@
 
 <p>The complete example below uses the information above to demonstrate CRUD operations with simple Products data. <code>original datasource</code> signifies the <code>sampleData</code> variable, which is used to populate the Grid initially. All data operations are persisted in this variable, so that it can be used or submitted somewhere else.</p>
 
-<p>It is not recommended to use an <a href="/api/javascript/data/observablearray"><code>ObservableArray</code></a> instead of a plain JavaScript array in the example below. The Kendo UI DataSource will wrap the provided plain array and transform it to a collection of <a href="/api/javascript/data/observableobject"><code>ObservableObjects</code></a> automatically.</p>
+<p>It is not recommended to use an <a href="/docs-kendo-china/api/javascript/data/observablearray"><code>ObservableArray</code></a> instead of a plain JavaScript array in the example below. The Kendo UI DataSource will wrap the provided plain array and transform it to a collection of <a href="/docs-kendo-china/api/javascript/data/observableobject"><code>ObservableObjects</code></a> automatically.</p>
 
 <h6>Example</h6>
 
@@ -439,11 +439,11 @@
 <li>The client request and expected server response <code>dataType</code> can be <code>"json"</code>, <code>"jsonp"</code>, <code>"odata"</code>, etc.</li>
 </ul>
 
-<p>For detailed information on these settings, refer to the <a href="/api/javascript/data/datasource">article about the Kendo UI DataSource API</a>.</p>
+<p>For detailed information on these settings, refer to the <a href="/docs-kendo-china/api/javascript/data/datasource">article about the Kendo UI DataSource API</a>.</p>
 
 <h3 id="read-remote"><a href="#read-remote">Read (Remote)</a></h3>
 
-<p>The <code>read</code> service defined by the DataSource transport should return data in the expected format—JSON, JSONP, XML, oData. By default, the expected format is JSON. If the response is not a plain array of objects, a <a href="/api/javascript/data/datasource#configuration-schema"><code>schema</code></a> must be defined, which will describe the structure of the response and especially, <a href="/api/javascript/data/datasource#configuration-schema.data">where the data is</a>.</p>
+<p>The <code>read</code> service defined by the DataSource transport should return data in the expected format—JSON, JSONP, XML, oData. By default, the expected format is JSON. If the response is not a plain array of objects, a <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-schema"><code>schema</code></a> must be defined, which will describe the structure of the response and especially, <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-schema.data">where the data is</a>.</p>
 
 <p>The example below uses a <code>read</code> transport configuration. The assumed server response is a plain JSON array of objects.</p>
 
@@ -474,7 +474,7 @@ var dataSource = new kendo.data.DataSource({
 
 <!--*-->
 
-<p>Here is a modified version of the above example, which requires the usage of a <code>schema</code>, due to the more complex response structure. The declared <code>itemCount</code> does not match the number of returned items, which is normal when using <a href="/api/javascript/data/datasource#configuration-serverPaging">server paging</a>—the server response contains only the items from the current page, but information about the <a href="/api/javascript/data/datasource#configuration-schema.total">total number of items</a> is provided, so that a correct paging interface can be generated, if needed.</p>
+<p>Here is a modified version of the above example, which requires the usage of a <code>schema</code>, due to the more complex response structure. The declared <code>itemCount</code> does not match the number of returned items, which is normal when using <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-serverPaging">server paging</a>—the server response contains only the items from the current page, but information about the <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-schema.total">total number of items</a> is provided, so that a correct paging interface can be generated, if needed.</p>
 
 <h6>Example</h6>
 
@@ -513,15 +513,15 @@ var dataSource = new kendo.data.DataSource({
 
 <p>If an error in the server code occurs, the server response can notify the client-side DataSource instance.</p>
 
-<p>For more information on handling errors in such scenarios, refer to the section about <a href="/framework/datasource/crud#error-handling-with-remote-transport">error handling with remote transport</a>.</p>
+<p>For more information on handling errors in such scenarios, refer to the section about <a href="/docs-kendo-china/framework/datasource/crud#error-handling-with-remote-transport">error handling with remote transport</a>.</p>
 
-<p>For more information on handling repetitive requests performed while filtering in ASP.NET, refer to <a href="/controls/editors/dropdownlist/troubleshoot/troubleshooting#repetitive-requests-are-performed-while-filtering-in-aspnet">this troubleshooting topic</a>.</p>
+<p>For more information on handling repetitive requests performed while filtering in ASP.NET, refer to <a href="/docs-kendo-china/controls/editors/dropdownlist/troubleshoot/troubleshooting#repetitive-requests-are-performed-while-filtering-in-aspnet">this troubleshooting topic</a>.</p>
 
 <h3 id="update-remote"><a href="#update-remote">Update (Remote)</a></h3>
 
 <p>The <code>update</code> service expects the edited data items and should return the same items (including all data fields) as a confirmation of the successful save operation. An empty response is also treated as a valid success response.</p>
 
-<p>If <a href="/api/javascript/data/datasource#configuration-schema.data"><code>schema.data</code></a> is set and the server response is not empty, then the server response must have <em>the same structure</em>, as the response of the <code>read</code> request.</p>
+<p>If <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-schema.data"><code>schema.data</code></a> is set and the server response is not empty, then the server response must have <em>the same structure</em>, as the response of the <code>read</code> request.</p>
 
 <p>The example below demonstrates a case with no <code>schema.data</code>.</p>
 
@@ -590,13 +590,13 @@ var dataSource = new kendo.data.DataSource({
 
 <!--*-->
 
-<p>Also, check the notes on IDs in the above <a href="/framework/datasource/crud#update-local">Update (Local)</a> section.</p>
+<p>Also, check the notes on IDs in the above <a href="/docs-kendo-china/framework/datasource/crud#update-local">Update (Local)</a> section.</p>
 
 <h3 id="create-remote"><a href="#create-remote">Create (Remote)</a></h3>
 
 <p>The <code>create</code> action should perform a similar routine as <code>update</code>, with one notable difference—the newly created data items have no IDs, so they must be assigned server-side and returned by the remote service.</p>
 
-<p>If <a href="/api/javascript/data/datasource#configuration-schema.data"><code>schema.data</code></a> is set, then the server response should have the <strong>same structure</strong>, as the response of the <code>read</code> request. See example below.</p>
+<p>If <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-schema.data"><code>schema.data</code></a> is set, then the server response should have the <strong>same structure</strong>, as the response of the <code>read</code> request. See example below.</p>
 
 <h6>Example with no schema.data</h6>
 
@@ -657,7 +657,7 @@ var dataSource = new kendo.data.DataSource({
 
 <!--*-->
 
-<p>Also, check the notes on IDs in the above <a href="/framework/datasource/crud#update-local">Update (Local)</a> section.</p>
+<p>Also, check the notes on IDs in the above <a href="/docs-kendo-china/framework/datasource/crud#update-local">Update (Local)</a> section.</p>
 
 <h3 id="destroy-remote"><a href="#destroy-remote">Destroy (Remote)</a></h3>
 
@@ -698,7 +698,7 @@ var dataSource = new kendo.data.DataSource({
 
 <ul>
 <li>A standard error can be returned via an empty response and an <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status code</a>.</li>
-<li>A custom error can be returned with a <code>200</code> HTTP status code and an error message assigned to an <code>errors</code> field in the response, or any other field, specified in <a href="/api/javascript/data/datasource#configuration-schema.errors"><code>schema.errors</code></a>.</li>
+<li>A custom error can be returned with a <code>200</code> HTTP status code and an error message assigned to an <code>errors</code> field in the response, or any other field, specified in <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-schema.errors"><code>schema.errors</code></a>.</li>
 </ul>
 
 <!-- exit list -->
@@ -766,7 +766,7 @@ var dataSource = new kendo.data.DataSource({
 
 <!--*-->
 
-<p>When an <code>error</code> event is fired, the DataSource does not process any data items, which may also be part of the server response. For example, if an update action fails due to conflicting edits, and the data needs to be refreshed from the server, you need to call the <a href="/api/javascript/data/datasource#methods-read"><code>read</code></a> method of the DataSource in the error handler. Sending the new data together with the error response is not going to populate the DataSource with the new values.</p>
+<p>When an <code>error</code> event is fired, the DataSource does not process any data items, which may also be part of the server response. For example, if an update action fails due to conflicting edits, and the data needs to be refreshed from the server, you need to call the <a href="/docs-kendo-china/api/javascript/data/datasource#methods-read"><code>read</code></a> method of the DataSource in the error handler. Sending the new data together with the error response is not going to populate the DataSource with the new values.</p>
 
 <h2 id="sample-apps-and-examples"><a href="#sample-apps-and-examples">Sample Apps and Examples</a></h2>
 
@@ -787,17 +787,17 @@ var dataSource = new kendo.data.DataSource({
 <p>Other articles on the Kendo UI DataSource component:</p>
 
 <ul>
-<li><a href="/framework/datasource/overview">DataSource Overview</a></li>
-<li><a href="/framework/datasource/basic-usage">Basic Usage</a></li>
-<li><a href="/framework/datasource/offline">Offline Support</a></li>
-<li><a href="/framework/datasource/cors">CORS Data Fetching from Another Domain</a></li>
-<li><a href="/api/javascript/data/datasource">DataSource JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/framework/datasource/overview">DataSource Overview</a></li>
+<li><a href="/docs-kendo-china/framework/datasource/basic-usage">Basic Usage</a></li>
+<li><a href="/docs-kendo-china/framework/datasource/offline">Offline Support</a></li>
+<li><a href="/docs-kendo-china/framework/datasource/cors">CORS Data Fetching from Another Domain</a></li>
+<li><a href="/docs-kendo-china/api/javascript/data/datasource">DataSource JavaScript API Reference</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -862,7 +862,7 @@ var dataSource = new kendo.data.DataSource({
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

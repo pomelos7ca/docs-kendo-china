@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="combobox">
         <title>Grouping | Kendo UI ComboBox</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to configure grouping in the Kendo UI ComboBox, DropDownList, AutoComplete and MultiSelect widgets.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("controls/editors/combobox/grouping.html")
         });
         </script>
@@ -121,7 +121,7 @@
             
              <h1 id="grouping"><a href="#grouping">Grouping</a></h1>
 
-<p>As of the Kendo UI Q1 2015 (2015.1.318) release, the <a href="http://demos.telerik.com/kendo-ui/autocomplete/index">Kendo UI AutoComplete</a>, the <a href="http://demos.telerik.com/kendo-ui/combobox/index">ComboBox</a>, the <a href="http://demos.telerik.com/kendo-ui/dropdownlist/index">DropDownList</a> and the <a href="http://demos.telerik.com/kendo-ui/multiselect/index">MultiSelect</a> widgets support binding to a grouped <a href="/framework/datasource/overview">DataSource</a>.</p>
+<p>As of the Kendo UI Q1 2015 (2015.1.318) release, the <a href="http://demos.telerik.com/kendo-ui/autocomplete/index">Kendo UI AutoComplete</a>, the <a href="http://demos.telerik.com/kendo-ui/combobox/index">ComboBox</a>, the <a href="http://demos.telerik.com/kendo-ui/dropdownlist/index">DropDownList</a> and the <a href="http://demos.telerik.com/kendo-ui/multiselect/index">MultiSelect</a> widgets support binding to a grouped <a href="/docs-kendo-china/framework/datasource/overview">DataSource</a>.</p>
 
 <p>This functionality allows you to display data items categorized by a specific model field. For more information on the data source grouping functionality, refer to the <a href="http://docs.telerik.com/kendo-ui/api/javascript/data/datasource#configuration-group">group configuration article</a>.</p>
 
@@ -161,7 +161,7 @@
 <blockquote>
 <p><strong>Important</strong></p>
 
-<p>The grouped data will be sorted either in ascending or descending order. This behavior is expected and cannot be modified. To group the data in a specific order, use <a href="/api/javascript/data/datasource#configuration-serverGrouping">server grouping</a>.</p>
+<p>The grouped data will be sorted either in ascending or descending order. This behavior is expected and cannot be modified. To group the data in a specific order, use <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-serverGrouping">server grouping</a>.</p>
 </blockquote>
 
 <h2 id="customization"><a href="#customization">Customization</a></h2>
@@ -237,19 +237,19 @@
 <p>Other articles on the Kendo UI ComboBox:</p>
 
 <ul>
-<li><a href="/controls/editors/combobox/how-to/customize/bypass-boundary-detection">How to Bypass Boundary Detection</a></li>
-<li><a href="/controls/editors/combobox/how-to/filtering/clear-filter-on-open">How to Clear Filter on Open</a></li>
-<li><a href="/controls/editors/combobox/how-to/mvvm/declarative-init-combo-with-templates">How to Declaratively Initialize ComboBox with Templates</a></li>
-<li><a href="/controls/editors/combobox/how-to/AngularJS/detect-when-all-widgets-are-bound">How to Detect When All Widgets Are Bound</a></li>
-<li><a href="/controls/editors/combobox/how-to/cascade/disable-child-combo">How to Disable Child Cascading ComboBoxes</a></li>
-<li><a href="/controls/editors/combobox/how-to/appearance/expand-list-item-background">How to Expand Background of Long List Items</a></li>
-<li><a href="/api/javascript/ui/combobox">ComboBox JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/controls/editors/combobox/how-to/customize/bypass-boundary-detection">How to Bypass Boundary Detection</a></li>
+<li><a href="/docs-kendo-china/controls/editors/combobox/how-to/filtering/clear-filter-on-open">How to Clear Filter on Open</a></li>
+<li><a href="/docs-kendo-china/controls/editors/combobox/how-to/mvvm/declarative-init-combo-with-templates">How to Declaratively Initialize ComboBox with Templates</a></li>
+<li><a href="/docs-kendo-china/controls/editors/combobox/how-to/AngularJS/detect-when-all-widgets-are-bound">How to Detect When All Widgets Are Bound</a></li>
+<li><a href="/docs-kendo-china/controls/editors/combobox/how-to/cascade/disable-child-combo">How to Disable Child Cascading ComboBoxes</a></li>
+<li><a href="/docs-kendo-china/controls/editors/combobox/how-to/appearance/expand-list-item-background">How to Expand Background of Long List Items</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/combobox">ComboBox JavaScript API Reference</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -314,7 +314,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

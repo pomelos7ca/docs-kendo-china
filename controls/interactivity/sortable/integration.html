@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="sortable">
         <title>Integration with Grid and ListView | Kendo UI Sortable</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to reorder Kendo UI Grid and ListView items with the Kendo UI Sortable widget.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("controls/interactivity/sortable/integration.html")
         });
         </script>
@@ -128,9 +128,9 @@
 <p>Before going on reading, make sure you are familiar with the following topics:</p>
 
 <ul>
-<li><a href="/controls/interactivity/sortable/overview">Overview of the Sortable Widget</a></li>
-<li><a href="/controls/data-management/grid/overview">Overview of Kendo UI Grid</a></li>
-<li><a href="/api/javascript/data/datasource#methods">Kendo UI DataSource API</a></li>
+<li><a href="/docs-kendo-china/controls/interactivity/sortable/overview">Overview of the Sortable Widget</a></li>
+<li><a href="/docs-kendo-china/controls/data-management/grid/overview">Overview of Kendo UI Grid</a></li>
+<li><a href="/docs-kendo-china/api/javascript/data/datasource#methods">Kendo UI DataSource API</a></li>
 </ul>
 
 <h2 id="reordering-of-items"><a href="#reordering-of-items">Reordering of Items</a></h2>
@@ -145,12 +145,12 @@
 
 <h3 id="reorder-grid-table-rows"><a href="#reorder-grid-table-rows">Reorder Grid Table Rows</a></h3>
 
-<p>To reorder the table rows of the Grid, initialize the Sortable widget on the Grid's <a href="/api/javascript/ui/grid#fields-table"><code>table</code> element</a>. Normally, the <code>filter</code> property of the Sortable should select all <code>tr</code> elements that are direct children of the table's <code>tbody</code> element, e.g. <code>filter: "&gt;tbody &gt;tr"</code>.</p>
+<p>To reorder the table rows of the Grid, initialize the Sortable widget on the Grid's <a href="/docs-kendo-china/api/javascript/ui/grid#fields-table"><code>table</code> element</a>. Normally, the <code>filter</code> property of the Sortable should select all <code>tr</code> elements that are direct children of the table's <code>tbody</code> element, e.g. <code>filter: "&gt;tbody &gt;tr"</code>.</p>
 
 <blockquote>
 <p><strong>Important</strong>  </p>
 
-<p>In an AngularJS application initialize the Sortable widget as a parent directive. The <code>filter</code> configuration option selects all <code>tr</code> elements that are children of the <code>.k-grid</code> wrapper. For detailed information, refer to <a href="/controls/interactivity/sortable/how-to/AngularJS/use-sortable-grid-angular">this example</a>.</p>
+<p>In an AngularJS application initialize the Sortable widget as a parent directive. The <code>filter</code> configuration option selects all <code>tr</code> elements that are children of the <code>.k-grid</code> wrapper. For detailed information, refer to <a href="/docs-kendo-china/controls/interactivity/sortable/how-to/AngularJS/use-sortable-grid-angular">this example</a>.</p>
 </blockquote>
 
 <h3 id="set-hint-in-grid"><a href="#set-hint-in-grid">Set Hint in Grid</a></h3>
@@ -206,7 +206,7 @@
 
 <p>If the Grid is configured to display details, use a selector that matches only the master Grid rows, e.g. <code>filter: "&gt;tbody &gt;tr.k-master-row"</code>. In this way the detail rows will not be draggable.</p>
 
-<p>For additional information on the Sortable events, refer to the <a href="/api/javascript/ui/sortable#events">JavaScript API article on Sortable events</a> and the <a href="http://demos.telerik.com/kendo-ui/web/sortable/integration-grid.html">Grid/Sortable integration demo</a>.</p>
+<p>For additional information on the Sortable events, refer to the <a href="/docs-kendo-china/api/javascript/ui/sortable#events">JavaScript API article on Sortable events</a> and the <a href="http://demos.telerik.com/kendo-ui/web/sortable/integration-grid.html">Grid/Sortable integration demo</a>.</p>
 
 <h3 id="grid-in-inline-and-popup-editing-modes"><a href="#grid-in-inline-and-popup-editing-modes">Grid in Inline and Popup Editing Modes</a></h3>
 
@@ -231,7 +231,7 @@
 <p>The <code>data-value-update</code> approach works with regular inputs. However, you must configure the Kendo UI widgets manually as they do not support the <code>data-value-update</code> attribute.</p>
 </blockquote>
 
-<p>For runnable examples, refer to the article on <a href="/controls/interactivity/sortable/how-to/use-sortable-grid">how to use the Sortable with Grids in incell editing mode</a>, or to the article on <a href="/controls/interactivity/sortable/how-to/AngularJS/use-sortable-grid-angular">how to use the Sortable with Grids in batch editing mode within an AngularJS application</a>.</p>
+<p>For runnable examples, refer to the article on <a href="/docs-kendo-china/controls/interactivity/sortable/how-to/use-sortable-grid">how to use the Sortable with Grids in incell editing mode</a>, or to the article on <a href="/docs-kendo-china/controls/interactivity/sortable/how-to/AngularJS/use-sortable-grid-angular">how to use the Sortable with Grids in batch editing mode within an AngularJS application</a>.</p>
 
 <h2 id="sortable-and-listview"><a href="#sortable-and-listview">Sortable and ListView</a></h2>
 
@@ -243,9 +243,9 @@
 
 <p>If the editing functionality of the ListView is enabled, use a more specific filter selector that excludes the item, which is currently in editing mode, e.g. <code>.filter("&gt;div:not(.k-edit-item)"</code>. In this way the Sortable functionality will not interfere with the editing feature of the ListView.</p>
 
-<p>The ListView <code>dataItems</code> can be reordered in <a href="/controls/interactivity/sortable/integration#reorder-grid-table-rows">the same way as the Grid ones</a>.</p>
+<p>The ListView <code>dataItems</code> can be reordered in <a href="/docs-kendo-china/controls/interactivity/sortable/integration#reorder-grid-table-rows">the same way as the Grid ones</a>.</p>
 
-<p>For additional information on the Sortable events, refer to the <a href="/api/javascript/ui/sortable#events">JavaScript API article on Sortable events</a> and the <a href="http://demos.telerik.com/kendo-ui/web/sortable/integration-listview.html">ListView/Sortable integration demo</a>.</p>
+<p>For additional information on the Sortable events, refer to the <a href="/docs-kendo-china/api/javascript/ui/sortable#events">JavaScript API article on Sortable events</a> and the <a href="http://demos.telerik.com/kendo-ui/web/sortable/integration-listview.html">ListView/Sortable integration demo</a>.</p>
 
 <h2 id="sortable-and-datasource"><a href="#sortable-and-datasource">Sortable and DataSource</a></h2>
 
@@ -326,14 +326,14 @@ The Sortable widget uses the index of the DOM elements. When the Grid displays g
 <p>Other articles on Kendo UI Sortable:</p>
 
 <ul>
-<li><a href="/controls/interactivity/sortable/integration-tabstrip">Integration with TabStrip</a></li>
-<li><a href="/api/javascript/ui/sortable">Sortable JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/controls/interactivity/sortable/integration-tabstrip">Integration with TabStrip</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/sortable">Sortable JavaScript API Reference</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -398,7 +398,7 @@ The Sortable widget uses the index of the DOM elements. When the Grid displays g
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

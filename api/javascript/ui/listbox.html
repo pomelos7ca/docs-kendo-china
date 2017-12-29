@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="listbox">
         <title>ListBox</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Configuration, methods and events of the Kendo UI ListBox">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("api/javascript/ui/listbox.html")
         });
         </script>
@@ -129,7 +129,7 @@
 <a href="#configuration-autoBind">autoBind </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
 </h3>
 
-<p>If set to <code>false</code>, the widget will not bind to the data source during initialization. In this case, the data binding will occur when the <a href="/api/javascript/data/datasource#events-change"><code>change</code></a> event of the data source is fired. By default, the ListBox will bind to the data source that is specified in the configuration.</p>
+<p>If set to <code>false</code>, the widget will not bind to the data source during initialization. In this case, the data binding will occur when the <a href="/docs-kendo-china/api/javascript/data/datasource#events-change"><code>change</code></a> event of the data source is fired. By default, the ListBox will bind to the data source that is specified in the configuration.</p>
 
 <blockquote>
 <p>Setting <code>autoBind</code> to <code>false</code> is useful when multiple widgets are bound to the same data source. Disabling automatic binding ensures that the shared data source does not make more than one request to the remote service.</p>
@@ -159,8 +159,8 @@ dataSource.read(); // "read()" will fire the "change" event of the dataSource an
 
 <blockquote>
 <ul>
-<li>It is not recommended to set the same <code>connectWith</code> option on two or more ListBoxes because the behavior of the <code>transferFrom</code> and <code>transferAllFrom</code> <a href="/api/javascript/ui/listbox#configuration-toolbar.tools">tools</a> is not deterministic.</li>
-<li>Configuring a bi-directional relationship between two ListBoxes results in duplicated behavior of their <code>transferTo</code> and <code>transferFrom</code> options, and <code>transferAllTo</code> and <code>transferAllFrom</code> tools. If your project does not require such behavior, remove some of the relationships from the <a href="/api/javascript/ui/listbox#configuration-toolbar.tools">tools</a> option.</li>
+<li>It is not recommended to set the same <code>connectWith</code> option on two or more ListBoxes because the behavior of the <code>transferFrom</code> and <code>transferAllFrom</code> <a href="/docs-kendo-china/api/javascript/ui/listbox#configuration-toolbar.tools">tools</a> is not deterministic.</li>
+<li>Configuring a bi-directional relationship between two ListBoxes results in duplicated behavior of their <code>transferTo</code> and <code>transferFrom</code> options, and <code>transferAllTo</code> and <code>transferAllFrom</code> tools. If your project does not require such behavior, remove some of the relationships from the <a href="/docs-kendo-china/api/javascript/ui/listbox#configuration-toolbar.tools">tools</a> option.</li>
 </ul>
 </blockquote>
 
@@ -231,14 +231,14 @@ dataSource.read(); // "read()" will fire the "change" event of the dataSource an
 </code></pre>
 
 <h3 id="configuration-dataSource">
-<a href="#configuration-dataSource">dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<a href="#configuration-dataSource">dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h3>
 
-<p>The data source of the widget which is used render ListBox items. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array, or an existing <a href="/api/javascript/data/datasource"><code>kendo.data.DataSource</code></a> instance.</p>
+<p>The data source of the widget which is used render ListBox items. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array, or an existing <a href="/docs-kendo-china/api/javascript/data/datasource"><code>kendo.data.DataSource</code></a> instance.</p>
 
-<p>If the <code>dataSource</code> option is set to a JavaScript object or array, the widget initializes a new <a href="/api/javascript/data/datasource"><code>kendo.data.DataSource</code></a> instance by using that value as the data source configuration.</p>
+<p>If the <code>dataSource</code> option is set to a JavaScript object or array, the widget initializes a new <a href="/docs-kendo-china/api/javascript/data/datasource"><code>kendo.data.DataSource</code></a> instance by using that value as the data source configuration.</p>
 
-<p>If the <code>dataSource</code> option is an existing <a href="/api/javascript/data/datasource"><code>kendo.data.DataSource</code></a> instance, the widget uses that instance and does <em>not</em> initialize a new one.</p>
+<p>If the <code>dataSource</code> option is an existing <a href="/docs-kendo-china/api/javascript/data/datasource"><code>kendo.data.DataSource</code></a> instance, the widget uses that instance and does <em>not</em> initialize a new one.</p>
 
 <h4>Example - set dataSource as a JavaScript object</h4>
 
@@ -895,13 +895,13 @@ $("#listBox").kendoListBox({
 <li>
 <code>"remove"</code> - Removes the selected ListBox items.</li>
 <li>
-<code>"transferTo"</code> - Moves the selected items from the current ListBox to the target that is defined in the <a href="/api/javascript/ui/listbox#configuration-connectWith"><code>connectWith</code></a> option.</li>
+<code>"transferTo"</code> - Moves the selected items from the current ListBox to the target that is defined in the <a href="/docs-kendo-china/api/javascript/ui/listbox#configuration-connectWith"><code>connectWith</code></a> option.</li>
 <li>
-<code>"transferFrom"</code> - Moves the selected items from the ListBox that is defined in the <a href="/api/javascript/ui/listbox#configuration-connectWith"><code>connectWith</code></a> option to the current ListBox.</li>
+<code>"transferFrom"</code> - Moves the selected items from the ListBox that is defined in the <a href="/docs-kendo-china/api/javascript/ui/listbox#configuration-connectWith"><code>connectWith</code></a> option to the current ListBox.</li>
 <li>
-<code>"transferAllTo"</code> - Moves all items from the current ListBox to the target that is defined in the <a href="/api/javascript/ui/listbox#configuration-connectWith"><code>connectWith</code></a> option.</li>
+<code>"transferAllTo"</code> - Moves all items from the current ListBox to the target that is defined in the <a href="/docs-kendo-china/api/javascript/ui/listbox#configuration-connectWith"><code>connectWith</code></a> option.</li>
 <li>
-<code>"transferAllFrom"</code> - Moves all items from the ListBox that is defined in the <a href="/api/javascript/ui/listbox#configuration-connectWith"><code>connectWith</code></a> option to the current ListBox.</li>
+<code>"transferAllFrom"</code> - Moves all items from the ListBox that is defined in the <a href="/docs-kendo-china/api/javascript/ui/listbox#configuration-connectWith"><code>connectWith</code></a> option to the current ListBox.</li>
 </ul>
 
 <h4>Example</h4>
@@ -1072,7 +1072,7 @@ listBox.enable(".k-item:first", false);
 
 <h3 id="methods-items"><a href="#methods-items">items</a></h3>
 
-<p>Obtains an array of the DOM elements which correspond to the data items from the <a href="/api/javascript/data/datasource#methods-view"><code>view</code></a> method of the Kendo UI DataSource.</p>
+<p>Obtains an array of the DOM elements which correspond to the data items from the <a href="/docs-kendo-china/api/javascript/data/datasource#methods-view"><code>view</code></a> method of the Kendo UI DataSource.</p>
 
 <h4>Returns</h4>
 
@@ -1217,7 +1217,7 @@ listBox.select(listBox.items().first());
 
 <h4>Parameters</h4>
 
-<h5>dataSource <a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<h5>dataSource <a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h5>
 
 <h4>Example</h4>
@@ -1656,7 +1656,7 @@ listBox.remove(listBox.items().first());
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -1721,7 +1721,7 @@ listBox.remove(listBox.items().first());
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

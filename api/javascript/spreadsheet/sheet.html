@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Configuration, methods and events of Kendo UI Spreadsheet Sheet Instance object</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("api/javascript/spreadsheet/sheet.html")
         });
         </script>
@@ -123,15 +123,15 @@
             
              <h1 id="kendospreadsheetsheet"><a href="#kendospreadsheetsheet">kendo.spreadsheet.Sheet</a></h1>
 
-<p>Represents a sheet instance in the <a href="/api/javascript/ui/spreadsheet">Kendo UI Spreadsheet</a> widget. Inherits from <a href="/api/javascript/observable">Observable</a>.</p>
+<p>Represents a sheet instance in the <a href="/docs-kendo-china/api/javascript/ui/spreadsheet">Kendo UI Spreadsheet</a> widget. Inherits from <a href="/docs-kendo-china/api/javascript/observable">Observable</a>.</p>
 
 <h2 id="fields"><a href="#fields">Fields</a></h2>
 
 <h3 id="fields-dataSource">
-<a href="#fields-dataSource">dataSource </a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<a href="#fields-dataSource">dataSource </a><a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h3>
 
-<p>The <a href="/framework/datasource/overview">DataSource</a> instance to which the Sheet is bound to.</p>
+<p>The <a href="/docs-kendo-china/framework/datasource/overview">DataSource</a> instance to which the Sheet is bound to.</p>
 
 <h4>Example</h4>
 
@@ -323,12 +323,12 @@
 
 <h3 id="methods-fromJSON"><a href="#methods-fromJSON">fromJSON</a></h3>
 
-<p>Loads the sheet from an object in the format defined in the <a href="/api/javascript/ui/spreadsheet#configuration.sheets">sheet configuration</a>.</p>
+<p>Loads the sheet from an object in the format defined in the <a href="/docs-kendo-china/api/javascript/ui/spreadsheet#configuration.sheets">sheet configuration</a>.</p>
 
 <blockquote>
 <p>The configuration and cell values will be merged.</p>
 
-<p><strong>Note:</strong> the Sheet objects are not resizable.  If you use this method you must make sure that the JSON does not contain more rows or columns than defined when the <code>Spreadsheet</code> object has been constructed.  To reload a full spreadsheet from JSON, we recommend using Spreadsheet's <a href="/api/javascript/ui/spreadsheet#methods-fromJSON">fromJSON</a> method.</p>
+<p><strong>Note:</strong> the Sheet objects are not resizable.  If you use this method you must make sure that the JSON does not contain more rows or columns than defined when the <code>Spreadsheet</code> object has been constructed.  To reload a full spreadsheet from JSON, we recommend using Spreadsheet's <a href="/docs-kendo-china/api/javascript/ui/spreadsheet#methods-fromJSON">fromJSON</a> method.</p>
 </blockquote>
 
 <h4>Parameters</h4>
@@ -575,7 +575,7 @@
 
 <h3 id="methods-range"><a href="#methods-range">range</a></h3>
 
-<p>Returns a <a href="/api/javascript/spreadsheet/range">Range</a> for the given range specification.</p>
+<p>Returns a <a href="/docs-kendo-china/api/javascript/spreadsheet/range">Range</a> for the given range specification.</p>
 
 <h4>Parameters</h4>
 
@@ -662,11 +662,11 @@
 
 <h3 id="methods-setDataSource"><a href="#methods-setDataSource">setDataSource</a></h3>
 
-<p>Binds the sheet to a DataSource instance. For more information on the data-binding Spreadsheet functionality, refer to the <a href="/controls/data-management/spreadsheet/import-and-export-data/bind-to-data-source">article on binding the Spreadsheet to a data source</a>.</p>
+<p>Binds the sheet to a DataSource instance. For more information on the data-binding Spreadsheet functionality, refer to the <a href="/docs-kendo-china/controls/data-management/spreadsheet/import-and-export-data/bind-to-data-source">article on binding the Spreadsheet to a data source</a>.</p>
 
 <h4>Parameters</h4>
 
-<h5>dataSource <a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<h5>dataSource <a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h5>
 
 <p>The DataSource instance.</p>
@@ -776,7 +776,7 @@
 
 <h3 id="methods-toJSON"><a href="#methods-toJSON">toJSON</a></h3>
 
-<p>Serializes the sheet in the format defined in the <a href="/api/javascript/ui/spreadsheet#configuration.sheets">sheet configuration</a>.</p>
+<p>Serializes the sheet in the format defined in the <a href="/docs-kendo-china/api/javascript/ui/spreadsheet#configuration.sheets">sheet configuration</a>.</p>
 
 <h4>Example - Serialize the sheet as JSON</h4>
 
@@ -900,7 +900,7 @@
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -965,7 +965,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

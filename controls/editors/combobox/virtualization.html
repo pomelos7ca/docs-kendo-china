@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="combobox">
         <title>Virtualization | Kendo UI ComboBox</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to configure virtualization in Kendo UI ComboBox, DropDownList, AutoComplete and MultiSelect widgets.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("controls/editors/combobox/virtualization.html")
         });
         </script>
@@ -131,15 +131,15 @@
 
 <h3 id="data"><a href="#data">Data</a></h3>
 
-<p>In the context of the widget, data virtualization is accomplished by using the <code>DataSource</code> paging functionality and remote data retrieval. In this way, the widget retrieves only a specified data page instead of requesting the whole dataset at once. To ensure the proper functioning of the widgets, you need to configure the <code>DataSource</code> paging correctly. For more information, see the <a href="/api/javascript/data/datasource#configuration-serverPaging">server paging</a> configuration.</p>
+<p>In the context of the widget, data virtualization is accomplished by using the <code>DataSource</code> paging functionality and remote data retrieval. In this way, the widget retrieves only a specified data page instead of requesting the whole dataset at once. To ensure the proper functioning of the widgets, you need to configure the <code>DataSource</code> paging correctly. For more information, see the <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-serverPaging">server paging</a> configuration.</p>
 
 <h3 id="ui"><a href="#ui">UI</a></h3>
 
-<p>The widget uses a specific strategy of reusing a list of DOM elements for displaying the corresponding data chunk. The number of these elements is determined based on the <a href="/api/javascript/ui/combobox#configuration-height"><code>height</code></a> and <a href="#itemheight"><code>itemHeight</code></a> options. Once the number is calculated, the widget creates those elements and starts reusing them to display the current data source page.</p>
+<p>The widget uses a specific strategy of reusing a list of DOM elements for displaying the corresponding data chunk. The number of these elements is determined based on the <a href="/docs-kendo-china/api/javascript/ui/combobox#configuration-height"><code>height</code></a> and <a href="#itemheight"><code>itemHeight</code></a> options. Once the number is calculated, the widget creates those elements and starts reusing them to display the current data source page.</p>
 
 <h3 id="data-and-ui-combined"><a href="#data-and-ui-combined">Data and UI Combined</a></h3>
 
-<p>To ensure the correct work of the widget, the DataSource <code>pageSize</code> value is calculated automatically based on the ((<a href="/api/javascript/ui/combobox#configuration-height"><code>height</code></a> / <a href="#itemheight"><code>itemHeight</code></a>) * 4) formula. The ComboBox iteself does the calculation and the defined <code>pageSize</code> value is overridden if it does not match the calculated one.</p>
+<p>To ensure the correct work of the widget, the DataSource <code>pageSize</code> value is calculated automatically based on the ((<a href="/docs-kendo-china/api/javascript/ui/combobox#configuration-height"><code>height</code></a> / <a href="#itemheight"><code>itemHeight</code></a>) * 4) formula. The ComboBox iteself does the calculation and the defined <code>pageSize</code> value is overridden if it does not match the calculated one.</p>
 
 <blockquote>
 <p><strong>Important</strong>  </p>
@@ -221,7 +221,7 @@
 
 <h3 id="configuration-Set"><a href="#configuration-Set">Set Page Size</a></h3>
 
-<p>To ensure the proper work of the virtualized list, the widget calculates the <code>pageSize</code> value automatically based on the ((<a href="/api/javascript/ui/combobox#configuration-height"><code>height</code></a> / <a href="#itemheight"><code>itemHeight</code></a>) * 4) formula and overrides the custom <code>pageSize</code> value.</p>
+<p>To ensure the proper work of the virtualized list, the widget calculates the <code>pageSize</code> value automatically based on the ((<a href="/docs-kendo-china/api/javascript/ui/combobox#configuration-height"><code>height</code></a> / <a href="#itemheight"><code>itemHeight</code></a>) * 4) formula and overrides the custom <code>pageSize</code> value.</p>
 
 <p>Consider the following scenario about a widget:</p>
 
@@ -315,7 +315,7 @@ In this case, the <code>pageSize</code> will be set to <code>80</code>, because 
 
 <p><strong>Figure 1: The virtualization process</strong></p>
 
-<p><img src="/controls/editors/combobox/mapValueTo-index.png" alt="Virtualization process"></p>
+<p><img src="/docs-kendo-china/controls/editors/combobox/mapValueTo-index.png" alt="Virtualization process"></p>
 
 <p><strong>Function result</strong></p>
 
@@ -375,7 +375,7 @@ In this case, the <code>pageSize</code> will be set to <code>80</code>, because 
 <li>The widget list displays the items from the first page no matter if the selected items are part of it or not.</li>
 </ol>
 
-<p><img src="/controls/editors/combobox/mapValueTo-dataItem.png" alt="Virtualization process"></p>
+<p><img src="/docs-kendo-china/controls/editors/combobox/mapValueTo-dataItem.png" alt="Virtualization process"></p>
 
 <p><strong>Function result</strong></p>
 
@@ -394,25 +394,25 @@ In this case, the <code>pageSize</code> will be set to <code>80</code>, because 
 <p>Other articles on the Kendo UI ComboBox:</p>
 
 <ul>
-<li><a href="/api/javascript/ui/combobox#configuration-virtual">Virtual Setup</a></li>
-<li><a href="/controls/editors/combobox/how-to/mvvm/deferred-value-binding">How to Configure Deferred Value Binding</a></li>
-<li><a href="/controls/editors/combobox/how-to/cascade/cascading-with-local-data">How to Implement Cascading with Local Data</a></li>
-<li><a href="/controls/editors/combobox/how-to/selection/select-on-tab">How to Select Items on Tab</a></li>
-<li><a href="/controls/editors/combobox/how-to/cascade/disable-child-combo">How to Disable Child Cascading ComboBoxes</a></li>
-<li><a href="/api/javascript/ui/combobox">JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/combobox#configuration-virtual">Virtual Setup</a></li>
+<li><a href="/docs-kendo-china/controls/editors/combobox/how-to/mvvm/deferred-value-binding">How to Configure Deferred Value Binding</a></li>
+<li><a href="/docs-kendo-china/controls/editors/combobox/how-to/cascade/cascading-with-local-data">How to Implement Cascading with Local Data</a></li>
+<li><a href="/docs-kendo-china/controls/editors/combobox/how-to/selection/select-on-tab">How to Select Items on Tab</a></li>
+<li><a href="/docs-kendo-china/controls/editors/combobox/how-to/cascade/disable-child-combo">How to Disable Child Cascading ComboBoxes</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/combobox">JavaScript API Reference</a></li>
 </ul>
 
 <p>Articles on the Kendo UI DataSource:</p>
 
 <ul>
-<li><a href="/framework/datasource/overview">DataSource Overview</a></li>
-<li><a href="/api/javascript/data/datasource">JavaScript DataSource API Reference</a></li>
+<li><a href="/docs-kendo-china/framework/datasource/overview">DataSource Overview</a></li>
+<li><a href="/docs-kendo-china/api/javascript/data/datasource">JavaScript DataSource API Reference</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -477,7 +477,7 @@ In this case, the <code>pageSize</code> will be set to <code>80</code>, because 
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

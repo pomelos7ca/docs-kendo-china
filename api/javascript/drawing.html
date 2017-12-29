@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>API reference for Kendo UI Drawing API static functions</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("api/javascript/drawing.html")
         });
         </script>
@@ -138,7 +138,7 @@
 
 <p>An array with the drawing elements that should be aligned.</p>
 
-<h5>rect <a href="/api/javascript/geometry/rect" class="type-link"><code>kendo.geometry.Rect</code></a>
+<h5>rect <a href="/docs-kendo-china/api/javascript/geometry/rect" class="type-link"><code>kendo.geometry.Rect</code></a>
 </h5>
 
 <p>The rectangle in which the elements should be aligned.</p>
@@ -173,7 +173,7 @@
 
 <h3 id="methods-drawDOM"><a href="#methods-drawDOM">drawDOM</a></h3>
 
-<p>Converts the given DOM element to a <a href="/framework/drawing/overview">Drawing API</a> scene.</p>
+<p>Converts the given DOM element to a <a href="/docs-kendo-china/framework/drawing/overview">Drawing API</a> scene.</p>
 
 <p>The operation is asynchronous and returns a <a href="http://api.jquery.com/Types/#Promise">promise</a>.</p>
 
@@ -203,12 +203,12 @@
 
 <p>An optional CSS selector that specifies the elements that should cause page breaks.</p>
 
-<p>See <a href="/framework/drawing/drawing-dom#multi-page-pdf-output">Multi-page PDF output</a>.</p>
+<p>See <a href="/docs-kendo-china/framework/drawing/drawing-dom#multi-page-pdf-output">Multi-page PDF output</a>.</p>
 
 <h5>options.paperSize <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: "auto")</em>
 </h5>
 
-<p>The paper size for <a href="/framework/drawing/drawing-dom#automatic-page-breaking-q1-2015">automatic page breaking</a>.
+<p>The paper size for <a href="/docs-kendo-china/framework/drawing/drawing-dom#automatic-page-breaking-q1-2015">automatic page breaking</a>.
 The default "auto" means paper size is determined by content.</p>
 
 <p>Supported values:</p>
@@ -249,7 +249,7 @@ units are "mm", "cm", "in" and "pt" (default).</p>
 <h5>options.template <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
 </h5>
 
-<p>The <a href="/framework/drawing/drawing-dom#page-template-headers-and-footers">page template</a> for multi-page output.</p>
+<p>The <a href="/docs-kendo-china/framework/drawing/drawing-dom#page-template-headers-and-footers">page template</a> for multi-page output.</p>
 
 <h4>Returns</h4>
 
@@ -369,7 +369,7 @@ units are "mm", "cm", "in" and "pt" (default).</p>
 
 <h4>Parameters</h4>
 
-<h5>group <a href="/api/javascript/drawing/group" class="type-link"><code>kendo.drawing.Group</code></a>
+<h5>group <a href="/docs-kendo-china/api/javascript/drawing/group" class="type-link"><code>kendo.drawing.Group</code></a>
 </h5>
 
 <p>The root group containing all elements to export.</p>
@@ -500,12 +500,12 @@ for more details.</p>
 
 <h4>Parameters</h4>
 
-<h5>group <a href="/api/javascript/drawing/group" class="type-link"><code>kendo.drawing.Group</code></a>
+<h5>group <a href="/docs-kendo-china/api/javascript/drawing/group" class="type-link"><code>kendo.drawing.Group</code></a>
 </h5>
 
 <p>The root group containing all elements to export.</p>
 
-<h5>options <a href="/api/javascript/drawing/pdfoptions" class="type-link"><code>kendo.drawing.PDFOptions</code></a>
+<h5>options <a href="/docs-kendo-china/api/javascript/drawing/pdfoptions" class="type-link"><code>kendo.drawing.PDFOptions</code></a>
 </h5>
 
 <p>Parameters for the exported PDF file.</p>
@@ -547,7 +547,7 @@ for more details.</p>
 
 <h4>Parameters</h4>
 
-<h5>group <a href="/api/javascript/drawing/group" class="type-link"><code>kendo.drawing.Group</code></a>
+<h5>group <a href="/docs-kendo-china/api/javascript/drawing/group" class="type-link"><code>kendo.drawing.Group</code></a>
 </h5>
 
 <p>The root group containing all elements to export.</p>
@@ -593,12 +593,12 @@ for more details.</p>
 
 <h4>Parameters</h4>
 
-<h5>element <a href="/api/javascript/drawing/element" class="type-link"><code>kendo.drawing.Element</code></a>
+<h5>element <a href="/docs-kendo-china/api/javascript/drawing/element" class="type-link"><code>kendo.drawing.Element</code></a>
 </h5>
 
 <p>The drawing element that should be fitted.</p>
 
-<h5>rect <a href="/api/javascript/geometry/rect" class="type-link"><code>kendo.geometry.Rect</code></a>
+<h5>rect <a href="/docs-kendo-china/api/javascript/geometry/rect" class="type-link"><code>kendo.geometry.Rect</code></a>
 </h5>
 
 <p>The rectangle in which the elements should be fitted.</p>
@@ -668,7 +668,7 @@ for more details.</p>
 
 <p>An array with the drawing elements that should be aligned.</p>
 
-<h5>rect <a href="/api/javascript/geometry/rect" class="type-link"><code>kendo.geometry.Rect</code></a>
+<h5>rect <a href="/docs-kendo-china/api/javascript/geometry/rect" class="type-link"><code>kendo.geometry.Rect</code></a>
 </h5>
 
 <p>The rectangle in which the elements should be aligned.</p>
@@ -743,7 +743,7 @@ for more details.</p>
 
 <p>An array with the drawing elements that should be wrapped.</p>
 
-<h5>rect <a href="/api/javascript/geometry/rect" class="type-link"><code>kendo.geometry.Rect</code></a>
+<h5>rect <a href="/docs-kendo-china/api/javascript/geometry/rect" class="type-link"><code>kendo.geometry.Rect</code></a>
 </h5>
 
 <p>The rectangle in which the elements should be wrapped.</p>
@@ -792,7 +792,7 @@ for more details.</p>
 
 <p>An array with the drawing elements that should be wrapped.</p>
 
-<h5>rect <a href="/api/javascript/geometry/rect" class="type-link"><code>kendo.geometry.Rect</code></a>
+<h5>rect <a href="/docs-kendo-china/api/javascript/geometry/rect" class="type-link"><code>kendo.geometry.Rect</code></a>
 </h5>
 
 <p>The rectangle in which the elements should be wrapped.</p>
@@ -833,7 +833,7 @@ for more details.</p>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -898,7 +898,7 @@ for more details.</p>
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

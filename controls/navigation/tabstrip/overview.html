@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="tabstrip">
         <title>Overview | Kendo UI TabStrip</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to initialize the Kendo UI TabStrip widget and configure its behaviors.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("controls/navigation/tabstrip/overview.html")
         });
         </script>
@@ -266,17 +266,17 @@
 
 <h3 id="scrollable-tabs"><a href="#scrollable-tabs">Scrollable Tabs</a></h3>
 
-<p>As of 2015 Q2 (2015.2.624) version Kendo UI TabStrip supports scrollable tabs for <code>tabPosition</code> of <code>"top"</code> and <code>"bottom"</code>. During initialization, the widget checks if the tabs fit in the available horizontal space and if not, scroll buttons will appear on the widget sides. This behavior is enabled by default, but <a href="/api/javascript/ui/tabstrip#configuration-scrollable">can be disabled</a>.</p>
+<p>As of 2015 Q2 (2015.2.624) version Kendo UI TabStrip supports scrollable tabs for <code>tabPosition</code> of <code>"top"</code> and <code>"bottom"</code>. During initialization, the widget checks if the tabs fit in the available horizontal space and if not, scroll buttons will appear on the widget sides. This behavior is enabled by default, but <a href="/docs-kendo-china/api/javascript/ui/tabstrip#configuration-scrollable">can be disabled</a>.</p>
 
-<p>If the TabStrip has no fixed width and is placed in a fluid layout, it can re-check whether tab scrolling is necessary, or is no longer required. To achieve this, execute the widget's <a href="/using-kendo-in-responsive-web-pages#individual-widget-resizing"><code>resize()</code> method</a>, e.g. in <code>window.resize</code>. The <code>resize</code> method will also show the right scroll button if the last and selected tab becomes invisible as a result of TabStrip shrinking.</p>
+<p>If the TabStrip has no fixed width and is placed in a fluid layout, it can re-check whether tab scrolling is necessary, or is no longer required. To achieve this, execute the widget's <a href="/docs-kendo-china/using-kendo-in-responsive-web-pages#individual-widget-resizing"><code>resize()</code> method</a>, e.g. in <code>window.resize</code>. The <code>resize</code> method will also show the right scroll button if the last and selected tab becomes invisible as a result of TabStrip shrinking.</p>
 
-<p>For additional information on the configuration, events, and methods of the widget, check the <a href="/api/javascript/ui/tabstrip">TabStrip API</a>.</p>
+<p>For additional information on the configuration, events, and methods of the widget, check the <a href="/docs-kendo-china/api/javascript/ui/tabstrip">TabStrip API</a>.</p>
 
 <h3 id="scrollable-content"><a href="#scrollable-content">Scrollable Content</a></h3>
 
-<p>The TabStrip content containers are scrollable by default. This allows the widget to display scrollbars if it has a fixed height and holds large content that cannot fit. If needed, it is possible to disable TabStrip content scrolling. This can help in scenarios where the TabStrip hosts a widget such as a Menu that needs to overflow outside the TabStrip. For more information and a runnable example, check the following how-to article: <a href="/controls/navigation/tabstrip/how-to/disable-content-scrolling">Disable TabStrip Content Scrolling</a></p>
+<p>The TabStrip content containers are scrollable by default. This allows the widget to display scrollbars if it has a fixed height and holds large content that cannot fit. If needed, it is possible to disable TabStrip content scrolling. This can help in scenarios where the TabStrip hosts a widget such as a Menu that needs to overflow outside the TabStrip. For more information and a runnable example, check the following how-to article: <a href="/docs-kendo-china/controls/navigation/tabstrip/how-to/disable-content-scrolling">Disable TabStrip Content Scrolling</a></p>
 
-<p>Depending on the browser, the content's scroll position may be reset when changing the active tab. If persisting the scroll position is required, use the <a href="/api/javascript/ui/tabstrip#events-select"><code>select</code></a> event to save the current scroll position, and the <a href="/api/javascript/ui/tabstrip#events-activate"><code>activate</code></a> event to restore it. Here is an example: <a href="/controls/navigation/tabstrip/how-to/save-content-scroll-position">Save TabStrip Content Scroll Position</a></p>
+<p>Depending on the browser, the content's scroll position may be reset when changing the active tab. If persisting the scroll position is required, use the <a href="/docs-kendo-china/api/javascript/ui/tabstrip#events-select"><code>select</code></a> event to save the current scroll position, and the <a href="/docs-kendo-china/api/javascript/ui/tabstrip#events-activate"><code>activate</code></a> event to restore it. Here is an example: <a href="/docs-kendo-china/controls/navigation/tabstrip/how-to/save-content-scroll-position">Save TabStrip Content Scroll Position</a></p>
 
 <h3 id="select-tab-on-initial-load"><a href="#select-tab-on-initial-load">Select Tab on Initial Load</a></h3>
 
@@ -350,20 +350,20 @@
 <p>Other articles on Kendo UI TabStrip:</p>
 
 <ul>
-<li><a href="/aspnet-mvc/helpers/tabstrip/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the TabStrip Widget</a></li>
-<li><a href="/jsp/tags/tabstrip/overview">Overview of the TabStrip JSP Tag</a></li>
-<li><a href="/php/widgets/tabstrip/overview">Overview of the TabStrip PHP Class</a></li>
-<li><a href="/controls/navigation/tabstrip/how-to/show-tabs-at-bottom">How to Display Buttons at the Bottom</a></li>
-<li><a href="/controls/navigation/tabstrip/how-to/expand-height">How to Expand to 100% Height and Auto-Resize</a></li>
-<li><a href="/controls/navigation/tabstrip/how-to/initiliaze-grid-in-tabstrip">How to Initialize the Grid in Kendo UI TabStrip</a></li>
-<li><a href="/controls/navigation/tabstrip/how-to/vertical-keyboard-scroll">How to Scroll TabStrip with Keyboard</a></li>
-<li><a href="/api/javascript/ui/tabstrip">TabStrip JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/aspnet-mvc/helpers/tabstrip/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the TabStrip Widget</a></li>
+<li><a href="/docs-kendo-china/jsp/tags/tabstrip/overview">Overview of the TabStrip JSP Tag</a></li>
+<li><a href="/docs-kendo-china/php/widgets/tabstrip/overview">Overview of the TabStrip PHP Class</a></li>
+<li><a href="/docs-kendo-china/controls/navigation/tabstrip/how-to/show-tabs-at-bottom">How to Display Buttons at the Bottom</a></li>
+<li><a href="/docs-kendo-china/controls/navigation/tabstrip/how-to/expand-height">How to Expand to 100% Height and Auto-Resize</a></li>
+<li><a href="/docs-kendo-china/controls/navigation/tabstrip/how-to/initiliaze-grid-in-tabstrip">How to Initialize the Grid in Kendo UI TabStrip</a></li>
+<li><a href="/docs-kendo-china/controls/navigation/tabstrip/how-to/vertical-keyboard-scroll">How to Scroll TabStrip with Keyboard</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/tabstrip">TabStrip JavaScript API Reference</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -428,7 +428,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

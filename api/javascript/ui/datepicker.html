@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="datepicker">
         <title>Configuration, methods and events of Kendo UI DatePicker</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Easy to follow steps guide how to quickly configure DatePicker UI widget, easily enable/disable it using methods and how to change events.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("api/javascript/ui/datepicker.html")
         });
         </script>
@@ -123,7 +123,7 @@
             
              <h1 id="kendouidatepicker"><a href="#kendouidatepicker">kendo.ui.DatePicker</a></h1>
 
-<p>Represents the Kendo UI DatePicker widget. Inherits from <a href="/api/javascript/ui/widget">Widget</a>.</p>
+<p>Represents the Kendo UI DatePicker widget. Inherits from <a href="/docs-kendo-china/api/javascript/ui/widget">Widget</a>.</p>
 
 <h2 id="configuration"><a href="#configuration">Configuration</a></h2>
 
@@ -191,7 +191,7 @@ $("#datepicker").kendoDatePicker({
 
 <p>The effect(s) to use when playing the close animation. Multiple effects should be separated with a space.</p>
 
-<p><a href="/api/javascript/effects/common">Complete list of available animations</a></p>
+<p><a href="/docs-kendo-china/api/javascript/effects/common">Complete list of available animations</a></p>
 
 <h3 id="configuration-animation.close.duration">
 <a href="#configuration-animation.close.duration">animation.close.duration </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
@@ -226,7 +226,7 @@ $("#datepicker").kendoDatePicker({
 
 <p>The effect(s) to use when playing the open animation. Multiple effects should be separated with a space.</p>
 
-<p><a href="/api/javascript/effects/common">Complete list of available animations</a></p>
+<p><a href="/docs-kendo-china/api/javascript/effects/common">Complete list of available animations</a></p>
 
 <h3 id="configuration-animation.open.duration">
 <a href="#configuration-animation.open.duration">animation.open.duration </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
@@ -280,7 +280,7 @@ $("#datepicker").kendoDatePicker({
 <a href="#configuration-dateInput">dateInput </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a><em>(default: false)</em>
 </h3>
 
-<p>Specifies if the DatePicker will use <a href="/api/javascript/ui/dateinput">DateInput</a> for editing value</p>
+<p>Specifies if the DatePicker will use <a href="/docs-kendo-china/api/javascript/ui/dateinput">DateInput</a> for editing value</p>
 
 <h4>Example</h4>
 
@@ -429,7 +429,7 @@ $("#datepicker").kendoDatePicker({
 <a href="#configuration-footer">footer </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the footer of the calendar. If false, the footer will not be rendered.</p>
+<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the footer of the calendar. If false, the footer will not be rendered.</p>
 
 <h4>Example - specify footer template as a function</h4>
 
@@ -970,8 +970,8 @@ datepicker.setOptions({
 <blockquote>
 <ul>
 <li>This method <strong>does not trigger</strong> <a href="#events-change">change</a> event.
-This could affect <a href="/framework/mvvm/bindings/value">MVVM value binding</a>. The model bound to the widget will not be updated.
-You can overcome this behavior trigerring the <code>change</code> event manually using <a href="/api/javascript/observable#methods-trigger">trigger("change")</a> method.</li>
+This could affect <a href="/docs-kendo-china/framework/mvvm/bindings/value">MVVM value binding</a>. The model bound to the widget will not be updated.
+You can overcome this behavior trigerring the <code>change</code> event manually using <a href="/docs-kendo-china/api/javascript/observable#methods-trigger">trigger("change")</a> method.</li>
 </ul>
 </blockquote>
 
@@ -1132,7 +1132,7 @@ datepicker.bind("open", function(e) {
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -1197,7 +1197,7 @@ datepicker.bind("open", function(e) {
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

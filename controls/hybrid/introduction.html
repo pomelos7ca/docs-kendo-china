@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Overview | Kendo UI Hybrid Components</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Build mobile applications using the Kendo UI hybrid components.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("controls/hybrid/introduction.html")
         });
         </script>
@@ -127,7 +127,7 @@
 
 <p><strong>Figure 1: Adaptive rendering of Kendo UI hybrid components</strong></p>
 
-<p><img src="/images/mobile/km-adaptive-rending-illustration.png" alt="Illustration of Kendo UI mobile adaptive rendering"></p>
+<p><img src="/docs-kendo-china/images/mobile/km-adaptive-rending-illustration.png" alt="Illustration of Kendo UI mobile adaptive rendering"></p>
 
 <p>While some mobile HTML frameworks focus on providing a one-size-fits-all experience, the Kendo UI hybrid framework focuses on delivering perfectly tailored experiences for different mobile platforms. Built and packaged correctly, the goal of such an application is to be virtually indistinguishable to end-users from a native SDK app.</p>
 
@@ -145,7 +145,7 @@
 <li>
 <a href="http://demos.telerik.com/kendo-ui/m/index#application/loadingpopup">Application</a>—This is the shell of Kendo UI hybrid apps. Application manages all navigation, application history, loading views, rendering mobile meta tags, and other essential mobile app tasks.</li>
 <li>
-<a href="/controls/hybrid/styles/layout">Layout</a>—Defines the reusable portions of a hybrid app, similar to a MasterPage or template. Layouts are often used improve app maintainability by defining things used across multiple views, like navigation. While not required, layouts are encouraged to use.</li>
+<a href="/docs-kendo-china/controls/hybrid/styles/layout">Layout</a>—Defines the reusable portions of a hybrid app, similar to a MasterPage or template. Layouts are often used improve app maintainability by defining things used across multiple views, like navigation. While not required, layouts are encouraged to use.</li>
 <li>
 <a href="http://demos.telerik.com/kendo-ui/m/index#mobile-view/index">Views</a>—Individual pages of a hybrid app. Views contain the greater part of the application content. Every application has one or more views.</li>
 </ol>
@@ -218,7 +218,7 @@
 <p>For development, the <code>all</code> minified files are the best choice.</p>
 </blockquote>
 
-<p>Find out more about installing Kendo UI in your project <a href="/intro/installation/getting-started">this article</a> section.</p>
+<p>Find out more about installing Kendo UI in your project <a href="/docs-kendo-china/intro/installation/getting-started">this article</a> section.</p>
 
 <h3 id="define-the-application-layout"><a href="#define-the-application-layout">Define the Application Layout</a></h3>
 
@@ -256,9 +256,9 @@
 
 <p><code>&lt;section data-role="layout" data-id="default"&gt;</code></p>
 
-<p>When the Application is initialized, this block of HTML is going to be initialized as a <a href="/controls/hybrid/styles/layout">Kendo UI Hybrid Layout</a>. The <code>data-id</code> attribute is further defined to give this layout a unique name that can be used by your views.</p>
+<p>When the Application is initialized, this block of HTML is going to be initialized as a <a href="/docs-kendo-china/controls/hybrid/styles/layout">Kendo UI Hybrid Layout</a>. The <code>data-id</code> attribute is further defined to give this layout a unique name that can be used by your views.</p>
 
-<p>Next, for completeness, a couple of Kendo UI hybrid widgets are introduced—<a href="/controls/hybrid/navbar/navbar">NavBar</a> and <a href="/controls/hybrid/tabstrip/tabstrip">TabStip</a>. Note that they are also configured with the simple <code>data-role</code> attribute.</p>
+<p>Next, for completeness, a couple of Kendo UI hybrid widgets are introduced—<a href="/docs-kendo-china/controls/hybrid/navbar/navbar">NavBar</a> and <a href="/docs-kendo-china/controls/hybrid/tabstrip/tabstrip">TabStip</a>. Note that they are also configured with the simple <code>data-role</code> attribute.</p>
 
 <h3 id="create-the-view"><a href="#create-the-view">Create the View</a></h3>
 
@@ -501,26 +501,26 @@
 
 <h2 id="further-reading"><a href="#further-reading">Further Reading</a></h2>
 
-<p>To get a better understanding of how Kendo UI hybrid Application works, check the features provided by the <a href="/controls/hybrid/application">application class</a>.</p>
+<p>To get a better understanding of how Kendo UI hybrid Application works, check the features provided by the <a href="/docs-kendo-china/controls/hybrid/application">application class</a>.</p>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <p>Articles and how-to examples on the Hybrid UI components in Kendo UI:</p>
 
 <ul>
-<li><a href="/controls/hybrid/performance">Performance Tips and Tricks</a></li>
-<li><a href="/controls/hybrid/native-scrolling">Native Scrolling</a></li>
-<li><a href="/controls/hybrid/application">Overview of the Application for Mobile</a></li>
-<li><a href="/controls/hybrid/how-to/fixed-content-area">How to Create Fixed Content Areas with Scroller</a></li>
-<li><a href="/controls/hybrid/how-to/relative-content-size-using-flexboxes">How to Create Relative Content Size Using Flexboxes</a></li>
-<li><a href="/controls/hybrid/how-to/select-value-from-another-view">How to Select Value from Another View</a></li>
-<li><a href="/controls/hybrid/how-to/angular/set-initial-view-using-angular">How to Set Initial View Prior to Initialization in AngularJS</a></li>
+<li><a href="/docs-kendo-china/controls/hybrid/performance">Performance Tips and Tricks</a></li>
+<li><a href="/docs-kendo-china/controls/hybrid/native-scrolling">Native Scrolling</a></li>
+<li><a href="/docs-kendo-china/controls/hybrid/application">Overview of the Application for Mobile</a></li>
+<li><a href="/docs-kendo-china/controls/hybrid/how-to/fixed-content-area">How to Create Fixed Content Areas with Scroller</a></li>
+<li><a href="/docs-kendo-china/controls/hybrid/how-to/relative-content-size-using-flexboxes">How to Create Relative Content Size Using Flexboxes</a></li>
+<li><a href="/docs-kendo-china/controls/hybrid/how-to/select-value-from-another-view">How to Select Value from Another View</a></li>
+<li><a href="/docs-kendo-china/controls/hybrid/how-to/angular/set-initial-view-using-angular">How to Set Initial View Prior to Initialization in AngularJS</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -585,7 +585,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

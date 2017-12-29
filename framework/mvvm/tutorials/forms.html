@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="mvvm">
         <title>Build MVVM-Bound Forms | Kendo UI MVVM</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to build MVVM-bound forms with Kendo UI.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("framework/mvvm/tutorials/forms.html")
         });
         </script>
@@ -121,7 +121,7 @@
             
              <h1 id="build-mvvm-bound-forms"><a href="#build-mvvm-bound-forms">Build MVVM Bound Forms</a></h1>
 
-<p>This article provides an in-depth look on collecting data from HTML forms using the <a href="/framework/mvvm/overview">Kendo UI framework MVVM features</a>.</p>
+<p>This article provides an in-depth look on collecting data from HTML forms using the <a href="/docs-kendo-china/framework/mvvm/overview">Kendo UI framework MVVM features</a>.</p>
 
 <h2 id="sample-case"><a href="#sample-case">Sample Case</a></h2>
 
@@ -234,7 +234,7 @@ kendo.bind(document.body.children, viewModel);
 &lt;/select&gt;
 </code></pre>
 
-<p>The <code>merchant</code> input has a new binding. The <code>data-bind=”value: merchant”</code> says that you want to bind the value of this input to the <code>merchant</code> variable in the View-Model. A <code>k-textbox</code> CSS class was also added to it to style it using <a href="/styles-and-layout/appearance-styling">Kendo UI styles</a>.</p>
+<p>The <code>merchant</code> input has a new binding. The <code>data-bind=”value: merchant”</code> says that you want to bind the value of this input to the <code>merchant</code> variable in the View-Model. A <code>k-textbox</code> CSS class was also added to it to style it using <a href="/docs-kendo-china/styles-and-layout/appearance-styling">Kendo UI styles</a>.</p>
 
 <h6>Example</h6>
 
@@ -244,7 +244,7 @@ kendo.bind(document.body.children, viewModel);
 &lt;/dd&gt;
 </code></pre>
 
-<p>The <code>amount</code> input has two new bindings: <code>data-role</code> and <code>data-bind</code>. The <code>data-role</code> sets the input to a <a href="/web/numerictextbox/overview">Kendo UI NumericTextBox</a> and the <code>data-bind</code> binds the value to our <code>amount</code> variable.</p>
+<p>The <code>amount</code> input has two new bindings: <code>data-role</code> and <code>data-bind</code>. The <code>data-role</code> sets the input to a <a href="/docs-kendo-china/web/numerictextbox/overview">Kendo UI NumericTextBox</a> and the <code>data-bind</code> binds the value to our <code>amount</code> variable.</p>
 
 <h6>Example</h6>
 
@@ -261,7 +261,7 @@ kendo.bind(document.body.children, viewModel);
 <pre><code>&lt;button id="create" data-bind="click: create" class="k-button"&gt;Add&lt;/button&gt;
 </code></pre>
 
-<p>This last one is the line that creates the <a href="/controls/data-management/grid/walkthrough">Kendo UI Grid widget</a>.</p>
+<p>This last one is the line that creates the <a href="/docs-kendo-china/controls/data-management/grid/walkthrough">Kendo UI Grid widget</a>.</p>
 
 <h6>Example</h6>
 
@@ -369,23 +369,23 @@ dt
 
 <p>Not only does MVVM keep you from having to worry about many of the manual details, but also dramatically simplifies your code, so that in your JavaScript you are only working with model objects. The DOM simply reflects the changes that you make to the model.</p>
 
-<p>To explore the features of Kendo UI MVVM in detail, visit the <a href="/framework/mvvm/overview">MVVM Overview article</a>.</p>
+<p>To explore the features of Kendo UI MVVM in detail, visit the <a href="/docs-kendo-china/framework/mvvm/overview">MVVM Overview article</a>.</p>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <p>Articles and how-to examples on Kendo UI MVVM:</p>
 
 <ul>
-<li><a href="/framework/mvvm/overview">MVVM Overview</a></li>
-<li><a href="/framework/mvvm/observableobject">ObservableObject Overview</a></li>
+<li><a href="/docs-kendo-china/framework/mvvm/overview">MVVM Overview</a></li>
+<li><a href="/docs-kendo-china/framework/mvvm/observableobject">ObservableObject Overview</a></li>
 </ul>
 
-<p>For detailed information on the bindings Kendo UI MVVM supports, refer to the section about <a href="/framework/mvvm/bindings/attr">Kendo UI MVVM bindings</a>.</p> 
+<p>For detailed information on the bindings Kendo UI MVVM supports, refer to the section about <a href="/docs-kendo-china/framework/mvvm/bindings/attr">Kendo UI MVVM bindings</a>.</p> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -450,7 +450,7 @@ dt
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

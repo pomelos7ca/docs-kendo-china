@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="scheduler">
         <title>Common Issues | Kendo UI Scheduler</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to deal with issues you may encounter while using the Kendo UI Scheduler widget.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("controls/scheduling/scheduler/troubleshoot/troubleshooting.html")
         });
         </script>
@@ -129,49 +129,49 @@
 
 <p>If the remote data request is successful and the Scheduler is databound, but no events are rendered, this indicates that the date format of the events is not correct, and the browser is unable to create JavaScript Date objects from the date strings. As a result, the events in the Scheduler dataSource have <code>null</code> values for their <code>start</code> and <code>end</code> properties, and the events are not rendered.</p>
 
-<p>To handle this issue, use the recommended date format for sending and receiving Scheduler event dates, which is <a href="/controls/scheduling/scheduler/timezones">ISO 8601 with a Z zone designator (UTC date)</a>.</p>
+<p>To handle this issue, use the recommended date format for sending and receiving Scheduler event dates, which is <a href="/docs-kendo-china/controls/scheduling/scheduler/timezones">ISO 8601 with a Z zone designator (UTC date)</a>.</p>
 
 <h2 id="crud-data-operations"><a href="#crud-data-operations">CRUD Data Operations</a></h2>
 
 <h3 id="createdestroyupdate-request-is-sent-multiple-times-to-the-remote-service"><a href="#createdestroyupdate-request-is-sent-multiple-times-to-the-remote-service">Create/Destroy/Update Request Is Sent Multiple Times to the Remote Service</a></h3>
 
-<p>In this case the server response of the create/destroy/update action is interpreted as an error by the <code>dataSource</code> and the <a href="/api/framework/datasource#events-error"><code>error</code> event</a> of the dataSource is triggered. When such a request fails, the Scheduler <code>dataSource</code> will try to get a valid server response again on a subsequent dataSource sync until the request succeeds.</p>
+<p>In this case the server response of the create/destroy/update action is interpreted as an error by the <code>dataSource</code> and the <a href="/docs-kendo-china/api/framework/datasource#events-error"><code>error</code> event</a> of the dataSource is triggered. When such a request fails, the Scheduler <code>dataSource</code> will try to get a valid server response again on a subsequent dataSource sync until the request succeeds.</p>
 
 <p><strong>Solution</strong></p>
 
 <p>Update the remote service in use, so it can return valid responses. Make sure the server response is formatted in the same way as the <code>read</code> action response:</p>
 
 <ol>
-<li><p>The <code>create</code> request—The Scheduler expects the created record to be returned to the client side with its <a href="/api/javascript/data/schedulerevent#fields-id"><code>id</code> field</a> set to a unique value.</p></li>
+<li><p>The <code>create</code> request—The Scheduler expects the created record to be returned to the client side with its <a href="/docs-kendo-china/api/javascript/data/schedulerevent#fields-id"><code>id</code> field</a> set to a unique value.</p></li>
 <li><p>The <code>update/destroy</code> request—The Scheduler expects the server to return a valid response, so it can signify success. Such a response, for example, is the updated/deleted event formatted in the same way as the <code>read</code> action <code>[{id: 23, title: "some title", start:"2015-10-14T15:00:00.000Z", end:"2015-10-14T17:00:00.000Z" }]</code>.</p></li>
 </ol>
 
 <h3 id="created-events-are-offset-after-createupdate-request"><a href="#created-events-are-offset-after-createupdate-request">Created Events Are Offset after Create/Update Request</a></h3>
 
-<p>This behavior may be caused if the Scheduler <a href="/api/javascript/ui/scheduler#configuration-timezone"><code>timezone</code></a> option is not set, or if the remote service does not keep dates in the correct format.</p>
+<p>This behavior may be caused if the Scheduler <a href="/docs-kendo-china/api/javascript/ui/scheduler#configuration-timezone"><code>timezone</code></a> option is not set, or if the remote service does not keep dates in the correct format.</p>
 
 <p><strong>Solution</strong></p>
 
-<p>Set the timezone option of the Scheduler and make sure the dates on the remote service are saved in UTC. For more information about how to do this see the <a href="/web/scheduler/timezones">Timezones help article</a>.</p>
+<p>Set the timezone option of the Scheduler and make sure the dates on the remote service are saved in UTC. For more information about how to do this see the <a href="/docs-kendo-china/web/scheduler/timezones">Timezones help article</a>.</p>
 
 <h3 id="defined-timezone-is-not-applied"><a href="#defined-timezone-is-not-applied">Defined Timezone Is Not Applied</a></h3>
 
-<p>In this case, the specified <a href="/api/javascript/ui/scheduler#configuration-timezone"><code>timezone</code></a> option is not recognized by the widget and the events are visualized with a specific time offset. This could happen when the <code>SchedulerDataSource</code> instance is created separately, outside the Scheduler.</p>
+<p>In this case, the specified <a href="/docs-kendo-china/api/javascript/ui/scheduler#configuration-timezone"><code>timezone</code></a> option is not recognized by the widget and the events are visualized with a specific time offset. This could happen when the <code>SchedulerDataSource</code> instance is created separately, outside the Scheduler.</p>
 
 <p><strong>Solution</strong></p>
 
-<p>Set directly the <a href="/api/javascript/data/schedulerdatasource#configuration-schema.timezone"><code>schema.timezone</code></a> option of the <code>SchedulerDataSource</code> instance to the desired value.</p>
+<p>Set directly the <a href="/docs-kendo-china/api/javascript/data/schedulerdatasource#configuration-schema.timezone"><code>schema.timezone</code></a> option of the <code>SchedulerDataSource</code> instance to the desired value.</p>
 
 <h2 id="performance-issues"><a href="#performance-issues">Performance Issues</a></h2>
 
 <h3 id="when-you-cancel-changes-other-events-disappear"><a href="#when-you-cancel-changes-other-events-disappear">When You Cancel Changes, Other Events Disappear</a></h3>
 
-<p>It is possible to experience such behavior if the <a href="/api/javascript/data/schedulerevent#fields-id">id fields</a> of the other events are not set to valid and unique values.</p>
+<p>It is possible to experience such behavior if the <a href="/docs-kendo-china/api/javascript/data/schedulerevent#fields-id">id fields</a> of the other events are not set to valid and unique values.</p>
 
 <h3 id="editing-event-causes-all-initial-events-to-be-sent-to-the-create-action">
 <a href="#editing-event-causes-all-initial-events-to-be-sent-to-the-create-action">Editing Event Causes All Initial Events to be Sent to the </a><code>Create</code> Action</h3>
 
-<p>This behavior can be experienced if the <a href="/api/javascript/data/schedulerevent#fields-id">id fields</a> of all events are not set to valid and unique values during initial read.</p>
+<p>This behavior can be experienced if the <a href="/docs-kendo-china/api/javascript/data/schedulerevent#fields-id">id fields</a> of all events are not set to valid and unique values during initial read.</p>
 
 <h3 id="remote-data-bound-scheduler-does-not-populate"><a href="#remote-data-bound-scheduler-does-not-populate">Remote Data Bound Scheduler Does Not Populate</a></h3>
 
@@ -179,7 +179,7 @@
 
 <p><strong>Step 1</strong> Use your browser developer console and check for JavaScript errors. Pressing the <code>F12</code> functional key is the shortcut for most browsers to display the console. Now you can easily address all JavaScript errors.</p>
 
-<p><strong>Step 2</strong> Check the <strong>Network</strong> (or <strong>Net</strong> in Firebug) tab of the browser developer console. Look for a failed HTTP request for the <a href="/api/javascript/data/datasource#configuration-transport">transport operations</a> configured via the <a href="/api/javascript/ui/scheduler#configuration-dataSource">dataSource</a> Scheduler option.</p>
+<p><strong>Step 2</strong> Check the <strong>Network</strong> (or <strong>Net</strong> in Firebug) tab of the browser developer console. Look for a failed HTTP request for the <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-transport">transport operations</a> configured via the <a href="/docs-kendo-china/api/javascript/ui/scheduler#configuration-dataSource">dataSource</a> Scheduler option.</p>
 
 <ul>
 <li>HTTP status code <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes#401">401</a> indicates that an authentication is required and has failed, or not is not provided yet.</li>
@@ -188,9 +188,9 @@
 <li>HTTP status code <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes#500">500</a> indicates that a server error occurred while processing the request.</li>
 </ul>
 
-<p><strong>Step 3</strong> Check if the server response is in the correct data type format. For more information see the <a href="/web/scheduler/overview#binding-to-remote-service">Binding to remote service</a> help topic.</p>
+<p><strong>Step 3</strong> Check if the server response is in the correct data type format. For more information see the <a href="/docs-kendo-china/web/scheduler/overview#binding-to-remote-service">Binding to remote service</a> help topic.</p>
 
-<p><strong>Step 4</strong> Check if the models returned from the sever match the required <a href="/api/javascript/data/schedulerevent">kendo.data.SchedulerEvent</a> fields. For more information check the <a href="/web/scheduler/overview#binding-to-remote-service">Binding to remote service</a> help topic.</p>
+<p><strong>Step 4</strong> Check if the models returned from the sever match the required <a href="/docs-kendo-china/api/javascript/data/schedulerevent">kendo.data.SchedulerEvent</a> fields. For more information check the <a href="/docs-kendo-china/web/scheduler/overview#binding-to-remote-service">Binding to remote service</a> help topic.</p>
 
 <h2 id="navigation"><a href="#navigation">Navigation</a></h2>
 
@@ -208,9 +208,9 @@
 
 <ul>
 <li>
-<a href="/api/javascript/ui/scheduler#configuration-selectable">Disable widget's navigation</a>, if it is not needed in your business case.</li>
+<a href="/docs-kendo-china/api/javascript/ui/scheduler#configuration-selectable">Disable widget's navigation</a>, if it is not needed in your business case.</li>
 <li>
-<a href="/controls/scheduling/scheduler/how-to/appearance/dynamic-calc-of-height-in-mobile">Size the widget to the view-port dimensions</a>.</li>
+<a href="/docs-kendo-china/controls/scheduling/scheduler/how-to/appearance/dynamic-calc-of-height-in-mobile">Size the widget to the view-port dimensions</a>.</li>
 </ul>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
@@ -218,29 +218,29 @@
 <p>Other articles on the Kendo UI Scheduler:</p>
 
 <ul>
-<li><a href="/api/javascript/ui/scheduler">Scheduler JavaScript API Reference</a></li>
-<li><a href="/controls/scheduling/scheduler/resources">Resources</a></li>
-<li><a href="/controls/scheduling/scheduler/timezones">Timezones</a></li>
-<li><a href="/controls/scheduling/scheduler/overview">Overview of the Scheduler Widget</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/scheduler">Scheduler JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/controls/scheduling/scheduler/resources">Resources</a></li>
+<li><a href="/docs-kendo-china/controls/scheduling/scheduler/timezones">Timezones</a></li>
+<li><a href="/docs-kendo-china/controls/scheduling/scheduler/overview">Overview of the Scheduler Widget</a></li>
 </ul>
 
 <p>Other articles on troubleshooting:</p>
 
 <ul>
-<li><a href="/troubleshoot/troubleshooting-common-issues">Common Issues in Kendo UI</a></li>
-<li><a href="/troubleshoot/troubleshooting-js-errors">Kendo UI JavaScript Errors</a></li>
-<li><a href="/troubleshoot/troubleshooting-memory-leaks">Kendo UI Performance Issues</a></li>
-<li><a href="/troubleshoot/content-security-policy">Kendo UI Content Security Policy</a></li>
-<li><a href="/framework/excel/troubleshoot/common-issues">Common Issues in Kendo UI Excel Export</a></li>
-<li><a href="/controls/charts/troubleshoot/common-issues">Common Issues in Kendo UI Charts</a></li>
-<li><a href="/controls/charts/troubleshoot/performance-tips">Performance Issues in Kendo UI Widgets for Data Visualization</a></li>
-<li><a href="/controls/editors/combobox/troubleshoot/troubleshooting">Common Issues in Kendo UI ComboBox</a></li>
-<li><a href="/controls/diagrams-and-maps/diagram/troubleshoot/common-issues">Common Issues in Kendo UI Diagram</a></li>
-<li><a href="/controls/editors/dropdownlist/troubleshoot/troubleshooting">Common Issues in Kendo UI DropDownList</a></li>
-<li><a href="/controls/editors/editor/troubleshoot/troubleshooting">Common Issues in Kendo UI Editor</a></li>
-<li><a href="/controls/editors/multiselect/troubleshoot/troubleshooting">Common Issues in Kendo UI MultiSelect</a></li>
-<li><a href="/controls/editors/upload/troubleshoot/troubleshooting">Common Issues in Kendo UI Upload</a></li>
-<li><a href="/styles-and-layout/troubleshoot/troubleshooting">Common Issues Related to Styling, Appearance, and Rendering</a></li>
+<li><a href="/docs-kendo-china/troubleshoot/troubleshooting-common-issues">Common Issues in Kendo UI</a></li>
+<li><a href="/docs-kendo-china/troubleshoot/troubleshooting-js-errors">Kendo UI JavaScript Errors</a></li>
+<li><a href="/docs-kendo-china/troubleshoot/troubleshooting-memory-leaks">Kendo UI Performance Issues</a></li>
+<li><a href="/docs-kendo-china/troubleshoot/content-security-policy">Kendo UI Content Security Policy</a></li>
+<li><a href="/docs-kendo-china/framework/excel/troubleshoot/common-issues">Common Issues in Kendo UI Excel Export</a></li>
+<li><a href="/docs-kendo-china/controls/charts/troubleshoot/common-issues">Common Issues in Kendo UI Charts</a></li>
+<li><a href="/docs-kendo-china/controls/charts/troubleshoot/performance-tips">Performance Issues in Kendo UI Widgets for Data Visualization</a></li>
+<li><a href="/docs-kendo-china/controls/editors/combobox/troubleshoot/troubleshooting">Common Issues in Kendo UI ComboBox</a></li>
+<li><a href="/docs-kendo-china/controls/diagrams-and-maps/diagram/troubleshoot/common-issues">Common Issues in Kendo UI Diagram</a></li>
+<li><a href="/docs-kendo-china/controls/editors/dropdownlist/troubleshoot/troubleshooting">Common Issues in Kendo UI DropDownList</a></li>
+<li><a href="/docs-kendo-china/controls/editors/editor/troubleshoot/troubleshooting">Common Issues in Kendo UI Editor</a></li>
+<li><a href="/docs-kendo-china/controls/editors/multiselect/troubleshoot/troubleshooting">Common Issues in Kendo UI MultiSelect</a></li>
+<li><a href="/docs-kendo-china/controls/editors/upload/troubleshoot/troubleshooting">Common Issues in Kendo UI Upload</a></li>
+<li><a href="/docs-kendo-china/styles-and-layout/troubleshoot/troubleshooting">Common Issues Related to Styling, Appearance, and Rendering</a></li>
 <li><a href="http://docs.telerik.com/aspnet-mvc/troubleshoot/troubleshooting">Common Issues in Telerik UI for ASP.NET MVC</a></li>
 <li><a href="http://docs.telerik.com/aspnet-mvc/troubleshoot/troubleshooting-validation">Validation Issues in Telerik UI for ASP.NET MVC</a></li>
 <li><a href="http://docs.telerik.com/aspnet-mvc/troubleshoot/troubleshooting-scaffolding">Scaffolding Issues in Telerik UI for ASP.NET MVC</a></li>
@@ -253,7 +253,7 @@
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -318,7 +318,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

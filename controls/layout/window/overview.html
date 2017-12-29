@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="window">
         <title>Overview | Kendo UI Window</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to initialize the Kendo UI Window widget and configure its behaviors.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("controls/layout/window/overview.html")
         });
         </script>
@@ -146,7 +146,7 @@ $(document).ready(function() {
 
 <h3 id="html-structure-and-dom-placement"><a href="#html-structure-and-dom-placement">HTML Structure and DOM Placement</a></h3>
 
-<p>By default, the Window is created as a child of the <code>&lt;body&gt;</code> element. This behavior is configurable through the <a href="/api/javascript/ui/window#configuration-appendTo"><code>appendTo</code> setting</a>.</p>
+<p>By default, the Window is created as a child of the <code>&lt;body&gt;</code> element. This behavior is configurable through the <a href="/docs-kendo-china/api/javascript/ui/window#configuration-appendTo"><code>appendTo</code> setting</a>.</p>
 
 <p>The example below demonstrates the possible markup before the initialization of the Kendo UI Window.</p>
 
@@ -243,7 +243,7 @@ $(document).ready(function() {
 
 <h3 id="configuration-Positioning"><a href="#configuration-Positioning">Positioning and Opening</a></h3>
 
-<p>Usually, it is preferable to center the Window rather than open it near the HTML element used to define its content. Often, the Window is opened as a result of a user action rather than of the <code>load</code> event of the page. The <a href="/api/javascript/ui/window">Window API</a> provides methods for handling these scenarios. Basically, the widget can be initialized as non-visible and can opened when needed.</p>
+<p>Usually, it is preferable to center the Window rather than open it near the HTML element used to define its content. Often, the Window is opened as a result of a user action rather than of the <code>load</code> event of the page. The <a href="/docs-kendo-china/api/javascript/ui/window">Window API</a> provides methods for handling these scenarios. Basically, the widget can be initialized as non-visible and can opened when needed.</p>
 
 <p>The example below demonstrates how to center and open a Kendo UI Window on a button click. If content is loaded through Ajax, <a href="#configuration-Load">centering occurs after request is complete</a>.</p>
 
@@ -293,7 +293,7 @@ $("#openButton").click(function(){
 
 <ul>
 <li>Loading full pages inside the Window with AJAX—pages with a <code>DOCTYPE</code>, <code>html</code>, <code>head</code>, and <code>body</code> tags—causes various undesired side-effects—breaks the DOM tree, deletes widget instances, and throws Javascript errors.</li>
-<li>If the Window has no set dimensions, it is probably going to resize after the AJAX content is loaded. This naturally changes the position of the widget on the screen. To center the Window, either <a href="/api/javascript/ui/window#methods-center"><code>center</code></a> it in the <a href="/api/javascript/ui/window#events-refresh"><code>refresh</code></a> event handler, or set some explicit <a href="/api/javascript/ui/window#configuration-height">dimensions</a>.</li>
+<li>If the Window has no set dimensions, it is probably going to resize after the AJAX content is loaded. This naturally changes the position of the widget on the screen. To center the Window, either <a href="/docs-kendo-china/api/javascript/ui/window#methods-center"><code>center</code></a> it in the <a href="/docs-kendo-china/api/javascript/ui/window#events-refresh"><code>refresh</code></a> event handler, or set some explicit <a href="/docs-kendo-china/api/javascript/ui/window#configuration-height">dimensions</a>.</li>
 </ul>
 </blockquote>
 
@@ -324,7 +324,7 @@ $(document).ready(function(){
 </ul>
 </blockquote>
 
-<p>The example below demonstrates how to access the <code>window</code> and <code>document</code> objects inside the <code>iframe</code>. To achieve this, the nested page has to belong to the same domain as the main page. The <code>iframe</code> is accessed through the <a href="/intro/widget-basics/wrapper-element"><code>element</code></a> of the Window widget.</p>
+<p>The example below demonstrates how to access the <code>window</code> and <code>document</code> objects inside the <code>iframe</code>. To achieve this, the nested page has to belong to the same domain as the main page. The <code>iframe</code> is accessed through the <a href="/docs-kendo-china/intro/widget-basics/wrapper-element"><code>element</code></a> of the Window widget.</p>
 
 <h6>Example</h6>
 
@@ -368,16 +368,16 @@ $(function() {
 
 <ol>
 <li>Place the whole form, including its opening and closing tags, inside the element from which the Window is created.</li>
-<li>If some parts of the Window need to remain outside it, use the <a href="/api/javascript/ui/window#configuration-appendTo"><code>appendTo</code></a> property, so that the widget remains inside the form.</li>
+<li>If some parts of the Window need to remain outside it, use the <a href="/docs-kendo-china/api/javascript/ui/window#configuration-appendTo"><code>appendTo</code></a> property, so that the widget remains inside the form.</li>
 </ol>
 
 <p>When the Window contains a form, which is submitted through a standard POST request, the widget will close and the page will reload. If you have to avoid this behavior, submit the form through Ajax. The approach is strongly recommended when the submitted data is validated on the server, because in such cases the Dialog is expected to remain visible and to display the validation messages that might be returned.</p>
 
 <h3 id="configuration-Destroy"><a href="#configuration-Destroy">Destroy</a></h3>
 
-<p>Unlike most widgets, Kendo UI Window is completely removed from the DOM when <a href="/framework/widgets/destroy">destroyed</a>. This means that the element, from which it was initialized, no longer exists on the page. Therefore, you are able to create a new Window instance only from another element.</p>
+<p>Unlike most widgets, Kendo UI Window is completely removed from the DOM when <a href="/docs-kendo-china/framework/widgets/destroy">destroyed</a>. This means that the element, from which it was initialized, no longer exists on the page. Therefore, you are able to create a new Window instance only from another element.</p>
 
-<p>If you want to destroy a Window instance when it is being closed, the earliest recommended time to do that is the <a href="/api/javascript/ui/window#events-deactivate"><code>deactivate</code></a> event.</p>
+<p>If you want to destroy a Window instance when it is being closed, the earliest recommended time to do that is the <a href="/docs-kendo-china/api/javascript/ui/window#events-deactivate"><code>deactivate</code></a> event.</p>
 
 <h3 id="configuration-Print"><a href="#configuration-Print">Print</a></h3>
 
@@ -415,7 +415,7 @@ $(function() {
 
 <h3 id="existing-instances"><a href="#existing-instances">Existing Instances</a></h3>
 
-<p>To refer to an existing Window instance, use the <a href="http://api.jquery.com/jQuery.data/"><code>jQuery.data()</code></a>. Once a reference has been established, use the <a href="/api/javascript/ui/window">Window API</a> to control its behavior.</p>
+<p>To refer to an existing Window instance, use the <a href="http://api.jquery.com/jQuery.data/"><code>jQuery.data()</code></a>. Once a reference has been established, use the <a href="/docs-kendo-china/api/javascript/ui/window">Window API</a> to control its behavior.</p>
 
 <p>The example below demonstrates how to access an existing Window instance.</p>
 
@@ -452,7 +452,7 @@ $(function() {
 
 <h3 id="access-dom-elements"><a href="#access-dom-elements">Access DOM Elements</a></h3>
 
-<p>Similar to other Kendo UI widgets, the Window has two DOM elements, which can be accessed and used to customize the appearance of the widget or its content. These are the <a href="/intro/widget-basics/wrapper-element"><code>wrapper</code> and <code>element</code></a> elements of the widget, which are provided as fields of the widget object. In specific scenarios, the Window wrapper can be used to tweak the position or the size of the widget although this is normally done through the API and the <a href="/api/javascript/ui/window#methods-setOptions"><code>setOptions</code> method</a>.</p>
+<p>Similar to other Kendo UI widgets, the Window has two DOM elements, which can be accessed and used to customize the appearance of the widget or its content. These are the <a href="/docs-kendo-china/intro/widget-basics/wrapper-element"><code>wrapper</code> and <code>element</code></a> elements of the widget, which are provided as fields of the widget object. In specific scenarios, the Window wrapper can be used to tweak the position or the size of the widget although this is normally done through the API and the <a href="/docs-kendo-china/api/javascript/ui/window#methods-setOptions"><code>setOptions</code> method</a>.</p>
 
 <h6>Example</h6>
 
@@ -479,35 +479,35 @@ winWrapper.addClass("myWindowClass");
 
 <h3 id="create-windows-multiple-times"><a href="#create-windows-multiple-times">Create Windows Multiple Times</a></h3>
 
-<p>To create a Kendo UI Window instance multiple times with the same ID, make sure that the existing instance with this ID is <a href="#configuration-Destroy">destroyed</a> first. Widgets with the same ID <a href="/intro/installation/jquery-initialization#duplicate-initialization">cannot exist and work properly</a> at one and the same time.</p>
+<p>To create a Kendo UI Window instance multiple times with the same ID, make sure that the existing instance with this ID is <a href="#configuration-Destroy">destroyed</a> first. Widgets with the same ID <a href="/docs-kendo-china/intro/installation/jquery-initialization#duplicate-initialization">cannot exist and work properly</a> at one and the same time.</p>
 
-<p>Alternatively, do not destroy the existing Window instance—<a href="/api/javascript/ui/window#methods-open">open</a> it and <a href="/api/javascript/ui/window#methods-refresh">refresh</a> its Ajax content or <a href="/api/javascript/ui/dialog#methods-content">set new static content</a> if needed.</p>
+<p>Alternatively, do not destroy the existing Window instance—<a href="/docs-kendo-china/api/javascript/ui/window#methods-open">open</a> it and <a href="/docs-kendo-china/api/javascript/ui/window#methods-refresh">refresh</a> its Ajax content or <a href="/docs-kendo-china/api/javascript/ui/dialog#methods-content">set new static content</a> if needed.</p>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <p>Other articles on Kendo UI Upload:</p>
 
 <ul>
-<li><a href="/aspnet-mvc/helpers/window/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the Upload Widget</a></li>
-<li><a href="/jsp/tags/window/overview">Overview of the Upload JSP Tag</a></li>
-<li><a href="/php/widgets/window/overview">Overview of the Upload PHP Class</a></li>
-<li><a href="/controls/layout/window/how-to/add-auto-resizing-splitter">How to Add Auto-Resizing Splitter</a></li>
-<li><a href="/controls/layout/window/how-to/add-close-button">How to Add Close Button inside Modal Windows</a></li>
-<li><a href="/controls/layout/window/how-to/cascade-open-windows">How to Cascade Open Windows</a></li>
-<li><a href="/controls/layout/window/how-to/confirmation-dialog-promise">How to Create Confirmation Dialog via Promises</a></li>
-<li><a href="/controls/layout/window/how-to/display-loading-overlay">How to Display Loading Indicator over Window</a></li>
-<li><a href="/controls/layout/window/how-to/initiliaze-grid-in-window">How to Initialize the Grid</a></li>
-<li><a href="/controls/layout/window/how-to/post-to-iframe">How to Post to Iframe</a></li>
-<li><a href="/controls/layout/window/how-to/restrict-windows-position">How to Restrict Window Positioning</a></li>
-<li><a href="/controls/layout/window/how-to/use-custom-action-icons">How to Use Custom Action Icons</a></li>
-<li><a href="/controls/layout/window/how-to/MVVM/mvvm-editing-form">How to Use MVVM Binding for Window Data Editing</a></li>
-<li><a href="/api/javascript/ui/window">Window JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/aspnet-mvc/helpers/window/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the Upload Widget</a></li>
+<li><a href="/docs-kendo-china/jsp/tags/window/overview">Overview of the Upload JSP Tag</a></li>
+<li><a href="/docs-kendo-china/php/widgets/window/overview">Overview of the Upload PHP Class</a></li>
+<li><a href="/docs-kendo-china/controls/layout/window/how-to/add-auto-resizing-splitter">How to Add Auto-Resizing Splitter</a></li>
+<li><a href="/docs-kendo-china/controls/layout/window/how-to/add-close-button">How to Add Close Button inside Modal Windows</a></li>
+<li><a href="/docs-kendo-china/controls/layout/window/how-to/cascade-open-windows">How to Cascade Open Windows</a></li>
+<li><a href="/docs-kendo-china/controls/layout/window/how-to/confirmation-dialog-promise">How to Create Confirmation Dialog via Promises</a></li>
+<li><a href="/docs-kendo-china/controls/layout/window/how-to/display-loading-overlay">How to Display Loading Indicator over Window</a></li>
+<li><a href="/docs-kendo-china/controls/layout/window/how-to/initiliaze-grid-in-window">How to Initialize the Grid</a></li>
+<li><a href="/docs-kendo-china/controls/layout/window/how-to/post-to-iframe">How to Post to Iframe</a></li>
+<li><a href="/docs-kendo-china/controls/layout/window/how-to/restrict-windows-position">How to Restrict Window Positioning</a></li>
+<li><a href="/docs-kendo-china/controls/layout/window/how-to/use-custom-action-icons">How to Use Custom Action Icons</a></li>
+<li><a href="/docs-kendo-china/controls/layout/window/how-to/MVVM/mvvm-editing-form">How to Use MVVM Binding for Window Data Editing</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/window">Window JavaScript API Reference</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -572,7 +572,7 @@ winWrapper.addClass("myWindowClass");
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

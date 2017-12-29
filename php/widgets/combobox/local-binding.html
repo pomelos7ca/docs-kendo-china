@@ -7,15 +7,15 @@
         <meta name="product" content="php-ui">
         
         <title>Local Binding | ComboBox PHP Class</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Bind Kendo UI ComboBox PHP class to an array of data.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/php-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/php-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("php/widgets/combobox/local-binding.html")
         });
         </script>
@@ -139,7 +139,7 @@
 <p>The following demo is using the sample SQLite database shipped with the Telerik UI for PHP demos (<code>/wrappers/php/sample.db</code>).</p>
 </blockquote>
 
-<p><strong>Step 1</strong> Make sure you followed all the steps from the <a href="/php/introduction">introductory article on Telerik UI for PHP</a>—include the autoloader, JavaScript, and CSS files.</p>
+<p><strong>Step 1</strong> Make sure you followed all the steps from the <a href="/docs-kendo-china/php/introduction">introductory article on Telerik UI for PHP</a>—include the autoloader, JavaScript, and CSS files.</p>
 
 <p><strong>Step 2</strong> Create a PDO connection.</p>
 
@@ -160,7 +160,7 @@
     ?&gt;
 </code></pre>
 
-<p><strong>Step 4</strong> Create a <a href="/api/php/Kendo/Data/DataSource"><code>dataSource</code></a> and set its <a href="/api/php/Kendo/Data/DataSource#data"><code>data</code></a> and <a href="/api/php/Kendo/Data/DataSource#schema"><code>schema</code></a>. Setting the schema is required to specify the model fields. These fields are required for filtering.</p>
+<p><strong>Step 4</strong> Create a <a href="/docs-kendo-china/api/php/Kendo/Data/DataSource"><code>dataSource</code></a> and set its <a href="/docs-kendo-china/api/php/Kendo/Data/DataSource#data"><code>data</code></a> and <a href="/docs-kendo-china/api/php/Kendo/Data/DataSource#schema"><code>schema</code></a>. Setting the schema is required to specify the model fields. These fields are required for filtering.</p>
 
 <h6>Example</h6>
 
@@ -193,7 +193,7 @@
     ?&gt;
 </code></pre>
 
-<p><strong>Step 5</strong> Create a <a href="/api/php/Kendo/UI/ComboBox">ComboBox</a>, configure its <a href="/api/php/Kendo/UI/ComboBox#datatextfield"><code>dataTextField</code></a> and <a href="/api/php/Kendo/UI/ComboBox#datavaluefield"><code>dataValueField</code></a> options and set its <a href="/api/php/Kendo/UI/ComboBox#datasource"><code>dataSource</code></a>.</p>
+<p><strong>Step 5</strong> Create a <a href="/docs-kendo-china/api/php/Kendo/UI/ComboBox">ComboBox</a>, configure its <a href="/docs-kendo-china/api/php/Kendo/UI/ComboBox#datatextfield"><code>dataTextField</code></a> and <a href="/docs-kendo-china/api/php/Kendo/UI/ComboBox#datavaluefield"><code>dataValueField</code></a> options and set its <a href="/docs-kendo-china/api/php/Kendo/UI/ComboBox#datasource"><code>dataSource</code></a>.</p>
 
 <h6>Example</h6>
 
@@ -218,7 +218,7 @@
 
 <p>The <code>DataSourceResult</code> class is a helper utility on top of PDO which simplifies common CRUD operations. It is distributed with the Telerik UI for PHP demos and can be found in the <code>/wrappers/php/lib/</code> directory of the Telerik UI for PHP distribution.</p>
 
-<p><strong>Step 1</strong> Make sure you followed all the steps from the <a href="/php/introduction">introductory article on Telerik UI for PHP</a>—include the autoloader, JavaScript, and CSS files.</p>
+<p><strong>Step 1</strong> Make sure you followed all the steps from the <a href="/docs-kendo-china/php/introduction">introductory article on Telerik UI for PHP</a>—include the autoloader, JavaScript, and CSS files.</p>
 
 <p><strong>Step 2</strong> Copy <code>/wrappers/php/lib/DataSourceResult.php</code> to your web site root and include it.</p>
 
@@ -302,17 +302,17 @@
 <p>Other articles on Telerik UI for PHP and on the ComboBox:</p>
 
 <ul>
-<li><a href="/php/widgets/combobox/overview">Overview of the ComboBox PHP Class</a></li>
-<li><a href="/php/widgets/combobox/remote-binding">Remote Binding of the ComboBox PHP Class</a></li>
-<li><a href="/controls/editors/combobox/overview">Overview of the Kendo UI ComboBox Widget</a></li>
-<li><a href="/api/php/Kendo/UI/AutoComplete">Telerik UI for PHP API Reference Folder</a></li>
-<li><a href="/php/widgets/autocomplete/overview">Telerik UI for PHP Classes Folder</a></li>
+<li><a href="/docs-kendo-china/php/widgets/combobox/overview">Overview of the ComboBox PHP Class</a></li>
+<li><a href="/docs-kendo-china/php/widgets/combobox/remote-binding">Remote Binding of the ComboBox PHP Class</a></li>
+<li><a href="/docs-kendo-china/controls/editors/combobox/overview">Overview of the Kendo UI ComboBox Widget</a></li>
+<li><a href="/docs-kendo-china/api/php/Kendo/UI/AutoComplete">Telerik UI for PHP API Reference Folder</a></li>
+<li><a href="/docs-kendo-china/php/widgets/autocomplete/overview">Telerik UI for PHP Classes Folder</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -377,7 +377,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

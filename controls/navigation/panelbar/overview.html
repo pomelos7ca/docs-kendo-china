@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="panelbar">
         <title>Overview | Kendo UI PanelBar</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to initialize the Kendo UI PanelBar widget and configure its behaviors.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("controls/navigation/panelbar/overview.html")
         });
         </script>
@@ -279,7 +279,7 @@ $(document).ready(function() {
 &lt;/script&gt;
 </code></pre>
 
-<p>For a complete reference on how to bind the PanelBar to different service end-points, refer to the API documentation on <a href="/api/framework/hierarchicaldatasource"><code>HierarchicalDataSource</code></a>.</p>
+<p>For a complete reference on how to bind the PanelBar to different service end-points, refer to the API documentation on <a href="/docs-kendo-china/api/framework/hierarchicaldatasource"><code>HierarchicalDataSource</code></a>.</p>
 
 <h2 id="configuration"><a href="#configuration">Configuration</a></h2>
 
@@ -359,7 +359,7 @@ $(document).ready(function() {
 
 <h3 id="configuration-Dynamic"><a href="#configuration-Dynamic">Dynamic Items</a></h3>
 
-<p><a href="/api/javascript/ui/panelbar">The PanelBar API</a> provides methods for dynamically adding or removing PanelBar items.</p>
+<p><a href="/docs-kendo-china/api/javascript/ui/panelbar">The PanelBar API</a> provides methods for dynamically adding or removing PanelBar items.</p>
 
 <p>To add items, provide the new item as a JSON object along with a reference item. A reference item is a target PanelBar item HTML element that already exists in the PanelBar. The reference item will be used to determine the placement in the hierarchy of the new item. Any valid jQuery selector can be used to obtain a reference to the target item.</p>
 
@@ -383,7 +383,7 @@ $(document).ready(function() {
 
 <h3 id="configuration-dataItem"><a href="#configuration-dataItem">dataItem Manipulations</a></h3>
 
-<p>As of the R1 2017 release, the <a href="/api/javascript/ui/panelbar">PanelBar API</a> has provided methods for you to dynamically manage the state of the items trough their <code>dataItems</code>.</p>
+<p>As of the R1 2017 release, the <a href="/docs-kendo-china/api/javascript/ui/panelbar">PanelBar API</a> has provided methods for you to dynamically manage the state of the items trough their <code>dataItems</code>.</p>
 
 <p>To disable, expand, or select a certain PanelBar item, get a reference to its <code>dataItem</code> and use the desirable method.</p>
 
@@ -425,25 +425,25 @@ $(document).ready(function() {
 
 <p><strong>Figure 1: The Retry button of the PanelBar prompting you to re-initiate the data binding</strong></p>
 
-<p><img src="/controls/navigation/panelbar/retry-request-failed.png" alt="PanelBar areas"></p>
+<p><img src="/docs-kendo-china/controls/navigation/panelbar/retry-request-failed.png" alt="PanelBar areas"></p>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <p>Other articles on the Kendo UI PanelBar:</p>
 
 <ul>
-<li><a href="/aspnet-mvc/helpers/panelbar/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the PanelBar Widget</a></li>
-<li><a href="/jsp/tags/panelbar/overview">Overview of the PanelBar JSP Tag</a></li>
-<li><a href="/php/widgets/panelbar/overview">Overview of the PanelBar PHP Class</a></li>
-<li><a href="/api/javascript/ui/panelbar">PanelBar JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/aspnet-mvc/helpers/panelbar/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the PanelBar Widget</a></li>
+<li><a href="/docs-kendo-china/jsp/tags/panelbar/overview">Overview of the PanelBar JSP Tag</a></li>
+<li><a href="/docs-kendo-china/php/widgets/panelbar/overview">Overview of the PanelBar PHP Class</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/panelbar">PanelBar JavaScript API Reference</a></li>
 </ul>
 
-<p>For how-to examples on the Kendo UI PanelBar widget, browse its <a href="/controls/navigation/panelbar/how-to/initiliaze-grid-in-panelbar"><strong>How To</strong> documentation folder</a>.</p> 
+<p>For how-to examples on the Kendo UI PanelBar widget, browse its <a href="/docs-kendo-china/controls/navigation/panelbar/how-to/initiliaze-grid-in-panelbar"><strong>How To</strong> documentation folder</a>.</p> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -508,7 +508,7 @@ $(document).ready(function() {
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

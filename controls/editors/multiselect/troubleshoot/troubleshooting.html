@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="multiselect">
         <title>Common Issues | Kendo UI MultiSelect</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to handle possible issues while working with the Kendo UI MultiSelect widget.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("controls/editors/multiselect/troubleshoot/troubleshooting.html")
         });
         </script>
@@ -130,7 +130,7 @@
 <blockquote>
 <p><strong>Important</strong>  </p>
 
-<p>This issue can also be observed in <a href="/controls/editors/combobox/troubleshoot/troubleshooting">Kendo UI ComboBox</a> and <a href="/controls/editors/dropdownlist/troubleshoot/troubleshooting">Kendo UI DropDownList</a>. The solution demonstrated in the examples below is fully applicable to the case of them both as well.</p>
+<p>This issue can also be observed in <a href="/docs-kendo-china/controls/editors/combobox/troubleshoot/troubleshooting">Kendo UI ComboBox</a> and <a href="/docs-kendo-china/controls/editors/dropdownlist/troubleshoot/troubleshooting">Kendo UI DropDownList</a>. The solution demonstrated in the examples below is fully applicable to the case of them both as well.</p>
 </blockquote>
 
 <p>The selected item of the widget is directly related to the data source view. If it does not contain the selected item, then the widget will remove its current value. Such behavior is expected.</p>
@@ -172,49 +172,49 @@ $("#ms2").kendoMultiSelect({
 
 <h3 id="repetitive-requests-are-performed-while-filtering-in-aspnet"><a href="#repetitive-requests-are-performed-while-filtering-in-aspnet">Repetitive Requests Are Performed while Filtering in ASP.NET</a></h3>
 
-<p>For more information on handling repetitive requests performed while filtering in ASP.NET, refer to <a href="/controls/editors/dropdownlist/troubleshoot/troubleshooting#repetitive-requests-are-performed-while-filtering-in-aspnet">this troubleshooting topic</a>.</p>
+<p>For more information on handling repetitive requests performed while filtering in ASP.NET, refer to <a href="/docs-kendo-china/controls/editors/dropdownlist/troubleshoot/troubleshooting#repetitive-requests-are-performed-while-filtering-in-aspnet">this troubleshooting topic</a>.</p>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <p>Other articles on the Kendo UI MultiSelect:</p>
 
 <ul>
-<li><a href="/api/javascript/ui/multiselect">MultiSelect JavaScript API Reference</a></li>
-<li><a href="/controls/editors/multiselect/grouping">Grouping Functionality</a></li>
-<li><a href="/controls/editors/multiselect/virtualization">Virtualization</a></li>
-<li><a href="/controls/editors/multiselect/how-to/templates/bind-values-to-template">How to Bind Values to Template</a></li>
-<li><a href="/controls/editors/multiselect/how-to/cascade/cascade-from-ddl">How to Cascade from DropDownList</a></li>
-<li><a href="/controls/editors/multiselect/how-to/cascade/cascading-multiselects">How to Create Cascading MultiSelects</a></li>
-<li><a href="/controls/editors/multiselect/how-to/selection/scrollable-data-items">How to Create Scrollable Data Items</a></li>
-<li><a href="/controls/editors/multiselect/how-to/filtering/distinct-values-in-widgets-sharing-same-data">How to Filter Values in Widgets Sharing the Same Data</a></li>
-<li><a href="/controls/editors/multiselect/how-to/AngularJS/pre-select-items">How to Preselect Items on Load in AngularJS</a></li>
-<li><a href="/controls/editors/multiselect/how-to/selection/preselect-items-using-mvvm">How to Preselect Items Using MVVM Binding</a></li>
-<li><a href="/controls/editors/multiselect/how-to/selection/reorder-selected-items">How to Reorder Selected Items</a></li>
-<li><a href="/controls/editors/multiselect/how-to/selection/select-all-values-with-one-selection">How to Select All Values with Single Selection</a></li>
-<li><a href="/controls/editors/multiselect/how-to/selection/select-deselect-all-items">How to Select or Deselect All Items</a></li>
-<li><a href="/controls/editors/multiselect/how-to/selection/select-on-tab">How to Select the First Item on TAB</a></li>
-<li><a href="/controls/editors/multiselect/how-to/integration/using-widget-with-boostrap-modal">How to Use MultiSelect with Bootstrap Modal Window</a></li>
-<li><a href="/controls/editors/multiselect/how-to/filtering/wire-blur-event-of-filter-input">How to Wire Blur Event of the Filter Input</a></li>
-<li><a href="/controls/editors/multiselect/overview">Overview of the MultiSelect Widget</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/multiselect">MultiSelect JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/controls/editors/multiselect/grouping">Grouping Functionality</a></li>
+<li><a href="/docs-kendo-china/controls/editors/multiselect/virtualization">Virtualization</a></li>
+<li><a href="/docs-kendo-china/controls/editors/multiselect/how-to/templates/bind-values-to-template">How to Bind Values to Template</a></li>
+<li><a href="/docs-kendo-china/controls/editors/multiselect/how-to/cascade/cascade-from-ddl">How to Cascade from DropDownList</a></li>
+<li><a href="/docs-kendo-china/controls/editors/multiselect/how-to/cascade/cascading-multiselects">How to Create Cascading MultiSelects</a></li>
+<li><a href="/docs-kendo-china/controls/editors/multiselect/how-to/selection/scrollable-data-items">How to Create Scrollable Data Items</a></li>
+<li><a href="/docs-kendo-china/controls/editors/multiselect/how-to/filtering/distinct-values-in-widgets-sharing-same-data">How to Filter Values in Widgets Sharing the Same Data</a></li>
+<li><a href="/docs-kendo-china/controls/editors/multiselect/how-to/AngularJS/pre-select-items">How to Preselect Items on Load in AngularJS</a></li>
+<li><a href="/docs-kendo-china/controls/editors/multiselect/how-to/selection/preselect-items-using-mvvm">How to Preselect Items Using MVVM Binding</a></li>
+<li><a href="/docs-kendo-china/controls/editors/multiselect/how-to/selection/reorder-selected-items">How to Reorder Selected Items</a></li>
+<li><a href="/docs-kendo-china/controls/editors/multiselect/how-to/selection/select-all-values-with-one-selection">How to Select All Values with Single Selection</a></li>
+<li><a href="/docs-kendo-china/controls/editors/multiselect/how-to/selection/select-deselect-all-items">How to Select or Deselect All Items</a></li>
+<li><a href="/docs-kendo-china/controls/editors/multiselect/how-to/selection/select-on-tab">How to Select the First Item on TAB</a></li>
+<li><a href="/docs-kendo-china/controls/editors/multiselect/how-to/integration/using-widget-with-boostrap-modal">How to Use MultiSelect with Bootstrap Modal Window</a></li>
+<li><a href="/docs-kendo-china/controls/editors/multiselect/how-to/filtering/wire-blur-event-of-filter-input">How to Wire Blur Event of the Filter Input</a></li>
+<li><a href="/docs-kendo-china/controls/editors/multiselect/overview">Overview of the MultiSelect Widget</a></li>
 </ul>
 
 <p>Other articles on troubleshooting:</p>
 
 <ul>
-<li><a href="/troubleshoot/troubleshooting-common-issues">Common Issues in Kendo UI</a></li>
-<li><a href="/troubleshoot/troubleshooting-js-errors">Kendo UI JavaScript Errors</a></li>
-<li><a href="/troubleshoot/troubleshooting-memory-leaks">Kendo UI Performance Issues</a></li>
-<li><a href="/troubleshoot/content-security-policy">Kendo UI Content Security Policy</a></li>
-<li><a href="/framework/excel/troubleshoot/common-issues">Common Issues in Kendo UI Excel Export</a></li>
-<li><a href="/controls/charts/troubleshoot/common-issues">Common Issues in Kendo UI Charts</a></li>
-<li><a href="/controls/charts/troubleshoot/performance-tips">Performance Issues in Kendo UI Widgets for Data Visualization</a></li>
-<li><a href="/controls/editors/combobox/troubleshoot/troubleshooting">Common Issues in Kendo UI ComboBox</a></li>
-<li><a href="/controls/diagrams-and-maps/diagram/troubleshoot/common-issues">Common Issues in Kendo UI Diagram</a></li>
-<li><a href="/controls/editors/dropdownlist/troubleshoot/troubleshooting">Common Issues in Kendo UI DropDownList</a></li>
-<li><a href="/controls/editors/editor/troubleshoot/troubleshooting">Common Issues in Kendo UI Editor</a></li>
-<li><a href="/controls/scheduling/scheduler/troubleshoot/troubleshooting">Common Issues in Kendo UI Scheduler</a></li>
-<li><a href="/controls/editors/upload/troubleshoot/troubleshooting">Common Issues in Kendo UI Upload</a></li>
-<li><a href="/styles-and-layout/troubleshoot/troubleshooting">Common Issues Related to Styling, Appearance, and Rendering</a></li>
+<li><a href="/docs-kendo-china/troubleshoot/troubleshooting-common-issues">Common Issues in Kendo UI</a></li>
+<li><a href="/docs-kendo-china/troubleshoot/troubleshooting-js-errors">Kendo UI JavaScript Errors</a></li>
+<li><a href="/docs-kendo-china/troubleshoot/troubleshooting-memory-leaks">Kendo UI Performance Issues</a></li>
+<li><a href="/docs-kendo-china/troubleshoot/content-security-policy">Kendo UI Content Security Policy</a></li>
+<li><a href="/docs-kendo-china/framework/excel/troubleshoot/common-issues">Common Issues in Kendo UI Excel Export</a></li>
+<li><a href="/docs-kendo-china/controls/charts/troubleshoot/common-issues">Common Issues in Kendo UI Charts</a></li>
+<li><a href="/docs-kendo-china/controls/charts/troubleshoot/performance-tips">Performance Issues in Kendo UI Widgets for Data Visualization</a></li>
+<li><a href="/docs-kendo-china/controls/editors/combobox/troubleshoot/troubleshooting">Common Issues in Kendo UI ComboBox</a></li>
+<li><a href="/docs-kendo-china/controls/diagrams-and-maps/diagram/troubleshoot/common-issues">Common Issues in Kendo UI Diagram</a></li>
+<li><a href="/docs-kendo-china/controls/editors/dropdownlist/troubleshoot/troubleshooting">Common Issues in Kendo UI DropDownList</a></li>
+<li><a href="/docs-kendo-china/controls/editors/editor/troubleshoot/troubleshooting">Common Issues in Kendo UI Editor</a></li>
+<li><a href="/docs-kendo-china/controls/scheduling/scheduler/troubleshoot/troubleshooting">Common Issues in Kendo UI Scheduler</a></li>
+<li><a href="/docs-kendo-china/controls/editors/upload/troubleshoot/troubleshooting">Common Issues in Kendo UI Upload</a></li>
+<li><a href="/docs-kendo-china/styles-and-layout/troubleshoot/troubleshooting">Common Issues Related to Styling, Appearance, and Rendering</a></li>
 <li><a href="http://docs.telerik.com/aspnet-mvc/troubleshoot/troubleshooting">Common Issues in Telerik UI for ASP.NET MVC</a></li>
 <li><a href="http://docs.telerik.com/aspnet-mvc/troubleshoot/troubleshooting-validation">Validation Issues in Telerik UI for ASP.NET MVC</a></li>
 <li><a href="http://docs.telerik.com/aspnet-mvc/troubleshoot/troubleshooting-scaffolding">Scaffolding Issues in Telerik UI for ASP.NET MVC</a></li>
@@ -227,7 +227,7 @@ $("#ms2").kendoMultiSelect({
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -292,7 +292,7 @@ $("#ms2").kendoMultiSelect({
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

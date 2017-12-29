@@ -7,15 +7,15 @@
         <meta name="product" content="jsp-ui">
         
         <title>Overview | Splitter JSP Tag</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Get started with the Splitter JSP tag in Kendo UI.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/jsp-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/jsp-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("jsp/tags/splitter/overview.html")
         });
         </script>
@@ -121,7 +121,7 @@
             
              <h1 id="splitter-jsp-tag-overview"><a href="#splitter-jsp-tag-overview">Splitter JSP Tag Overview</a></h1>
 
-<p>The Splitter JSP tag is a server-side wrapper for the <a href="/api/javascript/ui/splitter">Kendo UI Splitter</a> widget.</p>
+<p>The Splitter JSP tag is a server-side wrapper for the <a href="/docs-kendo-china/api/javascript/ui/splitter">Kendo UI Splitter</a> widget.</p>
 
 <h2 id="getting-started"><a href="#getting-started">Getting Started</a></h2>
 
@@ -129,7 +129,7 @@
 
 <p>Below are listed the steps for you to follow when configuring the Kendo UI Splitter.</p>
 
-<p><strong>Step 1</strong> Make sure you followed all the steps from the <a href="/jsp/introduction">introductory article on Telerik UI for JSP</a>.</p>
+<p><strong>Step 1</strong> Make sure you followed all the steps from the <a href="/docs-kendo-china/jsp/introduction">introductory article on Telerik UI for JSP</a>.</p>
 
 <p><strong>Step 2</strong> Create a new action method to render the view.</p>
 
@@ -176,7 +176,7 @@
 
 <h3 id="subscribe-to-events"><a href="#subscribe-to-events">Subscribe to Events</a></h3>
 
-<p>You can subscribe to all <a href="/api/javascript/ui/splitter#events">events exposed by Kendo UI Splitter</a> by the handler name.</p>
+<p>You can subscribe to all <a href="/docs-kendo-china/api/javascript/ui/splitter#events">events exposed by Kendo UI Splitter</a> by the handler name.</p>
 
 <h6>Example</h6>
 
@@ -210,7 +210,7 @@
 
 <h3 id="existing-instances"><a href="#existing-instances">Existing Instances</a></h3>
 
-<p>You are able to reference an existing Splitter instance via <a href="http://api.jquery.com/jQuery.data/"><code>jQuery.data()</code></a>. Once a reference is established, you are able to use the <a href="/api/javascript/ui/splitter#methods">Splitter API</a> to control its behavior.</p>
+<p>You are able to reference an existing Splitter instance via <a href="http://api.jquery.com/jQuery.data/"><code>jQuery.data()</code></a>. Once a reference is established, you are able to use the <a href="/docs-kendo-china/api/javascript/ui/splitter#methods">Splitter API</a> to control its behavior.</p>
 
 <h6>Example</h6>
 
@@ -228,15 +228,15 @@ $(function() {
 <p>Other articles on Telerik UI for JSP and on the Splitter:</p>
 
 <ul>
-<li><a href="/controls/layout/splitter/overview">Overview of the Kendo UI Splitter Widget</a></li>
-<li><a href="/api/jsp/autocomplete/animation">Telerik UI for JSP API Reference Folder</a></li>
-<li><a href="/jsp/tags/autocomplete/overview">Telerik UI for JSP Tags Folder</a></li>
+<li><a href="/docs-kendo-china/controls/layout/splitter/overview">Overview of the Kendo UI Splitter Widget</a></li>
+<li><a href="/docs-kendo-china/api/jsp/autocomplete/animation">Telerik UI for JSP API Reference Folder</a></li>
+<li><a href="/docs-kendo-china/jsp/tags/autocomplete/overview">Telerik UI for JSP Tags Folder</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -301,7 +301,7 @@ $(function() {
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

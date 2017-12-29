@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="grid">
         <title>PDF Export | Kendo UI Grid</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to set the PDF export functionality of the Kendo UI Grid widget.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("controls/data-management/grid/pdf-export.html")
         });
         </script>
@@ -128,8 +128,8 @@
 <p>To enable PDF export, include the corresponding toolbar command and configure the export settings.</p>
 
 <ul>
-<li><a href="/api/javascript/ui/grid#configuration-toolbar">Toolbar Configuration</a></li>
-<li><a href="/api/javascript/ui/grid#configuration-pdf">PDF Export Configuration</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/grid#configuration-toolbar">Toolbar Configuration</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/grid#configuration-pdf">PDF Export Configuration</a></li>
 <li><a href="http://demos.telerik.com/kendo-ui/grid/pdf-export">Online Demo</a></li>
 </ul>
 
@@ -167,7 +167,7 @@
     &lt;/script&gt;
 </code></pre>
 
-<p>To initiate PDF export via code, call the <a href="/api/javascript/ui/grid.html#methods-saveAsPdf"><code>saveAsPdf</code></a> method.</p>
+<p>To initiate PDF export via code, call the <a href="/docs-kendo-china/api/javascript/ui/grid.html#methods-saveAsPdf"><code>saveAsPdf</code></a> method.</p>
 
 <blockquote>
 <p><strong>Important</strong></p>
@@ -182,7 +182,7 @@
 
 <h3 id="export-of-all-pages"><a href="#export-of-all-pages">Export of All Pages</a></h3>
 
-<p>By default, the Kendo UI Grid exports only the current page of data. To export all pages set the <a href="/api/javascript/ui/grid#configuration-pdf.allPages"><code>allPages</code></a> option to <code>true</code>.</p>
+<p>By default, the Kendo UI Grid exports only the current page of data. To export all pages set the <a href="/docs-kendo-china/api/javascript/ui/grid#configuration-pdf.allPages"><code>allPages</code></a> option to <code>true</code>.</p>
 
 <blockquote>
 <p><strong>Important</strong></p>
@@ -220,7 +220,7 @@
 
 <h3 id="fit-to-paper-size"><a href="#fit-to-paper-size">Fit to Paper Size</a></h3>
 
-<p>By default, the <a href="/api/javascript/ui/grid#configuration-pdf.paperSize">paper size</a> of the exported document is determined by the size of the Grid on the screen. For detailed information on the conversion from screen to document units, refer to the article on <a href="/framework/drawing/drawing-dom#dimensions-and-css-units#">dimensions and CSS units</a>.</p>
+<p>By default, the <a href="/docs-kendo-china/api/javascript/ui/grid#configuration-pdf.paperSize">paper size</a> of the exported document is determined by the size of the Grid on the screen. For detailed information on the conversion from screen to document units, refer to the article on <a href="/docs-kendo-china/framework/drawing/drawing-dom#dimensions-and-css-units#">dimensions and CSS units</a>.</p>
 
 <p>This implies that the document can contain pages with different dimensions if the size of the Grid is not uniform for each data page.</p>
 
@@ -372,7 +372,7 @@
 
 <h3 id="server-proxy"><a href="#server-proxy">Server Proxy</a></h3>
 
-<p>Internet Explorer 9 and Safari do not support the option for saving a file and require the implementation of a <a href="/framework/save-files/introduction#browser-support">server proxy</a>. Set the <a href="/api/javascript/ui/grid#configuration-pdf.proxyURL"><code>proxyURL</code></a> option to specify the server proxy URL, as shown below.</p>
+<p>Internet Explorer 9 and Safari do not support the option for saving a file and require the implementation of a <a href="/docs-kendo-china/framework/save-files/introduction#browser-support">server proxy</a>. Set the <a href="/docs-kendo-china/api/javascript/ui/grid#configuration-pdf.proxyURL"><code>proxyURL</code></a> option to specify the server proxy URL, as shown below.</p>
 
 <h6>Example</h6>
 
@@ -441,7 +441,7 @@
 
 <p>The default fonts in PDF files do not support Unicode. To support international characters we need to embed an external font.</p>
 
-<p>Kendo UI ships the <a href="https://dejavu-fonts.github.io">Deja Vu font family</a> as part of its distributions. For more details on this, see the article on <a href="/framework/drawing/drawing-dom#configuration-Custom">custom fonts and PDF</a>.</p>
+<p>Kendo UI ships the <a href="https://dejavu-fonts.github.io">Deja Vu font family</a> as part of its distributions. For more details on this, see the article on <a href="/docs-kendo-china/framework/drawing/drawing-dom#configuration-Custom">custom fonts and PDF</a>.</p>
 
 <p>The following example demonstrates how to handle custom fonts.</p>
 
@@ -499,7 +499,7 @@
 
 <h2 id="known-limitations"><a href="#known-limitations">Known Limitations</a></h2>
 
-<p>All <a href="/framework/drawing/drawing-dom#known-limitations">known limitations</a> of the HTML Drawing module apply. Most importantly:</p>
+<p>All <a href="/docs-kendo-china/framework/drawing/drawing-dom#known-limitations">known limitations</a> of the HTML Drawing module apply. Most importantly:</p>
 
 <ul>
 <li>Right-to-left text is not supported.</li>
@@ -512,37 +512,37 @@
 
 <ul>
 <li>The maximum document size is limited to 5080x5080mm (200x200 inches) by the PDF 1.5 specification. Larger files might not open in all viewers.</li>
-<li>Older browsers, such as Internet Explorer 9 and Safari, require the implementation of a server proxy. For more information on this, refer to <a href="/api/javascript/ui/grid#configuration-pdf.proxyURL">the <code>proxyUrl</code> configuration section</a>.</li>
+<li>Older browsers, such as Internet Explorer 9 and Safari, require the implementation of a server proxy. For more information on this, refer to <a href="/docs-kendo-china/api/javascript/ui/grid#configuration-pdf.proxyURL">the <code>proxyUrl</code> configuration section</a>.</li>
 </ul>
 
 <h2 id="further-reading"><a href="#further-reading">Further Reading</a></h2>
 
 <ul>
-<li><a href="/framework/drawing/drawing-dom">Drawing HTML</a></li>
+<li><a href="/docs-kendo-china/framework/drawing/drawing-dom">Drawing HTML</a></li>
 <li><a href="https://github.com/telerik/ui-for-aspnet-mvc-examples/tree/master/grid/pdf-export-server-side">Export MVC Grid to PDF</a></li>
 <li><a href="https://github.com/telerik/ui-for-aspnet-mvc-examples/tree/master/grid/csv-export-server-side">Export MVC Grid to CSV</a></li>
-<li><a href="/framework/save-files/introduction">Save Files with Kendo UI</a></li>
+<li><a href="/docs-kendo-china/framework/save-files/introduction">Save Files with Kendo UI</a></li>
 </ul>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <ul>
-<li><a href="/api/javascript/ui/grid">Grid JavaScript API Reference</a></li>
-<li><a href="/controls/data-management/grid/walkthrough">Walkthrough of the Grid</a></li>
-<li><a href="/controls/data-management/grid/editing">Editing Functionality of the Grid</a></li>
-<li><a href="/controls/data-management/grid/appearance">Appearance of the Grid</a></li>
-<li><a href="/controls/data-management/grid/localization">Localization of Messages in the Grid</a></li>
-<li><a href="/controls/data-management/grid/adaptive">Adaptive Rendering of the Grid</a></li>
-<li><a href="/controls/data-management/grid/excel-export">Export of the Grid to Excel</a></li>
-<li><a href="/controls/data-management/grid/pdf-export">Printing of the Grid</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/grid">Grid JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/controls/data-management/grid/walkthrough">Walkthrough of the Grid</a></li>
+<li><a href="/docs-kendo-china/controls/data-management/grid/editing">Editing Functionality of the Grid</a></li>
+<li><a href="/docs-kendo-china/controls/data-management/grid/appearance">Appearance of the Grid</a></li>
+<li><a href="/docs-kendo-china/controls/data-management/grid/localization">Localization of Messages in the Grid</a></li>
+<li><a href="/docs-kendo-china/controls/data-management/grid/adaptive">Adaptive Rendering of the Grid</a></li>
+<li><a href="/docs-kendo-china/controls/data-management/grid/excel-export">Export of the Grid to Excel</a></li>
+<li><a href="/docs-kendo-china/controls/data-management/grid/pdf-export">Printing of the Grid</a></li>
 </ul>
 
-<p>For how-to examples on the Kendo UI Grid widget, browse its <a href="/controls/data-management/grid/how-to/AngularJS/use-telerik-backend-services-with-angular"><strong>How To</strong> documentation folder</a>.</p> 
+<p>For how-to examples on the Kendo UI Grid widget, browse its <a href="/docs-kendo-china/controls/data-management/grid/how-to/AngularJS/use-telerik-backend-services-with-angular"><strong>How To</strong> documentation folder</a>.</p> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -607,7 +607,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

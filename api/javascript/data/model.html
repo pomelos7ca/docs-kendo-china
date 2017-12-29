@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>API Reference for kendo.data.Model</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="The documentation for kendo.data.Model will help you define a new model, then introduce different methods and guide you to change, get or set an event.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("api/javascript/data/model.html")
         });
         </script>
@@ -123,8 +123,8 @@
             
              <h1 id="kendodatamodel"><a href="#kendodatamodel">kendo.data.Model</a></h1>
 
-<p>The <code>Model</code> inherits from the <a href="/api/javascript/data/observableobject">ObservableObject</a> and extends it with the ability to define schema - fields and methods. The
-<a href="/api/javascript/data/datasource">DataSource</a> contains instances of the <code>Model</code> when the <a href="/api/javascript/data/datasource#configuration-schema.model">schema.model</a> setting is specified.</p>
+<p>The <code>Model</code> inherits from the <a href="/docs-kendo-china/api/javascript/data/observableobject">ObservableObject</a> and extends it with the ability to define schema - fields and methods. The
+<a href="/docs-kendo-china/api/javascript/data/datasource">DataSource</a> contains instances of the <code>Model</code> when the <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-schema.model">schema.model</a> setting is specified.</p>
 
 <h2 id="configuration"><a href="#configuration">Configuration</a></h2>
 
@@ -193,7 +193,7 @@ console.log(person.idField); // outputs "personId"
 
 <h3 id="fields-uid"><a href="#fields-uid">uid</a></h3>
 
-<p>The unique identifier of the <code>Model</code>. Inherited from <code>ObservableObject</code>. More info can be found in the <a href="/api/javascript/data/observableobject#fields-uid">uid</a> section of the
+<p>The unique identifier of the <code>Model</code>. Inherited from <code>ObservableObject</code>. More info can be found in the <a href="/docs-kendo-china/api/javascript/data/observableobject#fields-uid">uid</a> section of the
 ObservableObject API reference.</p>
 
 <p>The main benefit of uid's is to represent a link between data items (that may not have an ID of their own) and the corresponding rendered DOM elements (list items, table rows, etc). The uid's are generated randomly and they are not persisted across data or web page reloads.</p>
@@ -221,7 +221,7 @@ console.log(model.dirty); // outputs "true"
 
 <h3 id="methods-bind"><a href="#methods-bind">bind</a></h3>
 
-<p>Attaches a handler to an event. Examples and more info can be found in the <a href="/api/javascript/observable#methods-bind">bind</a> section of the <code>kendo.Observable</code> API reference.</p>
+<p>Attaches a handler to an event. Examples and more info can be found in the <a href="/docs-kendo-china/api/javascript/observable#methods-bind">bind</a> section of the <code>kendo.Observable</code> API reference.</p>
 
 <h3 id="methods-Model.define"><a href="#methods-Model.define">Model.define</a></h3>
 
@@ -254,7 +254,7 @@ Quote the key if it contains spaces or other symbols which are not valid for a J
 
 <p>Specifies the default value which will be used for the field when a new model instance is created. The default settings depend on the type of the field. The default value for "string" is <code>""</code>, for "number" is <code>0</code>, and for "date" is <code>new Date()</code> (today).</p>
 
-<p>The parameter can also be set to a function that returns the dynamic default values of the fields. For a live demo, refer to <a href="/controls/data-management/grid/how-to/filtering/use-filtering-with-dynamic-default-values">this how-to example</a>.</p>
+<p>The parameter can also be set to a function that returns the dynamic default values of the fields. For a live demo, refer to <a href="/docs-kendo-china/controls/data-management/grid/how-to/filtering/use-filtering-with-dynamic-default-values">this how-to example</a>.</p>
 
 <h5>options.fields.fieldName.editable <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
 </h5>
@@ -279,12 +279,12 @@ Quote the key if it contains spaces or other symbols which are not valid for a J
 <h5>options.fields.fieldName.from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
 </h5>
 
-<p>Specifies the field of the original record whose value is used to populate the Model field. When CRUD operations (specifically adding new items) are enabled, the original field name should be defined with a <code>defaultValue</code> as well, because during updates and creates the Kendo UI DataSource will try to construct a data item object, which matches the original (server-side) data item structure. For more information and an example, please refer to <a href="/controls/data-management/grid/how-to/binding/use-nested-model-properties">How to Use Nested Model Properties</a>.</p>
+<p>Specifies the field of the original record whose value is used to populate the Model field. When CRUD operations (specifically adding new items) are enabled, the original field name should be defined with a <code>defaultValue</code> as well, because during updates and creates the Kendo UI DataSource will try to construct a data item object, which matches the original (server-side) data item structure. For more information and an example, please refer to <a href="/docs-kendo-china/controls/data-management/grid/how-to/binding/use-nested-model-properties">How to Use Nested Model Properties</a>.</p>
 
 <h5>options.fields.fieldName.validation <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
 </h5>
 
-<p>Specifies the validation options which will be used by <a href="/api/javascript/ui/validator">Kendo Validator</a>.</p>
+<p>Specifies the validation options which will be used by <a href="/docs-kendo-china/api/javascript/ui/validator">Kendo Validator</a>.</p>
 
 <h4>Example - define the fields of a model</h4>
 
@@ -356,7 +356,7 @@ console.log(product.editable("name")); // outputs "true"
 
 <h3 id="methods-get"><a href="#methods-get">get</a></h3>
 
-<p>Gets the value of the specified field. Inherited from <code>kendo.data.ObservableObject</code>. Examples and more info can be found in the <a href="/api/javascript/data/observableobject#methods-get">get</a> section of the
+<p>Gets the value of the specified field. Inherited from <code>kendo.data.ObservableObject</code>. Examples and more info can be found in the <a href="/docs-kendo-china/api/javascript/data/observableobject#methods-get">get</a> section of the
 ObservableObject API reference.</p>
 
 <h3 id="methods-isNew"><a href="#methods-isNew">isNew</a></h3>
@@ -388,35 +388,35 @@ console.log(productTwo.isNew()); // outputs "false" because productId is set to 
 
 <h3 id="methods-set"><a href="#methods-set">set</a></h3>
 
-<p>Sets the value of the specified field. Inherited from <code>kendo.data.ObservableObject</code>. Examples and more info can be found in the <a href="/api/javascript/data/observableobject#methods-set">set</a> section of the
+<p>Sets the value of the specified field. Inherited from <code>kendo.data.ObservableObject</code>. Examples and more info can be found in the <a href="/docs-kendo-china/api/javascript/data/observableobject#methods-set">set</a> section of the
 ObservableObject API reference.</p>
 
 <h3 id="methods-toJSON"><a href="#methods-toJSON">toJSON</a></h3>
 
-<p>Creates a plain JavaScript object which contains all fields of the <code>Model</code>. Inherited from <code>kendo.data.ObservableObject</code>. Examples and more info can be found in the <a href="/api/javascript/data/observableobject#methods-toJSON">toJSON</a> section of the
+<p>Creates a plain JavaScript object which contains all fields of the <code>Model</code>. Inherited from <code>kendo.data.ObservableObject</code>. Examples and more info can be found in the <a href="/docs-kendo-china/api/javascript/data/observableobject#methods-toJSON">toJSON</a> section of the
 ObservableObject API reference.</p>
 
 <h2 id="events"><a href="#events">Events</a></h2>
 
 <h3 id="events-change"><a href="#events-change">change event</a></h3>
 
-<p>Raised when a field value is updated via the <code>set</code> method. Inherited from <code>kendo.data.ObservableObject</code>. Examples and more info can be found in the <a href="/api/javascript/data/observableobject#events-change">change</a> section of the
+<p>Raised when a field value is updated via the <code>set</code> method. Inherited from <code>kendo.data.ObservableObject</code>. Examples and more info can be found in the <a href="/docs-kendo-china/api/javascript/data/observableobject#events-change">change</a> section of the
 ObservableObject API reference.</p>
 
 <h3 id="events-get"><a href="#events-get">get event</a></h3>
 
-<p>Raised when the <code>get</code> method is invoked. Inherited from <code>kendo.data.ObservableObject</code>. Examples and more info can be found in the <a href="/api/javascript/data/observableobject#events-get">get</a> section of the
+<p>Raised when the <code>get</code> method is invoked. Inherited from <code>kendo.data.ObservableObject</code>. Examples and more info can be found in the <a href="/docs-kendo-china/api/javascript/data/observableobject#events-get">get</a> section of the
 ObservableObject API reference.</p>
 
 <h3 id="events-set"><a href="#events-set">set event</a></h3>
 
-<p>Raised when the <code>set</code> method is invoked. Inherited from <code>kendo.data.ObservableObject</code>. Examples and more info can be found in the <a href="/api/javascript/data/observableobject#events-set">set</a> section of the
+<p>Raised when the <code>set</code> method is invoked. Inherited from <code>kendo.data.ObservableObject</code>. Examples and more info can be found in the <a href="/docs-kendo-china/api/javascript/data/observableobject#events-set">set</a> section of the
 ObservableObject API reference.</p> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -481,7 +481,7 @@ ObservableObject API reference.</p>
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

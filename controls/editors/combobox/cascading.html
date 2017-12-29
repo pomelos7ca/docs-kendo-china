@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="combobox">
         <title>Cascading ComboBoxes | Kendo UI ComboBox</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how Kendo UI cascading ComboBox works and helps you handle the most common scenarios with illustrative examples and FAQ.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("controls/editors/combobox/cascading.html")
         });
         </script>
@@ -148,7 +148,7 @@
 &lt;/script&gt;
 </code></pre>
 
-<p>The child ComboBox cascades from the parent one if the <a href="/api/javascript/ui/combobox#configuration"><code>cascadeFrom</code></a> option is defined. The <code>cascadeFrom</code> option has to point to the parent ID.</p>
+<p>The child ComboBox cascades from the parent one if the <a href="/docs-kendo-china/api/javascript/ui/combobox#configuration"><code>cascadeFrom</code></a> option is defined. The <code>cascadeFrom</code> option has to point to the parent ID.</p>
 
 <blockquote>
 <p><strong>Important</strong>  </p>
@@ -188,9 +188,9 @@ value: "" //parent's value
 
 <h2 id="mvvm-value-binding"><a href="#mvvm-value-binding">MVVM Value Binding</a></h2>
 
-<p>The MVVM <a href="/framework/mvvm/bindings/value">value</a> binding updates the <code>model</code> when a UI element triggers a <code>change</code> event. When widgets cascade, however, they do not raise a <code>change</code> event and the <code>model</code> is not updated.</p>
+<p>The MVVM <a href="/docs-kendo-china/framework/mvvm/bindings/value">value</a> binding updates the <code>model</code> when a UI element triggers a <code>change</code> event. When widgets cascade, however, they do not raise a <code>change</code> event and the <code>model</code> is not updated.</p>
 
-<p>If you need a synced <code>model</code>, refer to <a href="http://dojo.telerik.com/@ggkrustev/aSAlU">this demo</a> which shows how to implement a <a href="/framework/mvvm/bindings/custom">custom MVVM binding</a> that will update the model accordingly.</p>
+<p>If you need a synced <code>model</code>, refer to <a href="http://dojo.telerik.com/@ggkrustev/aSAlU">this demo</a> which shows how to implement a <a href="/docs-kendo-china/framework/mvvm/bindings/custom">custom MVVM binding</a> that will update the model accordingly.</p>
 
 <p>For more information on why a widget does not trigger a <code>change</code> event, refer to <a href="http://github.com/telerik/kendo-ui-core/issues/661">this GitHub discussion</a>.</p>
 
@@ -198,7 +198,7 @@ value: "" //parent's value
 
 <h3 id="how-can-i-preset-the-selected-items-when-i-use-cascading-comboboxes-with-autobind-true"><a href="#how-can-i-preset-the-selected-items-when-i-use-cascading-comboboxes-with-autobind-true">How can I preset the selected items when I use cascading ComboBoxes with autoBind: true?</a></h3>
 
-<p>Set the value of the ComboBoxes—define it before initialization as demonstrated in the following example. You also can use the <a href="/api/javascript/ui/combobox#configuration"><code>value</code></a> option.</p>
+<p>Set the value of the ComboBoxes—define it before initialization as demonstrated in the following example. You also can use the <a href="/docs-kendo-china/api/javascript/ui/combobox#configuration"><code>value</code></a> option.</p>
 
 <h6>Example</h6>
 
@@ -216,7 +216,7 @@ value: "" //parent's value
 
 <h3 id="how-can-i-preset-the-selected-items-when-i-use-cascading-comboboxes-with-load-on-demand"><a href="#how-can-i-preset-the-selected-items-when-i-use-cascading-comboboxes-with-load-on-demand">How can I preset the selected items when I use cascading ComboBoxes with load on demand?</a></h3>
 
-<p>Set the <a href="/api/javascript/ui/combobox#configuration"><code>value</code></a> and <a href="/api/javascript/ui/combobox#configuration"><code>text</code></a> options.</p>
+<p>Set the <a href="/docs-kendo-china/api/javascript/ui/combobox#configuration"><code>value</code></a> and <a href="/docs-kendo-china/api/javascript/ui/combobox#configuration"><code>text</code></a> options.</p>
 
 <h6>Example</h6>
 
@@ -253,7 +253,7 @@ value: "" //parent's value
 
 <h3 id="why-server-filtering-is-disabled-and-the-child-combobox-does-not-work"><a href="#why-server-filtering-is-disabled-and-the-child-combobox-does-not-work">Why server filtering is disabled and the child ComboBox does not work?</a></h3>
 
-<p>When <a href="/api/framework/datasource#configuration"><code>serverFiltering</code></a> is disabled, the ComboBox does not make any additional requests to the server. As a result, it filters the initial data by using the <code>dataValueField</code> property of the parent. If it does not find any items, the child ComboBox remains empty.</p>
+<p>When <a href="/docs-kendo-china/api/framework/datasource#configuration"><code>serverFiltering</code></a> is disabled, the ComboBox does not make any additional requests to the server. As a result, it filters the initial data by using the <code>dataValueField</code> property of the parent. If it does not find any items, the child ComboBox remains empty.</p>
 
 <p>To use a child ComboBox with disabled server filtering, provide all the necessary data on the client.</p>
 
@@ -291,17 +291,17 @@ value: "" //parent's value
 <p>Other articles on the Kendo UI ComboBox:</p>
 
 <ul>
-<li><a href="/controls/editors/combobox/how-to/cascade/cascading-with-local-data">How to Implement Cascading with Local Data</a></li>
-<li><a href="/controls/editors/combobox/how-to/filtering/native-drag-and-drop-support">How to Search for Items by Dragging to Input</a></li>
-<li><a href="/controls/editors/combobox/how-to/appearance/underline-matched-search">How to Underline Matched Search</a></li>
-<li><a href="/controls/editors/combobox/how-to/filtering/clear-filter-on-open">How to Clear Filter on Open</a></li>
-<li><a href="/api/javascript/ui/combobox">ComboBox JavaScript API Reference</a></li>
+<li><a href="/docs-kendo-china/controls/editors/combobox/how-to/cascade/cascading-with-local-data">How to Implement Cascading with Local Data</a></li>
+<li><a href="/docs-kendo-china/controls/editors/combobox/how-to/filtering/native-drag-and-drop-support">How to Search for Items by Dragging to Input</a></li>
+<li><a href="/docs-kendo-china/controls/editors/combobox/how-to/appearance/underline-matched-search">How to Underline Matched Search</a></li>
+<li><a href="/docs-kendo-china/controls/editors/combobox/how-to/filtering/clear-filter-on-open">How to Clear Filter on Open</a></li>
+<li><a href="/docs-kendo-china/api/javascript/ui/combobox">ComboBox JavaScript API Reference</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -366,7 +366,7 @@ value: "" //parent's value
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

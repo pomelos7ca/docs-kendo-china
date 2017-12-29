@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Part 2 - Hello Services | Kendo UI Third-Party Frameworks</title>
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
         <meta name="description" content="Learn how to install the ASP.NET Web API, create services, supporting CRUD operations, and debug Web API Services.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/introduction">
-            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        <a href="/docs-kendo-china/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/default.json",
+                        url: "/docs-kendo-china/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/"),
+            template: navigationTemplate("/docs-kendo-china/"),
             dataBound: expandNavigation("third-party/tutorials/webforms/asp-net-hello-services.html")
         });
         </script>
@@ -154,7 +154,7 @@
 
 <p><strong>Figure 1: Filing a new project</strong></p>
 
-<p><img src="/images/webforms/hello-services-file-new-project.png" alt="File New Project"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-file-new-project.png" alt="File New Project"></p>
 
 <p>Open the <strong>Default.aspx</strong> page and delete all the content.</p>
 
@@ -164,7 +164,7 @@
 
 <p><strong>Figure 2: Data controllers</strong></p>
 
-<p><img src="/images/webforms/hello-services-data-controllers.png" alt="Data Controllers"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-data-controllers.png" alt="Data Controllers"></p>
 
 <h3 id="create-data-access-layer"><a href="#create-data-access-layer">Create Data Access Layer</a></h3>
 
@@ -174,11 +174,11 @@
 
 <p><strong>Figure 3: Adding LINQ to SQL</strong></p>
 
-<p><img src="/images/webforms/hello-services-add-linq-to-sql.png" alt="Add Linq To Sql"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-add-linq-to-sql.png" alt="Add Linq To Sql"></p>
 
 <p><strong>Figure 4: Added LINQ to the SQL Table</strong></p>
 
-<p><img src="/images/webforms/hello-services-linq-to-sql-table-added.png" alt="Linq To Sql Table Added"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-linq-to-sql-table-added.png" alt="Linq To Sql Table Added"></p>
 
 <h3 id="install-nuget-packages"><a href="#install-nuget-packages">Install NuGet Packages</a></h3>
 
@@ -190,7 +190,7 @@
 
 <p><strong>Figure 5: Nuget ASP.NET Web API</strong></p>
 
-<p><img src="/images/webforms/hello-services-nuget-aspnetwebapi.png" alt="Nuget AspNetWebApi"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-nuget-aspnetwebapi.png" alt="Nuget AspNetWebApi"></p>
 
 <h4>Install jQuery</h4>
 
@@ -198,7 +198,7 @@
 
 <p><strong>Figure 6: Installing jQuery</strong></p>
 
-<p><img src="/images/webforms/hello-services-install-jquery.png" alt="Install jQuery"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-install-jquery.png" alt="Install jQuery"></p>
 
 <p>Close the <strong>Add Library Package Reference</strong> dialogue.</p>
 
@@ -208,13 +208,13 @@
 
 <p><strong>Figure 7: Employees Controller</strong></p>
 
-<p><img src="/images/webforms/hello-services-employees-controller.png" alt="Employees Controller"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-employees-controller.png" alt="Employees Controller"></p>
 
 <p>To designate the <code>EmployeesController.cs</code> class that was just added as a Web API controller that will respond to requests, inherit from the <code>ApiController</code> class. If <code>ApiController</code> is not recognized for you, hover over the word until you get the context menu. This will give you the option to include <code>System.Web.Http</code>. Optionally, you can achieve the same result by pressing <code>Alt</code>+<code>Shift</code>+<code>F10</code>, which brings up the same context menu.</p>
 
 <p><strong>Figure 8: Employee controller inheriting the API controller class</strong></p>
 
-<p><img src="/images/webforms/hello-services-employee-controller-class-inherit.png" alt="Employee Controller Inherits ApiController Class"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-employee-controller-class-inherit.png" alt="Employee Controller Inherits ApiController Class"></p>
 
 <p>This class will contain methods that can be invoked from the web service that is being created. This service represents the <strong>Employees</strong> table in the <a href="http://www.microsoft.com/en-us/download/details.aspx">Northwind Database</a>. This is the table that is going to be used in this tutorial for data.</p>
 
@@ -257,7 +257,7 @@
 
 <p><strong>Figure 9: Returning a LINLINQ to the SQL object</strong></p>
 
-<p><img src="/images/webforms/hello-services-return-linq-object.png" alt="Return A LinqToSql Object"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-return-linq-object.png" alt="Return A LinqToSql Object"></p>
 
 <p>You can override this convention by specifying to the verb you want a method to respond to by decorating the method with the correct attribute (i.e. <code>HttpPut</code>).</p>
 
@@ -288,7 +288,7 @@
 
 <p><strong>Figure 10: Serialization error</strong></p>
 
-<p><img src="/images/webforms/hello-services-serialization-error.png" alt="Serialization Error"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-serialization-error.png" alt="Serialization Error"></p>
 
 <p>This is because .NET cannot serialize the LINQ To SQL object that is being returned by the <code>Get()</code> method in the <code>EmployeesController.cs</code> file. LINQ To SQL Objects are rather complex and contain far more information than what is actually needed by the UI, which is the raw data.</p>
 
@@ -315,7 +315,7 @@
 
 <p><strong>Figure 11: Employee model</strong></p>
 
-<p><img src="/images/webforms/hello-services-employee-model.png" alt="Employee Model"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-employee-model.png" alt="Employee Model"></p>
 
 <p>Open up the <code>EmployeesController.cs</code> file in the <code>Controllers</code> folder. Alter the <code>Get()</code> method to return a list of <code>Model.Employee</code> objects instead of a list of <code>Data.Employee</code> objects. Also alter the LINQ To SQL Query so that it selects a new <code>Employee</code> model object for each row returned from the database.</p>
 
@@ -344,7 +344,7 @@
 
 <p><strong>Figure 12: Web get</strong></p>
 
-<p><img src="/images/webforms/hello-services-web-get.png" alt="Web Get"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-web-get.png" alt="Web Get"></p>
 
 <h4>Test the Application</h4>
 
@@ -352,7 +352,7 @@
 
 <p><strong>Figure 13: Employees XML</strong></p>
 
-<p><img src="/images/webforms/hello-services-employees-xml.png" alt="Employees XML"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-employees-xml.png" alt="Employees XML"></p>
 
 <h3 id="get-json-data-with-ajax"><a href="#get-json-data-with-ajax">Get JSON Data With AJAX</a></h3>
 
@@ -364,7 +364,7 @@
 
 <p><strong>Figure 14: Adding jQuery to the master page</strong></p>
 
-<p><img src="/images/webforms/hello-services-add-jquery-to-master-page.png" alt="Add jQuery To Master Page"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-add-jquery-to-master-page.png" alt="Add jQuery To Master Page"></p>
 
 <p>Open up the <code>Default.aspx</code> file. Create an HTML <code>table</code> element with an <code>employees</code> id, as demonstrated in the example below.</p>
 
@@ -529,13 +529,13 @@
 
 <p><strong>Figure 15: F12 content type inspection</strong></p>
 
-<p><img src="/images/webforms/hello-services-f12-content-type-json.png" alt="F12 Content Type Inspection"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-f12-content-type-json.png" alt="F12 Content Type Inspection"></p>
 
 <p>Select the <strong>Response body</strong> tab. Inspect the JSON response returned from the server.</p>
 
 <p><strong>Figure 16: F12 response body</strong></p>
 
-<p><img src="/images/webforms/hello-services-f12-response-body-json.png" alt="F12 Response Body"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-f12-response-body-json.png" alt="F12 Response Body"></p>
 
 <h3 id="enable-deletion-of-employees"><a href="#enable-deletion-of-employees">Enable Deletion Of Employees</a></h3>
 
@@ -712,7 +712,7 @@
 
 <p><strong>Figure 17: Deleting not implemented</strong></p>
 
-<p><img src="/images/webforms/hello-services-delete-not-implemented-404.png" alt="Delete Not Implemented"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-delete-not-implemented-404.png" alt="Delete Not Implemented"></p>
 
 <h3 id="add-delete-method">
 <a href="#add-delete-method">Add </a><code>Delete</code> Method</h3>
@@ -760,7 +760,7 @@
 
 <p><strong>Figure 18: Final result</strong></p>
 
-<p><img src="/images/webforms/hello-services-finally.png" alt="Finally"></p>
+<p><img src="/docs-kendo-china/images/webforms/hello-services-finally.png" alt="Finally"></p>
 
 <h2 id="further-reading"><a href="#further-reading">Further Reading</a></h2>
 
@@ -773,16 +773,16 @@
 <p>Tutorials on how to build an HTML application in ASP.NET:</p>
 
 <ul>
-<li><a href="/third-party/tutorials/webforms/asp-net-hello-jquery">Part 1 - Hello jQuery</a></li>
-<li><a href="/third-party/tutorials/webforms/asp-net-hello-html5">Part 3 - Hello HTML5</a></li>
-<li><a href="/third-party/tutorials/webforms/asp-net-hello-kendo-ui-part-1">Part 4 - Hello Kendo UI</a></li>
-<li><a href="/third-party/tutorials/webforms/asp-net-hello-kendo-ui-part-2">Part 5 - Hello Kendo UI Grid CRUD Operations</a></li>
+<li><a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-jquery">Part 1 - Hello jQuery</a></li>
+<li><a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-html5">Part 3 - Hello HTML5</a></li>
+<li><a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-kendo-ui-part-1">Part 4 - Hello Kendo UI</a></li>
+<li><a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-kendo-ui-part-2">Part 5 - Hello Kendo UI Grid CRUD Operations</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -847,7 +847,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/images/close-btn.svg" alt="close" />
+      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>
