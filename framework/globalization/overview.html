@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="globalization">
         <title>Overview | Kendo UI Globalization</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to define current culture settings, format number or date objects in the process of globalization when working with Kendo UI.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("framework/globalization/overview.html")
         });
         </script>
@@ -126,14 +126,14 @@
 <blockquote>
 <p><strong>Important</strong></p>
 
-<p>The Kendo UI culture scripts are generated from the Windows 10 and .NET 4.7 server-side culture definitions and match them by design. To customize the culture in your application, refer to the article on <a href="/docs-kendo-china/framework/globalization/definecultureinfo#customization">culture definition</a>.</p>
+<p>The Kendo UI culture scripts are generated from the Windows 10 and .NET 4.7 server-side culture definitions and match them by design. To customize the culture in your application, refer to the article on <a href="/framework/globalization/definecultureinfo#customization">culture definition</a>.</p>
 </blockquote>
 
 <h2 id="getting-started"><a href="#getting-started">Getting Started</a></h2>
 
 <p><a href="http://demos.telerik.com/kendo-ui/globalization/index">Kendo UI provides a way to internationalize the current page using a culture script</a>. Kendo UI exposes culture (<code>cultureName</code>) method which allows you to select the culture script corresponding to the <code>&lt;language code&gt;-&lt;country/region code&gt;</code>.</p>
 
-<p>For detailed information on the <code>culture</code> method, refer to the <a href="/docs-kendo-china/api/javascript/kendo#methods-culture">API reference article on this method</a>.</p>
+<p>For detailed information on the <code>culture</code> method, refer to the <a href="/api/javascript/kendo#methods-culture">API reference article on this method</a>.</p>
 
 <h3 id="define-current-culture"><a href="#define-current-culture">Define Current Culture</a></h3>
 
@@ -175,12 +175,12 @@
 
 <ul>
 <li>
-<a href="/docs-kendo-china/api/javascript/kendo#methods-toString"><code>kendo.toString(object, format, [culture])</code></a>—This method returns a string representation of the current object while taking into account the given format and culture.</li>
+<a href="/api/javascript/kendo#methods-toString"><code>kendo.toString(object, format, [culture])</code></a>—This method returns a string representation of the current object while taking into account the given format and culture.</li>
 <li>
-<a href="/docs-kendo-china/api/javascript/kendo#methods-format"><code>kendo.format(format, arguments)</code></a>—Replaces each format item in a specified string with the text equivalent of a corresponding object's value.</li>
+<a href="/api/javascript/kendo#methods-format"><code>kendo.format(format, arguments)</code></a>—Replaces each format item in a specified string with the text equivalent of a corresponding object's value.</li>
 </ul>
 
-<p>For detailed information, refer to <a href="/docs-kendo-china/framework/globalization/dateformatting">this article</a>.</p>
+<p>For detailed information, refer to <a href="/framework/globalization/dateformatting">this article</a>.</p>
 
 <h3 id="configuration-Parse"><a href="#configuration-Parse">Parse Strings</a></h3>
 
@@ -188,14 +188,14 @@
 
 <ul>
 <li>
-<a href="/docs-kendo-china/api/javascript/kendo#methods-parseInt"><code>kendo.parseInt(string, [culture])</code></a>—This method converts a string to a whole number using the specified culture (current culture by default).</li>
+<a href="/api/javascript/kendo#methods-parseInt"><code>kendo.parseInt(string, [culture])</code></a>—This method converts a string to a whole number using the specified culture (current culture by default).</li>
 <li>
-<a href="/docs-kendo-china/api/javascript/kendo#methods-parseFloat"><code>kendo.parseFloat(string, [culture])</code></a>—Converts a string to a number with floating point using the specified culture (current culture by default).</li>
+<a href="/api/javascript/kendo#methods-parseFloat"><code>kendo.parseFloat(string, [culture])</code></a>—Converts a string to a number with floating point using the specified culture (current culture by default).</li>
 <li>
-<a href="/docs-kendo-china/api/javascript/kendo#methods-parseDate"><code>kendo.parseDate(string, [formats], [culture])</code></a>—Converts a string to a JavaScript Date object, taking into account the given format/formats (or the given culture's set of default formats).</li>
+<a href="/api/javascript/kendo#methods-parseDate"><code>kendo.parseDate(string, [formats], [culture])</code></a>—Converts a string to a JavaScript Date object, taking into account the given format/formats (or the given culture's set of default formats).</li>
 </ul>
 
-<p>For detailed information, refer to <a href="/docs-kendo-china/framework/globalization/dateparsing">this article</a>.</p>
+<p>For detailed information, refer to <a href="/framework/globalization/dateparsing">this article</a>.</p>
 
 <h2 id="support"><a href="#support">Support</a></h2>
 
@@ -215,7 +215,7 @@
 
 <ul>
 <li><a href="http://demos.telerik.com/kendo-ui/calendar/index">Calendar</a></li>
-<li><a href="/docs-kendo-china/controls/editors/dateinput/overview">DateInput</a></li>
+<li><a href="/controls/editors/dateinput/overview">DateInput</a></li>
 <li><a href="http://demos.telerik.com/kendo-ui/datepicker/index">DatePicker</a></li>
 <li><a href="http://demos.telerik.com/kendo-ui/timepicker/index">TimePicker</a></li>
 <li><a href="http://demos.telerik.com/kendo-ui/datetimepicker/index">DateTimePicker</a></li>
@@ -232,18 +232,18 @@
 <p>Articles on globalization in Kendo UI:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/framework/globalization/overview">Overview of Globalization in Kendo UI</a></li>
-<li><a href="/docs-kendo-china/framework/globalization/definecultureinfo">Culture Definition</a></li>
-<li><a href="/docs-kendo-china/framework/globalization/dateformatting">Date Formatting</a></li>
-<li><a href="/docs-kendo-china/framework/globalization/dateparsing">Date Parsing</a></li>
-<li><a href="/docs-kendo-china/framework/globalization/numberformatting">Number Formatting</a></li>
-<li><a href="/docs-kendo-china/framework/globalization/numberparsing">Number Parsing</a></li>
+<li><a href="/framework/globalization/overview">Overview of Globalization in Kendo UI</a></li>
+<li><a href="/framework/globalization/definecultureinfo">Culture Definition</a></li>
+<li><a href="/framework/globalization/dateformatting">Date Formatting</a></li>
+<li><a href="/framework/globalization/dateparsing">Date Parsing</a></li>
+<li><a href="/framework/globalization/numberformatting">Number Formatting</a></li>
+<li><a href="/framework/globalization/numberparsing">Number Parsing</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -308,7 +308,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="application_mobile">
         <title>Configuration and methods for Mobile Application widget</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="How to hide the browser address bar, set the platform which will force on the application, hide/show a loading animation and more in Kendo UI Mobile Application widget.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("api/javascript/mobile/application.html")
         });
         </script>
@@ -348,7 +348,7 @@ You can also set platform variants with it ("android-light" or "android-dark").<
 
 <blockquote>
 <p>The default setting of "black" pushes down the content of the page, while the rest overlay it. To create seamless status bar in iOS7,
-check <a href="/docs-kendo-china/mobile/application#seamless-status-bar-in-ios7">Seamless Status Bar in iOS7</a> section in Mobile Application's Getting Started page.</p>
+check <a href="/mobile/application#seamless-status-bar-in-ios7">Seamless Status Bar in iOS7</a> section in Mobile Application's Getting Started page.</p>
 </blockquote>
 
 <h4>Example</h4>
@@ -366,7 +366,7 @@ check <a href="/docs-kendo-china/mobile/application#seamless-status-bar-in-ios7"
 <a href="#configuration-transition">transition </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
 </h3>
 
-<p>The default View transition. For a list of supported transitions, check the <a href="/docs-kendo-china/mobile/application#view-transitions">Getting Started help topic</a>.</p>
+<p>The default View transition. For a list of supported transitions, check the <a href="/mobile/application#view-transitions">Getting Started help topic</a>.</p>
 
 <h4>Example</h4>
 
@@ -400,7 +400,7 @@ new kendo.mobile.Application($(document.body), { updateDocumentTitle: false });
 <p>By default, the mobile application uses flexbox for the mobile views layout. The content element is made scrollable, either by initializing a mobile scroller or with the browser supported <code>overflow: auto</code> and <code>-webkit-overflow-scrolling: touch</code> CSS declarations.
 When the <code>useNativeScrolling</code> configuration option is set to true, the view header and footer are positioned using <code>position: fixed</code> CSS declaration. The view content vertical padding is adjusted to match the header and footer height; The default browser scroller is utilized for the content scrolling.</p>
 
-<p>For more information regarding native scrolling check <a href="/docs-kendo-china/mobile/native-scrolling">this article</a>.</p>
+<p>For more information regarding native scrolling check <a href="/mobile/native-scrolling">this article</a>.</p>
 
 <h4>Example</h4>
 
@@ -538,7 +538,7 @@ new kendo.mobile.Application($(document.body), { webAppCapable: false });
 <h5>transition <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
 </h5>
 
-<p>Optional. The transition to apply when navigating. See <a href="/docs-kendo-china/mobile/application#view-transitions">View Transitions section</a> for more information.</p>
+<p>Optional. The transition to apply when navigating. See <a href="/mobile/application#view-transitions">View Transitions section</a> for more information.</p>
 
 <h6>Example</h6>
 
@@ -568,7 +568,7 @@ new kendo.mobile.Application($(document.body), { webAppCapable: false });
 <h5>transition <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
 </h5>
 
-<p>Optional. The transition to apply when navigating. See <a href="/docs-kendo-china/mobile/application#view-transitions">View Transitions section</a> for more information.</p>
+<p>Optional. The transition to apply when navigating. See <a href="/mobile/application#view-transitions">View Transitions section</a> for more information.</p>
 
 <h6>Example</h6>
 
@@ -712,7 +712,7 @@ new kendo.mobile.Application($(document.body), { webAppCapable: false });
 <a href="#fields-router">router </a><code>kendo.Router</code>
 </h3>
 
-<p>the <a href="/docs-kendo-china/api/javascript/router">router</a> instance used by the mobile application for navigation purposes.</p>
+<p>the <a href="/api/javascript/router">router</a> instance used by the mobile application for navigation purposes.</p>
 
 <p>The mobile application binds to the <code>routeMissing</code> router event handler, so registering routes will take precedence over the default mobile app actions.</p>
 
@@ -729,7 +729,7 @@ new kendo.mobile.Application($(document.body), { webAppCapable: false });
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -794,7 +794,7 @@ new kendo.mobile.Application($(document.body), { webAppCapable: false });
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

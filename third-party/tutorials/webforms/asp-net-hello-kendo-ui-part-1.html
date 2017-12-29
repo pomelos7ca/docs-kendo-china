@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Part 4 - Hello Kendo UI | Kendo UI Third-Party Frameworks</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to get working with the Kendo UI Grid widget, the Kendo UI DataSource component and use them together in your web application.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("third-party/tutorials/webforms/asp-net-hello-kendo-ui-part-1.html")
         });
         </script>
@@ -135,13 +135,13 @@
 
 <h2 id="create-sample-application"><a href="#create-sample-application">Create Sample Application</a></h2>
 
-<p>In the <a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-services">Hello Services project</a>, delete the <strong>Site.Master</strong>, <strong>About.aspx</strong> and <strong>Default.aspx</strong> pages. Add a new Web Form to the project and call it <code>Default.aspx</code>.</p>
+<p>In the <a href="/third-party/tutorials/webforms/asp-net-hello-services">Hello Services project</a>, delete the <strong>Site.Master</strong>, <strong>About.aspx</strong> and <strong>Default.aspx</strong> pages. Add a new Web Form to the project and call it <code>Default.aspx</code>.</p>
 
 <p><strong>Figure 1: Adding a new Web Form to the project</strong></p>
 
-<p><img src="/docs-kendo-china/images/webforms/add-new-webform.png" alt="add-new-webform"></p>
+<p><img src="/images/webforms/add-new-webform.png" alt="add-new-webform"></p>
 
-<p>When the document comes up, delete all of the unnecessary <code>DOCTYPE</code> declaration and HTML namespacing. As explained in the <a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-html5">Hello HTML5</a>, none of this is necessary and really clutters up the code.</p>
+<p>When the document comes up, delete all of the unnecessary <code>DOCTYPE</code> declaration and HTML namespacing. As explained in the <a href="/third-party/tutorials/webforms/asp-net-hello-html5">Hello HTML5</a>, none of this is necessary and really clutters up the code.</p>
 
 <h3 id="remove-form">
 <a href="#remove-form">Remove </a><code>&lt;form&gt;</code>
@@ -175,13 +175,13 @@
 <p>While you are free to install and try out Kendo UI Core, make sure you have a licensed copy before using any of the Kendo UI enterprise distributions, such as Kendo UI Professional, which includes data-management and editors widgets, such as the Grid, as well as Bar Chart, Gauges, etc. Click <a href="http://www.telerik.com/purchase/kendo-ui">here</a> for more information on Kendo UI licensing.</p>
 </blockquote>
 
-<p>Find more information on how to <a href="/docs-kendo-china/intro/installation/getting-started##step-2-add-css-and-javascript-references">host Kendo UI Professional in your project</a>.</p>
+<p>Find more information on how to <a href="/intro/installation/getting-started##step-2-add-css-and-javascript-references">host Kendo UI Professional in your project</a>.</p>
 
 <p>Note that you now have a <code>Content</code> folder that contains a <code>kendo</code> subfolder. You also have a <code>Scripts</code> folder which also has a <code>kendo</code> subfolder.</p>
 
 <p><strong>Figure 2: Solution Explorer</strong></p>
 
-<p><img src="/docs-kendo-china/images/webforms/solution-explorer-content.jpg" alt="solution-explorer-content"></p>
+<p><img src="/images/webforms/solution-explorer-content.jpg" alt="solution-explorer-content"></p>
 
 <h3 id="add-to-default-page"><a href="#add-to-default-page">Add to Default Page</a></h3>
 
@@ -221,7 +221,7 @@
 &lt;/html&gt;
 </code></pre>
 
-<p>You now have everything it takes to get started. Since we already have an <code>employees</code> endpoint from the <a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-services">Hello Services</a> modules, use the Grid to display them.</p>
+<p>You now have everything it takes to get started. Since we already have an <code>employees</code> endpoint from the <a href="/third-party/tutorials/webforms/asp-net-hello-services">Hello Services</a> modules, use the Grid to display them.</p>
 
 <h3 id="initialize-the-grid"><a href="#initialize-the-grid">Initialize the Grid</a></h3>
 
@@ -252,7 +252,7 @@
 
 <p><strong>Figure 3: A preview of the Grid</strong></p>
 
-<p><img src="/docs-kendo-china/images/webforms/kendo-grid-preview.png" alt="kendo-grid-preview"></p>
+<p><img src="/images/webforms/kendo-grid-preview.png" alt="kendo-grid-preview"></p>
 
 <p>Kendo UI automatically creates columns for each of the data items and assigns the field name as the column header. Change this to make it more user-friendly. Specifically, do not display the Id and format the <strong>First Name</strong> and <strong>Last Name</strong> columns so they display headers in spaced title case. Right now they are title cased, but there is no space.</p>
 
@@ -280,7 +280,7 @@
 
 <p><strong>Figure 4: A Grid having its unnecessary columns removed</strong></p>
 
-<p><img src="/docs-kendo-china/images/webforms/grid-preview-with-columns-and-sorting.png" alt="grid-preview-with-columns-and-sorting"></p>
+<p><img src="/images/webforms/grid-preview-with-columns-and-sorting.png" alt="grid-preview-with-columns-and-sorting"></p>
 
 <p>You are also able to apply a drag-and-drop grouping by setting the <code>groupable: true</code> flag. Multi-column sorting, aggregating, and paging can also be enabled.</p>
 
@@ -313,7 +313,7 @@
 
 <p><strong>Figure 5: A Grid that is set up for paging</strong></p>
 
-<p><img src="/docs-kendo-china/images/webforms/grid-preview-client-paging.png" alt="grid-preview-client-paging"></p>
+<p><img src="/images/webforms/grid-preview-client-paging.png" alt="grid-preview-client-paging"></p>
 
 <p>Push this paging to the server. To tell Kendo UI to do this, toggle the <code>serverPaging: true</code> on the DataSource in the grid, as demonstrated in the example below.</p>
 
@@ -339,7 +339,7 @@
 
 <p><strong>Figure 6: A Grid with its paging pushed to the server</strong></p>
 
-<p><img src="/docs-kendo-china/images/webforms/grid-preview-server-paging-only-1-page.png" alt="grid-preview-server-paging-only-1-page"></p>
+<p><img src="/images/webforms/grid-preview-server-paging-only-1-page.png" alt="grid-preview-server-paging-only-1-page"></p>
 
 <p>The grid now displays only 1 page. The reason for this is that it is expecting the server to send it some information that is not yet specified. Open up the Developer Tools by pressing <code>Ctrl</code>+<code>Shift</code>+<code>i</code> in Chrome or <code>F12</code> in IE. Test your application on whichever browser you are targeting for deployment and switch to it if necessary.</p>
 
@@ -347,11 +347,11 @@
 
 <p><strong>Figure 7: The take, skip, and pageSize parameters sent back to the Web API service</strong></p>
 
-<p><img src="/docs-kendo-china/images/webforms/grid-preview-server-paging-broken-dev-tools.png" alt="grid-preview-server-paging-broken-dev-tools"></p>
+<p><img src="/images/webforms/grid-preview-server-paging-broken-dev-tools.png" alt="grid-preview-server-paging-broken-dev-tools"></p>
 
 <h3 id="handle-request-parameters"><a href="#handle-request-parameters">Handle Request Parameters</a></h3>
 
-<p>If you recall from the <a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-services">Hello Services tutorial</a>, you mapped a URL back to a method with an optional <code>id</code> parameter that may or may not be after <code>employees</code> in the URL path. But these parameters for paging are in the query string. How do we get to these parameters?</p>
+<p>If you recall from the <a href="/third-party/tutorials/webforms/asp-net-hello-services">Hello Services tutorial</a>, you mapped a URL back to a method with an optional <code>id</code> parameter that may or may not be after <code>employees</code> in the URL path. But these parameters for paging are in the query string. How do we get to these parameters?</p>
 
 <p>These parameters can be retrieved off of the <code>Request</code> object. You can create a reference to this variable at the top of your <code>EmployeesController</code> class for brevity. Then simply look for the parameters by name.</p>
 
@@ -386,7 +386,7 @@ public List Get() {
 
 <p><strong>Figure 8: A preview of the application in the browser</strong></p>
 
-<p><img src="/docs-kendo-china/images/webforms/grid-preview-server-paging-only-1-page.png" alt="grid-preview-server-paging-only-1-page"></p>
+<p><img src="/images/webforms/grid-preview-server-paging-only-1-page.png" alt="grid-preview-server-paging-only-1-page"></p>
 
 <p>There is still only 1 page of data. This is because Kendo UI is missing an essential piece of information.</p>
 
@@ -465,7 +465,7 @@ Level 2. The array of employees</p>
 
 <p><strong>Figure 9: A preview of your application</strong></p>
 
-<p><img src="/docs-kendo-china/images/webforms/grid-preview-paging-server-dev-tools.png" alt="grid-preview-paging-server-dev-tools"></p>
+<p><img src="/images/webforms/grid-preview-paging-server-dev-tools.png" alt="grid-preview-paging-server-dev-tools"></p>
 
 <h2 id="further-reading"><a href="#further-reading">Further Reading</a></h2>
 
@@ -486,16 +486,16 @@ Level 2. The array of employees</p>
 <p>Tutorials on how to build an HTML application in ASP.NET:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-jquery">Part 1 - Hello jQuery</a></li>
-<li><a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-services">Part 2 - Hello Services</a></li>
-<li><a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-html5">Part 3 - Hello HTML5</a></li>
-<li><a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-kendo-ui-part-2">Part 5 - Hello Kendo UI Grid CRUD Operations</a></li>
+<li><a href="/third-party/tutorials/webforms/asp-net-hello-jquery">Part 1 - Hello jQuery</a></li>
+<li><a href="/third-party/tutorials/webforms/asp-net-hello-services">Part 2 - Hello Services</a></li>
+<li><a href="/third-party/tutorials/webforms/asp-net-hello-html5">Part 3 - Hello HTML5</a></li>
+<li><a href="/third-party/tutorials/webforms/asp-net-hello-kendo-ui-part-2">Part 5 - Hello Kendo UI Grid CRUD Operations</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -560,7 +560,7 @@ Level 2. The array of employees</p>
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

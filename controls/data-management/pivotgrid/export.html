@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="pivotgrid">
         <title>Exporting | Kendo UI PivotGrid</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to export a Kendo UI PivotGrid to Excel and in PDF.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("controls/data-management/pivotgrid/export.html")
         });
         </script>
@@ -125,12 +125,12 @@
 
 <h2 id="pdf-export"><a href="#pdf-export">PDF Export</a></h2>
 
-<p>PDF export is enabled by default when <code>kendo.all.min.js</code>, <code>kendo.web.min.js</code>, or a custom build that includes PDF scripts are loaded on the page. To set up PDF export, refer to <a href="/docs-kendo-china/api/javascript/ui/pivotgrid#configuration-pdf">the PDF configuration option</a>.</p>
+<p>PDF export is enabled by default when <code>kendo.all.min.js</code>, <code>kendo.web.min.js</code>, or a custom build that includes PDF scripts are loaded on the page. To set up PDF export, refer to <a href="/api/javascript/ui/pivotgrid#configuration-pdf">the PDF configuration option</a>.</p>
 
 <blockquote>
 <p><strong>Important</strong>  </p>
 
-<p>Exporting in older browsers, such as Internet Explorer 9 or Safari, requires the implementation of a server proxy. For more information, refer to the <a href="/docs-kendo-china/api/javascript/ui/pivotgrid#configuration-pdf"><code>proxyUrl</code> configuration sections</a>.</p>
+<p>Exporting in older browsers, such as Internet Explorer 9 or Safari, requires the implementation of a server proxy. For more information, refer to the <a href="/api/javascript/ui/pivotgrid#configuration-pdf"><code>proxyUrl</code> configuration sections</a>.</p>
 </blockquote>
 
 <h2 id="excel-export"><a href="#excel-export">Excel Export</a></h2>
@@ -140,11 +140,11 @@
 <p>The Excel export is enabled by default when <code>kendo.ooxml.min.js</code> is loaded on the page. Note that <code>kendo.ooxml.min.js</code> is included in <code>kendo.all.min.js</code> and <code>kendo.web.min.js</code>. To set up the export to Excel, refer to the following configuration knowledge sources:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/api/javascript/ui/pivotgrid#configuration-excel">Excel Export Configuration</a></li>
+<li><a href="/api/javascript/ui/pivotgrid#configuration-excel">Excel Export Configuration</a></li>
 <li><a href="http://demos.telerik.com/kendo-ui/pivotgrid/excel-export">Online Demo</a></li>
 </ul>
 
-<p>To initiate Excel export by using code, call the <a href="/docs-kendo-china/api/javascript/ui/pivotgrid.html#methods-saveAsExcel"><code>saveAsExcel</code></a> method.</p>
+<p>To initiate Excel export by using code, call the <a href="/api/javascript/ui/pivotgrid.html#methods-saveAsExcel"><code>saveAsExcel</code></a> method.</p>
 
 <h3 id="features"><a href="#features">Features</a></h3>
 
@@ -152,25 +152,25 @@
 
 <p>By default, the PivotGrid exports the current data with the sorting and filtering functionalities applied. The widget does not export the current CSS theme in the Excel file. For more information on how to change the visual appearance of the Excel document, refer to the section about <a href="#customize-the-excel-document">the Excel customization</a> below.</p>
 
-<p>The <a href="/docs-kendo-china/api/javascript/ui/pivotgrid#configuration-dataCellTemplate"><code>dataCellTemplate</code></a>, <a href="/docs-kendo-china/api/javascript/ui/pivotgrid#configuration-columnHeaderTemplate"><code>columnHeaderTemplate</code></a>, and the <a href="/docs-kendo-china/api/javascript/ui/pivotgrid#configuration-rowHeaderTemplate"><code>rowHeaderTemplate</code></a> options are not used during export. For more information on this, refer to the following section on <a href="#templates">templates</a>.</p>
+<p>The <a href="/api/javascript/ui/pivotgrid#configuration-dataCellTemplate"><code>dataCellTemplate</code></a>, <a href="/api/javascript/ui/pivotgrid#configuration-columnHeaderTemplate"><code>columnHeaderTemplate</code></a>, and the <a href="/api/javascript/ui/pivotgrid#configuration-rowHeaderTemplate"><code>rowHeaderTemplate</code></a> options are not used during export. For more information on this, refer to the following section on <a href="#templates">templates</a>.</p>
 
 <h3 id="excel-customization"><a href="#excel-customization">Excel Customization</a></h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/ui/grid#events-excelExport"><code>excelExport</code></a> event allows the customization of the generated Excel document. The <code>workbook</code> event argument exposes the generated Excel workbook configuration. For a better understanding about how Excel documents work, refer to the <a href="/docs-kendo-china/framework/excel/introduction#create-excel-document">introductory topic on Excel</a>.</p>
+<p>The <a href="/api/javascript/ui/grid#events-excelExport"><code>excelExport</code></a> event allows the customization of the generated Excel document. The <code>workbook</code> event argument exposes the generated Excel workbook configuration. For a better understanding about how Excel documents work, refer to the <a href="/framework/excel/introduction#create-excel-document">introductory topic on Excel</a>.</p>
 
 <h3 id="templates"><a href="#templates">Templates</a></h3>
 
-<p>The PivotGrid does not use <a href="/docs-kendo-china/api/javascript/ui/pivotgrid#configuration-dataCellTemplate"><code>dataCellTemplate</code></a>, <a href="/docs-kendo-china/api/javascript/ui/pivotgrid#configuration-columnHeaderTemplate"><code>columnHeaderTemplate</code></a>, and <a href="/docs-kendo-china/api/javascript/ui/pivotgrid#configuration-rowHeaderTemplate"><code>rowHeaderTemplate</code></a> during Excel export. It exports only the data. The reason for this is that the templates may contain arbitrary HTML which cannot be converted to Excel column values.</p>
+<p>The PivotGrid does not use <a href="/api/javascript/ui/pivotgrid#configuration-dataCellTemplate"><code>dataCellTemplate</code></a>, <a href="/api/javascript/ui/pivotgrid#configuration-columnHeaderTemplate"><code>columnHeaderTemplate</code></a>, and <a href="/api/javascript/ui/pivotgrid#configuration-rowHeaderTemplate"><code>rowHeaderTemplate</code></a> during Excel export. It exports only the data. The reason for this is that the templates may contain arbitrary HTML which cannot be converted to Excel column values.</p>
 
 <h2 id="troubleshooting"><a href="#troubleshooting">Troubleshooting</a></h2>
 
 <h3 id="jszip-is-not-found-javascript-error-is-thrown"><a href="#jszip-is-not-found-javascript-error-is-thrown">"JSZip Is Not Found" JavaScript Error Is Thrown</a></h3>
 
-<p>If the JSZip JavaScript library is not found, an exception is thrown when you click the <strong>Export to Excel</strong> button or call <code>saveAsExcel</code>. To work around this issue, include JSZip in the page. For more information, refer to the <a href="/docs-kendo-china/framework/excel/introduction#requirements">introductory topic on exporting to Excel</a>.  </p>
+<p>If the JSZip JavaScript library is not found, an exception is thrown when you click the <strong>Export to Excel</strong> button or call <code>saveAsExcel</code>. To work around this issue, include JSZip in the page. For more information, refer to the <a href="/framework/excel/introduction#requirements">introductory topic on exporting to Excel</a>.  </p>
 
 <h3 id="export-is-not-working-in-internet-explorer-and-safari"><a href="#export-is-not-working-in-internet-explorer-and-safari">Export Is Not Working in Internet Explorer and Safari</a></h3>
 
-<p>Internet Explorer 10 or older versions and Safari do not support the option of file saving. These browsers require the implementation of a <a href="/docs-kendo-china/framework/save-files/introduction#browser-support">server proxy</a>. To specify the URL of the server proxy, set the <a href="/docs-kendo-china/api/javascript/ui/pivotgrid#configuration-excel.proxyURL"><code>proxyURL</code></a> option.</p>
+<p>Internet Explorer 10 or older versions and Safari do not support the option of file saving. These browsers require the implementation of a <a href="/framework/save-files/introduction#browser-support">server proxy</a>. To specify the URL of the server proxy, set the <a href="/api/javascript/ui/pivotgrid#configuration-excel.proxyURL"><code>proxyURL</code></a> option.</p>
 
 <h6>Example</h6>
 
@@ -203,9 +203,9 @@
 <h2 id="further-reading"><a href="#further-reading">Further Reading</a></h2>
 
 <ul>
-<li><a href="/docs-kendo-china/framework/excel/introduction">Learn More about Creating Excel Documents with Kendo UI</a></li>
-<li><a href="/docs-kendo-china/framework/save-files/introduction">Learn How to Save Files with Kendo UI</a></li>
-<li><a href="/docs-kendo-china/api/javascript/ooxml/workbook">API Reference: <code>kendo.ooxml.Workbook</code></a></li>
+<li><a href="/framework/excel/introduction">Learn More about Creating Excel Documents with Kendo UI</a></li>
+<li><a href="/framework/save-files/introduction">Learn How to Save Files with Kendo UI</a></li>
+<li><a href="/api/javascript/ooxml/workbook">API Reference: <code>kendo.ooxml.Workbook</code></a></li>
 </ul>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
@@ -213,19 +213,19 @@
 <p>Other articles on the Kendo UI PivotGrid:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/controls/data-management/pivotgrid/overview">Overview</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/pivotgrid/configurator">PivotConfigurator</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/pivotgrid/fundamentals">Fundamentals</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/pivotgrid/olap-cube-setup">OLAP Cube Setup</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/pivotgrid/pivot-grid-faq">Frequently Asked Questions</a></li>
+<li><a href="/controls/data-management/pivotgrid/overview">Overview</a></li>
+<li><a href="/controls/data-management/pivotgrid/configurator">PivotConfigurator</a></li>
+<li><a href="/controls/data-management/pivotgrid/fundamentals">Fundamentals</a></li>
+<li><a href="/controls/data-management/pivotgrid/olap-cube-setup">OLAP Cube Setup</a></li>
+<li><a href="/controls/data-management/pivotgrid/pivot-grid-faq">Frequently Asked Questions</a></li>
 </ul>
 
-<p>For how-to examples on the Kendo UI PivotGrid widget, browse its <a href="/docs-kendo-china/controls/data-management/pivotgrid/how-to/appearance/fields-name-change"><strong>How To</strong> documentation folder</a>.</p> 
+<p>For how-to examples on the Kendo UI PivotGrid widget, browse its <a href="/controls/data-management/pivotgrid/how-to/appearance/fields-name-change"><strong>How To</strong> documentation folder</a>.</p> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -290,7 +290,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

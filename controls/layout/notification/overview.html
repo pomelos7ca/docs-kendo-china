@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="notification">
         <title>Overview | Kendo UI Notification</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to initialize the Kendo UI Notification widget and customize it functionalities.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("controls/layout/notification/overview.html")
         });
         </script>
@@ -123,7 +123,7 @@
 
 <p>The <a href="http://demos.telerik.com/kendo-ui/notification/index">Kendo UI Notification widget</a> provides a styled UI widget with arbitrary content, which can provide information to the user on various occasions.</p>
 
-<p>This article assumes that you are familiar with the <a href="/docs-kendo-china/intro/widget-basics/events-and-methods">fundamental Kendo UI widget concepts</a>.</p>
+<p>This article assumes that you are familiar with the <a href="/intro/widget-basics/events-and-methods">fundamental Kendo UI widget concepts</a>.</p>
 
 <h2 id="getting-started"><a href="#getting-started">Getting Started</a></h2>
 
@@ -161,7 +161,7 @@ $(function(){
 
 <p>Kendo UI Notification provides the following built-in notification types: <code>"info"</code>, <code>"success"</code>, <code>"warning"</code> and <code>"error"</code>. By using them, you can apply different templates and looks for each type. The built-in types provide ready-to-use shorthand display methods and styling functionalities. The shorthand method names match the listed notification types. If you do not specify a notification type, the widget assumes that the default <code>"info"</code> should be invoked and will display it. You can also defines an unlimited amount of custom notification types and corresponding templates.</p>
 
-<p>For more information on Notification templates, refer to the <a href="/docs-kendo-china/controls/layout/notification/overview#templates">Templates section of this article</a>.</p>
+<p>For more information on Notification templates, refer to the <a href="/controls/layout/notification/overview#templates">Templates section of this article</a>.</p>
 
 <p>The example below demonstrates how to apply built-in notification types.</p>
 
@@ -230,7 +230,7 @@ $(function(){
 
 <p>You can independently control positioning and stacking. If you do not define any stacking settings, the popups will stack upwards or downwards, depending on the positioning settings. For example, popups displayed at the top of the viewport will stack downwards and vice versa. The automatic settings of the stacking functionality comply with a common preference among users. However, you can render leftward or rightward stacking by explicitly defining the respective settings.  </p>
 
-<p>Popups are <a href="/docs-kendo-china/api/javascript/ui/notification#configuration-position.pinned">pinned</a> by default, which means that they do not change their position when users scroll the page. The pinned functionality is achieved by applying a <code>position:fixed</code> style to the popups. If you want to let the popups move together with the scrolled page, use the <code>position:absolute</code> style.</p>
+<p>Popups are <a href="/api/javascript/ui/notification#configuration-position.pinned">pinned</a> by default, which means that they do not change their position when users scroll the page. The pinned functionality is achieved by applying a <code>position:fixed</code> style to the popups. If you want to let the popups move together with the scrolled page, use the <code>position:absolute</code> style.</p>
 
 <p>If the popup content is expected to vary and stacking is likely to occur, it is a good idea to define explicit dimensions. In this way, the popups are aligned and look better when stacked next to one another.</p>
 
@@ -264,7 +264,7 @@ $(function(){
 
 <p>Stacking works with the help of a Globally Unique Identifier (GUID), which is generated by the widget upon initialization and appended as a CSS class to each notification element. In this way every Notification instance can recognize and manage its own currently visible notifications independently.</p>
 
-<p>When a popup notification message from a given stack is hidden, the remaining visible popups do not move. If automatic moving and repositioning is desired, it can be achieved, as shown in the <a href="/docs-kendo-china/controls/layout/notification/how-to/move-on-notification-hide">Move Visible Notifications after Hiding Others</a> how-to article.</p>
+<p>When a popup notification message from a given stack is hidden, the remaining visible popups do not move. If automatic moving and repositioning is desired, it can be achieved, as shown in the <a href="/controls/layout/notification/how-to/move-on-notification-hide">Move Visible Notifications after Hiding Others</a> how-to article.</p>
 
 <blockquote>
 <p><strong>Important</strong>  </p>
@@ -296,7 +296,7 @@ $(function(){
 
 <h3 id="configuration-Change"><a href="#configuration-Change">Change Settings for Specific Notification Messages</a></h3>
 
-<p>It is possible for a single Notification widget instance to display different messages with different settings, e.g. messages related to automatic hiding, hide timeouts, etc. To apply the desired configuration options, use the <a href="/docs-kendo-china/api/javascript/ui/widget#methods-setOptions"><code>setOptions</code></a> method. The new options will apply to all messages displayed later on. To restore or change the widget settings again, use <code>setOptions</code> as many times as necessary.</p>
+<p>It is possible for a single Notification widget instance to display different messages with different settings, e.g. messages related to automatic hiding, hide timeouts, etc. To apply the desired configuration options, use the <a href="/api/javascript/ui/widget#methods-setOptions"><code>setOptions</code></a> method. The new options will apply to all messages displayed later on. To restore or change the widget settings again, use <code>setOptions</code> as many times as necessary.</p>
 
 <h6>Example</h6>
 
@@ -346,14 +346,14 @@ $(function(){
 
 <p>Kendo UI Notification exposes two events: <code>show</code> and <code>hide</code>. The <code>show</code> event is fired when the showing animation starts. The <code>hide</code> event is fired when the hiding animation starts.</p>
 
-<p>For more information on the configuration options, refer to the <a href="/docs-kendo-china/api/javascript/ui/notification">Kendo UI Notification API section</a>.</p>
+<p>For more information on the configuration options, refer to the <a href="/api/javascript/ui/notification">Kendo UI Notification API section</a>.</p>
 
 <h2 id="templates"><a href="#templates">Templates</a></h2>
 
 <blockquote>
 <p><strong>Important</strong>  </p>
 
-<p>The content of this section is intended to users that are familiar with <a href="/docs-kendo-china/framework/templates/overview">Kendo UI templates</a>.</p>
+<p>The content of this section is intended to users that are familiar with <a href="/framework/templates/overview">Kendo UI templates</a>.</p>
 </blockquote>
 
 <p>Kendo UI Notification allows configuring multiple templates. Each template will be used together with its corresponding <a href="#configuration-Types">notification type</a>, either build-in, or custom. If you define a custom template for a built-in notification type, you will no longer be able to use the corresponding built-in template, but you will still be able to use the shorthand show methods, as demonstrated in the example below.</p>
@@ -412,28 +412,28 @@ $(function(){
 
 <p>To access an existing Notification instance, use the <code>.data("kendoNotification")</code> jQuery method, executed by the jQuery object of the originating element.</p>
 
-<p>For detailed information on how to get a reference to a Kendo UI widget, see <a href="/docs-kendo-china/intro/installation/jquery-initialization#getting-reference-to-a-kendo-ui-widget">this help topic</a>.</p>
+<p>For detailed information on how to get a reference to a Kendo UI widget, see <a href="/intro/installation/jquery-initialization#getting-reference-to-a-kendo-ui-widget">this help topic</a>.</p>
 
-<p>For further reading on Kendo UI Notification settings, refer to <a href="/docs-kendo-china/api/javascript/ui/notification">Kendo UI Notification API</a>.</p>
+<p>For further reading on Kendo UI Notification settings, refer to <a href="/api/javascript/ui/notification">Kendo UI Notification API</a>.</p>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <p>Other articles on Kendo UI Notification:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/api/javascript/ui/notification">Notification JavaScript API Reference</a></li>
-<li><a href="/docs-kendo-china/controls/layout/notification/how-to/move-on-window-resize">How to Move Popup Notifications on Window Resize</a></li>
-<li><a href="/docs-kendo-china/controls/layout/notification/how-to/move-on-notification-hide">How to Move Visible Notifications after Hiding Others</a></li>
-<li><a href="/docs-kendo-china/controls/layout/notification/how-to/stacking-left-right">How to Stack Static Notifications to the Left or Right</a></li>
-<li><a href="/docs-kendo-china/aspnet-mvc/helpers/notification/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the Notification Widget</a></li>
-<li><a href="/docs-kendo-china/jsp/tags/notification/overview">Overview of the Notification JSP Tag</a></li>
-<li><a href="/docs-kendo-china/php/widgets/notification/overview">Overview of the Notification PHP Class</a></li>
+<li><a href="/api/javascript/ui/notification">Notification JavaScript API Reference</a></li>
+<li><a href="/controls/layout/notification/how-to/move-on-window-resize">How to Move Popup Notifications on Window Resize</a></li>
+<li><a href="/controls/layout/notification/how-to/move-on-notification-hide">How to Move Visible Notifications after Hiding Others</a></li>
+<li><a href="/controls/layout/notification/how-to/stacking-left-right">How to Stack Static Notifications to the Left or Right</a></li>
+<li><a href="/aspnet-mvc/helpers/notification/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the Notification Widget</a></li>
+<li><a href="/jsp/tags/notification/overview">Overview of the Notification JSP Tag</a></li>
+<li><a href="/php/widgets/notification/overview">Overview of the Notification PHP Class</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -498,7 +498,7 @@ $(function(){
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

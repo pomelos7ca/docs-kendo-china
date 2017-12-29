@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="gantt">
         <title>Configuration, methods and events of Kendo UI Gantt</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Code examples for Gantt UI widget configuration, learn how to use methods and which events to set once the gantt UI widget detail is initialized.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("api/javascript/ui/gantt.html")
         });
         </script>
@@ -123,7 +123,7 @@
             
              <h1 id="kendouigantt"><a href="#kendouigantt">kendo.ui.Gantt</a></h1>
 
-<p>Represents the Kendo UI Gantt widget. Inherits from <a href="/docs-kendo-china/api/javascript/ui/widget">Widget</a>.</p>
+<p>Represents the Kendo UI Gantt widget. Inherits from <a href="/api/javascript/ui/widget">Widget</a>.</p>
 
 <h2 id="configuration"><a href="#configuration">Configuration</a></h2>
 
@@ -134,15 +134,15 @@
 <p>The configuration of the assignments of the gantt resources. An assignment is a one-to-one mapping between a gantt task and a gantt resource containing the number of units for which a resource is assigned to a task.</p>
 
 <h3 id="configuration-assignments.dataSource">
-<a href="#configuration-assignments.dataSource">assignments.dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<a href="#configuration-assignments.dataSource">assignments.dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h3>
 
-<p>The data source which contains assignment data items.  Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/docs-kendo-china/api/javascript/data/datasource">kendo.data.DataSource</a>
+<p>The data source which contains assignment data items.  Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/api/javascript/data/datasource">kendo.data.DataSource</a>
 instance.</p>
 
-<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/docs-kendo-china/api/javascript/data/datasource">kendo.data.DataSource</a> instance using that value as data source configuration.</p>
+<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/api/javascript/data/datasource">kendo.data.DataSource</a> instance using that value as data source configuration.</p>
 
-<p>If the <code>dataSource</code> option is an existing <a href="/docs-kendo-china/api/javascript/data/datasource">kendo.data.DataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
+<p>If the <code>dataSource</code> option is an existing <a href="/api/javascript/data/datasource">kendo.data.DataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
 
 <h4>Example - set the assignments data source</h4>
 
@@ -345,7 +345,7 @@ $("#gantt").kendoGantt({
 <a href="#configuration-autoBind">autoBind </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
 </h3>
 
-<p>If set to <code>false</code> the widget will not bind to the data source during initialization. In this case data binding will occur when the <a href="/docs-kendo-china/api/javascript/data/datasource#events-change">change</a> event of the
+<p>If set to <code>false</code> the widget will not bind to the data source during initialization. In this case data binding will occur when the <a href="/api/javascript/data/datasource#events-change">change</a> event of the
 data source is fired. By default the widget will bind to the data source specified in the configuration.</p>
 
 <blockquote>
@@ -531,11 +531,11 @@ $("#gantt").kendoGantt({
 <a href="#configuration-columns.format">columns.format </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
 </h3>
 
-<p>The format that is applied to the value before it is displayed. Takes the form "{0:format}" where "format" is a <a href="/docs-kendo-china/api/javascript/kendo#standard-number-formats">standard number format</a>,
-<a href="/docs-kendo-china/api/javascript/kendo#custom-number-formats">custom number format</a>, <a href="/docs-kendo-china/api/javascript/kendo#standard-date-formats">standard date format</a> or a <a href="/docs-kendo-china/api/javascript/kendo#custom-date-formats">custom date format</a>.</p>
+<p>The format that is applied to the value before it is displayed. Takes the form "{0:format}" where "format" is a <a href="/api/javascript/kendo#standard-number-formats">standard number format</a>,
+<a href="/api/javascript/kendo#custom-number-formats">custom number format</a>, <a href="/api/javascript/kendo#standard-date-formats">standard date format</a> or a <a href="/api/javascript/kendo#custom-date-formats">custom date format</a>.</p>
 
 <blockquote>
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-format">kendo.format</a> function is used to format the value.</p>
+<p>The <a href="/api/javascript/kendo#methods-format">kendo.format</a> function is used to format the value.</p>
 </blockquote>
 
 <h4>Example - set format for the start and end column</h4>
@@ -819,12 +819,12 @@ $("#gantt").kendoGantt({
 <a href="#configuration-dataSource">dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><code>kendo.data.GanttDataSource</code>
 </h3>
 
-<p>The data source of the widget which contains the tasks. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/docs-kendo-china/api/javascript/data/ganttdatasource">kendo.data.GanttDataSource</a>
+<p>The data source of the widget which contains the tasks. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/api/javascript/data/ganttdatasource">kendo.data.GanttDataSource</a>
 instance.</p>
 
-<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/docs-kendo-china/api/javascript/data/ganttdatasource">kendo.data.GanttDataSource</a> instance using that value as data source configuration.</p>
+<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/api/javascript/data/ganttdatasource">kendo.data.GanttDataSource</a> instance using that value as data source configuration.</p>
 
-<p>If the <code>dataSource</code> option is an existing <a href="/docs-kendo-china/api/javascript/data/ganttdatasource">kendo.data.GanttDataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
+<p>If the <code>dataSource</code> option is an existing <a href="/api/javascript/data/ganttdatasource">kendo.data.GanttDataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
 
 <blockquote>
 <p>The Kendo UI Gantt widget can be bound <em>only</em> to a <code>kendo.data.GanttDataSource</code>. An exception will be thrown if the <code>dataSource</code> option is set to a <code>kendo.data.DataSource</code> instance.</p>
@@ -972,12 +972,12 @@ $("#gantt").kendoGantt({
 <a href="#configuration-dependencies">dependencies </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><code>kendo.data.GanttDependencyDataSource</code>
 </h3>
 
-<p>The data source of the widget which contains the dependencies. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/docs-kendo-china/api/javascript/data/ganttdependencydatasource">kendo.data.GanttDependencyDataSource</a>
+<p>The data source of the widget which contains the dependencies. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/api/javascript/data/ganttdependencydatasource">kendo.data.GanttDependencyDataSource</a>
 instance.</p>
 
-<p>If the <code>dependencies</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/docs-kendo-china/api/javascript/data/ganttdependencydatasource">kendo.data.GanttDependencyDataSource</a> instance using that value as data source configuration.</p>
+<p>If the <code>dependencies</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/api/javascript/data/ganttdependencydatasource">kendo.data.GanttDependencyDataSource</a> instance using that value as data source configuration.</p>
 
-<p>If the <code>dependencies</code> option is an existing <a href="/docs-kendo-china/api/javascript/data/ganttdependencydatasource">kendo.data.GanttDependencyDataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
+<p>If the <code>dependencies</code> option is an existing <a href="/api/javascript/data/ganttdependencydatasource">kendo.data.GanttDependencyDataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
 
 <blockquote>
 <p>The Kendo UI Gantt dependencies can be bound <em>only</em> to a <code>kendo.data.GanttDependencyDataSource</code>. An exception will be thrown if the <code>dataSource</code> option is set to a <code>kendo.data.DataSource</code> instance.</p>
@@ -1558,13 +1558,13 @@ $("#gantt").kendoGantt({
 <a href="#configuration-editable.template">editable.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the editor.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the editor.</p>
 
 <p>The template should contain elements whose <code>name</code> HTML attributes are set as the editable fields. This is how the Gantt will know
-which field to update. The other option is to use <a href="/docs-kendo-china/framework/mvvm/overview">MVVM</a> bindings in order to bind HTML elements to data item fields.</p>
+which field to update. The other option is to use <a href="/framework/mvvm/overview">MVVM</a> bindings in order to bind HTML elements to data item fields.</p>
 
 <blockquote>
-<p>Use the <code>role</code> data attribute to initialize Kendo UI widgets in the template. Check <a href="/docs-kendo-china/data-attribute-initialization">data attribute initialization</a> for more info.</p>
+<p>Use the <code>role</code> data attribute to initialize Kendo UI widgets in the template. Check <a href="/data-attribute-initialization">data attribute initialization</a> for more info.</p>
 </blockquote>
 
 <h4>Example - customize the popup editor</h4>
@@ -3419,9 +3419,9 @@ $("#gantt").kendoGantt({
 <a href="#configuration-taskTemplate">taskTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the gantt tasks.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the gantt tasks.</p>
 
-<p>The fields which can be used in the template are the <a href="/docs-kendo-china/api/javascript/data/gantttask">task fields</a></p>
+<p>The fields which can be used in the template are the <a href="/api/javascript/data/gantttask">task fields</a></p>
 
 <h4>Example - set the task template</h4>
 
@@ -3463,7 +3463,7 @@ $("#gantt").kendoGantt({
 </h3>
 
 <p>If a <code>String</code> value is assigned to the <code>toolbar</code> configuration option, it will be treated as a single string template for the whole Gantt Toolbar,
-and the string value will be passed as an argument to a <a href="/docs-kendo-china/api/javascript/kendo#methods-template"><code>kendo.template()</code></a> function.</p>
+and the string value will be passed as an argument to a <a href="/api/javascript/kendo#methods-template"><code>kendo.template()</code></a> function.</p>
 
 <p>If a <code>Function</code> value is assigned (it may be a kendo.template() function call or a generic function reference), then the return value of the function will be used to render the Gantt Toolbar contents.</p>
 
@@ -3575,7 +3575,7 @@ $(".k-gantt-custom").click(function(e){
 <a href="#configuration-toolbar.template">toolbar.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the command. By default renders a button.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the command. By default renders a button.</p>
 
 <h4>Example - set the template as a function</h4>
 
@@ -3694,7 +3694,7 @@ $("#gantt").kendoGantt({
 <a href="#configuration-tooltip.template">tooltip.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the tooltip.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the tooltip.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -3937,7 +3937,7 @@ $("#gantt").kendoGantt({
 <a href="#configuration-views.timeHeaderTemplate">views.timeHeaderTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the time slots in "day" view</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the time slots in "day" view</p>
 
 <h4>Example</h4>
 
@@ -3965,7 +3965,7 @@ $("#gantt").kendoGantt({
 <a href="#configuration-views.dayHeaderTemplate">views.dayHeaderTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the day slots in "day" and "week" views.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the day slots in "day" and "week" views.</p>
 
 <h4>Example - dayHeaderTemplate set for "day" view.</h4>
 
@@ -4021,7 +4021,7 @@ $("#gantt").kendoGantt({
 <a href="#configuration-views.weekHeaderTemplate">views.weekHeaderTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the week slots in "week" and "month" views.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the week slots in "week" and "month" views.</p>
 
 <h4>Example - weekHeaderTemplate set for "week" view</h4>
 
@@ -4078,7 +4078,7 @@ $("#gantt").kendoGantt({
 <a href="#configuration-views.monthHeaderTemplate">views.monthHeaderTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the month slots in "month" and "year" views.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the month slots in "month" and "year" views.</p>
 
 <h4>Example - monthHeaderTemplate set for "month" view</h4>
 
@@ -4137,7 +4137,7 @@ $("#gantt").kendoGantt({
 <a href="#configuration-views.yearHeaderTemplate">views.yearHeaderTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the year slots in "year" view.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the year slots in "year" view.</p>
 
 <h4>Example</h4>
 
@@ -4208,7 +4208,7 @@ with a gantt task.</p>
 </h3>
 
 <p>The field of the resource data item containing the format of the resource value, which could be assigned to a gantt task.
-The data item format value could be any valid <a href="/docs-kendo-china/api/javascript/kendo#methods-format">kendo format</a>.</p>
+The data item format value could be any valid <a href="/api/javascript/kendo#methods-format">kendo format</a>.</p>
 
 <h4>Example - set the resource data format field</h4>
 
@@ -4281,15 +4281,15 @@ $("#gantt").kendoGantt({
 </code></pre>
 
 <h3 id="configuration-resources.dataSource">
-<a href="#configuration-resources.dataSource">resources.dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<a href="#configuration-resources.dataSource">resources.dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h3>
 
-<p>The data source which contains resource data items.  Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/docs-kendo-china/api/javascript/data/datasource">kendo.data.DataSource</a>
+<p>The data source which contains resource data items.  Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/api/javascript/data/datasource">kendo.data.DataSource</a>
 instance.</p>
 
-<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/docs-kendo-china/api/javascript/data/datasource">kendo.data.DataSource</a> instance using that value as data source configuration.</p>
+<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/api/javascript/data/datasource">kendo.data.DataSource</a> instance using that value as data source configuration.</p>
 
-<p>If the <code>dataSource</code> option is an existing <a href="/docs-kendo-china/api/javascript/data/datasource">kendo.data.DataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
+<p>If the <code>dataSource</code> option is an existing <a href="/api/javascript/data/datasource">kendo.data.DataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
 
 <h4>Example - set the resource data source</h4>
 
@@ -4437,7 +4437,7 @@ $("#gantt").kendoGantt({
 <a href="#fields-dataSource">dataSource </a><code>kendo.data.GanttDataSource</code>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/data/ganttdatasource">data source</a> of the widget. Configured via the <a href="#configuration-dataSource">dataSource</a> option.</p>
+<p>The <a href="/api/javascript/data/ganttdatasource">data source</a> of the widget. Configured via the <a href="#configuration-dataSource">dataSource</a> option.</p>
 
 <blockquote>
 <p>Changes of the data source will be reflected in the widget.</p>
@@ -4551,7 +4551,7 @@ gantt.dataSource.remove(task);
 <a href="#fields-dependencies">dependencies </a><code>kendo.data.GanttDependencyDataSource</code>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/data/ganttdependencydatasource">dependencies data source</a> of the widget. Configured via the <a href="#configuration-dependencies">dependencies</a> option.</p>
+<p>The <a href="/api/javascript/data/ganttdependencydatasource">dependencies data source</a> of the widget. Configured via the <a href="#configuration-dependencies">dependencies</a> option.</p>
 
 <blockquote>
 <p>Changes of the data source will be reflected in the widget.</p>
@@ -6468,7 +6468,7 @@ gantt.bind("resizeEnd", gantt_resizeEnd);
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -6533,7 +6533,7 @@ gantt.bind("resizeEnd", gantt_resizeEnd);
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

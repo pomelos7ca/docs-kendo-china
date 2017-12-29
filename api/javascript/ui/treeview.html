@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="treeview">
         <title>Configuration, methods and events of Kendo UI TreeView</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Documentation guide that helps the developer configure TreeView UI widget in a few quick steps, apply methods and trigger events.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("api/javascript/ui/treeview.html")
         });
         </script>
@@ -123,7 +123,7 @@
             
              <h1 id="kendouitreeview"><a href="#kendouitreeview">kendo.ui.TreeView</a></h1>
 
-<p>Represents the Kendo UI TreeView. Inherits from <a href="/docs-kendo-china/api/javascript/ui/widget">Widget</a>.</p>
+<p>Represents the Kendo UI TreeView. Inherits from <a href="/api/javascript/ui/widget">Widget</a>.</p>
 
 <h2 id="configuration"><a href="#configuration">Configuration</a></h2>
 
@@ -304,7 +304,7 @@ $("#treeview").kendoTreeView({
 <a href="#configuration-autoBind">autoBind </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
 </h3>
 
-<p>If set to <code>false</code> the widget will not bind to the data source during initialization. In this case data binding will occur when the <a href="/docs-kendo-china/api/javascript/data/datasource#events-change">change</a> event of the
+<p>If set to <code>false</code> the widget will not bind to the data source during initialization. In this case data binding will occur when the <a href="/api/javascript/data/datasource#events-change">change</a> event of the
 data source is fired. By default the widget will bind to the data source specified in the configuration.</p>
 
 <blockquote>
@@ -441,7 +441,7 @@ $("#treeview").kendoTreeView({
 <a href="#configuration-checkboxes.template">checkboxes.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the checkboxes. Can be used to allow posting of
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the checkboxes. Can be used to allow posting of
 additional information along the TreeView checkboxes.</p>
 
 <p>The fields which can be used in the template are:</p>
@@ -493,11 +493,11 @@ $("#treeview").kendoTreeView({
 <a href="#configuration-dataSource">dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><code>kendo.data.HierarchicalDataSource</code>
 </h3>
 
-<p>The data source of the widget which is used render nodes. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/docs-kendo-china/api/javascript/data/hierarchicaldatasource">kendo.data.HierarchicalDataSource</a> instance.</p>
+<p>The data source of the widget which is used render nodes. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/api/javascript/data/hierarchicaldatasource">kendo.data.HierarchicalDataSource</a> instance.</p>
 
-<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/docs-kendo-china/api/javascript/data/hierarchicaldatasource">kendo.data.HierarchicalDataSource</a> instance using that value as data source configuration.</p>
+<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/api/javascript/data/hierarchicaldatasource">kendo.data.HierarchicalDataSource</a> instance using that value as data source configuration.</p>
 
-<p>If the <code>dataSource</code> option is an existing <a href="/docs-kendo-china/api/javascript/data/hierarchicaldatasource">kendo.data.HierarchicalDataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
+<p>If the <code>dataSource</code> option is an existing <a href="/api/javascript/data/hierarchicaldatasource">kendo.data.HierarchicalDataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
 
 <h4>Example - set dataSource as a JavaScript object</h4>
 
@@ -961,7 +961,7 @@ console.log(dataItem.text); // displays "foo"
 &lt;/script&gt;
 </code></pre>
 
-<p>See also: <a href="/docs-kendo-china/web/treeview/overview#get-node-data-in-select-event-handler">getting the node data in the select event handler</a></p>
+<p>See also: <a href="/web/treeview/overview#get-node-data-in-select-event-handler">getting the node data in the select event handler</a></p>
 
 <h3 id="methods-destroy"><a href="#methods-destroy">destroy</a></h3>
 
@@ -1243,8 +1243,8 @@ console.log(foo);
 <h3 id="methods-findByUid"><a href="#methods-findByUid">findByUid</a></h3>
 
 <p>Searches for a node with the given unique identifier.
-Applicable when the widget is bound to a <a href="/docs-kendo-china/api/javascript/data/hierarchicaldatasource">HierarchicalDataSource</a>.
-If you want to find a node by its <code>id</code>, use the <a href="/docs-kendo-china/api/javascript/data/datasource#get">dataSource.get()</a> method and supply its uid to the <code>findByUid</code> method.</p>
+Applicable when the widget is bound to a <a href="/api/javascript/data/hierarchicaldatasource">HierarchicalDataSource</a>.
+If you want to find a node by its <code>id</code>, use the <a href="/api/javascript/data/datasource#get">dataSource.get()</a> method and supply its uid to the <code>findByUid</code> method.</p>
 
 <h4>Parameters</h4>
 
@@ -1380,7 +1380,7 @@ treeview.insertBefore(foo, treeview.findByText("bar"));
 
 <h3 id="methods-items"><a href="#methods-items">items</a></h3>
 
-<p>Obtains an Array of the DOM elements, which correspond to the data items from the Kendo UI DataSource <a href="/docs-kendo-china/api/javascript/data/datasource#methods-view">view</a>.</p>
+<p>Obtains an Array of the DOM elements, which correspond to the data items from the Kendo UI DataSource <a href="/api/javascript/data/datasource#methods-view">view</a>.</p>
 
 <h4>Returns</h4>
 
@@ -2337,7 +2337,7 @@ treeview.bind("select", tree_select);
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -2402,7 +2402,7 @@ treeview.bind("select", tree_select);
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

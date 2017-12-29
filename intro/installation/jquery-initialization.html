@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>jQuery Plug-Ins Widget Initialization | Kendo UI Getting Started</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Use jQuery plug-in syntax to add Kendo UI widgets and frameworks to your mobile website or web application.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("intro/installation/jquery-initialization.html")
         });
         </script>
@@ -127,7 +127,7 @@
 
 <p>The jQuery plug-in method is formed by the widget name in Pascal Case, prefixed with <code>kendo</code> as in <code>kendoGrid</code> and <code>kendoListView</code>. To avoid collisions with their desktop counterparts, the methods for the Hybrid UI widgets are prefixed with <code>Mobile</code> as in <code>kendoMobileTabStrip</code>, <code>kendoMobileButton</code>, and <code>kendoMobileListView</code>.</p>
 
-<p>Some Kendo UI widgets have specific requirements about the element types they must be instantiated on. For more details and working examples, check the source code in the <a href="http://demos.telerik.com/kendo-ui/">respective widget demo</a> and <a href="/docs-kendo-china/api/javascript/kendo">API reference</a>.</p>
+<p>Some Kendo UI widgets have specific requirements about the element types they must be instantiated on. For more details and working examples, check the source code in the <a href="http://demos.telerik.com/kendo-ui/">respective widget demo</a> and <a href="/api/javascript/kendo">API reference</a>.</p>
 
 <p>While it is theoretically possible to initialize several different Kendo UI widgets from the same DOM element, it might lead to undesired side effects.</p>
 
@@ -161,7 +161,7 @@
 <p><strong>Important</strong></p>
 
 <ul>
-<li>A similar approach is used for all other widgets, with the widget name being spelled in Pascal Case. The widget initialization method follows the jQuery plug-in paradigm and returns the jQuery object of the same DOM element used for the widget creation. It does not return the widget instance, and the instance should be obtained through the <a href="/docs-kendo-china/intro/widget-basics/events-and-methods#jquery-data-method">jQuery <code>data()</code> method</a>.</li>
+<li>A similar approach is used for all other widgets, with the widget name being spelled in Pascal Case. The widget initialization method follows the jQuery plug-in paradigm and returns the jQuery object of the same DOM element used for the widget creation. It does not return the widget instance, and the instance should be obtained through the <a href="/intro/widget-basics/events-and-methods#jquery-data-method">jQuery <code>data()</code> method</a>.</li>
 <li>If the jQuery object includes more than one DOM element, a separate widget is instantiated for each one.</li>
 </ul>
 </blockquote>
@@ -234,7 +234,7 @@
 <h3 id="tracking-existing-instances"><a href="#tracking-existing-instances">Tracking Existing Instances</a></h3>
 
 <p>To check whether a widget instance already exists for a certain DOM element, use the
-<a href="/docs-kendo-china/intro/widget-basics/events-and-methods#jquery-data-method">standard way to obtain the widget instance</a>. If the returned value is <code>undefined</code>, then the widget instance does not exist.</p>
+<a href="/intro/widget-basics/events-and-methods#jquery-data-method">standard way to obtain the widget instance</a>. If the returned value is <code>undefined</code>, then the widget instance does not exist.</p>
 
 <h6>Example</h6>
 
@@ -256,9 +256,9 @@
 
 <h2 id="configuration"><a href="#configuration">Configuration</a></h2>
 
-<p>To configure a Kendo UI widget, pass a configuration object—key/value pairs—as an argument to the jQuery plug-in method. The supported configuration options and events for each widget are listed in the <a href="/docs-kendo-china/api/javascript/kendo">API reference</a> of the respective widget. The configuration object might also contain event handlers that will be bound to the corresponding widget events.</p>
+<p>To configure a Kendo UI widget, pass a configuration object—key/value pairs—as an argument to the jQuery plug-in method. The supported configuration options and events for each widget are listed in the <a href="/api/javascript/kendo">API reference</a> of the respective widget. The configuration object might also contain event handlers that will be bound to the corresponding widget events.</p>
 
-<p>The following example demonstrates how to set the <a href="/docs-kendo-china/api/javascript/ui/grid#configuration-height"><code>height</code></a>, <a href="/docs-kendo-china/api/javascript/ui/grid#configuration-columns"><code>columns</code></a> and <a href="/docs-kendo-china/api/javascript/ui/grid#configuration-dataSource"><code>dataSource</code></a> configuration options of the Grid widget.</p>
+<p>The following example demonstrates how to set the <a href="/api/javascript/ui/grid#configuration-height"><code>height</code></a>, <a href="/api/javascript/ui/grid#configuration-columns"><code>columns</code></a> and <a href="/api/javascript/ui/grid#configuration-dataSource"><code>dataSource</code></a> configuration options of the Grid widget.</p>
 
 <h6>Example</h6>
 
@@ -298,25 +298,25 @@
 <p>Other articles on getting started with Kendo UI:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/intro/installation/getting-started">Get Started with Kendo UI</a></li>
-<li><a href="/docs-kendo-china/intro/installation/cdn-service">Kendo UI CDN Services</a></li>
-<li><a href="/docs-kendo-china/intro/installation/what-you-need">Include Only What You Need</a></li>
-<li><a href="/docs-kendo-china/intro/installation/prerequisites">JavaScript Prerequisites</a></li>
-<li><a href="/docs-kendo-china/intro/installation/markup">Initialize Widgets Using Markup</a></li>
-<li><a href="/docs-kendo-china/intro/widget-basics/wrapper-element">Access Widget DOM Elements: wrapper and element</a></li>
-<li><a href="/docs-kendo-china/intro/widget-basics/data-attribute-initialization">Set Data Attributes</a></li>
-<li><a href="/docs-kendo-china/intro/widget-basics/events-and-methods">Widget Methods and Events</a></li>
-<li><a href="/docs-kendo-china/intro/widget-basics/destroy">Destroy Widgets</a></li>
-<li><a href="/docs-kendo-china/intro/widget-basics/editing">Edit Widgets</a></li>
-<li><a href="/docs-kendo-china/intro/widget-basics/create-custom-kendo-widget">Create Custom Widgets</a></li>
-<li><a href="/docs-kendo-china/intro/installation/bower-install">Bower Packages</a></li>
-<li><a href="/docs-kendo-china/intro/installation/nuget-install">NuGet Packages</a></li>
+<li><a href="/intro/installation/getting-started">Get Started with Kendo UI</a></li>
+<li><a href="/intro/installation/cdn-service">Kendo UI CDN Services</a></li>
+<li><a href="/intro/installation/what-you-need">Include Only What You Need</a></li>
+<li><a href="/intro/installation/prerequisites">JavaScript Prerequisites</a></li>
+<li><a href="/intro/installation/markup">Initialize Widgets Using Markup</a></li>
+<li><a href="/intro/widget-basics/wrapper-element">Access Widget DOM Elements: wrapper and element</a></li>
+<li><a href="/intro/widget-basics/data-attribute-initialization">Set Data Attributes</a></li>
+<li><a href="/intro/widget-basics/events-and-methods">Widget Methods and Events</a></li>
+<li><a href="/intro/widget-basics/destroy">Destroy Widgets</a></li>
+<li><a href="/intro/widget-basics/editing">Edit Widgets</a></li>
+<li><a href="/intro/widget-basics/create-custom-kendo-widget">Create Custom Widgets</a></li>
+<li><a href="/intro/installation/bower-install">Bower Packages</a></li>
+<li><a href="/intro/installation/nuget-install">NuGet Packages</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -381,7 +381,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

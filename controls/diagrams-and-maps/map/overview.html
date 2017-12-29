@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="map">
         <title>Overview | Kendo UI Map</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to initialize the Kendo UI Map widget, and create and bind layers to it.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("controls/diagrams-and-maps/map/overview.html")
         });
         </script>
@@ -175,34 +175,34 @@ $("#map").kendoMap({
 
 <p><strong>Figure 1: A basic map</strong></p>
 
-<p><img src="/docs-kendo-china/controls/diagrams-and-maps/map/images/map-basic.png" alt="Basic map"></p>
+<p><img src="/controls/diagrams-and-maps/map/images/map-basic.png" alt="Basic map"></p>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <p>Other articles and how-to examples on the Kendo UI Map:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/controls/diagrams-and-maps/map/layers">Map Layers</a></li>
-<li><a href="/docs-kendo-china/controls/diagrams-and-maps/map/authoring-maps">Map Authoring</a></li>
-<li><a href="/docs-kendo-china/aspnet-mvc/helpers/map/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the Map Widget</a></li>
-<li><a href="/docs-kendo-china/controls/diagrams-and-maps/map/how-to/add-shape-title">How to Add Shape Titles</a></li>
-<li><a href="/docs-kendo-china/controls/diagrams-and-maps/map/how-to/custom-markers">How to Customize Markers on Map</a></li>
-<li><a href="/docs-kendo-china/controls/diagrams-and-maps/map/how-to/disable-mousewheel-zoom">How to Disable Mousewheel Zoom</a></li>
-<li><a href="/docs-kendo-china/controls/diagrams-and-maps/map/how-to/shape-tooltips">How to Display Shape Tooltips</a></li>
-<li><a href="/docs-kendo-china/controls/diagrams-and-maps/map/how-to/drag-and-drop-markers">How to Drag and Drop Markers</a></li>
-<li><a href="/docs-kendo-china/controls/diagrams-and-maps/map/how-to/highlight-map-shapes-by-id">How to Highlight Map Shapes by ID</a></li>
-<li><a href="/docs-kendo-china/controls/diagrams-and-maps/map/how-to/link-marker-to-location">How to Link Marker to Location</a></li>
-<li><a href="/docs-kendo-china/controls/diagrams-and-maps/map/how-to/custom-bubble-layer-symbols">How to Render Custom Symbols for Bubble Layers</a></li>
-<li><a href="/docs-kendo-china/controls/diagrams-and-maps/map/how-to/set-height-in-mobile-application">How to Set 100% Height in Mobile Applications</a></li>
-<li><a href="/docs-kendo-china/controls/diagrams-and-maps/map/how-to/update-map-shapes-by-id">How to Update Map Shapes by ID</a></li>
-<li><a href="/docs-kendo-china/controls/diagrams-and-maps/map/how-to/zoom-on-area">How to Zoom on Area</a></li>
-<li><a href="/docs-kendo-china/api/javascript/dataviz/ui/map">Map JavaScript API Reference</a></li>
+<li><a href="/controls/diagrams-and-maps/map/layers">Map Layers</a></li>
+<li><a href="/controls/diagrams-and-maps/map/authoring-maps">Map Authoring</a></li>
+<li><a href="/aspnet-mvc/helpers/map/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the Map Widget</a></li>
+<li><a href="/controls/diagrams-and-maps/map/how-to/add-shape-title">How to Add Shape Titles</a></li>
+<li><a href="/controls/diagrams-and-maps/map/how-to/custom-markers">How to Customize Markers on Map</a></li>
+<li><a href="/controls/diagrams-and-maps/map/how-to/disable-mousewheel-zoom">How to Disable Mousewheel Zoom</a></li>
+<li><a href="/controls/diagrams-and-maps/map/how-to/shape-tooltips">How to Display Shape Tooltips</a></li>
+<li><a href="/controls/diagrams-and-maps/map/how-to/drag-and-drop-markers">How to Drag and Drop Markers</a></li>
+<li><a href="/controls/diagrams-and-maps/map/how-to/highlight-map-shapes-by-id">How to Highlight Map Shapes by ID</a></li>
+<li><a href="/controls/diagrams-and-maps/map/how-to/link-marker-to-location">How to Link Marker to Location</a></li>
+<li><a href="/controls/diagrams-and-maps/map/how-to/custom-bubble-layer-symbols">How to Render Custom Symbols for Bubble Layers</a></li>
+<li><a href="/controls/diagrams-and-maps/map/how-to/set-height-in-mobile-application">How to Set 100% Height in Mobile Applications</a></li>
+<li><a href="/controls/diagrams-and-maps/map/how-to/update-map-shapes-by-id">How to Update Map Shapes by ID</a></li>
+<li><a href="/controls/diagrams-and-maps/map/how-to/zoom-on-area">How to Zoom on Area</a></li>
+<li><a href="/api/javascript/dataviz/ui/map">Map JavaScript API Reference</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -267,7 +267,7 @@ $("#map").kendoMap({
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

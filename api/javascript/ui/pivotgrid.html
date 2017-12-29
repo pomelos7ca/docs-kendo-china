@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="pivotgrid">
         <title>Configuration, methods and events of Kendo UI PivotGrid</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Code examples for PivotGrid UI widget configuration, learn how to use methods and which events to set once the grid UI widget detail is initialized and expanded.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("api/javascript/ui/pivotgrid.html")
         });
         </script>
@@ -123,7 +123,7 @@
             
              <h1 id="kendouipivotgrid"><a href="#kendouipivotgrid">kendo.ui.PivotGrid</a></h1>
 
-<p>Represents the Kendo UI PivotGrid widget. Inherits from <a href="/docs-kendo-china/api/javascript/ui/widget">Widget</a>.</p>
+<p>Represents the Kendo UI PivotGrid widget. Inherits from <a href="/api/javascript/ui/widget">Widget</a>.</p>
 
 <h2 id="configuration"><a href="#configuration">Configuration</a></h2>
 
@@ -131,12 +131,12 @@
 <a href="#configuration-dataSource">dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><code>kendo.data.PivotDataSource</code>
 </h3>
 
-<p>The data source of the widget which is used to display values. Can be a JavaScript object which represents a valid data source configuration or an existing <a href="/docs-kendo-china/api/javascript/data/pivotdatasource">kendo.data.PivotDataSource</a>
+<p>The data source of the widget which is used to display values. Can be a JavaScript object which represents a valid data source configuration or an existing <a href="/api/javascript/data/pivotdatasource">kendo.data.PivotDataSource</a>
 instance.</p>
 
-<p>If the <code>dataSource</code> option is set to a JavaScript object the widget will initialize a new <a href="/docs-kendo-china/api/javascript/data/pivotdatasource">kendo.data.PivotDataSource</a> instance using that value as data source configuration.</p>
+<p>If the <code>dataSource</code> option is set to a JavaScript object the widget will initialize a new <a href="/api/javascript/data/pivotdatasource">kendo.data.PivotDataSource</a> instance using that value as data source configuration.</p>
 
-<p>If the <code>dataSource</code> option is an existing <a href="/docs-kendo-china/api/javascript/data/pivotdatasource">kendo.data.PivotDataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
+<p>If the <code>dataSource</code> option is an existing <a href="/api/javascript/data/pivotdatasource">kendo.data.PivotDataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
 
 <h4>Example - set dataSource as a JavaScript object</h4>
 
@@ -206,7 +206,7 @@ $("#pivotgrid").kendoPivotGrid({
 <a href="#configuration-autoBind">autoBind </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
 </h3>
 
-<p>If set to <code>false</code> the widget will not bind to the data source during initialization. In this case data binding will occur when the <a href="/docs-kendo-china/api/javascript/data/datasource#events-change">change</a> event of the
+<p>If set to <code>false</code> the widget will not bind to the data source during initialization. In this case data binding will occur when the <a href="/api/javascript/data/datasource#events-change">change</a> event of the
 data source is fired. By default the widget will bind to the data source specified in the configuration.</p>
 
 <blockquote>
@@ -1231,7 +1231,7 @@ $("#pivotgrid").kendoPivotGrid({
 <a href="#configuration-columnHeaderTemplate">columnHeaderTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the content of the column header cell. By default it renders the <em>caption</em> of the tuple member.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the content of the column header cell. By default it renders the <em>caption</em> of the tuple member.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -1240,7 +1240,7 @@ $("#pivotgrid").kendoPivotGrid({
 <li>tuple - the tuple of the corresponding column header cell</li>
 </ul>
 
-<p>For information about the tuple structure check this <a href="/docs-kendo-china/api/javascript/data/pivotdatasource#configuration-schema.axes">link</a>.</p>
+<p>For information about the tuple structure check this <a href="/api/javascript/data/pivotdatasource#configuration-schema.axes">link</a>.</p>
 
 <h4>Example - emphasize the title of a specific member</h4>
 
@@ -1285,7 +1285,7 @@ $("#pivotgrid").kendoPivotGrid({
 <a href="#configuration-dataCellTemplate">dataCellTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the content of the data cell. By default renders the formatted value (fmtValue) of the data item.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the content of the data cell. By default renders the formatted value (fmtValue) of the data item.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -1296,8 +1296,8 @@ $("#pivotgrid").kendoPivotGrid({
 <li>dataItem - the data item itself</li>
 </ul>
 
-<p>For information about the tuple structure check this <a href="/docs-kendo-china/api/javascript/data/pivotdatasource#configuration-schema.axes">link</a>.
-About the data item structure review this <a href="/docs-kendo-china/api/javascript/data/pivotdatasource#configuration-schema.data">help topic</a>.</p>
+<p>For information about the tuple structure check this <a href="/api/javascript/data/pivotdatasource#configuration-schema.axes">link</a>.
+About the data item structure review this <a href="/api/javascript/data/pivotdatasource#configuration-schema.data">help topic</a>.</p>
 
 <h4>Example - emphasize the values in <em>2005</em>
 </h4>
@@ -1343,7 +1343,7 @@ $("#pivotgrid").kendoPivotGrid({
 <a href="#configuration-kpiStatusTemplate">kpiStatusTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the content of the <code>KPI Status</code> value. By default renders "open", "hold" and "denied" status icons.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the content of the <code>KPI Status</code> value. By default renders "open", "hold" and "denied" status icons.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -1354,8 +1354,8 @@ $("#pivotgrid").kendoPivotGrid({
 <li>dataItem - the data item itself</li>
 </ul>
 
-<p>For information about the tuple structure check this <a href="/docs-kendo-china/api/javascript/data/pivotdatasource#configuration-schema.axes">link</a>.
-About the data item structure review this <a href="/docs-kendo-china/api/javascript/data/pivotdatasource#configuration-schema.data">help topic</a>.</p>
+<p>For information about the tuple structure check this <a href="/api/javascript/data/pivotdatasource#configuration-schema.axes">link</a>.
+About the data item structure review this <a href="/api/javascript/data/pivotdatasource#configuration-schema.data">help topic</a>.</p>
 
 <h4>Example - specify a custom template for the KPI Status measure</h4>
 
@@ -1400,7 +1400,7 @@ $("#pivotgrid").kendoPivotGrid({
 <a href="#configuration-kpiTrendTemplate">kpiTrendTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the content of the <code>KPI Trend</code> value. By default renders "increase", "decrease" and "equal" status icons.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the content of the <code>KPI Trend</code> value. By default renders "increase", "decrease" and "equal" status icons.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -1411,8 +1411,8 @@ $("#pivotgrid").kendoPivotGrid({
 <li>dataItem - the data item itself</li>
 </ul>
 
-<p>For information about the tuple structure check this <a href="/docs-kendo-china/api/javascript/data/pivotdatasource#configuration-schema.axes">link</a>.
-About the data item structure review this <a href="/docs-kendo-china/api/javascript/data/pivotdatasource#configuration-schema.data">help topic</a>.</p>
+<p>For information about the tuple structure check this <a href="/api/javascript/data/pivotdatasource#configuration-schema.axes">link</a>.
+About the data item structure review this <a href="/api/javascript/data/pivotdatasource#configuration-schema.data">help topic</a>.</p>
 
 <h4>Example - specify a custom template for the KPI Trend measure</h4>
 
@@ -1457,7 +1457,7 @@ $("#pivotgrid").kendoPivotGrid({
 <a href="#configuration-rowHeaderTemplate">rowHeaderTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the content of the row header cell. By default it renders the <em>caption</em> of the tuple member.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the content of the row header cell. By default it renders the <em>caption</em> of the tuple member.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -1466,7 +1466,7 @@ $("#pivotgrid").kendoPivotGrid({
 <li>tuple - the tuple of the corresponding row header cell</li>
 </ul>
 
-<p>For information about the tuple structure check this <a href="/docs-kendo-china/api/javascript/data/pivotdatasource#configuration-schema.axes">link</a>.</p>
+<p>For information about the tuple structure check this <a href="/api/javascript/data/pivotdatasource#configuration-schema.axes">link</a>.</p>
 
 <h4>Example - emphasize the title of a specific member</h4>
 
@@ -2477,7 +2477,7 @@ $("#pivotgrid").kendoPivotGrid({
 <a href="#fields-dataSource">dataSource </a><code>kendo.data.PivotDataSource</code>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/data/pivotdatasource">data source</a> of the widget. Configured via the <a href="#configuration-dataSource">dataSource</a> option.</p>
+<p>The <a href="/api/javascript/data/pivotdatasource">data source</a> of the widget. Configured via the <a href="#configuration-dataSource">dataSource</a> option.</p>
 
 <blockquote>
 <p>Changes of the data source will be reflected in the widget.</p>
@@ -3285,7 +3285,7 @@ pivotgrid.bind("collapseMember", collapseMember);
 <h5>e.workbook <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
 </h5>
 
-<p>The Excel <a href="/docs-kendo-china/api/javascript/ooxml/workbook#configuration">workbook configuration object</a>. Used to initialize a <code>kendo.ooxml.Workbook</code> class. Modifications of the workbook will reflect in the output Excel document.</p>
+<p>The Excel <a href="/api/javascript/ooxml/workbook#configuration">workbook configuration object</a>. Used to initialize a <code>kendo.ooxml.Workbook</code> class. Modifications of the workbook will reflect in the output Excel document.</p>
 
 <h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h5>
@@ -3480,7 +3480,7 @@ pivotgrid.saveAsPDF();
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -3545,7 +3545,7 @@ pivotgrid.saveAsPDF();
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

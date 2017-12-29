@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="drawing_api">
         <title>Drawing of HTML Elements | Kendo UI Drawing API</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to draw a piece of HTML that is available in the DOM using the Kendo UI Drawing API.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("framework/drawing/drawing-dom.html")
         });
         </script>
@@ -125,7 +125,7 @@
 
 <h2 id="getting-started"><a href="#getting-started">Getting Started</a></h2>
 
-<p>Using the <code>drawing.drawDOM</code> function you can draw a DOM element into a <a href="/docs-kendo-china/api/dataviz/drawing/group"><code>drawing.Group</code></a>, which you are then able to render with one of the supported backends into SVG, PDF, or HTML5 <code>&lt;canvas&gt;</code> format.</p>
+<p>Using the <code>drawing.drawDOM</code> function you can draw a DOM element into a <a href="/api/dataviz/drawing/group"><code>drawing.Group</code></a>, which you are then able to render with one of the supported backends into SVG, PDF, or HTML5 <code>&lt;canvas&gt;</code> format.</p>
 
 <p>The DOM element must be appended to the document and fully rendered, meaning that you cannot draw an element which has the <code>display: none</code>, or the <code>visibility: hidden</code> options. Assume that you have the following HTML in the page:</p>
 
@@ -158,7 +158,7 @@
 
 <h3 id="configuration-Custom"><a href="#configuration-Custom">Custom Fonts in PDF</a></h3>
 
-<p>If you need PDF output, your document should declare the fonts it applies by using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face">CSS <code>font-face</code> declarations</a> for optimal layout and Unicode support. As of the Kendo UI 2014 Q3 SP1, the Kendo UI PDF generator is able to dig such declarations directly from the CSS and you do not need to manually call the <a href="/docs-kendo-china/api/javascript/pdf#methods-defineFont"><code>pdf.defineFont</code></a> method.</p>
+<p>If you need PDF output, your document should declare the fonts it applies by using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face">CSS <code>font-face</code> declarations</a> for optimal layout and Unicode support. As of the Kendo UI 2014 Q3 SP1, the Kendo UI PDF generator is able to dig such declarations directly from the CSS and you do not need to manually call the <a href="/api/javascript/pdf#methods-defineFont"><code>pdf.defineFont</code></a> method.</p>
 
 <p>The example below demonstrates a sample CSS declaration.</p>
 
@@ -191,7 +191,7 @@
 </ul>
 </blockquote>
 
-<p>It is possible to use fonts without the necessity to host them on the same domain. For more information on this alternative approach which also works when the page is loaded over the <code>file://</code> URLs, refer to the article on how to <a href="/docs-kendo-china/framework/drawing/how-to/pack-fonts-for-export">pack fonts for PDF export</a>.</p>
+<p>It is possible to use fonts without the necessity to host them on the same domain. For more information on this alternative approach which also works when the page is loaded over the <code>file://</code> URLs, refer to the article on how to <a href="/framework/drawing/how-to/pack-fonts-for-export">pack fonts for PDF export</a>.</p>
 
 <h3 id="configuration-Images"><a href="#configuration-Images">Images in PDF</a></h3>
 
@@ -201,7 +201,7 @@
 
 <h3 id="configuration-Hyperlinks"><a href="#configuration-Hyperlinks">Hyperlinks in PDF</a></h3>
 
-<p>By default the <a href="/docs-kendo-china/api/javascript/drawing#methods-drawDOM"><code>drawDOM</code></a> method creates clickable hyperlinks in the generated PDF document. You can disable this behavior with the <code>avoidLinks</code> option, as demonstrated in the example below.</p>
+<p>By default the <a href="/api/javascript/drawing#methods-drawDOM"><code>drawDOM</code></a> method creates clickable hyperlinks in the generated PDF document. You can disable this behavior with the <code>avoidLinks</code> option, as demonstrated in the example below.</p>
 
 <h6>Example</h6>
 
@@ -229,7 +229,7 @@
 
 <h3 id="configuration-Multi-Page"><a href="#configuration-Multi-Page">Multi-Page PDF Output</a></h3>
 
-<p>The <code>drawing.drawDOM</code> allows you to create a <a href="/docs-kendo-china/framework/drawing/pdf-output.html#multiple-pages-output">multi-page PDF</a> by specifying manual page breaks. A page break occurs before each element that matches the <code>forcePageBreak</code> CSS selector.</p>
+<p>The <code>drawing.drawDOM</code> allows you to create a <a href="/framework/drawing/pdf-output.html#multiple-pages-output">multi-page PDF</a> by specifying manual page breaks. A page break occurs before each element that matches the <code>forcePageBreak</code> CSS selector.</p>
 
 <p>The example below demonstrates how to draw a multi-page Kendo UI Grid.</p>
 
@@ -268,7 +268,7 @@
 
 <h3 id="configuration-Automatic"><a href="#configuration-Automatic">Automatic Page Breaking</a></h3>
 
-<p>Since Kendo UI 2015 Q1 Kendo UI supports automatic page breaking. When your target is the output in PDF format, you can solicit automatic page breaking by informing the <code>drawDOM</code> what the desired page size and margins are. Note that the automatic page breaking is subject to a few limitations detailed below. The options are <code>paperSize</code> and <code>margin</code>, the same as documented in the <a href="/docs-kendo-china/framework/drawing/pdf-output#configuration-PDF">section on the PDF options</a>. You are still able to use the <code>forcePageBreak</code> in this case to manually specify break points.</p>
+<p>Since Kendo UI 2015 Q1 Kendo UI supports automatic page breaking. When your target is the output in PDF format, you can solicit automatic page breaking by informing the <code>drawDOM</code> what the desired page size and margins are. Note that the automatic page breaking is subject to a few limitations detailed below. The options are <code>paperSize</code> and <code>margin</code>, the same as documented in the <a href="/framework/drawing/pdf-output#configuration-PDF">section on the PDF options</a>. You are still able to use the <code>forcePageBreak</code> in this case to manually specify break points.</p>
 
 <h6>Example</h6>
 
@@ -605,7 +605,7 @@
 
 <h2 id="supported-browsers"><a href="#supported-browsers">Supported Browsers</a></h2>
 
-<p>For more information on the provided <a href="/docs-kendo-china/intro/supporting/browser-support">browser support</a>, refer to the section on <a href="/docs-kendo-china/intro/supporting/browser-support#pdf-export">PDF export</a>.</p>
+<p>For more information on the provided <a href="/intro/supporting/browser-support">browser support</a>, refer to the section on <a href="/intro/supporting/browser-support#pdf-export">PDF export</a>.</p>
 
 <h2 id="known-limitations"><a href="#known-limitations">Known Limitations</a></h2>
 
@@ -632,16 +632,16 @@
 <p>Other articles on Kendo UI Drawing API:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/framework/drawing/overview">Overview of the Drawing API</a></li>
-<li><a href="/docs-kendo-china/framework/drawing/basic-shapes">Drawing of Basic Shapes</a></li>
-<li><a href="/docs-kendo-china/framework/drawing/pdf-output">Export a Drawing in PDF</a></li>
-<li><a href="/docs-kendo-china/framework/drawing/drawing-dom">Supported Browsers for Kendo UI Drawing API</a></li>
+<li><a href="/framework/drawing/overview">Overview of the Drawing API</a></li>
+<li><a href="/framework/drawing/basic-shapes">Drawing of Basic Shapes</a></li>
+<li><a href="/framework/drawing/pdf-output">Export a Drawing in PDF</a></li>
+<li><a href="/framework/drawing/drawing-dom">Supported Browsers for Kendo UI Drawing API</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -706,7 +706,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

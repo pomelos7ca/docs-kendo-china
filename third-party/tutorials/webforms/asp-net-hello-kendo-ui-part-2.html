@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Part 5 - Hello CRUD Data Operations | Kendo UI Third-Party Frameworks</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to enable CRUD operations, handle the editing functionality and failed requests in the Kendo UI Grid widget.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("third-party/tutorials/webforms/asp-net-hello-kendo-ui-part-2.html")
         });
         </script>
@@ -206,7 +206,7 @@ public Models.Response Get() {
 
 <p><strong>Figure 1: An editable Grid</strong></p>
 
-<p><img src="/docs-kendo-china/images/webforms/grid_is_editable.png" alt="grid_is_editable"></p>
+<p><img src="/images/webforms/grid_is_editable.png" alt="grid_is_editable"></p>
 
 <h3 id="use-command-columns"><a href="#use-command-columns">Use Command Columns</a></h3>
 
@@ -276,7 +276,7 @@ model: {
 
 <p><strong>Figure 2: An editable Grid with a model</strong></p>
 
-<p><img src="/docs-kendo-china/images/webforms/grid_is_editable_with_model.png" alt="grid_is_editable_with_model"></p>
+<p><img src="/images/webforms/grid_is_editable_with_model.png" alt="grid_is_editable_with_model"></p>
 
 <p>If you want to tweak this validation message, change the model definition for the <strong>LastName</strong> so it looks like the one demonstrated in the example below.</p>
 
@@ -326,7 +326,7 @@ transport: {
 
 <h2 id="handle-crud-operations-server-side"><a href="#handle-crud-operations-server-side">Handle CRUD Operations Server-Side</a></h2>
 
-<p>The next step is to handle the different HTTP request types in the <code>EmployeesController</code>. Since this project builds off of <a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-services">Hello Services</a>, the <code>DELETE</code> type is already handled. Just add one for <code>update</code>. In this method, you are going to select the employee that needs to be updated from the database based on the <code>id</code> parameter that is passed in. Then set the fields one by one based on the request parameters.</p>
+<p>The next step is to handle the different HTTP request types in the <code>EmployeesController</code>. Since this project builds off of <a href="/third-party/tutorials/webforms/asp-net-hello-services">Hello Services</a>, the <code>DELETE</code> type is already handled. Just add one for <code>update</code>. In this method, you are going to select the employee that needs to be updated from the database based on the <code>id</code> parameter that is passed in. Then set the fields one by one based on the request parameters.</p>
 
 <p>Since you cannot rely on client-side validation, as anything in the browser can be circumvented, check to make sure the fields are not null before you assign them to the database object. Also, make sure that the date is valid. Return a status message of <strong>OK</strong> or <strong>200</strong> to the Grid for it to know that the update succeeded. You can do that by using the <code>HTTPResponseMessage</code> object. If the update succeeds, return a <strong>200</strong>. If it fails, return a <strong>500</strong> and give a little more info in the response body about what went wrong.</p>
 
@@ -386,7 +386,7 @@ transport: {
 
 <p><strong>Figure 3: A strange date format appearing in the Grid</strong></p>
 
-<p><img src="/docs-kendo-china/images/webforms/grid_bad_datetime.png" alt="grid_bad_datetime"></p>
+<p><img src="/images/webforms/grid_bad_datetime.png" alt="grid_bad_datetime"></p>
 
 <p>This is because Dates are formatted for JavaScript and you need to get the date formatted correctly. To do so, add a <code>parameterMap</code> method to the <code>transport</code> on the DataSource. The <code>parameterMap</code> takes in two parameters: <code>options</code> and <code>operation</code>. <code>options</code> are the parameters as Kendo UI is about to try to send them. <code>operation</code> is <code>read</code>, <code>update</code>, <code>create</code>, or <code>destroy</code>. You must always return at least <code>options</code> out of this function when you specify it. In this case, check for the <code>update</code> operation. If the current operation is indeed an update, format the date and reset the parameter value on the options.</p>
 
@@ -533,7 +533,7 @@ error: function (e) {
 
 <p><strong>Figure 4: A sample server error</strong></p>
 
-<p><img src="/docs-kendo-china/images/webforms/sample_error.png" alt="sample_error"></p>
+<p><img src="/images/webforms/sample_error.png" alt="sample_error"></p>
 
 <blockquote>
 <p><strong>Important</strong></p>
@@ -569,7 +569,7 @@ error: function (e) {
 <li><a href="http://demos.telerik.com/kendo-ui/web/grid/editing-popup.html">Kendo UI Grid Editing Functionality in Popups</a></li>
 <li><a href="http://demos.telerik.com/kendo-ui/web/grid/editing-inline.html">Kendo UI Grid Editing Functionality Inline</a></li>
 <li><a href="http://demos.telerik.com/kendo-ui/web/grid/editing-custom.html">Kendo UI Grid Custom Editing</a></li>
-<li><a href="/docs-kendo-china/api/javascript/data/model">JavaScript <code>model</code> API</a></li>
+<li><a href="/api/javascript/data/model">JavaScript <code>model</code> API</a></li>
 <li><a href="http://demos.telerik.com/kendo-ui/web/datepicker">Kendo UI DatePicker Demo Online</a></li>
 </ul>
 
@@ -578,16 +578,16 @@ error: function (e) {
 <p>Tutorials on how to build an HTML application in ASP.NET:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-jquery">Part 1 - Hello jQuery</a></li>
-<li><a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-services">Part 2 - Hello Services</a></li>
-<li><a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-html5">Part 3 - Hello HTML5</a></li>
-<li><a href="/docs-kendo-china/third-party/tutorials/webforms/asp-net-hello-kendo-ui-part-1">Part 4 - Hello Kendo UI</a></li>
+<li><a href="/third-party/tutorials/webforms/asp-net-hello-jquery">Part 1 - Hello jQuery</a></li>
+<li><a href="/third-party/tutorials/webforms/asp-net-hello-services">Part 2 - Hello Services</a></li>
+<li><a href="/third-party/tutorials/webforms/asp-net-hello-html5">Part 3 - Hello HTML5</a></li>
+<li><a href="/third-party/tutorials/webforms/asp-net-hello-kendo-ui-part-1">Part 4 - Hello Kendo UI</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -652,7 +652,7 @@ error: function (e) {
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="data_source">
         <title>Offline Support | Kendo UI Data Source</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn more about the offline support Kendo UI provides you with when working with the DataSource component.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("framework/datasource/offline.html")
         });
         </script>
@@ -131,13 +131,13 @@
 
 <p><strong>Figure 1: Offline storage mechanism</strong></p>
 
-<p><img src="/docs-kendo-china/framework/datasource/OfflineStorage.gif" alt="Offline Storage"></p>
+<p><img src="/framework/datasource/OfflineStorage.gif" alt="Offline Storage"></p>
 
 <h2 id="configuration"><a href="#configuration">Configuration</a></h2>
 
 <h3 id="configuration-Set"><a href="#configuration-Set">Set Offline Storage</a></h3>
 
-<p>Set the <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-offlineStorage"><code>offlineStorage</code></a> option to enable offline storage. The DataSource uses this value as a key when saving and loading its state. By default, the Kendo UI DataSource uses the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API"><code>localStorage</code></a> option to persist its offline state.</p>
+<p>Set the <a href="/api/javascript/data/datasource#configuration-offlineStorage"><code>offlineStorage</code></a> option to enable offline storage. The DataSource uses this value as a key when saving and loading its state. By default, the Kendo UI DataSource uses the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API"><code>localStorage</code></a> option to persist its offline state.</p>
 
 <blockquote>
 <p><strong>Important</strong></p>
@@ -169,13 +169,13 @@
 
 <h3 id="go-online"><a href="#go-online">Go Online</a></h3>
 
-<p>By default, the DataSource is online. All data item changes, such as create, update, and destroy, go to the remote service configured via the <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-transport"><code>transport</code></a> option.</p>
+<p>By default, the DataSource is online. All data item changes, such as create, update, and destroy, go to the remote service configured via the <a href="/api/javascript/data/datasource#configuration-transport"><code>transport</code></a> option.</p>
 
-<p>To go back to online mode, call the <code>online</code> method with <code>true</code> as an argument. The DataSource immediately calls the <a href="/docs-kendo-china/api/javascript/data/datasource#methods-sync"><code>sync</code></a> method to send all offline changes to the remote service.</p>
+<p>To go back to online mode, call the <code>online</code> method with <code>true</code> as an argument. The DataSource immediately calls the <a href="/api/javascript/data/datasource#methods-sync"><code>sync</code></a> method to send all offline changes to the remote service.</p>
 
 <h3 id="go-offline"><a href="#go-offline">Go Offline</a></h3>
 
-<p>To switch to offline mode call the <a href="/docs-kendo-china/api/javascript/data/datasource#methods-online"><code>online</code></a> method  with <code>false</code> as an argument. From now on the DataSource is going to persist all data item changes in offline storage.</p>
+<p>To switch to offline mode call the <a href="/api/javascript/data/datasource#methods-online"><code>online</code></a> method  with <code>false</code> as an argument. From now on the DataSource is going to persist all data item changes in offline storage.</p>
 
 <p>The example below demonstrates how to go in offline mode.</p>
 
@@ -221,7 +221,7 @@ dataSource.fetch(function() {
 
 <h3 id="get-current-offline-state"><a href="#get-current-offline-state">Get Current Offline State</a></h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/data/datasource#methods-offlineData"><code>offlineData</code></a> method returns the current offline state of the DataSource. The state is an array of JavaScript objects that represent the data items. Changed data items have a <code>__state__</code> field attached. That field indicates the type of change: <code>"create"</code>, <code>"update"</code> or <code>"destroy"</code>. Unmodified data items do not have a <code>__state__</code> field.</p>
+<p>The <a href="/api/javascript/data/datasource#methods-offlineData"><code>offlineData</code></a> method returns the current offline state of the DataSource. The state is an array of JavaScript objects that represent the data items. Changed data items have a <code>__state__</code> field attached. That field indicates the type of change: <code>"create"</code>, <code>"update"</code> or <code>"destroy"</code>. Unmodified data items do not have a <code>__state__</code> field.</p>
 
 <p>The example below demonstrates how to get the offline state.</p>
 
@@ -267,7 +267,7 @@ dataSource.fetch(function() {
 <blockquote>
 <p><strong>Important</strong></p>
 
-<p>If the <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-serverGrouping"><code>serverGrouping</code></a> option is set to <code>true</code> the <code>offlineData</code> returns an array of groups in the following way <code>{ value:"group value", field:"group field", items: [ /* data items in the group */ ] }</code>.</p>
+<p>If the <a href="/api/javascript/data/datasource#configuration-serverGrouping"><code>serverGrouping</code></a> option is set to <code>true</code> the <code>offlineData</code> returns an array of groups in the following way <code>{ value:"group value", field:"group field", items: [ /* data items in the group */ ] }</code>.</p>
 </blockquote>
 
 <h2 id="customization"><a href="#customization">Customization</a></h2>
@@ -398,17 +398,17 @@ var pollId = setInterval(function() {
 <p>Other articles on the Kendo UI DataSource component:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/framework/datasource/overview">DataSource Overview</a></li>
-<li><a href="/docs-kendo-china/framework/datasource/basic-usage">Basic Usage</a></li>
-<li><a href="/docs-kendo-china/framework/datasource/cors">CORS Data Fetching from Another Domain</a></li>
-<li><a href="/docs-kendo-china/framework/datasource/crud">CRUD Data Operations</a></li>
-<li><a href="/docs-kendo-china/api/javascript/data/datasource">DataSource JavaScript API Reference</a></li>
+<li><a href="/framework/datasource/overview">DataSource Overview</a></li>
+<li><a href="/framework/datasource/basic-usage">Basic Usage</a></li>
+<li><a href="/framework/datasource/cors">CORS Data Fetching from Another Domain</a></li>
+<li><a href="/framework/datasource/crud">CRUD Data Operations</a></li>
+<li><a href="/api/javascript/data/datasource">DataSource JavaScript API Reference</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -473,7 +473,7 @@ var pollId = setInterval(function() {
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

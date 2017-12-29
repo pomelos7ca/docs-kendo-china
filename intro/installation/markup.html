@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Markup Widget Initialization | Kendo UI Getting Started</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Initialize Kendo UI widgets from markup, add Kendo UI frameworks to your application, and use AngularJS or MVVM to configure Kendo UI.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("intro/installation/markup.html")
         });
         </script>
@@ -121,7 +121,7 @@
             
              <h1 id="markup-widget-initialization"><a href="#markup-widget-initialization">Markup Widget Initialization</a></h1>
 
-<p>In addition to the <a href="/docs-kendo-china/intro/installation/jquery-initialization">jQuery plugin syntax</a>, the Kendo UI widgets might be instantiated based on custom HTML attributes.</p>
+<p>In addition to the <a href="/intro/installation/jquery-initialization">jQuery plugin syntax</a>, the Kendo UI widgets might be instantiated based on custom HTML attributes.</p>
 
 <h2 id="overview"><a href="#overview">Overview</a></h2>
 
@@ -129,22 +129,22 @@
 
 <ul>
 <li>
-<strong>Option 1</strong> The <a href="/docs-kendo-china/framework/spa/view">View</a> and the <a href="/docs-kendo-china/controls/hybrid/application">mobile Application</a> instantiate widgets based on the <code>role</code> HTML5 <code>data</code> attributes. Both use the <a href="/docs-kendo-china/framework/mvvm/overview">MVVM</a> internally.<br>
+<strong>Option 1</strong> The <a href="/framework/spa/view">View</a> and the <a href="/controls/hybrid/application">mobile Application</a> instantiate widgets based on the <code>role</code> HTML5 <code>data</code> attributes. Both use the <a href="/framework/mvvm/overview">MVVM</a> internally.<br>
 </li>
 <li>
 <strong>Option 2</strong> The <code>kendo.bind</code> method scans the passed DOM element contents for the <code>data-role</code> attributes and instantiates the respective widgets.<br>
 </li>
 <li>
-<strong>Option 3</strong> The Kendo UI <a href="/docs-kendo-china/AngularJS/introduction">AngularJS</a> directives support declarative initialization based on custom element attributes or custom tag names.</li>
+<strong>Option 3</strong> The Kendo UI <a href="/AngularJS/introduction">AngularJS</a> directives support declarative initialization based on custom element attributes or custom tag names.</li>
 </ul>
 
 <blockquote>
 <p><strong>Important</strong></p>
 
-<p>The <code>data</code> attribute initialization is not designed to be combined with the Kendo UI server wrappers. The usage of wrappers is equivalent to <a href="/docs-kendo-china/intro/installation/jquery-initialization">jQuery plug-in syntax initialization</a>. To create Kendo UI widget instances through the <a href="/docs-kendo-china/framework/mvvm/overview">MVVM</a> or <a href="/docs-kendo-china/AngularJS/introduction">AngularJS</a> mechanisms, do not use server wrappers for these instances.</p>
+<p>The <code>data</code> attribute initialization is not designed to be combined with the Kendo UI server wrappers. The usage of wrappers is equivalent to <a href="/intro/installation/jquery-initialization">jQuery plug-in syntax initialization</a>. To create Kendo UI widget instances through the <a href="/framework/mvvm/overview">MVVM</a> or <a href="/AngularJS/introduction">AngularJS</a> mechanisms, do not use server wrappers for these instances.</p>
 </blockquote>
 
-<p>While it is theoretically possible to initialize several different Kendo UI widgets from the same DOM element through the <a href="/docs-kendo-china/intro/installation/jquery-initialization">jQuery plug-in syntax</a>, it is not supported with the declarative initialization from markup.</p>
+<p>While it is theoretically possible to initialize several different Kendo UI widgets from the same DOM element through the <a href="/intro/installation/jquery-initialization">jQuery plug-in syntax</a>, it is not supported with the declarative initialization from markup.</p>
 
 <blockquote>
 <p><strong>Important</strong></p>
@@ -164,7 +164,7 @@
 
 <h3 id="in-spa-views"><a href="#in-spa-views">In SPA Views</a></h3>
 
-<p>The following example refers to a (SPA) View with an AutoComplete widget in the template. For more information on the SPA View, refer to the <a href="/docs-kendo-china/framework/spa/overview">article on building Single Page Applications</a>.</p>
+<p>The following example refers to a (SPA) View with an AutoComplete widget in the template. For more information on the SPA View, refer to the <a href="/framework/spa/overview">article on building Single Page Applications</a>.</p>
 
 <h6>Example</h6>
 
@@ -199,12 +199,12 @@
 <blockquote>
 <p><strong>Important</strong></p>
 
-<p>The <code>data-bind</code> attribute syntax establishes a two-way binding between the widget options—in this case, the Data Source—and the view model field (the <code>source</code>). For more information, refer to the <a href="/docs-kendo-china/framework/mvvm/overview">introductory article on MVVM</a>.</p>
+<p>The <code>data-bind</code> attribute syntax establishes a two-way binding between the widget options—in this case, the Data Source—and the view model field (the <code>source</code>). For more information, refer to the <a href="/framework/mvvm/overview">introductory article on MVVM</a>.</p>
 </blockquote>
 
 <h3 id="in-hybrid-ui-applications"><a href="#in-hybrid-ui-applications">In Hybrid UI Applications</a></h3>
 
-<p>The following example refers to a Kendo UI hybrid Application with a View and an AutoComplete widget. For more information about the Hybrid UI applications, refer to the <a href="/docs-kendo-china/controls/hybrid/introduction">article on building hybrid mobile applications</a>.</p>
+<p>The following example refers to a Kendo UI hybrid Application with a View and an AutoComplete widget. For more information about the Hybrid UI applications, refer to the <a href="/controls/hybrid/introduction">article on building hybrid mobile applications</a>.</p>
 
 <h6>Example</h6>
 
@@ -235,11 +235,11 @@
 
 <h3 id="configuration-The"><a href="#configuration-The">The data Attributes</a></h3>
 
-<p>In addition to the <code>data-role</code> attribute, the declarative initialization parses other <code>data</code> attributes and passes them as configuration options to the widget constructor. For more information on the supported data attributes and on how to bind them to widget events, refer to the <a href="/docs-kendo-china/intro/widget-basics/data-attribute-initialization">section on data attributes</a>.</p>
+<p>In addition to the <code>data-role</code> attribute, the declarative initialization parses other <code>data</code> attributes and passes them as configuration options to the widget constructor. For more information on the supported data attributes and on how to bind them to widget events, refer to the <a href="/intro/widget-basics/data-attribute-initialization">section on data attributes</a>.</p>
 
 <h3 id="configuration-AngularJS"><a href="#configuration-AngularJS">AngularJS Directives</a></h3>
 
-<p>The following example refers to the AngularJS directive in the Kendo UI AutoComplete. For more information on the features of the Kendo UI AngularJS directives, refer to the <a href="/docs-kendo-china/AngularJS/introduction">introductory article on AngularJS</a>.</p>
+<p>The following example refers to the AngularJS directive in the Kendo UI AutoComplete. For more information on the features of the Kendo UI AngularJS directives, refer to the <a href="/AngularJS/introduction">introductory article on AngularJS</a>.</p>
 
 <h6>Example</h6>
 
@@ -267,25 +267,25 @@
 <p>Other articles on getting started with Kendo UI:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/intro/installation/getting-started">Get Started with Kendo UI</a></li>
-<li><a href="/docs-kendo-china/intro/installation/cdn-service">Kendo UI CDN Services</a></li>
-<li><a href="/docs-kendo-china/intro/installation/what-you-need">Include Only What You Need</a></li>
-<li><a href="/docs-kendo-china/intro/installation/prerequisites">JavaScript Prerequisites</a></li>
-<li><a href="/docs-kendo-china/intro/installation/jquery-initialization">Initialize Widgets Using jQuery Plug-Ins</a></li>
-<li><a href="/docs-kendo-china/intro/widget-basics/wrapper-element">Access Widget DOM Elements: wrapper and element</a></li>
-<li><a href="/docs-kendo-china/intro/widget-basics/data-attribute-initialization">Set Data Attributes</a></li>
-<li><a href="/docs-kendo-china/intro/widget-basics/events-and-methods">Widget Methods and Events</a></li>
-<li><a href="/docs-kendo-china/intro/widget-basics/destroy">Destroy Widgets</a></li>
-<li><a href="/docs-kendo-china/intro/widget-basics/editing">Edit Widgets</a></li>
-<li><a href="/docs-kendo-china/intro/widget-basics/create-custom-kendo-widget">Create Custom Widgets</a></li>
-<li><a href="/docs-kendo-china/intro/installation/bower-install">Bower Packages</a></li>
-<li><a href="/docs-kendo-china/intro/installation/nuget-install">NuGet Packages</a></li>
+<li><a href="/intro/installation/getting-started">Get Started with Kendo UI</a></li>
+<li><a href="/intro/installation/cdn-service">Kendo UI CDN Services</a></li>
+<li><a href="/intro/installation/what-you-need">Include Only What You Need</a></li>
+<li><a href="/intro/installation/prerequisites">JavaScript Prerequisites</a></li>
+<li><a href="/intro/installation/jquery-initialization">Initialize Widgets Using jQuery Plug-Ins</a></li>
+<li><a href="/intro/widget-basics/wrapper-element">Access Widget DOM Elements: wrapper and element</a></li>
+<li><a href="/intro/widget-basics/data-attribute-initialization">Set Data Attributes</a></li>
+<li><a href="/intro/widget-basics/events-and-methods">Widget Methods and Events</a></li>
+<li><a href="/intro/widget-basics/destroy">Destroy Widgets</a></li>
+<li><a href="/intro/widget-basics/editing">Edit Widgets</a></li>
+<li><a href="/intro/widget-basics/create-custom-kendo-widget">Create Custom Widgets</a></li>
+<li><a href="/intro/installation/bower-install">Bower Packages</a></li>
+<li><a href="/intro/installation/nuget-install">NuGet Packages</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -350,7 +350,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

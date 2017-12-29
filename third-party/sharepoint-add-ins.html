@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>SharePoint Add-Ins | Kendo UI Third-Party Frameworks</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn in theory and in practice how to build SharePoint add-ins with Kendo UI.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("third-party/sharepoint-add-ins.html")
         });
         </script>
@@ -182,7 +182,7 @@ To inform the receiving endpoint to issue a reply through JSON, include the <cod
 The <code>data()</code> function is necessary to parse the payload that is returned by the SharePoint REST API due to the presence of the <code>odata=verbose</code> request-header.  </p></li>
 </ol>
 
-<p>For more information on the Kendo UI Data Source abstraction, refer to <a href="/docs-kendo-china/framework/datasource/overview">its introductory article</a>.</p>
+<p>For more information on the Kendo UI Data Source abstraction, refer to <a href="/framework/datasource/overview">its introductory article</a>.</p>
 
 <h3 id="configuration-CRUD"><a href="#configuration-CRUD">CRUD Data Operations</a></h3>
 
@@ -198,24 +198,24 @@ The <code>update</code> and <code>destroy</code> operations target service endpo
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <ul>
-<li><a href="/docs-kendo-china/api/javascript/data/datasource.html">Kendo UI DataSource API</a></li>
+<li><a href="/api/javascript/data/datasource.html">Kendo UI DataSource API</a></li>
 <li><a href="http://developer.telerik.com/featured/building-sharepoint-add-ins-with-kendo-ui/">Online Tutorial</a></li>
 <li><a href="https://github.com/telerik/kendo-ui-sharepoint-2013-demo">GitHub Project</a></li>
-<li><a href="/docs-kendo-china/third-party/using-kendo-with-twitter-bootstrap">Twitter Bootstrap</a></li>
-<li><a href="/docs-kendo-china/third-party/angular2">Angular 2.0</a></li>
-<li><a href="/docs-kendo-china/third-party/using-kendo-with-requirejs">RequireJS</a></li>
-<li><a href="/docs-kendo-china/third-party/typescript">TypeScript</a></li>
-<li><a href="/docs-kendo-china/third-party/vs-intellisense">Visual Studio IntelliSense</a></li>
-<li><a href="/docs-kendo-china/third-party/using-kendo-with-data-access">Telerik Data Access</a></li>
-<li><a href="/docs-kendo-china/third-party/systemjs">SystemJS Support</a></li>
-<li><a href="/docs-kendo-china/third-party/webpack">Webpack Support</a></li>
-<li><a href="/docs-kendo-china/third-party/aurelia">Aurelia</a></li>
+<li><a href="/third-party/using-kendo-with-twitter-bootstrap">Twitter Bootstrap</a></li>
+<li><a href="/third-party/angular2">Angular 2.0</a></li>
+<li><a href="/third-party/using-kendo-with-requirejs">RequireJS</a></li>
+<li><a href="/third-party/typescript">TypeScript</a></li>
+<li><a href="/third-party/vs-intellisense">Visual Studio IntelliSense</a></li>
+<li><a href="/third-party/using-kendo-with-data-access">Telerik Data Access</a></li>
+<li><a href="/third-party/systemjs">SystemJS Support</a></li>
+<li><a href="/third-party/webpack">Webpack Support</a></li>
+<li><a href="/third-party/aurelia">Aurelia</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -280,7 +280,7 @@ The <code>update</code> and <code>destroy</code> operations target service endpo
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

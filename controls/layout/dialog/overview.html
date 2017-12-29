@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="dialog">
         <title>Overview | Kendo UI Dialog</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to initialize the Kendo UI Dialog widget and configure its behaviors.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("controls/layout/dialog/overview.html")
         });
         </script>
@@ -252,7 +252,7 @@ $(document).ready(function() {
 
 <h3 id="configuration-Opening"><a href="#configuration-Opening">Opening</a></h3>
 
-<p>Usually, a Dialog is opened as a result of a user action rather than of the <code>load</code> event of the page. The <a href="/docs-kendo-china/api/javascript/ui/dialog">Dialog API</a> provides methods for handling such scenarios. Basically, the widget can be initialized as non-visible and can opened when needed.</p>
+<p>Usually, a Dialog is opened as a result of a user action rather than of the <code>load</code> event of the page. The <a href="/api/javascript/ui/dialog">Dialog API</a> provides methods for handling such scenarios. Basically, the widget can be initialized as non-visible and can opened when needed.</p>
 
 <p>The example below demonstrates how to open a Kendo UI Dialog on a button click.</p>
 
@@ -299,7 +299,7 @@ $("#openButton").click(function(){
 
 <h3 id="configuration-Destroy"><a href="#configuration-Destroy">Destroy</a></h3>
 
-<p>Unlike most widgets, the Dialog is completely removed from the DOM when <a href="/docs-kendo-china/intro/widget-basics/destroy">destroyed</a>. This means that the element from which the Dialog was initialized no longer exists on the page. Therefore, you are able to create a new Dialog instance only from another element.</p>
+<p>Unlike most widgets, the Dialog is completely removed from the DOM when <a href="/intro/widget-basics/destroy">destroyed</a>. This means that the element from which the Dialog was initialized no longer exists on the page. Therefore, you are able to create a new Dialog instance only from another element.</p>
 
 <h3 id="configuration-Print"><a href="#configuration-Print">Print</a></h3>
 
@@ -335,14 +335,14 @@ $("#openButton").click(function(){
 
 <h2 id="predefined-dialogs"><a href="#predefined-dialogs">Predefined Dialogs</a></h2>
 
-<p>The Dialog provides an option to render predefined dialogs, similar to the alert, confirm, and prompt ones of the browser, through the <a href="/docs-kendo-china/api/javascript/kendo"><code>kendo</code></a> object.</p>
+<p>The Dialog provides an option to render predefined dialogs, similar to the alert, confirm, and prompt ones of the browser, through the <a href="/api/javascript/kendo"><code>kendo</code></a> object.</p>
 
 <p>For more information, refer the API documentation for:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/api/javascript/ui/alert">Alert dialogs</a></li>
-<li><a href="/docs-kendo-china/api/javascript/ui/confirm">Confirm dialogs</a></li>
-<li><a href="/docs-kendo-china/api/javascript/ui/prompt">Prompt dialogs</a></li>
+<li><a href="/api/javascript/ui/alert">Alert dialogs</a></li>
+<li><a href="/api/javascript/ui/confirm">Confirm dialogs</a></li>
+<li><a href="/api/javascript/ui/prompt">Prompt dialogs</a></li>
 </ul>
 
 <p>The example below demonstrates how to call the Kendo UI alert, confirm, and prompt dialogs.</p>
@@ -370,7 +370,7 @@ kendo.prompt("enter value")
 
 <h3 id="existing-instances"><a href="#existing-instances">Existing Instances</a></h3>
 
-<p>To refer to an existing Dialog instance, use the <a href="http://api.jquery.com/jQuery.data/"><code>jQuery.data()</code></a>. Once a reference has been established, use the <a href="/docs-kendo-china/api/javascript/ui/dialog">Dialog API</a> to control its behavior.</p>
+<p>To refer to an existing Dialog instance, use the <a href="http://api.jquery.com/jQuery.data/"><code>jQuery.data()</code></a>. Once a reference has been established, use the <a href="/api/javascript/ui/dialog">Dialog API</a> to control its behavior.</p>
 
 <p>The example below demonstrates how to access an existing Dialog instance.</p>
 
@@ -381,7 +381,7 @@ kendo.prompt("enter value")
 
 <h3 id="access-dom-elements"><a href="#access-dom-elements">Access DOM Elements</a></h3>
 
-<p>Similar to other Kendo UI widgets, the Dialog has two DOM elements, which can be accessed and used to customize the appearance of the widget or its content. These are the <a href="/docs-kendo-china/intro/widget-basics/wrapper-element"><code>wrapper</code> and <code>element</code></a> elements of the widget, which are provided as fields of the widget object. In specific scenarios, the Dialog wrapper can be used to tweak the position or the size of the widget although this is normally done through the API and the <a href="/docs-kendo-china/api/javascript/ui/widget#methods-setOptions"><code>setOptions</code> method</a>.</p>
+<p>Similar to other Kendo UI widgets, the Dialog has two DOM elements, which can be accessed and used to customize the appearance of the widget or its content. These are the <a href="/intro/widget-basics/wrapper-element"><code>wrapper</code> and <code>element</code></a> elements of the widget, which are provided as fields of the widget object. In specific scenarios, the Dialog wrapper can be used to tweak the position or the size of the widget although this is normally done through the API and the <a href="/api/javascript/ui/widget#methods-setOptions"><code>setOptions</code> method</a>.</p>
 
 <h6>Example</h6>
 
@@ -408,29 +408,29 @@ dialogWrapper.addClass("myDialogClass");
 
 <h3 id="create-dialogs-multiple-times"><a href="#create-dialogs-multiple-times">Create Dialogs Multiple Times</a></h3>
 
-<p>To create a Kendo UI Dialog instance multiple times with the same ID, make sure that the existing instance with this ID is <a href="#configuration-Destroy">destroyed</a> first. Widgets with the same ID <a href="/docs-kendo-china/intro/installation/jquery-initialization#duplicate-initialization">cannot exist and work properly</a> at one and the same time.</p>
+<p>To create a Kendo UI Dialog instance multiple times with the same ID, make sure that the existing instance with this ID is <a href="#configuration-Destroy">destroyed</a> first. Widgets with the same ID <a href="/intro/installation/jquery-initialization#duplicate-initialization">cannot exist and work properly</a> at one and the same time.</p>
 
-<p>Alternatively, do not destroy the existing Dialog instance—<a href="/docs-kendo-china/api/javascript/ui/dialog#methods-open">open</a> it and <a href="/docs-kendo-china/api/javascript/ui/dialog#methods-content">set new static content</a> if needed.</p>
+<p>Alternatively, do not destroy the existing Dialog instance—<a href="/api/javascript/ui/dialog#methods-open">open</a> it and <a href="/api/javascript/ui/dialog#methods-content">set new static content</a> if needed.</p>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <p>Other articles on Kendo UI Upload:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/aspnet-mvc/helpers/dialog/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the Dialog Widget</a></li>
-<li><a href="/docs-kendo-china/jsp/tags/dialog/overview">Overview of the Dialog JSP Tag</a></li>
-<li><a href="/docs-kendo-china/php/widgets/dialog/overview">Overview of the Dialog PHP Class</a></li>
-<li><a href="/docs-kendo-china/controls/layout/window/how-to/confirmation-dialog-promise">How to Create Confirmation Dialog via Promises</a></li>
-<li><a href="/docs-kendo-china/controls/layout/window/how-to/display-loading-overlay">How to Display Loading Indicator over Window</a></li>
-<li><a href="/docs-kendo-china/controls/layout/window/how-to/post-to-iframe">How to Post to Iframe</a></li>
-<li><a href="/docs-kendo-china/controls/layout/window/how-to/MVVM/mvvm-editing-form">How to Use MVVM Binding for Window Data Editing</a></li>
-<li><a href="/docs-kendo-china/api/javascript/ui/dialog">Dialog JavaScript API Reference</a></li>
+<li><a href="/aspnet-mvc/helpers/dialog/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the Dialog Widget</a></li>
+<li><a href="/jsp/tags/dialog/overview">Overview of the Dialog JSP Tag</a></li>
+<li><a href="/php/widgets/dialog/overview">Overview of the Dialog PHP Class</a></li>
+<li><a href="/controls/layout/window/how-to/confirmation-dialog-promise">How to Create Confirmation Dialog via Promises</a></li>
+<li><a href="/controls/layout/window/how-to/display-loading-overlay">How to Display Loading Indicator over Window</a></li>
+<li><a href="/controls/layout/window/how-to/post-to-iframe">How to Post to Iframe</a></li>
+<li><a href="/controls/layout/window/how-to/MVVM/mvvm-editing-form">How to Use MVVM Binding for Window Data Editing</a></li>
+<li><a href="/api/javascript/ui/dialog">Dialog JavaScript API Reference</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -495,7 +495,7 @@ dialogWrapper.addClass("myDialogClass");
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

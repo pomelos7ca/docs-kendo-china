@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="chart">
         <title>Export | Kendo UI Charts</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Set the export functionality of the Kendo UI Chart widget to produce PDF, SVG, and Images.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("controls/charts/export.html")
         });
         </script>
@@ -127,12 +127,12 @@
 
 <h2 id="pdf-export"><a href="#pdf-export">PDF Export</a></h2>
 
-<p>To initiate the export in PDF through code, call the <a href="/docs-kendo-china/api/javascript/dataviz/ui/chart#methods-saveAsPdf"><code>saveAsPdf</code></a> method.</p>
+<p>To initiate the export in PDF through code, call the <a href="/api/javascript/dataviz/ui/chart#methods-saveAsPdf"><code>saveAsPdf</code></a> method.</p>
 
 <p>For more information on PDF export, refer to:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/api/javascript/dataviz/ui/chart#configuration-pdf">PDF Export API Configuration</a></li>
+<li><a href="/api/javascript/dataviz/ui/chart#configuration-pdf">PDF Export API Configuration</a></li>
 <li><a href="http://demos.telerik.com/kendo-ui/chart-api/pdf-export">Online Demo</a></li>
 </ul>
 
@@ -211,9 +211,9 @@
 <p>The advanced export functionality is delivered though the following methods:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/api/javascript/dataviz/ui/chart#methods-exportPDF"><code>exportPDF</code></a></li>
-<li><a href="/docs-kendo-china/api/javascript/dataviz/ui/chart#methods-exportImage"><code>exportImage</code></a></li>
-<li><a href="/docs-kendo-china/api/javascript/dataviz/ui/chart#methods-exportSVG"><code>exportSVG</code></a></li>
+<li><a href="/api/javascript/dataviz/ui/chart#methods-exportPDF"><code>exportPDF</code></a></li>
+<li><a href="/api/javascript/dataviz/ui/chart#methods-exportImage"><code>exportImage</code></a></li>
+<li><a href="/api/javascript/dataviz/ui/chart#methods-exportSVG"><code>exportSVG</code></a></li>
 </ul>
 
 <p>The example below demonstrates how to obtain an image from the Chart.</p>
@@ -250,7 +250,7 @@
 
 <h3 id="server-proxy"><a href="#server-proxy">Server Proxy</a></h3>
 
-<p>Internet Explorer 9 and Safari do not support the option for saving a file and require the implementation of a <a href="/docs-kendo-china/framework/save-files/introduction#browser-support">server proxy</a>. Set the <a href="/docs-kendo-china/api/javascript/ui/grid#configuration-pdf.proxyURL"><code>proxyURL</code></a> option to specify the server proxy URL, as shown below.</p>
+<p>Internet Explorer 9 and Safari do not support the option for saving a file and require the implementation of a <a href="/framework/save-files/introduction#browser-support">server proxy</a>. Set the <a href="/api/javascript/ui/grid#configuration-pdf.proxyURL"><code>proxyURL</code></a> option to specify the server proxy URL, as shown below.</p>
 
 <h6>Example</h6>
 
@@ -400,7 +400,7 @@
 </ul>
 </blockquote>
 
-<p>Kendo UI ships the <a href="http://dejavu-fonts.org/wiki/Main_Page">Deja Vu font family</a> as part of its distributions. For more details on the supported fonts by Kendo UI, refer to the article on <a href="/docs-kendo-china/framework/drawing/drawing-dom#configuration-Custom">custom fonts and PDF</a>.</p>
+<p>Kendo UI ships the <a href="http://dejavu-fonts.org/wiki/Main_Page">Deja Vu font family</a> as part of its distributions. For more details on the supported fonts by Kendo UI, refer to the article on <a href="/framework/drawing/drawing-dom#configuration-Custom">custom fonts and PDF</a>.</p>
 
 <p>The example below demonstrates how to handle custom fonts by embedding a custom font for a Chart title.</p>
 
@@ -482,20 +482,20 @@
 
 <h2 id="known-limitations"><a href="#known-limitations">Known Limitations</a></h2>
 
-<p>All <a href="/docs-kendo-china/framework/drawing/drawing-dom#known-limitations">known limitations</a> of the HTML Drawing module apply.</p>
+<p>All <a href="/framework/drawing/drawing-dom#known-limitations">known limitations</a> of the HTML Drawing module apply.</p>
 
 <p>Below are listed the most important ones for you to note:</p>
 
 <ul>
 <li>The maximum document size is limited to 5080x5080mm (200x200 inches) by the PDF 1.5 specification. Larger files might not open in all viewers.</li>
-<li>Older browsers, such as Internet Explorer 9 and Safari, require the implementation of a server proxy. For more information on this, refer to <a href="/docs-kendo-china/api/javascript/ui/grid#configuration-pdf.proxyURL">the <code>proxyUrl</code> configuration section</a>.</li>
+<li>Older browsers, such as Internet Explorer 9 and Safari, require the implementation of a server proxy. For more information on this, refer to <a href="/api/javascript/ui/grid#configuration-pdf.proxyURL">the <code>proxyUrl</code> configuration section</a>.</li>
 </ul>
 
 <h2 id="further-reading"><a href="#further-reading">Further Reading</a></h2>
 
 <ul>
-<li><a href="/docs-kendo-china/framework/drawing/drawing-dom">Drawing HTML</a></li>
-<li><a href="/docs-kendo-china/framework/save-files/introduction">Save Files with Kendo UI</a></li>
+<li><a href="/framework/drawing/drawing-dom">Drawing HTML</a></li>
+<li><a href="/framework/save-files/introduction">Save Files with Kendo UI</a></li>
 </ul>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
@@ -503,24 +503,24 @@
 <p>Other articles on Kendo UI Charts:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/controls/charts/data-binding">Data Binding of the Chart Widgets</a></li>
-<li><a href="/docs-kendo-china/controls/charts/date-series">Date Series</a></li>
-<li><a href="/docs-kendo-china/controls/charts/features/tooltip">Tooltip</a></li>
-<li><a href="/docs-kendo-china/controls/charts/features/notes">Chart Notes</a></li>
-<li><a href="/docs-kendo-china/controls/charts/features/title-legend">Title and Legend</a></li>
-<li><a href="/docs-kendo-china/controls/charts/appearance">Appearance</a></li>
-<li><a href="/docs-kendo-china/controls/charts/features/error-bars">Error Bars</a></li>
-<li><a href="/docs-kendo-china/controls/charts/series">Data Series</a></li>
-<li><a href="/docs-kendo-china/controls/charts/chart-types/area-charts">Types of Kendo UI Charts</a></li>
-<li><a href="/docs-kendo-china/api/javascript/dataviz/ui/chart">Chart JavaScript API Reference</a></li>
+<li><a href="/controls/charts/data-binding">Data Binding of the Chart Widgets</a></li>
+<li><a href="/controls/charts/date-series">Date Series</a></li>
+<li><a href="/controls/charts/features/tooltip">Tooltip</a></li>
+<li><a href="/controls/charts/features/notes">Chart Notes</a></li>
+<li><a href="/controls/charts/features/title-legend">Title and Legend</a></li>
+<li><a href="/controls/charts/appearance">Appearance</a></li>
+<li><a href="/controls/charts/features/error-bars">Error Bars</a></li>
+<li><a href="/controls/charts/series">Data Series</a></li>
+<li><a href="/controls/charts/chart-types/area-charts">Types of Kendo UI Charts</a></li>
+<li><a href="/api/javascript/dataviz/ui/chart">Chart JavaScript API Reference</a></li>
 </ul>
 
-<p>For runnable examples on Kendo UI Charts, refer to the <a href="/docs-kendo-china/controls/charts/how-to/appearance/dynamic-plot-bands">how-to section of articles</a>.</p> 
+<p>For runnable examples on Kendo UI Charts, refer to the <a href="/controls/charts/how-to/appearance/dynamic-plot-bands">how-to section of articles</a>.</p> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -585,7 +585,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

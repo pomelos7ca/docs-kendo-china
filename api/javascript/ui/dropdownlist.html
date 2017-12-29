@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="dropdownlist">
         <title>Configuration, methods and events of Kendo UI DropDownList</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to control your DropDown UI widget's behavior to suit your needs: open, close, enable, disable the widget. Events data and code examples available.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("api/javascript/ui/dropdownlist.html")
         });
         </script>
@@ -123,7 +123,7 @@
             
              <h1 id="kendouidropdownlist"><a href="#kendouidropdownlist">kendo.ui.DropDownList</a></h1>
 
-<p>Represents the Kendo UI DropDownList widget. Inherits from <a href="/docs-kendo-china/api/javascript/ui/widget">Widget</a>.</p>
+<p>Represents the Kendo UI DropDownList widget. Inherits from <a href="/api/javascript/ui/widget">Widget</a>.</p>
 
 <h2 id="configuration"><a href="#configuration">Configuration</a></h2>
 
@@ -194,7 +194,7 @@ $("#dropdownlist").kendoDropDownList({
 
 <p>The effect(s) to use when playing the close animation. Multiple effects should be separated with a space.</p>
 
-<p><a href="/docs-kendo-china/api/javascript/effects/common">Complete list of available animations</a></p>
+<p><a href="/api/javascript/effects/common">Complete list of available animations</a></p>
 
 <h3 id="configuration-animation.close.duration">
 <a href="#configuration-animation.close.duration">animation.close.duration </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 100)</em>
@@ -229,7 +229,7 @@ $("#dropdownlist").kendoDropDownList({
 
 <p>The effect(s) to use when playing the open animation. Multiple effects should be separated with a space.</p>
 
-<p><a href="/docs-kendo-china/api/javascript/effects/common">Complete list of available animations</a></p>
+<p><a href="/api/javascript/effects/common">Complete list of available animations</a></p>
 
 <h3 id="configuration-animation.open.duration">
 <a href="#configuration-animation.open.duration">animation.open.duration </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 200)</em>
@@ -281,7 +281,7 @@ $("#dropdownlist").kendoDropDownList({
 </h3>
 
 <p>Use it to set the Id of the parent DropDownList widget.
-<a href="/docs-kendo-china/web/dropdownlist/cascading">Help topic showing how cascading functionality works</a></p>
+<a href="/web/dropdownlist/cascading">Help topic showing how cascading functionality works</a></p>
 
 <h4>Example</h4>
 
@@ -315,8 +315,8 @@ $("#child").kendoDropDownList({
 <a href="#configuration-cascadeFromField">cascadeFromField </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
 </h3>
 
-<p>Defines the field to be used to filter the data source. If not defined the <a href="/docs-kendo-china/api/javascript/ui/dropdownlist#configuration-dataValueField">parent's dataValueField option will be used</a>.
-<a href="/docs-kendo-china/web/dropdownlist/cascading">Help topic showing how cascading functionality works</a></p>
+<p>Defines the field to be used to filter the data source. If not defined the <a href="/api/javascript/ui/dropdownlist#configuration-dataValueField">parent's dataValueField option will be used</a>.
+<a href="/web/dropdownlist/cascading">Help topic showing how cascading functionality works</a></p>
 
 <h4>Example</h4>
 
@@ -348,15 +348,15 @@ $("#child").kendoDropDownList({
 </code></pre>
 
 <h3 id="configuration-dataSource">
-<a href="#configuration-dataSource">dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<a href="#configuration-dataSource">dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h3>
 
-<p>The data source of the widget which is used to display a list of values. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/docs-kendo-china/api/javascript/data/datasource">kendo.data.DataSource</a>
+<p>The data source of the widget which is used to display a list of values. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/api/javascript/data/datasource">kendo.data.DataSource</a>
 instance.</p>
 
-<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/docs-kendo-china/api/javascript/data/datasource">kendo.data.DataSource</a> instance using that value as data source configuration.</p>
+<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/api/javascript/data/datasource">kendo.data.DataSource</a> instance using that value as data source configuration.</p>
 
-<p>If the <code>dataSource</code> option is an existing <a href="/docs-kendo-china/api/javascript/data/datasource">kendo.data.DataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
+<p>If the <code>dataSource</code> option is an existing <a href="/api/javascript/data/datasource">kendo.data.DataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
 
 <h4>Example - set dataSource as a JavaScript object</h4>
 
@@ -535,7 +535,7 @@ $("#dropdownlist").kendoDropDownList({
 <a href="#configuration-fixedGroupTemplate">fixedGroupTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the fixed header group. By default the widget displays only the value of the current group.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the fixed header group. By default the widget displays only the value of the current group.</p>
 
 <pre><code>&lt;input id="customers" style="width: 400px" /&gt;
 &lt;script&gt;
@@ -561,7 +561,7 @@ $("#dropdownlist").kendoDropDownList({
 <a href="#configuration-footerTemplate">footerTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the footer template. The footer template receives the widget itself as a part of the data argument. Use the widget fields directly in the template.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the footer template. The footer template receives the widget itself as a part of the data argument. Use the widget fields directly in the template.</p>
 
 <h4>Parameters</h4>
 
@@ -590,7 +590,7 @@ $("#dropdownlist").kendoDropDownList({
 <a href="#configuration-groupTemplate">groupTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the groups. By default the widget displays only the value of the group.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the groups. By default the widget displays only the value of the group.</p>
 
 <pre><code>&lt;input id="customers" style="width: 400px" /&gt;
 &lt;script&gt;
@@ -700,7 +700,7 @@ $("#dropdownlist").kendoDropDownList({
 <a href="#configuration-noDataTemplate">noDataTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a> <em>(default: "NO DATA FOUND.")</em>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the "no data" template, which will be displayed if no results are found or the underlying data source is empty.
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the "no data" template, which will be displayed if no results are found or the underlying data source is empty.
 The noData template receives the widget itself as a part of the data argument. The template will be evaluated on every widget data bound.</p>
 
 <blockquote>
@@ -725,7 +725,7 @@ $("#dropdownlist").kendoDropDownList({
 </h3>
 
 <p>The options that will be used for the popup initialization. For more details about the available options
-refer to <a href="/docs-kendo-china/api/javascript/ui/popup">Popup</a> documentation.</p>
+refer to <a href="/api/javascript/ui/popup">Popup</a> documentation.</p>
 
 <h4>Example - append the popup to a specific element</h4>
 
@@ -869,7 +869,7 @@ $("#dropdownlist").kendoDropDownList({
 <blockquote>
 <ul>
 <li>If <code>optionLabel</code> is an object, it needs to have at least <code>dataValueField</code> and <code>dataTextField</code> properties. Otherwise, widget will show <code>undefined</code>.
-Note that the very same optionLabel object will be passed to the <a href="/docs-kendo-china/api/javascript/ui/dropdownlist#configuration-valueTemplate">valueTemplate</a>. <strong>You need to ensure that all required by the valueTemplate properties are present
+Note that the very same optionLabel object will be passed to the <a href="/api/javascript/ui/dropdownlist#configuration-valueTemplate">valueTemplate</a>. <strong>You need to ensure that all required by the valueTemplate properties are present
 in the optionLabel object</strong>.</li>
 <li>Since Q1 2015 (2015.1.318), the option label is rendered as a separate header template. The benefits of this change are:</li>
 <li>the widget's value will be empty string even when <code>dataValueField</code> and <code>dataTextField</code> options are equal or not defined</li>
@@ -913,10 +913,10 @@ $("#dropdownlist").kendoDropDownList({
 <a href="#configuration-optionLabelTemplate">optionLabelTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the option label.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the option label.</p>
 
 <blockquote>
-<p>Define the <a href="/docs-kendo-china/api/javascript/kendo#configuration-optionLabel">optionLabel</a> as <strong>object</strong> if complex template structure is used</p>
+<p>Define the <a href="/api/javascript/kendo#configuration-optionLabel">optionLabel</a> as <strong>object</strong> if complex template structure is used</p>
 </blockquote>
 
 <h3 id="configuration-headerTemplate">
@@ -952,7 +952,7 @@ $("#dropdownlist").kendoDropDownList({
 <a href="#configuration-template">template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the items. By default the widget displays only the text of the data item (configured via <code>dataTextField</code>).</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the items. By default the widget displays only the text of the data item (configured via <code>dataTextField</code>).</p>
 
 <h4>Example - specify template as a function</h4>
 
@@ -996,7 +996,7 @@ $("#dropdownlist").kendoDropDownList({
 <a href="#configuration-valueTemplate">valueTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">valueTemplate</a> used to render the selected value. By default the widget displays only the text of the data item (configured via <code>dataTextField</code>).</p>
+<p>The <a href="/api/javascript/kendo#methods-template">valueTemplate</a> used to render the selected value. By default the widget displays only the text of the data item (configured via <code>dataTextField</code>).</p>
 
 <h4>Example - specify valueTemplate as a function</h4>
 
@@ -1072,7 +1072,7 @@ $("#dropdownlist").kendoDropDownList({
 <a href="#configuration-valuePrimitive">valuePrimitive </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a><em>(default: false)</em>
 </h3>
 
-<p>Specifies the <a href="/docs-kendo-china/framework/mvvm/bindings/value">value binding</a> behavior for the widget when the initial model value is null. If set to true, the View-Model field will be updated with the selected item value field. If set to false, the View-Model field will be updated with the selected item.</p>
+<p>Specifies the <a href="/framework/mvvm/bindings/value">value binding</a> behavior for the widget when the initial model value is null. If set to true, the View-Model field will be updated with the selected item value field. If set to false, the View-Model field will be updated with the selected item.</p>
 
 <h4>Example - specify that the View-Model field should be updated with the selected item value</h4>
 
@@ -1105,7 +1105,7 @@ kendo.bind($("#dropdown"), viewModel);
 
 <p>Enables the virtualization feature of the widget. The configuration can be set on an object, which contains two properties - <code>itemHeight</code> and <code>valueMapper</code>.</p>
 
-<p>For detailed information, refer to the <a href="/docs-kendo-china/controls/editors/combobox/virtualization">article on virtualization</a>.</p>
+<p>For detailed information, refer to the <a href="/controls/editors/combobox/virtualization">article on virtualization</a>.</p>
 
 <h3 id="configuration-virtual.itemHeight">
 <a href="#configuration-virtual.itemHeight">virtual.itemHeight </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a><em>(default: null)</em>
@@ -1120,7 +1120,7 @@ If the developer does not specify one, the framework will automatically set <cod
 
 <p>The changes introduced with the Kendo UI R3 2016 release enable you to determine if the <code>valueMapper</code> must resolve a <em>value to an <code>index</code></em> or a <em>value to a <code>dataItem</code></em>. This is configured through the <code>mapValueTo</code> option that accepts two possible values - <code>"index"</code> or <code>"dataItem"</code>. By default, the <code>mapValueTo</code> is set to <code>"index"</code>, which does not affect the current behavior of the virtualization process.</p>
 
-<p>For more information, refer to the <a href="/docs-kendo-china/controls/editors/combobox/virtualization#value-mapping">article on virtualization</a>.</p>
+<p>For more information, refer to the <a href="/controls/editors/combobox/virtualization#value-mapping">article on virtualization</a>.</p>
 
 <h3 id="configuration-virtual.valueMapper">
 <a href="#configuration-virtual.valueMapper">virtual.valueMapper </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a><em>(default: null)</em>
@@ -1275,10 +1275,10 @@ The widget will pass the selected value(s) in the <code>valueMapper</code> funct
 <h2 id="fields"><a href="#fields">Fields</a></h2>
 
 <h3 id="fields-dataSource">
-<a href="#fields-dataSource">dataSource </a><a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<a href="#fields-dataSource">dataSource </a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/data/datasource">data source</a> of the widget. Configured via the <a href="#configuration-dataSource">dataSource</a> option.</p>
+<p>The <a href="/api/javascript/data/datasource">data source</a> of the widget. Configured via the <a href="#configuration-dataSource">dataSource</a> option.</p>
 
 <blockquote>
 <ul>
@@ -1496,7 +1496,7 @@ dropdownlist.focus();
 
 <h3 id="methods-items"><a href="#methods-items">items</a></h3>
 
-<p>Obtains an Array of the DOM elements, which correspond to the data items from the Kendo UI DataSource <a href="/docs-kendo-china/api/javascript/data/datasource#methods-view">view</a>.</p>
+<p>Obtains an Array of the DOM elements, which correspond to the data items from the Kendo UI DataSource <a href="/api/javascript/data/datasource#methods-view">view</a>.</p>
 
 <h4>Returns</h4>
 
@@ -1652,8 +1652,8 @@ dropdownlist.search("Oranges");
 <li>When <strong>virtualization</strong> is enabled, the method <strong>does not support</strong> selection with a <em>function predicate</em>. The predicate function looks only
 in the current datasource view, which represents only the active range/page. Hence it will not work properly.</li>
 <li>This method <strong>does not trigger</strong> <a href="#events-change">change</a> event.
-This could affect <a href="/docs-kendo-china/framework/mvvm/bindings/value">MVVM value binding</a>. The model bound to the widget will not be updated.
-You can overcome this behavior trigerring the <code>change</code> event manually using <a href="/docs-kendo-china/api/javascript/observable#methods-trigger">trigger("change")</a> method.</li>
+This could affect <a href="/framework/mvvm/bindings/value">MVVM value binding</a>. The model bound to the widget will not be updated.
+You can overcome this behavior trigerring the <code>change</code> event manually using <a href="/api/javascript/observable#methods-trigger">trigger("change")</a> method.</li>
 </ul>
 </blockquote>
 
@@ -1768,7 +1768,7 @@ var selectedIndex = dropdownlist.select();
 
 <h4>Parameters</h4>
 
-<h5>dataSource <a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<h5>dataSource <a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h5>
 
 <h4>Example</h4>
@@ -1851,8 +1851,8 @@ dropdownlist.toggle();
 </li>
 <li>The widget will <strong>clear the applied filter</strong> if a new value is set. Thus it ensures that the original/whole data set is available for selection.</li>
 <li>This method <strong>does not trigger</strong> <a href="#events-change">change</a> event.
-This could affect <a href="/docs-kendo-china/framework/mvvm/bindings/value">MVVM value binding</a>. The model bound to the widget will not be updated.
-You can overcome this behavior trigerring the <code>change</code> event manually using <a href="/docs-kendo-china/api/javascript/observable#methods-trigger">trigger("change")</a> method.</li>
+This could affect <a href="/framework/mvvm/bindings/value">MVVM value binding</a>. The model bound to the widget will not be updated.
+You can overcome this behavior trigerring the <code>change</code> event manually using <a href="/api/javascript/observable#methods-trigger">trigger("change")</a> method.</li>
 </ul>
 </blockquote>
 
@@ -1902,7 +1902,7 @@ dropdownlist.value("Oranges");
 <p>The event handler function context (available via the <code>this</code> keyword) will be set to the widget instance.</p>
 
 <blockquote>
-<p>The event is not fired when the value of the widget is changed programmatically. If you need to handle changes made by API, wire the <a href="/docs-kendo-china/api/javascript/ui/dropdownlist#events-cascade">cascade</a> event.</p>
+<p>The event is not fired when the value of the widget is changed programmatically. If you need to handle changes made by API, wire the <a href="/api/javascript/ui/dropdownlist#events-cascade">cascade</a> event.</p>
 </blockquote>
 
 <h4>Event Data</h4>
@@ -2045,7 +2045,7 @@ dropdownlist.bind("dataBound", dropdownlist_dataBound);
 <p>The filter descriptor that will be used to filter the data source.</p>
 
 <blockquote>
-<p>The data source filters the data items client-side unless the <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-serverFiltering">data source serverFiltering</a> option is set to <code>true</code>.</p>
+<p>The data source filters the data items client-side unless the <a href="/api/javascript/data/datasource#configuration-serverFiltering">data source serverFiltering</a> option is set to <code>true</code>.</p>
 </blockquote>
 
 <h4>Example - subscribe to the "filtering" event during initialization</h4>
@@ -2151,7 +2151,7 @@ dropdownlist.bind("open", dropdownlist_open);
 <blockquote>
 <ul>
 <li>The event is not fired when an item is selected programmatically.</li>
-<li>Since version Q1 2015 (2015.1.318), the <a href="/docs-kendo-china/backwards-compatibility/2015-backward-compatibility#kendo-ui-2015-q1">option label has been moved outside the item list DOM collection</a>. As a result, <code>jQuery.index()</code> can no longer be used to reliably detect if the option label is the selected dropdown item. A more appropriate approach would be to check if the selected dataItem value is an empty string, and/or check if the selected dateItem's text is equal to the <code>optionLabel</code> string.
+<li>Since version Q1 2015 (2015.1.318), the <a href="/backwards-compatibility/2015-backward-compatibility#kendo-ui-2015-q1">option label has been moved outside the item list DOM collection</a>. As a result, <code>jQuery.index()</code> can no longer be used to reliably detect if the option label is the selected dropdown item. A more appropriate approach would be to check if the selected dataItem value is an empty string, and/or check if the selected dateItem's text is equal to the <code>optionLabel</code> string.
 
 <ul>
 <li> <code>e.sender.dataItem(e.item)[e.sender.options.dataValueField] == ""</code>
@@ -2274,7 +2274,7 @@ dropdownlist.bind("cascade", dropdownlist_cascade);
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -2339,7 +2339,7 @@ dropdownlist.bind("cascade", dropdownlist_cascade);
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

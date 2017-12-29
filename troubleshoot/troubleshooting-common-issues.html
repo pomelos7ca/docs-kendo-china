@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Common Issues | Kendo UI Troubleshooting</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn about the solutions of issues that may occur while working with Kendo UI controls.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("troubleshoot/troubleshooting-common-issues.html")
         });
         </script>
@@ -156,7 +156,7 @@
 
 <h3 id="widgets-are-unavailable-or-undefined"><a href="#widgets-are-unavailable-or-undefined">Widgets Are Unavailable or Undefined</a></h3>
 
-<p>If jQuery is included more than once in the page all existing jQuery plugins (including Kendo UI) will be wiped out. Will also occur if the <a href="/docs-kendo-china/intro/installation/prerequisites">required Kendo JavaScript files</a> are not included.</p>
+<p>If jQuery is included more than once in the page all existing jQuery plugins (including Kendo UI) will be wiped out. Will also occur if the <a href="/intro/installation/prerequisites">required Kendo JavaScript files</a> are not included.</p>
 
 <p>Depending on the browser, the following JavaScript errors will be thrown:</p>
 
@@ -175,7 +175,7 @@
 
 <p><strong>Solution</strong></p>
 
-<p>Make sure jQuery is not included more than once in your page. Remove any duplicate <code>script</code> references to jQuery. Include all <a href="/docs-kendo-china/intro/installation/prerequisites">required Kendo JavaScript files</a>.</p>
+<p>Make sure jQuery is not included more than once in your page. Remove any duplicate <code>script</code> references to jQuery. Include all <a href="/intro/installation/prerequisites">required Kendo JavaScript files</a>.</p>
 
 <h3 id="widgets-cannot-be-initialized-in-internet-explorer-compatibility-mode"><a href="#widgets-cannot-be-initialized-in-internet-explorer-compatibility-mode">Widgets Cannot Be Initialized in Internet Explorer Compatibility Mode</a></h3>
 
@@ -209,7 +209,7 @@ where more information can be found.</p>
 
 <ul>
 <li>
-<p>Invalid Kendo UI DataSource <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-type"><code>type</code></a> configuration is set. For example:</p>
+<p>Invalid Kendo UI DataSource <a href="/api/javascript/data/datasource#configuration-type"><code>type</code></a> configuration is set. For example:</p>
 
 <pre><code>dataSource: {
     type: "json"
@@ -223,11 +223,11 @@ where more information can be found.</p>
 
 <p>Use a valid <code>type</code> value, or remove the <code>type</code> property, or add the corresponding missing file—for example, <code>kendo.aspnetmvc.min.js</code> when using the Kendo UI MVC wrappers.</p>
 
-<p>Note that the <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-type">dataSource <code>type</code></a> differs from the <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-transport.read.type"><code>type</code> of the transport actions</a>.</p>
+<p>Note that the <a href="/api/javascript/data/datasource#configuration-type">dataSource <code>type</code></a> differs from the <a href="/api/javascript/data/datasource#configuration-transport.read.type"><code>type</code> of the transport actions</a>.</p>
 
 <h3 id="input-widgets-do-not-raise-change-event-when-api-is-used"><a href="#input-widgets-do-not-raise-change-event-when-api-is-used">Input Widgets Do Not Raise Change Event When API Is Used</a></h3>
 
-<p>The change event of an input widget is triggered only by user action. DOM elements work in the same way. If you need to trigger an event manually use the <a href="/docs-kendo-china/api/javascript/ui/widget#methods-trigger">trigger method</a>.</p>
+<p>The change event of an input widget is triggered only by user action. DOM elements work in the same way. If you need to trigger an event manually use the <a href="/api/javascript/ui/widget#methods-trigger">trigger method</a>.</p>
 
 <h3 id="creating-multiple-widgets-throws-javascript-errors"><a href="#creating-multiple-widgets-throws-javascript-errors">Creating Multiple Widgets Throws JavaScript Errors</a></h3>
 
@@ -259,7 +259,7 @@ where more information can be found.</p>
 
 <ul>
 <li>Disable the modal popup's modality, so that elements outside it can be focused.</li>
-<li>Use a <a href="/docs-kendo-china/api/javascript/ui/window#configuration-modal">modal</a> <a href="/docs-kendo-china/controls/layout/window/overview">Kendo UI Window</a> instead of a third-party popup.</li>
+<li>Use a <a href="/api/javascript/ui/window#configuration-modal">modal</a> <a href="/controls/layout/window/overview">Kendo UI Window</a> instead of a third-party popup.</li>
 </ul>
 
 <h3 id="widgets-do-not-work-correctly-on-touch-devices"><a href="#widgets-do-not-work-correctly-on-touch-devices">Widgets Do Not Work Correctly on Touch Devices</a></h3>
@@ -280,7 +280,7 @@ where more information can be found.</p>
 
 <h3 id="incorrect-appearance-or-errors-occur-in-hidden-widgets"><a href="#incorrect-appearance-or-errors-occur-in-hidden-widgets">Incorrect Appearance or Errors Occur in Hidden Widgets</a></h3>
 
-<p>If you display widgets that have been in an initially hidden container, call their <a href="/docs-kendo-china/api/javascript/ui/widget#methods-resize"><code>resize()</code></a> method after you show them. Initializing widgets on elements with the <code>style="display: none;"</code> configuration might cause errors, such as inability to calculate dimensions and positions or even throw errors. The reason for this behavior is that such calculations are not available for elements that are not rendered by the browser.</p>
+<p>If you display widgets that have been in an initially hidden container, call their <a href="/api/javascript/ui/widget#methods-resize"><code>resize()</code></a> method after you show them. Initializing widgets on elements with the <code>style="display: none;"</code> configuration might cause errors, such as inability to calculate dimensions and positions or even throw errors. The reason for this behavior is that such calculations are not available for elements that are not rendered by the browser.</p>
 
 <p><strong>Solution</strong></p>
 
@@ -290,13 +290,13 @@ where more information can be found.</p>
 
 <h3 id="scripts-or-stylesheets-do-not-load-from-cdn"><a href="#scripts-or-stylesheets-do-not-load-from-cdn">Scripts or Stylesheets Do Not Load from CDN</a></h3>
 
-<p>For a solution, refer to <a href="/docs-kendo-china/intro/installation/cdn-service#troubleshooting">Kendo UI CDN Fallback and Troubleshooting</a>.</p>
+<p>For a solution, refer to <a href="/intro/installation/cdn-service#troubleshooting">Kendo UI CDN Fallback and Troubleshooting</a>.</p>
 
 <h2 id="status-codes"><a href="#status-codes">Status Codes</a></h2>
 
 <h3 id="404-status-code-is-thrown-for-woff-or-ttf-font-files"><a href="#404-status-code-is-thrown-for-woff-or-ttf-font-files">404 Status Code Is Thrown for WOFF or TTF Font Files</a></h3>
 
-<p>For a solution, refer to <a href="/docs-kendo-china/controls/hybrid/styles/icons#serving-font-files">Serving Font Files</a>.</p>
+<p>For a solution, refer to <a href="/controls/hybrid/styles/icons#serving-font-files">Serving Font Files</a>.</p>
 
 <h3 id="404-status-code-is-thrown-for-json-files-on-iis"><a href="#404-status-code-is-thrown-for-json-files-on-iis">404 Status Code Is Thrown for JSON Files on IIS</a></h3>
 
@@ -395,20 +395,20 @@ $("#dialog").kendoWinodow({
 <p>Other articles on troubleshooting:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/troubleshoot/troubleshooting-js-errors">JavaScript Errors</a></li>
-<li><a href="/docs-kendo-china/troubleshoot/troubleshooting-memory-leaks">Performance Issues</a></li>
-<li><a href="/docs-kendo-china/troubleshoot/content-security-policy">Content Security Policy</a></li>
-<li><a href="/docs-kendo-china/framework/excel/troubleshoot/common-issues">Common Issues in Kendo UI Excel Export</a></li>
-<li><a href="/docs-kendo-china/controls/charts/troubleshoot/common-issues">Common Issues in Kendo UI Charts</a></li>
-<li><a href="/docs-kendo-china/controls/charts/troubleshoot/performance-tips">Performance Issues in Kendo UI Widgets for Data Visualization</a></li>
-<li><a href="/docs-kendo-china/controls/editors/combobox/troubleshoot/troubleshooting">Common Issues in Kendo UI ComboBox</a></li>
-<li><a href="/docs-kendo-china/controls/diagrams-and-maps/diagram/troubleshoot/common-issues">Common Issues in Kendo UI Diagram</a></li>
-<li><a href="/docs-kendo-china/controls/editors/dropdownlist/troubleshoot/troubleshooting">Common Issues in Kendo UI DropDownList</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/troubleshoot/troubleshooting">Common Issues in Kendo UI Editor</a></li>
-<li><a href="/docs-kendo-china/controls/editors/multiselect/troubleshoot/troubleshooting">Common Issues in Kendo UI MultiSelect</a></li>
-<li><a href="/docs-kendo-china/controls/scheduling/scheduler/troubleshoot/troubleshooting">Common Issues in Kendo UI Scheduler</a></li>
-<li><a href="/docs-kendo-china/controls/editors/upload/troubleshoot/troubleshooting">Common Issues in Kendo UI Upload</a></li>
-<li><a href="/docs-kendo-china/styles-and-layout/troubleshoot/troubleshooting">Common Issues Related to Styling, Appearance, and Rendering</a></li>
+<li><a href="/troubleshoot/troubleshooting-js-errors">JavaScript Errors</a></li>
+<li><a href="/troubleshoot/troubleshooting-memory-leaks">Performance Issues</a></li>
+<li><a href="/troubleshoot/content-security-policy">Content Security Policy</a></li>
+<li><a href="/framework/excel/troubleshoot/common-issues">Common Issues in Kendo UI Excel Export</a></li>
+<li><a href="/controls/charts/troubleshoot/common-issues">Common Issues in Kendo UI Charts</a></li>
+<li><a href="/controls/charts/troubleshoot/performance-tips">Performance Issues in Kendo UI Widgets for Data Visualization</a></li>
+<li><a href="/controls/editors/combobox/troubleshoot/troubleshooting">Common Issues in Kendo UI ComboBox</a></li>
+<li><a href="/controls/diagrams-and-maps/diagram/troubleshoot/common-issues">Common Issues in Kendo UI Diagram</a></li>
+<li><a href="/controls/editors/dropdownlist/troubleshoot/troubleshooting">Common Issues in Kendo UI DropDownList</a></li>
+<li><a href="/controls/editors/editor/troubleshoot/troubleshooting">Common Issues in Kendo UI Editor</a></li>
+<li><a href="/controls/editors/multiselect/troubleshoot/troubleshooting">Common Issues in Kendo UI MultiSelect</a></li>
+<li><a href="/controls/scheduling/scheduler/troubleshoot/troubleshooting">Common Issues in Kendo UI Scheduler</a></li>
+<li><a href="/controls/editors/upload/troubleshoot/troubleshooting">Common Issues in Kendo UI Upload</a></li>
+<li><a href="/styles-and-layout/troubleshoot/troubleshooting">Common Issues Related to Styling, Appearance, and Rendering</a></li>
 <li><a href="http://docs.telerik.com/aspnet-mvc/troubleshoot/troubleshooting">Common Issues in Telerik UI for ASP.NET MVC</a></li>
 <li><a href="http://docs.telerik.com/aspnet-mvc/troubleshoot/troubleshooting-validation">Validation Issues in Telerik UI for ASP.NET MVC</a></li>
 <li><a href="http://docs.telerik.com/aspnet-mvc/troubleshoot/troubleshooting-scaffolding">Scaffolding Issues in Telerik UI for ASP.NET MVC</a></li>
@@ -421,7 +421,7 @@ $("#dialog").kendoWinodow({
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -486,7 +486,7 @@ $("#dialog").kendoWinodow({
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

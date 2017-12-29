@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Telerik Data Access | Kendo UI Third-Party Tools</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to leverage Telerik Data Access Framework on the backend and let Kendo UI take care of the user interface.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("third-party/using-kendo-with-data-access.html")
         });
         </script>
@@ -127,7 +127,7 @@
 
 <p>To get started, create a new Telerik MVC Web Application.</p>
 
-<p><img src="/docs-kendo-china/images/oa1.png" alt="New Web Project"></p>
+<p><img src="/images/oa1.png" alt="New Web Project"></p>
 
 <p>When asked about the Data Access approach, select <strong>Skip Creating a Telerik Data Access Model Library Project</strong>. This is going to create an empty Telerik UI for an MVC project.</p>
 
@@ -141,19 +141,19 @@
 <p>If you do not have Telerik Data Access installed, you are able to get the trial edition on the <a href="http://www.telerik.com/download-trial-file.aspx?pid=638">Free Trials page</a>.</p>
 </blockquote>
 
-<p><img src="/docs-kendo-china/images/oa3.png" alt="Build The Model"></p>
+<p><img src="/images/oa3.png" alt="Build The Model"></p>
 
 <p><strong>Step 2</strong> On the window that opens next, select <strong>Populate from database</strong>. Click <strong>Next</strong>.</p>
 
-<p><img src="/docs-kendo-china/images/oa4.png" alt="Populate From Data"></p>
+<p><img src="/images/oa4.png" alt="Populate From Data"></p>
 
 <p><strong>Step 3</strong> Set up a connection to NorthwindOA, installed with Data Access, by choosing the option from the drop-down list. Click <strong>Next</strong>.</p>
 
-<p><img src="/docs-kendo-china/images/oa5.png" alt="Connect To NorthwindOA"></p>
+<p><img src="/images/oa5.png" alt="Connect To NorthwindOA"></p>
 
 <p><strong>Step 4</strong> Include all tables from the database in the data model by ticking the <strong>Tables</strong> check box.</p>
 
-<p><img src="/docs-kendo-china/images/oa6.png" alt="Include All Tables"></p>
+<p><img src="/images/oa6.png" alt="Include All Tables"></p>
 
 <p><strong>Step 5</strong> Click <strong>Finish</strong>. The data model is now ready to be used. Next, you need to expose this data model through a service layer.</p>
 
@@ -161,19 +161,19 @@
 
 <p><strong>Step 1</strong> Perform a build on the application. Right-click the <code>.rlinq</code> file in <strong>Solution Explorer</strong>. Select <strong>Add Telerik Data Access Service</strong> so that the domain service wizard fires up.</p>
 
-<p><img src="/docs-kendo-china/images/oa7.png" alt="Generate OpenAccess Domain Model"></p>
+<p><img src="/images/oa7.png" alt="Generate OpenAccess Domain Model"></p>
 
 <p><strong>Step 2</strong> From the drop-down list of the wizard select <strong>EntitiesModel</strong>. Click <strong>Next</strong>.</p>
 
-<p><img src="/docs-kendo-china/images/oa9.png" alt="Select Northwind OA"></p>
+<p><img src="/images/oa9.png" alt="Select Northwind OA"></p>
 
 <p><strong>Step 3</strong> The screen that loads next allows you to configure the service that is going to be created. Select <strong>WCF Service - OData v3</strong> and click <strong>Next</strong>.</p>
 
-<p><img src="/docs-kendo-china/images/oa10.png" alt="Configure The Service"></p>
+<p><img src="/images/oa10.png" alt="Configure The Service"></p>
 
 <p><strong>Step 4</strong> On the next screen you are able to change the name of the service and select which tables to include. Click <strong>Finish</strong> to create your service.</p>
 
-<p><img src="/docs-kendo-china/images/oa11.png" alt="Configure The entitites"></p>
+<p><img src="/images/oa11.png" alt="Configure The entitites"></p>
 
 <h2 id="connect-odata-to-the-grid"><a href="#connect-odata-to-the-grid">Connect oData to the Grid</a></h2>
 
@@ -250,28 +250,28 @@
 
 <p><strong>Step 3</strong> Run the application. You are expected to see the Grid below as a result.</p>
 
-<p><img src="/docs-kendo-china/images/oa12.png" alt="Grid"></p>
+<p><img src="/images/oa12.png" alt="Grid"></p>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <p>Other articles on Kendo UI integration with third-party tools and frameworks:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/third-party/sharepoint-add-ins">SharePoint Add-Ins</a></li>
-<li><a href="/docs-kendo-china/third-party/using-kendo-with-twitter-bootstrap">Twitter Bootstrap</a></li>
-<li><a href="/docs-kendo-china/third-party/angular2">Angular 2.0</a></li>
-<li><a href="/docs-kendo-china/third-party/using-kendo-with-requirejs">RequireJS</a></li>
-<li><a href="/docs-kendo-china/third-party/typescript">TypeScript</a></li>
-<li><a href="/docs-kendo-china/third-party/vs-intellisense">Visual Studio IntelliSense</a></li>
-<li><a href="/docs-kendo-china/third-party/systemjs">SystemJS Support</a></li>
-<li><a href="/docs-kendo-china/third-party/webpack">Webpack Support</a></li>
-<li><a href="/docs-kendo-china/third-party/aurelia">Aurelia</a></li>
+<li><a href="/third-party/sharepoint-add-ins">SharePoint Add-Ins</a></li>
+<li><a href="/third-party/using-kendo-with-twitter-bootstrap">Twitter Bootstrap</a></li>
+<li><a href="/third-party/angular2">Angular 2.0</a></li>
+<li><a href="/third-party/using-kendo-with-requirejs">RequireJS</a></li>
+<li><a href="/third-party/typescript">TypeScript</a></li>
+<li><a href="/third-party/vs-intellisense">Visual Studio IntelliSense</a></li>
+<li><a href="/third-party/systemjs">SystemJS Support</a></li>
+<li><a href="/third-party/webpack">Webpack Support</a></li>
+<li><a href="/third-party/aurelia">Aurelia</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -336,7 +336,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

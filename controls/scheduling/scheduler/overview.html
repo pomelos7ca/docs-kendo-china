@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="scheduler">
         <title>Overview | Kendo UI Scheduler</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to initialize and configure the Kendo UI Scheduler widget.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("controls/scheduling/scheduler/overview.html")
         });
         </script>
@@ -130,14 +130,14 @@
 <h3 id="initialize-the-scheduler"><a href="#initialize-the-scheduler">Initialize the Scheduler</a></h3>
 
 <ol>
-<li>Include the Kendo UI JavaScript and CSS files. For more information on how to add these to your project, refer to the <a href="/docs-kendo-china/intro/installation/getting-started">article on getting started with Kendo UI</a>.</li>
-<li>Kendo UI Scheduler needs a data source to be bound to and uses a special type of Kendo UI DataSource: <a href="/docs-kendo-china/api/framework/schedulerdatasource"><code>kendo.data.SchedulerDataSource</code></a>. The <code>SchedulerDataSource</code> contains instances of a custom Kendo UI model: <a href="/docs-kendo-china/api/framework/schedulerevent"><code>kendo.data.SchedulerEvent</code></a>, which represents the event data items of the Scheduler.</li>
+<li>Include the Kendo UI JavaScript and CSS files. For more information on how to add these to your project, refer to the <a href="/intro/installation/getting-started">article on getting started with Kendo UI</a>.</li>
+<li>Kendo UI Scheduler needs a data source to be bound to and uses a special type of Kendo UI DataSource: <a href="/api/framework/schedulerdatasource"><code>kendo.data.SchedulerDataSource</code></a>. The <code>SchedulerDataSource</code> contains instances of a custom Kendo UI model: <a href="/api/framework/schedulerevent"><code>kendo.data.SchedulerEvent</code></a>, which represents the event data items of the Scheduler.</li>
 </ol>
 
 <blockquote>
 <p><strong>Important</strong></p>
 
-<p>To enable editing of the events and working with recurring event, you must define all fields of the <a href="/docs-kendo-china/api/framework/schedulerevent"><code>kendo.data.SchedulerEvent</code></a> in the dataSource <a href="/docs-kendo-china/api/framework/datasource#configuration-schema.model"><code>schema.model</code></a>.</p>
+<p>To enable editing of the events and working with recurring event, you must define all fields of the <a href="/api/framework/schedulerevent"><code>kendo.data.SchedulerEvent</code></a> in the dataSource <a href="/api/framework/datasource#configuration-schema.model"><code>schema.model</code></a>.</p>
 </blockquote>
 
 <h3 id="bind-to-local-array"><a href="#bind-to-local-array">Bind to Local Array</a></h3>
@@ -185,7 +185,7 @@ $("#scheduler").kendoScheduler({
 <p>If your own service lives in the same domain as the website, you do not need to use JSONP—use JSON instead.</p>
 </blockquote>
 
-<p>For more information on cross-domain requests, see <a href="/docs-kendo-china/framework/datasource/cors">this article</a>.</p>
+<p>For more information on cross-domain requests, see <a href="/framework/datasource/cors">this article</a>.</p>
 
 <p>The example below demonstrates how to bind the Scheduler to a remote service.</p>
 
@@ -316,7 +316,7 @@ $("#scheduler").kendoScheduler({
 <p>When binding to a remote service, it is advisable, while not mandatory, to do the following:</p>
 
 <ol>
-<li><p>Set the <a href="/docs-kendo-china/api/web/scheduler#configuration-timezone"><code>timezone</code></a> option of the Scheduler. It is used to tell the widget in what timezone its events are created and stored on the server. If the timezone is not set, the Scheduler will use the current timezone. This means that users with different timezone settings will see different start and end times. Setting the timezone of the Scheduler will make the widget display the same start and end times regardless of the current user timezone. For more information on timezones and how Kendo UI Scheduler works with them, see the <a href="/docs-kendo-china/web/scheduler/timezones">article about timezones</a>.</p></li>
+<li><p>Set the <a href="/api/web/scheduler#configuration-timezone"><code>timezone</code></a> option of the Scheduler. It is used to tell the widget in what timezone its events are created and stored on the server. If the timezone is not set, the Scheduler will use the current timezone. This means that users with different timezone settings will see different start and end times. Setting the timezone of the Scheduler will make the widget display the same start and end times regardless of the current user timezone. For more information on timezones and how Kendo UI Scheduler works with them, see the <a href="/web/scheduler/timezones">article about timezones</a>.</p></li>
 <li>
 <p>Send the Scheduler event date fields (start and end) to the remote service in <a href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time">UTC format</a>. The <code>parameterMap</code> option from the previous example does the same:</p>
 
@@ -349,7 +349,7 @@ $("#scheduler").kendoScheduler({
 <code>agenda</code> - displays the events from the current date until the next week (7 days).</li>
 </ul>
 
-<p>The <code>day</code> and <code>week</code> views are enabled by default. To enable other views or configure them, use the <a href="/docs-kendo-china/api/web/scheduler#configuration-views"><code>views</code></a> option.</p>
+<p>The <code>day</code> and <code>week</code> views are enabled by default. To enable other views or configure them, use the <a href="/api/web/scheduler#configuration-views"><code>views</code></a> option.</p>
 
 <p>The example below demonstrates how to enable all Scheduler views.</p>
 
@@ -464,9 +464,9 @@ $("#scheduler").kendoScheduler({
 
 <p>Kendo UI Scheduler supports adaptive enhancements like changes in styling and behavior in order to remain consistent with the specific user device experience. For instance, when editing on a mobile device, Kendo UI will slide in a new screen for the user, which is a departure from the more desktop-like popup behaviors.</p>
 
-<p>To enable the adaptive rendering feature, set the <a href="/docs-kendo-china/api/javascript/ui/scheduler#configuration-mobile"><code>mobile</code></a> property to <code>true</code>, <code>"phone"</code> or <code>"tablet"</code>.</p>
+<p>To enable the adaptive rendering feature, set the <a href="/api/javascript/ui/scheduler#configuration-mobile"><code>mobile</code></a> property to <code>true</code>, <code>"phone"</code> or <code>"tablet"</code>.</p>
 
-<p>The Kendo UI adaptive mode requires scripts, which are normally part of the Kendo UI Mobile (Hybrid) library (<code>kendo.mobile.min.js</code>). However, these scripts are also included in <code>kendo.web.min.js</code> and <code>kendo.all.min.js</code>. If you are using <a href="/docs-kendo-china/intro/installation/what-you-need#individual-widget-scripts">individual widget scripts</a> or a <a href="/docs-kendo-china/intro/installation/what-you-need#employ-download-builder">custom combined script</a>, make sure the relevant scripts are included.</p>
+<p>The Kendo UI adaptive mode requires scripts, which are normally part of the Kendo UI Mobile (Hybrid) library (<code>kendo.mobile.min.js</code>). However, these scripts are also included in <code>kendo.web.min.js</code> and <code>kendo.all.min.js</code>. If you are using <a href="/intro/installation/what-you-need#individual-widget-scripts">individual widget scripts</a> or a <a href="/intro/installation/what-you-need#employ-download-builder">custom combined script</a>, make sure the relevant scripts are included.</p>
 
 <p>Each adaptive Scheduler is rendered inside a separate Kendo UI Mobile Pane. Since the panes are absolutely positioned, they can overlap with other content on the page. To avoid this, wrap the Scheduler inside a <code>&lt;div&gt;</code> container that has a <code>position:relative</code> style and a set <code>height</code>. The <code>height</code> must be consistent with the Scheduler's height. Note that the absolute position is required for the transitions between the main and editing views to work correctly.</p>
 
@@ -490,7 +490,7 @@ $("#scheduler").kendoScheduler({
 
 <h3 id="methods-and-fields"><a href="#methods-and-fields">Methods and Fields</a></h3>
 
-<p>Kendo UI Scheduler exposes a set of <a href="/docs-kendo-china/api/web/scheduler#methods">methods</a> and <a href="/docs-kendo-china/api/web/scheduler#fields">fields</a> you can use.</p>
+<p>Kendo UI Scheduler exposes a set of <a href="/api/web/scheduler#methods">methods</a> and <a href="/api/web/scheduler#fields">fields</a> you can use.</p>
 
 <p>The example below demonstrates how to apply the Scheduler API.</p>
 
@@ -517,7 +517,7 @@ scheduler.view("week"); // Go to week view
 
 <h3 id="events"><a href="#events">Events</a></h3>
 
-<p>Kendo UI Scheduler supports a set of <a href="/docs-kendo-china/api/web/scheduler#events">events</a> you can subscribe to.</p>
+<p>Kendo UI Scheduler supports a set of <a href="/api/web/scheduler#events">events</a> you can subscribe to.</p>
 
 <p>There are two ways to handle events:</p>
 
@@ -610,27 +610,27 @@ var scheduler = $("#scheduler").data("kendoScheduler");
 
 <p>The built-in views of the widget are designed to render a time-frame that ends on the day it starts. If you want to render views which start on one day and end on another, build a custom view.</p>
 
-<p>For more information on how to create custom views, refer to <a href="/docs-kendo-china/controls/scheduling/scheduler/how-to/custom-views/custom-view">this how-to example</a>.</p>
+<p>For more information on how to create custom views, refer to <a href="/controls/scheduling/scheduler/how-to/custom-views/custom-view">this how-to example</a>.</p>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <p>Other articles on the Kendo UI Scheduler:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/api/javascript/ui/scheduler">Scheduler JavaScript API Reference</a></li>
-<li><a href="/docs-kendo-china/controls/scheduling/scheduler/resources">Resources</a></li>
-<li><a href="/docs-kendo-china/controls/scheduling/scheduler/timezones">Timezones</a></li>
-<li><a href="/docs-kendo-china/aspnet-mvc/helpers/scheduler/mvc-scheduler-overview">Overview of the ASP.NET MVC HtmlHelper Extension for the Scheduler Widget</a></li>
-<li><a href="/docs-kendo-china/jsp/tags/scheduler/overview">Overview of the Scheduler JSP Tag</a></li>
-<li><a href="/docs-kendo-china/php/widgets/scheduler/overview">Overview of the Scheduler PHP Class</a></li>
+<li><a href="/api/javascript/ui/scheduler">Scheduler JavaScript API Reference</a></li>
+<li><a href="/controls/scheduling/scheduler/resources">Resources</a></li>
+<li><a href="/controls/scheduling/scheduler/timezones">Timezones</a></li>
+<li><a href="/aspnet-mvc/helpers/scheduler/mvc-scheduler-overview">Overview of the ASP.NET MVC HtmlHelper Extension for the Scheduler Widget</a></li>
+<li><a href="/jsp/tags/scheduler/overview">Overview of the Scheduler JSP Tag</a></li>
+<li><a href="/php/widgets/scheduler/overview">Overview of the Scheduler PHP Class</a></li>
 </ul>
 
-<p>For how-to examples on the Kendo UI Scheduler, browse its <a href="/docs-kendo-china/controls/scheduling/scheduler/how-to/editing/add-control-to-customeditor"><strong>How To</strong> documentation folder</a>.</p> 
+<p>For how-to examples on the Kendo UI Scheduler, browse its <a href="/controls/scheduling/scheduler/how-to/editing/add-control-to-customeditor"><strong>How To</strong> documentation folder</a>.</p> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -695,7 +695,7 @@ var scheduler = $("#scheduler").data("kendoScheduler");
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

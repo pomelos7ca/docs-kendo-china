@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="touch">
         <title>Touch Events | Kendo UI Hybrid Components</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Handle user-initiated touch events in the Hybrid UI framework of Kendo UI.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("controls/hybrid/styles/touch.html")
         });
         </script>
@@ -169,7 +169,7 @@
 
 <p>Each <code>touch</code> event handler receives an event object as a parameter. The <code>touch</code> event has a <code>touch</code> property, which contains information about the touch event like its current coordinates, initial position, the DOM element, etc.</p>
 
-<p>For a full list of the properties of the <code>touch</code> object, see the <a href="/docs-kendo-china/api/javascript/mobile/ui/touch"><code>touchObject</code> API reference</a>.</p>
+<p>For a full list of the properties of the <code>touch</code> object, see the <a href="/api/javascript/mobile/ui/touch"><code>touchObject</code> API reference</a>.</p>
 
 <p>The multi-touch gestures event object parameter has a <code>touches</code> property, which is an array of two <code>touch</code> objects. In addition, a <code>distance</code> and <code>center</code> properties are exposed.</p>
 
@@ -199,15 +199,15 @@
 
 <p>The touch feature exposes four touch events—<code>touchstart</code>, <code>dragstart</code>, <code>drag</code>, and <code>dragend</code>, corresponding to the four stages of the touch sequence.</p>
 
-<p>For a detailed event description and sample code, see the <a href="/docs-kendo-china/api/javascript/mobile/ui/touch"><code>touch</code> component API reference</a>.</p>
+<p>For a detailed event description and sample code, see the <a href="/api/javascript/mobile/ui/touch"><code>touch</code> component API reference</a>.</p>
 
 <h3 id="touch-events-tap-doubletap-hold"><a href="#touch-events-tap-doubletap-hold">Touch Events: tap, doubletap, hold</a></h3>
 
-<p>In addition to the <code>drag</code> events, the <code>tap</code>, <code>doubletap</code>, and <code>hold</code> events may be fired if users do not move their finger after pressing. The <code>hold</code> event minimum time and the <code>doubletap</code> maximum time between two successive taps can be set through the <a href="/docs-kendo-china/api/javascript/mobile/ui/touch#configuration"><code>touch</code> configuration options</a>.</p>
+<p>In addition to the <code>drag</code> events, the <code>tap</code>, <code>doubletap</code>, and <code>hold</code> events may be fired if users do not move their finger after pressing. The <code>hold</code> event minimum time and the <code>doubletap</code> maximum time between two successive taps can be set through the <a href="/api/javascript/mobile/ui/touch#configuration"><code>touch</code> configuration options</a>.</p>
 
 <h3 id="touch-events-swipe"><a href="#touch-events-swipe">Touch Events: swipe</a></h3>
 
-<p>If the <code>enableSwipe</code> configuration option is set to <code>true</code>, the Touch component recognizes horizontal swipes and fires the <code>swipe</code> event. The <code>swipe</code> minimum distance, maximum horizontal deviation, and maximum duration can be set through the <a href="/docs-kendo-china/api/javascript/mobile/ui/touch#configuration">configuration options</a>.</p>
+<p>If the <code>enableSwipe</code> configuration option is set to <code>true</code>, the Touch component recognizes horizontal swipes and fires the <code>swipe</code> event. The <code>swipe</code> minimum distance, maximum horizontal deviation, and maximum duration can be set through the <a href="/api/javascript/mobile/ui/touch#configuration">configuration options</a>.</p>
 
 <blockquote>
 <p><strong>Important</strong></p>
@@ -219,7 +219,7 @@
 
 <p>If the <code>multiTouch</code> configuration option is set to <code>true</code>, the Touch component recognizes two-finger gestures, and fires the <code>gesturestart</code>, <code>gesturechange</code>, and <code>gestureend</code> events.</p>
 
-<p>For a detailed description of each event, see the <a href="/docs-kendo-china/api/javascript/mobile/ui/touch"><code>touch</code> API reference section</a>.</p>
+<p>For a detailed description of each event, see the <a href="/api/javascript/mobile/ui/touch"><code>touch</code> API reference section</a>.</p>
 
 <blockquote>
 <p><strong>Important</strong></p>
@@ -232,16 +232,16 @@
 <p>Other articles related to the appearance and styling of Kendo UI hybrid distribution:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/controls/hybrid/styles/forms">Style the Hybrid UI Form Elements</a></li>
-<li><a href="/docs-kendo-china/controls/hybrid/styles/styling">Apply CSS</a></li>
-<li><a href="/docs-kendo-china/controls/hybrid/styles/layout">Define the Layout</a></li>
-<li><a href="/docs-kendo-china/controls/hybrid/styles/icons">Hybrid UI Font Icons</a></li>
+<li><a href="/controls/hybrid/styles/forms">Style the Hybrid UI Form Elements</a></li>
+<li><a href="/controls/hybrid/styles/styling">Apply CSS</a></li>
+<li><a href="/controls/hybrid/styles/layout">Define the Layout</a></li>
+<li><a href="/controls/hybrid/styles/icons">Hybrid UI Font Icons</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -306,7 +306,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

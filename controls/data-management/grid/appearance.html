@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="grid">
         <title>Appearance | Kendo UI Grid</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to control the layout and appearance of the Kendo UI Grid widget.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("controls/data-management/grid/appearance.html")
         });
         </script>
@@ -205,11 +205,11 @@
 
 <p>The <code>#GridID</code> allows the application of styles only to a particular Grid instance. To use the above styles in all Grid instances, replace the ID with the <code>.k-grid</code> CSS class.</p>
 
-<p><a href="/docs-kendo-china/controls/data-management/grid/how-to/Layout/hide-scrollbar-when-not-needed">This enhanced example</a> shows how to hide or show the scrollbar, depending on the number of Grid rows.</p>
+<p><a href="/controls/data-management/grid/how-to/Layout/hide-scrollbar-when-not-needed">This enhanced example</a> shows how to hide or show the scrollbar, depending on the number of Grid rows.</p>
 
 <h3 id="restore-scroll-positions"><a href="#restore-scroll-positions">Restore Scroll Positions</a></h3>
 
-<p>In some scenarios, the scroll position of the Grid might be reset when the widget is rebound. To avoid this behavior, save the scroll position in the <a href="/docs-kendo-china/api/javascript/ui/grid#events-dataBinding"><code>dataBinding</code></a> event and restore it in the <a href="/docs-kendo-china/api/javascript/ui/grid#events-dataBound"><code>dataBound</code></a> event. The scrollable container is <code>div.k-grid-content</code> and it is possible to retrieve it as a child element of the widget <a href="/docs-kendo-china/intro/widget-basics/wrapper-element"><code>wrapper</code></a>.</p>
+<p>In some scenarios, the scroll position of the Grid might be reset when the widget is rebound. To avoid this behavior, save the scroll position in the <a href="/api/javascript/ui/grid#events-dataBinding"><code>dataBinding</code></a> event and restore it in the <a href="/api/javascript/ui/grid#events-dataBound"><code>dataBound</code></a> event. The scrollable container is <code>div.k-grid-content</code> and it is possible to retrieve it as a child element of the widget <a href="/intro/widget-basics/wrapper-element"><code>wrapper</code></a>.</p>
 
 <p>If virtual scrolling is enabled, the scrollable data container is <code>div.k-virtual-scrollable-wrap</code> and it is scrolled only horizontally.</p>
 
@@ -355,7 +355,7 @@ grid.thead.closest(".k-grid-header").css("padding-right", kendo.support.scrollba
 <li>Refreshing or replacing the Grid data in the virtual mode has to be accompanied by resetting the position of the virtual scrollbar to zero—for example, by using <code>$('#GridID .k-scrollbar').scrollTop(0);</code>. In some scenarios, you might also need to call the <a href="http://docs.telerik.com/kendo-ui/api/javascript/ui/grid#methods-refresh"><code>refresh()</code> method</a>.</li>
 <li>Programmatic scrolling to a particular Grid row is not supported when virtual scrolling is enabled, because it is not possible to reliably predict the exact scroll offset of the row.</li>
 <li>When the Grid is <code>navigatable</code>, keyboard navigation supports only the <code>Up Arrow</code> and <code>Down Arrow</code> keys. The <code>Page Up</code> and <code>Page Down</code> key scrolling is not supported.</li>
-<li>The Grid does not persist <a href="#selection">selection</a> when virtual scrolling occurs. To achieve this behavior, <a href="/docs-kendo-china/controls/data-management/grid/how-to/Selection/persist-row-selection-while-paging">use this custom implementation</a>.</li>
+<li>The Grid does not persist <a href="#selection">selection</a> when virtual scrolling occurs. To achieve this behavior, <a href="/controls/data-management/grid/how-to/Selection/persist-row-selection-while-paging">use this custom implementation</a>.</li>
 </ul>
 
 <p>When virtual scrolling is not supported or recommended, revert to standard paging or non-virtual scrolling without paging, depending on the number of data items.</p>
@@ -364,7 +364,7 @@ grid.thead.closest(".k-grid-header").css("padding-right", kendo.support.scrollba
 
 <p>The endless scroll mode is suitable for displaying large number of items. At the same time, advanced features such as editing, grouping, filtering, sorting, and hierarchy are also supported.</p>
 
-<p>To enable endless scrolling, set the <a href="/docs-kendo-china/api/javascript/ui/grid#configuration-scrollable.endless"><code>scrollable.endless</code></a> property to <code>true</code>.</p>
+<p>To enable endless scrolling, set the <a href="/api/javascript/ui/grid#configuration-scrollable.endless"><code>scrollable.endless</code></a> property to <code>true</code>.</p>
 
 <p>The Grid supports endless scrolling both when it is bound to local and remote data:</p>
 
@@ -432,11 +432,11 @@ grid.thead.closest(".k-grid-header").css("padding-right", kendo.support.scrollba
 
 <p>It is advisable to set a height to the Grid only if its scrolling is enabled.</p>
 
-<p>When the height of the Grid is set, it calculates the appropriate height of its scrollable data area, so that the sum of the header rows, filter row, data, footer, and pager is equal to the expected height of the widget. That is why if the height of the Grid is changed through JavaScript after you create the widget,  you need to call the <a href="/docs-kendo-china/styles-and-layout/using-kendo-in-responsive-web-pages"><code>resize</code> method of the Grid</a> afterwards. In this way the Grid recalculates the height of its data area.</p>
+<p>When the height of the Grid is set, it calculates the appropriate height of its scrollable data area, so that the sum of the header rows, filter row, data, footer, and pager is equal to the expected height of the widget. That is why if the height of the Grid is changed through JavaScript after you create the widget,  you need to call the <a href="/styles-and-layout/using-kendo-in-responsive-web-pages"><code>resize</code> method of the Grid</a> afterwards. In this way the Grid recalculates the height of its data area.</p>
 
 <p><strong>Figure 1: Grid with a fixed height and its scrolling functionality enabled</strong></p>
 
-<p><img src="/docs-kendo-china/controls/data-management/grid/grid3_1.png" alt="Grid With Fixed Height And Scrolling"></p>
+<p><img src="/controls/data-management/grid/grid3_1.png" alt="Grid With Fixed Height And Scrolling"></p>
 
 <p>In some special scenarios it is possible to set a height style to the scrollable data area of the Grid either by using JavaScript or external CSS, which is a <code>div.k-grid-content</code> element. In this case it is not recommended to set height to the Grid.</p>
 
@@ -469,9 +469,9 @@ grid.thead.closest(".k-grid-header").css("padding-right", kendo.support.scrollba
 <p>This section is applicable to scrollable Grids only.</p>
 </blockquote>
 
-<p>To make the Grid 100% high and resize together with its parent, you need to apply a 100% height style to the widget—<a href="/docs-kendo-china/intro/widget-basics/wrapper-element">that is, to the <code>&lt;div class="k-grid"&gt;</code> wrapper of the widget</a>. According to web standards, elements with a percentage height require that their parent has an explicit height. This requirement applies recursively until either an element with a pixel height, or the <code>html</code> element is reached. Elements that are 100% high cannot have margins, paddings, borders, or sibling elements. That is why you have to remove the default border of the Grid as well.</p>
+<p>To make the Grid 100% high and resize together with its parent, you need to apply a 100% height style to the widget—<a href="/intro/widget-basics/wrapper-element">that is, to the <code>&lt;div class="k-grid"&gt;</code> wrapper of the widget</a>. According to web standards, elements with a percentage height require that their parent has an explicit height. This requirement applies recursively until either an element with a pixel height, or the <code>html</code> element is reached. Elements that are 100% high cannot have margins, paddings, borders, or sibling elements. That is why you have to remove the default border of the Grid as well.</p>
 
-<p>Then, you need to make sure that the inner layout of the Grid adapts to changes in the height of the <code>&lt;div&gt;</code> wrapper. If these changes are triggered by the resizing of the browser window, subscribe to the window <code>resize</code> event of the browser and execute the <a href="/docs-kendo-china/styles-and-layout/using-kendo-in-responsive-web-pages"><code>resize</code></a> method of the Grid. The <code>resize</code> method measures the height of the Grid <code>&lt;div&gt;</code> and adjusts the height of the scrollable data area.</p>
+<p>Then, you need to make sure that the inner layout of the Grid adapts to changes in the height of the <code>&lt;div&gt;</code> wrapper. If these changes are triggered by the resizing of the browser window, subscribe to the window <code>resize</code> event of the browser and execute the <a href="/styles-and-layout/using-kendo-in-responsive-web-pages"><code>resize</code></a> method of the Grid. The <code>resize</code> method measures the height of the Grid <code>&lt;div&gt;</code> and adjusts the height of the scrollable data area.</p>
 
 <p>If the Grid is placed inside a Kendo UI Splitter or Kendo UI Window, you do not need to call the <code>resize</code> method because these widgets will execute it automatically. Also, it is not necessary to apply the method if you use locked (frozen) columns.</p>
 
@@ -495,11 +495,11 @@ grid.thead.closest(".k-grid-header").css("padding-right", kendo.support.scrollba
 });
 </code></pre>
 
-<p>For a runnable example of the previously discussed scenario, refer to the article on <a href="/docs-kendo-china/controls/data-management/grid/how-to/Layout/resize-grid-when-the-window-is-resized">how to resize the Grid when the window is resized</a>.</p>
+<p>For a runnable example of the previously discussed scenario, refer to the article on <a href="/controls/data-management/grid/how-to/Layout/resize-grid-when-the-window-is-resized">how to resize the Grid when the window is resized</a>.</p>
 
 <h3 id="configure-the-loading-indicator"><a href="#configure-the-loading-indicator">Configure the Loading Indicator</a></h3>
 
-<p>Internally, the Grid uses the <a href="/docs-kendo-china/api/javascript/ui/ui#methods-progress"><code>kendo.ui.progress</code></a> method to display a loading overlay during remote <code>read</code> requests.</p>
+<p>Internally, the Grid uses the <a href="/api/javascript/ui/ui#methods-progress"><code>kendo.ui.progress</code></a> method to display a loading overlay during remote <code>read</code> requests.</p>
 
 <p>If the scrolling functionality of the Grid is disabled, the overlay is displayed over the whole Grid.</p>
 
@@ -630,7 +630,7 @@ grid.thead.closest(".k-grid-header").css("padding-right", kendo.support.scrollba
 }
 </code></pre>
 
-<p>The color value of the <code>#ccc</code> border has to match the color of the cell border from the <a href="/docs-kendo-china/styles-and-layout/appearance-styling">Kendo UI theme</a>. To obtain this, check the styles of the table cell by using a DOM inspector.</p>
+<p>The color value of the <code>#ccc</code> border has to match the color of the cell border from the <a href="/styles-and-layout/appearance-styling">Kendo UI theme</a>. To obtain this, check the styles of the table cell by using a DOM inspector.</p>
 
 <h3 id="locked-columns"><a href="#locked-columns">Locked Columns</a></h3>
 
@@ -665,7 +665,7 @@ grid.thead.closest(".k-grid-header").css("padding-right", kendo.support.scrollba
 <p><strong>Important</strong>  </p>
 
 <ul>
-<li>The <a href="/docs-kendo-china/api/javascript/ui/grid">JavaScript API of the Grid</a> allows you to lock and unlock columns on the fly. However, this is possible only if at least one column is initially locked during initialization. The HTML output and script behavior of the Grid are very different when frozen columns are used. That is why the widget cannot switch between frozen and unfrozen mode after initialization.</li>
+<li>The <a href="/api/javascript/ui/grid">JavaScript API of the Grid</a> allows you to lock and unlock columns on the fly. However, this is possible only if at least one column is initially locked during initialization. The HTML output and script behavior of the Grid are very different when frozen columns are used. That is why the widget cannot switch between frozen and unfrozen mode after initialization.</li>
 <li>The locked columns can be positioned only on the left side of the Grid. Positioning them on the right side is not supported.</li>
 <li>The row template and detail features are not supported in combination with column locking. It is possible to lock a column at the topmost level only, if you use <a href="http://demos.telerik.com/kendo-ui/grid/multicolumnheaders">multi-column headers</a>.</li>
 </ul>
@@ -678,7 +678,7 @@ grid.thead.closest(".k-grid-header").css("padding-right", kendo.support.scrollba
 <p>It is possible to get a table row in the Grid by the ID of the data item. To achieve this behavior, follow the steps below:</p>
 
 <ol>
-<li>Make sure the <a href="/docs-kendo-china/api/javascript/data/model#configuration-Example">ID field is defined in the model configuration</a> of the Grid dataSource.</li>
+<li>Make sure the <a href="/api/javascript/data/model#configuration-Example">ID field is defined in the model configuration</a> of the Grid dataSource.</li>
 <li>Retrieve the row model, the model UID, and the Grid table row consecutively:</li>
 </ol>
 
@@ -693,7 +693,7 @@ var tableRow = $("[data-uid='" + modelUID + "']"); // the data-uid attribute is 
 
 <p>It is possible to manually add a table row with some user-friendly message when the dataSource does not return any data—for example, as a result of filtering.</p>
 
-<p>The following example demonstrates how to add a table row in the <a href="/docs-kendo-china/api/javascript/ui/grid#events-dataBound"><code>dataBound</code></a> event handler of the Grid.</p>
+<p>The following example demonstrates how to add a table row in the <a href="/api/javascript/ui/grid#events-dataBound"><code>dataBound</code></a> event handler of the Grid.</p>
 
 <h6>Example</h6>
 
@@ -708,7 +708,7 @@ var tableRow = $("[data-uid='" + modelUID + "']"); // the data-uid attribute is 
 
 <h3 id="row-templates"><a href="#row-templates">Row Templates</a></h3>
 
-<p>For more information on using row templates, refer to the <a href="/docs-kendo-china/controls/data-management/grid/walkthrough#templates">walkthrough article</a>.</p>
+<p>For more information on using row templates, refer to the <a href="/controls/data-management/grid/walkthrough#templates">walkthrough article</a>.</p>
 
 <h2 id="hidden-containers"><a href="#hidden-containers">Hidden Containers</a></h2>
 
@@ -721,7 +721,7 @@ var tableRow = $("[data-uid='" + modelUID + "']"); // the data-uid attribute is 
 <ul>
 <li>The Grid may appear smaller than expected.</li>
 <li>The scrollable data area overflows the bottom border of the Grid.</li>
-<li>If <a href="/docs-kendo-china/controls/data-management/grid/walkthrough#virtual-scrolling">virtual scrolling</a> is enabled, the vertical scrollbar is not visible.</li>
+<li>If <a href="/controls/data-management/grid/walkthrough#virtual-scrolling">virtual scrolling</a> is enabled, the vertical scrollbar is not visible.</li>
 <li>Frozen columns are too narrow and non-frozen columns are not visible.</li>
 </ul>
 
@@ -729,7 +729,7 @@ var tableRow = $("[data-uid='" + modelUID + "']"); // the data-uid attribute is 
 
 <ul>
 <li><p>Delay the initialization of the Grid or change the order in which various Kendo UI widgets are initialized, so that the Grid is initialized after its element becomes visible.</p></li>
-<li><p>Execute the <a href="/docs-kendo-china/styles-and-layout/using-kendo-in-responsive-web-pages#individual-widget-resizing"><code>resize</code></a> method of the Grid after the widget becomes visible.</p></li>
+<li><p>Execute the <a href="/styles-and-layout/using-kendo-in-responsive-web-pages#individual-widget-resizing"><code>resize</code></a> method of the Grid after the widget becomes visible.</p></li>
 <li>
 <p>Instead of setting an overall height for the Grid in its configuration, define the height for the scrollable data area only. In this case, no height calculations are made. This approach is applicable only if frozen columns and virtual scrolling are <em>not</em> used.</p>
 
@@ -754,9 +754,9 @@ var tableRow = $("[data-uid='" + modelUID + "']"); // the data-uid attribute is 
 <p>For more information on how to initialize the Grid inside other Kendo UI widgets which act as hidden containers, refer to the following articles:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/controls/navigation/panelbar/how-to/initiliaze-grid-in-panelbar">Initialize the Grid inside the PanelBar</a></li>
-<li><a href="/docs-kendo-china/controls/navigation/tabstrip/how-to/initiliaze-grid-in-tabstrip">Initialize the Grid inside the TabStrib</a></li>
-<li><a href="/docs-kendo-china/controls/layout/window/how-to/initiliaze-grid-in-window">Initialize the Grid inside the Window</a></li>
+<li><a href="/controls/navigation/panelbar/how-to/initiliaze-grid-in-panelbar">Initialize the Grid inside the PanelBar</a></li>
+<li><a href="/controls/navigation/tabstrip/how-to/initiliaze-grid-in-tabstrip">Initialize the Grid inside the TabStrib</a></li>
+<li><a href="/controls/layout/window/how-to/initiliaze-grid-in-window">Initialize the Grid inside the Window</a></li>
 </ul>
 
 <h2 id="interactive-states"><a href="#interactive-states">Interactive States</a></h2>
@@ -802,23 +802,23 @@ var tableRow = $("[data-uid='" + modelUID + "']"); // the data-uid attribute is 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <ul>
-<li><a href="/docs-kendo-china/api/javascript/ui/grid">Grid JavaScript API Reference</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/walkthrough">Walkthrough of the Grid</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/editing">Editing Functionality of the Grid</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/data-binding">Remote Data Binding of the Grid</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/localization">Localization of Messages in the Grid</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/adaptive">Adaptive Rendering of the Grid</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/excel-export">Export of the Grid to Excel</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/pdf-export">Export of the Grid in PDF</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/pdf-export">Printing of the Grid</a></li>
+<li><a href="/api/javascript/ui/grid">Grid JavaScript API Reference</a></li>
+<li><a href="/controls/data-management/grid/walkthrough">Walkthrough of the Grid</a></li>
+<li><a href="/controls/data-management/grid/editing">Editing Functionality of the Grid</a></li>
+<li><a href="/controls/data-management/grid/data-binding">Remote Data Binding of the Grid</a></li>
+<li><a href="/controls/data-management/grid/localization">Localization of Messages in the Grid</a></li>
+<li><a href="/controls/data-management/grid/adaptive">Adaptive Rendering of the Grid</a></li>
+<li><a href="/controls/data-management/grid/excel-export">Export of the Grid to Excel</a></li>
+<li><a href="/controls/data-management/grid/pdf-export">Export of the Grid in PDF</a></li>
+<li><a href="/controls/data-management/grid/pdf-export">Printing of the Grid</a></li>
 </ul>
 
-<p>For how-to examples on the Kendo UI Grid widget, browse its <a href="/docs-kendo-china/controls/data-management/grid/how-to/AngularJS/use-telerik-backend-services-with-angular"><strong>How To</strong> documentation folder</a>.</p> 
+<p>For how-to examples on the Kendo UI Grid widget, browse its <a href="/controls/data-management/grid/how-to/AngularJS/use-telerik-backend-services-with-angular"><strong>How To</strong> documentation folder</a>.</p> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -883,7 +883,7 @@ var tableRow = $("[data-uid='" + modelUID + "']"); // the data-uid attribute is 
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

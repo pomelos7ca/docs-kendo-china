@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="drawing_api">
         <title>PDF Drawing Backend | Kendo UI Drawing API</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to export a drawing in a PDF file when using the Kendo UI Drawing API.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("framework/drawing/pdf-output.html")
         });
         </script>
@@ -167,7 +167,7 @@ drawing.pdf.saveAs(group, "filename.pdf", proxyUrl, callback);
 
 <p>The <code>proxyUrl</code> and <code>callback</code> arguments are optional. The <code>proxyUrl</code> is necessary for the download to work with Internet Explorer 9 and Safari and is not going to be used for other browsers. The <code>callback</code> will be invoked when the file has been successfully generated (generation could be asynchronous).</p>
 
-<p>For more information on the <code>proxyURL</code>, refer to <a href="/docs-kendo-china/api/javascript/kendo.html#methods-saveAs"><code>kendo.saveAs</code></a>.</p>
+<p>For more information on the <code>proxyURL</code>, refer to <a href="/api/javascript/kendo.html#methods-saveAs"><code>kendo.saveAs</code></a>.</p>
 
 <h3 id="use-blob-object"><a href="#use-blob-object">Use Blob Object</a></h3>
 
@@ -233,9 +233,9 @@ drawing.pdf.toDataURL(group, function(dataURL){ ... });
 text.options.set("font", "30px Verdana");
 </code></pre>
 
-<p>In order for this configuration to render the content correctly as PDF, your code must have access to the TTF files. Ideally, they must be the same fonts that the browser uses to render on screen. However, you cannot access the fonts from the client-side JavaScript on the machine where the browser runs, so they must be provided on the server and the paths to them must be declared. As of the Kendo UI 2014 Q3 SP1 release, the Kendo UI PDF generator is able to dig the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face">CSS <code>@font-face</code> declarations</a> directly from the stylesheets. You no longer need to call the <a href="/docs-kendo-china/api/javascript/pdf#methods-defineFont"><code>pdf.defineFont()</code></a> method manually.</p>
+<p>In order for this configuration to render the content correctly as PDF, your code must have access to the TTF files. Ideally, they must be the same fonts that the browser uses to render on screen. However, you cannot access the fonts from the client-side JavaScript on the machine where the browser runs, so they must be provided on the server and the paths to them must be declared. As of the Kendo UI 2014 Q3 SP1 release, the Kendo UI PDF generator is able to dig the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face">CSS <code>@font-face</code> declarations</a> directly from the stylesheets. You no longer need to call the <a href="/api/javascript/pdf#methods-defineFont"><code>pdf.defineFont()</code></a> method manually.</p>
 
-<p>For more information on how to embed fonts only using CSS at-rules, refer to the section on <a href="/docs-kendo-china/framework/drawing/drawing-dom#configuration-Custom">drawing custom fonts in PDF</a>.</p>
+<p>For more information on how to embed fonts only using CSS at-rules, refer to the section on <a href="/framework/drawing/drawing-dom#configuration-Custom">drawing custom fonts in PDF</a>.</p>
 
 <p>To manually define fonts, see the example below:</p>
 
@@ -289,23 +289,23 @@ text.options.set("font", "30px Verdana");
 
 <h2 id="supported-browsers"><a href="#supported-browsers">Supported Browsers</a></h2>
 
-<p>For more information on the provided <a href="/docs-kendo-china/intro/supporting/browser-support">browser support</a>, refer to the section on <a href="/docs-kendo-china/intro/supporting/browser-support#pdf-export">PDF export</a>.</p>
+<p>For more information on the provided <a href="/intro/supporting/browser-support">browser support</a>, refer to the section on <a href="/intro/supporting/browser-support#pdf-export">PDF export</a>.</p>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <p>Other articles on Kendo UI Drawing API:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/framework/drawing/overview">Overview of the Drawing API</a></li>
-<li><a href="/docs-kendo-china/framework/drawing/basic-shapes">Drawing of Basic Shapes</a></li>
-<li><a href="/docs-kendo-china/framework/drawing/drawing-dom">Drawing of HTML Elements</a></li>
-<li><a href="/docs-kendo-china/framework/drawing/drawing-dom">Supported Browsers for Kendo UI Drawing API</a></li>
+<li><a href="/framework/drawing/overview">Overview of the Drawing API</a></li>
+<li><a href="/framework/drawing/basic-shapes">Drawing of Basic Shapes</a></li>
+<li><a href="/framework/drawing/drawing-dom">Drawing of HTML Elements</a></li>
+<li><a href="/framework/drawing/drawing-dom">Supported Browsers for Kendo UI Drawing API</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -370,7 +370,7 @@ text.options.set("font", "30px Verdana");
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

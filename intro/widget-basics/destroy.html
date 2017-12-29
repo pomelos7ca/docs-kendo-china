@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Destroying Widgets | Kendo UI Getting Started</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Destroy Kendo UI widgets.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("intro/widget-basics/destroy.html")
         });
         </script>
@@ -130,7 +130,7 @@
 <ul>
 <li>Deletes the widget instance (client object). It is no longer accessible and all its event handlers stop working.</li>
 <li>Removes auto-generated HTML content, which is outside the widget—for example, detached popups and dropdowns. The main HTML of the widget remains intact and if needed, you have to manually remove it from the DOM. The Window widget is an exception because it represents a detached popup on its own.</li>
-<li>Destroys all child widgets with the help of the <a href="/docs-kendo-china/api/framework/kendo#methods-destroy"><code>kendo.destroy()</code> method</a>.</li>
+<li>Destroys all child widgets with the help of the <a href="/api/framework/kendo#methods-destroy"><code>kendo.destroy()</code> method</a>.</li>
 </ul>
 
 <h2 id="options"><a href="#options">Options</a></h2>
@@ -189,36 +189,36 @@
 
 <h3 id="destroy-widgets-created-through-mvvm"><a href="#destroy-widgets-created-through-mvvm">Destroy Widgets Created through MVVM</a></h3>
 
-<p>To properly destroy widgets <a href="/docs-kendo-china/intro/widget-basics/data-attribute-initialization">created declaratively</a> through the <a href="/docs-kendo-china/framework/mvvm/overview">Kendo UI MVVM mechanism</a>, first use the <a href="/docs-kendo-china/api/javascript/kendo#methods-unbind"><code>kendo.unbind()</code></a> method to remove any MVVM bindings related to the widget, and then call <a href="/docs-kendo-china/api/framework/kendo#methods-destroy"><code>kendo.destroy()</code></a> for the appropriate container, or the <a href="/docs-kendo-china/api/javascript/ui/widget#methods-destroy"><code>destroy()</code></a> method of each widget inside this container.</p>
+<p>To properly destroy widgets <a href="/intro/widget-basics/data-attribute-initialization">created declaratively</a> through the <a href="/framework/mvvm/overview">Kendo UI MVVM mechanism</a>, first use the <a href="/api/javascript/kendo#methods-unbind"><code>kendo.unbind()</code></a> method to remove any MVVM bindings related to the widget, and then call <a href="/api/framework/kendo#methods-destroy"><code>kendo.destroy()</code></a> for the appropriate container, or the <a href="/api/javascript/ui/widget#methods-destroy"><code>destroy()</code></a> method of each widget inside this container.</p>
 
 <h3 id="destroy-multiple-widgets"><a href="#destroy-multiple-widgets">Destroy Multiple Widgets</a></h3>
 
-<p>In addition to destroying a particular Kendo UI widget, the Kendo UI framework provides a <a href="/docs-kendo-china/api/framework/kendo#methods-destroy"><code>kendo.destroy()</code> method</a>, which can destroy multiple widgets that are placed inside a specific container.</p>
+<p>In addition to destroying a particular Kendo UI widget, the Kendo UI framework provides a <a href="/api/framework/kendo#methods-destroy"><code>kendo.destroy()</code> method</a>, which can destroy multiple widgets that are placed inside a specific container.</p>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <p>Other articles on Kendo UI widget basics:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/intro/installation/getting-started">Get Started with Kendo UI</a></li>
-<li><a href="/docs-kendo-china/intro/installation/cdn-service">Kendo UI CDN Services</a></li>
-<li><a href="/docs-kendo-china/intro/installation/what-you-need">Include Only What You Need</a></li>
-<li><a href="/docs-kendo-china/intro/installation/prerequisites">JavaScript Prerequisites</a></li>
-<li><a href="/docs-kendo-china/intro/installation/jquery-initialization">Initialize Widgets Using jQuery Plug-Ins</a></li>
-<li><a href="/docs-kendo-china/intro/installation/markup">Initialize Widgets Using Markup</a></li>
-<li><a href="/docs-kendo-china/intro/widget-basics/wrapper-element">Access Widget DOM Elements: wrapper and element</a></li>
-<li><a href="/docs-kendo-china/intro/widget-basics/data-attribute-initialization">Set Data Attributes</a></li>
-<li><a href="/docs-kendo-china/intro/widget-basics/events-and-methods">Widget Methods and Events</a></li>
-<li><a href="/docs-kendo-china/intro/widget-basics/editing">Edit Widgets</a></li>
-<li><a href="/docs-kendo-china/intro/widget-basics/create-custom-kendo-widget">Create Custom Widgets</a></li>
-<li><a href="/docs-kendo-china/intro/installation/bower-install">Bower Packages</a></li>
-<li><a href="/docs-kendo-china/intro/installation/nuget-install">NuGet Packages</a></li>
+<li><a href="/intro/installation/getting-started">Get Started with Kendo UI</a></li>
+<li><a href="/intro/installation/cdn-service">Kendo UI CDN Services</a></li>
+<li><a href="/intro/installation/what-you-need">Include Only What You Need</a></li>
+<li><a href="/intro/installation/prerequisites">JavaScript Prerequisites</a></li>
+<li><a href="/intro/installation/jquery-initialization">Initialize Widgets Using jQuery Plug-Ins</a></li>
+<li><a href="/intro/installation/markup">Initialize Widgets Using Markup</a></li>
+<li><a href="/intro/widget-basics/wrapper-element">Access Widget DOM Elements: wrapper and element</a></li>
+<li><a href="/intro/widget-basics/data-attribute-initialization">Set Data Attributes</a></li>
+<li><a href="/intro/widget-basics/events-and-methods">Widget Methods and Events</a></li>
+<li><a href="/intro/widget-basics/editing">Edit Widgets</a></li>
+<li><a href="/intro/widget-basics/create-custom-kendo-widget">Create Custom Widgets</a></li>
+<li><a href="/intro/installation/bower-install">Bower Packages</a></li>
+<li><a href="/intro/installation/nuget-install">NuGet Packages</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -283,7 +283,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

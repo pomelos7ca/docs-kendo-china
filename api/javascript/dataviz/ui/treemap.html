@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="treemap">
         <title>Configuration, methods and events of Kendo UI DataViz TreeMap</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to configure Kendo UI Javascript TreeMap widget in a few easy steps, use and change methods and events.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("api/javascript/dataviz/ui/treemap.html")
         });
         </script>
@@ -129,18 +129,18 @@
 <a href="#configuration-dataSource">dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><code>kendo.data.HierarchicalDataSource</code>
 </h3>
 
-<p>The data source of the treeMap which is used to display the tiles and titles. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/docs-kendo-china/api/framework/hierarchicaldatasource">kendo.data.HierarchicalDataSource</a>
+<p>The data source of the treeMap which is used to display the tiles and titles. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/api/framework/hierarchicaldatasource">kendo.data.HierarchicalDataSource</a>
 instance.</p>
 
-<p>If the <code>HierarchicalDataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/docs-kendo-china/api/framework/hierarchicaldatasource">kendo.data.HierarchicalDataSource</a> instance using that value as data source configuration.</p>
+<p>If the <code>HierarchicalDataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/api/framework/hierarchicaldatasource">kendo.data.HierarchicalDataSource</a> instance using that value as data source configuration.</p>
 
-<p>If the <code>HierarchicalDataSource</code> option is an existing <a href="/docs-kendo-china/api/framework/hierarchicaldatasource">kendo.data.HierarchicalDataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
+<p>If the <code>HierarchicalDataSource</code> option is an existing <a href="/api/framework/hierarchicaldatasource">kendo.data.HierarchicalDataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
 
 <h3 id="configuration-autoBind">
 <a href="#configuration-autoBind">autoBind </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
 </h3>
 
-<p>If set to <code>false</code> the widget will not bind to the data source during initialization. In this case data binding will occur when the <a href="/docs-kendo-china/api/framework/hierarchicaldatasource#events-change">change</a> event of the
+<p>If set to <code>false</code> the widget will not bind to the data source during initialization. In this case data binding will occur when the <a href="/api/framework/hierarchicaldatasource#events-change">change</a> event of the
 data source is fired. By default the widget will bind to the data source specified in the configuration.</p>
 
 <blockquote>
@@ -210,7 +210,7 @@ dataSource.read(); // "read()" will fire the "change" event of the dataSource an
 <a href="#configuration-template">template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/framework/kendo#methods-template">template</a> which renders the treeMap tile content.</p>
+<p>The <a href="/api/framework/kendo#methods-template">template</a> which renders the treeMap tile content.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -223,7 +223,7 @@ dataSource.read(); // "read()" will fire the "change" event of the dataSource an
 <a href="#configuration-colors">colors </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
 </h3>
 
-<p>The default colors for the TreeMap items (tiles). Can be set to array of specific colors or array of color ranges. For more information on the widget behavior, see the <a href="/docs-kendo-china/controls/charts/treemap/overview#colors">Colors</a> section on the TreeMap Overview page.</p>
+<p>The default colors for the TreeMap items (tiles). Can be set to array of specific colors or array of color ranges. For more information on the widget behavior, see the <a href="/controls/charts/treemap/overview#colors">Colors</a> section on the TreeMap Overview page.</p>
 
 <h4>Example - set the treemap tile colors</h4>
 
@@ -380,8 +380,8 @@ treemap.dataSource.fetch();
 <h3 id="methods-findByUid"><a href="#methods-findByUid">findByUid</a></h3>
 
 <p>Searches for an item with the given unique identifier.
-Applicable when the widget is bound to a <a href="/docs-kendo-china/api/framework/hierarchicaldatasource">HierarchicalDataSource</a>.
-If you want to find an item by its <code>id</code>, use the <a href="/docs-kendo-china/api/framework/datasource#get">dataSource.get()</a> method and supply its uid to the <code>findByUid</code> method.</p>
+Applicable when the widget is bound to a <a href="/api/framework/hierarchicaldatasource">HierarchicalDataSource</a>.
+If you want to find an item by its <code>id</code>, use the <a href="/api/framework/datasource#get">dataSource.get()</a> method and supply its uid to the <code>findByUid</code> method.</p>
 
 <h4>Parameters</h4>
 
@@ -593,7 +593,7 @@ treeMap.setOptions({ type: "horizontal" });
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -658,7 +658,7 @@ treeMap.setOptions({ type: "horizontal" });
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

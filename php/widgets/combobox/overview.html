@@ -7,15 +7,15 @@
         <meta name="product" content="php-ui">
         
         <title>Overview | ComboBox PHP Class</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Get started with the ComboBox PHP class in Kendo UI.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/php-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/php-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("php/widgets/combobox/overview.html")
         });
         </script>
@@ -121,7 +121,7 @@
             
              <h1 id="combobox-php-class-overview"><a href="#combobox-php-class-overview">ComboBox PHP Class Overview</a></h1>
 
-<p>The Kendo UI ComboBox for PHP is a server-side wrapper for the <a href="/docs-kendo-china/api/javascript/ui/combobox">Kendo UI ComboBox</a> widget.</p>
+<p>The Kendo UI ComboBox for PHP is a server-side wrapper for the <a href="/api/javascript/ui/combobox">Kendo UI ComboBox</a> widget.</p>
 
 <h2 id="getting-started"><a href="#getting-started">Getting Started</a></h2>
 
@@ -131,16 +131,16 @@
 
 <ul>
 <li>
-<a href="/docs-kendo-china/php/widgets/combobox/local-binding">Locally</a>—Local binding binds the ComboBox to a PHP array.</li>
+<a href="/php/widgets/combobox/local-binding">Locally</a>—Local binding binds the ComboBox to a PHP array.</li>
 <li>
-<a href="/docs-kendo-china/php/widgets/combobox/remote-binding">Remotely</a>—During remote binding the ComboBox makes AJAX requests and is bound to the JSON result.</li>
+<a href="/php/widgets/combobox/remote-binding">Remotely</a>—During remote binding the ComboBox makes AJAX requests and is bound to the JSON result.</li>
 </ul>
 
 <h3 id="configuration"><a href="#configuration">Configuration</a></h3>
 
 <p>Below are listed the steps for you to follow when configuring the Kendo UI ComboBox for local binding.</p>
 
-<p><strong>Step 1</strong> Make sure you followed all the steps from the <a href="/docs-kendo-china/php/introduction">introductory article on Telerik UI for PHP</a>—include the autoloader, JavaScript, and CSS files.</p>
+<p><strong>Step 1</strong> Make sure you followed all the steps from the <a href="/php/introduction">introductory article on Telerik UI for PHP</a>—include the autoloader, JavaScript, and CSS files.</p>
 
 <p><strong>Step 2</strong> Create an array to which the ComboBox will be bound.</p>
 
@@ -154,7 +154,7 @@
     ?&gt;
 </code></pre>
 
-<p><strong>Step 3</strong> Create a <a href="/docs-kendo-china/api/php/Kendo/Data/DataSource">data source</a> and set its <a href="/docs-kendo-china/api/php/Kendo/Data/DataSource#data"><code>data</code></a>.</p>
+<p><strong>Step 3</strong> Create a <a href="/api/php/Kendo/Data/DataSource">data source</a> and set its <a href="/api/php/Kendo/Data/DataSource#data"><code>data</code></a>.</p>
 
 <h6>Example</h6>
 
@@ -164,7 +164,7 @@
     ?&gt;
 </code></pre>
 
-<p><strong>Step 4</strong> Create an <a href="/docs-kendo-china/api/php/Kendo/UI/ComboBox">ComboBox</a>, configure its <a href="/docs-kendo-china/api/php/Kendo/UI/ComboBox#datatextfield"><code>dataTextField</code></a> <a href="/docs-kendo-china/api/php/Kendo/UI/ComboBox#datavaluefield"><code>dataValueField</code></a> options and set its <a href="/docs-kendo-china/api/php/Kendo/UI/AutoComplete#datasource"><code>DataSource</code></a>.</p>
+<p><strong>Step 4</strong> Create an <a href="/api/php/Kendo/UI/ComboBox">ComboBox</a>, configure its <a href="/api/php/Kendo/UI/ComboBox#datatextfield"><code>dataTextField</code></a> <a href="/api/php/Kendo/UI/ComboBox#datavaluefield"><code>dataValueField</code></a> options and set its <a href="/api/php/Kendo/UI/AutoComplete#datasource"><code>DataSource</code></a>.</p>
 
 <h6>Example</h6>
 
@@ -190,7 +190,7 @@
 
 <h2 id="event-handling"><a href="#event-handling">Event Handling</a></h2>
 
-<p>You can subscribe to all ComboBox <a href="/docs-kendo-china/api/web/combobox#events">events</a>.</p>
+<p>You can subscribe to all ComboBox <a href="/api/web/combobox#events">events</a>.</p>
 
 <h3 id="specify-function-names"><a href="#specify-function-names">Specify Function Names</a></h3>
 
@@ -235,7 +235,7 @@
 
 <h3 id="client-side-instances"><a href="#client-side-instances">Client-Side Instances</a></h3>
 
-<p>You can reference the client-side Kendo UI ComboBox instance via <a href="http://api.jquery.com/jQuery.data/"><code>jQuery.data()</code></a>. Once a reference is established, use the <a href="/docs-kendo-china/api/javascript/ui/combobox#methods">ComboBox API</a> to control its behavior.</p>
+<p>You can reference the client-side Kendo UI ComboBox instance via <a href="http://api.jquery.com/jQuery.data/"><code>jQuery.data()</code></a>. Once a reference is established, use the <a href="/api/javascript/ui/combobox#methods">ComboBox API</a> to control its behavior.</p>
 
 <h6>Example</h6>
 
@@ -256,17 +256,17 @@
 <p>Other articles on Telerik UI for PHP and on the ComboBox:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/php/widgets/combobox/local-binding">Local Binding of the ComboBox PHP Class</a></li>
-<li><a href="/docs-kendo-china/php/widgets/combobox/remote-binding">Remote Binding of the ComboBox PHP Class</a></li>
-<li><a href="/docs-kendo-china/controls/editors/combobox/overview">Overview of the Kendo UI ComboBox Widget</a></li>
-<li><a href="/docs-kendo-china/api/php/Kendo/UI/AutoComplete">Telerik UI for PHP API Reference Folder</a></li>
-<li><a href="/docs-kendo-china/php/widgets/autocomplete/overview">Telerik UI for PHP Classes Folder</a></li>
+<li><a href="/php/widgets/combobox/local-binding">Local Binding of the ComboBox PHP Class</a></li>
+<li><a href="/php/widgets/combobox/remote-binding">Remote Binding of the ComboBox PHP Class</a></li>
+<li><a href="/controls/editors/combobox/overview">Overview of the Kendo UI ComboBox Widget</a></li>
+<li><a href="/api/php/Kendo/UI/AutoComplete">Telerik UI for PHP API Reference Folder</a></li>
+<li><a href="/php/widgets/autocomplete/overview">Telerik UI for PHP Classes Folder</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -331,7 +331,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

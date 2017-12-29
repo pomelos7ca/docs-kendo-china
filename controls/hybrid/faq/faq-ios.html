@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>iOS-Specific FAQ | Kendo UI Hybrid Components</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Check out the frequently asked questions and their answers about how Kendo UI hybrid components work and behave on the iOS platform.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("controls/hybrid/faq/faq-ios.html")
         });
         </script>
@@ -127,7 +127,7 @@
 
 <h3 id="i-run-a-phonegap-application-in-ios7-and-the-status-bar-overlays-my-navbar-why"><a href="#i-run-a-phonegap-application-in-ios7-and-the-status-bar-overlays-my-navbar-why">I run a PhoneGap application in iOS7 and the status bar overlays my NavBar. Why?</a></h3>
 
-<p>According to the <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/Bars.html#//apple_ref/doc/uid/TP40006556-CH12-SW1">official iOS7 design guidelines</a>, the iOS7 status bar should be transparent and always visible. The Hybrid UI allows this by using the <a href="/docs-kendo-china/controls/hybrid/application#hide-status-bar-in-ios-and-cordova"><code>statusBarStyle</code> option of the Application</a> set to <code>black-transparent</code>. If you still wish to use the old black non-transparent status bar style, change it through the PhoneGap XCode project's <a href="http://stackoverflow.com/a/4053237/258445">plist</a>.</p>
+<p>According to the <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/Bars.html#//apple_ref/doc/uid/TP40006556-CH12-SW1">official iOS7 design guidelines</a>, the iOS7 status bar should be transparent and always visible. The Hybrid UI allows this by using the <a href="/controls/hybrid/application#hide-status-bar-in-ios-and-cordova"><code>statusBarStyle</code> option of the Application</a> set to <code>black-transparent</code>. If you still wish to use the old black non-transparent status bar style, change it through the PhoneGap XCode project's <a href="http://stackoverflow.com/a/4053237/258445">plist</a>.</p>
 
 <h3 id="my-tabstrip-looks-different-on-different-versions-of-the-ios-or-even-between-ipad-and-iphone-why"><a href="#my-tabstrip-looks-different-on-different-versions-of-the-ios-or-even-between-ipad-and-iphone-why">My TabStrip looks different on different versions of the iOS or even between iPad and iPhone. Why?</a></h3>
 
@@ -138,16 +138,16 @@
 <p>Other articles on frequently asked questions about the Hybrid UI components:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/controls/hybrid/faq/faq">All Platforms FAQ</a></li>
-<li><a href="/docs-kendo-china/controls/hybrid/faq/faq-android">Android-Specific FAQ</a></li>
-<li><a href="/docs-kendo-china/controls/hybrid/faq/faq-blackberry">Blackberry-Specific FAQ</a></li>
-<li><a href="/docs-kendo-china/controls/hybrid/faq/faq-windows">Windows Phone 8 FAQ</a></li>
+<li><a href="/controls/hybrid/faq/faq">All Platforms FAQ</a></li>
+<li><a href="/controls/hybrid/faq/faq-android">Android-Specific FAQ</a></li>
+<li><a href="/controls/hybrid/faq/faq-blackberry">Blackberry-Specific FAQ</a></li>
+<li><a href="/controls/hybrid/faq/faq-windows">Windows Phone 8 FAQ</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -212,7 +212,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

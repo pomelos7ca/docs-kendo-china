@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="treelist">
         <title>Overview | Kendo UI TreeList</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to initialize the Kendo UI TreeList widget and configure its behavior.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("controls/data-management/treelist/overview.html")
         });
         </script>
@@ -135,7 +135,7 @@
 &lt;div id="treelist"&gt;&lt;/div&gt;
 </code></pre>
 
-<p>Kendo UI TreeList needs a data source from where it is able to retrieve the data you want it to display. The widget uses a special type of Kendo UI DataSource—<a href="/docs-kendo-china/api/javascript/data/treelistdatasource"><code>kendo.data.TreeListDataSource</code></a>. The <code>TreeListDataSource</code> contains instances of a custom Kendo UI model—<a href="/docs-kendo-china/api/javascript/data/treelistmodel"><code>kendo.data.TreeListModel</code></a>—which represents the TreeList data items.</p>
+<p>Kendo UI TreeList needs a data source from where it is able to retrieve the data you want it to display. The widget uses a special type of Kendo UI DataSource—<a href="/api/javascript/data/treelistdatasource"><code>kendo.data.TreeListDataSource</code></a>. The <code>TreeListDataSource</code> contains instances of a custom Kendo UI model—<a href="/api/javascript/data/treelistmodel"><code>kendo.data.TreeListModel</code></a>—which represents the TreeList data items.</p>
 
 <h3 id="bind-to-local-arrays"><a href="#bind-to-local-arrays">Bind to Local Arrays</a></h3>
 
@@ -167,13 +167,13 @@
 &lt;/script&gt;
 </code></pre>
 
-<p>Note that the data objects contain both an <code>id</code> and a <code>parentId</code> field which describe the hierarchy of items. These field names can be changed via the <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-schema-model"><code>schema.model</code> definition</a>.</p>
+<p>Note that the data objects contain both an <code>id</code> and a <code>parentId</code> field which describe the hierarchy of items. These field names can be changed via the <a href="/api/javascript/data/datasource#configuration-schema-model"><code>schema.model</code> definition</a>.</p>
 
 <h3 id="bind-to-remote-data"><a href="#bind-to-remote-data">Bind to Remote Data</a></h3>
 
 <p>You can also bind the <code>TreeListDataSource</code> to remote data. This means that the TreeList will load items from a web service. Remote data binding enables the retrieval of data from the server and the saving of the TreeList data items to the server database.</p>
 
-<p>For additional information, refer to the article on the <a href="/docs-kendo-china/framework/datasource/overview">Kendo UI DataSource</a>.</p>
+<p>For additional information, refer to the article on the <a href="/framework/datasource/overview">Kendo UI DataSource</a>.</p>
 
 <p>The following example demonstrates how to enable the remote binding for the TreeList by setting the DataSource <code>transport</code>.</p>
 
@@ -297,31 +297,31 @@
 <p>To achieve a maximum level of accessibility with assistive technologies for the TreeList, disable the scrolling feature.</p>
 </blockquote>
 
-<p>For more information on the scrolling functionality of the TreeList, refer to the article on the <a href="/docs-kendo-china/controls/data-management/grid/appearance">appearance of the Grid</a>—in this respect, the two widgets are similar.</p>
+<p>For more information on the scrolling functionality of the TreeList, refer to the article on the <a href="/controls/data-management/grid/appearance">appearance of the Grid</a>—in this respect, the two widgets are similar.</p>
 
 <ul>
-<li><a href="/docs-kendo-china/controls/data-management/grid/appearance#set-100-height-and-auto-resize">Set 100% Height and Auto-Resize</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/appearance#remove-the-vertical-scrollbar">Remove the Vertical Scrollbar</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/appearance#columns">Columns and Column Widths</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/appearance#locked-columns">Locked Columns</a></li>
+<li><a href="/controls/data-management/grid/appearance#set-100-height-and-auto-resize">Set 100% Height and Auto-Resize</a></li>
+<li><a href="/controls/data-management/grid/appearance#remove-the-vertical-scrollbar">Remove the Vertical Scrollbar</a></li>
+<li><a href="/controls/data-management/grid/appearance#columns">Columns and Column Widths</a></li>
+<li><a href="/controls/data-management/grid/appearance#locked-columns">Locked Columns</a></li>
 </ul>
 
-<p>More information about TreeList scrolling is available in the <a href="/docs-kendo-china/controls/data-management/grid/appearance">Grid Appearance</a> help article, as the two widgets are similar with this regard.</p>
+<p>More information about TreeList scrolling is available in the <a href="/controls/data-management/grid/appearance">Grid Appearance</a> help article, as the two widgets are similar with this regard.</p>
 
 <ul>
-<li><a href="/docs-kendo-china/controls/data-management/grid/appearance#set-100-height-and-auto-resize">Set 100% Height and Auto-Resize</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/appearance#remove-the-vertical-scrollbar">Remove the Vertical Scrollbar</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/appearance#columns">Columns and Column Widths</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/appearance#locked-columns">Locked Columns</a></li>
+<li><a href="/controls/data-management/grid/appearance#set-100-height-and-auto-resize">Set 100% Height and Auto-Resize</a></li>
+<li><a href="/controls/data-management/grid/appearance#remove-the-vertical-scrollbar">Remove the Vertical Scrollbar</a></li>
+<li><a href="/controls/data-management/grid/appearance#columns">Columns and Column Widths</a></li>
+<li><a href="/controls/data-management/grid/appearance#locked-columns">Locked Columns</a></li>
 </ul>
 
 <h2 id="treelist-api"><a href="#treelist-api">TreeList API</a></h2>
 
 <h3 id="methods-and-fields"><a href="#methods-and-fields">Methods and Fields</a></h3>
 
-<p>The TreeList exposes a set of <a href="/docs-kendo-china/api/javascript/ui/treelist#methods">methods</a> and <a href="/docs-kendo-china/api/javascript/ui/treelist#fields">fields</a> you can use.</p>
+<p>The TreeList exposes a set of <a href="/api/javascript/ui/treelist#methods">methods</a> and <a href="/api/javascript/ui/treelist#fields">fields</a> you can use.</p>
 
-<p>The following example demonstrates how to apply the <a href="/docs-kendo-china/api/javascript/ui/treelist">API of the TreeList</a>.</p>
+<p>The following example demonstrates how to apply the <a href="/api/javascript/ui/treelist">API of the TreeList</a>.</p>
 
 <h6>Example</h6>
 
@@ -351,7 +351,7 @@
 
 <h3 id="events"><a href="#events">Events</a></h3>
 
-<p>The TreeList supports a set of <a href="/docs-kendo-china/api/javascript/ui/treelist#events">events</a> you can subscribe to.</p>
+<p>The TreeList supports a set of <a href="/api/javascript/ui/treelist#events">events</a> you can subscribe to.</p>
 
 <p>To handle the events, either:</p>
 
@@ -418,7 +418,7 @@
 
 <h3 id="existing-instances"><a href="#existing-instances">Existing Instances</a></h3>
 
-<p>To refer to an existing TreeList instance, use the <a href="http://api.jquery.com/jQuery.data/"><code>jQuery.data()</code></a> method and pass <code>"kendoTreeList"</code> as an argument. Once a reference has been established, use the <a href="/docs-kendo-china/api/javascript/ui/treelist">API of the TreeList</a> to control its behavior.</p>
+<p>To refer to an existing TreeList instance, use the <a href="http://api.jquery.com/jQuery.data/"><code>jQuery.data()</code></a> method and pass <code>"kendoTreeList"</code> as an argument. Once a reference has been established, use the <a href="/api/javascript/ui/treelist">API of the TreeList</a> to control its behavior.</p>
 
 <p>The following example demonstrates how to access an existing TreeList instance.</p>
 
@@ -449,21 +449,21 @@
 <p>Other articles and how-to examples on the Kendo UI TreeList:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/aspnet-mvc/helpers/treelist/overview">Overview of the ASP.NET MVC HtmlHelper Extension</a></li>
-<li><a href="/docs-kendo-china/jsp/tags/treelist/overview">Overview of the JSP Tag</a></li>
-<li><a href="/docs-kendo-china/php/widgets/treelist/overview">Overview of the PHP Class</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/treelist/how-to/hide-edit-fields-on-different-levels">How to Hide Edit Fields on Different Levels</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/treelist/how-to/show-a-checkbox-column">How to Show Checkbox Column</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/treelist/how-to/show-context-menu">How to Show Context Menu</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/treelist/how-to/update-a-field-in-all-child-nodes">How to Update Field in All Child Nodes</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/treelist/how-to/AngularJS/update-a-field-in-all-child-nodes">How to Update Field in All Child Nodes in AngularJS</a></li>
-<li><a href="/docs-kendo-china/api/javascript/ui/treelist">JavaScript API Reference</a></li>
+<li><a href="/aspnet-mvc/helpers/treelist/overview">Overview of the ASP.NET MVC HtmlHelper Extension</a></li>
+<li><a href="/jsp/tags/treelist/overview">Overview of the JSP Tag</a></li>
+<li><a href="/php/widgets/treelist/overview">Overview of the PHP Class</a></li>
+<li><a href="/controls/data-management/treelist/how-to/hide-edit-fields-on-different-levels">How to Hide Edit Fields on Different Levels</a></li>
+<li><a href="/controls/data-management/treelist/how-to/show-a-checkbox-column">How to Show Checkbox Column</a></li>
+<li><a href="/controls/data-management/treelist/how-to/show-context-menu">How to Show Context Menu</a></li>
+<li><a href="/controls/data-management/treelist/how-to/update-a-field-in-all-child-nodes">How to Update Field in All Child Nodes</a></li>
+<li><a href="/controls/data-management/treelist/how-to/AngularJS/update-a-field-in-all-child-nodes">How to Update Field in All Child Nodes in AngularJS</a></li>
+<li><a href="/api/javascript/ui/treelist">JavaScript API Reference</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -528,7 +528,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

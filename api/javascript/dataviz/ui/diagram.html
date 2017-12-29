@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="diagram">
         <title>API Reference for methods, objects and properties in the math module of Kendo diagram</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Examples and detailed explanation of Kendo UI methods and properties.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("api/javascript/dataviz/ui/diagram.html")
         });
         </script>
@@ -129,7 +129,7 @@
 <a href="#configuration-autoBind">autoBind </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
 </h3>
 
-<p>If set to <code>false</code> the widget will not bind to the data source during initialization. In this case data binding will occur when the <a href="/docs-kendo-china/api/javascript/data/datasource#events-change">change</a> event of the
+<p>If set to <code>false</code> the widget will not bind to the data source during initialization. In this case data binding will occur when the <a href="/api/javascript/data/datasource#events-change">change</a> event of the
 data source is fired. By default the widget will bind to the data source specified in the configuration.</p>
 
 <blockquote>
@@ -244,7 +244,7 @@ $("#diagram").kendoDiagram({
 <a href="#configuration-connectionDefaults.content.template">connectionDefaults.content.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the labels.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the labels.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -323,7 +323,7 @@ $("#diagram").kendoDiagram({
 <a href="#configuration-connectionDefaults.editable.tools">connectionDefaults.editable.tools </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
 </h3>
 
-<p>Specifies the toolbar tools. Supports all options supported for the <a href="/docs-kendo-china/api/javascript/ui/toolbar#configuration-items">toolbar.items</a>. Predefined tools are:</p>
+<p>Specifies the toolbar tools. Supports all options supported for the <a href="/api/javascript/ui/toolbar#configuration-items">toolbar.items</a>. Predefined tools are:</p>
 
 <ul>
 <li>"edit" - The elected item can be edited</li>
@@ -754,7 +754,7 @@ $("#diagram").kendoDiagram({
 <a href="#configuration-connections.content.template">connections.content.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the labels.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the labels.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -784,7 +784,7 @@ $("#diagram").kendoDiagram({
 <a href="#configuration-connections.editable.tools">connections.editable.tools </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
 </h3>
 
-<p>Specifies the the toolbar tools. Supports all options supported for the <a href="/docs-kendo-china/api/javascript/ui/toolbar#configuration-items">toolbar.items</a>. Predefined tools are:</p>
+<p>Specifies the the toolbar tools. Supports all options supported for the <a href="/api/javascript/ui/toolbar#configuration-items">toolbar.items</a>. Predefined tools are:</p>
 
 <ul>
 <li>"edit" - The selected item can be edited</li>
@@ -942,7 +942,7 @@ $("#diagram").kendoDiagram({
 
 <h4>Example - setting intermediate connection points</h4>
 
-<p><img src="/docs-kendo-china/api/javascript/dataviz/diagram/connection_points.png" alt="Intermediate connection points."></p>
+<p><img src="/api/javascript/dataviz/diagram/connection_points.png" alt="Intermediate connection points."></p>
 
 <pre><code>&lt;div id="diagram"&gt;&lt;/div&gt;
 &lt;script&gt;
@@ -1167,7 +1167,7 @@ $("#diagram").kendoDiagram({
 <p>Specifies the connection type. The supported values are <code>"polyline"</code> and <code>"cascading"</code>.</p>
 
 <h3 id="configuration-connectionsDataSource">
-<a href="#configuration-connectionsDataSource">connectionsDataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<a href="#configuration-connectionsDataSource">connectionsDataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h3>
 
 <p>Defines the data source of the connections.</p>
@@ -1222,7 +1222,7 @@ $("#diagram").kendoDiagram({
 </code></pre>
 
 <h3 id="configuration-dataSource">
-<a href="#configuration-dataSource">dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<a href="#configuration-dataSource">dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h3>
 
 <p>Defines the data source of the diagram.</p>
@@ -1662,7 +1662,7 @@ These can be edited by setting a Kendo template and a diagram configuration as f
 <a href="#configuration-editable.tools">editable.tools </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
 </h3>
 
-<p>Specifies the the toolbar tools. Supports all options supported for the <a href="/docs-kendo-china/api/javascript/ui/toolbar#configuration-items">toolbar.items</a>. Predefined tools are:</p>
+<p>Specifies the the toolbar tools. Supports all options supported for the <a href="/api/javascript/ui/toolbar#configuration-items">toolbar.items</a>. Predefined tools are:</p>
 
 <ul>
 <li>"edit" - The selected item can be edited.</li>
@@ -1772,13 +1772,13 @@ These can be edited by setting a Kendo template and a diagram configuration as f
 </h3>
 
 <p>Each layout algorithm has a different set of parameters customizing the layout but they also all have a common collection of parameters which relate to the way 'pieces' of a diagram are organized.
-<img src="/docs-kendo-china/api/javascript/dataviz/diagram/component_example.png" alt="Diagram component"></p>
+<img src="/api/javascript/dataviz/diagram/component_example.png" alt="Diagram component"></p>
 
 <p>A diagram can have in general disconnected pieces, known as components, which can be organized in a way independent of the way a component on its own is arranged. In the picture above, this is one diagram consisting of four components.</p>
 
 <p>When you apply a certain layout an analysis will first split the diagram in components, arrange each component individually and thereafter organize the components in a grid. The common parameters referred above deal with this grid layout, they define the width, margin and padding of the (invisible) grid used to organize the components.</p>
 
-<p><img src="/docs-kendo-china/api/javascript/dataviz/diagram/component_parameters.png" alt="Component parameters"></p>
+<p><img src="/api/javascript/dataviz/diagram/component_parameters.png" alt="Component parameters"></p>
 
 <h3 id="configuration-layout.grid.componentSpacingX">
 <a href="#configuration-layout.grid.componentSpacingX">layout.grid.componentSpacingX </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 50)</em>
@@ -1816,7 +1816,7 @@ These can be edited by setting a Kendo template and a diagram configuration as f
 
 <p>Either the distance between the siblings if the tree is up/down or between levels if the tree is left/right. In <em>tipOver tree layout</em> this setting is used only for the direct children of the root</p>
 
-<p><img src="/docs-kendo-china/api/javascript/dataviz/diagram/tree_parameters.png" alt="Tree parameters"></p>
+<p><img src="/api/javascript/dataviz/diagram/tree_parameters.png" alt="Tree parameters"></p>
 
 <h3 id="configuration-layout.iterations">
 <a href="#configuration-layout.iterations">layout.iterations </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 300)</em>
@@ -1828,7 +1828,7 @@ These can be edited by setting a Kendo template and a diagram configuration as f
 
 <p><em>This setting is specific to the force-directed layout</em></p>
 
-<p><img src="/docs-kendo-china/api/javascript/dataviz/diagram/force_directed_iterations.png" alt="Increasing iterations"></p>
+<p><img src="/api/javascript/dataviz/diagram/force_directed_iterations.png" alt="Increasing iterations"></p>
 
 <h3 id="configuration-layout.layerSeparation">
 <a href="#configuration-layout.layerSeparation">layout.layerSeparation </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 50)</em>
@@ -1874,7 +1874,7 @@ These can be edited by setting a Kendo template and a diagram configuration as f
 <li>"down" - <em>tree layout</em> and <em>layered layout</em> specific subtype. In the tree layout the root is arranged at the top and its children downwards. For the layered layout the links are directed downwards. This is the default subtype.</li>
 </ul>
 
-<p><img src="/docs-kendo-china/api/javascript/dataviz/diagram/tree_down_parameters.png" alt="Tree down parameters"></p>
+<p><img src="/api/javascript/dataviz/diagram/tree_down_parameters.png" alt="Tree down parameters"></p>
 
 <ul>
 <li>"up" - <em>tree layout</em> and <em>layered layout</em> specific subtype. In the tree layout the root is arranged at the bottom and its children upwards. For the layered layout the links are directed upwards.</li>
@@ -1882,27 +1882,27 @@ These can be edited by setting a Kendo template and a diagram configuration as f
 <li>"right" - <em>tree layout</em> <em>layered layout</em> specific subtype. In the tree layout the root is arranged at the right and its children sideways to the left. For the layered layout the links are directed downwards.</li>
 </ul>
 
-<p><img src="/docs-kendo-china/api/javascript/dataviz/diagram/tree_right_parameters.png" alt="Tree right parameters"></p>
+<p><img src="/api/javascript/dataviz/diagram/tree_right_parameters.png" alt="Tree right parameters"></p>
 
 <ul>
 <li>"mindmapHorizontal" - <em>tree layout</em> specific subtype. The root sits at the center and its children are spread equally to the left and right.</li>
 <li>"mindmapVertical" - <em>tree layout</em> specific subtype. The root sits at the center and its children are spread equally above and below.</li>
 </ul>
 
-<p><img src="/docs-kendo-china/api/javascript/dataviz/diagram/mindmap_parameters.png" alt="Mindmap parameters"></p>
+<p><img src="/api/javascript/dataviz/diagram/mindmap_parameters.png" alt="Mindmap parameters"></p>
 
 <ul>
 <li>"radial" - <em>tree layout</em> specific subtype. The root sits at the center and its children are spread radially around.</li>
 </ul>
 
-<p><img src="/docs-kendo-china/api/javascript/dataviz/diagram/radial_tree_parameters.png" alt="Radial tree parameters">
-<img src="/docs-kendo-china/api/javascript/dataviz/diagram/radial_angles.png" alt="Radial layout angles."></p>
+<p><img src="/api/javascript/dataviz/diagram/radial_tree_parameters.png" alt="Radial tree parameters">
+<img src="/api/javascript/dataviz/diagram/radial_angles.png" alt="Radial layout angles."></p>
 
 <ul>
 <li>"tipOver" - <em>tree layout</em> specific subtype. A special version of the tree-down layout where the grand-children (and iteratively) are arranged vertically while the direct children are arranged horizontally. This arrangement has the advantage that it doesn't spread as much as the classic tree-down layout. See below for a concrete example.</li>
 </ul>
 
-<p><img src="/docs-kendo-china/api/javascript/dataviz/diagram/tip_over_parameters.png" alt="Tip-over parameters"></p>
+<p><img src="/api/javascript/dataviz/diagram/tip_over_parameters.png" alt="Tip-over parameters"></p>
 
 <ul>
 <li>"horizontal" - <em>layered layout</em> specific subtype. The preferred direction of the links is horizontal.</li>
@@ -1957,7 +1957,7 @@ These can be edited by setting a Kendo template and a diagram configuration as f
 <li>"force" - Force-directed layout algorithm (also known as the spring-embedder algorithm) is based on a physical simulation of forces acting on the nodes whereby the links define whether two nodes act upon each other. Each link effectively is like a spring embedded in the diagram. The simulation attempts to find a minimum energy state in such a way that the springs are in their base-state and thus do not pull or push any (linked) node. This force-directed layout is <strong>non-deterministic</strong>; each layout pass will result in an unpredictable (and hence not reproducible) layout. The optimal length is more and indication in the algorithm than a guarantee that all nodes will be at this distance. The result of the layout is really a combination of the incidence structure of the diagram, the initial topology (positions of the nodes) and the number of iterations.</li>
 </ul>
 
-<p><img src="/docs-kendo-china/api/javascript/dataviz/diagram/force_directed_parameters.png" alt="Force-directed parameter"></p>
+<p><img src="/api/javascript/dataviz/diagram/force_directed_parameters.png" alt="Force-directed parameter"></p>
 
 <ul>
 <li>"layered" - Organizes the diagram with an emphasis on <em>flow</em> and minimizing the crossing between layers of shapes. This layout works well when few components are present and some sort of top-down flow is present. The concept of <em>flow</em> in this context being a more or less clear direction of the connections with a minimum of cycles (connections flowing back upstream). Layered graph layout is a type of graph layout in which the nodes of a (directed) graph are drawn in horizontal or vertical layers with the links directed in the complementary direction. It is also known as Sugiyama or hierarchical graph layout. When the graph is a tree the layout reduces to a standard tree layout and thus can be considered as an extension to the classic tree layout.</li>
@@ -1983,7 +1983,7 @@ These can be edited by setting a Kendo template and a diagram configuration as f
 <li>The edges reversed in the first step of the algorithm are returned to their original orientations, the dummy vertices are removed from the graph and the vertices and edges are drawn.</li>
 </ul>
 
-<p><img src="/docs-kendo-china/api/javascript/dataviz/diagram/layered_parameters.png" alt="Layered layout parameters."></p>
+<p><img src="/api/javascript/dataviz/diagram/layered_parameters.png" alt="Layered layout parameters."></p>
 
 <h3 id="configuration-layout.underneathHorizontalOffset">
 <a href="#configuration-layout.underneathHorizontalOffset">layout.underneathHorizontalOffset </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 15)</em>
@@ -2859,7 +2859,7 @@ The supported units are <code>mm</code>, <code>cm</code>, <code>in</code>, and <
 <a href="#configuration-shapeDefaults.content.template">shapeDefaults.content.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template"><code>template</code></a> which renders the labels.</p>
+<p>The <a href="/api/javascript/kendo#methods-template"><code>template</code></a> which renders the labels.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -2901,7 +2901,7 @@ The supported units are <code>mm</code>, <code>cm</code>, <code>in</code>, and <
 <a href="#configuration-shapeDefaults.editable.tools">shapeDefaults.editable.tools </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
 </h3>
 
-<p>Specifies the toolbar tools. Provides all options that are supported for <a href="/docs-kendo-china/api/javascript/ui/toolbar#configuration-items"><code>toolbar.items</code></a>. The predefined tools are:</p>
+<p>Specifies the toolbar tools. Provides all options that are supported for <a href="/api/javascript/ui/toolbar#configuration-items"><code>toolbar.items</code></a>. The predefined tools are:</p>
 
 <ul>
 <li>"edit" - The selected item can be edited.</li>
@@ -3218,18 +3218,18 @@ Ranges from <code>0</code> (completely transparent) to <code>1</code> (completel
 <p>A function that returns a visual element to render for a given shape. The following primitives can be used to construct a composite visual:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/api/javascript/dataviz/diagram/circle">Circle</a></li>
-<li><a href="/docs-kendo-china/api/javascript/dataviz/diagram/rectangle">Rectangle</a></li>
-<li><a href="/docs-kendo-china/api/javascript/dataviz/diagram/path">Path</a></li>
-<li><a href="/docs-kendo-china/api/javascript/dataviz/diagram/line">Line</a></li>
-<li><a href="/docs-kendo-china/api/javascript/dataviz/diagram/polyline">Polyline</a></li>
-<li><a href="/docs-kendo-china/api/javascript/dataviz/diagram/text_block">TextBlock</a></li>
-<li><a href="/docs-kendo-china/api/javascript/dataviz/diagram/image">Image</a></li>
-<li><a href="/docs-kendo-china/api/javascript/dataviz/diagram/layout">Layout</a></li>
+<li><a href="/api/javascript/dataviz/diagram/circle">Circle</a></li>
+<li><a href="/api/javascript/dataviz/diagram/rectangle">Rectangle</a></li>
+<li><a href="/api/javascript/dataviz/diagram/path">Path</a></li>
+<li><a href="/api/javascript/dataviz/diagram/line">Line</a></li>
+<li><a href="/api/javascript/dataviz/diagram/polyline">Polyline</a></li>
+<li><a href="/api/javascript/dataviz/diagram/text_block">TextBlock</a></li>
+<li><a href="/api/javascript/dataviz/diagram/image">Image</a></li>
+<li><a href="/api/javascript/dataviz/diagram/layout">Layout</a></li>
 </ul>
 
 <blockquote>
-<p>The origin of the visual bounding box has to be <code>(0, 0)</code>. If you have a complex path whose coordinates cannot be easily adjusted, then position the element as demonstrated in <a href="/docs-kendo-china/controls/diagrams-and-maps/diagram/how-to/adjust-path-origin">this</a> example.</p>
+<p>The origin of the visual bounding box has to be <code>(0, 0)</code>. If you have a complex path whose coordinates cannot be easily adjusted, then position the element as demonstrated in <a href="/controls/diagrams-and-maps/diagram/how-to/adjust-path-origin">this</a> example.</p>
 </blockquote>
 
 <h4>Example - how to use the visual</h4>
@@ -3588,7 +3588,7 @@ Ranges from <code>0</code> (completely transparent) to <code>1</code> (completel
 <a href="#configuration-shapes.content.template">shapes.content.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the labels.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the labels.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -3618,7 +3618,7 @@ Ranges from <code>0</code> (completely transparent) to <code>1</code> (completel
 <a href="#configuration-shapes.editable.tools">shapes.editable.tools </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
 </h3>
 
-<p>Specifies the toolbar tools. Provides all options supported for <a href="/docs-kendo-china/api/javascript/ui/toolbar#configuration-items"><code>toolbar.items</code></a>. The predefined tools are:</p>
+<p>Specifies the toolbar tools. Provides all options supported for <a href="/api/javascript/ui/toolbar#configuration-items"><code>toolbar.items</code></a>. The predefined tools are:</p>
 
 <ul>
 <li>"edit" - The selected item can be edited.</li>
@@ -3907,13 +3907,13 @@ Ranges from <code>0</code> (completely transparent) to <code>1</code> (completel
 <a href="#configuration-template">template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a> <em>(default: "")</em>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template"><code>template</code></a> which renders the content of the shape when bound to a dataSource. The names you can use in the template correspond to the properties used in the dataSource. For an example, refer to the dataSource topic below.</p>
+<p>The <a href="/api/javascript/kendo#methods-template"><code>template</code></a> which renders the content of the shape when bound to a dataSource. The names you can use in the template correspond to the properties used in the dataSource. For an example, refer to the dataSource topic below.</p>
 
 <h3 id="configuration-theme">
 <a href="#configuration-theme">theme </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
 </h3>
 
-<p>The diagram theme. This can be either a built-in theme or "sass". When set to "sass" the diagram will read the variables from the <a href="/docs-kendo-china/styles-and-layout/sass-themes">Sass-based themes</a>.</p>
+<p>The diagram theme. This can be either a built-in theme or "sass". When set to "sass" the diagram will read the variables from the <a href="/styles-and-layout/sass-themes">Sass-based themes</a>.</p>
 
 <p>The supported values are:</p>
 
@@ -3964,13 +3964,13 @@ Ranges from <code>0</code> (completely transparent) to <code>1</code> (completel
 <p>An array holding the Diagram connections.</p>
 
 <h3 id="fields-connectionsDataSource">
-<a href="#fields-connectionsDataSource">connectionsDataSource </a><a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<a href="#fields-connectionsDataSource">connectionsDataSource </a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h3>
 
 <p>The connections data source, if any.</p>
 
 <h3 id="fields-dataSource">
-<a href="#fields-dataSource">dataSource </a><a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<a href="#fields-dataSource">dataSource </a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h3>
 
 <p>The shapes data source, if any.</p>
@@ -4047,7 +4047,7 @@ Ranges from <code>0</code> (completely transparent) to <code>1</code> (completel
 
 <h4>Returns</h4>
 
-<p><a href="/docs-kendo-china/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a> The newly created diagram shape.</p>
+<p><a href="/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a> The newly created diagram shape.</p>
 
 <h3 id="methods-alignShapes"><a href="#methods-alignShapes">alignShapes</a></h3>
 
@@ -4071,7 +4071,7 @@ Ranges from <code>0</code> (completely transparent) to <code>1</code> (completel
 
 <h4>Returns</h4>
 
-<p><a href="/docs-kendo-china/api/javascript/dataviz/diagram/rect" class="type-link"><code>kendo.dataviz.diagram.Rect</code></a> The bounding rectangle of the specified items. If nothing is specified the bounding box of the all diagram will be returned.</p>
+<p><a href="/api/javascript/dataviz/diagram/rect" class="type-link"><code>kendo.dataviz.diagram.Rect</code></a> The bounding rectangle of the specified items. If nothing is specified the bounding box of the all diagram will be returned.</p>
 
 <h4>Parameters</h4>
 
@@ -4169,7 +4169,7 @@ Defaults to all items if not specified.</p>
 <p>Creates a connection which can be either attached on both ends to a shape, half attached or floating (not attached to any shape). When a connection is (half) attached to a shape it happens through the intermediate Connector object. Connectors are part of a Shape's definition and you can specify the binding of a connection to a shape directly via the shape or via one of its connectors. If you specify a Shape as a connection's endpoint the Auto-connector will be used. This means that the endpoint of the connection will switch to the most convenient (in the sense of shortest path) connector automatically. If you specify a shape's connector as an endpoint for a connection the endpoint will remain attached to that given Connector instance.
 Finally, if you wish to have a (half) floating connection endpoint you should specify a Point as parameter for the floating end.</p>
 
-<p><img src="/docs-kendo-china/api/javascript/dataviz/diagram/connect.png" alt="Creating connections."></p>
+<p><img src="/api/javascript/dataviz/diagram/connect.png" alt="Creating connections."></p>
 
 <h4>Parameters</h4>
 
@@ -4357,10 +4357,10 @@ Finally, if you wish to have a (half) floating connection endpoint you should sp
 <h3 id="methods-exportImage"><a href="#methods-exportImage">exportImage</a></h3>
 
 <p>Exports the diagram content as an image.
-The result can be saved using <a href="/docs-kendo-china/api/javascript/kendo#methods-saveAs">kendo.saveAs</a>.</p>
+The result can be saved using <a href="/api/javascript/kendo#methods-saveAs">kendo.saveAs</a>.</p>
 
 <p>The full content of the diagram will be exported in 1:1 scale.
-If exporting the current view is desired then the <a href="/docs-kendo-china/api/javascript/drawing#methods-drawDOM">kendo.drawing.drawDOM</a>
+If exporting the current view is desired then the <a href="/api/javascript/drawing#methods-drawDOM">kendo.drawing.drawDOM</a>
 method should be called on a container element.</p>
 
 <p>The export operation is asynchronous and returns a <a href="http://api.jquery.com/Types/#Promise">promise</a>.
@@ -4434,14 +4434,14 @@ for more details.</p>
 <h3 id="methods-exportPDF"><a href="#methods-exportPDF">exportPDF</a></h3>
 
 <p>Exports the diagram content as a PDF file.
-The result can be saved using <a href="/docs-kendo-china/api/javascript/kendo#methods-saveAs">kendo.saveAs</a>.</p>
+The result can be saved using <a href="/api/javascript/kendo#methods-saveAs">kendo.saveAs</a>.</p>
 
 <p>The export operation is asynchronous and returns a <a href="http://api.jquery.com/Types/#Promise">promise</a>.
 The promise will be resolved with a PDF file encoded as a <a href="https://developer.mozilla.org/en-US/docs/data_URIs">Data URI</a>.</p>
 
 <h4>Parameters</h4>
 
-<h5>options <a href="/docs-kendo-china/api/javascript/drawing/pdfoptions" class="type-link"><code>kendo.drawing.PDFOptions</code></a> <em>(optional)</em>
+<h5>options <a href="/api/javascript/drawing/pdfoptions" class="type-link"><code>kendo.drawing.PDFOptions</code></a> <em>(optional)</em>
 </h5>
 
 <p>Parameters for the exported PDF file.</p>
@@ -4477,10 +4477,10 @@ The promise will be resolved with a PDF file encoded as a <a href="https://devel
 <h3 id="methods-exportSVG"><a href="#methods-exportSVG">exportSVG</a></h3>
 
 <p>Exports the diagram content as an SVG document.
-The result can be saved using <a href="/docs-kendo-china/api/javascript/kendo#methods-saveAs">kendo.saveAs</a>.</p>
+The result can be saved using <a href="/api/javascript/kendo#methods-saveAs">kendo.saveAs</a>.</p>
 
 <p>The full content of the diagram will be exported in 1:1 scale.
-If exporting the current view is desired then the <a href="/docs-kendo-china/api/javascript/drawing#methods-drawDOM">kendo.drawing.drawDOM</a>
+If exporting the current view is desired then the <a href="/api/javascript/drawing#methods-drawDOM">kendo.drawing.drawDOM</a>
 method should be called on a container element.</p>
 
 <p>The export operation is asynchronous and returns a <a href="http://api.jquery.com/Types/#Promise">promise</a>.
@@ -4543,7 +4543,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Returns</h4>
 
-<p><a href="/docs-kendo-china/api/javascript/dataviz/diagram/connection" class="type-link"><code>kendo.dataviz.diagram.Connection</code></a> the connection corresponding to the model.</p>
+<p><a href="/api/javascript/dataviz/diagram/connection" class="type-link"><code>kendo.dataviz.diagram.Connection</code></a> the connection corresponding to the model.</p>
 
 <h3 id="methods-getConnectionByModelUid"><a href="#methods-getConnectionByModelUid">getConnectionByModelUid</a></h3>
 
@@ -4558,7 +4558,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Returns</h4>
 
-<p><a href="/docs-kendo-china/api/javascript/dataviz/diagram/connection" class="type-link"><code>kendo.dataviz.diagram.Connection</code></a> the connection corresponding to the model.</p>
+<p><a href="/api/javascript/dataviz/diagram/connection" class="type-link"><code>kendo.dataviz.diagram.Connection</code></a> the connection corresponding to the model.</p>
 
 <h3 id="methods-getShapeById"><a href="#methods-getShapeById">getShapeById</a></h3>
 
@@ -4588,7 +4588,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Returns</h4>
 
-<p><a href="/docs-kendo-china/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a> the shape corresponding to the model.</p>
+<p><a href="/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a> the shape corresponding to the model.</p>
 
 <h3 id="methods-getShapeByModelUid"><a href="#methods-getShapeByModelUid">getShapeByModelUid</a></h3>
 
@@ -4603,7 +4603,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Returns</h4>
 
-<p><a href="/docs-kendo-china/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a> the shape corresponding to the model.</p>
+<p><a href="/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a> the shape corresponding to the model.</p>
 
 <h3 id="methods-layerToModel"><a href="#methods-layerToModel">layerToModel</a></h3>
 
@@ -4758,7 +4758,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Parameters</h4>
 
-<h5>elements <a href="/docs-kendo-china/api/javascript/dataviz/diagram/connection" class="type-link"><code>kendo.dataviz.diagram.Connection |</code></a><a href="/docs-kendo-china/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+<h5>elements <a href="/api/javascript/dataviz/diagram/connection" class="type-link"><code>kendo.dataviz.diagram.Connection |</code></a><a href="/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
 </h5>
 
 <p>The diagram element(s) that should be selected.</p>
@@ -4799,7 +4799,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Parameters</h4>
 
-<h5>rect <a href="/docs-kendo-china/api/javascript/dataviz/diagram/rect" class="type-link"><code>kendo.dataviz.diagram.Rect</code></a>
+<h5>rect <a href="/api/javascript/dataviz/diagram/rect" class="type-link"><code>kendo.dataviz.diagram.Rect</code></a>
 </h5>
 
 <p>The rectangle that determines which elements should be selected.</p>
@@ -4810,7 +4810,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Parameters</h4>
 
-<h5>dataSource <a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<h5>dataSource <a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h5>
 
 <p>The data source to which the widget should be bound.</p>
@@ -4821,7 +4821,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Parameters</h4>
 
-<h5>dataSource <a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<h5>dataSource <a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h5>
 
 <p>The data source to which the widget should be bound.</p>
@@ -4907,14 +4907,14 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Parameters</h4>
 
-<h5>point <a href="/docs-kendo-china/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a>
+<h5>point <a href="/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a>
 </h5>
 
 <p>The point in Page document coordinates.</p>
 
 <h4>Returns</h4>
 
-<p><a href="/docs-kendo-china/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a> the transformed point</p>
+<p><a href="/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a> the transformed point</p>
 
 <h3 id="methods-viewToModel"><a href="#methods-viewToModel">viewToModel</a></h3>
 
@@ -4922,14 +4922,14 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Parameters</h4>
 
-<h5>point <a href="/docs-kendo-china/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a>
+<h5>point <a href="/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a>
 </h5>
 
 <p>The point in View coordinates.</p>
 
 <h4>Returns</h4>
 
-<p><a href="/docs-kendo-china/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a> the transformed point</p>
+<p><a href="/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a> the transformed point</p>
 
 <h3 id="methods-viewport"><a href="#methods-viewport">viewport</a></h3>
 
@@ -4937,7 +4937,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Returns</h4>
 
-<p><a href="/docs-kendo-china/api/javascript/dataviz/diagram/rect" class="type-link"><code>kendo.dataviz.diagram.Rect</code></a> as viewport bounds</p>
+<p><a href="/api/javascript/dataviz/diagram/rect" class="type-link"><code>kendo.dataviz.diagram.Rect</code></a> as viewport bounds</p>
 
 <h3 id="methods-zoom"><a href="#methods-zoom">zoom</a></h3>
 
@@ -4950,7 +4950,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <p>The zoom factor.</p>
 
-<h5>point <a href="/docs-kendo-china/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a>
+<h5>point <a href="/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a>
 </h5>
 
 <p>The point to zoom into or out of.</p>
@@ -4969,12 +4969,12 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Event Data</h4>
 
-<h5>e.connection <a href="/docs-kendo-china/api/javascript/dataviz/diagram/connection" class="type-link"><code>kendo.dataviz.diagram.Connection</code></a>
+<h5>e.connection <a href="/api/javascript/dataviz/diagram/connection" class="type-link"><code>kendo.dataviz.diagram.Connection</code></a>
 </h5>
 
 <p>The connection that will be added.</p>
 
-<h5>e.shape <a href="/docs-kendo-china/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a>
+<h5>e.shape <a href="/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a>
 </h5>
 
 <p>The shape that will be added.</p>
@@ -5118,7 +5118,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Event Data</h4>
 
-<h5>e.item <a href="/docs-kendo-china/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a> | <a href="/docs-kendo-china/api/javascript/dataviz/diagram/connection" class="type-link"><code>kendo.dataviz.diagram.Connection</code></a>
+<h5>e.item <a href="/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a> | <a href="/api/javascript/dataviz/diagram/connection" class="type-link"><code>kendo.dataviz.diagram.Connection</code></a>
 </h5>
 
 <p>The clicked shape or connection.</p>
@@ -5128,7 +5128,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <p>An object with fields indicating which keys(altKey, ctrlKey, shiftKey, metaKey) were pressed.</p>
 
-<h5>e.point <a href="/docs-kendo-china/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a>
+<h5>e.point <a href="/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a>
 </h5>
 
 <p>The clicked location.</p>
@@ -5269,12 +5269,12 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Event Data</h4>
 
-<h5>e.bounds <a href="/docs-kendo-china/api/javascript/dataviz/diagram/rect" class="type-link"><code>kendo.dataviz.diagram.Rect</code></a>
+<h5>e.bounds <a href="/api/javascript/dataviz/diagram/rect" class="type-link"><code>kendo.dataviz.diagram.Rect</code></a>
 </h5>
 
 <p>The new item bounds.</p>
 
-<h5>e.item <a href="/docs-kendo-china/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a>
+<h5>e.item <a href="/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a>
 </h5>
 
 <p>The affected shape.</p>
@@ -5290,7 +5290,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Event Data</h4>
 
-<h5>e.item <a href="/docs-kendo-china/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a>
+<h5>e.item <a href="/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a>
 </h5>
 
 <p>The rotated shape.</p>
@@ -5312,7 +5312,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Event Data</h4>
 
-<h5>e.item <a href="/docs-kendo-china/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a> | <a href="/docs-kendo-china/api/javascript/dataviz/diagram/connection" class="type-link"><code>kendo.dataviz.diagram.Connection</code></a>
+<h5>e.item <a href="/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a> | <a href="/api/javascript/dataviz/diagram/connection" class="type-link"><code>kendo.dataviz.diagram.Connection</code></a>
 </h5>
 
 <p>The target shape or connection.</p>
@@ -5334,7 +5334,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Event Data</h4>
 
-<h5>e.item <a href="/docs-kendo-china/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a> | <a href="/docs-kendo-china/api/javascript/dataviz/diagram/connection" class="type-link"><code>kendo.dataviz.diagram.Connection</code></a>
+<h5>e.item <a href="/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a> | <a href="/api/javascript/dataviz/diagram/connection" class="type-link"><code>kendo.dataviz.diagram.Connection</code></a>
 </h5>
 
 <p>The target shape or connection.</p>
@@ -5350,7 +5350,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Event Data</h4>
 
-<h5>pan <a href="/docs-kendo-china/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a>
+<h5>pan <a href="/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a>
 </h5>
 
 <p>A point representing the pan distance.</p>
@@ -5366,12 +5366,12 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Event Data</h4>
 
-<h5>e.connection <a href="/docs-kendo-china/api/javascript/dataviz/diagram/connection" class="type-link"><code>kendo.dataviz.diagram.Connection</code></a>
+<h5>e.connection <a href="/api/javascript/dataviz/diagram/connection" class="type-link"><code>kendo.dataviz.diagram.Connection</code></a>
 </h5>
 
 <p>The connection that will be removed.</p>
 
-<h5>e.shape <a href="/docs-kendo-china/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a>
+<h5>e.shape <a href="/api/javascript/dataviz/diagram/shape" class="type-link"><code>kendo.dataviz.diagram.Shape</code></a>
 </h5>
 
 <p>The shape that will be removed.</p>
@@ -5470,7 +5470,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Event Data</h4>
 
-<h5>e.point <a href="/docs-kendo-china/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a>
+<h5>e.point <a href="/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a>
 </h5>
 
 <p>The zoom center.</p>
@@ -5491,7 +5491,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
 
 <h4>Event Data</h4>
 
-<h5>e.point <a href="/docs-kendo-china/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a>
+<h5>e.point <a href="/api/javascript/dataviz/diagram/point" class="type-link"><code>kendo.dataviz.diagram.Point</code></a>
 </h5>
 
 <p>The zoom center.</p>
@@ -5509,7 +5509,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -5574,7 +5574,7 @@ The promise will be resolved with a SVG document encoded as a <a href="https://d
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

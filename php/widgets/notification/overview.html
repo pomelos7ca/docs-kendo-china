@@ -7,15 +7,15 @@
         <meta name="product" content="php-ui">
         
         <title>Overview | Notification PHP Class</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Get started with the Notification PHP class in Kendo UI.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/php-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/php-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("php/widgets/notification/overview.html")
         });
         </script>
@@ -121,9 +121,9 @@
             
              <h1 id="notification-php-class-overview"><a href="#notification-php-class-overview">Notification PHP Class Overview</a></h1>
 
-<p>The Kendo UI Notification for PHP is a server-side wrapper for the <a href="/docs-kendo-china/api/javascript/ui/notification">Kendo UI Notification</a> widget.</p>
+<p>The Kendo UI Notification for PHP is a server-side wrapper for the <a href="/api/javascript/ui/notification">Kendo UI Notification</a> widget.</p>
 
-<p>Before reading on, make sure you are familiar with the fundamental <a href="/docs-kendo-china/intro/installation/jquery-initialization">Kendo UI widget concepts</a> and the <a href="/docs-kendo-china/php/introduction">Kendo UI PHP wrappers</a> are set up correctly.</p>
+<p>Before reading on, make sure you are familiar with the fundamental <a href="/intro/installation/jquery-initialization">Kendo UI widget concepts</a> and the <a href="/php/introduction">Kendo UI PHP wrappers</a> are set up correctly.</p>
 
 <p>The Kendo UI Notification widget provides a styled UI widget with arbitrary content, which can provide information to the user on various occasions.</p>
 
@@ -267,7 +267,7 @@
 
 <h3 id="configuration-Templates"><a href="#configuration-Templates">Templates</a></h3>
 
-<p>Before reading on, make sure you are familiar with the <a href="/docs-kendo-china/framework/templates/overview">Kendo UI templates</a>.</p>
+<p>Before reading on, make sure you are familiar with the <a href="/framework/templates/overview">Kendo UI templates</a>.</p>
 
 <p>The Notification widget allows the configuration of multiple templates. Each template is used together with its corresponding <a href="#configuration-Notification">notification type</a> (either build-in or custom). If you define a custom template for a built-in notification type, you are no longer able to use the corresponding built-in template, but you can still use the shorthand show methods.</p>
 
@@ -321,17 +321,17 @@
 <p>Other articles on Telerik UI for PHP and on the Notification:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/controls/layout/notification/overview">Overview of the Kendo UI Notification Widget</a></li>
-<li><a href="/docs-kendo-china/api/php/Kendo/UI/Notification">Notification PHP Class API Reference</a></li>
-<li><a href="/docs-kendo-china/api/javascript/ui/notification">Notification JavaScript API Reference</a></li>
-<li><a href="/docs-kendo-china/api/jsp/autocomplete/animation">Telerik UI for JSP API Reference Folder</a></li>
-<li><a href="/docs-kendo-china/jsp/tags/autocomplete/overview">Telerik UI for JSP Tags Folder</a></li>
+<li><a href="/controls/layout/notification/overview">Overview of the Kendo UI Notification Widget</a></li>
+<li><a href="/api/php/Kendo/UI/Notification">Notification PHP Class API Reference</a></li>
+<li><a href="/api/javascript/ui/notification">Notification JavaScript API Reference</a></li>
+<li><a href="/api/jsp/autocomplete/animation">Telerik UI for JSP API Reference Folder</a></li>
+<li><a href="/jsp/tags/autocomplete/overview">Telerik UI for JSP Tags Folder</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -396,7 +396,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

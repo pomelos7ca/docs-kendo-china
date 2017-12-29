@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>API reference for Kendo UI Drawing API (PDF) static functions</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("api/javascript/pdf.html")
         });
         </script>
@@ -131,8 +131,8 @@
 
 <p>Defines a map with locations for TrueType Font (.ttf) files. It is safe to call this method multiple times.</p>
 
-<p>The <a href="/docs-kendo-china/api/javascript/drawing#methods-drawDOM">exportPDF</a> method will use the font files when embedding them in a PDF document.
-Since Kendo UI 2014 Q3 SP1, the Kendo UI PDF generator is able to dig <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face">CSS <code>@font-face</code> declarations</a> directly from the stylesheets. "Manually" calling the <code>pdf.defineFont()</code>method is no longer necessary. For more information how to embed fonts using CSS at-rules - check <a href="/docs-kendo-china/framework/drawing/drawing-dom#configuration-Custom">this</a> section. This will work only if the style sheet and fonts are loaded from the same domain. </p>
+<p>The <a href="/api/javascript/drawing#methods-drawDOM">exportPDF</a> method will use the font files when embedding them in a PDF document.
+Since Kendo UI 2014 Q3 SP1, the Kendo UI PDF generator is able to dig <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face">CSS <code>@font-face</code> declarations</a> directly from the stylesheets. "Manually" calling the <code>pdf.defineFont()</code>method is no longer necessary. For more information how to embed fonts using CSS at-rules - check <a href="/framework/drawing/drawing-dom#configuration-Custom">this</a> section. This will work only if the style sheet and fonts are loaded from the same domain. </p>
 
 <blockquote>
 <p>Fonts must be loaded from the same origin or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image">CORS-enabled</a>.</p>
@@ -196,17 +196,17 @@ Since Kendo UI 2014 Q3 SP1, the Kendo UI PDF generator is able to dig <a href="h
 <p>Other articles on Kendo UI Drawing API:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/framework/drawing/drawing-dom">Drawing of HTML Elements</a></li>
-<li><a href="/docs-kendo-china/framework/drawing/overview">Overview of the Drawing API</a></li>
-<li><a href="/docs-kendo-china/framework/drawing/basic-shapes">Drawing of Basic Shapes</a></li>
-<li><a href="/docs-kendo-china/framework/drawing/pdf-output">Export a Drawing in PDF</a></li>
-<li><a href="/docs-kendo-china/framework/drawing/drawing-dom">Supported Browsers for Kendo UI Drawing API</a></li>
+<li><a href="/framework/drawing/drawing-dom">Drawing of HTML Elements</a></li>
+<li><a href="/framework/drawing/overview">Overview of the Drawing API</a></li>
+<li><a href="/framework/drawing/basic-shapes">Drawing of Basic Shapes</a></li>
+<li><a href="/framework/drawing/pdf-output">Export a Drawing in PDF</a></li>
+<li><a href="/framework/drawing/drawing-dom">Supported Browsers for Kendo UI Drawing API</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -271,7 +271,7 @@ Since Kendo UI 2014 Q3 SP1, the Kendo UI PDF generator is able to dig <a href="h
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

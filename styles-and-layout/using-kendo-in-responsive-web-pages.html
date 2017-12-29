@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>Responsive Web Design | Kendo UI Styles and Appearance</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to implement responsive web design in Kendo UI widgets.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("styles-and-layout/using-kendo-in-responsive-web-pages.html")
         });
         </script>
@@ -125,7 +125,7 @@
 
 <h2 id="kendo-ui-in-responsive-web-pages"><a href="#kendo-ui-in-responsive-web-pages">Kendo UI in Responsive Web Pages</a></h2>
 
-<p>Most Kendo UI widgets work and auto-resize when used in responsive web pages out of the box. Several widgets are going to need an additional <a href="/docs-kendo-china/api/javascript/kendo#methods-resize"><code>kendo.resize</code></a> if their dimensions are set to percentage values.</p>
+<p>Most Kendo UI widgets work and auto-resize when used in responsive web pages out of the box. Several widgets are going to need an additional <a href="/api/javascript/kendo#methods-resize"><code>kendo.resize</code></a> if their dimensions are set to percentage values.</p>
 
 <h3 id="non-autoresizing-widgets-in-container"><a href="#non-autoresizing-widgets-in-container">Non-Autoresizing Widgets in Container</a></h3>
 
@@ -206,7 +206,7 @@
 
 <h3 id="individual-widget-resizing"><a href="#individual-widget-resizing">Individual Widget Resizing</a></h3>
 
-<p>Each Kendo UI widget has a <code>resize()</code> method which can be used to trigger a layout readjustment instead of using <a href="/docs-kendo-china/api/javascript/kendo#methods-resize"><code>kendo.resize</code></a>. The <code>resize</code> method of the widget accepts a single Boolean parameter, which defines whether the control should execute its layout adjustment algorithm even if the widget dimensions have not changed (<code>"force"</code> mode).</p>
+<p>Each Kendo UI widget has a <code>resize()</code> method which can be used to trigger a layout readjustment instead of using <a href="/api/javascript/kendo#methods-resize"><code>kendo.resize</code></a>. The <code>resize</code> method of the widget accepts a single Boolean parameter, which defines whether the control should execute its layout adjustment algorithm even if the widget dimensions have not changed (<code>"force"</code> mode).</p>
 
 <h3 id="apply-resize-method">
 <a href="#apply-resize-method">Apply </a><code>resize()</code> Method</h3>
@@ -225,7 +225,7 @@ gridWidget.resize();
 gridWidget.resize(true);
 </code></pre>
 
-<p>The example above uses a <code>wrapper</code> field, which is documented in the article on the <a href="/docs-kendo-china/framework/widgets/wrapper-element">widget wrapper and widget element</a>.</p>
+<p>The example above uses a <code>wrapper</code> field, which is documented in the article on the <a href="/framework/widgets/wrapper-element">widget wrapper and widget element</a>.</p>
 
 <p>If the widget wrapper resizes automatically with its parent element during browser window resize, it is not required to set new dimensions for the <code>wrapper</code> before executing the <code>resize</code> method, nor to use the  <code>"force"</code> mode.</p>
 
@@ -274,20 +274,20 @@ gridWidget.resize(true);
 <p>Other articles on styling, appearance, and rendering of Kendo UI widgets:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/styles-and-layout/appearance-styling">Themes and Appearance of the Kendo UI Widgets</a></li>
-<li><a href="/docs-kendo-china/styles-and-layout/icons-web">Web Font Icons</a></li>
-<li><a href="/docs-kendo-china/styles-and-layout/how-to/change-themes-on-the-client">How to Change Themes on the Client</a></li>
-<li><a href="/docs-kendo-china/styles-and-layout/sass-themes#sass-theme-builder">Sass ThemeBuilder Overview</a></li>
-<li><a href="/docs-kendo-china/styles-and-layout/appearance-styling#less-theme-builder">Less ThemeBuilder Overview</a></li>
-<li><a href="/docs-kendo-china/styles-and-layout/rendering">Rendering Modes for Data Visualization</a></li>
-<li><a href="/docs-kendo-china/styles-and-layout/troubleshoot/troubleshooting">Troubleshooting</a></li>
-<li><a href="/docs-kendo-china/controls/hybrid/styling">Themes and Appearance of the Kendo UI Hybrid Widgets</a></li>
+<li><a href="/styles-and-layout/appearance-styling">Themes and Appearance of the Kendo UI Widgets</a></li>
+<li><a href="/styles-and-layout/icons-web">Web Font Icons</a></li>
+<li><a href="/styles-and-layout/how-to/change-themes-on-the-client">How to Change Themes on the Client</a></li>
+<li><a href="/styles-and-layout/sass-themes#sass-theme-builder">Sass ThemeBuilder Overview</a></li>
+<li><a href="/styles-and-layout/appearance-styling#less-theme-builder">Less ThemeBuilder Overview</a></li>
+<li><a href="/styles-and-layout/rendering">Rendering Modes for Data Visualization</a></li>
+<li><a href="/styles-and-layout/troubleshoot/troubleshooting">Troubleshooting</a></li>
+<li><a href="/controls/hybrid/styling">Themes and Appearance of the Kendo UI Hybrid Widgets</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -352,7 +352,7 @@ gridWidget.resize(true);
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="treelist">
         <title>Configuration, methods and events of Kendo UI TreeList</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Code examples for TreeList UI widget configuration. Learn how to use methods and which events to set once the treelist UI widget is initialized and expanded.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("api/javascript/ui/treelist.html")
         });
         </script>
@@ -123,7 +123,7 @@
             
              <h1 id="kendouitreelist"><a href="#kendouitreelist">kendo.ui.TreeList</a></h1>
 
-<p>Represents the Kendo UI TreeList widget. Inherits from <a href="/docs-kendo-china/api/javascript/ui/widget">Widget</a>.</p>
+<p>Represents the Kendo UI TreeList widget. Inherits from <a href="/api/javascript/ui/widget">Widget</a>.</p>
 
 <h2 id="configuration"><a href="#configuration">Configuration</a></h2>
 
@@ -131,7 +131,7 @@
 <a href="#configuration-autoBind">autoBind </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
 </h3>
 
-<p>If set to <code>false</code> the widget will not bind to the data source during initialization. In this case data binding will occur when the <a href="/docs-kendo-china/api/javascript/data/datasource#events-change">change</a> event of the
+<p>If set to <code>false</code> the widget will not bind to the data source during initialization. In this case data binding will occur when the <a href="/api/javascript/data/datasource#events-change">change</a> event of the
 data source is fired. By default the widget will bind to the data source specified in the configuration.</p>
 
 <blockquote>
@@ -238,7 +238,7 @@ data source is fired. By default the widget will bind to the data source specifi
 <p>Custom commands are supported by specifying the <a href="#configuration-columns.command.click">click</a> option.</p>
 
 <blockquote>
-<p>Each custom command requires you to explicitly specify its <a href="/docs-kendo-china/api/javascript/ui/treelist.html#configuration-columns.command.name">name</a>.</p>
+<p>Each custom command requires you to explicitly specify its <a href="/api/javascript/ui/treelist.html#configuration-columns.command.name">name</a>.</p>
 
 <p>A command column cannot be <a href="#configuration-columns.expandable">expandable</a>.</p>
 
@@ -443,7 +443,7 @@ data source is fired. By default the widget will bind to the data source specifi
 <blockquote>
 <p>The editing UI should contain an element whose <code>name</code> HTML attribute is set as the column <a href="#configuration-columns.field">field</a>.</p>
 
-<p>Validation settings defined in the <code>model.fields</code> configuration will <strong>not</strong> be applied automatically. In order the validation to work, <strong>the developer is responsible for attaching the corresponding validation attributes to the editor input</strong>. In case the custom editor is a widget, the developer should <a href="/docs-kendo-china/framework/validator/overview#customizing-the-tooltip-position">customize the validation warning tooltip position</a> in order to avoid visual issues.</p>
+<p>Validation settings defined in the <code>model.fields</code> configuration will <strong>not</strong> be applied automatically. In order the validation to work, <strong>the developer is responsible for attaching the corresponding validation attributes to the editor input</strong>. In case the custom editor is a widget, the developer should <a href="/framework/validator/overview#customizing-the-tooltip-position">customize the validation warning tooltip position</a> in order to avoid visual issues.</p>
 </blockquote>
 
 <h4>Parameters</h4>
@@ -647,7 +647,7 @@ $("#treeList").kendoTreeList({
 <a href="#configuration-columns.filterable.ui">columns.filterable.ui </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <code>role</code> <a href="/docs-kendo-china/framework/data-attribute-initialization">data attribute</a> of the widget used in the filter menu or a JavaScript function which initializes that widget.</p>
+<p>The <code>role</code> <a href="/framework/data-attribute-initialization">data attribute</a> of the widget used in the filter menu or a JavaScript function which initializes that widget.</p>
 
 <h4>Example - specify the filter UI as a string</h4>
 
@@ -689,7 +689,7 @@ $("#treelist").kendoTreeList({
 <a href="#configuration-columns.footerTemplate">columns.footerTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the footer table cell for the column.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the footer table cell for the column.</p>
 
 <p>The fields which can be used in the template are:</p>
 
@@ -731,11 +731,11 @@ $("#treelist").kendoTreeList({
 <a href="#configuration-columns.format">columns.format </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
 </h3>
 
-<p>The format that is applied to the value before it is displayed. Takes the form "{0:format}" where "format" is a <a href="/docs-kendo-china/api/javascript/kendo#standard-number-formats">standard number format</a>,
-<a href="/docs-kendo-china/api/javascript/kendo#custom-number-formats">custom number format</a>, <a href="/docs-kendo-china/api/javascript/kendo#standard-date-formats">standard date format</a> or a <a href="/docs-kendo-china/api/javascript/kendo#custom-date-formats">custom date format</a>.</p>
+<p>The format that is applied to the value before it is displayed. Takes the form "{0:format}" where "format" is a <a href="/api/javascript/kendo#standard-number-formats">standard number format</a>,
+<a href="/api/javascript/kendo#custom-number-formats">custom number format</a>, <a href="/api/javascript/kendo#standard-date-formats">standard date format</a> or a <a href="/api/javascript/kendo#custom-date-formats">custom date format</a>.</p>
 
 <blockquote>
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-format">kendo.format</a> function is used to format the value.</p>
+<p>The <a href="/api/javascript/kendo#methods-format">kendo.format</a> function is used to format the value.</p>
 </blockquote>
 
 <h4>Example - specify the column format string</h4>
@@ -791,7 +791,7 @@ $("#treelist").kendoTreeList({
 <a href="#configuration-columns.headerTemplate">columns.headerTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the column header content. By default the value of the <a href="#configuration-columns.title">title</a> column option
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the column header content. By default the value of the <a href="#configuration-columns.title">title</a> column option
 is displayed in the column header cell.</p>
 
 <blockquote>
@@ -818,7 +818,7 @@ is displayed in the column header cell.</p>
 <a href="#configuration-columns.minScreenWidth">columns.minScreenWidth </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
 </h3>
 
-<p>The pixel screen width below which the column will be hidden. The setting takes precedence over the <a href="/docs-kendo-china/api/javascript/ui/grid#configuration-columns.hidden"><code>hidden</code></a> setting,
+<p>The pixel screen width below which the column will be hidden. The setting takes precedence over the <a href="/api/javascript/ui/grid#configuration-columns.hidden"><code>hidden</code></a> setting,
 so the two should not be used at the same time.</p>
 
 <h4>Example - lockable columns</h4>
@@ -903,7 +903,7 @@ be disabled for this column. By default all columns are sortable if sorting is e
 <a href="#configuration-columns.template">columns.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the column content. The treelist renders table rows (<code>&lt;tr&gt;</code>) which represent the data source items.
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the column content. The treelist renders table rows (<code>&lt;tr&gt;</code>) which represent the data source items.
 Each table row consists of table cells (<code>&lt;td&gt;</code>) which represent the treelist columns. By default the HTML-encoded value of the <a href="#configuration-columns.field">field</a> is displayed in the column.</p>
 
 <blockquote>
@@ -976,7 +976,7 @@ $("#treelist").kendoTreeList({
 <a href="#configuration-columns.width">columns.width </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
 </h3>
 
-<p>The width of the column. Numeric values are treated as pixels. <strong>For more important information, please refer to <a href="/docs-kendo-china/web/grid/walkthrough#column-widths">Column Widths</a></strong>.</p>
+<p>The width of the column. Numeric values are treated as pixels. <strong>For more important information, please refer to <a href="/web/grid/walkthrough#column-widths">Column Widths</a></strong>.</p>
 
 <h4>Example - set the column width as a string</h4>
 
@@ -1068,7 +1068,7 @@ $("#treelist").kendoTreeList({
 <a href="#configuration-columns.locked">columns.locked </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
 </h3>
 
-<p>If set to <code>true</code> the column will be displayed as locked (frozen) in the treelist. Also see the information about <a href="/docs-kendo-china/controls/data-management/grid/appearance#locked-columns">Frozen Columns</a> in the Grid Appearance article.</p>
+<p>If set to <code>true</code> the column will be displayed as locked (frozen) in the treelist. Also see the information about <a href="/controls/data-management/grid/appearance#locked-columns">Frozen Columns</a> in the Grid Appearance article.</p>
 
 <h4>Example - locked columns</h4>
 
@@ -1450,10 +1450,10 @@ By default the column menu is not enabled.</p>
 <a href="#configuration-dataSource">dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><code>kendo.data.TreeListDataSource</code>
 </h3>
 
-<p>The data source of the widget which is used to render table rows. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/docs-kendo-china/api/javascript/data/datasource">kendo.data.DataSource</a>
+<p>The data source of the widget which is used to render table rows. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/api/javascript/data/datasource">kendo.data.DataSource</a>
 instance.</p>
 
-<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/docs-kendo-china/api/javascript/data/datasource">kendo.data.DataSource</a> instance using that value as data source configuration.</p>
+<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/api/javascript/data/datasource">kendo.data.DataSource</a> instance using that value as data source configuration.</p>
 
 <p>If the <code>dataSource</code> option is an existing <code>kendo.data.DataSource</code> instance, the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
 
@@ -1628,13 +1628,13 @@ $("#treelist").kendoTreeList({
 <a href="#configuration-editable.template">editable.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> which renders the popup editor.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the popup editor.</p>
 
 <p>The template should contain elements whose <code>name</code> HTML attributes are set as the editable fields. This is how the treelist will know
-which field to update. The other option is to use <a href="/docs-kendo-china/framework/mvvm/overview">MVVM</a> bindings in order to bind HTML elements to data item fields.</p>
+which field to update. The other option is to use <a href="/framework/mvvm/overview">MVVM</a> bindings in order to bind HTML elements to data item fields.</p>
 
 <blockquote>
-<p>Use the <code>role</code> data attribute to initialize Kendo UI widgets in the template. Check <a href="/docs-kendo-china/framework/data-attribute-initialization">data attribute initialization</a> for more info.</p>
+<p>Use the <code>role</code> data attribute to initialize Kendo UI widgets in the template. Check <a href="/framework/data-attribute-initialization">data attribute initialization</a> for more info.</p>
 </blockquote>
 
 <h4>Example - customize the popup editor</h4>
@@ -1705,7 +1705,7 @@ which field to update. The other option is to use <a href="/docs-kendo-china/fra
 
 <p>Configures the Kendo UI Window instance, which is used when the TreeList edit mode is "popup". The configuration is optional.</p>
 
-<p>For more information, please refer to the <a href="/docs-kendo-china/api/javascript/ui/window">Window configuration API</a>.</p>
+<p>For more information, please refer to the <a href="/api/javascript/ui/window">Window configuration API</a>.</p>
 
 <h4>Example - TreeList popup Window configuration</h4>
 
@@ -1900,7 +1900,7 @@ Such browsers are IE version 9 and lower and Safari.</p>
 <p>Can be set to a JavaScript object which represents the filter menu configuration.</p>
 
 <blockquote>
-<p>All other <a href="/docs-kendo-china/api/javascript/ui/grid#configuration-filterable"><code>filterable</code> options from Grid</a> can be used, except for <code>filterable.mode</code>, which is always <code>menu</code>.</p>
+<p>All other <a href="/api/javascript/ui/grid#configuration-filterable"><code>filterable</code> options from Grid</a> can be used, except for <code>filterable.mode</code>, which is always <code>menu</code>.</p>
 </blockquote>
 
 <h4>Example - enable and configure filtering</h4>
@@ -3559,7 +3559,7 @@ the proxy should set the "Content-Disposition" header to <code>inline; filename=
 </h3>
 
 <p>If a <code>String</code> value is assigned to the <code>toolbar</code> configuration option, it will be treated as a single string template for the whole treelist Toolbar,
-and the string value will be passed as an argument to a <a href="/docs-kendo-china/api/javascript/kendo#methods-template"><code>kendo.template()</code></a> function.</p>
+and the string value will be passed as an argument to a <a href="/api/javascript/kendo#methods-template"><code>kendo.template()</code></a> function.</p>
 
 <p>If a <code>Function</code> value is assigned (it may be a <code>kendo.template()</code> function call or a generic function reference), then the return value of the function will be used to render the treelist Toolbar contents.</p>
 
@@ -4144,7 +4144,7 @@ This class can be used to get a reference to the button (after TreeList initiali
 
 <h3 id="methods-items"><a href="#methods-items">items</a></h3>
 
-<p>Obtains an Array of the DOM elements, which correspond to the data items from the Kendo UI DataSource <a href="/docs-kendo-china/api/javascript/data/datasource#methods-view">view</a>.</p>
+<p>Obtains an Array of the DOM elements, which correspond to the data items from the Kendo UI DataSource <a href="/api/javascript/data/datasource#methods-view">view</a>.</p>
 
 <h4>Returns</h4>
 
@@ -5272,7 +5272,7 @@ As a general rule, use <code>preventDefault</code> to manually handle the drag&a
 <h5>e.model <code>kendo.data.TreeListModel</code>
 </h5>
 
-<p>The data item which is going to be edited. Use its <a href="/docs-kendo-china/api/javascript/data/model#methods-isNew">isNew</a> method to check if the data item is new (created) or not (edited).</p>
+<p>The data item which is going to be edited. Use its <a href="/api/javascript/data/model#methods-isNew">isNew</a> method to check if the data item is new (created) or not (edited).</p>
 
 <h5>e.sender <code>kendo.ui.TreeList</code>
 </h5>
@@ -5346,7 +5346,7 @@ As a general rule, use <code>preventDefault</code> to manually handle the drag&a
 <h5>e.workbook <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
 </h5>
 
-<p>The Excel <a href="/docs-kendo-china/api/javascript/ooxml/workbook#configuration">workbook configuration object</a>. Used to initialize a <code>kendo.ooxml.Workbook</code> class. Modifications of the workbook will reflect in the output Excel document.</p>
+<p>The Excel <a href="/api/javascript/ooxml/workbook#configuration">workbook configuration object</a>. Used to initialize a <code>kendo.ooxml.Workbook</code> class. Modifications of the workbook will reflect in the output Excel document.</p>
 
 <h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h5>
@@ -6278,7 +6278,7 @@ treelist.saveAsPDF();
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -6343,7 +6343,7 @@ treelist.saveAsPDF();
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

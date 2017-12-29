@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="editor">
         <title>Overview | Kendo UI Editor</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to initialize and configure the Kendo UI Editor widget.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("controls/editors/editor/overview.html")
         });
         </script>
@@ -153,7 +153,7 @@
 
 <p>If you initialize the Editor from a <code>&lt;textarea&gt;</code> element, it assumes its classic mode. The <code>textarea</code> is not visible and is used to hold the value of the widget. You can type in the <code>contenteditable iframe</code> that is created. In the past, <code>iframes</code> used to be the only element that allowed for the content to be editable in most browsers.</p>
 
-<p>The classic Editor posts its value automatically because it is based on a <code>form</code> element. The tools of the Editor are always visible. Its content does not reside on the main web page and the styling of the page does not influence the editable content. To apply custom styles to the editable content, <a href="/docs-kendo-china/api/javascript/ui/editor#configuration-stylesheets">inject them through the configuration of the Editor</a>.</p>
+<p>The classic Editor posts its value automatically because it is based on a <code>form</code> element. The tools of the Editor are always visible. Its content does not reside on the main web page and the styling of the page does not influence the editable content. To apply custom styles to the editable content, <a href="/api/javascript/ui/editor#configuration-stylesheets">inject them through the configuration of the Editor</a>.</p>
 
 <p><a href="http://demos.telerik.com/kendo-ui/web/editor/index.html">Demo of the Classic Mode Editor</a></p>
 
@@ -167,7 +167,7 @@
 <p>While it is possible to initialize an inline Editor from a non-<code>div</code> element, such as <code>p</code> or <code>h1</code>, it is strongly recommended that you use the <code>&lt;div&gt;</code> one. Do not use <code>&lt;table&gt;</code> elements for creating inline Editors because of Internet Explorer browser limitations.</p>
 </blockquote>
 
-<p>The inline Editor does not post its value. Posting the value of an inline Editor is a matter that <a href="/docs-kendo-china/controls/editors/editor/troubleshoot/troubleshooting">you need to take care of</a>. The tools of the Editor are only visible when the widget is focused. Its content resides on the main web page and the styling of the page influences the editable content.</p>
+<p>The inline Editor does not post its value. Posting the value of an inline Editor is a matter that <a href="/controls/editors/editor/troubleshoot/troubleshooting">you need to take care of</a>. The tools of the Editor are only visible when the widget is focused. Its content resides on the main web page and the styling of the page influences the editable content.</p>
 
 <p><a href="http://demos.telerik.com/kendo-ui/web/editor/inline-editing.html">Demo of the Inline Mode Editor</a></p>
 
@@ -179,7 +179,7 @@
 
 <h2 id="configuration"><a href="#configuration">Configuration</a></h2>
 
-<p>To configure the Editor tools, use the <a href="/docs-kendo-china/api/web/editor#tools"><code>tools</code></a> configuration option.</p>
+<p>To configure the Editor tools, use the <a href="/api/web/editor#tools"><code>tools</code></a> configuration option.</p>
 
 <h3 id="configuration-Define"><a href="#configuration-Define">Define Sets of Editor Tools</a></h3>
 
@@ -226,7 +226,7 @@
 
 <h3 id="configuration-Apply"><a href="#configuration-Apply">Apply Read-Only Functionalities</a></h3>
 
-<p>To make the Editor read-only, remove the <code>contenteditable</code> attribute of the <a href="/docs-kendo-china/api/javascript/ui/editor#fields-body"><code>body</code></a> element. While the Editor is read-only, the hyperlinks in its content become active and clicking on them navigates the page. To avoid this behavior, prevent the hyperlink clicks.</p>
+<p>To make the Editor read-only, remove the <code>contenteditable</code> attribute of the <a href="/api/javascript/ui/editor#fields-body"><code>body</code></a> element. While the Editor is read-only, the hyperlinks in its content become active and clicking on them navigates the page. To avoid this behavior, prevent the hyperlink clicks.</p>
 
 <p>The following example demonstrates how to apply a read-only functionality to the Editor.</p>
 
@@ -409,24 +409,24 @@ styleTag.parentNode.removeChild(styleTag);
 <p>Other articles on the Kendo UI Editor:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/api/javascript/ui/editor">Editor JavaScript API Reference</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/imagebrowser">Image Browser</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/post-process">Post-Process Content</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/working-with-selection">Set Selections</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/preventing-xss">Prevent Cross-Site Scripting</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/pasting">Pasting</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/troubleshoot/troubleshooting">Troubleshooting</a></li>
-<li><a href="/docs-kendo-china/aspnet-mvc/helpers/editor/overview">Overview of the ASP.NET MVC HtmlHelper Extension of the Editor Widget</a></li>
-<li><a href="/docs-kendo-china/jsp/tags/editor/overview">Overview of the Editor JSP Tag</a></li>
-<li><a href="/docs-kendo-china/php/widgets/editor/overview">Overview of the Editor PHP Class</a></li>
+<li><a href="/api/javascript/ui/editor">Editor JavaScript API Reference</a></li>
+<li><a href="/controls/editors/editor/imagebrowser">Image Browser</a></li>
+<li><a href="/controls/editors/editor/post-process">Post-Process Content</a></li>
+<li><a href="/controls/editors/editor/working-with-selection">Set Selections</a></li>
+<li><a href="/controls/editors/editor/preventing-xss">Prevent Cross-Site Scripting</a></li>
+<li><a href="/controls/editors/editor/pasting">Pasting</a></li>
+<li><a href="/controls/editors/editor/troubleshoot/troubleshooting">Troubleshooting</a></li>
+<li><a href="/aspnet-mvc/helpers/editor/overview">Overview of the ASP.NET MVC HtmlHelper Extension of the Editor Widget</a></li>
+<li><a href="/jsp/tags/editor/overview">Overview of the Editor JSP Tag</a></li>
+<li><a href="/php/widgets/editor/overview">Overview of the Editor PHP Class</a></li>
 </ul>
 
-<p>For how-to examples on the Kendo UI Editor widget, browse its <a href="/docs-kendo-china/controls/editors/editor/how-to/AngularJS/handle-blur-and-focus-events-angular"><strong>How To</strong> documentation folder</a>.</p> 
+<p>For how-to examples on the Kendo UI Editor widget, browse its <a href="/controls/editors/editor/how-to/AngularJS/handle-blur-and-focus-events-angular"><strong>How To</strong> documentation folder</a>.</p> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -491,7 +491,7 @@ styleTag.parentNode.removeChild(styleTag);
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

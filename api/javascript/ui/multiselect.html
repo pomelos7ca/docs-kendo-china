@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="multiselect">
         <title>Configuration, methods and events of Kendo UI MultiSelect</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("api/javascript/ui/multiselect.html")
         });
         </script>
@@ -123,7 +123,7 @@
             
              <h1 id="kendouimultiselect"><a href="#kendouimultiselect">kendo.ui.MultiSelect</a></h1>
 
-<p>Represents the Kendo UI MultiSelect widget. Inherits from <a href="/docs-kendo-china/api/javascript/ui/widget">Widget</a>.</p>
+<p>Represents the Kendo UI MultiSelect widget. Inherits from <a href="/api/javascript/ui/widget">Widget</a>.</p>
 
 <h2 id="configuration"><a href="#configuration">Configuration</a></h2>
 
@@ -198,7 +198,7 @@ $("#multiselect").kendoMultiSelect({
 
 <p>The effect(s) to use when playing the close animation. Multiple effects should be separated with a space.</p>
 
-<p><a href="/docs-kendo-china/api/javascript/effects/common">Complete list of available animations</a></p>
+<p><a href="/api/javascript/effects/common">Complete list of available animations</a></p>
 
 <h3 id="configuration-animation.close.duration">
 <a href="#configuration-animation.close.duration">animation.close.duration </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 100)</em>
@@ -236,7 +236,7 @@ $("#multiselect").kendoMultiSelect({
 
 <p>The effect(s) to use when playing the open animation. Multiple effects should be separated with a space.</p>
 
-<p><a href="/docs-kendo-china/api/javascript/effects/common">Complete list of available animations</a></p>
+<p><a href="/api/javascript/effects/common">Complete list of available animations</a></p>
 
 <h3 id="configuration-animation.open.duration">
 <a href="#configuration-animation.open.duration">animation.open.duration </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 200)</em>
@@ -325,15 +325,15 @@ $("#multiselect").kendoMultiSelect({
 </code></pre>
 
 <h3 id="configuration-dataSource">
-<a href="#configuration-dataSource">dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<a href="#configuration-dataSource">dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h3>
 
-<p>The data source of the widget which is used to display a list of values. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/docs-kendo-china/api/javascript/data/datasource">kendo.data.DataSource</a>
+<p>The data source of the widget which is used to display a list of values. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/api/javascript/data/datasource">kendo.data.DataSource</a>
 instance.</p>
 
-<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/docs-kendo-china/api/javascript/data/datasource">kendo.data.DataSource</a> instance using that value as data source configuration.</p>
+<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/api/javascript/data/datasource">kendo.data.DataSource</a> instance using that value as data source configuration.</p>
 
-<p>If the <code>dataSource</code> option is an existing <a href="/docs-kendo-china/api/javascript/data/datasource">kendo.data.DataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
+<p>If the <code>dataSource</code> option is an existing <a href="/api/javascript/data/datasource">kendo.data.DataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
 
 <h4>Example - set dataSource as a JavaScript object</h4>
 
@@ -530,7 +530,7 @@ $("#multiselect").kendoMultiSelect({
 <a href="#configuration-fixedGroupTemplate">fixedGroupTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the fixed header group. By default the widget displays only the value of the current group.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the fixed header group. By default the widget displays only the value of the current group.</p>
 
 <pre><code>&lt;select id="customers" style="width: 400px;"&gt;&lt;/select&gt;
 &lt;script&gt;
@@ -557,7 +557,7 @@ $("#multiselect").kendoMultiSelect({
 <a href="#configuration-footerTemplate">footerTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the footer template. The footer template receives the widget itself as a part of the data argument. Use the widget fields directly in the template.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the footer template. The footer template receives the widget itself as a part of the data argument. Use the widget fields directly in the template.</p>
 
 <h4>Parameters</h4>
 
@@ -586,7 +586,7 @@ $("#customers").kendoMultiSelect({
 <a href="#configuration-groupTemplate">groupTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the groups. By default the widget displays only the value of the group.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the groups. By default the widget displays only the value of the group.</p>
 
 <pre><code>&lt;select id="customers" style="width: 400px;"&gt;&lt;/select&gt;
 &lt;script&gt;
@@ -715,7 +715,7 @@ $("#multiselect").kendoMultiSelect({
 <a href="#configuration-noDataTemplate">noDataTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a> <em>(default: "NO DATA FOUND.")</em>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the "no data" template, which will be displayed if no results are found or the underlying data source is empty.
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the "no data" template, which will be displayed if no results are found or the underlying data source is empty.
 The noData template receives the widget itself as a part of the data argument. The template will be evaluated on every widget data bound.</p>
 
 <blockquote>
@@ -774,7 +774,7 @@ $("#multiselect").kendoMultiSelect();
 </h3>
 
 <p>The options that will be used for the popup initialization. For more details about the available options
-refer to <a href="/docs-kendo-china/api/javascript/ui/popup">Popup</a> documentation.</p>
+refer to <a href="/api/javascript/ui/popup">Popup</a> documentation.</p>
 
 <h4>Example - append the popup to a specific element</h4>
 
@@ -940,7 +940,7 @@ $("#multiselect").kendoMultiSelect({
 <a href="#configuration-itemTemplate">itemTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the items in the popup list.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the items in the popup list.</p>
 
 <h4>Example - specify template as a function</h4>
 
@@ -984,7 +984,7 @@ $("#multiselect").kendoMultiSelect({
 <a href="#configuration-tagTemplate">tagTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/kendo#methods-template">template</a> used to render the tags.</p>
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> used to render the tags.</p>
 
 <h4>Template Data for the 'multiple' <a href="#configuration-tagMode">tagMode</a>
 </h4>
@@ -1010,7 +1010,7 @@ $("#multiselect").kendoMultiSelect({
 <h5>data.currentTotal <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
 </h5>
 
-<p>The current dataSource total value. If it is server filtered, it will show the current length of the <a href="/docs-kendo-china/api/javascript/data/datasource#methods-view">view</a>.</p>
+<p>The current dataSource total value. If it is server filtered, it will show the current length of the <a href="/api/javascript/data/datasource#methods-view">view</a>.</p>
 
 <h5>data.maxTotal <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
 </h5>
@@ -1140,7 +1140,7 @@ $("#multiselect").kendoMultiSelect({
 <a href="#configuration-valuePrimitive">valuePrimitive </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a><em>(default: false)</em>
 </h3>
 
-<p>Specifies the <a href="/docs-kendo-china/framework/mvvm/bindings/value">value binding</a> behavior for the widget. If set to true, the View-Model field will be updated with the selected item value field. If set to false, the View-Model field will be updated with the selected item.</p>
+<p>Specifies the <a href="/framework/mvvm/bindings/value">value binding</a> behavior for the widget. If set to true, the View-Model field will be updated with the selected item value field. If set to false, the View-Model field will be updated with the selected item.</p>
 
 <h4>Example - specify that the View-Model field should be updated with the selected item value</h4>
 
@@ -1171,7 +1171,7 @@ kendo.bind($("#multiselect"), viewModel);
 
 <p>Enables the virtualization feature of the widget. The configuration can be set on an object, which contains two properties - <code>itemHeight</code> and <code>valueMapper</code>.</p>
 
-<p>For detailed information, refer to the <a href="/docs-kendo-china/controls/editors/combobox/virtualization">article on virtualization</a>.</p>
+<p>For detailed information, refer to the <a href="/controls/editors/combobox/virtualization">article on virtualization</a>.</p>
 
 <h4>Example - MultiSelect with a virtualized list</h4>
 
@@ -1384,7 +1384,7 @@ If the developer does not specify one, the framework will automatically set <cod
 
 <p>The changes introduced with the Kendo UI R3 2016 release enable you to determine if the <code>valueMapper</code> must resolve a <em>value to an <code>index</code></em> or a <em>value to a <code>dataItem</code></em>. This is configured through the <code>mapValueTo</code> option that accepts two possible values - <code>"index"</code> or <code>"dataItem"</code>. By default, the <code>mapValueTo</code> is set to <code>"index"</code>, which does not affect the current behavior of the virtualization process.</p>
 
-<p>For more information, refer to the <a href="/docs-kendo-china/controls/editors/combobox/virtualization#value-mapping">article on virtualization</a>.</p>
+<p>For more information, refer to the <a href="/controls/editors/combobox/virtualization#value-mapping">article on virtualization</a>.</p>
 
 <h3 id="configuration-virtual.valueMapper">
 <a href="#configuration-virtual.valueMapper">virtual.valueMapper </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a><em>(default: null)</em>
@@ -1463,10 +1463,10 @@ The widget will pass the selected value(s) in the <code>valueMapper</code> funct
 <h2 id="fields"><a href="#fields">Fields</a></h2>
 
 <h3 id="fields-dataSource">
-<a href="#fields-dataSource">dataSource </a><a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<a href="#fields-dataSource">dataSource </a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h3>
 
-<p>The <a href="/docs-kendo-china/api/javascript/data/datasource">data source</a> of the widget. Configured via the <a href="#configuration-dataSource">dataSource</a> option.</p>
+<p>The <a href="/api/javascript/data/datasource">data source</a> of the widget. Configured via the <a href="#configuration-dataSource">dataSource</a> option.</p>
 
 <blockquote>
 <p>Changes of the data source will be reflected in the widget.</p>
@@ -1694,7 +1694,7 @@ multiselect.focus();
 
 <h3 id="methods-items"><a href="#methods-items">items</a></h3>
 
-<p>Obtains an Array of the DOM elements, which correspond to the data items from the Kendo UI DataSource <a href="/docs-kendo-china/api/javascript/data/datasource#methods-view">view</a>.</p>
+<p>Obtains an Array of the DOM elements, which correspond to the data items from the Kendo UI DataSource <a href="/api/javascript/data/datasource#methods-view">view</a>.</p>
 
 <h4>Returns</h4>
 
@@ -1797,7 +1797,7 @@ multiselect.search("Item1");
 
 <h4>Parameters</h4>
 
-<h5>dataSource <a href="/docs-kendo-china/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+<h5>dataSource <a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
 </h5>
 
 <h4>Example</h4>
@@ -1851,8 +1851,8 @@ multiselect.toggle();
 <p><strong>Important:</strong> The widget will <strong>clear the applied filter</strong> if a new value is set. Thus it ensures that the original/whole data set is available for selection.</p>
 
 <p><strong>Important:</strong> This method <strong>does not trigger</strong> <a href="#events-change">change</a> event.
-This could affect <a href="/docs-kendo-china/framework/mvvm/bindings/value">MVVM value binding</a>. The model bound to the widget will not be updated.
-You can overcome this behavior trigerring the <code>change</code> event manually using <a href="/docs-kendo-china/api/javascript/observable#methods-trigger">trigger("change")</a> method.</p>
+This could affect <a href="/framework/mvvm/bindings/value">MVVM value binding</a>. The model bound to the widget will not be updated.
+You can overcome this behavior trigerring the <code>change</code> event manually using <a href="/api/javascript/observable#methods-trigger">trigger("change")</a> method.</p>
 </blockquote>
 
 <pre><code>&lt;select id="multiselect" multiple="multiple"&gt;
@@ -2081,7 +2081,7 @@ multiselect.bind("dataBound", multiselect_dataBound);
 <p>The filter descriptor that will be used to filter the data source.</p>
 
 <blockquote>
-<p>The data source filters the data items client-side unless the <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-serverFiltering">data source serverFiltering</a> option is set to <code>true</code>.</p>
+<p>The data source filters the data items client-side unless the <a href="/api/javascript/data/datasource#configuration-serverFiltering">data source serverFiltering</a> option is set to <code>true</code>.</p>
 </blockquote>
 
 <h4>Example - subscribe to the "filtering" event during initialization</h4>
@@ -2344,7 +2344,7 @@ $("#multiselect").kendoMultiSelect({
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -2409,7 +2409,7 @@ $("#multiselect").kendoMultiSelect({
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

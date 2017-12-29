@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="chart">
         <title>Overview | Kendo UI Charts</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to create a chart, enable the visualization of a series that displays inline data, and explore the major features of Kendo UI Charts.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("controls/charts/overview.html")
         });
         </script>
@@ -163,7 +163,7 @@
 
 <p><strong>Figure 1: An empty chart</strong></p>
 
-<p><img src="/docs-kendo-china/controls/charts/chart-empty.png" alt="Empty Chart"></p>
+<p><img src="/controls/charts/chart-empty.png" alt="Empty Chart"></p>
 
 <h2 id="configuration"><a href="#configuration">Configuration</a></h2>
 
@@ -204,9 +204,9 @@
 
 <p><strong>Figure 2: A chart without categories</strong></p>
 
-<p><img src="/docs-kendo-china/controls/charts/chart-column-no-categories.png" alt="Column Chart without categories"></p>
+<p><img src="/controls/charts/chart-column-no-categories.png" alt="Column Chart without categories"></p>
 
-<p>Notice that the columns have no label across the category axis. Specify the labeling for the series in the <a href="/docs-kendo-china/api/dataviz/chart#categoryAxis"><code>categoryAxis</code> property</a>, as demonstrated in the example below.</p>
+<p>Notice that the columns have no label across the category axis. Specify the labeling for the series in the <a href="/api/dataviz/chart#categoryAxis"><code>categoryAxis</code> property</a>, as demonstrated in the example below.</p>
 
 <h6>Example</h6>
 
@@ -227,7 +227,7 @@
 
 <p><strong>Figure 3: A chart with categories</strong></p>
 
-<p><img src="/docs-kendo-china/controls/charts/chart-column-categories.png" alt="Column Chart with categories"></p>
+<p><img src="/controls/charts/chart-column-categories.png" alt="Column Chart with categories"></p>
 
 <h2 id="categorical-charts"><a href="#categorical-charts">Categorical Charts</a></h2>
 
@@ -280,7 +280,7 @@ $("#chart").kendoChart({
 
 <h3 id="value-axis"><a href="#value-axis">Value Axis</a></h3>
 
-<p>The Kendo UI Chart currently supports only Numeric value axes. Configuration options are accessible through the <a href="/docs-kendo-china/api/dataviz/chart#valueaxis-object"><code>valueAxis</code> object</a>.</p>
+<p>The Kendo UI Chart currently supports only Numeric value axes. Configuration options are accessible through the <a href="/api/dataviz/chart#valueaxis-object"><code>valueAxis</code> object</a>.</p>
 
 <p>The example below demonstrates how to configure a Numeric axis with a minimum value of 0 and a maximum value of 100.</p>
 
@@ -346,7 +346,7 @@ $("#chart").kendoChart({
 
 <p><strong>Figure 4: A chart with multiple axes</strong></p>
 
-<p><img src="/docs-kendo-china/controls/charts/chart-multiple-axes.png" alt="Chart with multiple axes"></p>
+<p><img src="/controls/charts/chart-multiple-axes.png" alt="Chart with multiple axes"></p>
 
 <h3 id="arrangement-of-value-axes"><a href="#arrangement-of-value-axes">Arrangement of Value Axes</a></h3>
 
@@ -364,7 +364,7 @@ $("#chart").kendoChart({
 
 <p><strong>Figure 5: A chart with customized axis-crossing values</strong></p>
 
-<p><img src="/docs-kendo-china/controls/charts/chart-axis-crossing-values.png" alt="Bar chart with customized axis crossing values"></p>
+<p><img src="/controls/charts/chart-axis-crossing-values.png" alt="Bar chart with customized axis crossing values"></p>
 
 <h2 id="scatter-charts"><a href="#scatter-charts">Scatter Charts</a></h2>
 
@@ -439,7 +439,7 @@ $("#chart").kendoChart({
 
 <p><strong>Figure 6: A Scatter chart with multiple axes</strong></p>
 
-<p><img src="/docs-kendo-china/controls/charts/chart-scatter-line-multiple-axes.png" alt="Scatter chart with multiple axes"></p>
+<p><img src="/controls/charts/chart-scatter-line-multiple-axes.png" alt="Scatter chart with multiple axes"></p>
 
 <h3 id="arrangement-of-xy-axes"><a href="#arrangement-of-xy-axes">Arrangement of X/Y Axes</a></h3>
 
@@ -457,7 +457,7 @@ $("#chart").kendoChart({
 
 <p><strong>Figure 7: A Scatter chart with customized axis-crossing values</strong></p>
 
-<p><img src="/docs-kendo-china/controls/charts/chart-scatter-line-axis-crossing-value.png" alt="Scatter line chart with customized axis crossing value"></p>
+<p><img src="/controls/charts/chart-scatter-line-axis-crossing-value.png" alt="Scatter line chart with customized axis crossing value"></p>
 
 <h2 id="axis-features"><a href="#axis-features">Axis Features</a></h2>
 
@@ -503,7 +503,7 @@ $("#chart").kendoChart({
 
 <p><strong>Figure 8: A chart with axis titles</strong></p>
 
-<p><img src="/docs-kendo-china/controls/charts/chart-axis-titles.png" alt="Chart with axis titles"></p>
+<p><img src="/controls/charts/chart-axis-titles.png" alt="Chart with axis titles"></p>
 
 <h3 id="plot-bands"><a href="#plot-bands">Plot Bands</a></h3>
 
@@ -531,11 +531,11 @@ $("#chart").kendoChart({
 
 <p><strong>Figure 9: A chart with axis plot bands</strong></p>
 
-<p><img src="/docs-kendo-china/controls/charts/chart-plot-bands.png" alt="Chart with axis plot bands"></p>
+<p><img src="/controls/charts/chart-plot-bands.png" alt="Chart with axis plot bands"></p>
 
 <h3 id="global-settings"><a href="#global-settings">Global Settings</a></h3>
 
-<p>Sometimes you need to apply settings to all axes. In such cases it is convenient to use the <a href="/docs-kendo-china/api/javascript/dataviz/ui/chart#axisdefaults-object"><code>axisDefaults</code> object</a>.</p>
+<p>Sometimes you need to apply settings to all axes. In such cases it is convenient to use the <a href="/api/javascript/dataviz/ui/chart#axisdefaults-object"><code>axisDefaults</code> object</a>.</p>
 
 <h6>Example</h6>
 
@@ -558,24 +558,24 @@ $("#chart").kendoChart({
 <p>Other articles on Kendo UI Charts:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/controls/charts/data-binding">Data Binding of the Chart Widgets</a></li>
-<li><a href="/docs-kendo-china/controls/charts/date-series">Date Series</a></li>
-<li><a href="/docs-kendo-china/controls/charts/features/tooltip">Tooltip</a></li>
-<li><a href="/docs-kendo-china/controls/charts/features/notes">Chart Notes</a></li>
-<li><a href="/docs-kendo-china/controls/charts/features/title-legend">Title and Legend</a></li>
-<li><a href="/docs-kendo-china/controls/charts/appearance">Appearance</a></li>
-<li><a href="/docs-kendo-china/controls/charts/features/error-bars">Error Bars</a></li>
-<li><a href="/docs-kendo-china/controls/charts/series">Data Series</a></li>
-<li><a href="/docs-kendo-china/controls/charts/chart-types/area-charts">Types of Kendo UI Charts</a></li>
-<li><a href="/docs-kendo-china/api/javascript/dataviz/ui/chart">Chart JavaScript API Reference</a></li>
+<li><a href="/controls/charts/data-binding">Data Binding of the Chart Widgets</a></li>
+<li><a href="/controls/charts/date-series">Date Series</a></li>
+<li><a href="/controls/charts/features/tooltip">Tooltip</a></li>
+<li><a href="/controls/charts/features/notes">Chart Notes</a></li>
+<li><a href="/controls/charts/features/title-legend">Title and Legend</a></li>
+<li><a href="/controls/charts/appearance">Appearance</a></li>
+<li><a href="/controls/charts/features/error-bars">Error Bars</a></li>
+<li><a href="/controls/charts/series">Data Series</a></li>
+<li><a href="/controls/charts/chart-types/area-charts">Types of Kendo UI Charts</a></li>
+<li><a href="/api/javascript/dataviz/ui/chart">Chart JavaScript API Reference</a></li>
 </ul>
 
-<p>For runnable examples on Kendo UI Charts, refer to the <a href="/docs-kendo-china/controls/charts/how-to/appearance/dynamic-plot-bands">how-to section of articles</a>.</p> 
+<p>For runnable examples on Kendo UI Charts, refer to the <a href="/controls/charts/how-to/appearance/dynamic-plot-bands">how-to section of articles</a>.</p> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -640,7 +640,7 @@ $("#chart").kendoChart({
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

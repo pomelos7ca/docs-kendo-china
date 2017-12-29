@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="grid">
         <title>Adaptive Rendering | Kendo UI Grid</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to apply the adaptive rendering feature of the Kendo UI Grid widget.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("controls/data-management/grid/adaptive.html")
         });
         </script>
@@ -129,7 +129,7 @@
 
 <h3 id="enabling-adaptive-rendering"><a href="#enabling-adaptive-rendering">Enabling Adaptive Rendering</a></h3>
 
-<p>To enable the adaptive rendering feature, set the <a href="/docs-kendo-china/api/javascript/ui/grid#configuration-mobile"><code>mobile</code></a> property to <code>true</code>, <code>phone</code>, or <code>tablet</code>.</p>
+<p>To enable the adaptive rendering feature, set the <a href="/api/javascript/ui/grid#configuration-mobile"><code>mobile</code></a> property to <code>true</code>, <code>phone</code>, or <code>tablet</code>.</p>
 
 <h6>Example</h6>
 
@@ -154,7 +154,7 @@ $("#grid").kendoGrid({
 
 <h3 id="prerequisites"><a href="#prerequisites">Prerequisites</a></h3>
 
-<p>The Kendo UI adaptive mode requires scripts, which are normally part of the Kendo UI Mobile (Hybrid) library (<code>kendo.mobile.min.js</code>). However, these scripts are also included in <code>kendo.web.min.js</code> and <code>kendo.all.min.js</code>. If you are using <a href="/docs-kendo-china/intro/installation/what-you-need#individual-widget-scripts">individual widget scripts</a> or a <a href="/docs-kendo-china/intro/installation/what-you-need#employ-download-builder">custom combined script</a>, make sure the relevant scripts are included.</p>
+<p>The Kendo UI adaptive mode requires scripts, which are normally part of the Kendo UI Mobile (Hybrid) library (<code>kendo.mobile.min.js</code>). However, these scripts are also included in <code>kendo.web.min.js</code> and <code>kendo.all.min.js</code>. If you are using <a href="/intro/installation/what-you-need#individual-widget-scripts">individual widget scripts</a> or a <a href="/intro/installation/what-you-need#employ-download-builder">custom combined script</a>, make sure the relevant scripts are included.</p>
 
 <h2 id="pane-configuration"><a href="#pane-configuration">Pane Configuration</a></h2>
 
@@ -232,7 +232,7 @@ $("#grid").kendoGrid({
 
 <p><strong>Figure 1: Grid with resizeable columns on a mobile device</strong></p>
 
-<p><img src="/docs-kendo-china/controls/data-management/grid/adaptive-resizing-icon.png" alt=""></p>
+<p><img src="/controls/data-management/grid/adaptive-resizing-icon.png" alt=""></p>
 
 <h2 id="grid-specifics"><a href="#grid-specifics">Grid Specifics</a></h2>
 
@@ -287,29 +287,29 @@ $("#grid").kendoGrid({
 
 <h3 id="destroying-adaptive-grids"><a href="#destroying-adaptive-grids">Destroying Adaptive Grids</a></h3>
 
-<p>When in adaptive mode, the Grid generates some auxiliary markup, which needs to be removed if the widget is to be <a href="/docs-kendo-china/intro/widget-basics/destroy">destroyed</a> manually.</p>
+<p>When in adaptive mode, the Grid generates some auxiliary markup, which needs to be removed if the widget is to be <a href="/intro/widget-basics/destroy">destroyed</a> manually.</p>
 
-<p>The recommended approach is to call <a href="/docs-kendo-china/api/javascript/kendo#methods-destroy"><code>kendo.destroy()</code></a> over the closest <code>.km-pane-wrapper</code> ancestor of the Grid, which is created around the Grid widget. Then, remove the whole <code>.km-pane-wrapper</code> element from the DOM. To recreate the Grid, insert a new <code>&lt;div&gt;</code> at the same place where the previous Grid <code>&lt;div&gt;</code> was placed initially.</p>
+<p>The recommended approach is to call <a href="/api/javascript/kendo#methods-destroy"><code>kendo.destroy()</code></a> over the closest <code>.km-pane-wrapper</code> ancestor of the Grid, which is created around the Grid widget. Then, remove the whole <code>.km-pane-wrapper</code> element from the DOM. To recreate the Grid, insert a new <code>&lt;div&gt;</code> at the same place where the previous Grid <code>&lt;div&gt;</code> was placed initially.</p>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <ul>
-<li><a href="/docs-kendo-china/api/javascript/ui/grid">Grid JavaScript API Reference</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/walkthrough">Walkthrough of the Grid</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/editing">Editing Functionality of the Grid</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/appearance">Appearance of the Grid</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/localization">Localization of Messages in the Grid</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/excel-export">Export of the Grid to Excel</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/pdf-export">Export of the Grid in PDF</a></li>
-<li><a href="/docs-kendo-china/controls/data-management/grid/pdf-export">Printing of the Grid</a></li>
+<li><a href="/api/javascript/ui/grid">Grid JavaScript API Reference</a></li>
+<li><a href="/controls/data-management/grid/walkthrough">Walkthrough of the Grid</a></li>
+<li><a href="/controls/data-management/grid/editing">Editing Functionality of the Grid</a></li>
+<li><a href="/controls/data-management/grid/appearance">Appearance of the Grid</a></li>
+<li><a href="/controls/data-management/grid/localization">Localization of Messages in the Grid</a></li>
+<li><a href="/controls/data-management/grid/excel-export">Export of the Grid to Excel</a></li>
+<li><a href="/controls/data-management/grid/pdf-export">Export of the Grid in PDF</a></li>
+<li><a href="/controls/data-management/grid/pdf-export">Printing of the Grid</a></li>
 </ul>
 
-<p>For how-to examples on the Kendo UI Grid widget, browse its <a href="/docs-kendo-china/controls/data-management/grid/how-to/AngularJS/use-telerik-backend-services-with-angular"><strong>How To</strong> documentation folder</a>.</p> 
+<p>For how-to examples on the Kendo UI Grid widget, browse its <a href="/controls/data-management/grid/how-to/AngularJS/use-telerik-backend-services-with-angular"><strong>How To</strong> documentation folder</a>.</p> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -374,7 +374,7 @@ $("#grid").kendoGrid({
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="chart">
         <title>Error Bars | Kendo UI Charts</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to configure the error bars of Kendo UI Charts, bind them to the series data and set their value.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("controls/charts/features/error-bars.html")
         });
         </script>
@@ -144,7 +144,7 @@
 
 <h3 id="bind-to-categorical-series"><a href="#bind-to-categorical-series">Bind to Categorical Series</a></h3>
 
-<p>To bind the error bars low and high values when using categorical series, set the <a href="/docs-kendo-china/api/dataviz/chart#configuration-series.errorLowField"><code>errorLowField</code></a> and <a href="/docs-kendo-china/api/dataviz/chart#configuration-series.errorHighField"><code>errorHighField</code></a> options to the fields in the data that hold the low and high value, as demonstrated below.</p>
+<p>To bind the error bars low and high values when using categorical series, set the <a href="/api/dataviz/chart#configuration-series.errorLowField"><code>errorLowField</code></a> and <a href="/api/dataviz/chart#configuration-series.errorHighField"><code>errorHighField</code></a> options to the fields in the data that hold the low and high value, as demonstrated below.</p>
 
 <h6>Example</h6>
 
@@ -164,7 +164,7 @@ $("#chart").kendoChart({
 
 <h3 id="bind-to-scatter-series"><a href="#bind-to-scatter-series">Bind to Scatter Series</a></h3>
 
-<p>Error bars can be displayed for the series <code>x</code> value, <code>y</code> value or both. To set the low and high fields for the series <code>x</code> value, set the <a href="/docs-kendo-china/api/dataviz/chart#configuration-series.xErrorLowField"><code>xErrorLowField</code></a> and <a href="/docs-kendo-china/api/dataviz/chart#configuration-series.xErrorHighField"><code>xErrorHighField</code></a> series options. The low and high fields for the series <code>y</code> value, can be specified with the <a href="/docs-kendo-china/api/dataviz/chart#configuration-series.yErrorLowField"><code>yErrorLowField</code></a> and <a href="/docs-kendo-china/api/dataviz/chart#configuration-series.yErrorHighField"><code>yErrorHighField</code></a> options.</p>
+<p>Error bars can be displayed for the series <code>x</code> value, <code>y</code> value or both. To set the low and high fields for the series <code>x</code> value, set the <a href="/api/dataviz/chart#configuration-series.xErrorLowField"><code>xErrorLowField</code></a> and <a href="/api/dataviz/chart#configuration-series.xErrorHighField"><code>xErrorHighField</code></a> series options. The low and high fields for the series <code>y</code> value, can be specified with the <a href="/api/dataviz/chart#configuration-series.yErrorLowField"><code>yErrorLowField</code></a> and <a href="/api/dataviz/chart#configuration-series.yErrorHighField"><code>yErrorHighField</code></a> options.</p>
 
 <p>The example below demonstrates how to bind the error bars for the series <code>x</code> value.</p>
 
@@ -204,7 +204,7 @@ $("#chart").kendoChart({
 
 <h2 id="set-error-bars-value"><a href="#set-error-bars-value">Set Error Bars Value</a></h2>
 
-<p>The error bars low and high value can be calculated based on the series point values. To set the error bars value for categorical series, specify the <a href="/docs-kendo-china/api/dataviz/chart#configuration-series.errorBars.value"><code>series.errorBars.value</code></a> option. For scatter series set the <a href="/docs-kendo-china/api/dataviz/chart#configuration-series.errorBars.xValue"><code>series.errorBars.xValue</code></a> or <a href="/docs-kendo-china/api/dataviz/chart#configuration-series.errorBars.yValue"><code>series.errorBars.yValue</code></a> options or both.</p>
+<p>The error bars low and high value can be calculated based on the series point values. To set the error bars value for categorical series, specify the <a href="/api/dataviz/chart#configuration-series.errorBars.value"><code>series.errorBars.value</code></a> option. For scatter series set the <a href="/api/dataviz/chart#configuration-series.errorBars.xValue"><code>series.errorBars.xValue</code></a> or <a href="/api/dataviz/chart#configuration-series.errorBars.yValue"><code>series.errorBars.yValue</code></a> options or both.</p>
 
 <h3 id="set-numeric-value"><a href="#set-numeric-value">Set Numeric Value</a></h3>
 
@@ -387,22 +387,22 @@ $("#chart").kendoChart({
 <p>Other articles on Kendo UI Charts:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/controls/charts/overview">Overview of the Chart Widgets</a></li>
-<li><a href="/docs-kendo-china/controls/charts/data-binding">Data Binding</a></li>
-<li><a href="/docs-kendo-china/controls/charts/date-series">Date Series</a></li>
-<li><a href="/docs-kendo-china/controls/charts/features/tooltip">Tooltip</a></li>
-<li><a href="/docs-kendo-china/controls/charts/features/notes">Chart Notes</a></li>
-<li><a href="/docs-kendo-china/controls/charts/features/title-legend">Title and Legend</a></li>
-<li><a href="/docs-kendo-china/controls/charts/appearance">Appearance</a></li>
-<li><a href="/docs-kendo-china/controls/charts/series">Data Series Charts</a></li>
-<li><a href="/docs-kendo-china/controls/charts/chart-types/area-charts">Types of Kendo UI Charts</a></li>
-<li><a href="/docs-kendo-china/api/javascript/dataviz/ui/chart">Chart JavaScript API Reference</a></li>
+<li><a href="/controls/charts/overview">Overview of the Chart Widgets</a></li>
+<li><a href="/controls/charts/data-binding">Data Binding</a></li>
+<li><a href="/controls/charts/date-series">Date Series</a></li>
+<li><a href="/controls/charts/features/tooltip">Tooltip</a></li>
+<li><a href="/controls/charts/features/notes">Chart Notes</a></li>
+<li><a href="/controls/charts/features/title-legend">Title and Legend</a></li>
+<li><a href="/controls/charts/appearance">Appearance</a></li>
+<li><a href="/controls/charts/series">Data Series Charts</a></li>
+<li><a href="/controls/charts/chart-types/area-charts">Types of Kendo UI Charts</a></li>
+<li><a href="/api/javascript/dataviz/ui/chart">Chart JavaScript API Reference</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -467,7 +467,7 @@ $("#chart").kendoChart({
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

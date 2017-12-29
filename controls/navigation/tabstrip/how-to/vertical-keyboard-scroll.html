@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="tabstrip">
         <title>Scroll TabStrip with Keyboard | Kendo UI TabStrip</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to vertically scroll the Knedo UI TabStrip widget using keyboard navigation.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("controls/navigation/tabstrip/how-to/vertical-keyboard-scroll.html")
         });
         </script>
@@ -121,7 +121,7 @@
             
              <h1 id="scroll-tabstrip-with-keyboard"><a href="#scroll-tabstrip-with-keyboard">Scroll TabStrip with Keyboard</a></h1>
 
-<p>Keyboard navigation requires an element to be focused. Non-form elements normally do not receive focus. To overcome this, the TabStrip <code>&lt;div&gt;</code> wrapper has a <code>tabindex</code> attribute. Logically, <code>Left Arrow</code> and <code>Right Arrow</code> keys switch the active tab. <code>Up Arrow</code> and <code>Down Arrow</code> keys do the same as this is what accessibility standards require. When the TabStrip <a href="/docs-kendo-china/framework/widgets/wrapper-element">wrapper</a> has the focus, and its active content container is scrollable, then the <code>Up Arrow</code> and <code>Down Arrow</code> keys do not scroll the container even if the widget ignores these keystrokes. This is because the focused element is a parent of the scrollable one and the browser has no idea that it is supposed to scroll the child element in this situation.</p>
+<p>Keyboard navigation requires an element to be focused. Non-form elements normally do not receive focus. To overcome this, the TabStrip <code>&lt;div&gt;</code> wrapper has a <code>tabindex</code> attribute. Logically, <code>Left Arrow</code> and <code>Right Arrow</code> keys switch the active tab. <code>Up Arrow</code> and <code>Down Arrow</code> keys do the same as this is what accessibility standards require. When the TabStrip <a href="/framework/widgets/wrapper-element">wrapper</a> has the focus, and its active content container is scrollable, then the <code>Up Arrow</code> and <code>Down Arrow</code> keys do not scroll the container even if the widget ignores these keystrokes. This is because the focused element is a parent of the scrollable one and the browser has no idea that it is supposed to scroll the child element in this situation.</p>
 
 <p>There is a way to make the scrollable content container become focused: add a <code>tabindex</code> attribute to it. Then, scrolling with the <code>Up Arrow</code> and <code>Down Arrow</code> keys start working, but TabStrip keyboard navigation completely stops working. This is because Kendo UI TabStrip handles key events only if its wrapper is the focused element. The idea behind this behavior is that the widget is not supposed to interfere with the keyboard navigation of nested form elements, child widgets, etc.</p>
 
@@ -207,18 +207,18 @@
 <p>Other articles on the Kendo UI TabStrip:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/api/javascript/ui/tabstrip">TabStrip JavaScript API Reference</a></li>
-<li><a href="/docs-kendo-china/controls/navigation/tabstrip/how-to/show-tabs-at-bottom">How to Display Buttons at the Bottom</a></li>
-<li><a href="/docs-kendo-china/controls/navigation/tabstrip/how-to/expand-height">How to Expand to 100% Height and Auto-Resize</a></li>
-<li><a href="/docs-kendo-china/controls/navigation/tabstrip/how-to/save-content-scroll-position">How to Save Content Scroll Position</a></li>
+<li><a href="/api/javascript/ui/tabstrip">TabStrip JavaScript API Reference</a></li>
+<li><a href="/controls/navigation/tabstrip/how-to/show-tabs-at-bottom">How to Display Buttons at the Bottom</a></li>
+<li><a href="/controls/navigation/tabstrip/how-to/expand-height">How to Expand to 100% Height and Auto-Resize</a></li>
+<li><a href="/controls/navigation/tabstrip/how-to/save-content-scroll-position">How to Save Content Scroll Position</a></li>
 </ul>
 
-<p>For more runnable examples on the Kendo UI TabStrip widget, browse its <a href="/docs-kendo-china/controls/navigation/tabstrip/how-to/add-close-button-to-tabs"><strong>How To</strong> documentation folder</a>.</p> 
+<p>For more runnable examples on the Kendo UI TabStrip widget, browse its <a href="/controls/navigation/tabstrip/how-to/add-close-button-to-tabs"><strong>How To</strong> documentation folder</a>.</p> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -283,7 +283,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

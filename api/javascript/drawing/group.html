@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         
         <title>API reference for Kendo UI Drawing API Group</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,10 +27,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
-        <script src="/docs-kendo-china/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
         
         
 
@@ -68,8 +68,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -93,7 +93,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -109,7 +109,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("api/javascript/drawing/group.html")
         });
         </script>
@@ -122,7 +122,7 @@
         <article>
             
              <h1 id="kendodrawinggroup--kendodrawingelement">
-<a href="#kendodrawinggroup--kendodrawingelement">kendo.drawing.Group</a><span class="type-link">Inherits from <a class="type-link" href="/docs-kendo-china/api/javascript/drawing/element">kendo.drawing.Element</a></span>
+<a href="#kendodrawinggroup--kendodrawingelement">kendo.drawing.Group</a><span class="type-link">Inherits from <a class="type-link" href="/api/javascript/drawing/element">kendo.drawing.Element</a></span>
 </h1>
 
 <p>Represents a set of drawing elements, possibly including other groups.</p>
@@ -155,7 +155,7 @@
 <h2 id="configuration"><a href="#configuration">Configuration</a></h2>
 
 <h3 id="configuration-clip">
-<a href="#configuration-clip">clip </a><a href="/docs-kendo-china/api/javascript/drawing/path" class="type-link"><code>kendo.drawing.Path</code></a>
+<a href="#configuration-clip">clip </a><a href="/api/javascript/drawing/path" class="type-link"><code>kendo.drawing.Path</code></a>
 </h3>
 
 <p>The group clipping path.
@@ -178,19 +178,19 @@ Inherited from <a href="element#configuration-opacity">Element.opacity</a></p>
 <p>The opacity of any child groups and elements will be multiplied by this value.</p>
 
 <h3 id="configuration-pdf">
-<a href="#configuration-pdf">pdf </a><a href="/docs-kendo-china/api/javascript/drawing/pdfoptions" class="type-link"><code>kendo.drawing.PDFOptions</code></a>
+<a href="#configuration-pdf">pdf </a><a href="/api/javascript/drawing/pdfoptions" class="type-link"><code>kendo.drawing.PDFOptions</code></a>
 </h3>
 
 <p>Page options to apply during PDF export.</p>
 
 <h3 id="configuration-tooltip">
-<a href="#configuration-tooltip">tooltip </a><a href="/docs-kendo-china/api/javascript/drawing/tooltip-options" class="type-link"><code>kendo.drawing.TooltipOptions</code></a>
+<a href="#configuration-tooltip">tooltip </a><a href="/api/javascript/drawing/tooltip-options" class="type-link"><code>kendo.drawing.TooltipOptions</code></a>
 </h3>
 
 <p>The tooltip options of the shape.</p>
 
 <h3 id="configuration-transform">
-<a href="#configuration-transform">transform </a><a href="/docs-kendo-china/api/javascript/geometry/transformation" class="type-link"><code>kendo.geometry.Transformation</code></a>
+<a href="#configuration-transform">transform </a><a href="/api/javascript/geometry/transformation" class="type-link"><code>kendo.geometry.Transformation</code></a>
 </h3>
 
 <p>The transformation to apply to this group and its children.
@@ -219,7 +219,7 @@ Inherited from <a href="element#configuration-visible">Element.visible</a></p>
 
 <h4>Parameters</h4>
 
-<h5>element <a href="/docs-kendo-china/api/javascript/drawing/element" class="type-link"><code>kendo.drawing.Element</code></a>
+<h5>element <a href="/api/javascript/drawing/element" class="type-link"><code>kendo.drawing.Element</code></a>
 </h5>
 
 <p>The element to append. Multiple parameters are accepted.</p>
@@ -235,14 +235,14 @@ Inherited from <a href="element#methods-clip">Element.clip</a></p>
 
 <h4>Parameters</h4>
 
-<h5>clip <a href="/docs-kendo-china/api/javascript/drawing/path" class="type-link"><code>kendo.drawing.Path</code></a>
+<h5>clip <a href="/api/javascript/drawing/path" class="type-link"><code>kendo.drawing.Path</code></a>
 </h5>
 
 <p>The group clipping path.</p>
 
 <h4>Returns</h4>
 
-<p><a href="/docs-kendo-china/api/javascript/drawing/path" class="type-link"><code>kendo.drawing.Path</code></a> The current group clipping path.</p>
+<p><a href="/api/javascript/drawing/path" class="type-link"><code>kendo.drawing.Path</code></a> The current group clipping path.</p>
 
 <h3 id="methods-clippedBBox"><a href="#methods-clippedBBox">clippedBBox</a></h3>
 
@@ -251,7 +251,7 @@ Inherited from <a href="element#methods-clippedBBox">Element.clippedBBox</a></p>
 
 <h4>Returns</h4>
 
-<p><a href="/docs-kendo-china/api/javascript/geometry/rect" class="type-link"><code>kendo.geometry.Rect</code></a> The bounding box of the element with clipping transformations applied.</p>
+<p><a href="/api/javascript/geometry/rect" class="type-link"><code>kendo.geometry.Rect</code></a> The bounding box of the element with clipping transformations applied.</p>
 
 <h3 id="methods-containsPoint"><a href="#methods-containsPoint">containsPoint</a></h3>
 
@@ -259,7 +259,7 @@ Inherited from <a href="element#methods-clippedBBox">Element.clippedBBox</a></p>
 
 <h4>Parameters</h4>
 
-<h5>point <a href="/docs-kendo-china/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a>
+<h5>point <a href="/api/javascript/geometry/point" class="type-link"><code>kendo.geometry.Point</code></a>
 </h5>
 
 <p>The point that should be checked.</p>
@@ -279,7 +279,7 @@ Inherited from <a href="element#methods-clippedBBox">Element.clippedBBox</a></p>
 
 <p>The position to insert the element at. Existing children beyond this position will be shifted right.</p>
 
-<h5>element <a href="/docs-kendo-china/api/javascript/drawing/element" class="type-link"><code>kendo.drawing.Element</code></a>
+<h5>element <a href="/api/javascript/drawing/element" class="type-link"><code>kendo.drawing.Element</code></a>
 </h5>
 
 <p>The element to insert.</p>
@@ -308,7 +308,7 @@ Inherited from <a href="element#methods-opacity">Element.opacity</a></p>
 
 <h4>Parameters</h4>
 
-<h5>element <a href="/docs-kendo-china/api/javascript/drawing/element" class="type-link"><code>kendo.drawing.Element</code></a>
+<h5>element <a href="/api/javascript/drawing/element" class="type-link"><code>kendo.drawing.Element</code></a>
 </h5>
 
 <p>The element to remove.</p>
@@ -342,7 +342,7 @@ Inherited from <a href="element#methods-opacity">Element.opacity</a></p>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -407,7 +407,7 @@ Inherited from <a href="element#methods-opacity">Element.opacity</a></p>
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

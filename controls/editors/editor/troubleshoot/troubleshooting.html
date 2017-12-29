@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="editor">
         <title>Common Issues | Kendo UI Editor</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Learn how to deal with issues you may encounter while using the Kendo UI Editor widget.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("controls/editors/editor/troubleshoot/troubleshooting.html")
         });
         </script>
@@ -145,7 +145,7 @@
 
 <p><strong>Solution</strong></p>
 
-<p>Ideally, the output of the Editor has to be styled via a stylesheet provided through the <a href="/docs-kendo-china/api/javascript/ui/editor#configuration-stylesheets">stylesheets configuration option</a>. It allows for the whole pasted content to be consistently styled across your site.</p>
+<p>Ideally, the output of the Editor has to be styled via a stylesheet provided through the <a href="/api/javascript/ui/editor#configuration-stylesheets">stylesheets configuration option</a>. It allows for the whole pasted content to be consistently styled across your site.</p>
 
 <p>If wrong pasting removes semantics or actual content along with the styles:</p>
 
@@ -176,7 +176,7 @@
 
 <p><strong>Solution</strong></p>
 
-<p>When you use an Editor inside a popup, which moves elements to the DOM, either first initialize the popup (for example, a Kendo UI Window, a jQuery dialog, or other) or call the <a href="/docs-kendo-china/api/javascript/ui/editor#methods-refresh"><code>refresh</code></a> method.</p>
+<p>When you use an Editor inside a popup, which moves elements to the DOM, either first initialize the popup (for example, a Kendo UI Window, a jQuery dialog, or other) or call the <a href="/api/javascript/ui/editor#methods-refresh"><code>refresh</code></a> method.</p>
 
 <h2 id="layout-and-display"><a href="#layout-and-display">Layout and Display</a></h2>
 
@@ -196,7 +196,7 @@
 
 <p><strong>Solution</strong></p>
 
-<p>Call the <a href="/docs-kendo-china/api/javascript/ui/editor#methods-refresh"><code>refresh</code></a> method of the Editor after the widget becomes visible. Refreshing the widget recreates the <code>iframe</code>.</p>
+<p>Call the <a href="/api/javascript/ui/editor#methods-refresh"><code>refresh</code></a> method of the Editor after the widget becomes visible. Refreshing the widget recreates the <code>iframe</code>.</p>
 
 <p>Another possible approach is to use the inline mode of the Editor, that is, to create the Editor from a <code>div</code> element.</p>
 
@@ -215,11 +215,11 @@
 
 <p><strong>Solution</strong></p>
 
-<p>Set the <a href="/docs-kendo-china/api/javascript/ui/editor#configuration-encoded"><code>encoded</code></a> property to <code>false</code>. The value of the Editor is expected to be posted unencoded to the server.</p>
+<p>Set the <a href="/api/javascript/ui/editor#configuration-encoded"><code>encoded</code></a> property to <code>false</code>. The value of the Editor is expected to be posted unencoded to the server.</p>
 
 <p>If you are using ASP.NET, make sure that you either disable the ASP.NET security validation or set the <code>AllowHtml</code> attribute on the model field that will receive the HTML string. For more information, refer to the documentation on <a href="http://blogs.learnnowonline.com/blog/bid/199703/ASP-NET-MVC-Request-Validation-Protection-AllowHtml-Attribute">requesting validation in ASP.NET</a>.</p>
 
-<p>Another option is to enable the <a href="/docs-kendo-china/web/editor/overview#classic-mode-vs-inline-mode">inline Editor mode</a> which does not use an <code>iframe</code> and a <code>textarea</code>. In this case, however, you have to <a href="/docs-kendo-china/controls/editors/editor/troubleshoot/troubleshooting#inline-editor-value-is-not-posted-to-the-server">manually submit the value of the Editor</a>.</p>
+<p>Another option is to enable the <a href="/web/editor/overview#classic-mode-vs-inline-mode">inline Editor mode</a> which does not use an <code>iframe</code> and a <code>textarea</code>. In this case, however, you have to <a href="/controls/editors/editor/troubleshoot/troubleshooting#inline-editor-value-is-not-posted-to-the-server">manually submit the value of the Editor</a>.</p>
 
 <p>The back-forward cache of the browser can be disabled by attaching a <code>window.unload</code> handler, as demonstrated in the following example.</p>
 
@@ -271,37 +271,37 @@
 <p>Other articles on Kendo UI Editor:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/api/javascript/ui/editor">Editor JavaScript API Reference</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/how-to/editing/add-maxlength-validation">How to Add Max-Length Validation</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/how-to/integration/get-reference-to-imagebrowser-child-widgets">How to Get Reference to Child Widgets</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/how-to/customize/insert-html-via-custom-popup-tool">How to Insert HTML Content via Custom Popup Tools</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/how-to/customize/set-caret-position-using-javascript">How to Set Caret Position</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/how-to/appearance/show-editor-in-full-screen">How to Show Editor in Full Screen</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/how-to/integration/inline-editor-inside-window">How to Use Inline Editor inside Windows</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/imagebrowser">Image Browser</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/post-process">Post-Process Content</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/preventing-xss">Prevent Cross-Site Scripting</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/working-with-selection">Set Selections</a></li>
-<li><a href="/docs-kendo-china/controls/editors/editor/overview">Overview of the Editor Widget</a></li>
+<li><a href="/api/javascript/ui/editor">Editor JavaScript API Reference</a></li>
+<li><a href="/controls/editors/editor/how-to/editing/add-maxlength-validation">How to Add Max-Length Validation</a></li>
+<li><a href="/controls/editors/editor/how-to/integration/get-reference-to-imagebrowser-child-widgets">How to Get Reference to Child Widgets</a></li>
+<li><a href="/controls/editors/editor/how-to/customize/insert-html-via-custom-popup-tool">How to Insert HTML Content via Custom Popup Tools</a></li>
+<li><a href="/controls/editors/editor/how-to/customize/set-caret-position-using-javascript">How to Set Caret Position</a></li>
+<li><a href="/controls/editors/editor/how-to/appearance/show-editor-in-full-screen">How to Show Editor in Full Screen</a></li>
+<li><a href="/controls/editors/editor/how-to/integration/inline-editor-inside-window">How to Use Inline Editor inside Windows</a></li>
+<li><a href="/controls/editors/editor/imagebrowser">Image Browser</a></li>
+<li><a href="/controls/editors/editor/post-process">Post-Process Content</a></li>
+<li><a href="/controls/editors/editor/preventing-xss">Prevent Cross-Site Scripting</a></li>
+<li><a href="/controls/editors/editor/working-with-selection">Set Selections</a></li>
+<li><a href="/controls/editors/editor/overview">Overview of the Editor Widget</a></li>
 </ul>
 
 <p>Other articles on troubleshooting:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/troubleshoot/troubleshooting-common-issues">Common Issues in Kendo UI</a></li>
-<li><a href="/docs-kendo-china/troubleshoot/troubleshooting-js-errors">Kendo UI JavaScript Errors</a></li>
-<li><a href="/docs-kendo-china/troubleshoot/troubleshooting-memory-leaks">Kendo UI Performance Issues</a></li>
-<li><a href="/docs-kendo-china/troubleshoot/content-security-policy">Kendo UI Content Security Policy</a></li>
-<li><a href="/docs-kendo-china/framework/excel/troubleshoot/common-issues">Common Issues in Kendo UI Excel Export</a></li>
-<li><a href="/docs-kendo-china/controls/charts/troubleshoot/common-issues">Common Issues in Kendo UI Charts</a></li>
-<li><a href="/docs-kendo-china/controls/charts/troubleshoot/performance-tips">Performance Issues in Kendo UI Widgets for Data Visualization</a></li>
-<li><a href="/docs-kendo-china/controls/editors/combobox/troubleshoot/troubleshooting">Common Issues in Kendo UI ComboBox</a></li>
-<li><a href="/docs-kendo-china/controls/diagrams-and-maps/diagram/troubleshoot/common-issues">Common Issues in Kendo UI Diagram</a></li>
-<li><a href="/docs-kendo-china/controls/editors/dropdownlist/troubleshoot/troubleshooting">Common Issues in Kendo UI DropDownList</a></li>
-<li><a href="/docs-kendo-china/controls/editors/multiselect/troubleshoot/troubleshooting">Common Issues in Kendo UI MultiSelect</a></li>
-<li><a href="/docs-kendo-china/controls/scheduling/scheduler/troubleshoot/troubleshooting">Common Issues in Kendo UI Scheduler</a></li>
-<li><a href="/docs-kendo-china/controls/editors/upload/troubleshoot/troubleshooting">Common Issues in Kendo UI Upload</a></li>
-<li><a href="/docs-kendo-china/styles-and-layout/troubleshoot/troubleshooting">Common Issues Related to Styling, Appearance, and Rendering</a></li>
+<li><a href="/troubleshoot/troubleshooting-common-issues">Common Issues in Kendo UI</a></li>
+<li><a href="/troubleshoot/troubleshooting-js-errors">Kendo UI JavaScript Errors</a></li>
+<li><a href="/troubleshoot/troubleshooting-memory-leaks">Kendo UI Performance Issues</a></li>
+<li><a href="/troubleshoot/content-security-policy">Kendo UI Content Security Policy</a></li>
+<li><a href="/framework/excel/troubleshoot/common-issues">Common Issues in Kendo UI Excel Export</a></li>
+<li><a href="/controls/charts/troubleshoot/common-issues">Common Issues in Kendo UI Charts</a></li>
+<li><a href="/controls/charts/troubleshoot/performance-tips">Performance Issues in Kendo UI Widgets for Data Visualization</a></li>
+<li><a href="/controls/editors/combobox/troubleshoot/troubleshooting">Common Issues in Kendo UI ComboBox</a></li>
+<li><a href="/controls/diagrams-and-maps/diagram/troubleshoot/common-issues">Common Issues in Kendo UI Diagram</a></li>
+<li><a href="/controls/editors/dropdownlist/troubleshoot/troubleshooting">Common Issues in Kendo UI DropDownList</a></li>
+<li><a href="/controls/editors/multiselect/troubleshoot/troubleshooting">Common Issues in Kendo UI MultiSelect</a></li>
+<li><a href="/controls/scheduling/scheduler/troubleshoot/troubleshooting">Common Issues in Kendo UI Scheduler</a></li>
+<li><a href="/controls/editors/upload/troubleshoot/troubleshooting">Common Issues in Kendo UI Upload</a></li>
+<li><a href="/styles-and-layout/troubleshoot/troubleshooting">Common Issues Related to Styling, Appearance, and Rendering</a></li>
 <li><a href="http://docs.telerik.com/aspnet-mvc/troubleshoot/troubleshooting">Common Issues in Telerik UI for ASP.NET MVC</a></li>
 <li><a href="http://docs.telerik.com/aspnet-mvc/troubleshoot/troubleshooting-validation">Validation Issues in Telerik UI for ASP.NET MVC</a></li>
 <li><a href="http://docs.telerik.com/aspnet-mvc/troubleshoot/troubleshooting-scaffolding">Scaffolding Issues in Telerik UI for ASP.NET MVC</a></li>
@@ -314,7 +314,7 @@
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -379,7 +379,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

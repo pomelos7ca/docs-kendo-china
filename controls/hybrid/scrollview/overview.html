@@ -7,15 +7,15 @@
         <meta name="product" content="kendo-ui">
         <meta name="subproduct" content="scrollview_mobile">
         <title>Overview | Hybrid UI ScrollView</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Initialize the hybrid Kendo UI ScrollView widget and define content pages to display one item per page.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/kendo-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("controls/hybrid/scrollview/overview.html")
         });
         </script>
@@ -428,7 +428,7 @@
 
 <p><strong>Figure 1: ScrollView pager overlay</strong></p>
 
-<p><img src="/docs-kendo-china/controls/hybrid/scrollview/pager-overlay.png" alt="ScrollView pager overlay"></p>
+<p><img src="/controls/hybrid/scrollview/pager-overlay.png" alt="ScrollView pager overlay"></p>
 
 <p>To activate the feature, add the <code>km-scrollview-overlay</code> class to the ScrollView element.</p>
 
@@ -446,21 +446,21 @@
 
 <p>A data-bound ScrollView does not display any data. Below are listed some of the possible reasons and solutions for that.</p>
 
-<p>The <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-pageSize"><code>pageSize</code></a> of the DataSource is undefined.</p>
+<p>The <a href="/api/javascript/data/datasource#configuration-pageSize"><code>pageSize</code></a> of the DataSource is undefined.</p>
 
 <ul>
 <li>
 <strong>Solution</strong> Set the <code>pageSize</code>. Setting the <code>pageSize</code> is mandatory.</li>
 </ul>
 
-<p>The <a href="/docs-kendo-china/api/javascript/data/datasource#configuration-schema.total"><code>total</code></a> amount of records in the DataSource is undefined.</p>
+<p>The <a href="/api/javascript/data/datasource#configuration-schema.total"><code>total</code></a> amount of records in the DataSource is undefined.</p>
 
 <ul>
 <li>
 <strong>Solution</strong> Set the <code>total</code>. Setting the <code>total</code> is mandatory.</li>
 </ul>
 
-<p>The widget's <a href="/docs-kendo-china/api/javascript/mobile/ui/scrollview#configuration-template"><code>template</code></a> is undefined.</p>
+<p>The widget's <a href="/api/javascript/mobile/ui/scrollview#configuration-template"><code>template</code></a> is undefined.</p>
 
 <ul>
 <li>
@@ -471,32 +471,32 @@
 
 <ul>
 <li>
-<strong>Solution</strong> If the <code>contentHeight</code> is set to 100%, the ScrollView element should be the immediate child of the View and the View's <code>stretch</code> option should be set to <code>true</code>. For a code sample, refer to <a href="/docs-kendo-china/api/javascript/mobile/ui/scrollview#configuration-contentHeight">this demo</a>.</li>
+<strong>Solution</strong> If the <code>contentHeight</code> is set to 100%, the ScrollView element should be the immediate child of the View and the View's <code>stretch</code> option should be set to <code>true</code>. For a code sample, refer to <a href="/api/javascript/mobile/ui/scrollview#configuration-contentHeight">this demo</a>.</li>
 </ul>
 
 <h3 id="performance-issues"><a href="#performance-issues">Performance Issues</a></h3>
 
 <p>The widget loads data, but the application hangs or crashes. The possible reason is that the total amount of records that you are loading is large.</p>
 
-<p><strong>Solution</strong> Set the <a href="/docs-kendo-china/api/mobile/scrollview#configuration-enablePager"><code>enablePager</code></a> to <code>false</code>.</p>
+<p><strong>Solution</strong> Set the <a href="/api/mobile/scrollview#configuration-enablePager"><code>enablePager</code></a> to <code>false</code>.</p>
 
 <h2 id="see-also"><a href="#see-also">See Also</a></h2>
 
 <p>Other articles and how-to examples on the Hybrid UI components and on the ScrollView:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/api/javascript/mobile/ui/scrollview">Hybrid UI ScrollView JavaScript API Reference</a></li>
-<li><a href="/docs-kendo-china/controls/hybrid/introduction">Overview of the Hybrid UI Components</a></li>
-<li><a href="/docs-kendo-china/controls/hybrid/how-to/fixed-content-area">How to Create Fixed Content Areas with Scroller</a></li>
-<li><a href="/docs-kendo-china/controls/hybrid/how-to/relative-content-size-using-flexboxes">How to Create Relative Content Size Using Flexboxes</a></li>
-<li><a href="/docs-kendo-china/controls/hybrid/how-to/select-value-from-another-view">How to Select Value from Another View</a></li>
-<li><a href="/docs-kendo-china/controls/hybrid/how-to/angular/set-initial-view-using-angular">How to Set Initial View Prior to Initialization in AngularJS</a></li>
+<li><a href="/api/javascript/mobile/ui/scrollview">Hybrid UI ScrollView JavaScript API Reference</a></li>
+<li><a href="/controls/hybrid/introduction">Overview of the Hybrid UI Components</a></li>
+<li><a href="/controls/hybrid/how-to/fixed-content-area">How to Create Fixed Content Areas with Scroller</a></li>
+<li><a href="/controls/hybrid/how-to/relative-content-size-using-flexboxes">How to Create Relative Content Size Using Flexboxes</a></li>
+<li><a href="/controls/hybrid/how-to/select-value-from-another-view">How to Select Value from Another View</a></li>
+<li><a href="/controls/hybrid/how-to/angular/set-initial-view-using-angular">How to Set Initial View Prior to Initialization in AngularJS</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -561,7 +561,7 @@
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>

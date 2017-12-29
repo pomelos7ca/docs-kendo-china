@@ -7,15 +7,15 @@
         <meta name="product" content="jsp-ui">
         
         <title>Overview | DropDownList JSP Tag</title>
-        <link rel="shortcut icon" href="/docs-kendo-china/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
         <meta name="description" content="Get started with the DropDownList JSP tag in Kendo UI.">
         <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
         <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
-        <link rel="stylesheet" href="/docs-kendo-china/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
         
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
@@ -27,8 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
-        <script src="/docs-kendo-china/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
-        <script src="/docs-kendo-china/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=b449339ba367b10f8b479f2e4faac62b"></script>
         
         
 
@@ -66,8 +66,8 @@
 
 
     <div id="logo-bar">
-        <a href="/docs-kendo-china/">
-            <img alt="Kendo UI logo" class="logo" src="/docs-kendo-china/images/jsp-ui.svg">
+        <a href="/">
+            <img alt="Kendo UI logo" class="logo" src="/images/jsp-ui.svg">
         </a>
     </div>
 
@@ -91,7 +91,7 @@
             dataSource: {
                 transport: {
                     read: {
-                        url: "/docs-kendo-china/default.json",
+                        url: "/default.json",
                         dataType: "json"
                     }
                 },
@@ -107,7 +107,7 @@
                 loading: " "
             },
             select: preventParentSelection,
-            template: navigationTemplate("/docs-kendo-china/"),
+            template: navigationTemplate("/"),
             dataBound: expandNavigation("jsp/tags/dropdownlist/overview.html")
         });
         </script>
@@ -121,7 +121,7 @@
             
              <h1 id="dropdownlist-jsp-tag-overview"><a href="#dropdownlist-jsp-tag-overview">DropDownList JSP Tag Overview</a></h1>
 
-<p>The DropDownList JSP tag is a server-side wrapper for the <a href="/docs-kendo-china/api/javascript/ui/dropdownlist">Kendo UI DropDownList</a> widget.</p>
+<p>The DropDownList JSP tag is a server-side wrapper for the <a href="/api/javascript/ui/dropdownlist">Kendo UI DropDownList</a> widget.</p>
 
 <h2 id="getting-started"><a href="#getting-started">Getting Started</a></h2>
 
@@ -133,14 +133,14 @@
 <li>
 <code>server</code>—The data is serialized to the client. No Ajax requests are going to be made.</li>
 <li>
-<code>ajax</code>—The DropDownList is going to make Ajax requests to get the data. For more information on this type of binding, refer to the <a href="/docs-kendo-china/jsp/tags/dropdownlist/ajax-binding">DropDownList API reference article on Ajax binding</a>.</li>
+<code>ajax</code>—The DropDownList is going to make Ajax requests to get the data. For more information on this type of binding, refer to the <a href="/jsp/tags/dropdownlist/ajax-binding">DropDownList API reference article on Ajax binding</a>.</li>
 </ul>
 
 <h3 id="configuration"><a href="#configuration">Configuration</a></h3>
 
 <p>Below are listed the steps for you to follow when configuring the Kendo UI DropDownList for binding to data, passed as a model attribute in Spring MVC.</p>
 
-<p><strong>Step 1</strong> Make sure you followed all the steps from the <a href="/docs-kendo-china/jsp/introduction">introductory article on Telerik UI for JSP</a>.</p>
+<p><strong>Step 1</strong> Make sure you followed all the steps from the <a href="/jsp/introduction">introductory article on Telerik UI for JSP</a>.</p>
 
 <p><strong>Step 2</strong> Create a new action method and pass the <strong>Products</strong> table to the View.</p>
 
@@ -174,7 +174,7 @@
 
 <h3 id="subscribe-to-events"><a href="#subscribe-to-events">Subscribe to Events</a></h3>
 
-<p>You can subscribe to all <a href="/docs-kendo-china/api/javascript/ui/dropdownlist#events">events exposed by Kendo UI DropDownList</a> by the handler name.</p>
+<p>You can subscribe to all <a href="/api/javascript/ui/dropdownlist#events">events exposed by Kendo UI DropDownList</a> by the handler name.</p>
 
 <h6>Example</h6>
 
@@ -194,7 +194,7 @@
 
 <h3 id="existing-instances"><a href="#existing-instances">Existing Instances</a></h3>
 
-<p>You are able to reference an existing DropDownList instance via the <a href="http://api.jquery.com/jQuery.data/"><code>jQuery.data()</code></a>. Once a reference is established, you are able to use the <a href="/docs-kendo-china/api/javascript/ui/dropdownlist#methods">DropDownList API</a> to control its behavior.</p>
+<p>You are able to reference an existing DropDownList instance via the <a href="http://api.jquery.com/jQuery.data/"><code>jQuery.data()</code></a>. Once a reference is established, you are able to use the <a href="/api/javascript/ui/dropdownlist#methods">DropDownList API</a> to control its behavior.</p>
 
 <h6>Example</h6>
 
@@ -212,16 +212,16 @@ $(function() {
 <p>Other articles on Telerik UI for JSP and on the DropDownList:</p>
 
 <ul>
-<li><a href="/docs-kendo-china/jsp/tags/autocomplete/ajax-binding">Ajax Binding of the DropDownList</a></li>
-<li><a href="/docs-kendo-china/jsp/tags/dropdownlist/ajax-binding">Overview of the Kendo UI DropDownList Widget</a></li>
-<li><a href="/docs-kendo-china/api/jsp/autocomplete/animation">Telerik UI for JSP API Reference Folder</a></li>
-<li><a href="/docs-kendo-china/jsp/tags/autocomplete/overview">Telerik UI for JSP Tags Folder</a></li>
+<li><a href="/jsp/tags/autocomplete/ajax-binding">Ajax Binding of the DropDownList</a></li>
+<li><a href="/jsp/tags/dropdownlist/ajax-binding">Overview of the Kendo UI DropDownList Widget</a></li>
+<li><a href="/api/jsp/autocomplete/animation">Telerik UI for JSP API Reference Folder</a></li>
+<li><a href="/jsp/tags/autocomplete/overview">Telerik UI for JSP Tags Folder</a></li>
 </ul> 
         </article>
     </div>
     <div id="feedback-container">
   <div id="feedback-section">
-    <script src="/docs-kendo-china/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
     <span id="popupNotification"></span>
     <div id="feedback-menu-container">
       <div id="helpful-buttons-container">
@@ -286,7 +286,7 @@ $(function() {
       </div>
     </div>
     <a id="close-button" class="button">
-      <img src="/docs-kendo-china/images/close-btn.svg" alt="close" />
+      <img src="/images/close-btn.svg" alt="close" />
     </a>
   </div>
   <div id="feedback-section-dummy">Dummy</div>
