@@ -1,0 +1,1026 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="documentation">
+        <meta name="product" content="kendo-ui">
+        
+        <title>AngularJS Integration | AngularJS Directives"</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Learn more about the AngularJS integration of Kendo UI controls and find out how to use the widgets in AngularJS applications.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("AngularJS/introduction.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//AngularJS/introduction.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="angularjs-integration"><a href="#angularjs-integration">AngularJS Integration</a></h1>
+
+<p>This article demonstrates the basics of the integration between Kendo UI and AngularJS.</p>
+
+<p>For more information, refer to the page on <a href="http://www.telerik.com/kendo-ui/angularjs-and-kendo-ui-framework-integration" title="Developing with AngularJS?">developing with AngularJS</a>.</p>
+
+<h2 id="overview"><a href="#overview">Overview</a></h2>
+
+<p>Kendo UI is seamlessly used with AngularJS. It is possible to integrate the two frameworks through the AngularJS directives for Kendo UI widgets. These directives are part of the product distribution and are officially supported by the Kendo UI team. In this way, you benefit from the features available in AngularJS, such as declarative data binding, routing, form validation, and others, and employ them when building up your project.</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>The initialization of Kendo UI widgets in AngularJS projects is not designed to be combined with the Kendo UI server wrappers. Using wrappers is equivalent to <a href="/intro/installation/jquery-initialization">jQuery plugin syntax initialization</a>. To create Kendo UI widget instances with AngularJS, do not use server wrappers for these instances. Also, the two frameworks have some overlapping features, such as Angular binding and Kendo UI MVVM, which must not be mixed.</p>
+</blockquote>
+
+<h2 id="angularjs-kendo-ui-bindings"><a href="#angularjs-kendo-ui-bindings">AngularJS-Kendo UI Bindings</a></h2>
+
+<p>The AngularJS bindings are now integrated into Kendo UI. If you are using one of the bundles, such as <code>kendo.all.min.js</code>, the required code is already there. If you load individual Kendo UI files, also load <code>kendo.angular.js</code> or <code>kendo.angular.min.js</code>. It has to be loaded after <code>kendo.core.js</code>.</p>
+
+<p>To activate the Angular bindings, load <code>angular.js</code> before you load Kendo UI and load the scripts in the following order.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;script src="jquery.js"&gt;&lt;/script&gt;
+&lt;script src="angular.js"&gt;&lt;/script&gt;
+&lt;script src="kendo.all.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Remember to load the Kendo UI stylesheets too. Next, when creating your AngularJS application, declare a dependency on <code>"kendo.directives"</code> as shown below.</p>
+
+<h6>Example</h6>
+
+<pre><code>var app = angular.module("your-angular-app", [ "kendo.directives" ]);
+</code></pre>
+
+<h3 id="widget-creation-in-angularjs"><a href="#widget-creation-in-angularjs">Widget Creation in AngularJS</a></h3>
+
+<p>The directives start to operate on attributes like <code>kendo-widget-name</code>.</p>
+
+<p>The following example demonstrates how to get the <code>DatePicker</code> widget.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;label&gt;Birthday: &lt;input kendo-date-picker /&gt;&lt;/label&gt;
+</code></pre>
+
+<p>When AngularJS compiles the HTML, the Kendo UI directive turn the <code>&lt;input&gt;</code> field into a nice DatePicker widget.</p>
+
+<p>The following example demonstrates how to discard the dashes after <code>kendo-</code> as a shortcut approach.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;input kendo-numerictextbox /&gt;
+</code></pre>
+
+<h3 id="widget-html-options"><a href="#widget-html-options">Widget HTML Options</a></h3>
+
+<p>It is possible for you to specify any options supported by Kendo UI widgets in <code>element</code> attributes by converting the option name from camelCase to dash-separated-words and prefixing it with a <code>k-</code>.</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<ul>
+<li>If any of the defined attribute options are <code>undefined</code>, the widget will not initialize. For example, if the NumericTextBox <code>k-max</code> attribute points to a <code>$scope.maxNumber</code> field which is <code>undefined</code>, it will not initialize.</li>
+<li>If the attributes match the widget options, Kendo UI bindings parse them without prefixes. For example, the HTML5 <code>placeholder</code> attribute defined in the NumericTextBox element will be parsed as an Angular expression, because the widget has a <code>placeholder</code> option. Because of this built-in functionality, ensure that the attribute has a valid Angular expression or a valid string value, rendered between <code>'</code> (single quote) characters.</li>
+</ul>
+</blockquote>
+
+<h4>Setting Options as Attributes</h4>
+
+<p>The following example demonstrates an important detail—the <code>'Increment'</code> and <code>'Decrement'</code> strings are quoted inside the attribute values. Without the single quote inside they are interpreted as variable names and AngularJS-Kendo UI will look for the <code>$scope.Increment</code> and <code>$scope.Decrement</code> variables. The omission of the quotes is a common error—that is why AngularJS-Kendo UI emit a warning in the JS console whenever such variables are not found.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div ng-app="app" ng-controller="MyCtrl"&gt;
+        &lt;input kendo-numerictextbox k-min="1" k-max="10" k-up-arrow-text="'Increment'" k-down-arrow-text="'Decrement'"&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+    angular.module("app", ["kendo.directives"]).controller("MyCtrl", function($scope) {
+    });
+    &lt;/script&gt;
+</code></pre>
+
+<h4>Specifying Options from Controller</h4>
+
+<p>The following example demonstrates how to specify options form the <code>controller</code> in AngularJS projects.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div ng-app="app" ng-controller="MyCtrl"&gt;
+        &lt;input kendo-numerictextbox k-min="1" k-max="10" k-up-arrow-text="textUp" k-down-arrow-text="textDown"&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+    angular.module("app", ["kendo.directives"]).controller("MyCtrl", function($scope) {
+        $scope.textUp = "Increment";
+        $scope.textDown = "Decrement";
+    });
+    &lt;/script&gt;
+</code></pre>
+
+<h4>Setting Array and Object Options as Attributes</h4>
+
+<p>The following example demonstrates how to use declarative attributes for the <code>array</code> and <code>object</code> configuration options too.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div ng-app="app" ng-controller="MyCtrl"&gt;
+        &lt;textarea kendo-editor
+                  k-tools="[
+                      'bold',
+                      'italic',
+                      'undeline',
+                      {
+                        name: 'foreColor',
+                        palette: [ '#f00', '#0f0', '#00f' ]
+                      }
+                  ]"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+    angular.module("app", ["kendo.directives"]).controller("MyCtrl", function($scope) {
+    });
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="widget-configuration-in-controller"><a href="#widget-configuration-in-controller">Widget Configuration in Controller</a></h3>
+
+<p>The following example demonstrates how to store the whole widget configuration in the <code>controller</code> by using the special <code>k-options</code> attribute.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div ng-app="app" ng-controller="MyCtrl"&gt;
+        &lt;input kendo-date-picker k-options="monthPickerConfig"&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+    angular.module("app", ["kendo.directives"]).controller("MyCtrl", function($scope) {
+        $scope.monthPickerConfig = {
+          start  : "year",
+          depth  : "year",
+          format : "MMMM yyyy"
+        };
+    });
+    &lt;/script&gt;
+</code></pre>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>If any of the defined attribute options are <code>undefined</code>, the widget will not initialize. For example, if the NumericTextBox <code>k-max</code> attribute points to a <code>$scope.maxNumber</code> field which is <code>undefined</code>, it will not initialize.</p>
+</blockquote>
+
+<h3 id="template-directives"><a href="#template-directives">Template Directives</a></h3>
+
+<p>The data-bound container widgets may have their template options specified as nested directives.</p>
+
+<p>The following example demonstrates how to set templates through the AngularJS directives.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div ng-app="app" ng-controller="MyCtrl"&gt;
+      &lt;div kendo-list-view k-data-source="source"&gt;
+        &lt;!-- the template (including the div tag itself) here will be assigned as a string to the `template` configuration option of the listview widget --&gt;
+        &lt;div class="product" k-template&gt;
+            &lt;img ng-src="https://demos.telerik.com/kendo-ui/content/web/foods/{{dataItem.ProductID}}.jpg" alt="{{dataItem.ProductName}} image" /&gt;
+            &lt;h3&gt;{{ dataItem.ProductName }}&lt;/h3&gt;
+            &lt;p&gt;{{ dataItem.UnitPrice | currency:"USD$":0 }}&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+    angular.module("app", ["kendo.directives"]).controller("MyCtrl", function($scope) {
+       $scope.source = new kendo.data.DataSource({
+         transport: {
+           read: {
+             url: "https://demos.telerik.com/kendo-ui/service/products",
+             dataType: "jsonp"
+           }
+         },
+         pageSize: 21
+      });
+    });
+    &lt;/script&gt;
+</code></pre>
+
+<p>The following table provides information on the template directives that are supported by the Kendo UI widgets.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">WIDGET</th>
+<th align="left">SUPPORTED TEMPLATE DIRECTIVES</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">TreeMap</td>
+<td align="left"><code>k-template</code></td>
+</tr>
+<tr>
+<td align="left">MobileListView</td>
+<td align="left">
+<code>k-header-template</code> and <code>k-template</code>
+</td>
+</tr>
+<tr>
+<td align="left">MobileScrollView</td>
+<td align="left">
+<code>k-empty-template</code> and <code>k-template</code>
+</td>
+</tr>
+<tr>
+<td align="left">Grid</td>
+<td align="left">
+<code>k-alt-row-template</code>, <code>k-detail-template</code>, and <code>k-row-template</code>
+</td>
+</tr>
+<tr>
+<td align="left">ListView</td>
+<td align="left">
+<code>k-edit-template</code>, <code>k-template</code>, and <code>k-alt-template</code>
+</td>
+</tr>
+<tr>
+<td align="left">Pager</td>
+<td align="left">
+<code>k-select-template</code> and <code>k-link-template</code>
+</td>
+</tr>
+<tr>
+<td align="left">PivotGrid</td>
+<td align="left">
+<code>k-column-header-template</code>, <code>k-data-cell-template</code>, and <code>k-row-header-template</code>
+</td>
+</tr>
+<tr>
+<td align="left">Scheduler</td>
+<td align="left">
+<code>k-all-day-event-template</code>, <code>k-date-header-template</code>, <code>k-event-template</code>, <code>k-major-time-header-template</code>, and <code>k-minor-time-header-template</code>
+</td>
+</tr>
+<tr>
+<td align="left">TreeView</td>
+<td align="left"><code>k-template</code></td>
+</tr>
+<tr>
+<td align="left">Validator</td>
+<td align="left"><code>k-error-template</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="scope-bindings"><a href="#scope-bindings">Scope Bindings</a></h3>
+
+<h4>Binding Values: ng-model</h4>
+
+<p>To bind the value of widgets that provide a <code>value()</code> method to the AngularJS scope, use the standard <code>ng-model</code> directive.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div ng-app="app" ng-controller="MyCtrl"&gt;
+      &lt;label&gt;Birthday: &lt;input kendo-date-picker ng-model="birthday" /&gt;&lt;/label&gt;
+      &lt;p&gt;
+        Your selection: {{ birthday }}
+      &lt;/p&gt;  
+    &lt;/div&gt;
+    &lt;script&gt;
+    angular.module("app", ["kendo.directives"]).controller("MyCtrl", function($scope) {
+    });
+    &lt;/script&gt;
+</code></pre>
+
+<p>The input field is now bound to the scope variable. When you select a date, the <code>birthday</code> variable is set to the value of the input field as a string.</p>
+
+<h4>Binding Values: k-ng-model</h4>
+
+<p>If your element is a form field that has a text value, such as <code>&lt;input&gt;</code> or <code>&lt;textarea&gt;</code>, <code>ng-model</code> binds the field contents. So, for the DatePicker example above, you get a string date instead of a JavaScript Date object in the scope.</p>
+
+<p>The following example demonstrates how to get the actual <code>widget.value()</code> by using <code>k-ng-model</code>.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div ng-app="app" ng-controller="MyCtrl"&gt;
+      &lt;label&gt;Birthday: &lt;input kendo-date-picker k-ng-model="birthday" /&gt;&lt;/label&gt;
+      &lt;p&gt;
+        Your selection: {{ birthday }}
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+    angular.module("app", ["kendo.directives"]).controller("MyCtrl", function($scope) {
+    });
+    &lt;/script&gt;
+</code></pre>
+
+<p>The directive will update the <code>birthday</code> variable with the selected <code>Date</code> object whenever the <code>change</code> event occurs on the widget.</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>If you are using AngularJS, it is convenient to apply the Angular's own routing mechanism and data binding. However, do not mix these with the Kendo UI MVVM.</p>
+</blockquote>
+
+<h3 id="the-k-value-primitive-attribute"><a href="#the-k-value-primitive-attribute">The k-value-primitive Attribute</a></h3>
+
+<p>As of the Kendo UI Q3 2014 (2014.3.1119) release, the <code>k-value-primitive</code> attribute has been introduced for the DropDownList, ComboBox, MultiSelect, and AutoComplete widgets.</p>
+
+<p>The <code>k-value-primitive</code> option enables you to set the widget to either use primitive or object values. It works in a similar way as the <code>data-value-primitive</code> option in the <a href="/framework/mvvm/bindings/value#use-the-value-binding-with-a-select-widget-to-update-the-view-model-field-with-the-value-field-when-the-initial-value-is-null">MVVM value binding</a>. By using this option you can always apply the <code>k-ng-model</code> attribute no matter if you are using primitive or non-primitive values. By default, the attribute is set to <code>false</code>.</p>
+
+<h4>Setting to false</h4>
+
+<p>Setting the <code>k-value-primitive</code> to <code>false</code> forces the widget to accept or return an object or an array of objects for the MultiSelect holding the current value selected.</p>
+
+<p>The following example demonstrates that the MultiSelect displays <code>Chai</code> as selected and that the value of the widget is set to <code>[{"ProductName":"Chai","ProductID":1}]</code>.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div ng-app="app" ng-controller="MyCtrl"&gt;
+        &lt;h4&gt;Select product&lt;/h4&gt;
+        &lt;select kendo-multi-select k-options="selectOptions" k-ng-model="selectedIds" k-value-primitive="false"&gt;&lt;/select&gt;
+        &lt;p ng-show="selectedIds.length"&gt;&lt;br /&gt;Selected: {{ selectedIds }}&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+      angular.module("app", [ "kendo.directives" ]).controller("MyCtrl", function($scope){
+        $scope.selectOptions = {
+          placeholder: "Select products...",
+          dataTextField: "ProductName",
+          dataValueField: "ProductID",
+          dataSource: {
+            transport: {
+              read: {
+                url: "https://demos.telerik.com/kendo-ui/service/products",
+                dataType: "jsonp"
+              }
+            }
+          }
+        };
+        $scope.selectedIds = [ {ProductName: "Chai", ProductID: 1} ];
+      })
+    &lt;/script&gt;
+</code></pre>
+
+<h4>Setting to true</h4>
+
+<p>In this scenario, when <code>k-value-primitive</code> is set to <code>true</code>, you can pass an array of primitive values holding the IDs of the elements that you want to select.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div ng-app="app" ng-controller="MyCtrl"&gt;
+        &lt;h4&gt;Select product&lt;/h4&gt;
+        &lt;select kendo-multi-select k-options="selectOptions" k-ng-model="selectedIds" k-value-primitive="true"&gt;&lt;/select&gt;
+        &lt;p ng-show="selectedIds.length"&gt;&lt;br /&gt;Selected: {{ selectedIds }}&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+      angular.module("app", [ "kendo.directives" ]).controller("MyCtrl", function($scope){
+        $scope.selectOptions = {
+          placeholder: "Select products...",
+          dataTextField: "ProductName",
+          dataValueField: "ProductID",
+          dataSource: {
+            transport: {
+              read: {
+                url: "https://demos.telerik.com/kendo-ui/service/products",
+                dataType: "jsonp"
+              }
+            }
+          }
+        };
+        $scope.selectedIds = [1, 9] ;
+      })
+    &lt;/script&gt;
+</code></pre>
+
+<p>In this case the widget displays <code>Chai</code> and <code>Mishi Kobe Niku</code> as selected and the value of the widget is set to <code>[1,9]</code>.</p>
+
+<h3 id="event-handlers"><a href="#event-handlers">Event Handlers</a></h3>
+
+<h4>Setting Handlers through Widget Configuration Options</h4>
+
+<p>If you store the whole configuration in the <code>controller</code>, add an event handler in the same way as with plain Kendo UI.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div ng-app="app" ng-controller="MyCtrl"&gt;
+      &lt;input kendo-date-picker k-options="monthPickerConfig" /&gt;
+      &lt;p ng-show="selected"&gt;A month was picked&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+      angular.module("app", [ "kendo.directives" ]).controller("MyCtrl", function($scope) {
+          $scope.monthPickerConfig = {
+            start  : "year",
+            depth  : "year",
+            format : "MMMM yyyy",
+            change : function(e) { // handler for "change" event
+              var datePicker = e.sender;
+              console.log(datePicker.value());
+              $scope.selected = true;
+              $scope.$digest();
+            }
+          };
+      });
+    &lt;/script&gt;
+</code></pre>
+
+<p>The sample above includes a paragraph that is using the Angular's <code>ng-show</code> directive and is displayed only after a month was picked. The <code>$scope.$digest()</code> event handler had to be called to make this approach work.</p>
+
+<h4>Setting Handlers through k-on Attribute</h4>
+
+<p>You can also specify event handlers by using attributes. They require the <code>k-on-</code> prefix.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div ng-app="app" ng-controller="MyCtrl"&gt;
+      &lt;input kendo-date-picker k-on-change="onDateSelected(kendoEvent)" /&gt;
+      &lt;p ng-show="selected"&gt;A month was picked&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+      angular.module("app", [ "kendo.directives" ]).controller("MyCtrl", function($scope) {
+        $scope.onDateSelected = function(e) {
+          var datePicker = e.sender;
+          console.log(datePicker.value());
+          $scope.selected = true;
+        };
+      });
+    &lt;/script&gt;
+</code></pre>
+
+<p>The <code>kendoEvent</code> variable is defined in a scope and you have to pass it to the event handler. If you are using the <code>k-on-</code> attributes, you do not need to call <code>$digest()</code> on the scope because your bindings take care of it.</p>
+
+<h4>Special Change Event on Some Widgets</h4>
+
+<p>The Grid, TreeView, and ListView widgets evaluate handlers defined with <code>k-on-change</code> in a scope containing additional information about the selected items as local variables.</p>
+
+<p>The following locals are defined:</p>
+
+<ul>
+<li>
+<code>selected</code> (jQuery object)—The selected elements.</li>
+<li>
+<code>data</code> (array or data item)—The selected data models. It will be an array when a multiple selection is enabled, or a single item otherwise.</li>
+<li>
+<code>dataItem</code>—When multiple selection is not enabled, this is provided for consistency and will be the same item as <code>data</code>.</li>
+<li>
+<code>angularDataItem</code>—When multiple selection is not enabled, this is the <code>dataItem</code> object that has its properties wrapped with getter/setters.</li>
+<li>
+<code>columns</code>—For the Grid, when the cell selection is enabled, it will be an array with zero-based column indexes for the selected columns. Also, in this case, the <code>selected</code> object will contain the respective <code>&lt;td&gt;</code> elements instead of the <code>&lt;tr&gt;</code> ones.</li>
+</ul>
+
+<p>The <code>kendoEvent</code> is available as well.</p>
+
+<p>The following example demonstrates how to use some of these local variables.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div id="example" ng-app="KendoDemos"&gt;
+      &lt;div ng-controller="MyCtrl"&gt;
+        &lt;kendo-grid options="mainGridOptions" k-on-change="onChange({ selected: selected },data,dataItem,angularDataItem)"&gt;
+        &lt;/kendo-grid&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+      angular.module("KendoDemos", [ "kendo.directives" ])
+        .controller("MyCtrl", function($scope){
+        $scope.onChange = function(selected,data,dataIteam,angularDataItem) {
+          console.log("Selected: "+ selected.selected,data,dataIteam,angularDataItem);
+          console.log("data: ", data);
+          console.log("dataIteam: ", dataIteam);
+          console.log("angularDataItem: ", angularDataItem);                    
+        }
+        $scope.mainGridOptions = {
+          dataSource: {
+            type: "odata",
+            transport: {
+              read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Employees"
+            },
+            pageSize: 5,
+            serverPaging: true,
+            serverSorting: true
+          },
+          selectable:true,
+          columns: [{
+            field: "FirstName",
+            title: "First Name",
+            width: "120px"
+          },{
+            field: "LastName",
+            title: "Last Name",
+            width: "120px"
+          }]
+        };
+      })
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="widget-update-upon-option-changes"><a href="#widget-update-upon-option-changes">Widget Update upon Option Changes</a></h3>
+
+<p>To create a widget that automatically updates when some of the scope variables changes, update the widget from <code>controller</code> by using the special <code>k-rebind</code> attribute. This option destroys the original widget and recreates it using the changed option.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div ng-app="app" ng-controller="MyCtrl"&gt;
+      &lt;ul kendo-menu k-orientation="orientation" k-rebind="orientation"&gt;
+        &lt;li&gt;Item 1&lt;/li&gt;
+        &lt;li&gt;Item 2&lt;/li&gt;
+        &lt;li&gt;Item 3&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;select kendo-drop-down-list ng-model="orientation"&gt;
+        &lt;option&gt;horizontal&lt;/option&gt;
+        &lt;option&gt;vertical&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+      angular.module("app", [ "kendo.directives" ]).controller("MyCtrl", function($scope) {
+        $scope.orientation = "horizontal";
+      });
+    &lt;/script&gt;
+</code></pre>
+
+<p>The following example demonstrates how to use <code>k-options</code> and pass the same variable to <code>k-rebind</code> when watching multiple options for changes, .</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>This approach is not suitable for <code>dataBound</code> widgets because those widgets are recreated on each change of their data—for example, after paging of the Grid.</p>
+</blockquote>
+
+<h6>Example</h6>
+
+<pre><code>&lt;ul kendo-menu k-options="menuOptions" k-rebind="menuOptions"&gt; ... &lt;/ul&gt;
+</code></pre>
+
+<h3 id="state-changes"><a href="#state-changes">State Changes</a></h3>
+
+<p>The Kendo UI Q1 2015 release introduces support for the <code>k-ng-disabled</code> and <code>k-ng-readonly</code> directives. By using them, you can change the <code>disabled</code> or <code>readonly</code> state of the widget based on a scope variable.</p>
+
+<p>All widgets that contain the <code>enabled</code> method, except for the PanelBar and the Menu, support the <code>k-ng-disabled</code> directive.</p>
+
+<p>All widgets that contain the <code>readonly</code> method support the <code>k-ng-readonly</code> directive.</p>
+
+<p>The following example demonstrates how to change the disabled state of the DropDownList.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div id="example" ng-app="KendoDemos"&gt;
+      &lt;div class="demo-section k-content" ng-controller="MyCtrl"&gt;
+        &lt;select id="customers"
+                kendo-drop-down-list
+                k-ng-disabled = "isDisabled"
+                k-options="customOptions"&gt;&lt;/select&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+      angular.module("KendoDemos", [ "kendo.directives" ])
+      .controller("MyCtrl", function($scope){
+        $scope.isDisabled = true;
+        $scope.customOptions = {
+          dataSource: {
+            transport: {
+              read: {
+                dataType: "jsonp",
+                url: "https://demos.telerik.com/kendo-ui/service/Customers",
+              }
+            }
+          },
+          dataTextField: "ContactName",
+          dataValueField: "CustomerID"
+        };
+      })
+    &lt;/script&gt;
+</code></pre>
+
+<p>The following example demonstrates how to change the read-only state of the DropDownList.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div id="example" ng-app="KendoDemos"&gt;
+      &lt;div class="demo-section k-content" ng-controller="MyCtrl"&gt;
+        &lt;select id="customers"
+                kendo-drop-down-list
+                k-ng-readonly = "isReadonly"
+                k-options="customOptions"&gt;&lt;/select&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+      angular.module("KendoDemos", [ "kendo.directives" ])
+      .controller("MyCtrl", function($scope){
+        $scope.isReadonly = true;
+        $scope.customOptions = {
+          dataSource: {
+            transport: {
+              read: {
+                dataType: "jsonp",
+                url: "https://demos.telerik.com/kendo-ui/service/Customers",
+              }
+            }
+          },
+          dataTextField: "ContactName",
+          dataValueField: "CustomerID"
+        };
+      })
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="delaying-widget-initialization"><a href="#delaying-widget-initialization">Delaying Widget Initialization</a></h3>
+
+<p>In particular scenarios it is useful to postpone the creation of a widget until some asynchronously loaded data becomes available. For example, initializing a Grid when you load the column definitions from the server as the Grid does not support re-defining columns after the widget is instantiated.</p>
+
+<h4>Using k-ng-delay Attribute</h4>
+
+<p>To delay the initialization of a widget, use the special <code>k-ng-delay</code> attribute.</p>
+
+<p>The following example demonstrates that the Grid is created only when the <code>gridOptions</code> variable becomes available.</p>
+
+<h6>Example</h6>
+
+<pre><code>// in controller
+$http({ method: "GET", url: "customers.json" })
+  .success(function(result){
+    var dataSource = new kendo.data.DataSource({
+      data: result.data
+    });
+    $scope.gridOptions = {
+      dataSource: data,
+      columns: result.columns,
+      ...
+    };
+  });
+
+&lt;!-- in HTML: --&gt;
+&lt;div kendo-grid k-options="gridOptions" k-ng-delay="gridOptions"&gt;&lt;/div&gt;
+</code></pre>
+
+<h4>Using HTTP Calls</h4>
+
+<p>You can load the widget data with a <code>$http</code> call and initialize the widget when the data is available.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>&lt;div ng-app="app" ng-controller="MyCtrl"&gt;
+  &lt;select kendo-drop-down-list k-options="customOptions" k-ng-delay="customOptions.dataSource"&gt;&lt;/select&gt;
+&lt;/div&gt;
+&lt;script&gt;
+  angular.module("app", [ "kendo.directives" ]).controller("MyCtrl", function($scope, $http) {
+    $http({method: "GET", url: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Products"})
+      .success(function(result){
+        $scope.customOptions.dataSource = new kendo.data.DataSource({
+          data: result.d
+        });
+      });
+    $scope.customOptions = {
+      dataTextField: "ProductName",
+      dataValueField: "ProductID"
+    };
+  });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="widget-references"><a href="#widget-references">Widget References</a></h3>
+
+<h4>Getting Instances in Controller</h4>
+
+<p>To call methods on a widget from your controller, you might sometimes need a reference to the widget. To get such, assign a name to the <code>kendo-widget-name</code> attribute.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>&lt;div ng-app="app" ng-controller="MyCtrl"&gt;
+  &lt;input kendo-datepicker="datePicker" k-on-change="onChange()"&gt;
+&lt;/div&gt;
+&lt;script&gt;
+  angular.module("app", [ "kendo.directives" ]).controller("MyCtrl", function($scope) {
+    $scope.onChange = function() {
+     alert($scope.datePicker.value());
+    };
+  });
+&lt;/script&gt;
+</code></pre>
+
+<h4>Using Tag Directive</h4>
+
+<p>As of the Kendo UI Q1 2015 release, if you use the tag directive variant, you can set the <code>k-scope-field</code> to achieve the same.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div ng-app="app" ng-controller="MyCtrl"&gt;
+      &lt;kendo-date-picker k-scope-field="datePicker" k-on-change="onChange()"&gt;&lt;/kendo-date-picker&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+      angular.module("app", [ "kendo.directives" ]).controller("MyCtrl", function($scope) {
+        $scope.onChange = function() {
+         alert($scope.datePicker.value());
+        };
+      });
+    &lt;/script&gt;
+</code></pre>
+
+<h4>Setting Options in Link Function</h4>
+
+<p>As of the Kendo UI Q2 2015 release, the timeout initialization of the widgets is removed.</p>
+
+<p>To set the options of a widget as part of the link function of a custom directive, use <code>k-ng-delay</code> and <code>timeout</code>.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div id="example" ng-app="KendoDemos"&gt;
+        &lt;div class="demo-section k-header" ng-controller="MyCtrl"&gt;
+            &lt;my-custom-directive /&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        angular.module("KendoDemos", [ "kendo.directives" ])
+            .directive('myCustomDirective', function($timeout) {
+                return {
+                    template: '&lt;input kendo-auto-complete k-options="options" k-ng-delay="options" style="width: 100%;" /&gt;',
+                    link: function (scope) {
+                    $timeout(function() {
+                        scope.options = { placeholder: 'placeholder text here'};
+                    })
+                }
+            };
+        })
+        .controller("MyCtrl", function($scope){});
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="widgets-placed-in-window"><a href="#widgets-placed-in-window">Widgets Placed in Window</a></h3>
+
+<p>AngularJS creates a new scope for the content placed in a window. The reason for this behavior is the dynamic scoping of the framework. A widget placed in the window or popup loses its connection to the parent scope and does not handle any changes to the parent scope.</p>
+
+<h4>Getting AngularJS Scope Attached to Pop-Up Window</h4>
+
+<p>The available workaround is either:</p>
+
+<ul>
+<li>To use the <a href="http://docs.telerik.com/kendo-ui/api/javascript/ui/window#configuration-appendTo"><code>appendTo</code></a> option to append the window to another HTML element which is part of the Angular application and scope, or</li>
+<li>To initialize the AngularJS application on the body.</li>
+</ul>
+
+<p>The following example demonstrates the first approach and it shows how to find the window or popup element and get the scope from it.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div id="example" ng-app="KendoDemos"&gt;
+        &lt;div class="demo-section k-header" ng-controller="MyCtrl"&gt;
+            &lt;div kendo-window="wnd" k-append-to="'#example'"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        angular.module("KendoDemos", [ "kendo.directives" ])
+        .controller("MyCtrl", function($scope){
+          $scope.$on("kendoRendered", function(e) {
+            //retrieve the child scope from the window element
+            var childScope = angular.element($scope.wnd.element).scope();
+            console.log(childScope);
+          });
+        });
+    &lt;/script&gt;
+</code></pre>
+
+<h4>Using Separate Controller to Resolve Window Scopes</h4>
+
+<p>The following example demonstrates the best solution in this case—to use a separate <code>controller</code> that handles the scope of the window.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div ng-controller="Host"&gt;
+      &lt;div class="demo-section k-content"&gt;
+
+        &lt;div kendo-window="editPopup" k-modal="true" k-title="'popupTitle'" k-width="300"
+               k-resizable="false" k-height="200" k-visible="false"&gt;
+
+            &lt;div ng-controller="Popup"&gt;
+              &lt;span&gt;Selected: {{dataview.DataSourceID}} &lt;/span&gt;
+              &lt;select kendo-drop-down-list style="width:230px;"
+                      ng-model="dataview.DataSourceID"
+                      k-data-text-field="'Name'"
+                      k-data-value-field="'ID'"
+                      k-data-source="datasources"&gt;&lt;/select&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;button kendo-button ng-click="Show()"&gt;Show&lt;/button&gt;
+
+     &lt;/div&gt;
+
+     &lt;script&gt;
+      angular.module("KendoDemos", ["kendo.directives"])
+      .controller("Host", function($scope) {
+        $scope.Show = function() {
+          $scope.editPopup.center();
+          $scope.editPopup.open();
+        }
+      }).controller("Popup", function($scope) {
+        var datasources = [{ ID: 13, Name: "ID is 13" }, { ID: 14, Name: "ID is 14" }];
+        $scope.datasources = datasources;
+        var dataview = { DataSourceID: 14 };
+        $scope.dataview = dataview;
+      });
+
+     &lt;/script&gt;
+
+    &lt;/div&gt;
+</code></pre>
+
+<h2 id="known-limitations"><a href="#known-limitations">Known Limitations</a></h2>
+
+<p>As of the Kendo UI 2015 Q2 release, if the widget's <code>k-options</code> is bound to a non-existing object, the widget is not initialized. This is caused by a change introduced to accommodate the AngularJS router implementation which causes the widget to wait for the options object to be set.</p>
+
+<h2 id="see-also"><a href="#see-also">See Also</a></h2>
+
+<p>Other articles on AngularJS directives and integration with Kendo UI:</p>
+
+<ul>
+<li><a href="/AngularJS/global-events">Global Events</a></li>
+<li><a href="/AngularJS/the-grid-widget">Grid Settings</a></li>
+<li><a href="/AngularJS/data-source">Directives with DataSource</a></li>
+<li><a href="/AngularJS/Troubleshooting/notes-on-ng-repeat">ng-* Directives in Widget Markup</a></li>
+<li><a href="/AngularJS/Troubleshooting/leak">Memory Leaks</a></li>
+<li><a href="/AngularJS/how-to/window-service">How to Load View in Window</a></li>
+<li><a href="/AngularJS/how-to/nesting-widgets">How to Nest Widgets</a></li>
+<li><a href="/AngularJS/Troubleshooting/common-issues">Troubleshooting: Common Issues</a></li>
+<li><a href="http://ngmigrate.telerik.com/">Angular 2 Migration Guide</a></li>
+</ul> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

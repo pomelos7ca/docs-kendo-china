@@ -1,0 +1,878 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="documentation">
+        <meta name="product" content="php-ui">
+        
+        <title>Editing | ListView PHP Class</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Edit the Kendo UI ListView PHP class.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/php-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/php-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/php-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/php-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/php-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("php/widgets/listview/editing.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//php/widgets/listview/editing.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="editing"><a href="#editing">Editing</a></h1>
+
+<p>This help topic shows how to persist the changes from create, update and destroy operations using Kendo UI ListView for PHP.</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>The following demos are using the sample SQLite database shipped with the Telerik UI for PHP demos (<code>/wrappers/php/sample.db</code>).</p>
+</blockquote>
+
+<h2 id="edit-with-pdo"><a href="#edit-with-pdo">Edit with PDO</a></h2>
+
+<p>This demo shows how to use <a href="http://www.php.net/manual/en/intro.pdo.php">PDO</a> to perform the create, update, and destroy data operations.</p>
+
+<h3 id="configurаtion"><a href="#configur%D0%B0tion">Configurаtion</a></h3>
+
+<p><strong>Step 1</strong> Make sure you followed all the steps from the <a href="/php/introduction">introductory article on Telerik UI for PHP</a>—include the autoloader, JavaScript, and CSS files.</p>
+
+<p><strong>Step 2</strong> Define the item template for the ListView.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;!-- The following markup contains the `Add new record` button --&gt;
+    &lt;div class="k-toolbar k-grid-toolbar"&gt;
+        &lt;a class="k-button k-button-icontext k-add-button" href="#"&gt;&lt;span class="k-icon k-add"&gt;&lt;/span&gt;Add new record&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;!-- ListView item template --&gt;
+    &lt;script id="list-view-template" type="text/x-kendo-template"&gt;
+        &lt;div class="product-view"&gt;
+                &lt;dl&gt;
+                    &lt;dt&gt;Product Name&lt;/dt&gt;
+                    &lt;dd&gt;${ProductName}&lt;/dd&gt;
+                    &lt;dt&gt;Unit Price&lt;/dt&gt;
+                    &lt;dd&gt;${kendo.toString(UnitPrice, "c")}&lt;/dd&gt;
+                    &lt;dt&gt;Units In Stock&lt;/dt&gt;
+                    &lt;dd&gt;${UnitsInStock}&lt;/dd&gt;
+                    &lt;dt&gt;Discontinued&lt;/dt&gt;
+                    &lt;dd&gt;${Discontinued}&lt;/dd&gt;
+                &lt;/dl&gt;
+                &lt;div class="edit-buttons"&gt;
+                    &lt;a class="k-button k-button-icontext k-edit-button" href="\\#"&gt;&lt;span class="k-icon k-edit"&gt;&lt;/span&gt;Edit&lt;/a&gt;
+                    &lt;a class="k-button k-button-icontext k-delete-button" href="\\#"&gt;&lt;span class="k-icon k-delete"&gt;&lt;/span&gt;Delete&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+    &lt;/script&gt;
+</code></pre>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>Click events for elements with the <code>k-edit-button</code> and <code>k-delete-button</code> class names will be automatically handled and treated by the Kendo UI ListView as <code>edit</code> and <code>delete</code> actions.</p>
+</blockquote>
+
+<p><strong>Step 3</strong> Define the edit template for the ListView.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;script type="text/x-kendo-tmpl" id="editTemplate"&gt;
+    &lt;div class="product-view"&gt;
+        &lt;dl&gt;
+            &lt;dt&gt;Product Name&lt;/dt&gt;
+            &lt;dd&gt;
+                &lt;input type="text" data-bind="value:ProductName" name="ProductName" required="required" validationMessage="required" /&gt;
+                &lt;span data-for="ProductName" class="k-invalid-msg"&gt;&lt;/span&gt;
+            &lt;/dd&gt;
+            &lt;dt&gt;Unit Price&lt;/dt&gt;
+            &lt;dd&gt;
+                &lt;input type="text" data-bind="value:UnitPrice" data-role="numerictextbox" data-type="number" name="UnitPrice" required="required" min="1" validationMessage="required" /&gt;
+                &lt;span data-for="UnitPrice" class="k-invalid-msg"&gt;&lt;/span&gt;
+            &lt;/dd&gt;
+            &lt;dt&gt;Units In Stock&lt;/dt&gt;
+            &lt;dd&gt;
+                &lt;input type="text" data-bind="value:UnitsInStock" data-role="numerictextbox" name="UnitsInStock" required="required" data-type="number" min="0" validationMessage="required" /&gt;
+                &lt;span data-for="UnitsInStock" class="k-invalid-msg"&gt;&lt;/span&gt;
+            &lt;/dd&gt;
+            &lt;dt&gt;Discontinued&lt;/dt&gt;
+            &lt;dd&gt;&lt;input type="checkbox" name="Discontinued" data-bind="checked:Discontinued"&gt;&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;div class="edit-buttons"&gt;
+            &lt;a class="k-button k-button-icontext k-update-button" href="\\#"&gt;&lt;span class="k-icon k-update"&gt;&lt;/span&gt;Save&lt;/a&gt;
+            &lt;a class="k-button k-button-icontext k-cancel-button" href="\\#"&gt;&lt;span class="k-icon k-cancel"&gt;&lt;/span&gt;Cancel&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/script&gt;
+</code></pre>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>Click events for elements with class name <strong>k-update-button</strong> and <strong>k-cancel-button</strong> will be automatically handled and treated by Kendo ListView as <strong>save</strong> and <strong>cancel</strong> actions.</p>
+</blockquote>
+
+<p><strong>Step 4</strong> Create a data source and configure it.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    $transport = new \Kendo\Data\DataSourceTransport();
+
+    // Configure the remote service - a PHP file called 'products.php'
+    // The query string parameter 'type' specifies the type of CRUD operation
+
+    $create = new \Kendo\Data\DataSourceTransportCreate();
+
+    $create-&gt;url('products.php?type=create')
+           -&gt;contentType('application/json')
+           -&gt;type('POST');
+
+    $read = new \Kendo\Data\DataSourceTransportRead();
+
+    $read-&gt;url('products.php?type=read')
+         -&gt;contentType('application/json')
+         -&gt;type('POST');
+
+    $update = new \Kendo\Data\DataSourceTransportUpdate();
+
+    $update-&gt;url('products.php?type=update')
+           -&gt;contentType('application/json')
+           -&gt;type('POST');
+
+    $destroy = new \Kendo\Data\DataSourceTransportDestroy();
+
+    $destroy-&gt;url('products.php?type=destroy')
+            -&gt;contentType('application/json')
+            -&gt;type('POST');
+
+    // Configure the transport. Send all data source parameters as JSON using the parameterMap setting
+    $transport-&gt;create($create)
+              -&gt;read($read)
+              -&gt;update($update)
+              -&gt;destroy($destroy)
+              -&gt;parameterMap('function(data) {
+                  return kendo.stringify(data);
+              }');
+
+    // Configure the model
+    $model = new \Kendo\Data\DataSourceSchemaModel();
+
+    $productIDField = new \Kendo\Data\DataSourceSchemaModelField('ProductID');
+    $productIDField-&gt;type('number')
+                   -&gt;editable(false)
+                   -&gt;nullable(true);
+
+    $productNameField = new \Kendo\Data\DataSourceSchemaModelField('ProductName');
+    $productNameField-&gt;type('string');     
+
+    $unitPriceField = new \Kendo\Data\DataSourceSchemaModelField('UnitPrice');
+    $unitPriceField-&gt;type('number');
+
+    $unitsInStockField = new \Kendo\Data\DataSourceSchemaModelField('UnitsInStock');
+    $unitsInStockField-&gt;type('number');
+
+    $discontinuedField = new \Kendo\Data\DataSourceSchemaModelField('Discontinued');
+    $discontinuedField-&gt;type('boolean');
+
+    $model-&gt;id('ProductID')
+          -&gt;addField($productIDField)
+          -&gt;addField($productNameField)
+          -&gt;addField($unitPriceField)
+          -&gt;addField($unitsInStockField)
+          -&gt;addField($discontinuedField);
+
+    $schema = new \Kendo\Data\DataSourceSchema();
+
+    $schema-&gt;model($model);
+
+    $dataSource = new \Kendo\Data\DataSource();
+
+    // Configure data source - set transport, schema and enable batch mode
+    $dataSource-&gt;transport($transport)
+               -&gt;batch(true)
+               -&gt;schema($schema);
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 5</strong> Create a ListView, configure its <code>template</code> and set its <code>dataSource</code>.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;!-- The following markup contains the `Add new record` button --&gt;
+    &lt;div class="k-toolbar k-grid-toolbar"&gt;
+        &lt;a class="k-button k-button-icontext k-add-button" href="#"&gt;&lt;span class="k-icon k-add"&gt;&lt;/span&gt;Add new record&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;?php
+    $listview = new \Kendo\UI\ListView('listView');
+    $listview-&gt;dataSource($dataSource)
+             -&gt;templateId('template')
+             -&gt;editTemplateId('editTemplate')
+             -&gt;pageable(true);   
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 6</strong> Output the ListView by echoing the result of the <code>render</code> method.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    echo $listview-&gt;render();
+    ?&gt;
+</code></pre>
+
+<h3 id="create-php-file-which-performs-crud"><a href="#create-php-file-which-performs-crud">Create PHP file which performs CRUD</a></h3>
+
+<p><strong>Step 1</strong> Create a new PHP file called <code>products.php</code>. This file will perform CRUD data operations.</p>
+
+<p><strong>Step 2</strong> Create a PDO connection.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    $db = new PDO('sqlite:../sample.db');
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 3</strong> Read the request body and parse it as JSON. In the previous example, the Kendo UI DataSource is configured to submit its parameters as JSON via the <a href="/api/php/Kendo/Data/DataSourceTransport#parametermap"><code>parameterMap</code></a>.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    $request = json_decode(file_get_contents('php://input'));
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 4</strong> Get the current operation type, available as the <code>type</code> query string parameter.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    $type = $_GET['type'];
+    ?&gt;
+</code></pre>
+
+<!--_-->
+
+<p><strong>Step 5</strong> Declare a variable which will be returned as a result of the operation.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    $result = null;
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 6</strong> Implement <code>create</code>.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    if ($type == 'create') {
+        // In batch mode the inserted records are available in the 'models' field
+        $createdProducts = $request-&gt;models;
+
+        // Will store the ProductID fields of the inserted records
+        $result = array();
+
+        foreach($createdProducts as $product) {
+            // Create SQL INSERT statement
+            $statement = $db-&gt;prepare('INSERT INTO Products (ProductName, UnitPrice, UnitsInStock, Discontinued) VALUES (:productName, :unitPrice, :unitsInStock, :discontinued)');
+
+            // Bind parameter values
+            $statement-&gt;bindValue(':productName', $product-&gt;ProductName);
+            $statement-&gt;bindValue(':unitPrice', $product-&gt;UnitPrice);
+            $statement-&gt;bindValue(':unitsInStock', $product-&gt;UnitsInStock);
+            $statement-&gt;bindValue(':discontinued', $product-&gt;Discontinued);
+
+            // Execute the statement
+            $statement-&gt;execute();
+
+            // Set ProductID to the last inserted ID (ProductID is auto-incremented column)
+            $product-&gt;ProductID = $db-&gt;lastInsertId();
+
+            // The result of the 'create' operation is all inserted products
+            $result[] = $product;
+        }
+    }
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 7</strong> Implement <code>read</code>.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    if ($type == 'read') {
+        // Create SQL SELECT statement
+        $statement = $db-&gt;prepare('SELECT * FROM Products');
+
+        // Execute the statement
+        $statement-&gt;execute();
+
+        // The result of the 'read' operation is all products from the Products table
+        $result = $statement-&gt;fetchAll(PDO::FETCH_ASSOC);
+    }
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 8</strong> Implement <code>update</code>.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    if ($type == 'update') {
+        // in batch mode the updated records are available in the 'models' field
+        $updatedProducts = $request-&gt;models;
+
+        foreach($updatedProducts as $product) {
+            // Create UPDATE SQL statement
+            $statement = $db-&gt;prepare('UPDATE Products SET ProductName = :productName, UnitPrice = :unitPrice, UnitsInStock = :unitsInStock, Discontinued = :discontinued WHERE ProductID = :productID');
+
+            // Bind parameter values
+            $statement-&gt;bindValue(':productID', $product-&gt;ProductID);
+            $statement-&gt;bindValue(':productName', $product-&gt;ProductName);
+            $statement-&gt;bindValue(':unitPrice', $product-&gt;UnitPrice);
+            $statement-&gt;bindValue(':unitsInStock', $product-&gt;UnitsInStock);
+            $statement-&gt;bindValue(':discontinued', $product-&gt;Discontinued);
+
+            // Execute the statement
+            $statement-&gt;execute();
+        }
+    }
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 9</strong> Implement <code>destroy</code>.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    if ($type == 'destroy') {
+        // in batch mode the destroyed records are available in the 'models' field
+        $destroyedProducts = $request-&gt;models;
+
+        foreach($destroyedProducts as $product) {
+            // Create DELETE SQL statement
+            $statement = $db-&gt;prepare('DELETE FROM Products WHERE ProductID = :productID');
+
+            // Bind parameter values
+            $statement-&gt;bindValue(':productID', $product-&gt;ProductID);
+
+            // Execute the statement
+            $statement-&gt;execute();
+        }
+    }
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 10</strong> Return the result of the operation as JSON.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    // Set response content type
+    header('Content-Type: application/json');
+
+    echo json_encode($result);
+    ?&gt;
+</code></pre>
+
+<h2 id="use-datasourceresult-helpers"><a href="#use-datasourceresult-helpers">Use DataSourceResult Helpers</a></h2>
+
+<p>The <code>DataSourceResult</code> class is a helper utility on top of PDO which simplifies common CRUD operations. The <code>DataSourceResult</code> can also perform paging, sorting, filtering, grouping and aggregate calculations on the server side by generating SQL executed via PDO. It is distributed with the Telerik UI for PHP demos and can be found in the <code>/wrappers/php/lib/</code> directory of the Telerik UI for PHP distribution.</p>
+
+<p>First, configure a Kendo UI ListView for PHP binding and then implement the remote service which will return JSON.</p>
+
+<h3 id="configuration-datasourceresult"><a href="#configuration-datasourceresult">Configuration (DataSourceResult)</a></h3>
+
+<p><strong>Step 1</strong> Follow the steps from the <a href="/php/introduction">introductory article on Telerik UI for PHP</a>—include the autoloader, JavaScript and CSS files.</p>
+
+<p><strong>Step 2</strong> Define the item template for the ListView.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;!-- The following markup contains the `Add new record` button --&gt;
+    &lt;div class="k-toolbar k-grid-toolbar"&gt;
+        &lt;a class="k-button k-button-icontext k-add-button" href="#"&gt;&lt;span class="k-icon k-add"&gt;&lt;/span&gt;Add new record&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;!-- ListView item template --&gt;
+    &lt;script id="list-view-template" type="text/x-kendo-template"&gt;
+        &lt;div class="product-view"&gt;
+                &lt;dl&gt;
+                    &lt;dt&gt;Product Name&lt;/dt&gt;
+                    &lt;dd&gt;${ProductName}&lt;/dd&gt;
+                    &lt;dt&gt;Unit Price&lt;/dt&gt;
+                    &lt;dd&gt;${kendo.toString(UnitPrice, "c")}&lt;/dd&gt;
+                    &lt;dt&gt;Units In Stock&lt;/dt&gt;
+                    &lt;dd&gt;${UnitsInStock}&lt;/dd&gt;
+                    &lt;dt&gt;Discontinued&lt;/dt&gt;
+                    &lt;dd&gt;${Discontinued}&lt;/dd&gt;
+                &lt;/dl&gt;
+                &lt;div class="edit-buttons"&gt;
+                    &lt;a class="k-button k-button-icontext k-edit-button" href="\\#"&gt;&lt;span class="k-icon k-edit"&gt;&lt;/span&gt;Edit&lt;/a&gt;
+                    &lt;a class="k-button k-button-icontext k-delete-button" href="\\#"&gt;&lt;span class="k-icon k-delete"&gt;&lt;/span&gt;Delete&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+    &lt;/script&gt;
+</code></pre>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>Click events for elements with the <code>k-edit-button</code> and <code>k-delete-button</code> class name will be automatically handled and treated by the Kendo UI ListView as <code>edit</code> and <code>delete</code> actions.</p>
+</blockquote>
+
+<p><strong>Step 3</strong> Define the edit template for the ListView.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;script type="text/x-kendo-tmpl" id="editTemplate"&gt;
+    &lt;div class="product-view"&gt;
+        &lt;dl&gt;
+            &lt;dt&gt;Product Name&lt;/dt&gt;
+            &lt;dd&gt;
+                &lt;input type="text" data-bind="value:ProductName" name="ProductName" required="required" validationMessage="required" /&gt;
+                &lt;span data-for="ProductName" class="k-invalid-msg"&gt;&lt;/span&gt;
+            &lt;/dd&gt;
+            &lt;dt&gt;Unit Price&lt;/dt&gt;
+            &lt;dd&gt;
+                &lt;input type="text" data-bind="value:UnitPrice" data-role="numerictextbox" data-type="number" name="UnitPrice" required="required" min="1" validationMessage="required" /&gt;
+                &lt;span data-for="UnitPrice" class="k-invalid-msg"&gt;&lt;/span&gt;
+            &lt;/dd&gt;
+            &lt;dt&gt;Units In Stock&lt;/dt&gt;
+            &lt;dd&gt;
+                &lt;input type="text" data-bind="value:UnitsInStock" data-role="numerictextbox" name="UnitsInStock" required="required" data-type="number" min="0" validationMessage="required" /&gt;
+                &lt;span data-for="UnitsInStock" class="k-invalid-msg"&gt;&lt;/span&gt;
+            &lt;/dd&gt;
+            &lt;dt&gt;Discontinued&lt;/dt&gt;
+            &lt;dd&gt;&lt;input type="checkbox" name="Discontinued" data-bind="checked:Discontinued"&gt;&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;div class="edit-buttons"&gt;
+            &lt;a class="k-button k-button-icontext k-update-button" href="\\#"&gt;&lt;span class="k-icon k-update"&gt;&lt;/span&gt;Save&lt;/a&gt;
+            &lt;a class="k-button k-button-icontext k-cancel-button" href="\\#"&gt;&lt;span class="k-icon k-cancel"&gt;&lt;/span&gt;Cancel&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/script&gt;
+</code></pre>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>Click events for elements with the <code>k-update-button</code> and <code>k-cancel-button</code> class name  will be automatically handled and treated by the Kendo UI ListView as <code>save</code> and <code>cancel</code> actions.</p>
+</blockquote>
+
+<p><strong>Step 4</strong> Create a data source and configure it.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    // Configure the remote service - a PHP file called 'products.php'
+    // The query string parameter 'type' specifies the type of CRUD operation
+    $transport = new \Kendo\Data\DataSourceTransport();
+
+    $create = new \Kendo\Data\DataSourceTransportCreate();
+
+    $create-&gt;url('products.php?type=create')
+         -&gt;contentType('application/json')
+         -&gt;type('POST');
+
+    $read = new \Kendo\Data\DataSourceTransportRead();
+
+    $read-&gt;url('products.php?type=read')
+         -&gt;contentType('application/json')
+         -&gt;type('POST');
+
+    $update = new \Kendo\Data\DataSourceTransportUpdate();
+
+    $update-&gt;url('products.php?type=update')
+         -&gt;contentType('application/json')
+         -&gt;type('POST');
+
+    $destroy = new \Kendo\Data\DataSourceTransportDestroy();
+
+    $destroy-&gt;url('products.php?type=destroy')
+         -&gt;contentType('application/json')
+         -&gt;type('POST');
+
+    // Configure the transport. Send all data source parameters as JSON using the parameterMap setting.
+    $transport-&gt;create($create)
+              -&gt;read($read)
+              -&gt;update($update)
+              -&gt;destroy($destroy)
+              -&gt;parameterMap('function(data) {
+                  return kendo.stringify(data);
+              }');
+
+    $model = new \Kendo\Data\DataSourceSchemaModel();
+
+    $productIDField = new \Kendo\Data\DataSourceSchemaModelField('ProductID');
+    $productIDField-&gt;type('number')
+                   -&gt;editable(false)
+                   -&gt;nullable(true);
+
+    $productNameField = new \Kendo\Data\DataSourceSchemaModelField('ProductName');
+    $productNameField-&gt;type('string');                           
+
+    $unitPriceField = new \Kendo\Data\DataSourceSchemaModelField('UnitPrice');
+    $unitPriceField-&gt;type('number');                       
+
+    $unitsInStockField = new \Kendo\Data\DataSourceSchemaModelField('UnitsInStock');
+    $unitsInStockField-&gt;type('number');
+
+    $discontinuedField = new \Kendo\Data\DataSourceSchemaModelField('Discontinued');
+    $discontinuedField-&gt;type('boolean');
+
+    $model-&gt;id('ProductID')
+        -&gt;addField($productIDField)
+        -&gt;addField($productNameField)
+        -&gt;addField($unitPriceField)
+        -&gt;addField($unitsInStockField)
+        -&gt;addField($discontinuedField);
+
+    // Configure the schema to accept the format returned by DataSourceResult
+    $schema = new \Kendo\Data\DataSourceSchema();
+    $schema-&gt;data('data')
+           -&gt;errors('errors')
+           -&gt;model($model)
+           -&gt;total('total');
+
+    $dataSource = new \Kendo\Data\DataSource();
+
+    $dataSource-&gt;transport($transport)
+               -&gt;batch(true)
+               -&gt;schema($schema);
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 5</strong> Create a ListView, configure its <code>template</code> and set its <code>dataSource</code>.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;div class="k-toolbar k-grid-toolbar"&gt;
+        &lt;a class="k-button k-button-icontext k-add-button" href="#"&gt;&lt;span class="k-icon k-add"&gt;&lt;/span&gt;Add new record&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;?php
+    $listview = new \Kendo\UI\ListView('listView');
+    $listview-&gt;dataSource($dataSource)
+             -&gt;templateId('template')
+             -&gt;editTemplateId('editTemplate')
+             -&gt;pageable(true);   
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 6</strong> Output the ListView by echoing the result of the <code>render</code> method.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    echo $listview-&gt;render();
+    ?&gt;
+</code></pre>
+
+<h3 id="crud-performing-file-creation-datasourceresult"><a href="#crud-performing-file-creation-datasourceresult">CRUD-Performing File Creation (DataSourceResult)</a></h3>
+
+<p><strong>Step 1</strong> Create a new PHP file called <code>products.php</code>. This file will perform CRUD data operations.</p>
+
+<p><strong>Step 2</strong> Copy <code>/wrappers/php/lib/DataSourceResult.php</code> to your web site root and include it.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php require_once 'lib/DataSourceResult.php'; ?&gt;
+</code></pre>
+
+<p><strong>Step 3</strong> Read the request body and parse it as JSON. In the previous example we configured the Kendo DataSource to submit its parameters as JSON via the <a href="/api/php/Kendo/Data/DataSourceTransport#parametermap">parameterMap</a>.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    $request = json_decode(file_get_contents('php://input'));
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 4</strong> Create a new instance of the <code>DataSourceResult</code>.</p>
+
+<h6>Example</h6>
+
+<pre><code>            &lt;?php
+    $result = new DataSourceResult('sqlite:../sample.db');
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 5</strong> Get the current operation type. Available as the <code>type</code> query string parameter.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    $type = $_GET['type'];
+    ?&gt;
+</code></pre>
+
+<!--_-->                
+
+<p><strong>Step 6</strong> Declare a variable which will be returned as a result of the operation.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    $data = null;
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 7</strong> Implement <code>create</code>.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    if ($type == 'create') {
+        // The 'create' method of DataSourceResult accepts table name, array of column names, array of models and the name of the primary key column
+        $data = $result-&gt;create('Products', array('ProductID', 'ProductName', 'UnitPrice', 'UnitsInStock', 'Discontinued'), $request-&gt;models, 'ProductID');
+    }
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 8</strong> Implement <code>read</code>.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    if ($type == 'read') {
+        // The 'read' method accepts table name, array of columns to select and request parameters as array
+        $data = $result-&gt;read('Products', array('ProductID', 'ProductName', 'UnitPrice', 'UnitsInStock', 'Discontinued'), $request));
+    }
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 9</strong> Implement <code>update</code>.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    if ($type == 'update') {
+        // The 'update' method of DataSourceResult accepts table name, array of column names, array of models and the name of the primary key column
+        $data = $result-&gt;update('Products', array('ProductID', 'ProductName', 'UnitPrice', 'UnitsInStock', 'Discontinued'), $request-&gt;models, 'ProductID');
+    }
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 10</strong> Implement <code>destroy</code>.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    if ($type == 'destroy') {
+        // The 'destroy' method of DataSourceResult accepts table name, array of models and the name of the primary key column
+        $data = $result-&gt;update('Products', $request-&gt;models, 'ProductID');
+    }
+    ?&gt;
+</code></pre>
+
+<p><strong>Step 11</strong> Return the result of the operation as JSON.</p>
+
+<h6>Example</h6>
+
+<pre><code>    &lt;?php
+    // Set response content type
+    header('Content-Type: application/json');
+
+    echo json_encode($data);
+    ?&gt;
+</code></pre>
+
+<h2 id="see-also"><a href="#see-also">See Also</a></h2>
+
+<p>Other articles on Telerik UI for PHP and on the ListView:</p>
+
+<ul>
+<li><a href="/php/widgets/listview/overview">Overview of the ListView PHP Class</a></li>
+<li><a href="/php/widgets/listview/local-binding">Local Binding of the ListView PHP Class</a></li>
+<li><a href="/php/widgets/listview/remote-binding">Remote Binding of the ListView PHP Class</a></li>
+<li><a href="/controls/data-management/listview/overview">Overview of the Kendo UI ListView Widget</a></li>
+<li><a href="/api/php/Kendo/UI/AutoComplete">Telerik UI for PHP API Reference Folder</a></li>
+<li><a href="/php/widgets/autocomplete/overview">Telerik UI for PHP Classes Folder</a></li>
+</ul> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

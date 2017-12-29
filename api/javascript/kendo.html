@@ -1,0 +1,1901 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="api">
+        <meta name="product" content="kendo-ui">
+        
+        <title>API Reference for methods and properties in Kendo UI Framework</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Examples and detailed explanation of Kendo UI methods and properties.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("api/javascript/kendo.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//api/javascript/kendo.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    <div id="markdown-toc"></div>
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="kendo"><a href="#kendo">kendo</a></h1>
+
+<h2 id="methods"><a href="#methods">Methods</a></h2>
+
+<h3 id="methods-alert"><a href="#methods-alert">alert</a></h3>
+
+<p>Opens a <a href="/api/javascript/ui/alert">Kendo UI Alert</a> popup. Similar to the native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/alert">window.alert()</a> method.</p>
+
+<h4>Example - Open a Kendo UI Alert on the page</h4>
+
+<pre><code>&lt;script&gt;
+    kendo.alert("This is an alert popup!");
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>text <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The text to be shown in the Alert popup.</p>
+
+<h3 id="methods-antiForgeryTokens"><a href="#methods-antiForgeryTokens">antiForgeryTokens</a></h3>
+
+<p>Returns an object that contains common
+<a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet">CSRF tokens</a>
+found on the page.</p>
+
+<p>These include tokens used by ASP.NET, Ruby on Rails and others.</p>
+
+<h4>Example - Send CSRF tokens in DataSource read request</h4>
+
+<pre><code>&lt;script&gt;
+var dataSource = new kendo.data.DataSource({
+  transport: {
+    read: {
+      url: "https://demos.telerik.com/kendo-ui/service/twitter/search",
+      dataType: "jsonp",
+      data: function() {
+        return kendo.antiForgeryTokens();
+      }
+    }
+  }
+});
+
+dataSource.fetch();
+&lt;/script&gt;
+</code></pre>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a> An object that contains common CSRF tokens found on the page</p>
+
+<h3 id="methods-bind"><a href="#methods-bind">bind</a></h3>
+
+<p>Binds a HTML View to a View-Model and initializes Kendo UI widgets from DOM elements based on <code>data-role</code> attributes, similar to <a href="#methods-init"><code>kendo.init()</code></a>.</p>
+
+<p>Model View ViewModel (<a href="http://en.wikipedia.org/wiki/Model_View_ViewModel">MVVM</a>) is a design pattern which helps developers separate the Model from the View. The View-Model part of MVVM is responsible for
+exposing the data objects from the Model in such a way that those objects are easily consumed in the View.</p>
+
+<blockquote>
+<p><strong>Important:</strong> Kendo UI Mobile is not included in the default list of initialized namespaces. You can initialize it explicitly by
+  running <code>kendo.bind(element, viewModel, kendo.mobile.ui);</code></p>
+</blockquote>
+
+<h4>Example - bind a DOM element to a view model</h4>
+
+<pre><code> &lt;!-- View --&gt;
+ &lt;div id="view"&gt;
+   &lt;!-- The value of the INPUT element is bound to the "firstName" field of the View-Model.
+   When the value changes so will the "firstName" field and vice versa.  --&gt;
+   &lt;label&gt;First Name:&lt;input data-bind="value: firstName" /&gt;&lt;/label&gt;
+   &lt;!-- The value of the INPUT element is bound to the "lastName" field of the View-Model.
+   When the value changes so will the "lastName" field and vice versa.   --&gt;
+   &lt;label&gt;Last Name:&lt;input data-bind="value: lastName" /&gt;&lt;/label&gt;
+   &lt;!-- The click event of the BUTTON element is bound to the "displayGreeting" method of the View-Model.
+   When the user clicks the button the "displayGreeting" method will be invoked.  --&gt;
+   &lt;button data-bind="click: displayGreeting"&gt;Display Greeting&lt;/button&gt;
+ &lt;/div&gt;
+ &lt;script&gt;
+   // View-Model
+   var viewModel = kendo.observable({
+      firstName: "John",
+      lastName: "Doe",
+      displayGreeting: function() {
+          // Get the current values of "firstName" and "lastName"
+          var firstName = this.get("firstName");
+          var lastName = this.get("lastName");
+          alert("Hello, " + firstName + " " + lastName + "!!!");
+      }
+   });
+
+   // Bind the View to the View-Model
+   kendo.bind($("#view"), viewModel);
+ &lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>element <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<p>The root element(s) from which the binding starts. Can be a valid jQuery string selector, a DOM element or a jQuery object.
+All descendant elements are traversed.</p>
+
+<h5>viewModel <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><code>kendo.data.ObservableObject</code>
+</h5>
+
+<p>The View-Model which the elements are bound to. Wrapped as an instance of <code>kendo.data.ObservableObject</code> if not already.</p>
+
+<h5>namespace <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a> <em>(optional)</em>
+</h5>
+
+<p>Optional namespace to look in when instantiating Kendo UI widgets. The valid namespaces are <code>kendo.ui</code>, <code>kendo.dataviz.ui</code> and <code>kendo.mobile.ui</code>. If omitted
+<code>kendo.ui</code> will be used. Multiple namespaces can be passed.</p>
+
+<h3 id="methods-init"><a href="#methods-init">init</a></h3>
+
+<p>Instantiates Kendo UI widgets in a given DOM element based on role data attributes.</p>
+
+<blockquote>
+<p><strong>Important:</strong> Kendo UI Mobile is not included in the default list of initialized namespaces. You can initialize it explicitly by
+  running <code>kendo.init(element, kendo.mobile.ui);</code></p>
+</blockquote>
+
+<h4>Example</h4>
+
+<pre><code> &lt;div id="view"&gt;
+    &lt;div&gt;
+        &lt;input data-role="autocomplete" data-source="data" data-filter="startswith" data-placeholder="select country ..." /&gt;
+    &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;script&gt;
+ var data = [ "Albania", "Andorra", "Armenia", "Austria", "Azerbaijan", "Belarus", "Belgium", "Bosnia &amp; Herzegovina", "Bulgaria", "Croatia", "Cyprus"  ];
+
+ kendo.init($("#view"));
+ &lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>element <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<p>The root element(s) from which the instantiation starts. Can be a valid jQuery string selector, a DOM element or a jQuery object. All descendant elements are traversed.</p>
+
+<h5>namespace <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a> <em>(optional)</em>
+</h5>
+
+<p>Optional namespace too look in when instantiating Kendo UI widgets. The valid namespaces are <code>kendo.ui</code>, <code>kendo.dataviz.ui</code> and <code>kendo.mobile.ui</code>. If omitted
+<code>kendo.ui</code> will be used. Multiple namespaces can be passed.</p>
+
+<h4>Example</h4>
+
+<pre><code> &lt;div id="view"&gt;
+    &lt;div&gt;
+        &lt;input data-role="autocomplete" data-source="data" data-filter="startswith" data-placeholder="select country ..." /&gt;
+        &lt;button data-role="button" data-click="foo"&gt;Foo&lt;/button&gt;
+    &lt;/div&gt;
+ &lt;/div&gt;
+
+ &lt;script&gt;
+ function foo(e) {
+     console.log(e.sender); // a mobile button
+ }
+ var data = [ "Albania", "Andorra", "Armenia", "Austria", "Azerbaijan", "Belarus", "Belgium", "Bosnia &amp; Herzegovina", "Bulgaria", "Croatia", "Cyprus"  ];
+
+ kendo.init($("#view"), kendo.mobile.ui, kendo.ui);
+ &lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-observableHierarchy"><a href="#methods-observableHierarchy">observableHierarchy</a></h3>
+
+<p>Creates an ObservableArray instance that is bound to a HierarchicalDataSource. Required to bind a HierarchicalDataSource-enabled widget (such as the Kendo UI TreeView) to a view-model.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div data-role="treeview" data-bind="source: products"&gt;&lt;/div&gt;
+&lt;script&gt;
+var viewModel = kendo.observable({
+  products: kendo.observableHierarchy([
+    {
+      text: "foo",
+      items: [
+        { text: "bar" }
+      ]
+    },
+    { text: "baz" }
+   ])
+});
+kendo.bind(document.body, viewModel);
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>array <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h5>
+
+<p>The array that will be converted to an ObservableArray.</p>
+
+<h3 id="methods-confirm"><a href="#methods-confirm">confirm</a></h3>
+
+<p>Opens a <a href="/api/javascript/ui/confirm">Kendo UI Confirm</a> popup. Similar to the native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm">window.confirm()</a> method.</p>
+
+<h4>Example - Open a Kendo UI Confirm on the page</h4>
+
+<pre><code>&lt;script&gt;
+    kendo.confirm("Confirm text");
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>text <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The text to be shown in the Confirm popup.</p>
+
+<h4>Returns</h4>
+
+<p><a href="http://api.jquery.com/Types/#Promise" class="type-link"><code>Promise</code></a> a <a href="http://api.jquery.com/Types/#Promise">jQuery promise instance</a>, which can be used for callbacks, or passed to <a href="http://api.jquery.com/jQuery.when/">jQuery.when</a>. The jQuery Deferred object resolves to:</p>
+
+<ul>
+<li>
+<code>done()</code> - when user has pressed the "OK" button;</li>
+<li>
+<code>fail()</code> - when user has pressed the "Cancel" button.</li>
+</ul>
+
+<h4>Example</h4>
+
+<pre><code>&lt;script&gt;
+    kendo.confirm("Confirm text")
+        .done(function(){
+            console.log("User accepted");
+        })
+        .fail(function(){
+            console.log("User rejected");
+        });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-culture"><a href="#methods-culture">culture</a></h3>
+
+<p>Sets or gets the current culture. Uses the passed culture name to select a culture from the culture scripts that you have included and then sets the current culture.
+If there is no corresponding culture then the method will try to find culture which is equal to the country part of the culture name.
+If no culture is found the default one is used.</p>
+
+<blockquote>
+<p>The culture must be set before any Kendo UI widgets that rely on it, are initialized.</p>
+</blockquote>
+
+<h4>Example -  include a culture-specific JavaScript file and set the culture</h4>
+
+<pre><code>&lt;script src="http://kendo.cdn.telerik.com/2013.2.716/js/cultures/kendo.culture.en-GB.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  console.log(kendo.format("{0:c}", 99)); // outputs "$99.00" using the default en-US culture
+  kendo.culture("en-GB"); // change the culture
+  console.log(kendo.format("{0:c}", 99)); // outputs "£99.00"
+&lt;/script&gt;
+</code></pre>
+
+<h4>Get the current culture</h4>
+
+<pre><code>&lt;script&gt;
+var culture = kendo.culture();
+console.log(culture.name); // outputs "en-US"
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>culture <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The culture to set.</p>
+
+<h3 id="methods-destroy"><a href="#methods-destroy">destroy</a></h3>
+
+<p>Finds all Kendo widgets that are children of the specified element and calls their destroy method.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;input id="autocomplete"&gt;
+&lt;script&gt;
+$("#autocomplete").kendoAutoComplete();
+  console.log($("#autocomplete").data("kendoAutoComplete") != null); // outputs "true"
+  kendo.destroy(document.body);
+  console.log($("#autocomplete").data("kendoAutoComplete") != null); // outputs "false"
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>element <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<h3 id="methods-format"><a href="#methods-format">format</a></h3>
+
+<p>Replaces each format item in a specified string with the text equivalent of a corresponding object's value. Uses <a href="#methods-toString">toString</a> for every format item.</p>
+
+<h4>Parameters</h4>
+
+<h5>format <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The format string.</p>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> The formatted string.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.format("{0} - {1}", 12, 24));  // outputs "12 - 24"
+console.log(kendo.format("{0:c} - {1:c}", 12, 24)); // outputs "$12.00 - $24.00"
+&lt;/script&gt;
+</code></pre>
+
+<h4>See Also</h4>
+
+<p><a href="http://docs.telerik.com/kendo-ui/framework/globalization/numberformatting">Supported number formats</a></p>
+
+<h3 id="methods-htmlEncode"><a href="#methods-htmlEncode">htmlEncode</a></h3>
+
+<p>Encodes HTML characters to entities.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;script&gt;
+var value = kendo.htmlEncode("&lt;span&gt;Hello&lt;/span&gt;");
+console.log(value);
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>value <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The string that needs to be HTML encoded.</p>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> The encoded string.</p>
+
+<h3 id="methods-parseDate"><a href="#methods-parseDate">parseDate</a></h3>
+
+<p>Parses as a formatted string as a <code>Date</code>. Also see <a href="/framework/globalization/dateparsing">Date Parsing</a></p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;script&gt;
+  console.log(kendo.parseDate("2013/3/4 10:00 AM")); // outputs "Mon Mar 04 2013 10:00:00"
+  console.log(kendo.parseDate("3/4/2013", "MM/dd/yyyy")); // outputs "Mon Mar 04 2013 00:00:00"
+  console.log(kendo.parseDate("invalid")); // outputs "null"
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>value <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The string which should be parsed as <code>Date</code>.</p>
+
+<h5>formats <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a> <em>(optional)</em>
+</h5>
+
+<p>The format(s) that will be used to parse the date. If you do not explicitly state a date parsing format, the <a href="/framework/globalization/dateformatting#standard">standard date formats</a> of the current culture will apply.</p>
+
+<p>For more information on the custom date parsing formats, refer to <a href="/framework/globalization/dateformatting#custom">this article</a>.</p>
+
+<h5>culture <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(optional)</em>
+</h5>
+
+<p>The culture used to parse the number. The current culture is used by default.</p>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" class="type-link"><code>Date</code></a> the parsed date. Returns <code>null</code> if the value cannot be parsed as a valid <code>Date</code>.</p>
+
+<h3 id="methods-parseFloat"><a href="#methods-parseFloat">parseFloat</a></h3>
+
+<p>Parses a string as a floating point number.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;script src="http://kendo.cdn.telerik.com/2013.2.716/js/cultures/kendo.culture.de-DE.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  console.log(kendo.parseFloat("12.22")); // outputs "12.22"
+  kendo.culture("de-DE");
+  console.log(kendo.parseFloat("1.212,22 €")); // outputs "1212.22"
+  console.log(kendo.parseFloat("invalid")); // outputs "null"
+&lt;/script&gt;
+</code></pre>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> the parsed number. Returns <code>null</code> if the value cannot be parsed as a valid <code>Number</code>.</p>
+
+<h4>Parameters</h4>
+
+<h5>value <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The string which should be parsed as a <code>Number</code>.</p>
+
+<h5>culture <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(optional)</em>
+</h5>
+
+<p>The culture used to parse the number. The current culture is used by default.</p>
+
+<h3 id="methods-parseInt"><a href="#methods-parseInt">parseInt</a></h3>
+
+<p>Parses as a string as an integer.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;script src="http://kendo.cdn.telerik.com/2013.2.716/js/cultures/kendo.culture.de-DE.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  console.log(kendo.parseInt("12.22")); // outputs "12"
+  kendo.culture("de-DE");
+  console.log(kendo.parseInt("1.212,22 €")); // outputs 1212
+  console.log(kendo.parseInt("invalid")); // outputs "null"
+&lt;/script&gt;
+</code></pre>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> the parsed number. Returns <code>null</code> if the value cannot be parsed as a valid <code>Number</code>.</p>
+
+<h4>Parameters</h4>
+
+<h5>value <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The string which should be parsed as <code>Number</code>.</p>
+
+<h5>culture <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(optional)</em>
+</h5>
+
+<p>The culture used to parse the number. The current culture is used by default.</p>
+
+<h3 id="methods-parseColor"><a href="#methods-parseColor">parseColor</a></h3>
+
+<p>Parse a color string to a Color object.  If the input is not valid throws an Error, unless the <code>noerror</code> argument is given.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;script&gt;
+var red = kendo.parseColor("#ff0000");
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>color <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>A string in one of the following (case-insensitive) CSS notations:</p>
+
+<ul>
+<li>
+<code>#F00</code> (optionally without the sharp: <code>F00</code>)</li>
+<li>
+<code>#FF0000</code> (optionally without the sharp: <code>FF0000</code>)</li>
+<li><code>rgb(255, 0, 0)</code></li>
+<li><code>rgba(255, 0, 0, 1)</code></li>
+</ul>
+
+<p>Particularly if this argument is <code>null</code> or the string <code>"transparent"</code> then this function will return <code>null</code>.</p>
+
+<h5>noerror <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a><em>(default: false)</em>
+</h5>
+
+<p>If you pass <code>true</code> then this function will return <code>undefined</code> rather than throwing an error on invalid input.</p>
+
+<h4>Returns</h4>
+
+<p><code>kendo.Color</code> A Color object.</p>
+
+<h3 id="methods-prompt"><a href="#methods-prompt">prompt</a></h3>
+
+<p>Opens a <a href="/api/javascript/ui/prompt">Kendo UI Prompt</a> popup. Similar to the native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt">window.prompt()</a> method.</p>
+
+<h4>Example - Open a Kendo UI Prompt on the page</h4>
+
+<pre><code>&lt;script&gt;
+    kendo.prompt("Prompt text", "Default input text");
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>text <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The text to be shown in the Prompt popup.</p>
+
+<h4>Parameters</h4>
+
+<h5>defaultValue <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The default value that will be shown in the popup's input.</p>
+
+<h4>Returns</h4>
+
+<p><a href="http://api.jquery.com/Types/#Promise" class="type-link"><code>Promise</code></a> a <a href="http://api.jquery.com/Types/#Promise">jQuery promise instance</a>, which can be used for callbacks, or passed to <a href="http://api.jquery.com/jQuery.when/">jQuery.when</a>. The jQuery Deferred object resolves to:</p>
+
+<ul>
+<li>
+<code>done()</code> - when user has pressed the "OK" button and the <code>data</code> passed to the callback is the inputted text;</li>
+<li>
+<code>fail()</code> - when user has pressed the "Cancel" button and the <code>data</code> passed to the callback is the inputted text.</li>
+</ul>
+
+<h4>Example</h4>
+
+<pre><code>&lt;script&gt;
+    kendo.prompt("Prompt text", "Default input text")
+        .done(function(data){
+            console.log("User accepted with text: " + data);
+        })
+        .fail(function(data){
+            console.log("User rejected with text: " + data);
+        });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-proxyModelSetters"><a href="#methods-proxyModelSetters">proxyModelSetters</a></h3>
+
+<p>Creates a wrapper object over the passed one, with get/set properties that set the original object <code>dirty</code> flag. Suitable for a scenario where a dataSource item is used in a third-party MVVM implementation, like AngularJS.</p>
+
+<h4>Parameters</h4>
+
+<h5>data <code>kendo.data.Model</code>
+</h5>
+
+<p>The model that will be wrapped.</p>
+
+<h3 id="methods-render"><a href="#methods-render">render</a></h3>
+
+<p>Renders the specified template using the provided array.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;ul&gt;&lt;/ul&gt;
+&lt;script&gt;
+var template = kendo.template("&lt;li&gt;#: name #&lt;/li&gt;");
+var data = [ { name: "John Doe" }, { name: "Jane Doe" }];
+var html = kendo.render(template, data);
+$("ul").html(html);
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>template <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>The Kendo UI template which should be rendered. Create one via the <a href="#methods-template">template</a> method.</p>
+
+<h5>data <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h5>
+
+<p>The array of objects which contains the data that the template will render.</p>
+
+<h3 id="methods-resize"><a href="#methods-resize">resize</a></h3>
+
+<p>Finds all Kendo widgets that are children of the specified element and calls their <code>resize</code> method.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div class="chart-wrapper"&gt;
+   &lt;div id="chart" style="width:100%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    $(function() {
+        $("#chart").kendoChart({
+            title: {
+                text: "Gross domestic product growth /GDP annual %/"
+            },
+            legend: {
+                position: "bottom"
+            },
+            seriesDefaults: {
+                type: "area"
+            },
+            series: [{
+                name: "India",
+                data: [3.907, 7.943, 7.848, 9.284, 9.263, 9.801, 3.890, 8.238, 9.552, 6.855]
+            }],
+            valueAxis: {
+                labels: {
+                    format: "{0}%"
+                },
+                line: {
+                    visible: false
+                },
+                axisCrossingValue: -10
+            },
+            categoryAxis: {
+                categories: [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011],
+                majorGridLines: {
+                    visible: false
+                }
+            },
+            tooltip: {
+                visible: true,
+                format: "{0}%",
+                template: "#= series.name #: #= value #"
+            }
+        });
+    });
+
+    $(window).on("resize", function() {
+      kendo.resize($(".chart-wrapper"));
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>element <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<h5>force <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a><em>(default: false)</em>
+</h5>
+
+<p>Determines whether the resizing routine should be executed even if the respective widget's outer dimensions have not changed. The parameter will be passed to the <a href="/using-kendo-in-responsive-web-pages#individual-widget-resizing">widget's <code>resize</code> method</a>.</p>
+
+<h3 id="methods-saveAs"><a href="#methods-saveAs">saveAs</a></h3>
+
+<p>Saves a file with the specified name and content.
+A server "echo" proxy might be required, depending on browser capabilities.</p>
+
+<h4>Parameters</h4>
+
+<h5>options <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h5>
+
+<p>Configuration options for the save operation.</p>
+
+<h5>options.dataURI <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The file contents encoded as a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/data_URIs">Data URI</a>.</p>
+
+<p>Only base64-encoded Data URIs are supported.</p>
+
+<h5>options.fileName <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The desired file name.</p>
+
+<h5>options.forceProxy <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h5>
+
+<p>If set to true, the content will be forwarded to proxyURL even if the browser supports saving files locally.</p>
+
+<h5>options.proxyURL <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(optional)</em>
+</h5>
+
+<p>The URL of the server side proxy which will stream the file to the end user.</p>
+
+<p>A proxy will be used when the browser isn't capable of saving files locally.
+Such browsers are IE version 9 and lower and Safari.</p>
+
+<p>The developer is responsible for implementing the server-side proxy.</p>
+
+<p>The proxy will receive a POST request with the following parameters in the request body:</p>
+
+<ul>
+<li>contentType: The MIME type of the file</li>
+<li>base64: The base-64 encoded file content</li>
+<li>fileName: The file name, as requested by the caller.</li>
+</ul>
+
+<p>The proxy should return the decoded file with set "Content-Disposition" header.</p>
+
+<h4>Example - Saving a text file</h4>
+
+<pre><code>&lt;script&gt;
+    kendo.saveAs({
+        dataURI: "data:text/plain,Report title and text",
+        fileName: "report.txt"
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h5>options.proxyTarget <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: "_self")</em>
+</h5>
+
+<p>A name or keyword indicating where to display the document returned from the proxy.</p>
+
+<p>If you want to display the document in a new window or iframe,
+the proxy should set the "Content-Disposition" header to <code>inline; filename="&lt;fileName.ext&gt;"</code>.</p>
+
+<h3 id="methods-stringify"><a href="#methods-stringify">stringify</a></h3>
+
+<p>Converts a JavaScript object to <a href="http://en.wikipedia.org/wiki/JSON">JSON</a>. Uses <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">JSON.stringify</a> in browsers that support it.</p>
+
+<h4>Parameters</h4>
+
+<h5>value <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h5>
+
+<p>The value to convert to a JSON string.</p>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> The JSON representation of the value.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;script&gt;
+var json = kendo.stringify({ foo: "bar" });
+console.log(json); // displays {"foo":"bar"}
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-template"><a href="#methods-template">template</a></h3>
+
+<p>Compiles a template to a function that builds HTML. Useful when a template will be used several times.
+Templates offer way of creating HTML chunks. Options such as HTML encoding and compilation for optimal
+performance are available.</p>
+
+<h4>Example - Basic template</h4>
+
+<pre><code>&lt;span id="output"&gt;&lt;/span&gt;
+&lt;script&gt;
+var template = kendo.template("Hello, #= firstName # #= lastName #");
+var data = { firstName: "John", lastName: "Doe" };
+$("#output").html(template(data));
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - encode HTML</h4>
+
+<pre><code>&lt;span id="output"&gt;&lt;/span&gt;
+&lt;script&gt;
+var template = kendo.template("HTML tags are encoded: #: html #");
+var data = { html: "&lt;strong&gt;lorem ipsum&lt;/strong&gt;" };
+$("#output").html(template(data));
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - use JavaScript in the template</h4>
+
+<pre><code>&lt;span id="output"&gt;&lt;/span&gt;
+&lt;script&gt;
+var template = kendo.template("#if (foo) {# foo is true #}#");
+var data = { foo: true };
+$("#output").html(template(data));
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - escape sharp ("#") symbols in an inline template</h4>
+
+<pre><code>&lt;span id="output"&gt;&lt;/span&gt;
+&lt;script&gt;
+var template = kendo.template("&lt;a href='\\#'&gt;link&lt;/a&gt;");
+$("#output").html(template({}));
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - escape sharp ("#") symbols in a template defined in a script element</h4>
+
+<pre><code>&lt;span id="output"&gt;&lt;/span&gt;
+&lt;script type="text/x-kendo-template" id="template"&gt;
+&lt;a href="\#"&gt;link&lt;/a&gt;
+&lt;/script&gt;
+&lt;script&gt;
+var template = kendo.template($("#template").html());
+$("#output").html(template({}));
+&lt;/script&gt;
+</code></pre>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a> the compiled template as a JavaScript function. When called this function will return the generated HTML string.</p>
+
+<h4>Parameters</h4>
+
+<h5>template <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The template that will be compiled.</p>
+
+<h5>options <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a> <em>(optional)</em>
+</h5>
+
+<p>Template compilation options.</p>
+
+<h5>options.paramName <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: "data")</em>
+</h5>
+
+<p>The name of the parameter used by the generated function. Useful when <code>useWithBlock</code> is set to <code>false</code>.</p>
+
+<h6>Example</h6>
+
+<pre><code>var template = kendo.template("&lt;strong&gt;#: d.name #&lt;/strong&gt;", { paramName: "d", useWithBlock: false });
+</code></pre>
+
+<h5>options.useWithBlock <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
+</h5>
+
+<p>Wraps the generated code in a <code>with</code> block. This allows the usage of unqualified fields in the template. Disabling the <code>with</code> block will improve
+the performance of the template.</p>
+
+<h6>Example</h6>
+
+<pre><code>var template = kendo.template("&lt;strong&gt;#: data.name #&lt;/strong&gt;", { useWithBlock: false }); // Note that "data." is used to qualify the field
+
+console.log(template({ name: "John Doe" })); // outputs "&lt;strong&gt;John Doe&lt;/strong&gt;"
+</code></pre>
+
+<h3 id="methods-throttle"><a href="#methods-throttle">throttle</a></h3>
+
+<p>Limits the number of calls to a function to one for a specified amount of time.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;script&gt;
+  var throttled = kendo.throttle(function() {
+      console.log("hey! " + new Date());
+  }, 100);
+
+  // will log two times "hey":
+  // (1) once for the first call
+  // (2) once for the last call, roughly 100ms after the first one
+  for (var i = 0; i &lt; 10; i++) {
+      throttled();
+  }
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>fn <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>The function to be throttled.</p>
+
+<h5>timeout <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The amount of time that needs to pass before a subsequent function call is made.</p>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a> the throttled function</p>
+
+<h3 id="methods-touchScroller"><a href="#methods-touchScroller">touchScroller</a></h3>
+
+<p>Enables kinetic scrolling on touch devices</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="scrollable" style="height: 200px"&gt;
+  Scrollable
+  &lt;div style="height: 1000px"&gt;content&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+  kendo.touchScroller($("#scrollable"));
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>element <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<p>The container element to enable scrolling for.</p>
+
+<h3 id="methods-toString"><a href="#methods-toString">toString</a></h3>
+
+<p>Formats a <code>Number</code> or <code>Date</code> using the specified format and the current culture.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;script src="http://kendo.cdn.telerik.com/2013.2.716/js/cultures/kendo.culture.de-DE.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  // Format a number using standard number formats and default culture (en-US)
+  console.log(kendo.toString(10.12, "n"));  // "10.12"
+  console.log(kendo.toString(10.12, "n0")); // "10"
+  console.log(kendo.toString(10.12, "n5")); // "10.12000"
+  console.log(kendo.toString(10.12, "c"));  // "$10.12"
+  console.log(kendo.toString(0.12, "p"));   // "12.00 %"
+
+  // Format a number using custom number formats
+  console.log(kendo.toString(19.12, "00##")); // "0019"
+
+  // Format a number using standard number format and a specific culture de-DE (default culture is en-US)
+  console.log(kendo.toString(10.12, "c", "de-DE")); // "10,12" €
+
+  // Format a date
+  console.log(kendo.toString(new Date(2010, 9, 5), "yyyy/MM/dd" ));         // "2010/10/05"
+  console.log(kendo.toString(new Date(2010, 9, 5), "dddd MMMM d, yyyy" ));  // "Tuesday October 5, 2010"
+  console.log(kendo.toString(new Date(2010, 10, 10, 22, 12), "hh:mm tt" )); // "10:12 PM"
+&lt;/script&gt;
+</code></pre>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> the string representation of the formatted value.</p>
+
+<h4>Parameters</h4>
+
+<h5>value <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" class="type-link"><code>Date |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The <code>Date</code> or <code>Number</code> which should be formatted.</p>
+
+<h5>format <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The format string which should be used to format the value. <a href="/framework/globalization/numberformatting">Number formatting</a> and <a href="/framework/globalization/dateformatting">date formatting</a> depends on the current culture.</p>
+
+<h5>culture <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(optional)</em>
+</h5>
+
+<p>The name of the culture which should be used to format the value. <a href="/framework/globalization/overview#add%20culture%20scripts%20to%20the%20page">The culture should be registered on the page</a>.</p>
+
+<h3 id="methods-unbind"><a href="#methods-unbind">unbind</a></h3>
+
+<p>Unbinds a tree of HTML elements from a View-Model.</p>
+
+<h4>Example</h4>
+
+<pre><code> &lt;div id="view"&gt;
+   &lt;label&gt;First Name:&lt;input data-bind="value: firstName" /&gt;&lt;/label&gt;
+   &lt;label&gt;Last Name:&lt;input data-bind="value: lastName" /&gt;&lt;/label&gt;
+   &lt;button data-bind="click: displayGreeting"&gt;Display Greeting&lt;/button&gt;
+ &lt;/div&gt;
+ &lt;script&gt;
+ var viewModel = kendo.observable({
+    firstName: "John",
+    lastName: "Doe",
+    displayGreeting: function() {
+        // Get the current values of "firstName" and "lastName"
+        var firstName = this.get("firstName");
+        var lastName = this.get("lastName");
+        alert("Hello, " + firstName + " " + lastName + "!!!");
+    }
+ });
+ kendo.bind($("#view"), viewModel);
+ // unbind the view model
+ kendo.unbind($("#view"));
+ &lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>element <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<p>The root element(s) from which the unbinding starts. Can be a valid jQuery string selector, a DOM element or a jQuery object.
+All descendant elements are traversed.</p>
+
+<h3 id="methods-widgetInstance"><a href="#methods-widgetInstance">widgetInstance</a></h3>
+
+<p>Returns a Kendo UI widget instance, attached to the provided element.
+This method can be used in scenarios when the page (e.g. a form) contains both generic HTML elements and Kendo UI widgets and the exact distribution is not clear.</p>
+
+<h4>Parameters</h4>
+
+<h5>element <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>The DOM element that may have a Kendo UI instance attached to it.</p>
+
+<h5>suite <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a> <em>(optional)</em>
+</h5>
+
+<p><strong>Optional</strong>. The Kendo UI suite, that the widget is expected to be part of - <code>kendo.ui</code> (web widgets), <code>kendo.mobile.ui</code> or <code>kendo.dataviz.ui</code>. As of Q1 2014 you can also pass an array of suites.</p>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a> The Kendo UI widget instance with all applicable methods and fields, if the instance is attached to the provided element.</p>
+
+<p><code>undefined</code> otherwise</p>
+
+<h4>Example - using kendo.widgetInstance()</h4>
+
+<pre><code>// get element
+var textbox = $("#myTextBox");
+// get widget object
+var widget = kendo.widgetInstance(textbox);
+if (widget) {
+    // execute an API method
+    widget.value(/* ... */);
+} else {
+    // execute generic jQuery method
+    textbox.val(/* ... */);
+}
+</code></pre>
+
+<h2 id="fields"><a href="#fields">Fields</a></h2>
+
+<h3 id="fields-keys"><a href="#fields-keys">keys</a></h3>
+
+<p>A dictionary of special keys' ASCII codes, which can be accessed by user-friendly names, instead of their numeric values.
+The collection includes only key codes, which are used by the Kendo UI widgets' source code.</p>
+
+<h4>kendo.keys collection</h4>
+
+<pre><code>kendo.keys = {
+    INSERT: 45,
+    DELETE: 46,
+    BACKSPACE: 8,
+    TAB: 9,
+    ENTER: 13,
+    ESC: 27,
+    LEFT: 37,
+    UP: 38,
+    RIGHT: 39,
+    DOWN: 40,
+    END: 35,
+    HOME: 36,
+    SPACEBAR: 32,
+    PAGEUP: 33,
+    PAGEDOWN: 34,
+    F2: 113,
+    F10: 121,
+    F12: 123,
+    NUMPAD_PLUS: 107,
+    NUMPAD_MINUS: 109,
+    NUMPAD_DOT: 110
+}
+</code></pre>
+
+<p>The key codes are especially helpful in keydown, keyup and keypress event handlers.</p>
+
+<h4>kendo.keys usage example</h4>
+
+<pre><code>function onMyKeyPress(e) {
+    // if ENTER key is pressed, do something
+    if (e.keyCode == kendo.keys.ENTER) {
+        // .....
+    }
+}
+</code></pre>
+
+<h3 id="fields-support"><a href="#fields-support">support</a></h3>
+
+<p>A range of useful supported by the current browser capabilities and features.</p>
+
+<h4>support</h4>
+
+<h5>touch <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h5>
+
+<p>Return true if the browser supports touch events.</p>
+
+<h5>pointers <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h5>
+
+<p>Return true if the browser supports pointer events (IE10 and Metro apps currently).</p>
+
+<h5>scrollbar <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>Checks for the browser scrollbar width, returns scrollbar width in pixels, 0 if no scrollbars available (e.g. in mobile).</p>
+
+<h5>hasHW3D <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h5>
+
+<p>Return true if the browser supports 3D transitions and transforms.</p>
+
+<h5>hasNativeScrolling <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h5>
+
+<p>Returns true if the browser supports overflow-scrolling CSS property (currently only iOS 5+).</p>
+
+<h5>devicePixelRatio <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 1)</em>
+</h5>
+
+<p>Returns the current device's Device to Pixel Ratio. Doesn't work in Windows Phone 8, where IE10 doesn't support it.</p>
+
+<h5>placeholder <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h5>
+
+<p>Returns <code>true</code> if the browser supports input placeholders.</p>
+
+<h5>zoomLevel <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 1)</em>
+</h5>
+
+<p>Returns the current zoom level on a mobile browser (returns 1 on desktop).</p>
+
+<h3 id="fields-support.transforms">
+<a href="#fields-support.transforms">support.transforms </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>Returns a number of browser specific transformation properties</p>
+
+<h4>support.transforms</h4>
+
+<h5>transforms.css <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>Returns the CSS prefix of the current browser proprietary transform properties. E.g. "-webkit-", "-moz-", "-o-", "-ms-"</p>
+
+<h5>transforms.prefix <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>Returns the JavaScript prefix of the current browser proprietary transform properties. E.g. "webkit", "Moz", "O", "ms"</p>
+
+<h3 id="fields-support.transitions">
+<a href="#fields-support.transitions">support.transitions </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>Returns a number of browser specific transition properties</p>
+
+<h4>support.transitions</h4>
+
+<h5>transitions.css <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>Returns the CSS prefix of the current browser proprietary transition properties. E.g. "-webkit-", "-moz-", "-o-", "-ms-"</p>
+
+<h5>transitions.prefix <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>Returns the JavaScript prefix of the current browser proprietary transition properties. E.g. "webkit", "Moz", "O", "ms"</p>
+
+<h5>transitions.event <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>Returns the transition end event name in the current browser. E.g. "webkitTransitionEnd", "transitionend", "oTransitionEnd"</p>
+
+<h3 id="fields-support.mobileOS">
+<a href="#fields-support.mobileOS">support.mobileOS </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>Returns a number of properties that identify the current mobile browser. Parses navigator.userAgent to do it. False on desktop.</p>
+
+<h4>support.mobileOS</h4>
+
+<h5>device <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>Returns the current mobile device identifier, can be "fire", "android", "iphone", "ipad", "meego", "webos", "blackberry", "playbook", "wp", "windows".</p>
+
+<h5>tablet <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: false)</em>
+</h5>
+
+<p>Returns the current tablet identifier or false if the current device is not a tablet, can be "fire", "ipad", "playbook" or false.</p>
+
+<h5>browser <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: "default")</em>
+</h5>
+
+<p>Returns the current browser identifier or "default" if the browser is the native one, can be "omini", "omobile", "firefox", "mobilesafari", "webkit", "ie", "default".</p>
+
+<h5>name <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>Returns the current os name identifier, can be "ios", "android", "blackberry", "windows", "webos", "meego". For convenience a property with the os name is also initialized,
+for instance:</p>
+
+<pre><code>if (kendo.support.mobileOS.android) {
+    // Do something in Android
+}
+</code></pre>
+
+<h5>majorVersion <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The current OS major version, e.g. "5" in iOS 5.1.</p>
+
+<h5>minorVersion <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The current OS minor versions, e.g. "1.1" in iOS 5.1.1.</p>
+
+<h5>flatVersion <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>A convenience property to allow easier version checks, for instance:</p>
+
+<pre><code>var os = kendo.support.mobileOS;
+if (os.ios &amp;&amp; os.flatVersion &gt;= 400 &amp;&amp; os.flatVersion &lt; 500) {
+    // Do something in iOS 4.x
+}
+</code></pre>
+
+<h5>appMode <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h5>
+
+<p>Returns true if running in application mode - pinned to desktop in iOS or running in PhoneGap/WebView.</p>
+
+<h5>cordova <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h5>
+
+<p>Returns true if running in a Cordova/PhoneGap/Telerik AppBuilder application.</p>
+
+<h3 id="fields-support.browser">
+<a href="#fields-support.browser">support.browser </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>Convenience replacement for the now deprecated jQuery.browser. It returns an object with the browser identifier initialized as a boolean property and a version.
+The identifiers are identical to jQuery ones, e.g. "webkit", "opera", "msie", "edge" and "mozilla". In addition WebKit browsers will return their name e.g. "safari" and "chrome".</p>
+
+<pre><code>&lt;script&gt;
+    console.log(kendo.stringify(kendo.support.browser));
+    // Chrome will return this object: { "webkit": true, "chrome": true, "version": 37 }
+    // IE11 will return this one: { "msie": true, "version": 11 }
+&lt;/script&gt;
+</code></pre>
+
+<h4>support.browser</h4>
+
+<h5>version <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The current browser major version, e.g. "7" in Internet Explorer 7.</p>
+
+<h3 id="fields-version">
+<a href="#fields-version">version </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Returns the Kendo UI version as a string, for example <code>"2013.3.1119"</code> or <code>"2013.2.918"</code>, etc. In general, Kendo UI version identifiers provide the following information:</p>
+
+<ul>
+<li>year in YYYY format (2013, 2012, etc);</li>
+<li>major release as "1", "2" or "3" (derived from Q1, Q2 and Q3). All service packs and internal builds, which come after a given major release, share the same major release number;</li>
+<li>month and day of the release in Mdd format (November 19, September 18, etc);</li>
+</ul>
+
+<p>Q3 service packs and internal builds may be released in the following year. In this case 12 is added to the month number, e.g. 13 means January, 14 means February and so on.
+For example <code>"2012.3.1315"</code> means a service pack (internal build) released after Q3 <strong>2012</strong> on January 15, <strong>2013</strong>.</p>
+
+<p>The returned value does not give clues whether the given Kendo UI version represents a major release, service pack, or the so-called internal (nightly) build.</p>
+
+<h2 id="standard-number-formats"><a href="#standard-number-formats">Standard number formats</a></h2>
+
+<h3 id="n"><a href="#n"><em>n</em></a></h3>
+
+<p>Formats the value as a number with decimal and thousand separators.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;script src="http://kendo.cdn.telerik.com/2013.2.716/js/cultures/kendo.culture.de-DE.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+console.log(kendo.toString(1234.567, "n")); // outputs "1,234.57"
+kendo.culture("de-DE");
+console.log(kendo.toString(1234.567, "n3")); //outputs "1.234,567"
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="c"><a href="#c"><em>c</em></a></h3>
+
+<p>Formats the value by adding the currency symbol.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;script src="http://kendo.cdn.telerik.com/2013.2.716/js/cultures/kendo.culture.de-DE.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+console.log(kendo.toString(1234.567, "c")); // outputs "$1,234.57"
+kendo.culture("de-DE");
+console.log(kendo.toString(1234.567, "c3")); // outputs "1.234,567 €"
+&lt;script&gt;
+</code></pre>
+
+<h3 id="p"><a href="#p"><em>p</em></a></h3>
+
+<p>Formats the value as percentage (the value is multiplied by 100).</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(0.222, "p")); // outputs "22.20 %"
+console.log(kendo.toString(0.22, "p3")); // outputs "22.000 %"
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="e"><a href="#e"><em>e</em></a></h3>
+
+<p>Returns the value in exponential format.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(0.122, "e")); // outputs "1.22e-1"
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="custom-number-formats"><a href="#custom-number-formats">Custom number formats</a></h2>
+
+<p>Custom number formats can be created by using one or more custom numeric specifiers.</p>
+
+<h3 id="format-specifiers"><a href="#format-specifiers">Format Specifiers</a></h3>
+
+<h4><em>0</em></h4>
+
+<p>Zero placeholder. Replaces the zero with the corresponding digit if one is present; otherwise, zero appears in the result string.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(1234.5678, "00000")); // outputs "01235"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>#</em></h4>
+
+<p>Digit placeholder. Replaces the pound sign with the corresponding digit if one is present; otherwise, no digit appears in the result string.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(1234.5678, "#####")); // outputs "1235"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>.</em></h4>
+
+<p>Decimal placeholder. Determines the position of the decimal separator in the result string.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(0.45678, "0.00")); // outputs "0.46"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>,</em></h4>
+
+<p>Group separator. Inserts a group separator between each group of digits.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(12345678, "##,#")); // outputs "12,345,678"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>%</em></h4>
+
+<p>Percentage. Multiplies a number by 100 and inserts a the percentage symbol (according to the current culture) in the result string.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+  console.log(kendo.toString(0.14, "#%")); // outputs "14%"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>e</em></h4>
+
+<p>Exponential notation.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(0.45678, "e0")); // outputs "5e-1"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>;</em></h4>
+
+<p>Section separator. Defines sections of separate format strings for positive, negative, and zero numbers.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+  console.log(kendo.toString(3.14, "0.0;0.00")); // outputs "3.1"
+  console.log(kendo.toString(-3.14, "0.0;-0.00")); // outputs "-3.14"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>"string"|'string'</em></h4>
+
+<p>Literal string. Indicates literal strings which should be included in the result verbatim.</p>
+
+<h5>Example</h5>
+
+<h2 id="standard-date-formats"><a href="#standard-date-formats">Standard date formats</a></h2>
+
+<h4><em>d</em></h4>
+
+<p>Short date pattern.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2000, 10, 6), "d")); // outputs "11/6/2000"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>D</em></h4>
+
+<p>Long date pattern.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2000, 10, 6), "D")); // outputs "Monday, November 06, 2000"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>F</em></h4>
+
+<p>Full date time pattern.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2000, 10, 6), "F")); // outputs "Monday, November 06, 2000 12:00:00 AM"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>g</em></h4>
+
+<p>General date/time pattern (short time).</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2000, 10, 6), "g")); // outputs "11/6/2000 12:00 AM"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>G</em></h4>
+
+<p>General date/time pattern (long time).</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2000, 10, 6), "G")); // outputs "11/6/2000 12:00:00 AM"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>m|M</em></h4>
+
+<p>Day of month pattern.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2000, 10, 6), "m")); // outputs "November 06"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>u</em></h4>
+
+<p>Universal sortable date/time pattern</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2000, 10, 6), "u")); // outputs "2000-11-06 00:00:00Z"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>y|Y</em></h4>
+
+<p>Month year pattern.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2000, 10, 6), "y")); // outputs "November, 2000"
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="custom-date-formats"><a href="#custom-date-formats">Custom date formats</a></h2>
+
+<p>Custom date formats can be created by using one or more custom date specifiers.</p>
+
+<h3 id="format-specifiers"><a href="#format-specifiers">Format Specifiers</a></h3>
+
+<h4><em>d</em></h4>
+
+<p>The day of the month, from 1 to 31.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6), "yyyy/M/d")); // outputs "2013/6/6"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>dd</em></h4>
+
+<p>The zero-padded day of the month - from 01 to 31.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6), "yyyy/M/dd")); // outputs "2013/6/06"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>ddd</em></h4>
+
+<p>The abbreviated name of the day of the week.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6), "ddd,yyyy/M")); // outputs "Thu, 2013/6"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>dddd</em></h4>
+
+<p>The full name of the day of the week.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6), "ddd,yyyy/M")); // outputs "Thursday, 2013/6"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>f</em></h4>
+
+<p>The tenths of a second.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6, 5, 5, 5, 500), "f")); // outputs "5"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>ff</em></h4>
+
+<p>The hundreds of a second.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6, 5, 5, 5, 500), "ff")); // outputs "50"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>fff</em></h4>
+
+<p>The milliseconds.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6, 5, 5, 5, 500), "fff")); // outputs "500"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>M</em></h4>
+
+<p>The month, from 1 to 12.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6), "yyyy/M/d")); // outputs "2013/6/6"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>MM</em></h4>
+
+<p>The zero-padded month, from 01 to 12.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6), "yyyy/MM/d")); // outputs "2013/06/6"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>MMM</em></h4>
+
+<p>The abbreviated name of the month.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6), "yyyy/MMM/d")); // outputs "2013/Jun/6"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>MMMM</em></h4>
+
+<p>The full name of the month.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6), "yyyy/MMM/d")); // outputs "2013/June/6"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>h</em></h4>
+
+<p>The hour, using 12-hour clock from 1 to 12.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6, 6, 0), "h")); // outputs "6"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>hh</em></h4>
+
+<p>The zero-padded hour, using 12-hour clock from 01 to 12.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6, 6, 0), "h")); // outputs "06"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>H</em></h4>
+
+<p>The hour, using 24-hour clock from 0 to 23.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6, 13, 0), "H")); // outputs "13"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>HH</em></h4>
+
+<p>The zero-padded hour, using 24-hour clock from 00 to 23.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6, 6, 0), "HH")); // outputs "06"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>m</em></h4>
+
+<p>The minute, from 0 to 59.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6, 6, 30), "m")); // outputs "30"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>mm</em></h4>
+
+<p>The zero-padded minute, from 00 to 59.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6, 6, 5), "mm")); // outputs "05"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>s</em></h4>
+
+<p>The second, from 0 to 59.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6, 6, 5, 5), "s")); // outputs "5"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>ss</em></h4>
+
+<p>The zero-padded second, from 00 to 59.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6, 6, 5, 5), "ss")); // outputs "05"
+&lt;/script&gt;
+</code></pre>
+
+<h4><em>tt</em></h4>
+
+<p>The AM/PM designator.</p>
+
+<h5>Example</h5>
+
+<pre><code>&lt;script&gt;
+console.log(kendo.toString(new Date(2013, 5, 6, 13, 0), "HH tt")); // outputs "13 PM"
+&lt;/script&gt;
+</code></pre> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

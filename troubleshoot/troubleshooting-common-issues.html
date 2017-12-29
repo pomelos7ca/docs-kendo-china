@@ -1,0 +1,501 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="documentation">
+        <meta name="product" content="kendo-ui">
+        
+        <title>Common Issues | Kendo UI Troubleshooting</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Learn about the solutions of issues that may occur while working with Kendo UI controls.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("troubleshoot/troubleshooting-common-issues.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//troubleshoot/troubleshooting-common-issues.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="common-issues"><a href="#common-issues">Common Issues</a></h1>
+
+<p>This page provides solutions for common problems you may encounter while working with Kendo UI widgets.</p>
+
+<h2 id="offline-examples"><a href="#offline-examples">Offline Examples</a></h2>
+
+<h3 id="examples-fail-to-load-sample-data"><a href="#examples-fail-to-load-sample-data">Examples Fail to Load Sample Data</a></h3>
+
+<p>The most common cause for this error is loading the demos from the file system. Google Chrome, for example, will disallow accessing the JSON files needed for the demos to run.</p>
+
+<p><strong>Solution</strong></p>
+
+<p>Host the offline demos on a web server and load them from there.</p>
+
+<h2 id="jquery"><a href="#jquery">jQuery</a></h2>
+
+<h3 id="jquery-is-unavailable-or-undefined"><a href="#jquery-is-unavailable-or-undefined">jQuery Is Unavailable or Undefined</a></h3>
+
+<p>If jQuery is not included, or is included after the Kendo UI JavaScript files, or is included after Kendo UI widget initialization statements, the Kendo UI widgets will not function as expected.</p>
+
+<p>The following JavaScript errors will be thrown (depending on the browser):</p>
+
+<ul>
+<li>
+<code>ReferenceError: jQuery is not defined</code> (in Google Chrome and Firefox)</li>
+<li>
+<code>jQuery is undefined</code> (in Internet Explorer)</li>
+</ul>
+
+<p><strong>Solution</strong></p>
+
+<p>Make sure that jQuery is included only before the Kendo UI JavaScript files and before any JavaScript statements that depend on it.</p>
+
+<h2 id="widgets"><a href="#widgets">Widgets</a></h2>
+
+<h3 id="widgets-are-unavailable-or-undefined"><a href="#widgets-are-unavailable-or-undefined">Widgets Are Unavailable or Undefined</a></h3>
+
+<p>If jQuery is included more than once in the page all existing jQuery plugins (including Kendo UI) will be wiped out. Will also occur if the <a href="/intro/installation/prerequisites">required Kendo JavaScript files</a> are not included.</p>
+
+<p>Depending on the browser, the following JavaScript errors will be thrown:</p>
+
+<ul>
+<li>TypeError: Object <code>#&lt;Object&gt;</code> has no method <code>kendoGrid</code> (in Google Chrome)</li>
+<li>TypeError: <code>$("#Grid").kendoGrid</code> is not a function (in Firefox)</li>
+<li>Object does not support property or method <code>kendoGrid</code> (in Internet Explorer 9 and later)</li>
+<li>Object does not support this property or method (in older versions of Internet Explorer)</li>
+</ul>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>Not just the Kendo UI Grid, but all Kendo UI widgets are affected by this issue with only the error message being different. For example, <code>kendoChart is not a function</code> or <code>Object has no method kendoEditor</code>.</p>
+</blockquote>
+
+<p><strong>Solution</strong></p>
+
+<p>Make sure jQuery is not included more than once in your page. Remove any duplicate <code>script</code> references to jQuery. Include all <a href="/intro/installation/prerequisites">required Kendo JavaScript files</a>.</p>
+
+<h3 id="widgets-cannot-be-initialized-in-internet-explorer-compatibility-mode"><a href="#widgets-cannot-be-initialized-in-internet-explorer-compatibility-mode">Widgets Cannot Be Initialized in Internet Explorer Compatibility Mode</a></h3>
+
+<p>Kendo widgets provide a WAI-ARIA support, which means that some ARIA-specific attributes are added to the HTML element. When a widget tries to add an ARIA attribute using <a href="http://api.jquery.com/attr/">jQuery's <code>attr</code> method</a>, which in turn calls the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute"><code>Element.setAttribute</code> method</a>, the Internet Explorer in Compatibility mode will raise a JavaScript error with the following message:</p>
+
+<ul>
+<li>SCRIPT3: Member not found (in Internet Explorer 10+ in Compatibility Mode)</li>
+</ul>
+
+<p>The problem is reported to Microsoft on <code>https://connect.microsoft.com/IE/feedback/details/774078</code>. Also there is a <a href="http://bugs.jquery.com/ticket/12577">jQuery bug report</a>
+where more information can be found.</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>All Kendo widgets, which add ARIA attributes to HTML elements, will be affected.</p>
+</blockquote>
+
+<p><strong>Solution</strong></p>
+
+<p><strong>Option 1</strong> Force the Internet Explorer to use the Edge mode:</p>
+
+<pre><code> &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+</code></pre>
+
+<p><strong>Option 2</strong> Path jQuery. You can find more information about the possible path in the aforementioned jQuery bug report.</p>
+
+<h3 id="unknown-datasource-transport-type-json-warning-is-displayed"><a href="#unknown-datasource-transport-type-json-warning-is-displayed">Unknown DataSource transport type json Warning Is Displayed</a></h3>
+
+<p>The <code>Unknown DataSource transport type json</code> warning might be caused by either of the following reasons:</p>
+
+<ul>
+<li>
+<p>Invalid Kendo UI DataSource <a href="/api/javascript/data/datasource#configuration-type"><code>type</code></a> configuration is set. For example:</p>
+
+<pre><code>dataSource: {
+    type: "json"
+}
+</code></pre>
+</li>
+<li><p>A JavaScript file is missing when using a DataSource type that is not included in <code>kendo.all.min.js</code>. For example, <code>aspnetmvc-ajax</code>, <code>jsdo</code>, and others. Specifically, <code>json</code> is not a valid DataSource <code>type</code> and it does not require a separate JavaScript file.</p></li>
+</ul>
+
+<p><strong>Solution</strong></p>
+
+<p>Use a valid <code>type</code> value, or remove the <code>type</code> property, or add the corresponding missing file—for example, <code>kendo.aspnetmvc.min.js</code> when using the Kendo UI MVC wrappers.</p>
+
+<p>Note that the <a href="/api/javascript/data/datasource#configuration-type">dataSource <code>type</code></a> differs from the <a href="/api/javascript/data/datasource#configuration-transport.read.type"><code>type</code> of the transport actions</a>.</p>
+
+<h3 id="input-widgets-do-not-raise-change-event-when-api-is-used"><a href="#input-widgets-do-not-raise-change-event-when-api-is-used">Input Widgets Do Not Raise Change Event When API Is Used</a></h3>
+
+<p>The change event of an input widget is triggered only by user action. DOM elements work in the same way. If you need to trigger an event manually use the <a href="/api/javascript/ui/widget#methods-trigger">trigger method</a>.</p>
+
+<h3 id="creating-multiple-widgets-throws-javascript-errors"><a href="#creating-multiple-widgets-throws-javascript-errors">Creating Multiple Widgets Throws JavaScript Errors</a></h3>
+
+<p>This will happen if two or more widgets are initialized from elements that have same IDs. jQuery will find only the first one every time it searches for it and thus try to initialize the first element in the DOM multiple times.</p>
+
+<p><strong>Solution</strong></p>
+
+<p>The ID for each element on the page should be unique.</p>
+
+<pre><code>&lt;textarea id="editor"&gt;&lt;/textarea&gt;
+&lt;textarea id="editor"&gt;&lt;/textarea&gt;
+&lt;script&gt;
+    $('#editor').kendoEditor();
+    $('#editor').kendoEditor(); // problem
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="when-creating-multiple-widgets-only-one-of-them-works"><a href="#when-creating-multiple-widgets-only-one-of-them-works">When Creating Multiple Widgets Only One of Them Works</a></h3>
+
+<p>For a solution, see the <a href="#creating-multiple-widgets-throws-javascript-errors">Creating Multiple Widgets Throws JavaScript Errors</a> section above.</p>
+
+<h3 id="third-party-modal-popups-prevent-access-to-kendo-ui-widgets"><a href="#third-party-modal-popups-prevent-access-to-kendo-ui-widgets">Third-Party Modal Popups Prevent Access to Kendo UI Widgets</a></h3>
+
+<p>Some third-party modal popups prevent access to focusable elements, which are rendered outside the modal popup. Such widgets include the Bootstrap modal dialog, the jQuery UI modal dialog, and possibly others. The Kendo UI widgets, which are affected by this behavior are all widgets, which render their own detached popups, e.g. AutoComplete, ColorPicker, ComboBox, DropDownList, DateTimePicker, Editor, Grid, and MultiSelect. The popups of these Kendo UI widgets are rendered as children of the <code>&lt;body&gt;</code> and as a result, the third-party modal popup will prevent access to them.</p>
+
+<p><strong>Solution</strong></p>
+
+<p>There are two ways to avoid this problem:</p>
+
+<ul>
+<li>Disable the modal popup's modality, so that elements outside it can be focused.</li>
+<li>Use a <a href="/api/javascript/ui/window#configuration-modal">modal</a> <a href="/controls/layout/window/overview">Kendo UI Window</a> instead of a third-party popup.</li>
+</ul>
+
+<h3 id="widgets-do-not-work-correctly-on-touch-devices"><a href="#widgets-do-not-work-correctly-on-touch-devices">Widgets Do Not Work Correctly on Touch Devices</a></h3>
+
+<p>Client libraries that interfere with touch events, such as FastClick, are not compatible with Kendo UI and may break the behavior of the widgets. For example, they may cause a drop-down list to close immediately after opening.</p>
+
+<p><strong>Solution</strong></p>
+
+<p>For more information on this issue, refer to <a href="http://www.telerik.com/blogs/what-exactly-is.....-the-300ms-click-delay">What Exactly Is... The 300ms Click Delay</a>.</p>
+
+<h3 id="widget-popup-is-offset-incorrectly-in-internet-explorer"><a href="#widget-popup-is-offset-incorrectly-in-internet-explorer">Widget Popup Is Offset Incorrectly in Internet Explorer</a></h3>
+
+<p>When Kendo UI is used with jQuery <code>1.12.0</code> or <code>2.2.0</code>, some issues with the popup positioning might occur. The popup is offset incorrectly when the page is scrolled.</p>
+
+<p><strong>Solution</strong></p>
+
+<p>The reason for this issue is a bug in the aforementioned jQuery version. According to jQuery's bug tracker, it will be addressed in the next patch release of jQuery. For more details, refer to <a href="https://github.com/telerik/kendo-ui-core/issues/1375">https://github.com/telerik/kendo-ui-core/issues/1375</a>.</p>
+
+<h3 id="incorrect-appearance-or-errors-occur-in-hidden-widgets"><a href="#incorrect-appearance-or-errors-occur-in-hidden-widgets">Incorrect Appearance or Errors Occur in Hidden Widgets</a></h3>
+
+<p>If you display widgets that have been in an initially hidden container, call their <a href="/api/javascript/ui/widget#methods-resize"><code>resize()</code></a> method after you show them. Initializing widgets on elements with the <code>style="display: none;"</code> configuration might cause errors, such as inability to calculate dimensions and positions or even throw errors. The reason for this behavior is that such calculations are not available for elements that are not rendered by the browser.</p>
+
+<p><strong>Solution</strong></p>
+
+<p>Usually, delaying the widget initialization until after it is displayed resolves the issue and improves the page performance.</p>
+
+<h2 id="cdn"><a href="#cdn">CDN</a></h2>
+
+<h3 id="scripts-or-stylesheets-do-not-load-from-cdn"><a href="#scripts-or-stylesheets-do-not-load-from-cdn">Scripts or Stylesheets Do Not Load from CDN</a></h3>
+
+<p>For a solution, refer to <a href="/intro/installation/cdn-service#troubleshooting">Kendo UI CDN Fallback and Troubleshooting</a>.</p>
+
+<h2 id="status-codes"><a href="#status-codes">Status Codes</a></h2>
+
+<h3 id="404-status-code-is-thrown-for-woff-or-ttf-font-files"><a href="#404-status-code-is-thrown-for-woff-or-ttf-font-files">404 Status Code Is Thrown for WOFF or TTF Font Files</a></h3>
+
+<p>For a solution, refer to <a href="/controls/hybrid/styles/icons#serving-font-files">Serving Font Files</a>.</p>
+
+<h3 id="404-status-code-is-thrown-for-json-files-on-iis"><a href="#404-status-code-is-thrown-for-json-files-on-iis">404 Status Code Is Thrown for JSON Files on IIS</a></h3>
+
+<p>By default, IIS does not serve files with unknown extensions. The mime types can be specified either through the IIS management console (inetmgr) or in the site <code>Web.config</code>.</p>
+
+<p><strong>Solution</strong></p>
+
+<p>The example below demonstrates how to configure the IIS <code>Web.config</code>. Note the mime is removed first to avoid clashes if it is already defined.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="xml"><code>    &lt;?xml version="1.0"?&gt;
+    &lt;configuration&gt;
+        ...
+        &lt;system.webServer&gt;
+            ...
+            &lt;staticContent&gt;
+                &lt;remove fileExtension=".json" /&gt;
+                &lt;mimeMap fileExtension=".json" mimeType="application/json" /&gt;
+            &lt;/staticContent&gt;
+        &lt;/system.webServer&gt;
+    &lt;/configuration&gt;
+</code></pre>
+
+<h2 id="ajax"><a href="#ajax">Ajax</a></h2>
+
+<h3 id="widget-object-is-undefined-after-loading-a-page-through-ajax"><a href="#widget-object-is-undefined-after-loading-a-page-through-ajax">Widget Object Is Undefined after Loading a Page through AJAX</a></h3>
+
+<p>This issue is usually caused when the page loaded via AJAX contains a script reference to jQuery. When jQuery is re-initialized, all jQuery-based data attributes are cleared, including the data(<code>kendoWidget</code>) attribute that holds the Kendo UI widget object.</p>
+
+<p><strong>Solution</strong></p>
+
+<p>Load a partial HTML fragment that does not contain any unneeded jQuery references, or use an <code>iframe</code> to load the complete page.</p>
+
+<p>The example below demonstrates a test issue.</p>
+
+<h6>Example</h6>
+
+<pre><code>$("#dialog").kendoWinodow({
+    // loads complete page
+    content: "/foo"
+});
+</code></pre>
+
+<p>The example below demonstrates the solution of the test issue above.</p>
+
+<h6>Example</h6>
+
+<pre><code>$("#dialog").kendoWindow({
+    // load complete page...
+    content: "/foo",
+    // ... and show it in an iframe
+    iframe: true
+});
+
+// or
+
+$("#dialog").kendoWinodow({
+     // load partial page, without jQuery reference
+    content: "/foo"
+});
+</code></pre>
+
+<h2 id="styles-and-themes"><a href="#styles-and-themes">Styles and Themes</a></h2>
+
+<h3 id="icons-disappear-after-upgrade"><a href="#icons-disappear-after-upgrade">Icons Disappear after Upgrade</a></h3>
+
+<p>As of the R1 2017 release, Kendo UI widgets utilize font-icons instead of sprites. This approach outdates some CSS, which are now removed from the built-in styles.</p>
+
+<p><strong>Solution</strong></p>
+
+<p>To provide for the backward compatibility of any custom icons you add to your project, include the following styles in your application:</p>
+
+<pre data-lang="css"><code>/* Provides backward compatibility support for custom sprites */
+.k-sprite {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+    -ms-high-contrast-adjust: none;
+}
+
+/* Removes sprite styles from font icons */
+.k-sprite.k-icon {
+    font-size: 16px;
+    line-height: 1;
+}
+</code></pre>
+
+<h2 id="see-also"><a href="#see-also">See Also</a></h2>
+
+<p>Other articles on troubleshooting:</p>
+
+<ul>
+<li><a href="/troubleshoot/troubleshooting-js-errors">JavaScript Errors</a></li>
+<li><a href="/troubleshoot/troubleshooting-memory-leaks">Performance Issues</a></li>
+<li><a href="/troubleshoot/content-security-policy">Content Security Policy</a></li>
+<li><a href="/framework/excel/troubleshoot/common-issues">Common Issues in Kendo UI Excel Export</a></li>
+<li><a href="/controls/charts/troubleshoot/common-issues">Common Issues in Kendo UI Charts</a></li>
+<li><a href="/controls/charts/troubleshoot/performance-tips">Performance Issues in Kendo UI Widgets for Data Visualization</a></li>
+<li><a href="/controls/editors/combobox/troubleshoot/troubleshooting">Common Issues in Kendo UI ComboBox</a></li>
+<li><a href="/controls/diagrams-and-maps/diagram/troubleshoot/common-issues">Common Issues in Kendo UI Diagram</a></li>
+<li><a href="/controls/editors/dropdownlist/troubleshoot/troubleshooting">Common Issues in Kendo UI DropDownList</a></li>
+<li><a href="/controls/editors/editor/troubleshoot/troubleshooting">Common Issues in Kendo UI Editor</a></li>
+<li><a href="/controls/editors/multiselect/troubleshoot/troubleshooting">Common Issues in Kendo UI MultiSelect</a></li>
+<li><a href="/controls/scheduling/scheduler/troubleshoot/troubleshooting">Common Issues in Kendo UI Scheduler</a></li>
+<li><a href="/controls/editors/upload/troubleshoot/troubleshooting">Common Issues in Kendo UI Upload</a></li>
+<li><a href="/styles-and-layout/troubleshoot/troubleshooting">Common Issues Related to Styling, Appearance, and Rendering</a></li>
+<li><a href="http://docs.telerik.com/aspnet-mvc/troubleshoot/troubleshooting">Common Issues in Telerik UI for ASP.NET MVC</a></li>
+<li><a href="http://docs.telerik.com/aspnet-mvc/troubleshoot/troubleshooting-validation">Validation Issues in Telerik UI for ASP.NET MVC</a></li>
+<li><a href="http://docs.telerik.com/aspnet-mvc/troubleshoot/troubleshooting-scaffolding">Scaffolding Issues in Telerik UI for ASP.NET MVC</a></li>
+<li><a href="http://docs.telerik.com/aspnet-mvc/helpers/grid/troubleshoot/troubleshooting">Common Issues in the Grid ASP.NET MVC HtmlHelper Extension</a></li>
+<li><a href="http://docs.telerik.com/aspnet-mvc/helpers/grid/troubleshoot/excel-export-issues">Excel Export with the Grid ASP.NET MVC HtmlHelper Extension</a></li>
+<li><a href="http://docs.telerik.com/aspnet-mvc/helpers/spreadsheet/troubleshoot/troubleshooting">Common Issues in the Spreadsheet ASP.NET MVC HtmlHelper Extension</a></li>
+<li><a href="http://docs.telerik.com/aspnet-mvc/helpers/upload/troubleshoot/troubleshooting">Common Issues in the Upload ASP.NET MVC HtmlHelper Extension</a></li>
+</ul> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

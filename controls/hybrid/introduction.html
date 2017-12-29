@@ -1,0 +1,600 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="documentation">
+        <meta name="product" content="kendo-ui">
+        
+        <title>Overview | Kendo UI Hybrid Components</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Build mobile applications using the Kendo UI hybrid components.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("controls/hybrid/introduction.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//controls/hybrid/introduction.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="overview"><a href="#overview">Overview</a></h1>
+
+<p>This article elaborates on the basics of building applications with <a href="http://www.telerik.com/kendo-ui-mobile">the Hybrid UI components in Kendo UI</a>.</p>
+
+<p>The Kendo UI hybrid framework is designed to help developers build mobile app experiences through using HTML and JavaScript that automatically adapt to the native look and feel of different mobile platforms. Developers using Kendo UI hybrid components can focus on the content and functions of their apps and let the Kendo UI framework handle differences between platforms such as iOS and Android.</p>
+
+<p><strong>Figure 1: Adaptive rendering of Kendo UI hybrid components</strong></p>
+
+<p><img src="/images/mobile/km-adaptive-rending-illustration.png" alt="Illustration of Kendo UI mobile adaptive rendering"></p>
+
+<p>While some mobile HTML frameworks focus on providing a one-size-fits-all experience, the Kendo UI hybrid framework focuses on delivering perfectly tailored experiences for different mobile platforms. Built and packaged correctly, the goal of such an application is to be virtually indistinguishable to end-users from a native SDK app.</p>
+
+<p>The advantage of building apps with HTML, JavaScript, and Kendo UI is that you are able to maintain a single code base to target all major app platforms. Your team can focus on becoming masters of HTML, JavaScript, and CSS, rather than being average practitioners of Objective-C, Java, .NET, UIKit, and the myriad of other developer skills needed for cross-platform mobile app development.</p>
+
+<h2 id="building-blocks-of-hybrid-applications"><a href="#building-blocks-of-hybrid-applications">Building Blocks of Hybrid Applications</a></h2>
+
+<p>The Kendo UI hybrid applications are built entirely with HTML, JavaScript, and CSS. Those are the only skills you will need to build a Kendo UI mobile app that looks and feels native across mobile platforms. If you plan to work with data, make sure you are familiar with <a href="http://en.wikipedia.org/wiki/JSON">JSON</a>.</p>
+
+<p>Applications do not need to be cross-compiled into a native <a href="https://en.wikipedia.org/wiki/Software_development_kit">software-development kit (SDK)</a> language. Your HTML and JavaScript code is ultimately intended to run on mobile devices, even if you eventually use tools like <a href="http://incubator.apache.org/cordova/">Cordova</a> to package your application for an app store.</p>
+
+<p>There are a few key, non-visual pieces of Kendo UI hybrid components used in virtually all applications. These are:</p>
+
+<ol>
+<li>
+<a href="http://demos.telerik.com/kendo-ui/m/index#application/loadingpopup">Application</a>—This is the shell of Kendo UI hybrid apps. Application manages all navigation, application history, loading views, rendering mobile meta tags, and other essential mobile app tasks.</li>
+<li>
+<a href="/controls/hybrid/styles/layout">Layout</a>—Defines the reusable portions of a hybrid app, similar to a MasterPage or template. Layouts are often used improve app maintainability by defining things used across multiple views, like navigation. While not required, layouts are encouraged to use.</li>
+<li>
+<a href="http://demos.telerik.com/kendo-ui/m/index#mobile-view/index">Views</a>—Individual pages of a hybrid app. Views contain the greater part of the application content. Every application has one or more views.</li>
+</ol>
+
+<p>Layouts and Views are defined through HTML. The Application is simply JavaScript. No markup associated with the Application is used.</p>
+
+<h2 id="getting-started"><a href="#getting-started">Getting Started</a></h2>
+
+<p>To create the basic structure of a Kendo UI hybrid application by using its building blocks:</p>
+
+<ul>
+<li><a href="#create-an-html-page">Create an HTML page</a></li>
+<li><a href="#add-references-to-kendo-ui">Add references to Kendo UI</a></li>
+<li><a href="#define-the-application-layout">Define the layout of the application</a></li>
+<li><a href="#define-the-view">Define the view</a></li>
+<li><a href="#initialize-the-hybrid-application">Initialize the hybrid application</a></li>
+</ul>
+
+<h3 id="create-an-html-page"><a href="#create-an-html-page">Create an HTML Page</a></h3>
+
+<p>Kendo UI hybrid apps can be created by using simple HTML pages. First, try creating a page called <code>index.html</code> using the code from the example below.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My App&lt;/title&gt;
+    &lt;!--TODO: Add CSS links--&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;!--TODO: Add JavaScript referneces--&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>The Kendo UI hybrid Application automatically adds mobile meta tags for you at runtime.</p>
+</blockquote>
+
+<h3 id="add-references-to-kendo-ui"><a href="#add-references-to-kendo-ui">Add References to Kendo UI</a></h3>
+
+<p>Just as with other parts of the Kendo UI framework, adding Kendo UI to your application is a process of copying the provided JavaScript and CSS assets into your project and then configuring the CSS and JavaScript links. When set up, your app page should look similar to the one demonstrated in the example below.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My App&lt;/title&gt;
+
+    &lt;link href="css/kendo.mobile.all.min.css" rel="stylesheet" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="js/kendo.all.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>This example uses the minified versions of Kendo UI scripts and styles that include all features, widgets, and themes. You can create customized and more compact versions of the Kendo UI resources for your app if you choose not to use specific features or widgets.</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>For development, the <code>all</code> minified files are the best choice.</p>
+</blockquote>
+
+<p>Find out more about installing Kendo UI in your project <a href="/intro/installation/getting-started">this article</a> section.</p>
+
+<h3 id="define-the-application-layout"><a href="#define-the-application-layout">Define the Application Layout</a></h3>
+
+<p>The layout is the template of your application. The whole content from views, which you are to create later, are going to be rendered inside of the layout, or layouts—you can define as many layouts as you need. A layout can contain anything, but generally it is where your app title bar and navigation are going to live. Add a layout to your app with the basic elements demonstrated in the example below.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My App&lt;/title&gt;
+
+    &lt;link href="css/kendo.mobile.all.min.css" rel="stylesheet" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;section data-role="layout" data-id="default"&gt;
+        &lt;header data-role="header"&gt;
+            &lt;div data-role="navbar"&gt;My App&lt;/div&gt;
+        &lt;/header&gt;
+        &lt;!--View content will render here--&gt;
+        &lt;footer data-role="footer"&gt;
+            &lt;div data-role="tabstrip"&gt;
+                &lt;a data-icon="home" href="#home"&gt;Home&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/section&gt;
+
+    &lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="js/kendo.all.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Note that the example uses the <code>data-role</code> attribute in your HTML. This communicates to Kendo UI that the HTML should be transformed when the Application is initialized with JavaScript. In this case:</p>
+
+<p><code>&lt;section data-role="layout" data-id="default"&gt;</code></p>
+
+<p>When the Application is initialized, this block of HTML is going to be initialized as a <a href="/controls/hybrid/styles/layout">Kendo UI Hybrid Layout</a>. The <code>data-id</code> attribute is further defined to give this layout a unique name that can be used by your views.</p>
+
+<p>Next, for completeness, a couple of Kendo UI hybrid widgets are introduced—<a href="/controls/hybrid/navbar/navbar">NavBar</a> and <a href="/controls/hybrid/tabstrip/tabstrip">TabStip</a>. Note that they are also configured with the simple <code>data-role</code> attribute.</p>
+
+<h3 id="create-the-view"><a href="#create-the-view">Create the View</a></h3>
+
+<p>Now that the application layout is defined, you need to define at least one view to be displayed when the application loads. Most apps have multiple views. However, start with the simple configuration from the example below.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My App&lt;/title&gt;
+
+    &lt;link href="css/kendo.mobile.all.min.css" rel="stylesheet" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="home" data-role="view" data-layout="default"&gt;
+        Hello Mobile World!
+    &lt;/div&gt;
+
+    &lt;section data-role="layout" data-id="default"&gt;
+        &lt;header data-role="header"&gt;
+            &lt;div data-role="navbar"&gt;My App&lt;/div&gt;
+        &lt;/header&gt;
+        &lt;!--View content will render here--&gt;
+        &lt;footer data-role="footer"&gt;
+            &lt;div data-role="tabstrip"&gt;
+                &lt;a data-icon="home" href="#home"&gt;Home&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/section&gt;
+
+    &lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="js/kendo.all.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>This example uses the <code>data-role</code> attribute to define your view, and the <code>data-layout</code> attribute to tell your view which layout template to use. You can add simple HTML or other Kendo UI widgets to the view.</p>
+
+<p>Instead of <code>&lt;a href="#home"&gt;Home&lt;/a&gt;</code>, you can also use <code>&lt;a href="#/"&gt;Home&lt;/a&gt;</code>. By definition, the <code>#/</code> URL points to the first view, which is defined in the HTML file or the so-called root view. If you try to run the application now, you see a bunch of HTML, but nothing looks right yet. You need to take one more step to initialize the application.</p>
+
+<h3 id="initialize-the-hybrid-application"><a href="#initialize-the-hybrid-application">Initialize the Hybrid Application</a></h3>
+
+<p>To make this HTML start looking like a mobile app, add the following line of script after your jQuery and Kendo UI script links, but before the closing <code>body</code> tag.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;script&gt;
+    var app = new kendo.mobile.Application();
+&lt;/script&gt;
+</code></pre>
+
+<p>This automatically initializes your Kendo UI hybrid application together with all widgets with <code>data-role</code> attributes.</p>
+
+<p>The following example demonstrates the full implementation of the described approach.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div id="home" data-role="view" data-layout="default"&gt;
+      Hello Mobile World!
+    &lt;/div&gt;
+
+    &lt;section data-role="layout" data-id="default"&gt;
+      &lt;header data-role="header"&gt;
+        &lt;div data-role="navbar"&gt;My App&lt;/div&gt;
+      &lt;/header&gt;
+      &lt;!--View content will render here--&gt;
+      &lt;footer data-role="footer"&gt;
+        &lt;div data-role="tabstrip"&gt;
+          &lt;a data-icon="home" href="#home"&gt;Home&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/footer&gt;
+    &lt;/section&gt;
+
+    &lt;script&gt;
+      var app = new kendo.mobile.Application(document.body);
+    &lt;/script&gt;
+</code></pre>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>If you have trouble seeing the application when working locally, make sure all of your script and CSS resources are loading without error by using the browser developer tools. Some browsers, such as Chrome, block the loading of external resources if you load your page using the <code>file://</code> protocol. Instead, test your pages using local web server (<code>localhost</code>) or a browser that does not restrict local resources, such as Firefox.</p>
+</blockquote>
+
+<h2 id="native-look-and-feel"><a href="#native-look-and-feel">Native Look and Feel</a></h2>
+
+<h3 id="configure-views"><a href="#configure-views">Configure Views</a></h3>
+
+<p>Now that you have a basic Kendo UI hybrid app structure setup, begin adding more views to your application. Multiple views can be defined in the same file or in separate HTML files. For larger applications, maintaining views in separate files during development is preferred.</p>
+
+<p>To add a second view to your app, create a new page called <code>about.html</code> with the content shown in the example below.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;About&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="about" data-role="view" data-layout="default"&gt;
+        All About My App
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Note that this page does not redefine references to the Kendo UI script or CSS resources. This page requires minimal markup. When the Kendo UI hybrid application loads a remote view—a view defined in separate file—it looks for the first <code>data-role="view"</code> in the <code>body</code> element and discards the rest of the page.</p>
+
+<h3 id="handle-navigation"><a href="#handle-navigation">Handle Navigation</a></h3>
+
+<p>Enable your application to navigate to this page by updating the TabStrip, added previously, to include a navigation link for your external view.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;footer data-role="footer"&gt;
+    &lt;div data-role="tabstrip"&gt;
+        &lt;a href="#home"&gt;Home&lt;/a&gt;
+        &lt;a href="about.html"&gt;About&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/footer&gt;
+</code></pre>
+
+<p>When Kendo UI encounters a link to an external view, it automatically loads and caches the view with Ajax and provides a seamless navigation experience.</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>If you do not want a link in a navigational Kendo UI hybrid widget to be treated as a view, be sure to include the <code>data-rel="external"</code> attribute.</p>
+</blockquote>
+
+<p>If you want to maintain multiple views in a single page, just navigate the <code>id</code> of the view, as demonstrated below.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div data-role="view" id="foo"&gt;
+    &lt;span&gt;foo&lt;/span&gt;
+    &lt;footer data-role="footer"&gt;
+        &lt;div data-role="tabstrip"&gt;
+            &lt;a href="#home"&gt;Home&lt;/a&gt;
+            &lt;a href="about.html"&gt;About&lt;/a&gt;
+            &lt;a href="#foo"&gt;More&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Your navigation is now working, though all the views appear instantly with no animation transition. To give your application the native mobile feel, add a default transition for all views by modifying the Application initialization script in the way shown below.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;script&gt;
+    var app = new kendo.mobile.Application(document.body,
+    {
+        transition:'slide'
+    });
+&lt;/script&gt;
+</code></pre>
+
+<p>Now your application is looking and feeling native.</p>
+
+<h2 id="multiple-platforms-testing"><a href="#multiple-platforms-testing">Multiple Platforms Testing</a></h2>
+
+<p>By default, the Kendo UI hybrid application renders with an iOS look and feel if it does not detect another mobile platform. When you want to test the look and feel of your application on other platforms and see how Kendo UI hybrid components automatically adapts, take either of two paths:</p>
+
+<ol>
+<li>Force Platform Rendering</li>
+<li>Use Browser Tools</li>
+</ol>
+
+<h3 id="force-platform-rendering"><a href="#force-platform-rendering">Force Platform Rendering</a></h3>
+
+<p>When you initialize a Kendo UI hybrid Application, you have the option to force the platform rendering with a simple configuration option used in the Application constructor.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;script&gt;
+    var app = new kendo.mobile.Application(document.body,
+    {
+        platform:'android'
+    });
+&lt;/script&gt;
+</code></pre>
+
+<p>When using this code, you effectively disable the adaptive rendering detection and manually tell the application how to render.</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>Make sure you remove this setting before deploying your application if you want the adaptive rendering to work across platforms.</p>
+</blockquote>
+
+<h3 id="use-browser-tools"><a href="#use-browser-tools">Use Browser Tools</a></h3>
+
+<p>Kendo UI relies on the <a href="http://en.wikipedia.org/wiki/User_agent"><code>UserAgent</code> string</a> to trigger different platform renderings. If a browser reports that it is a specific mobile device, the mobile application responds and provides the correct, device-specific rendering.</p>
+
+<p>Some desktop browsers, such as Google's Chrome, allow you to easily modify your user agent string, thereby allowing you to trick Kendo UI that your browser is a given mobile device. This helps you to quickly preview your application styling for different mobile platforms without changing any code.</p>
+
+<p>To do this in Chrome, follow the steps below:</p>
+
+<ol>
+<li>Open the Chrome Developer Tools (<code>F12</code>).</li>
+<li>Click on the gear icon in the lower right corner.</li>
+<li>In the <strong>Settings</strong> window that opens, check the <strong>Override User Agent</strong> box.</li>
+<li>This reveals a dropdown of pre-defined browsers and devices. Select the device you want to imitate or define your own.</li>
+<li>To undo this effect, uncheck the <strong>Override</strong> box.</li>
+</ol>
+
+<p>Of course, nothing replaces actual testing on mobile devices. In many cases, the Kendo UI mobile styles look better on devices than in desktop browsers. Make sure you test on an iPhone, Android, BlackBerry, or whatever devices you intend to support before deploying your application or when previewing application styles.</p>
+
+<h2 id="apps-intended-for-specific-platforms"><a href="#apps-intended-for-specific-platforms">Apps Intended for Specific Platforms</a></h2>
+
+<p>Kendo UI automatic platform adapting is a huge time-saver, but you might want to customize the presentation of an application for specific platforms. When you want to take more control over the experience different devices provide, use the <code>data-platform</code> attribute.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div data-role="layout" data-id="foo" data-platform="ios"&gt;
+    &lt;div data-role="header"&gt;iOS App&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div data-role="layout" data-id="foo" data-platform="android"&gt;
+    &lt;div data-role="header"&gt;Android App&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>The use of <code>data-platform</code> in these examples causes different headers to be displayed to iOS and Android users of the app. You are also able to use custom CSS to fine-tune your apps. When Kendo UI initializes an application, it adds a device-specific CSS class to the Application root element. This allows you to create styles that specifically target different platforms. For example, on iOS, the HTML for an initialized app might look like:</p>
+
+<p><code>&lt;body class="km-ios km-vertical"&gt;</code></p>
+
+<p>If you want to create styles for your application that are going to be applied to iOS devices only, create CSS rules as demonstrated below.</p>
+
+<h6>Example</h6>
+
+<pre><code>.km-ios .myStyle { color: blue; }
+.km-android .myStyle { color: green; }
+</code></pre>
+
+<p>This added degree of control makes it a cinch to precisely style apps for different target platforms. You can also target styles at specific device orientations. Kendo UI hybrid framework updates the orientation CSS class as the device position changes.</p>
+
+<h2 id="further-reading"><a href="#further-reading">Further Reading</a></h2>
+
+<p>To get a better understanding of how Kendo UI hybrid Application works, check the features provided by the <a href="/controls/hybrid/application">application class</a>.</p>
+
+<h2 id="see-also"><a href="#see-also">See Also</a></h2>
+
+<p>Articles and how-to examples on the Hybrid UI components in Kendo UI:</p>
+
+<ul>
+<li><a href="/controls/hybrid/performance">Performance Tips and Tricks</a></li>
+<li><a href="/controls/hybrid/native-scrolling">Native Scrolling</a></li>
+<li><a href="/controls/hybrid/application">Overview of the Application for Mobile</a></li>
+<li><a href="/controls/hybrid/how-to/fixed-content-area">How to Create Fixed Content Areas with Scroller</a></li>
+<li><a href="/controls/hybrid/how-to/relative-content-size-using-flexboxes">How to Create Relative Content Size Using Flexboxes</a></li>
+<li><a href="/controls/hybrid/how-to/select-value-from-another-view">How to Select Value from Another View</a></li>
+<li><a href="/controls/hybrid/how-to/angular/set-initial-view-using-angular">How to Set Initial View Prior to Initialization in AngularJS</a></li>
+</ul> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

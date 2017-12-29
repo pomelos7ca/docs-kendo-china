@@ -1,0 +1,877 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="documentation">
+        <meta name="product" content="kendo-ui">
+        <meta name="subproduct" content="data_source">
+        <title>CRUD Data Operations | Kendo UI Data Source</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Learn how to use the Kendo UI DataSource component for CRUD data operations.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("framework/datasource/crud.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//framework/datasource/crud.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="crud-data-operations"><a href="#crud-data-operations">CRUD Data Operations</a></h1>
+
+<p>The <a href="http://demos.telerik.com/kendo-ui/datasource/index">Kendo UI DataSource component</a> fully supports the CRUD (Create, Read, Update, Destroy) data operations. However, it must be combined with some user interface or another Kendo UI widget such as the Grid, ListView, etc.</p>
+
+<p>Though the examples below use the Grid as a sample, the configurations apply to any other widget or scenario.</p>
+
+<h2 id="concepts"><a href="#concepts">Concepts</a></h2>
+
+<h3 id="transport"><a href="#transport">Transport</a></h3>
+
+<p>The DataSource component can work with local data or remote data. In both cases the CRUD operations are managed by the Kendo UI DataSource <code>transport</code>. This is a JavaScript object that can be configured to execute predefined functions or make requests to predefined URLs on certain events.</p>
+
+<p>For detailed information on the DataSource <code>transport</code>, refer to the <a href="/api/javascript/data/datasource#configuration-transport">DataSource API documentation</a>.</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>All transport actions (read, update, create, destroy) must be defined in the same way—for example, as functions (when using local or custom transport), or as objects (when using remote transport). It is not possible to mix the two configuration alternatives.</p>
+</blockquote>
+
+<h3 id="schema"><a href="#schema">Schema</a></h3>
+
+<p>The DataSource <code>schema</code> has several important roles, with the most notable ones being:</p>
+
+<ul>
+<li>Define the <code>data</code> field types in <code>schema.model.fields</code>. This ensures the correct sorting and filtering, and corrects the usage of default field editors, such as a numeric textbox for numeric data.</li>
+<li>Define the <code>id</code> field of the data items in <code>schema.model.id</code>. This ensures the correct adding, editing, and deleting of items.</li>
+<li>Define the <code>key</code>, which points to the data items array in <code>schema.data</code>. This is required when the data does not represent a plain array of objects or JSON.</li>
+</ul>
+
+<p>You must configure the first two settings no matter whether local or remote CRUD operations are used. The only case when they are not needed is for scenarios when all data fields are of the string type and there is no editing.</p>
+
+<p>For detailed information on the DataSource <code>schema</code>, refer to the <a href="/api/javascript/data/datasource#configuration-schema">DataSource API documentation</a>.</p>
+
+<h2 id="local-or-custom-transport-crud-operations"><a href="#local-or-custom-transport-crud-operations">Local or Custom Transport CRUD Operations</a></h2>
+
+<p>The information in this section is applicable to scenarios, in which the data is already available on the client, or when it is you that is going to take care of its retrieval and submission. In other words, the Kendo UI DataSource will not make any HTTP requests on its own.</p>
+
+<h3 id="read-local"><a href="#read-local">Read (Local)</a></h3>
+
+<p>When a Kendo UI DataSource instance must be bound to local data without the need to support editing, it is sufficient to use the <code>data</code> option, as demonstrated below.</p>
+
+<h6>Example</h6>
+
+<pre><code>var dataSource = new kendo.data.DataSource({
+    data: sampleData
+}
+</code></pre>
+
+<p>However, when editing is going to be used, a <code>transport</code> configuration is required. The <code>data</code> option is no longer needed. The <code>read</code> method of the <code>transport</code> should pass a local variable. It can even make a custom Ajax request and then pass the response.</p>
+
+<h6>Example</h6>
+
+<pre><code>var dataSource = new kendo.data.DataSource({
+    transport: {
+        read: function (e) {
+            // on success
+            e.success(sampleData);
+            // on failure
+            //e.error("XHR response", "status code", "error message");
+        }
+    }
+}
+</code></pre>
+
+<p>Executing the <code>success</code> method of the <code>read</code> function argument populates the DataSource instance and fire its <code>change</code> event. Executing the <code>error</code> method fires the <code>error</code> event of the DataSource, which can be handled.</p>
+
+<p>For more information on handling errors in such scenarios, refer to the section about <a href="/framework/datasource/crud#local-or-custom-transport-error-handling">error handling with local transport</a>.</p>
+
+<h3 id="update-local"><a href="#update-local">Update (Local)</a></h3>
+
+<p>The <code>update</code> configuration setting of the DataSource should define a function that handles the updated data items, received as a function argument. When <code>batch</code> is disabled, as it is by default, and only one data item can be updated at a time, the updated data item is received as an object in <code>e.data</code>. If <code>batch</code> is enabled and multiple data items can be updated, they are received as an array of objects in <code>e.data.models</code>. Again, the <code>success</code> or <code>error</code> method of the function argument must be executed at the end.</p>
+
+<h6>Example</h6>
+
+<pre><code>var dataSource = new kendo.data.DataSource({
+    transport: {
+        /* the other CRUD settings are ommitted for brevity */
+        update: function (e) {
+            // batch is enabled
+            //var updateItems = e.data.models;
+            // batch is disabled
+            var updatedItem = e.data;
+
+            // save the updated item to the original datasource
+            // ...
+
+            // on success
+            e.success();
+            // on failure
+            //e.error("XHR response", "status code", "error message");
+        }
+    }
+});
+</code></pre>
+
+<!--*-->
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<ul>
+<li>The Kendo UI DataSource uses the ID value to determine whether a data item is new or existing.</li>
+<li>If the ID value is <code>zero</code>, it is assumed that the data item is new, so the <code>create</code> function is executed.</li>
+<li>If you need to use zero ID values, then change the <a href="/api/javascript/data/model#methods-Model.define"><code>defaultValue</code></a> of the ID field to -1 in
+<a href="/api/javascript/data/datasource#configuration-schema.model"><code>schema.model.fields</code></a>.</li>
+</ul>
+</blockquote>
+
+<h3 id="create-local"><a href="#create-local">Create (Local)</a></h3>
+
+<p>The <code>create</code> function should perform a similar routine as the <code>update</code> one with a couple of notable differences:</p>
+
+<ul>
+<li>The newly created data items have no ID, so they must be added by the function script or returned by the remote service.</li>
+<li>The newly created data items must be returned in the <code>success</code> method with their IDs assigned. Otherwise, the DataSource instance is going to operate with incorrect data and subsequent data operations can fail.</li>
+<li>If the <a href="/api/javascript/data/datasource#configuration-schema.data"><code>schema.data</code></a> configuration is set, the <code>success</code> method should receive the created data item in an object <em>with the same structure</em> as the object that is passed to the <code>success</code> method of the <code>read</code> function. See the example below.</li>
+</ul>
+
+<h6>Example</h6>
+
+<!-- exit list -->
+
+<pre><code>var dataSource = new kendo.data.DataSource({
+    transport: {
+        /* the other CRUD settings are ommitted for brevity */
+        create: function (e) {
+            // batch is disabled
+            // generate appropriate data item ID and save the new items to the original datasource
+            e.data.my_ID_field_name = 123;
+            // ...
+
+            // on success return the new data items with IDs (assuming schema.data is NOT SET)
+            e.success(e.data);
+
+            // if schema.data IS SET (for example to "foo"), use the following syntax instead
+            // e.success({"foo": [e.data]});
+
+            // on failure
+            //e.error("XHR response", "status code", "error message");
+        }
+    }
+});
+</code></pre>
+
+<!--*-->
+
+<p>Also, check the notes on IDs in the above <a href="/framework/datasource/crud#update-local">Update (Local)</a> section.</p>
+
+<h3 id="destroy-local"><a href="#destroy-local">Destroy (Local)</a></h3>
+
+<p>The <code>destroy</code> function receives the items to be deleted in <code>e.data</code>, similar to <code>create</code> and <code>update</code>. The function should remove the provided items from the original datasource and return <code>success</code> or <code>error</code>.</p>
+
+<h6>Example</h6>
+
+<pre><code>var dataSource = new kendo.data.DataSource({
+    transport: {
+        /* the other CRUD settings are ommitted for brevity */
+        destroy: function (e) {
+            // remove items from the original datasource by using e.data
+
+            // on success
+            e.success();
+            // on failure
+            //e.error("XHR response", "status code", "error message");
+        }
+    }
+});
+</code></pre>
+
+<!--*-->
+
+<h3 id="local-or-custom-transport-error-handling"><a href="#local-or-custom-transport-error-handling">Local or Custom Transport Error Handling</a></h3>
+
+<p>If any of the transport actions (read, update, create, destroy) fails, then information about this can and should be passed to the Kendo UI DataSource instance. This is achieved by executing <code>e.error()</code> instead of <code>e.success()</code> in the respective transport function. The <code>error</code> method accepts three parameters—Ajax request object, status code, and custom error message.</p>
+
+<h6>Example</h6>
+
+<pre><code>var dataSource = new kendo.data.DataSource({
+    transport: {
+        read: function (e) {
+            // on success
+            // e.success(sampleData);
+            // on failure
+            e.error("XHR response", "status code", "error message");
+        }
+    },
+    error: function (e) {
+        // handle error
+        alert("Status: " + e.status + "; Error message: " + e.errorThrown);
+    }
+});
+</code></pre>
+
+<h3 id="examples"><a href="#examples">Examples</a></h3>
+
+<p>The complete example below uses the information above to demonstrate CRUD operations with simple Products data. <code>original datasource</code> signifies the <code>sampleData</code> variable, which is used to populate the Grid initially. All data operations are persisted in this variable, so that it can be used or submitted somewhere else.</p>
+
+<p>It is not recommended to use an <a href="/api/javascript/data/observablearray"><code>ObservableArray</code></a> instead of a plain JavaScript array in the example below. The Kendo UI DataSource will wrap the provided plain array and transform it to a collection of <a href="/api/javascript/data/observableobject"><code>ObservableObjects</code></a> automatically.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;style&gt;html { font: 12px sans-serif; }&lt;/style&gt;
+
+    &lt;div id="grid"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        var sampleData = [
+            {ProductID: 1, ProductName: "Apple iPhone 5s", Introduced: new Date(2013, 8, 10), UnitPrice: 525, Discontinued: false, UnitsInStock: 10},
+            {ProductID: 2, ProductName: "HTC One M8", Introduced: new Date(2014, 2, 25), UnitPrice: 425, Discontinued: false, UnitsInStock: 3},
+            {ProductID: 3, ProductName: "Nokia 5880", Introduced: new Date(2008, 10, 2), UnitPrice: 275, Discontinued: true, UnitsInStock: 0}
+        ];
+
+        // custom logic start
+
+        var sampleDataNextID = sampleData.length + 1;
+
+        function getIndexById(id) {
+            var idx,
+                l = sampleData.length;
+
+            for (var j=0; j &lt; l; j++) {
+                if (sampleData[j].ProductID == id) {
+                    return j;
+                }
+            }
+            return null;
+        }
+
+        // custom logic end
+
+        $(document).ready(function () {
+            var dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: function (e) {
+                        // on success
+                        e.success(sampleData);
+                        // on failure
+                        //e.error("XHR response", "status code", "error message");
+                    },
+                    create: function (e) {
+                        // assign an ID to the new item
+                        e.data.ProductID = sampleDataNextID++;
+                        // save data item to the original datasource
+                        sampleData.push(e.data);
+                        // on success
+                        e.success(e.data);
+                        // on failure
+                        //e.error("XHR response", "status code", "error message");
+                    },
+                    update: function (e) {
+                        // locate item in original datasource and update it
+                        sampleData[getIndexById(e.data.ProductID)] = e.data;
+                        // on success
+                        e.success();
+                        // on failure
+                        //e.error("XHR response", "status code", "error message");
+                    },
+                    destroy: function (e) {
+                        // locate item in original datasource and remove it
+                        sampleData.splice(getIndexById(e.data.ProductID), 1);
+                        // on success
+                        e.success();
+                        // on failure
+                        //e.error("XHR response", "status code", "error message");
+                    }
+                },
+                error: function (e) {
+                    // handle data operation error
+                    alert("Status: " + e.status + "; Error message: " + e.errorThrown);
+                },
+                pageSize: 10,
+                batch: false,
+                schema: {
+                    model: {
+                        id: "ProductID",
+                        fields: {
+                            ProductID: { editable: false, nullable: true },
+                            ProductName: { validation: { required: true } },
+                            Introduced: { type: "date" },
+                            UnitPrice: { type: "number", validation: { required: true, min: 1} },
+                            Discontinued: { type: "boolean" },
+                            UnitsInStock: { type: "number", validation: { min: 0, required: true } }
+                        }
+                    }
+                }
+            });
+
+            $("#grid").kendoGrid({
+                dataSource: dataSource,
+                pageable: true,
+                toolbar: ["create"],
+                columns: [
+                    { field: "ProductName", title: "Mobile Phone" },
+                    { field: "Introduced", title: "Introduced", format: "{0:yyyy/MM/dd}", width: "200px" },
+                    { field: "UnitPrice", title: "Price", format: "{0:c}", width: "120px" },
+                    { field: "UnitsInStock", title:"Units In Stock", width: "120px" },
+                    { field: "Discontinued", width: "120px" },
+                    { command: ["edit", "destroy"], title: "&amp;nbsp;", width: "200px" }
+                ],
+                editable: "inline"
+            });
+        });
+    &lt;/script&gt;
+</code></pre>
+
+<h2 id="remote-transport-crud-operations"><a href="#remote-transport-crud-operations">Remote Transport CRUD Operations</a></h2>
+
+<p>The information in this section is applicable to scenarios, in which the data should be retrieved from and submitted to a remote data service via HTTP requests made by the Kendo UI DataSource.</p>
+
+<p>CRUD operations with remote data rely on server code to perform the read, update, create and destroy actions. Instead of configuring client functions, the dataSource transport defines remote service URLs and the expected format in which data should be sent and received. Theoretically, it is possible to use remote CRUD operations with transport functions, similar to the above examples that use local data, but this is rarely required.</p>
+
+<p>Each of the CRUD operation settings—read, update, create, destroy—provides some common transport settings that need to be set accordingly:</p>
+
+<ul>
+<li>The client request <code>type</code> can be <code>"get"</code> or <code>"post"</code>.</li>
+<li>Additional optional <code>data</code> parameters can be sent to the server if needed.</li>
+<li>The client request and expected server response <code>dataType</code> can be <code>"json"</code>, <code>"jsonp"</code>, <code>"odata"</code>, etc.</li>
+</ul>
+
+<p>For detailed information on these settings, refer to the <a href="/api/javascript/data/datasource">article about the Kendo UI DataSource API</a>.</p>
+
+<h3 id="read-remote"><a href="#read-remote">Read (Remote)</a></h3>
+
+<p>The <code>read</code> service defined by the DataSource transport should return data in the expected format—JSON, JSONP, XML, oData. By default, the expected format is JSON. If the response is not a plain array of objects, a <a href="/api/javascript/data/datasource#configuration-schema"><code>schema</code></a> must be defined, which will describe the structure of the response and especially, <a href="/api/javascript/data/datasource#configuration-schema.data">where the data is</a>.</p>
+
+<p>The example below uses a <code>read</code> transport configuration. The assumed server response is a plain JSON array of objects.</p>
+
+<h6>Example</h6>
+
+<pre><code>/*Server response:
+
+[{
+    "ProductID": 1,
+    "ProductName": "Bananas"
+},{
+    "ProductID": 2,
+    "ProductName": "Pijamas"
+}]
+
+*/
+
+var dataSource = new kendo.data.DataSource({
+    transport: {
+        read: {
+            url: "service/products/read/",
+            type: "post",
+            dataType: "json"
+        }
+    }
+});
+</code></pre>
+
+<!--*-->
+
+<p>Here is a modified version of the above example, which requires the usage of a <code>schema</code>, due to the more complex response structure. The declared <code>itemCount</code> does not match the number of returned items, which is normal when using <a href="/api/javascript/data/datasource#configuration-serverPaging">server paging</a>—the server response contains only the items from the current page, but information about the <a href="/api/javascript/data/datasource#configuration-schema.total">total number of items</a> is provided, so that a correct paging interface can be generated, if needed.</p>
+
+<h6>Example</h6>
+
+<pre><code>/*Server response:
+
+{
+    "itemCount": 10,
+    "items": [{
+        "ProductID": 1,
+        "ProductName": "Bananas"
+    },{
+        "ProductID": 2,
+        "ProductName": "Pijamas"
+    }]
+}
+
+*/
+
+var dataSource = new kendo.data.DataSource({
+    transport: {
+        read: {
+            url: "service/products/read/",
+            type: "post",
+            dataType: "json"
+        }
+    },
+    schema: {
+        data: "items",
+        total: "itemCount"
+    },
+    serverPaging: true
+});
+</code></pre>
+
+<!--*-->
+
+<p>If an error in the server code occurs, the server response can notify the client-side DataSource instance.</p>
+
+<p>For more information on handling errors in such scenarios, refer to the section about <a href="/framework/datasource/crud#error-handling-with-remote-transport">error handling with remote transport</a>.</p>
+
+<p>For more information on handling repetitive requests performed while filtering in ASP.NET, refer to <a href="/controls/editors/dropdownlist/troubleshoot/troubleshooting#repetitive-requests-are-performed-while-filtering-in-aspnet">this troubleshooting topic</a>.</p>
+
+<h3 id="update-remote"><a href="#update-remote">Update (Remote)</a></h3>
+
+<p>The <code>update</code> service expects the edited data items and should return the same items (including all data fields) as a confirmation of the successful save operation. An empty response is also treated as a valid success response.</p>
+
+<p>If <a href="/api/javascript/data/datasource#configuration-schema.data"><code>schema.data</code></a> is set and the server response is not empty, then the server response must have <em>the same structure</em>, as the response of the <code>read</code> request.</p>
+
+<p>The example below demonstrates a case with no <code>schema.data</code>.</p>
+
+<h6>Example</h6>
+
+<pre><code>/*Client POST request:
+
+ProductID: 1
+ProductName: "Fresh yellow bananas"
+
+Server response:
+
+[{
+    "ProductID": 1,
+    "ProductName": "Fresh yellow bananas"
+}]
+
+*/
+
+var dataSource = new kendo.data.DataSource({
+    transport: {
+        /* the other CRUD settings are omitted for brevity */
+        update: {
+            url: "service/products/update/",
+            type: "post"
+        }
+    }
+});
+</code></pre>
+
+<!--*-->
+
+<p>The example below demonstrates a case with <code>schema.data</code>.</p>
+
+<h6>Example</h6>
+
+<pre><code>/*Client POST request:
+
+ProductID: 1
+ProductName: "Fresh yellow bananas"
+
+Server response:
+
+{
+    "items": [{
+        "ProductID": 1,
+        "ProductName": "Fresh yellow bananas"
+    }]
+}
+
+*/
+
+var dataSource = new kendo.data.DataSource({
+    transport: {
+        /* the other CRUD settings are omitted for brevity */
+        update: {
+            url: "service/products/update/",
+            type: "post"
+        }
+    },
+    schema: {
+        data: "items"
+    }
+});
+</code></pre>
+
+<!--*-->
+
+<p>Also, check the notes on IDs in the above <a href="/framework/datasource/crud#update-local">Update (Local)</a> section.</p>
+
+<h3 id="create-remote"><a href="#create-remote">Create (Remote)</a></h3>
+
+<p>The <code>create</code> action should perform a similar routine as <code>update</code>, with one notable difference—the newly created data items have no IDs, so they must be assigned server-side and returned by the remote service.</p>
+
+<p>If <a href="/api/javascript/data/datasource#configuration-schema.data"><code>schema.data</code></a> is set, then the server response should have the <strong>same structure</strong>, as the response of the <code>read</code> request. See example below.</p>
+
+<h6>Example with no schema.data</h6>
+
+<pre><code>/*Client POST request:
+
+ProductName: "Fresh yellow bananas"
+
+Server response:
+
+[{
+    "ProductID": 1,
+    "ProductName": "Fresh yellow bananas"
+}]
+
+*/
+
+var dataSource = new kendo.data.DataSource({
+    transport: {
+        /* the other CRUD settings are ommitted for brevity */
+        create: {
+            url: "service/products/create/",
+            type: "post"
+        }
+    }
+});
+</code></pre>
+
+<h6>Example with schema.data</h6>
+
+<pre><code>/*Client POST request:
+
+ProductName: "Fresh yellow bananas"
+
+Server response:
+
+{
+    "items": [{
+        "ProductID": 1,
+        "ProductName": "Fresh yellow bananas"
+    }]
+}
+
+*/
+
+var dataSource = new kendo.data.DataSource({
+    transport: {
+        /* the other CRUD settings are ommitted for brevity */
+        create: {
+            url: "service/products/create/",
+            type: "post"
+        }
+    },
+    schema: {
+        data: "items"
+    }
+});
+</code></pre>
+
+<!--*-->
+
+<p>Also, check the notes on IDs in the above <a href="/framework/datasource/crud#update-local">Update (Local)</a> section.</p>
+
+<h3 id="destroy-remote"><a href="#destroy-remote">Destroy (Remote)</a></h3>
+
+<p>The <code>destroy</code> action submits the data items that should be deleted, or just its IDs. The expected response is similar to that of the <code>update</code> action—it can be empty, or it can include the same data items.</p>
+
+<h6>Example</h6>
+
+<pre><code>/*Client POST request:
+
+ProductID: 1
+ProductName: "Fresh yellow bananas"
+
+Server response:
+
+[{
+    "ProductID": 1,
+    "ProductName": "Fresh yellow bananas"
+}]
+
+*/
+
+var dataSource = new kendo.data.DataSource({
+    transport: {
+        /* the other CRUD settings are ommitted for brevity */
+        destroy: {
+            url: "service/products/destroy/",
+            type: "post"
+        }
+    }
+});
+</code></pre>
+
+<!--*-->
+
+<h3 id="remote-transport-error-handling"><a href="#remote-transport-error-handling">Remote Transport Error Handling</a></h3>
+
+<p>In all four transport actions (read, update, create, destroy), an error can be triggered. There are two options:</p>
+
+<ul>
+<li>A standard error can be returned via an empty response and an <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status code</a>.</li>
+<li>A custom error can be returned with a <code>200</code> HTTP status code and an error message assigned to an <code>errors</code> field in the response, or any other field, specified in <a href="/api/javascript/data/datasource#configuration-schema.errors"><code>schema.errors</code></a>.</li>
+</ul>
+
+<!-- exit list -->
+
+<p>The two techniques cannot be combined, i.e. custom errors can be provided only with a <code>200</code> HTTP status code.</p>
+
+<p>The example below demonstrates a standard error.</p>
+
+<h6>Example</h6>
+
+<pre><code>/* Server response:
+
+HTTP status code: 401 Unathorized
+Response body: empty
+
+*/
+var dataSource = new kendo.data.DataSource({
+    /* the other CRUD settings are ommitted for brevity */
+    error: function (e) {
+        /* the e event argument will represent the following object:
+
+        {
+            errorThrown: "Unauthorized",
+            sender: {... the Kendo UI DataSource instance ...}
+            status: "error"
+            xhr: {... the Ajax request object ...}
+        }
+
+        */
+        alert("Status: " + e.status + "; Error message: " + e.errorThrown);
+    }
+});
+</code></pre>
+
+<!--*-->
+
+<p>The example below demonstrates a custom error.</p>
+
+<h6>Example</h6>
+
+<pre><code>/* Server response:
+
+HTTP status code: 200 OK
+Response body: { "errors": ["foo", "bar"] }
+
+*/
+var dataSource = new kendo.data.DataSource({
+    /* the other CRUD settings are ommitted for brevity */
+    error: function (e) {
+        /* the e event argument will represent the following object:
+
+        {
+            errorThrown: "custom error",
+            errors: ["foo", "bar"]
+            sender: {... the Kendo UI DataSource instance ...}
+            status: "customerror"
+            xhr: null
+        }
+
+        */
+        alert("Errors: " + e.errors.join("; "));
+    }
+});
+</code></pre>
+
+<!--*-->
+
+<p>When an <code>error</code> event is fired, the DataSource does not process any data items, which may also be part of the server response. For example, if an update action fails due to conflicting edits, and the data needs to be refreshed from the server, you need to call the <a href="/api/javascript/data/datasource#methods-read"><code>read</code></a> method of the DataSource in the error handler. Sending the new data together with the error response is not going to populate the DataSource with the new values.</p>
+
+<h2 id="sample-apps-and-examples"><a href="#sample-apps-and-examples">Sample Apps and Examples</a></h2>
+
+<h3 id="remote-crud-operations-with-the-grid"><a href="#remote-crud-operations-with-the-grid">Remote CRUD Operations with the Grid</a></h3>
+
+<p>To see the example on remote CRUD operations with a Kendo UI Grid, refer to the <a href="http://demos.telerik.com/kendo-ui/grid/editing-inline">online Grid Editing demos</a>.</p>
+
+<h3 id="remote-crud-operations-in-aspnet-mvc"><a href="#remote-crud-operations-in-aspnet-mvc">Remote CRUD Operations in ASP.NET MVC</a></h3>
+
+<p>To see the example on remote CRUD operations in ASP.NET MVC, refer to <a href="https://github.com/telerik/kendo-examples-asp-net">this GitHub page</a>.</p>
+
+<h3 id="openedge-integration-using-jsdo"><a href="#openedge-integration-using-jsdo">OpenEdge Integration Using JSDO</a></h3>
+
+<p>To run a sample mobile application, which uses the Kendo UI DataSource component to list and update records from an employee table, refer to <a href="https://github.com/CloudDataObject/sample-crud-app">this GitHub page</a>.</p>
+
+<h2 id="see-also"><a href="#see-also">See Also</a></h2>
+
+<p>Other articles on the Kendo UI DataSource component:</p>
+
+<ul>
+<li><a href="/framework/datasource/overview">DataSource Overview</a></li>
+<li><a href="/framework/datasource/basic-usage">Basic Usage</a></li>
+<li><a href="/framework/datasource/offline">Offline Support</a></li>
+<li><a href="/framework/datasource/cors">CORS Data Fetching from Another Domain</a></li>
+<li><a href="/api/javascript/data/datasource">DataSource JavaScript API Reference</a></li>
+</ul> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

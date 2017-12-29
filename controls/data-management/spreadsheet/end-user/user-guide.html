@@ -1,0 +1,787 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="documentation">
+        <meta name="product" content="kendo-ui">
+        <meta name="subproduct" content="spreadsheet">
+        <title>User Guide | Kendo UI Spreadsheet</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="A user guide for the Kendo UI Spreadsheet widget.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("controls/data-management/spreadsheet/end-user/user-guide.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//controls/data-management/spreadsheet/end-user/user-guide.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="user-guide"><a href="#user-guide">User Guide</a></h1>
+
+<p>This guide is intended for the end user of the Spreadsheet.</p>
+
+<p>The document provides information about the functionalities of the widget for data entry and management.</p>
+
+<h2 id="conventions"><a href="#conventions">Conventions</a></h2>
+
+<p>This guide uses the following conventions:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Item</th>
+<th align="left">Convention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Buttons, menus, tabs, dialog titles</td>
+<td align="left">
+<strong>boldface</strong> font</td>
+</tr>
+<tr>
+<td align="left">Keyboard buttons, names of functions</td>
+<td align="left">
+<code>screen</code> font</td>
+</tr>
+<tr>
+<td align="left">Selection sequences of buttons or options</td>
+<td align="left">
+<strong>Data</strong> &gt; <strong>Data Validation</strong>
+</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="overview"><a href="#overview">Overview</a></h2>
+
+<p>The Kendo UI Spreadsheet is used for the implementation of related data and its visualization in a tabular format (rows and columns). This kind of data structuring provides for an easier management and analysis. The widget renders the touch and feel of a <a href="https://support.office.com/en-ca/article/Overview-of-Excel-tables-7ab0bb7d-3a9e-4b56-a3c9-6c94334e492c">Microsoft Excel table</a> by offering many cell-formatting options, styles, and themes while utilizing simpler and easy-to-master user interface.</p>
+
+<p><strong>Figure 1: Main Elements of the Spreadsheet</strong></p>
+
+<p></p><center><img src="../images/spreadsheet-components.png" alt="Spreadsheet UI components"></center>
+
+<h2 id="actions"><a href="#actions">Actions</a></h2>
+
+<h3 id="sheets"><a href="#sheets">Sheets</a></h3>
+
+<p>When you open the Spreadsheet, the widget automatically generates a worksheet and applies to it a collection of default settings.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">What you want</th>
+<th align="left">How to get there</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Select</td>
+<td align="left">Click <strong>Select All</strong> [ <span class="k-icon k-i-resize-se"></span> ]  located to the left of column header <strong>A</strong> and above row header <strong>1</strong> on the active sheet</td>
+</tr>
+<tr>
+<td align="left">Create</td>
+<td align="left">Click <strong>+</strong> on the Sheet Tab Bar to create a new sheet</td>
+</tr>
+<tr>
+<td align="left">Rename</td>
+<td align="left"><ol>
+<li> Double-click the tab of the sheet you want to rename and modify it</li> <li>Press <code>Enter</code> to exit, or click anywhere on the sheet</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Reorder</td>
+<td align="left">Click and hold the sheet tab, and drag it to the desired location on the Sheet Tab Bar</td>
+</tr>
+<tr>
+<td align="left">Delete</td>
+<td align="left">Click <strong>X</strong> [ <span class="k-icon k-i-x"></span> ] on the tab of the sheet you want to remove</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="cells"><a href="#cells">Cells</a></h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">What you want</th>
+<th align="left">How to get there</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Select/activate</td>
+<td align="left">Click a cell</td>
+</tr>
+<tr>
+<td align="left">Select a range of cells</td>
+<td align="left"><ol>
+<li>Click a cell</li> <li>Extend the selection by holding down the mouse while marking the selection you want</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Edit</td>
+<td align="left">Double-click a cell</td>
+</tr>
+<tr>
+<td align="left">Copy content</td>
+<td align="left"><ol>
+<li>Select a cell</li> <li>Click <strong>Copy</strong> [ <span class="k-icon k-i-copy"></span> ] on the <strong>Toolbar</strong>, or right-click the desired cell to display the context menu and choose <strong>Copy</strong> from it, or use the <a href="/controls/data-management/spreadsheet/end-user/list-of-shortcuts"><code>Ctrl</code> + <code>C</code></a> keyboard shortcut</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Cut content</td>
+<td align="left"><ol>
+<li>Select a cell</li> <li>Click <strong>Cut</strong> [ <span class="k-icon k-i-cut"></span> ] on the <strong>Toolbar</strong>, or right-click the desired cell to display the context menu and choose <strong>Cut</strong> from it, or use the <a href="/controls/data-management/spreadsheet/end-user/list-of-shortcuts"><code>Ctrl</code> + <code>X</code></a> keyboard shortcut</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Paste content</td>
+<td align="left"><ol>
+<li>Click the cell where you want to place the copied or cut content</li> <li>Click <strong>Paste</strong> [ <span class="k-icon k-i-paste"></span> ] on the <strong>Toolbar</strong>, or right-click the desired cell to display the context menu and choose <strong>Paste</strong> from it, or use the <a href="/controls/data-management/spreadsheet/end-user/list-of-shortcuts"><code>Ctrl</code> + <code>V</code></a> keyboard shortcut</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Delete content</td>
+<td align="left"><ol>
+<li>Select a cell</li> <li>Press <strong>Delete</strong> on your keyboard to remove its content</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Align content</td>
+<td align="left"><ol>
+<li>Select a cell</li> <li>Click <strong>Alignment</strong> [ <span class="k-icon k-i-justify-left"></span> ] on the <strong>Toolbar</strong>
+</li> <li>Choose a style form the drop-down list</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Wrap content</td>
+<td align="left"><ol>
+<li>Select a cell that contains the content you want to wrap</li> <li>Click <strong>Wrap Text</strong> [ <span class="k-icon k-i-text-wrap"></span> ] on the <strong>Toolbar</strong>
+</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Merge cells</td>
+<td align="left"><ol>
+<li>Select the cells you want to merge</li> <li>Right-click the selection &gt; <strong>Merge</strong>
+</li> <li>Select the option from the <strong>Merge Cells</strong> pop-up window</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Merge cells (via <strong>Toolbar</strong>)</td>
+<td align="left"><ol>
+<li>Select the cells you want to merge</li> <li>Click <strong>Merge Cells</strong> [ <span class="k-icon k-i-merge-horizontally"></span> ] on the <strong>Toolbar</strong>
+</li> <li>Choose an option from the drop-down list</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Add a background color</td>
+<td align="left"><ol>
+<li>Select a cell</li> <li>Click <strong>Background</strong> [ <span class="k-icon k-i-background"></span> ] on the <strong>Toolbar</strong>
+</li> <li>Choose a color from the drop-down list to apply to the cell background</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Choose border styles and colors</td>
+<td align="left"><ol>
+<li>Select a cell</li> <li>Click <strong>Borders</strong> [ <span class="k-icon k-i-all-borders"></span> ] on the <strong>Toolbar</strong>
+</li> <li>Select the border style and/or the color from the drop-down list</li> <li>Click anywhere on the sheet to exit</li>
+</ol></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="rows"><a href="#rows">Rows</a></h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">What you want</th>
+<th align="left">How to get there</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Select/activate</td>
+<td align="left">Click the row header against of the row you want to select</td>
+</tr>
+<tr>
+<td align="left">Insert</td>
+<td align="left"><ol>
+<li>Select a row by clicking on the respective row header</li> <li>Click the <strong>Insert</strong> tab from the <strong>Menu</strong>
+</li> <li>Click <strong>Add Row Below</strong> [ <span class="k-icon k-i-add-row-below"></span> ] or <strong>Add Row Above</strong> [ <span class="k-icon k-i-add-row-above"></span> ] on the <strong>Toolbar</strong>
+</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Delete</td>
+<td align="left"><ol>
+<li>Right-click the row header</li> <li>Choose <strong>Delete</strong>
+</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Delete (via <strong>Toolbar</strong>)</td>
+<td align="left"><ol>
+<li>Select a row by clicking on its row header</li> <li>In the <strong>Menu</strong> click <strong>Insert</strong>
+</li> <li>On the <strong>Toolbar</strong> click <strong>Delete Row</strong> [ <span class="k-icon k-i-delete-row"></span> ]</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Hide</td>
+<td align="left"><ol>
+<li>Select the rows by clicking on the respective row header</li> <li>Right-click the row header</li> <li>Choose <strong>Hide</strong>
+</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Wrap content</td>
+<td align="left"><ol>
+<li>Select a row</li> <li>Click <strong>Wrap Text</strong> [ <span class="k-icon k-i-text-wrap"></span> ] on the <strong>Toolbar</strong>
+</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Resize the height of a row</td>
+<td align="left"><ol>
+<li>Select a row or a cell from a row</li> <li>Hover the pointer over the row header field until either the upper or bottom field border is highlighted</li> <li>Click the highlighted area and hold while dragging it to the desired height. Release the hold.</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Add a background color</td>
+<td align="left"><ol>
+<li>Select a row</li> <li>On the <strong>Toolbar</strong> click <strong>Background</strong> [ <span class="k-icon k-i-background"></span> ]</li> <li>Select the color from the drop-down list</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Choose border styles and colors</td>
+<td align="left"><ol>
+<li>Select a row</li> <li>Click <strong>Borders</strong> [ <span class="k-icon k-i-all-borders"></span> ] on the <strong>Toolbar</strong>
+</li> <li>Select the border style and/or the color from the drop-down list</li> <li>Click anywhere on the worksheet to exit</li>
+</ol></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="columns"><a href="#columns">Columns</a></h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">What you want</th>
+<th align="left">How to get there</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Select/activate</td>
+<td align="left">Click the column header against the column you want to select</td>
+</tr>
+<tr>
+<td align="left">Insert</td>
+<td align="left"><ol>
+<li>Select a column by clicking on the respective column header</li> <li>Click the <strong>Insert</strong> tab from the <strong>Menu</strong>
+</li> <li>On the <strong>Toolbar</strong> click <strong>Add Column Left</strong> [ <span class="k-icon k-i-add-column-left"></span> ] or <strong>Add Column Right</strong> [ <span class="k-icon k-i-add-column-right"></span> ]</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Delete</td>
+<td align="left"><ol>
+<li>Select the columns by clicking on the respective column header</li> <li>In the <strong>Menu</strong> click <strong>Insert</strong>
+</li> <li>On the <strong>Toolbar</strong> click <strong>Delete Column</strong> [ <span class="k-icon k-i-delete-column"></span> ]</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Hide</td>
+<td align="left"><ol>
+<li>Select a column by clicking on the respective column header</li> <li>Right-click the column header</li> <li>Choose <strong>Hide</strong>
+</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Wrap content</td>
+<td align="left"><ol>
+<li>Select the column whose content you want to wrap</li> <li>Click <strong>Wrap Text</strong> [ <span class="k-icon k-i-text-wrap"></span> ] on the <strong>Toolbar</strong>
+</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Resize the width of a column</td>
+<td align="left"><ol>
+<li>Select a column or a cell within a column</li> <li>Hover the pointer over the column header field until either the left or right border is highlighted</li> <li>Click the highlighted area and hold while dragging it to the desired width. Release the hold.</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Add a background color</td>
+<td align="left"><ol>
+<li>Select a  column</li> <li>On the <strong>Toolbar</strong> click <strong>Background</strong> [ <span class="k-icon k-i-background"></span> ]</li> <li>Select the color from the drop-down list</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Choose border styles and colors</td>
+<td align="left"><ol>
+<li>Select a column</li> <li>Click <strong>Borders</strong> [ <span class="k-icon k-i-all-borders"></span> ] on the <strong>Toolbar</strong>
+</li> <li>Select the border style and/or the color from the drop-down list</li> <li>Click anywhere on the sheet to exit</li>
+</ol></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="fonts"><a href="#fonts">Fonts</a></h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">What you want</th>
+<th align="left">How to get there</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Choose fonts</td>
+<td align="left"><ol>
+<li>Select the cells to which you want to apply the font</li> <li>On the <strong>Toolbar</strong> click <strong>Font</strong> [ <span class="k-icon k-i-font-family"></span> ]</li> <li>Choose a font type from the drop-down list</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Edit font sizes</td>
+<td align="left"><ol>
+<li>Select the cells to which you want to apply the font size</li> <li>On the <strong>Toolbar</strong> click <strong>Font Size</strong> [ <span class="k-icon k-i-font-size"></span> ]</li> <li>Choose the font size from the predetermined values in drop-down list</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Format fonts</td>
+<td align="left">
+<ol>
+<li>Select the cells where you want to format the font</li> <li>Use any of the following commands:</li>
+</ol> <ul><ul>
+<li>To make make the font <strong>bold</strong>, click <strong>Bold</strong> [ <span class="k-icon k-i-bold"></span> ] on the <strong>Toolbar</strong>
+</li> <li>To make make the font <i>italic</i>, click <strong>Italic</strong> [ <span class="k-icon k-i-italic"></span> ] on the <strong>Toolbar</strong>
+</li> <li>To make make the font <u>underlined</u>, click <strong>Underline</strong> [ <span class="k-icon k-i-underline"></span> ] on the <strong>Toolbar</strong>
+</li>
+</ul></ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="filters"><a href="#filters">Filters</a></h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">What you want</th>
+<th align="left">How to get there</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Sort fields</td>
+<td align="left">
+<ol>
+<li>Click <strong>Data</strong> on the <strong>Tab Bar</strong>
+</li> <li>Select a column</li> <li>Click <strong>Sort</strong> [ <span class="k-icon k-i-sort-desc"></span> ] on the <strong>Toolbar</strong> and choose any of the two options from the drop-down list:</li> </ol>
+<ul><ul>
+<li>
+<strong>Sort range A to Z</strong> sorts the content within the selected columns in ascending order</li> <li>
+<strong>Sort range Z to A</strong> sorts the content within the selected columns in descending alphabetical order</li>
+</ul></ul>
+</td>
+</tr>
+<tr>
+<td align="left">Unsort fields</td>
+<td align="left">
+<ul><li>Click <strong>Undo</strong> [ <span class="k-icon k-i-undo"></span> ] on the <strong>Menu</strong> to reverse the sorting you made.</li></ul> <ul>Оr</ul> <ul><li>Add a new column. Check which is the last active field of the columns whose data you want to sort. Then add a subsequent number (1, 2, 3, etc.) to each field of the recently added column ending with the field in the same row as the last field of the columns whose content you want to sort. In this way you can revert the sorting of the target columns by applying the sorting option in ascending order to the recently added helper column.</li></ul>
+</td>
+</tr>
+<tr>
+<td align="left">Filter information</td>
+<td align="left">
+<ol>
+<li>Click <strong>Data</strong> on the <strong>Tab Bar</strong>
+</li> <li>Select the columns to which you want to apply the filtering criteria</li> <li>Click <strong>Filter</strong> [ <span class="k-icon k-i-filter"></span> ] on the <strong>Toolbar</strong>
+</li> <li>Choose from the drop-down list of options:</li> </ol>
+<ul><ul>
+<li>
+<strong>Sort range A to Z</strong> sorts the data within the columns in ascending alphabetical order</li> <li>
+<strong>Sort range Z to A</strong> sorts the data within the columns in descending alphabetical order</li> <li>
+<strong>Filter by condition</strong> filters the data within the column by applying any of the conditions from the drop-down list of options. Each of them can be applied to text fields, dates, or numbers:</li> <ul><ul>
+<li>
+<u>Text fields:</u> Choose any of the options referring to texts from the <strong>Filter by condition</strong> drop-down list. Fill in the field below to set the filter condition. Click <strong>Apply</strong>. For example, choose <strong>Text starts with</strong>, set the condition to <strong>E</strong>, and click <strong>Apply</strong>. The result shows all rows containing text fields that start with an <strong>E</strong>. You can alphabetically sort the filtered information by clicking <strong>Sort range A to Z</strong> or <strong>Sort range Z to A</strong>.</li> <li>
+<u>Dates:</u> Choose any of the options referring to dates from the <strong>Filter by condition</strong> drop-down list. Fill in the field below to set the filter condition. Click <strong>Apply</strong>. For example, choose <strong>Date is</strong>, set the condition to <strong>6/30/2014</strong>, and click <strong>Apply</strong>. The result is a list of only rows containing fields that display the date 6/30/2014. Note that the date format may differ depending on the order of date components. Make sure you check the current format before applying this filter.</li> <li>
+<u>Numbers:</u> Choose any of the options referring to numbers from the <strong>Filter by condition</strong> drop-down list. Fill in the field below to set the filter condition. Click <strong>Apply</strong>. For example, choose <strong>Is equal to</strong>, set the condition to <strong>10230</strong>, and click <strong>Apply</strong>. The result is a list of only rows containing fields that display the number 10230.</li>
+</ul></ul>
+</ul></ul> <ul><ul>To retrieve all applied filters and sorting conditions, from <strong>Filter by condition</strong> choose <strong>None</strong> &gt; <strong>Apply</strong>.</ul></ul> <ul><ul>
+<li>
+<strong>Filter by value</strong> provides more options for filtering numbers.</li> <ul>
+<li>Select the checkbox against <strong>All</strong> to clear all conditions and view all rows within the active sheet</li> <li>Uncheck <strong>All</strong> to clear all checkboxes, and choose the values according to which you want to filter the data in the selected columns.</li>
+</ul>
+</ul></ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="file-import-and-export"><a href="#file-import-and-export">File Import and Export</a></h3>
+
+<p>You are able to export the content of your Spreadsheet to Portable Document Format (PDF) or Excel format (.xlsx) files, as well as import Excel Workbook content to the Spreadsheet.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">What you want</th>
+<th align="left">How to get there</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Import files</td>
+<td align="left"><ol>
+<li>Click <strong>Open</strong> [ <span class="k-icon k-i-folder-open"></span> ] on the <strong>Toolbar</strong>.</li> <li>From the dialog box select the Excel Workbook you want to import by clicking on it.</li> <li>Click <strong>Open</strong> to load its content.</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Export files</td>
+<td align="left">
+<ol><li> Click <strong>Export</strong> [ <span class="k-icon k-i-xls"></span> ].</li></ol>  <ul>Export to Excel <ul>2. In the <strong>File name</strong> field fill in a name for the file that is going to be exported. <p>3. From the <strong>Save as type</strong> drop-down list choose <strong>Excel Workbook (.xlsx)</strong>.</p> <p>4. Click <strong>Save</strong> to locally download the exported Excel file and follow your browser instructions to proceed further on.</p>
+</ul>
+</ul> <ul>Export in PDF <ul>2. In the <strong>File name</strong> field fill in a name for the file that is going to be exported. <p>3. From the drop-down list against <strong>Save as type</strong> choose <strong>Portable Document Format (.pdf)</strong>.</p> <p>4. From the <strong>Export</strong> drop-down list choose which part of the content you want to export—the entire workbook, active sheet, or a partial content selection.</p> <p>5. From the <strong>Paper size</strong> drop-down list pick the size in which you want the exported file to be displayed.</p> <p>6. From the <strong>Margins</strong> drop-down list select what the margins of the resulting pages—normal, narrow, or wide.</p> <p>7. Indicate whether you want to display the content of the resulting file in a horizontal or vertical orientation by clicking on the respective icon.</p> <p>8. By checking <strong>Guidelines</strong> against <strong>Print</strong>, your exported PDF document is going to display its content in a table format with gridlines. If you want to disable the gridlines, uncheck the button. By default, <strong>Guidelines</strong> is checked for you to provide for the better visualization of the content.</p> <p>9. Checking the <strong>Fit to page</strong> option against <strong>Scale</strong> is going to automatically make the content from your spreadsheets fit within the boundaries of the exported PDF document. By default, <strong>Fit to page</strong> is checked for you to provide for the better visualization of the content.</p> <p>10. By checking the <strong>Horizontally</strong> option against <strong>Center</strong>, the content of the exported PDF file is going to be centered according to the horizontal margins of each exported sheet. By checking the <strong>Vertically</strong> option against <strong>Center</strong>, the content of the exported PDF file is going to be centered according to the vertical margins of each exported sheet. By default, both options are checked for you to provide for the better visualization of the content.</p> <p>11. Click <strong>Save</strong> to locally download the exported PDF file and follow your browser instructions to proceed further on.</p>
+</ul>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="other"><a href="#other">Other</a></h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">What you want</th>
+<th align="left">How to get there</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Auto fill</td>
+<td align="left">
+<ol>
+<li>Insert textual, numeric, or textual and numeric characters of one and the same pattern in at least two subsequent column cells. For example, 1, 2.</li> <li>Select these cells.</li> <li>To copy the data series automatically, drag the fill handle across, down, or up the cells you want to fill.</li>
+</ol> <p>Note that the <strong>Auto Fill</strong> command copies the format of the cells with the initial data series and will apply it to the target ones.</p> <p>If you select just one cell and drag the fill handle to auto-complete adjacent cells, the command copies, but does not change in the existing pattern, the content from the initial cell to each of the target ones.</p>
+</td>
+</tr>
+<tr>
+<td align="left">Freeze panes</td>
+<td align="left"><ol>
+<li>Select the row or column which you want to freeze</li> <li>From the <strong>Toolbar</strong> click <strong>Freeze Panes</strong>
+</li> <li>Choose the option from the drop-down list</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Apply the <code>Undo</code> function</td>
+<td align="left">Click <strong>Undo</strong> [ <span class="k-icon k-i-undo"></span> ] on the <strong>Menu</strong> to reverse the actions you made during your current session. The number of actions you can reverse using <code>Undo</code> is unlimited.</td>
+</tr>
+<tr>
+<td align="left">Apply the <code>Redo</code> function</td>
+<td align="left">Click <strong>Redo</strong> [ <span class="k-icon k-i-redo"></span> ] on the <strong>Menu</strong> to repeat the actions you made during your current session. The number of actions you can repeat using <code>Redo</code> is unlimited.</td>
+</tr>
+<tr>
+<td align="left">Increase decimal values</td>
+<td align="left">Click <strong>Increase Decimal</strong> [ <span class="k-icon k-i-increase-decimal"></span> ] on the <strong>Toolbar</strong> to increase the number of digits after the decimal point</td>
+</tr>
+<tr>
+<td align="left">Decrease decimal values</td>
+<td align="left">Click <strong>Decrease Decimal</strong> [ <span class="k-icon k-i-decrease-decimal"></span> ] on the <strong>Toolbar</strong> to decrease the number of digits after the decimal point</td>
+</tr>
+<tr>
+<td align="left">Customize the format of numbers</td>
+<td align="left"><ol>
+<li>Select the cells where you want to format the font</li> <li>Click <strong>Custom Format</strong> [ <span class="k-icon k-i-format-number"></span> ] on the <strong>Toolbar</strong>
+</li> <li>Select an option from the drop-down list. The style of formatting is hinted to the right of each option.</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Further customize the format of numbers</td>
+<td align="left">
+<ol>
+<li>Select the cells whose content you want to format</li> <li>Click <strong>Custom Format</strong> [ <span class="k-icon k-i-format-number"></span> ] &gt; <strong>More Formats</strong>. Choose any of the following options:</li>
+</ol> <ul><ul>
+<li>
+<strong>Number</strong> customizes the format of numerical input</li> <li>
+<strong>Currency</strong> customizes the format of currency input</li> <li>
+<strong>Date</strong> customizes the format of date input</li>
+</ul></ul>
+</td>
+</tr>
+<tr>
+<td align="left">Apply formulas and functions</td>
+<td align="left"><ol>
+<li>Select a cell</li> <li>Go to the <strong>Formula Bar</strong> and type an equal sign [ <code>=</code> ]</li> <li>Type your formula/function and press <code>Enter</code> once done to see the outcome of your input in the cell. Note that when you start writing a function, the <code>AutoComplete</code> prompts you with the syntax.</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Edit formulas and functions</td>
+<td align="left"><ol>
+<li>Double-click a cell to display the formula/function in the <strong>Formula Bar</strong>
+</li> <li>Change the formula/function and press <code>Enter</code>
+</li>
+</ol></td>
+</tr>
+<tr>
+<td align="left">Validate data</td>
+<td align="left">Data validation allows you to predetermine the format and constrain the value of the content of a single cell or cells within a range, column, or row: <ol>
+<li>Select a cell or a range of cells</li> <li>In the <strong>Menu</strong> click <strong>Data</strong> &gt; <strong>Data Validation</strong> to open the <strong>Data Validation</strong> window</li> <li>Choose the criterion from the drop-down list of options.</li> <li>A new window with criteria-specific options appears. Use the prompts and drop-down options to set the rules for modifying the content.</li>
+</ol>
+</td>
+</tr>
+<tr>
+<td align="left">Choose data from predefined values</td>
+<td align="left">
+<p>The Spreadsheet supports the implementation of custom editors. They facilitate your input of data in a cell by providing you with predefined date and list values that are already placed in the necessary format.</p> <p>For example, if you are asked to fill in a date in a cell, clicking the icon of the custom editor of that cell provides you with a calendar. Choose the desired date without bothering about the syntax you are supposed to use to fill it in.</p> <ol>
+<li>Select a cell.</li> <li>An icon appears right next to it. Click on it to see the options that are predefined for you to choose from.</li>
+</ol>
+</td>
+</tr>
+<tr>
+<td align="left">Define names for cells and ranges of cells</td>
+<td align="left">
+<p>It is possible to define a custom name for a cell or a range of cells in the Spreadsheet. As a result, instead of typing the range in formulas later on, you can directly refer to the range by its name.</p> <ol>
+<li>Select a cell or a range of cells by using the mouse. For example, select the <code>A1:C3</code> range.</li> <li>Click on the <strong>Name Box</strong> of the Spreadsheet.</li> <li>Type in the name of the range that is currently selected. For example, name the range <strong>MyRange</strong>.</li> <li>Press <code>Enter</code>.</li> <li>Go to a cell outside the range and type in the <strong>Formula Bar</strong> a formula which refers to the range by its name. For example, <code>=SUM(MyRange)+2</code>.</li>
+</ol>
+</td>
+</tr>
+<tr>
+<td align="left">Delete names of cells and ranges of cells</td>
+<td align="left"><ol>
+<li>Select the name of the cell or the range of cells from the <strong>Name Box</strong>.</li> <li>Click <strong>X</strong>.</li>
+</ol></td>
+</tr>
+</tbody>
+</table>
+
+<p><br></p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<ul>
+<li>To close an active drop-down list or menu or exit an open window and then return to the worksheet, click <strong>Cancel</strong> whenever displayed as a command.</li>
+<li>To apply an options you have already selected, click <strong>Apply</strong> whenever displayed as a command.</li>
+</ul>
+</blockquote>
+
+<h2 id="formulas-and-functions"><a href="#formulas-and-functions">Formulas and Functions</a></h2>
+
+<p>The Spreadsheet supports many of the Excel formulas and functions as seen in the <a href="/controls/data-management/spreadsheet/end-user/list-of-formulas">List of Formulas and Functions</a>.</p>
+
+<h2 id="keyboard-navigation"><a href="#keyboard-navigation">Keyboard Navigation</a></h2>
+
+<p>The Spreadsheet supports many of the Excel keyboard shortcuts as seen in the <a href="/controls/data-management/spreadsheet/end-user/list-of-shortcuts">List of Keyboard Shortcuts</a>.</p>
+
+<h2 id="known-limitations"><a href="#known-limitations">Known Limitations</a></h2>
+
+<ul>
+<li>Because of specific requirements, browsers might not support the <strong>Paste</strong> command when it is initiated from the context menu or from the <strong>Toolbar</strong>. If you try to apply the command in either of these ways, a popup message is displayed informing you about the limitation. Use the keyboard navigation to achieve the desired result.</li>
+<li>Formulas that are very deeply nested, such as <code>=sin(cos(sin(cos(...))))</code> or <code>=A1+A2+A3+...+A200</code>, might produce a stack overflow error. Even though the latter does not seem nested, it is internally treated as <code>=((((...(A1+A2)+A3)+A4)+...+)+A200)</code>).</li>
+</ul>
+
+<p><strong>Solution</strong></p>
+
+<p>Use <code>SUM</code> when your case is similar to the second example of the nested formulas above. If to use <code>SUM</code> is not possible, avoid nesting values more than 100 levels deep. Note that the maximum depth depends on the browser, but one hundred is considered to be a safe limit.</p>
+
+<h2 id="see-also"><a href="#see-also">See Also</a></h2>
+
+<p>Other articles on Kendo UI Spreadsheet:</p>
+
+<ul>
+<li><a href="/controls/data-management/spreadsheet/end-user/list-of-shortcuts">List of Keyboard Shortcuts</a></li>
+<li><a href="/controls/data-management/spreadsheet/end-user/list-of-formulas">List of Formulas and Functions</a></li>
+</ul> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

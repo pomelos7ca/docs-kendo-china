@@ -1,0 +1,633 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="documentation">
+        <meta name="product" content="kendo-ui">
+        <meta name="subproduct" content="grid">
+        <title>Walkthrough | Kendo UI Grid</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Learn how to create a grid, add an HTML table and control the features of the Kendo UI Grid widget.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("controls/data-management/grid/walkthrough.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//controls/data-management/grid/walkthrough.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="walkthrough"><a href="#walkthrough">Walkthrough</a></h1>
+
+<p>The <a href="http://demos.telerik.com/kendo-ui/grid/index">Kendo UI Grid widget</a> is a powerful component of the Kendo UI toolkit and an essential part of almost any user interface. The Grid control is quick to set up and is packed with features such as <a href="/api/javascript/ui/grid#configuration-sortable">sorting</a>, <a href="/api/javascript/ui/grid#configuration-groupable">grouping</a>, <a href="/api/javascript/ui/grid#configuration-pageable">paging</a>, and <a href="/api/javascript/ui/grid#events-edit">editing</a>.</p>
+
+<h2 id="data-binding"><a href="#data-binding">Data Binding</a></h2>
+
+<h3 id="configure-auto-binding"><a href="#configure-auto-binding">Configure Auto Binding</a></h3>
+
+<p>By default, the Grid is set to automatically bind to data—as soon as it is loaded, it causes the <a href="/framework/datasource/overview">DataSource</a> to query, and the data is loaded to the Grid.</p>
+
+<p>To disable this behavior, set the <code>autoBind</code> option of the widget to <code>false</code>, as shown below.</p>
+
+<h6>Example</h6>
+
+<pre><code>$("#grid").kendoGrid({
+    autoBind: false,
+    // other configuration
+});
+</code></pre>
+
+<h3 id="bind-to-local-arrays"><a href="#bind-to-local-arrays">Bind to Local Arrays</a></h3>
+
+<p>To bind the Grid to local data, set the <code>dataSource</code> option of the <code>kendoGrid</code> object.</p>
+
+<h6>Example</h6>
+
+<pre><code>var people = [ { firstName: "John",
+                 lastName: "Smith",
+                 email: "john.smith@telerik.com" },
+               { firstName: "Jane",
+                 lastName: "Smith",
+                 email: "jane.smith@telerik.com" },
+               { firstName: "Josh",
+                 lastName: "Davis",
+                 email: "josh.davis@telerik.com" },
+               { firstName: "Cindy",
+                 lastName: "Jones",
+                 email: "cindy.jones@telerik.com" } ];
+
+ $("#grid").kendoGrid({
+     dataSource: people
+ });
+</code></pre>
+
+<p><strong>Figure 1: Grid bound to a local data array</strong></p>
+
+<p><img src="/controls/data-management/grid/grid2_1.png" alt="Kendo UI Grid bound to a local data array"></p>
+
+<h3 id="bind-to-remote-data"><a href="#bind-to-remote-data">Bind to Remote Data</a></h3>
+
+<p>To bind the Grid to remote data, specify the <code>dataSource</code> option. It is possible to either create the data source outside the widget, or to pass it in it.</p>
+
+<p>If multiple widgets are bound to the same data set, you have to create the data source as an object that you can refer to in different widgets. If the Grid is the only item bound to the data, create it inline.</p>
+
+<h6>Example</h6>
+
+<pre><code>$("#grid").kendoGrid({
+     dataSource: {
+         transport: {
+             read: "/Home/People.json"
+         },
+         schema: {
+             data: "data"
+         }
+     }
+});
+</code></pre>
+
+<p>For more information on binding the Grid to a remote data source, refer to the article on <a href="/controls/data-management/grid/data-binding">remote data binding of the widget</a>.</p>
+
+<h2 id="configuration"><a href="#configuration">Configuration</a></h2>
+
+<h3 id="configuration-Selection"><a href="#configuration-Selection">Selection</a></h3>
+
+<p>To enable selection in the Grid set the <a href="/api/javascript/ui/grid#configuration-selectable"><code>selectable</code></a> option to <code>true</code>. This enables the default single-row selection option.</p>
+
+<h6>Example</h6>
+
+<pre><code>    $("#grid").kendoGrid({
+        selectable: true,
+        // other configuration
+     });
+</code></pre>
+
+<p><strong>Figure 2: Grid with enabled row selection</strong></p>
+
+<p><img src="/controls/data-management/grid/grid4_1.png" alt="Grid with enabled row selection"></p>
+
+<p>It is also possible to set the <code>selectable</code> option to any of the following values:</p>
+
+<ul>
+<li><code>row</code></li>
+<li><code>cell</code></li>
+<li><code>multiple row</code></li>
+<li><code>multiple cell</code></li>
+</ul>
+
+<p>Since R2 2017 SP1, the Grid widget provides another option for enabling multiple selection by rendering a checkbox column. This functionality is enabled through the <a href="/api/javascript/ui/grid#configuration-columns.selectable"><code>columns.selectable</code></a> property. Enabling the <code>selectable</code> property of a column will also render a checkbox in the header, which allows selecting/deselecting of all rows on the current page.</p>
+
+<blockquote>
+<p><strong>Important</strong>
+The built-in checkbox selection is not integrated with the select functionality of the grid enabled via the Grid's <a href="/api/javascript/ui/grid#configuration-selectable"><code>selectable</code></a> option. They are mutually exclusive and we recommend using only one of the approaches for enabling selection.</p>
+</blockquote>
+
+<h6>Example</h6>
+
+<pre><code>$("#grid").kendoGrid({
+  columns: [
+    { selectable: true },
+    { field: "name" }
+  ],
+  dataSource: [ { name: "Jane Doe" }, { name: "John Doe" } ]
+});
+</code></pre>
+
+<h4>The row Value</h4>
+
+<p>The <code>row</code> value is set by default and enables a single row selection. It functions in the same way as the <code>selectable: true</code> configuration.</p>
+
+<h6>Example</h6>
+
+<pre><code>$("#grid").kendoGrid({
+    selectable: "row",
+    // other configuration
+});
+</code></pre>
+
+<h4>The cell Value</h4>
+
+<p>The <code>cell</code> value enables the selection of individual cells within the Grid.</p>
+
+<h6>Example</h6>
+
+<pre><code>$("#grid").kendoGrid({
+    selectable: "cell",
+    // other configuration
+});
+</code></pre>
+
+<h4>The multiple row Value</h4>
+
+<p>The <code>multiple row</code> value allows users to select multiple rows within the Grid.</p>
+
+<h6>Example</h6>
+
+<pre><code>$("#grid").kendoGrid({
+    selectable: "multiple row",
+    // other configuration
+});
+</code></pre>
+
+<h4>The multiple cell Value</h4>
+
+<p>The <code>multiple cell</code> value enables the selection of multiple cells within the Grid.</p>
+
+<h6>Example</h6>
+
+<pre><code>$("#grid").kendoGrid({
+    selectable: "multiple cell",
+    // other configuration
+});
+</code></pre>
+
+<p>When the multiple selection is enabled, it is possible to select multiple rows or cells by dragging the mouse cursor and select them in a similar way to a block of text.</p>
+
+<blockquote>
+<p><strong>Important</strong>  </p>
+
+<ul>
+<li>In a Grid that is rebound (paging, filtering, sorting, editing, or virtual scrolling occur), the selection persists only if you enable the <a href="/api/javascript/ui/grid#configuration-persistSelection"><code>persistSelection</code></a> property. The <code>persistSelection</code> is applicable only for row selection. To persist the row selection and avoid the usage of the <code>persistSelection</code> property, refer to the example on <a href="/controls/data-management/grid/how-to/Selection/persist-row-selection-while-paging">how to persist row selection during data operations</a>.<br>
+</li>
+<li>Selection performance may decrease when the page size is too large, or if no paging is used, and the Grid is rendering hundreds or thousands of items. This behavior is most frequently seen in Internet Explorer. Grouping, hierarchy, and frozen columns also have a negative impact on the selection performance, because these features make the HTML output of the Grid more complex. Therefore, it is recommended to use paging and a reasonable page size.</li>
+</ul>
+</blockquote>
+
+<h3 id="configuration-Paging"><a href="#configuration-Paging">Paging</a></h3>
+
+<p>By default, paging is disabled.</p>
+
+<p>The paging functionality of the Grid is controlled by the <code>pageable</code> option. To configure it, use Boolean parameters.</p>
+
+<p>Additionally, you have to indicate to the Grid the number of records to display on each page as well as the total number of records in the dataset. Specify the <code>pageSize</code> on the data source and the field in the dataset that will contain the total count of records.</p>
+
+<h6>Example</h6>
+
+<pre><code>$("#grid").kendoGrid({
+     pageable: true
+     // other configuration
+});
+</code></pre>
+
+<p>Try to do paging operations on the server to keep away from including too much data in the HTML, which might slow down page performance. To accomplish this, set the <code>serverPaging</code> option on the data source to <code>true</code>.</p>
+
+<p>If you decide to use server paging, be prepared to handle the requests to the server, and respond appropriately. When <code>serverPaging</code> is enabled, the data source will send the following default parameters to the server:</p>
+
+<ul>
+<li>The <code>top</code> parameter defines the number of records to send back in the response.</li>
+<li>The <code>skip</code> parameter defines the number of records to skip from the start of the dataset.</li>
+</ul>
+
+<p>For example, if you want to show page 3 out of a 60-record dataset split into 10 records per page, the Grid will send <code>skip: 20</code>, <code>top: 10</code>.</p>
+
+<p>In general, the Grid is platform-agnostic. This means that it works with HTTP requests sending and receiving JSON payload. For example, to bind the widget to a specific data subset (only to a particular page), instruct the dataSource to use <a href="/api/javascript/data/datasource#configuration-serverPaging"><code>serverPaging</code></a>. In this way, it will directly use the received data. The same rule applies to the filtering, grouping, aggregation, and sorting operations.</p>
+
+<h6>Example</h6>
+
+<pre><code>   $(document).ready(function(){
+      $("#grid").kendoGrid({
+         groupable: true,
+         scrollable: true,
+         sortable: true,
+         pageable: true
+      });
+  });
+</code></pre>
+
+<h3 id="configuration-Grouping"><a href="#configuration-Grouping">Grouping</a></h3>
+
+<p>By default, grouping is disabled.</p>
+
+<p>To enable the grouping functionality of the Grid, set the <code>groupable</code> option to <code>true</code>. This exposes a new area in the header, which informs that it is possible for the user to drop a column on it and in this way to group the Grid data by that column. It is also possible to do grouping by multiple columns by dragging a second column onto the grouping header.</p>
+
+<h6>Example</h6>
+
+<pre><code>$("#grid").kendoGrid({
+     groupable: true
+     // other configuration
+});
+</code></pre>
+
+<p><strong>Figure 3: Grid with its grouping functionality enabled</strong></p>
+
+<p><img src="/controls/data-management/grid/grid5_1.png" alt="Grid With Grouping Enabled"></p>
+
+<p><strong>Figure 4: Grid with its data grouped by last name</strong></p>
+
+<p><img src="/controls/data-management/grid/grid6_1.png" alt="Grid Grouped By Last Name"></p>
+
+<p>It is also possible to sort the grouped content by clicking on the grouping tab. In the previous example, click on <strong>lastName</strong> to sort the grouped data in descending order. Click it again to toggle to ascending order. Each of the individual groups themselves can be toggled from expanded to collapsed states by clicking on the arrow next to the respective header grouping.</p>
+
+<p>Grouping can be configured to work also with:</p>
+
+<ul>
+<li>Row templates</li>
+<li>Paging</li>
+</ul>
+
+<h4>Grouping with Row Templates</h4>
+
+<p>By definition, a row template explicitly defines the row markup, while grouping requires changing the row markup. As a result, the two features can be used at the same time only if the row template includes a script which, depending on the number of existing groups, adds additional cells.</p>
+
+<h6>Example</h6>
+
+<pre><code>$(document).ready(function () {
+    // "window." can be omitted if the function is defined outside the document.ready closure
+    window.getGridGroupCells = function(id) {
+        var cnt = $("#" + id).data("kendoGrid").dataSource.group().length,
+            result = "";
+
+        for (var j = 0; j &lt; cnt; j++) {
+            result += "&lt;td class='k-group-cell'&gt;&amp;nbsp;&lt;/td&gt;";
+        }
+
+        return result;
+    }
+
+    $("#GridID").kendoGrid({
+        groupable: true,
+        rowTemplate: "&lt;tr&gt;" +
+            "#= getGridGroupCells('GridID') #" +
+            "&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;",
+        altRowTemplate: "&lt;tr class='k-alt'&gt;" +
+            "#= getGridGroupCells('GridID') #" +
+            "&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;"
+    });
+});
+</code></pre>
+
+<h4>Grouping with Paging</h4>
+
+<p>Paging occurs before grouping. As a result, the following behavior is exhibited:</p>
+
+<ul>
+<li>The dataSource instance of the Grid is not aware if there are items from the displayed groups on other pages.</li>
+<li>If the groups are collapsed, it is not possible to display additional items and groups from other pages below the rendered items and groups. The only workaround is to increase the page size.</li>
+</ul>
+
+<p>To configure the Grid so that grouping occurs before paging, you need to group the whole dataSource. However, this setup is not recommended because it leads to a greatly reduced performance.</p>
+
+<h3 id="configuration-Sorting"><a href="#configuration-Sorting">Sorting</a></h3>
+
+<p>By default, sorting is disabled.</p>
+
+<p><strong>Figure 5: Grid with its sorting functionality enabled</strong></p>
+
+<p><img src="/controls/data-management/grid/grid7_1.png" alt="Grid with Sorting Enabled"></p>
+
+<p>Sorting is also a function that can be pushed to the server for increased performance. This is done through the data source itself and by setting the <code>serverSorting</code> option on the data source to <code>true</code>. When you delegate the sorting to the server, you will receive the default <code>orderBy</code> parameter. This field will contain the field name of the column to sort by in the dataset.</p>
+
+<p>Sorting is supported in two formats:  </p>
+
+<ul>
+<li>Single-column sorting</li>
+<li>Multi-column sorting</li>
+</ul>
+
+<h4>Single-Column Sorting</h4>
+
+<p>To enable the single-column sorting, set the <code>sortable</code> option of the Grid to <code>true</code>. This enables the default single-column sorting.</p>
+
+<h6>Example</h6>
+
+<pre><code>$("#grid").kendoGrid({
+     sortable: true
+     // other configuration
+});
+</code></pre>
+
+<h4>Multi-Column Sorting</h4>
+
+<p>To enable the single-column sorting, set the <code>mode</code> option to <code>multiple</code>.</p>
+
+<h6>Example</h6>
+
+<pre><code>$("#grid").kendoGrid({
+    sortable: {
+        mode: "multiple"
+    },
+    // other configuration
+});
+</code></pre>
+
+<h3 id="configuration-Keyboard"><a href="#configuration-Keyboard">Keyboard Navigation</a></h3>
+
+<p>Keyboard navigation within the Grid is configured through the <code>navigatable</code> option. When set to <code>true</code>, it is possible to initially select a row or a cell and then move through the Grid by using the <code>Arrow</code> keys.</p>
+
+<p>The navigation occurs at a cell level regardless of what the <code>selectable</code> mode is. To select the current row or cell, press the space bar.</p>
+
+<p>The following example demonstrates how to enable the key navigation in the Grid.</p>
+
+<h6>Example</h6>
+
+<pre><code>$("#grid").kendoGrid({
+     navigatable: true
+     // other configuration
+});
+</code></pre>
+
+<p>The keyboard navigation of the Grid works by listening to the <code>keydown</code> events on the wrapper element of the widget. It is assumed that everything the user does is in accordance with the currently focused Grid cell, not the focused element of the browser.</p>
+
+<p>If the data cells of the Grid contain hyperlinks and you want to activate them through the keyboard, navigate to the respective Grid cell by using the <code>Arrow</code> keys, then press <code>Enter</code> to focus the hyperlink inside the cell, and press <code>Enter</code> again. To return the focus on the table cell, press <code>Esc</code>. In order for the hyperlinks to be inaccessible through tabbing, set the <code>tabindex="-1"</code> attribute to the custom hyperlinks.</p>
+
+<p>It is also possible to avoid the described procedure. The custom hyperlinks can be accessed through tabbing and activated through <code>Enter</code> by hacking and bypassing the keyboard navigation of the Grid. To achieve this, prevent the event bubbling of the <code>keydown</code> event of the custom hyperlinks. In this way, the <code>Enter</code> key-presses go unnoticed by the Grid.</p>
+
+<h2 id="templates"><a href="#templates">Templates</a></h2>
+
+<h3 id="row-templates"><a href="#row-templates">Row Templates</a></h3>
+
+<p>It is possible to format any cell within the Grid by using templates within a script tag or within the template option on the column object if the Grid is initialized from a <code>&lt;div&gt;</code> element.</p>
+
+<p>The following example demonstrates how to use a template to format the email address as a hyperlink by using a template declared in a script block.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;script id="template" type="text/x-kendo-tmpl"&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            #= firstName #
+        &lt;/td&gt;
+        &lt;td&gt;
+            #= lastName #
+        &lt;/td&gt;
+        &lt;td&gt;
+            &lt;a href="mailto:#= email #"&gt;#= email #&lt;/a&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/script&gt;
+</code></pre>
+
+<p>Specify this as a template for each row by passing it in to the <code>rowTemplate</code> option on the Grid and initializing it with the <code>kendo.template</code> function, as demonstrated in the following example.</p>
+
+<h6>Example</h6>
+
+<pre><code>$("#grid").kendoGrid({
+    rowTemplate: kendo.template($("#template").html()),
+   // other configuration
+});
+</code></pre>
+
+<p>In the resulting Grid, the email address is an interactive hyperlink which opens a new email message when clicked.</p>
+
+<p><strong>Figure 6: Grid with a row template applied</strong></p>
+
+<p><img src="/controls/data-management/grid/grid8_1.png" alt="Grid with row template"></p>
+
+<p>For more information on the templating features in Kendo UI, refer to the <a href="/framework/templates/overview">introductory article on templates</a>.</p>
+
+<h3 id="column-templates"><a href="#column-templates">Column Templates</a></h3>
+
+<p>Columns need additional specific templating when they represent complex displays and not single fields.</p>
+
+<p>For more information on configuring columns by using templates in the Grid, refer to the article on <a href="/controls/data-management/grid/data-binding#set-the-column-template">binding the Grid to a remote data source</a>.</p>
+
+<h2 id="other-options"><a href="#other-options">Other Options</a></h2>
+
+<p>The Grid provides other configuration options as well. The basic ones deliver the possibility to:</p>
+
+<ul>
+<li><a href="/controls/data-management/grid/editing">Edit the Grid</a></li>
+<li><a href="/controls/data-management/grid/appearance#height">Configure its height and width</a></li>
+<li><a href="/controls/data-management/grid/appearance#columns">Configure its columns and rows</a></li>
+<li><a href="/controls/data-management/grid/appearance#scrolling">Configure scrolling and virtual scrolling</a></li>
+<li><a href="/controls/data-management/grid/appearance#hidden-containers">Initialize it in hidden containers</a></li>
+<li><a href="/controls/data-management/grid/adaptive">Render it adaptively</a></li>
+<li><a href="/controls/data-management/grid/localization">Localize its messages</a></li>
+<li><a href="/controls/data-management/grid/excel-export">Export it to Excel</a></li>
+<li><a href="/controls/data-management/grid/pdf-export">Export it in PDF</a></li>
+<li><a href="/controls/data-management/grid/print-export">Print the Grid</a></li>
+</ul>
+
+<h2 id="see-also"><a href="#see-also">See Also</a></h2>
+
+<ul>
+<li><a href="/api/javascript/ui/grid">Grid JavaScript API Reference</a></li>
+<li><a href="http://docs.telerik.com/aspnet-mvc/helpers/grid/templating/client-detail-template">Client Detail Templates</a></li>
+<li><a href="http://docs.telerik.com/aspnet-mvc/helpers/grid/templating/server-detail-template">Server Detail Templates</a></li>
+<li><a href="http://docs.telerik.com/aspnet-mvc/helpers/grid/templating/editor-templates">Editor Templates</a></li>
+</ul>
+
+<p>For how-to examples on the Kendo UI Grid widget, browse its <a href="/controls/data-management/grid/how-to/AngularJS/use-telerik-backend-services-with-angular"><strong>How To</strong> documentation folder</a>.</p> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

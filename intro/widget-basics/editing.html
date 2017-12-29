@@ -1,0 +1,482 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="documentation">
+        <meta name="product" content="kendo-ui">
+        
+        <title>Editing Functionality | Kendo UI Getting Started</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Configure the editing functionality in Kendo UI widgets such as the Grid, Scheduler, and ListView.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("intro/widget-basics/editing.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//intro/widget-basics/editing.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="editing-functionality"><a href="#editing-functionality">Editing Functionality</a></h1>
+
+<p>Some Kendo UI widgets provide an editing functionality that is implemented with a specific editor element or form bound to the model by using the <a href="/framework/mvvm/overview">Kendo UI MVVM</a> bindings.</p>
+
+<p>These Kendo UI widgets are:</p>
+
+<ul>
+<li>The <a href="/controls/data-management/grid/overview">Kendo UI Grid</a>.</li>
+<li>The <a href="/controls/data-management/listview/overview">Kendo UI ListView</a>.</li>
+<li>The <a href="/controls/data-management/treelist/overview">Kendo UI TreeList</a>.</li>
+<li>The <a href="/controls/scheduling/scheduler/overview">Kendo UI Scheduler</a>.</li>
+<li>The <a href="/controls/scheduling/gantt/overview">Kendo UI Gantt</a>.</li>
+</ul>
+
+<h2 id="getting-started"><a href="#getting-started">Getting Started</a></h2>
+
+<p>You can configure the editing functionality through setting the available options, such as <code>editable</code> and <code>editable.template</code>, while the widgets that support it share some common events such as <code>edit</code>, <code>save</code>, and <code>remove</code>.</p>
+
+<h3 id="options"><a href="#options">Options</a></h3>
+
+<p>The Kendo UI widgets that support editing have the following configuration options:</p>
+
+<ul>
+<li>
+<code>editable</code>—Controls whether the editing is enabled or not. For instance, the editing functionality in the Kendo UI Grid widget is disabled by default. For detailed information, refer to <a href="/api/javascript/ui/grid#configuration-editable">the API article on editing of the Grid</a>.</li>
+<li>
+<code>editable.template</code>—Allows you to define a custom editor template.</li>
+</ul>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>Some widgets provide additional <code>editable</code> options. For more details, see the particular widget API documentation. For example, the Grid widget can disable the <code>remove</code> functionality by using the <a href="/api/javascript/ui/grid#configuration-editable.destroy"><code>editable.destroy</code></a> option.</p>
+</blockquote>
+
+<h3 id="events"><a href="#events">Events</a></h3>
+
+<p>The Kendo UI widgets that support editing have the following common events:</p>
+
+<ul>
+<li>
+<code>edit</code>—Triggered before the editor form is shown. The UI elements are already bound to the model.</li>
+<li>
+<code>save</code>—Triggered before the model is saved. The editor form is still open.</li>
+<li>
+<code>remove</code>—Triggered before the model is removed.</li>
+</ul>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<ul>
+<li>Only the Scheduler widget supports prevention of the <a href="/api/javascript/ui/scheduler#events-edit"><code>edit</code></a>, <a href="/api/javascript/ui/scheduler#events-edit"><code>save</code></a>, and <a href="/api/javascript/ui/scheduler#events-edit"><code>remove</code></a> events.</li>
+<li>The widget uses only one editor form. It applies the same editor template for the <code>create</code> and <code>update</code> actions.</li>
+</ul>
+</blockquote>
+
+<h3 id="setup"><a href="#setup">Setup</a></h3>
+
+<p>To enable the editing functionality of the widget, perform the following steps:</p>
+
+<ol>
+<li>Configure the <a href="/framework/datasource/crud">CRUD</a> (Create, Read, Update, Destroy) data operation actions of the DataSource.</li>
+<li>Define the model fields by using the <a href="/api/javascript/data/datasource#configuration-schema.model"><code>schema.model</code></a> option.</li>
+<li>Enable the <code>editable</code> option.</li>
+</ol>
+
+<p>For more information on how to set up the editing functionality in Kendo UI widgets, refer to the <a href="/controls/data-management/grid/editing">article on editing of the Grid</a>. The approaches are largely applicable, with minor differences, to the other Kendo UI widgets which support the editing functionality.</p>
+
+<h2 id="basic-concepts"><a href="#basic-concepts">Basic Concepts</a></h2>
+
+<h3 id="building-editor-forms"><a href="#building-editor-forms">Building Editor Forms</a></h3>
+
+<p>A Kendo UI widget builds an editor form dynamically based on the <a href="/api/javascript/data/model#methods-Model.define"><code>schema.model</code></a> structure and more specifically the <code>fields</code> collection, as demonstrated in the example below.</p>
+
+<h6>Example</h6>
+
+<pre><code>schema: {
+    model: {
+        id: "ProductID",
+        fields: {
+            ProductID: { editable: false, nullable: true },
+            ProductName: { validation: { required: true } },
+            UnitPrice: { type: "number", validation: { required: true, min: 1} },
+            Discontinued: { type: "boolean" },
+            UnitsInStock: { type: "number", validation: { min: 0, required: true } }
+        }
+    }
+}
+</code></pre>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>The Kendo UI Scheduler has <a href="/api/javascript/data/schedulerevent#fields">a static model structure</a> and it follows only the predefined model fields list. If you want to edit additional fields, use <a href="/controls/scheduling/scheduler/how-to/editing/custom-edit-and-event-templates">a custom editor template</a>.</p>
+</blockquote>
+
+<p>The auto-generated editor form is bound to the model through the <a href="/framework/mvvm/overview">Kendo UI MVVM pattern</a>. The widget also allows you to override this form by using a custom editor template.</p>
+
+<p>Once the form is created, the widget performs the following actions:</p>
+
+<ol>
+<li>It <a href="/api/javascript/kendo#methods-bind">binds</a> the editor fields to the model.</li>
+<li>Triggers the <code>edit</code> event.</li>
+<li>Shows the editor form.</li>
+<li>Updates the model based on the changes made in the editors.</li>
+<li>When the editor form is about to close, the widget triggers the <code>save</code> event. At this stage, the changes can be either accepted or declined.</li>
+</ol>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>The editor form is created and bound before the <code>edit</code> event is triggered, and is already populated.</p>
+</blockquote>
+
+<h3 id="binding-specific-models-to-editor-forms"><a href="#binding-specific-models-to-editor-forms">Binding Specific Models to Editor Forms</a></h3>
+
+<p>When the <code>edit</code> event is triggered, the widget gets the corresponding model and binds the generated or custom editor form to it through the <a href="/framework/mvvm/overview">Kendo UI MVVM pattern</a>. The connection between the model fields and the form editors is done by using the <a href="/framework/mvvm/bindings/value"><code>value</code> binding</a>.</p>
+
+<p>This connection respects the following rules:</p>
+
+<ul>
+<li>On initial load, the editor form is populated using the model values.</li>
+<li>The model is updated when the related <code>editor</code> triggers a <code>change</code> event. The <code>value binding</code> gets its value and populates the model field.</li>
+<li>The form editors are updated when the <a href="/api/javascript/data/observableobject"><code>ObservableObject</code> API</a> is used. Use the <a href="/api/javascript/data/observableobject#methods-set"><code>set</code> method</a> if you want to update the corresponding UI editors. If this API is omitted, the editors do not change.</li>
+</ul>
+
+<h2 id="common-scenarios"><a href="#common-scenarios">Common Scenarios</a></h2>
+
+<h3 id="defining-custom-editor-templates"><a href="#defining-custom-editor-templates">Defining Custom Editor Templates</a></h3>
+
+<p>When the default editor form does not cover your business needs, create a custom editor form. As mentioned in the <a href="#getting-started">section on getting started</a> section, the Kendo UI widgets provide an <code>editable.template</code> option that allows you to define a custom editor form.</p>
+
+<p>The following rules apply to the editor template:</p>
+
+<ul>
+<li>The template uses the <a href="/framework/templates/overview">Kendo UI template syntax</a>.</li>
+<li>The editor is bound to a specific <code>model</code> field through the <a href="/framework/mvvm/bindings/value">MVVM <code>value</code> binding</a>.</li>
+</ul>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>The widget uses only one editor form for the <code>create</code> and <code>update</code> actions.</p>
+</blockquote>
+
+<h3 id="defining-model-default-values"><a href="#defining-model-default-values">Defining Model Default Values</a></h3>
+
+<p>By default, the model fields have predefined values based on the field type. Note that you are also able to define the field as <code>nullable</code>.</p>
+
+<p>If you want to define a specific default value, use the <code>schema.model.fields.defaulValue</code> option. The <code>value binding</code> uses the model value to set the editor value.</p>
+
+<h6>Example</h6>
+
+<pre><code>schema: {
+    model: {
+        id: "ProductID",
+        fields: {
+            ProductID: { editable: false, nullable: true },
+            ProductName: { defaultValue: "Product Name 1" }
+        }
+    }
+}
+</code></pre>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>The value of the editor will be lost in favor of the model value.</p>
+</blockquote>
+
+<h3 id="getting-references-to-specific-editor-controls"><a href="#getting-references-to-specific-editor-controls">Getting References to Specific Editor Controls</a></h3>
+
+<p>You are able to access a particular editor element from the editor form by using the <code>edit</code> event of the widget.</p>
+
+<p>For a sample demo which demonstrates how to accomplish this task, refer to <a href="/controls/data-management/grid/how-to/Editing/access-editor-control">this runnable example</a>.</p>
+
+<h3 id="updating-models-by-using-specific-editors"><a href="#updating-models-by-using-specific-editors">Updating Models by Using Specific Editors</a></h3>
+
+<p>If you want to modify the <code>model</code> by updating the relevant editor, trigger the <code>change</code> event manually. Thus you notify the <code>value binding</code> of the change and the model is updated accordingly.</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>The Kendo UI widgets have their own <a href="/api/javascript/observable#methods-trigger"><code>trigger</code> method</a>, which must be used to trigger the <code>change</code> event.</p>
+</blockquote>
+
+<h3 id="adding-additional-editors-without-using-kendo-ui-mvvm-bindings"><a href="#adding-additional-editors-without-using-kendo-ui-mvvm-bindings">Adding Additional Editors without Using Kendo UI MVVM Bindings</a></h3>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>To accomplish custom editing, it is recommended use a custom editor template.</p>
+</blockquote>
+
+<p>If you want to avoid defining a custom editor template for editing a specific model field, add an additional editor after the form is created.</p>
+
+<p>To do this, follow the steps below:</p>
+
+<p><strong>Step 1</strong> Wire the <code>edit</code> event of the widget.</p>
+
+<p><strong>Step 2</strong> Add the editor manually in the <code>edit</code> event handler.</p>
+
+<p><strong>Step 3</strong> Set editor's value by using the model, available in the arguments of the <code>edit</code> event handler.</p>
+
+<p><strong>Step 4</strong> Wire the <code>change</code> event of the editor and update the <code>model</code> accordingly.</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>The Kendo UI MVVM bindings cannot be used anymore and the model binding should be handled manually.</p>
+</blockquote>
+
+<p>For a sample demo that demonstrates how to add a control to the editor form, refer to <a href="/controls/scheduling/scheduler/how-to/editing/add-control-to-customeditor">this runnable example</a>.</p>
+
+<h3 id="accessing-models-before-editing"><a href="#accessing-models-before-editing">Accessing Models before Editing</a></h3>
+
+<p>Wire the <code>edit</code> event of the widget. You will get the model from the passed arguments.</p>
+
+<h6>Example</h6>
+
+<pre><code>function edit(e) {
+    var model = e.model;
+}
+</code></pre>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>The Scheduler passes the <code>e.event</code> field instead of the <code>model</code> one. The event is an instance of the <a href="/api/javascript/data/schedulerevent"><code>SchedulerEvent</code></a> class. For more details, see the corresponding <code>edit</code> event API documentation of the respective Kendo UI widget.</p>
+</blockquote>
+
+<h3 id="accessing-models-by-uid"><a href="#accessing-models-by-uid">Accessing Models by UID</a></h3>
+
+<p>Every model has a unique identifier. It is applied to the HTML element that holds the editor form. You are able to recognize that element by the <code>data-uid</code> HTML attribute. Use that <code>uid</code> value to get the model from the DataSource of the widget by using <a href="/api/javascript/data/datasource#methods-getByUid"><code>getByUid</code> method</a>.</p>
+
+<h3 id="finding-out-if-models-are-new"><a href="#finding-out-if-models-are-new">Finding Out If Models Are New</a></h3>
+
+<p>If you need to differentiate between <code>create</code> and <code>update</code> actions, use the <a href="/api/javascript/data/model#methods-isNew"><code>Model.isNew()</code> method</a>.</p>
+
+<h2 id="troubleshooting"><a href="#troubleshooting">Troubleshooting</a></h2>
+
+<p>This section provides solutions for common issues you might encounter while configuring the editing functionality.</p>
+
+<h3 id="model-field-values-in-edit-events-are-not-updated"><a href="#model-field-values-in-edit-events-are-not-updated">Model Field Values in Edit Events Are Not Updated</a></h3>
+
+<p>A common scenario is to modify the model in the <code>edit</code> event of the widget. This would be prevented, if the initial (default) value of the model field is invalid. In this case, the attached UI Validation kicks in and prevents any additional model modifications until the value is updated from the editor form.</p>
+
+<p>Here are the actions that are taken during a model update and which create the issue:</p>
+
+<ol>
+<li>A model field is updated using the <a href="/api/javascript/data/observableobject#methods-set"><code>set</code> method</a>.</li>
+<li>The model gets the new value, compares it to the current one and, if they are different, the new value is ready to be set.</li>
+<li>UI validation is triggered. Note that it uses the editor element value to perform the validation check. However, it is invalid and hence the new value that we try to set is ignored.</li>
+</ol>
+
+<p><strong>Solution</strong></p>
+
+<p>Define a valid <code>defaulValue</code> by using the <a href="/api/javascript/data/model#methods-Model.define"><code>schema.model.fields.defaultValue</code> option</a>.</p>
+
+<h2 id="see-also"><a href="#see-also">See Also</a></h2>
+
+<p>Other articles on Kendo UI widget basics:</p>
+
+<ul>
+<li><a href="/intro/installation/getting-started">Get Started with Kendo UI</a></li>
+<li><a href="/intro/installation/cdn-service">Kendo UI CDN Services</a></li>
+<li><a href="/intro/installation/what-you-need">Include Only What You Need</a></li>
+<li><a href="/intro/installation/prerequisites">JavaScript Prerequisites</a></li>
+<li><a href="/intro/installation/jquery-initialization">Initialize Widgets Using jQuery Plug-Ins</a></li>
+<li><a href="/intro/installation/markup">Initialize Widgets Using Markup</a></li>
+<li><a href="/intro/widget-basics/wrapper-element">Access Widget DOM Elements: wrapper and element</a></li>
+<li><a href="/intro/widget-basics/data-attribute-initialization">Set Data Attributes</a></li>
+<li><a href="/intro/widget-basics/events-and-methods">Widget Methods and Events</a></li>
+<li><a href="/intro/widget-basics/destroy">Destroy Widgets</a></li>
+<li><a href="/intro/widget-basics/create-custom-kendo-widget">Create Custom Widgets</a></li>
+<li><a href="/intro/installation/bower-install">Bower Packages</a></li>
+<li><a href="/intro/installation/nuget-install">NuGet Packages</a></li>
+</ul> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

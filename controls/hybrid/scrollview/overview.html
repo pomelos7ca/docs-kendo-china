@@ -1,0 +1,576 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="documentation">
+        <meta name="product" content="kendo-ui">
+        <meta name="subproduct" content="scrollview_mobile">
+        <title>Overview | Hybrid UI ScrollView</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Initialize the hybrid Kendo UI ScrollView widget and define content pages to display one item per page.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("controls/hybrid/scrollview/overview.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//controls/hybrid/scrollview/overview.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="scrollview-overview"><a href="#scrollview-overview">ScrollView Overview</a></h1>
+
+<p>The <a href="http://demos.telerik.com/kendo-ui/m/index#scrollview/mobile">Hybrid UI ScrollView widget</a> is used to scroll content that is wider than the device screen.</p>
+
+<h2 id="getting-started"><a href="#getting-started">Getting Started</a></h2>
+
+<p>The Kendo UI mobile Application automatically initializes the mobile ScrollView for every element with <code>role</code> data attribute set to <code>scrollview</code> and present in the markup of the views. Alternatively, it can be initialized by using jQuery plugin syntax in the containing mobile View <code>init</code> event handler.</p>
+
+<p>The ScrollView widget supports two operation modes—standard and data-bound. The first one is suitable for displaying static content, while the second one provides remote data virtualization. If the ScrollView has a DataSource set during the initialization, it operates in a data-bound mode.</p>
+
+<h3 id="initialize-from-markup"><a href="#initialize-from-markup">Initialize from Markup</a></h3>
+
+<p>The example below demonstrates how to initialize the Hybrid UI ScrollView by using the data-role attribute.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div data-role="scrollview"&gt;
+    Foo
+&lt;/div&gt;
+</code></pre>
+
+<h3 id="initialize-using-jquery"><a href="#initialize-using-jquery">Initialize Using jQuery</a></h3>
+
+<p>The example below demonstrates how to initialize the Hybrid UI ScrollView by using jQuery plugin syntax.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div data-role="view" data-init="initScrollView"&gt;
+    &lt;div id="scrollView"&gt;
+        &lt;div data-role="page"&gt;Foo&lt;/div&gt;
+        &lt;div data-role="page"&gt;Bar&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    function initScrollView(e) {
+        e.view.element.find("#scrollView").kendoMobileScrollView();
+    }
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="data-binding"><a href="#data-binding">Data Binding</a></h2>
+
+<h3 id="grasp-the-basics"><a href="#grasp-the-basics">Grasp the Basics</a></h3>
+
+<p>The Hybrid UI ScrollView widget can be bound to both local JavaScript arrays and remote data via the Kendo UI DataSource component. Local JavaScript arrays are appropriate for small data sets, while remote data binding with <code>serverPaging</code> applies better to larger data sets.</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>If the total amount of displayed data is large, it is recommended to turn off the pager by setting <code>enablePager: false</code> in the configuration options or via <code>data-enable-pager="false"</code> data attribute.</p>
+</blockquote>
+
+<p>If the <code>dataSource</code> configuration option of the ScrollView is set, the widget operates in a data-bound mode. In it, a fixed amount of DOM elements are rendered and then dynamically repositioned and updated while the user scrolls the widget.</p>
+
+<p>Once the ScrollView reaches the total amount of DataSource items, forward scrolling is automatically prevented.</p>
+
+<h3 id="initialize-data-bound-scrollviews"><a href="#initialize-data-bound-scrollviews">Initialize Data-Bound ScrollViews</a></h3>
+
+<h4>Use Data Attributes</h4>
+
+<p>The example below demonstrates how to initialize a Hybrid UI ScrollView bound to remote data by using the data attributes.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div data-role="view" data-stretch="true"&gt;
+    &lt;div data-role="scrollview"
+        data-source="dataSource"
+        data-template="scrollview-template"
+        data-content-height="120px"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script id="scrollview-template" type="text/x-kendo-template"&gt;
+    &lt;div style="width: 110px; height: 110px; background-image: #=setBackground(ProductID)#;"&gt;&lt;/div&gt;
+    &lt;p&gt;#= ProductName #&lt;/p&gt;
+&lt;/script&gt;
+
+&lt;script&gt;
+    var app = new kendo.mobile.Application();
+
+    //Important! The dataSource variable should be accessible from the global scope
+    var dataSource = new kendo.data.DataSource({
+        type: "odata",
+        transport: {
+            read: {
+                url: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Products"
+            }
+        },
+        serverPaging: true,
+        pageSize: 30
+    });
+
+    function setBackground(id) {
+        return "url(https://demos.telerik.com/kendo-ui/content/web/foods/" + id +".jpg)";
+    }
+&lt;/script&gt;
+</code></pre>
+
+<h4>Use jQuery Plugin Syntax</h4>
+
+<p>The example below demonstrates how to initialize a Hybrid UI ScrollView bound to remote data by using jQuery plugin syntax.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div data-role="view" data-stretch="true" data-init="onInit"&gt;
+    &lt;div id="scrollview"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script id="scrollview-template" type="text/x-kendo-template"&gt;
+    &lt;div style="width: 110px; height: 110px; background-image: #=setBackground(ProductID)#;"&gt;&lt;/div&gt;
+    &lt;p&gt;#= ProductName #&lt;/p&gt;
+&lt;/script&gt;
+
+&lt;script&gt;
+    var app = new kendo.mobile.Application();
+
+    function onInit() {
+        $("#scrollview").kendoMobileScrollView({
+            dataSource: {
+                type: "odata",
+                transport: {
+                    read: {
+                        url: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Products"
+                    }
+                },
+                serverPaging: true,
+                pageSize: 30
+            },
+            template: $("#scrollview-template").html(),
+            contentHeight: 120,
+            enablePager: false
+        });
+    }
+
+    function setBackground(id) {
+        return "url(https://demos.telerik.com/kendo-ui/content/web/foods/" + id +".jpg)";
+    }
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="render-content-of-pages"><a href="#render-content-of-pages">Render Content of Pages</a></h3>
+
+<p>When the ScrollView is in a data-bound mode, it generates its page elements automatically. When the DataSource is populated with data, the widget uses its <code>template</code> to render the content of the pages.</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>It is mandatory that you specify the template. If it is missing, the widget is not able to render the content.</p>
+</blockquote>
+
+<p>By default, the widget displays one data-record per page. There is an opportunity for displaying multiple data records on a single page by setting the <code>itemsPerPage</code> configuration option. In such cases, the specified amount of data records is passed to the template and it is your responsibility to handle the way they are going to be displayed.</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>To ensure smooth scrolling, the <code>pageSize</code> of the DataSource should be 6 times <code>itemsPerPage</code> amount or higher. For example, if the <code>itemsPerPage</code> is set to 4, the <code>pageSize</code> must be 24 (4*6) or higher.</p>
+</blockquote>
+
+<h4>Single-Item Templates</h4>
+
+<p>The example below demonstrates a single-item template.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;script id="scrollview-template" type="text/x-kendo-template"&gt;
+    &lt;div style="width: 110px; height: 110px; background-image: #=setBackground(ProductID)#;"&gt;&lt;/div&gt;
+    &lt;p&gt;#= ProductName #&lt;/p&gt;
+&lt;/script&gt;
+</code></pre>
+
+<h4>Multiple-Item Templates</h4>
+
+<p>The example below demonstrates a multiple-item template.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;!-- Note! data is accessed via data[index].fieldName --&gt;
+&lt;script id="scrollview-template" type="text/x-kendo-template"&gt;
+    &lt;div&gt;
+        &lt;div style="width: 110px; height: 110px; background-image: #=setBackground(data[0].ProductID)#;"&gt;&lt;/div&gt;
+        &lt;p&gt;#= data[0].ProductName #&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;div style="width: 110px; height: 110px; background-image: #=setBackground(data[1].ProductID)#;"&gt;&lt;/div&gt;
+        &lt;p&gt;#= data[1].ProductName #&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/script&gt;
+
+&lt;div data-role="view" data-stretch="true" data-init="onInit"&gt;
+    &lt;div id="scrollview"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    var app = new kendo.mobile.Application();
+
+    function onInit() {
+        $("#scrollview").kendoMobileScrollView({
+            dataSource: {
+                type: "odata",
+                transport: {
+                    read: {
+                        url: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Products"
+                    }
+                },
+                serverPaging: true,
+                pageSize: 30
+            },
+            itemsPerPage: 2,
+            template: $("#scrollview-template").html(),
+            contentHeight: 120,
+            enablePager: false
+        });
+    }
+
+    function setBackground(id) {
+        return "url(https://demos.telerik.com/kendo-ui/content/web/foods/" + id +".jpg)";
+    }
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="display-of-incomplete-pages"><a href="#display-of-incomplete-pages">Display of Incomplete Pages</a></h3>
+
+<p>When the ScrollView is configured to display multiple items per page, sometimes the last data view may not be complete. For example, if <code>itemsPerPage: 3</code> and there are a total of seven records in the DataSource, the widget should render 3 pages in total. The first two contain 3 items, while the last one has only 1 remaining item to display. In such cases, it is your responsibility to configure the template of the widget so it is able to handle the missing records. Otherwise, a JavaScript error occurs.</p>
+
+<p>A possible approach to handle this issue is to use JavaScript logic (the <code>for</code> loop) inside the template.</p>
+
+<p>The example below demonstrates a template with a JavaScript <code>for</code> loop.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div id="home" data-role="view" data-model="viewModel"&gt;
+    &lt;div id="scrollview" data-role="scrollview"
+        data-source="ds"
+        data-template="tmpl"
+        data-items-per-page="3"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script type="text/x-kendo-template" id="tmpl"&gt;
+    &lt;div&gt;
+        # for (var i = 0; i &lt; data.length; i++) { #
+            # var item = data[i]; #
+            &lt;div&gt;#= item.title #&lt;/div&gt;
+        # } #
+    &lt;/div&gt;
+&lt;/script&gt;
+
+&lt;script&gt;
+    var ds = new kendo.data.DataSource({
+        data: [
+            {title:"Item 1", desc:"Description 1"},
+            {title:"Item 2", desc:"Description 2"},
+            {title:"Item 3", desc:"Description 3"},
+            {title:"Item 4", desc:"Description 4"},
+            {title:"Item 5", desc:"Description 5"},
+            {title:"Item 6", desc:"Description 6"},
+            {title:"Item 7", desc:"Description 7"}
+        ]
+    });
+
+    var app = new kendo.mobile.Application();
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="local-pages"><a href="#local-pages">Local Pages</a></h2>
+
+<h3 id="define-local-pages"><a href="#define-local-pages">Define Local Pages</a></h3>
+
+<p>To define a local page, wrap the content in a <code>div</code> tag with <code>data-role="page"</code> attribute set.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div data-role="scrollView"&gt;
+    &lt;div data-role="page"&gt;Foo&lt;/div&gt;
+    &lt;div data-role="page"&gt;Bar&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3 id="clear-whitespaces"><a href="#clear-whitespaces">Clear Whitespaces</a></h3>
+
+<p>Whitespaces between page elements in markup causes the ScrollView pager to display an extra page. To fix this, remove any whitespace between the page elements.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div data-role="page"&gt;
+    &lt;!--page content--&gt;
+&lt;/div&gt;&lt;div data-role="page"&gt;
+    &lt;!--page content--&gt;
+&lt;/div&gt;&lt;div data-role="page"&gt;
+    &lt;!--page content--&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>If a Kendo UI template is used to generate the pages, the whitespace gaps can be avoided in the way shown in the example below.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;script type="text/x-kendo-template" id="tmp"&gt;&lt;div data-role="page" &gt;
+    &lt;!-- page content --&gt;
+&lt;/div&gt;&lt;/script&gt;
+</code></pre>
+
+<h2 id="nova-theme-features"><a href="#nova-theme-features">Nova Theme Features</a></h2>
+
+<h3 id="pager-overlay"><a href="#pager-overlay">Pager Overlay</a></h3>
+
+<p><strong>Figure 1: ScrollView pager overlay</strong></p>
+
+<p><img src="/controls/hybrid/scrollview/pager-overlay.png" alt="ScrollView pager overlay"></p>
+
+<p>To activate the feature, add the <code>km-scrollview-overlay</code> class to the ScrollView element.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div data-role="scrollView" class="km-scrollview-overlay"&gt;
+    &lt;div data-role="page"&gt;Foo&lt;/div&gt;
+    &lt;div data-role="page"&gt;Bar&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2 id="troubleshooting"><a href="#troubleshooting">Troubleshooting</a></h2>
+
+<h3 id="display-issues"><a href="#display-issues">Display Issues</a></h3>
+
+<p>A data-bound ScrollView does not display any data. Below are listed some of the possible reasons and solutions for that.</p>
+
+<p>The <a href="/api/javascript/data/datasource#configuration-pageSize"><code>pageSize</code></a> of the DataSource is undefined.</p>
+
+<ul>
+<li>
+<strong>Solution</strong> Set the <code>pageSize</code>. Setting the <code>pageSize</code> is mandatory.</li>
+</ul>
+
+<p>The <a href="/api/javascript/data/datasource#configuration-schema.total"><code>total</code></a> amount of records in the DataSource is undefined.</p>
+
+<ul>
+<li>
+<strong>Solution</strong> Set the <code>total</code>. Setting the <code>total</code> is mandatory.</li>
+</ul>
+
+<p>The widget's <a href="/api/javascript/mobile/ui/scrollview#configuration-template"><code>template</code></a> is undefined.</p>
+
+<ul>
+<li>
+<strong>Solution</strong> Set the <code>template</code>. Setting the <code>template</code> is mandatory.</li>
+</ul>
+
+<p>The widget's content height is zero.</p>
+
+<ul>
+<li>
+<strong>Solution</strong> If the <code>contentHeight</code> is set to 100%, the ScrollView element should be the immediate child of the View and the View's <code>stretch</code> option should be set to <code>true</code>. For a code sample, refer to <a href="/api/javascript/mobile/ui/scrollview#configuration-contentHeight">this demo</a>.</li>
+</ul>
+
+<h3 id="performance-issues"><a href="#performance-issues">Performance Issues</a></h3>
+
+<p>The widget loads data, but the application hangs or crashes. The possible reason is that the total amount of records that you are loading is large.</p>
+
+<p><strong>Solution</strong> Set the <a href="/api/mobile/scrollview#configuration-enablePager"><code>enablePager</code></a> to <code>false</code>.</p>
+
+<h2 id="see-also"><a href="#see-also">See Also</a></h2>
+
+<p>Other articles and how-to examples on the Hybrid UI components and on the ScrollView:</p>
+
+<ul>
+<li><a href="/api/javascript/mobile/ui/scrollview">Hybrid UI ScrollView JavaScript API Reference</a></li>
+<li><a href="/controls/hybrid/introduction">Overview of the Hybrid UI Components</a></li>
+<li><a href="/controls/hybrid/how-to/fixed-content-area">How to Create Fixed Content Areas with Scroller</a></li>
+<li><a href="/controls/hybrid/how-to/relative-content-size-using-flexboxes">How to Create Relative Content Size Using Flexboxes</a></li>
+<li><a href="/controls/hybrid/how-to/select-value-from-another-view">How to Select Value from Another View</a></li>
+<li><a href="/controls/hybrid/how-to/angular/set-initial-view-using-angular">How to Set Initial View Prior to Initialization in AngularJS</a></li>
+</ul> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

@@ -1,0 +1,2876 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="api">
+        <meta name="product" content="kendo-ui">
+        <meta name="subproduct" content="spreadsheet">
+        <title>Configuration, methods and events of Kendo UI Spreadsheet</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Code examples for Spreadsheet UI widget configuration. Learn how to use methods and which events to set once the Spreadsheet UI widget is initialized.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("api/javascript/ui/spreadsheet.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//api/javascript/ui/spreadsheet.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    <div id="markdown-toc"></div>
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="kendouispreadsheet"><a href="#kendouispreadsheet">kendo.ui.Spreadsheet</a></h1>
+
+<p>Represents the Kendo UI Spreadsheet widget. Inherits from <a href="/api/javascript/ui/widget">Widget</a>.</p>
+
+<h2 id="configuration"><a href="#configuration">Configuration</a></h2>
+
+<h3 id="configuration-activeSheet">
+<a href="#configuration-activeSheet">activeSheet </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The name of the currently active sheet.</p>
+
+<p>Must match one of the (sheet names)[#configuration-sheets.name] exactly.</p>
+
+<h3 id="configuration-columnWidth">
+<a href="#configuration-columnWidth">columnWidth </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 64)</em>
+</h3>
+
+<p>The default column width in pixels.</p>
+
+<h3 id="configuration-columns">
+<a href="#configuration-columns">columns </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 50)</em>
+</h3>
+
+<p>The number of columns in the document.</p>
+
+<h3 id="configuration-defaultCellStyle">
+<a href="#configuration-defaultCellStyle">defaultCellStyle </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>The default cell styles to be applyied to sheet cells.</p>
+
+<h3 id="configuration-defaultCellStyle.background">
+<a href="#configuration-defaultCellStyle.background">defaultCellStyle.background </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The background <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value">CSS color</a> of the cell.</p>
+
+<h3 id="configuration-defaultCellStyle.color">
+<a href="#configuration-defaultCellStyle.color">defaultCellStyle.color </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The text <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value">CSS color</a> of the cell.</p>
+
+<h3 id="configuration-defaultCellStyle.fontFamily">
+<a href="#configuration-defaultCellStyle.fontFamily">defaultCellStyle.fontFamily </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The font family for the cell.</p>
+
+<h3 id="configuration-defaultCellStyle.fontSize">
+<a href="#configuration-defaultCellStyle.fontSize">defaultCellStyle.fontSize </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The font size of the cell in pixels.</p>
+
+<h3 id="configuration-defaultCellStyle.Italic">
+<a href="#configuration-defaultCellStyle.Italic">defaultCellStyle.Italic </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h3>
+
+<p>Sets the cell font to italic, if set to true.</p>
+
+<h3 id="configuration-defaultCellStyle.bold">
+<a href="#configuration-defaultCellStyle.bold">defaultCellStyle.bold </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h3>
+
+<p>Sets the cell font to bold, if set to true.</p>
+
+<h3 id="configuration-defaultCellStyle.underline">
+<a href="#configuration-defaultCellStyle.underline">defaultCellStyle.underline </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h3>
+
+<p>Sets the cell font to underline, if set to true.</p>
+
+<h3 id="configuration-defaultCellStyle.wrap">
+<a href="#configuration-defaultCellStyle.wrap">defaultCellStyle.wrap </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h3>
+
+<p>Sets the cell wrap, if set to true.</p>
+
+<h3 id="configuration-headerHeight">
+<a href="#configuration-headerHeight">headerHeight </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 20)</em>
+</h3>
+
+<p>The height of the header row in pixels.</p>
+
+<h3 id="configuration-headerWidth">
+<a href="#configuration-headerWidth">headerWidth </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 32)</em>
+</h3>
+
+<p>The width of the header column in pixels.</p>
+
+<h3 id="configuration-excel">
+<a href="#configuration-excel">excel </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>Configures the Kendo UI Spreadsheet Excel export settings.</p>
+
+<h3 id="configuration-excel.fileName">
+<a href="#configuration-excel.fileName">excel.fileName </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: "Spreadsheet.xslx")</em>
+</h3>
+
+<p>Specifies the file name of the exported Excel file.</p>
+
+<h4>Example - set the default Excel file name</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                name: "Food Order",
+                mergedCells: [
+                    "A1:G1"
+                ],
+                rows: [{
+                    height: 70,
+                    cells: [{
+                        value: "My Company", fontSize: 32, textAlign: "center"
+                    }]
+                }],
+            }],
+            excel: {
+                fileName: "Order.xlsx"
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsExcel();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-excel.forceProxy">
+<a href="#configuration-excel.forceProxy">excel.forceProxy </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h3>
+
+<p>If set to true, the content will be forwarded to <a href="#configuration-excel.proxyURL">proxyURL</a> even if the browser supports saving files locally.</p>
+
+<h3 id="configuration-excel.proxyURL">
+<a href="#configuration-excel.proxyURL">excel.proxyURL </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: null)</em>
+</h3>
+
+<p>The URL of the server side proxy which will stream the file to the end user.</p>
+
+<p>A proxy will be used when the browser isn't capable of saving files locally.
+Such browsers are IE version 9 and lower and Safari.</p>
+
+<p>The developer is responsible for implementing the server-side proxy.</p>
+
+<p>The proxy will receive a POST request with the following parameters in the request body:</p>
+
+<ul>
+<li>contentType: The MIME type of the file</li>
+<li>base64: The base-64 encoded file content</li>
+<li>fileName: The file name, as requested by the caller.</li>
+</ul>
+
+<p>The proxy should return the decoded file with the "Content-Disposition" header set to
+<code>attachment; filename="&lt;fileName.xslx&gt;"</code>.</p>
+
+<h4>Example - set the server proxy URL</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                name: "Food Order",
+                mergedCells: [
+                    "A1:G1"
+                ],
+                rows: [{
+                    height: 70,
+                    cells: [{
+                        value: "My Company", fontSize: 32, textAlign: "center"
+                    }]
+                }],
+            }],
+            excel: {
+                proxyURL: "/save"
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsExcel();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pdf">
+<a href="#configuration-pdf">pdf </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>Configures the Kendo UI Spreadsheet PDF export settings.</p>
+
+<h3 id="configuration-pdf.area">
+<a href="#configuration-pdf.area">pdf.area </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The area to export. Possible values:</p>
+
+<ul>
+<li>"workbook": Exports the full workbook, including all sheets.</li>
+<li>"sheet": Exports the active sheet.</li>
+<li>"selection": Exports the selected area on the active sheet.</li>
+</ul>
+
+<h4>Example - set export area</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdf: {
+                area: "selection"
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pdf.author">
+<a href="#configuration-pdf.author">pdf.author </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: null)</em>
+</h3>
+
+<p>The author of the PDF document.</p>
+
+<h4>Example - set the author</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdf: {
+                author: "John Doe"
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pdf.creator">
+<a href="#configuration-pdf.creator">pdf.creator </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: "Kendo UI PDF Generator")</em>
+</h3>
+
+<p>The creator of the PDF document.</p>
+
+<h4>Example - set the creator</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdf: {
+                creator: "John Doe"
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pdf.date">
+<a href="#configuration-pdf.date">pdf.date </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" class="type-link"><code>Date</code></a>
+</h3>
+
+<p>The date when the PDF document is created. Defaults to <code>new Date()</code>.</p>
+
+<h4>Example - set the date</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdf: {
+                date: new Date("2014/10/10")
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pdf.fileName">
+<a href="#configuration-pdf.fileName">pdf.fileName </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: "Export.pdf")</em>
+</h3>
+
+<p>Specifies the file name of the exported PDF file.</p>
+
+<h4>Example - set the default PDF file name</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdf: {
+                fileName: "Foo.pdf"
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pdf.fitWidth">
+<a href="#configuration-pdf.fitWidth">pdf.fitWidth </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h3>
+
+<p>An option indicating whether to fit the spreadsheet content to page width.</p>
+
+<h4>Example - fit spreadsheet to page width</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [
+                        { value: "A" }, { value: "B" }, { value: "C" },
+                        { value: "1" }, { value: "2" }, { value: "3" },
+                        { value: "4" }, { value: "5" }, { value: "6" },
+                        { value: "7" }, { value: "8" }, { value: "9" }
+                    ]
+                }]
+            }],
+            pdf: {
+                landscape: false,
+                fitWidth: true
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pdf.forceProxy">
+<a href="#configuration-pdf.forceProxy">pdf.forceProxy </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h3>
+
+<p>If set to true, the content will be forwarded to <a href="#configuration-pdf.proxyURL">proxyURL</a> even if the browser supports saving files locally.</p>
+
+<h3 id="configuration-pdf.guidelines">
+<a href="#configuration-pdf.guidelines">pdf.guidelines </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h3>
+
+<p>An option indicating whether to export the cell guidelines.</p>
+
+<h4>Example - disable guidelines</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdf: {
+                guidelines: false
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pdf.hCenter">
+<a href="#configuration-pdf.hCenter">pdf.hCenter </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h3>
+
+<p>An option indicating whether to center the content horizontally.</p>
+
+<p>See also <a href="#configuration-pdf.vCenter">vCenter</a>.</p>
+
+<h4>Example - center content horizontally</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdf: {
+                hCenter: true
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pdf.keywords">
+<a href="#configuration-pdf.keywords">pdf.keywords </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: null)</em>
+</h3>
+
+<p>Specifies the keywords of the exported PDF file.</p>
+
+<h4>Example - set the keywords</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdf: {
+                keywords: "food order"
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pdf.landscape">
+<a href="#configuration-pdf.landscape">pdf.landscape </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
+</h3>
+
+<p>Set to <code>true</code> to reverse the paper dimensions if needed such that width is the larger edge.</p>
+
+<h4>Example - set portrait mode</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdf: {
+                landscape: false
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pdf.margin">
+<a href="#configuration-pdf.margin">pdf.margin </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>Specifies the margins of the page (numbers or strings with units). Supported
+units are "mm", "cm", "in" and "pt" (default).</p>
+
+<h4>Example - set the margins</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdf: {
+                margin: {
+                    left: 10,
+                    right: "10pt",
+                    top: "10mm",
+                    bottom: "1in"
+                }
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pdf.margin.bottom">
+<a href="#configuration-pdf.margin.bottom">pdf.margin.bottom </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: 0)</em>
+</h3>
+
+<p>The bottom margin. Numbers are considered as "pt" units.</p>
+
+<h3 id="configuration-pdf.margin.left">
+<a href="#configuration-pdf.margin.left">pdf.margin.left </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: 0)</em>
+</h3>
+
+<p>The left margin. Numbers are considered as "pt" units.</p>
+
+<h3 id="configuration-pdf.margin.right">
+<a href="#configuration-pdf.margin.right">pdf.margin.right </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: 0)</em>
+</h3>
+
+<p>The right margin. Numbers are considered as "pt" units.</p>
+
+<h3 id="configuration-pdf.margin.top">
+<a href="#configuration-pdf.margin.top">pdf.margin.top </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: 0)</em>
+</h3>
+
+<p>The top margin. Numbers are considered as "pt" units.</p>
+
+<h3 id="configuration-pdf.paperSize">
+<a href="#configuration-pdf.paperSize">pdf.paperSize </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a> <em>(default: "auto")</em>
+</h3>
+
+<p>Specifies the paper size of the PDF document.
+The default "auto" means paper size is determined by content.</p>
+
+<blockquote>
+<p>The size of the content in pixels will match the size of the output in points (1 pixel = 1/72 inch).</p>
+</blockquote>
+
+<p>Supported values:</p>
+
+<ul>
+<li>A predefined size: "A4", "A3" etc</li>
+<li>An array of two numbers specifying the width and height in points (1pt = 1/72in)</li>
+<li>An array of two strings specifying the width and height in units.
+Supported units are "mm", "cm", "in" and "pt".</li>
+</ul>
+
+<h4>Example - set custom paper size</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdf: {
+                paperSize: ["100mm", "50mm"]
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pdf.proxyURL">
+<a href="#configuration-pdf.proxyURL">pdf.proxyURL </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: null)</em>
+</h3>
+
+<p>The URL of the server side proxy which will stream the file to the end user.</p>
+
+<p>A proxy will be used when the browser is not capable of saving files locally, for example, Internet Explorer 9 and Safari.</p>
+
+<p>The developer is responsible for implementing the server-side proxy.</p>
+
+<p>The proxy will receive a POST request with the following parameters in the request body:</p>
+
+<ul>
+<li>contentType: The MIME type of the file</li>
+<li>base64: The base-64 encoded file content</li>
+<li>fileName: The file name, as requested by the caller.</li>
+</ul>
+
+<p>The proxy should return the decoded file with the "Content-Disposition" header set to
+<code>attachment; filename="&lt;fileName.pdf&gt;"</code>.</p>
+
+<h4>Example - set the server proxy URL</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdf: {
+                proxyURL: "/save"
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pdf.proxyTarget">
+<a href="#configuration-pdf.proxyTarget">pdf.proxyTarget </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: "_self")</em>
+</h3>
+
+<p>A name or keyword indicating where to display the document returned from the proxy.</p>
+
+<p>If you want to display the document in a new window or iframe,
+the proxy should set the "Content-Disposition" header to <code>inline; filename="&lt;fileName.pdf&gt;"</code>.</p>
+
+<h4>Example - open the generated document in a new window</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdf: {
+                forceProxy: true,
+                proxyURL: "/save",
+                proxyTarget: "_blank"
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pdf.subject">
+<a href="#configuration-pdf.subject">pdf.subject </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: null)</em>
+</h3>
+
+<p>Sets the subject of the PDF file.</p>
+
+<h4>Example - set the subject</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdf: {
+                subject: "Products"
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pdf.title">
+<a href="#configuration-pdf.title">pdf.title </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: null)</em>
+</h3>
+
+<p>Sets the title of the PDF file.</p>
+
+<h4>Example - set the title</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdf: {
+                title: "Products"
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pdf.vCenter">
+<a href="#configuration-pdf.vCenter">pdf.vCenter </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h3>
+
+<p>An option indicating whether to center the content vertically.</p>
+
+<p>See also <a href="#configuration-pdf.hCenter">hCenter</a>.</p>
+
+<h4>Example - center content vertically</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdf: {
+                vCenter: true
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-rowHeight">
+<a href="#configuration-rowHeight">rowHeight </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 20)</em>
+</h3>
+
+<p>The default row height in pixels.</p>
+
+<h3 id="configuration-rows">
+<a href="#configuration-rows">rows </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 200)</em>
+</h3>
+
+<p>The number of rows in the document.</p>
+
+<h3 id="configuration-sheets">
+<a href="#configuration-sheets">sheets </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h3>
+
+<p>An array defining the document sheets and their content.</p>
+
+<h3 id="configuration-sheets.activeCell">
+<a href="#configuration-sheets.activeCell">sheets.activeCell </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The active cell in the sheet, e.g. "A1".</p>
+
+<h3 id="configuration-sheets.name">
+<a href="#configuration-sheets.name">sheets.name </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The name of the sheet.</p>
+
+<h3 id="configuration-sheets.columns">
+<a href="#configuration-sheets.columns">sheets.columns </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h3>
+
+<p>An array defining the columns in this sheet and their content.</p>
+
+<h3 id="configuration-sheets.columns.index">
+<a href="#configuration-sheets.columns.index">sheets.columns.index </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The zero-based index of the column. Required to ensure correct positioning.</p>
+
+<h3 id="configuration-sheets.columns.width">
+<a href="#configuration-sheets.columns.width">sheets.columns.width </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The width of the column in pixels. Defaults to <a href="#configuration-columnWidth">columnWidth</a>.</p>
+
+<h3 id="configuration-sheets.dataSource">
+<a href="#configuration-sheets.dataSource">sheets.dataSource </a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+</h3>
+
+<p>The data source instance for this sheet.</p>
+
+<p>See <a href="/web/spreadsheet/import-and-export-data/bind-to-data-source">Bind to Data Source</a>.</p>
+
+<h3 id="configuration-sheets.filter">
+<a href="#configuration-sheets.filter">sheets.filter </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>Defines the filtering criteria for this sheet, if any.</p>
+
+<h3 id="configuration-sheets.filter.columns">
+<a href="#configuration-sheets.filter.columns">sheets.filter.columns </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h3>
+
+<p>An array defining the filter configuration of individual columns.</p>
+
+<h3 id="configuration-sheets.filter.columns.criteria">
+<a href="#configuration-sheets.filter.columns.criteria">sheets.filter.columns.criteria </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h3>
+
+<p>An array of filter criteria for custom filters.</p>
+
+<h3 id="configuration-sheets.filter.columns.criteria.operator">
+<a href="#configuration-sheets.filter.columns.criteria.operator">sheets.filter.columns.criteria.operator </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The criterion operator type.</p>
+
+<p>Supported types vary based on the inferred column data type (inferred):</p>
+
+<ul>
+<li>Text
+
+<ul>
+<li>contains - the text contains the value</li>
+<li>doesnotcontain - text does not contain the value</li>
+<li>startswith - text starts with the value</li>
+<li>endswith - text ends with the value</li>
+</ul>
+</li>
+<li>Date
+
+<ul>
+<li>eq -  date is the same as the value</li>
+<li>neq - date is not the same as the value</li>
+<li>lt -  date is before the value</li>
+<li>gt -  date is after the value</li>
+</ul>
+</li>
+<li>Number
+
+<ul>
+<li>eq - is equal to the value</li>
+<li>neq - is not equal to the value</li>
+<li>gte - is greater than or equal to the value</li>
+<li>gt - is greater than the value</li>
+<li>lte - is less than or equal to the value</li>
+<li>lt - is less than the value</li>
+</ul>
+</li>
+</ul>
+
+<h3 id="configuration-sheets.filter.columns.criteria.value">
+<a href="#configuration-sheets.filter.columns.criteria.value">sheets.filter.columns.criteria.value </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The value for the criteria operator.</p>
+
+<h3 id="configuration-sheets.filter.columns.filter">
+<a href="#configuration-sheets.filter.columns.filter">sheets.filter.columns.filter </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The filter to apply to this column.</p>
+
+<p>The supported filters are:</p>
+
+<ul>
+<li>value - filters based on unique values</li>
+<li>custom - applies custom filtering criteria</li>
+<li>top - filters the top or bottom records</li>
+<li>dynamic - filters based on dynamic criteria</li>
+</ul>
+
+<h3 id="configuration-sheets.filter.columns.index">
+<a href="#configuration-sheets.filter.columns.index">sheets.filter.columns.index </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The index of the column <strong>relative to</strong> the <a href="#configuration-sheets.filter.ref">filter range</a>.</p>
+
+<h3 id="configuration-sheets.filter.columns.logic">
+<a href="#configuration-sheets.filter.columns.logic">sheets.filter.columns.logic </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The logical operator to apply to <a href="#configuration-sheets.filter.columns.criteria">filter criteria</a>.</p>
+
+<p>Possible values are <code>and</code>, <code>or</code>.</p>
+
+<h3 id="configuration-sheets.filter.columns.type">
+<a href="#configuration-sheets.filter.columns.type">sheets.filter.columns.type </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The filter sub-type, if any.</p>
+
+<p>Applicable types according to the <a href="#configuration-sheets.filter.columns.filter">main filter</a>.</p>
+
+<ul>
+<li>top
+
+<ul>
+<li>topNumber</li>
+<li>topPercent</li>
+<li>bottomNumber</li>
+<li>bottomPercent</li>
+</ul>
+</li>
+<li>dynamic
+
+<ul>
+<li>aboveAverage</li>
+<li>belowAverage</li>
+<li>tomorrow</li>
+<li>today</li>
+<li>yesterday</li>
+<li>nextWeek</li>
+<li>thisWeek</li>
+<li>lastWeek</li>
+<li>nextMonth</li>
+<li>thisMonth</li>
+<li>lastMonth</li>
+<li>nextQuarter</li>
+<li>thisQuarter</li>
+<li>lastQuarter</li>
+<li>nextYear</li>
+<li>thisYear</li>
+<li>lastYear</li>
+<li>yearToDate</li>
+</ul>
+</li>
+</ul>
+
+<h3 id="configuration-sheets.filter.columns.value">
+<a href="#configuration-sheets.filter.columns.value">sheets.filter.columns.value </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" class="type-link"><code>Date</code></a>
+</h3>
+
+<p>The filter value for filters that require a single value, e.g. "top".</p>
+
+<h3 id="configuration-sheets.filter.columns.values">
+<a href="#configuration-sheets.filter.columns.values">sheets.filter.columns.values </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h3>
+
+<p>The filter values for filters that support multiple values.</p>
+
+<h3 id="configuration-sheets.filter.ref">
+<a href="#configuration-sheets.filter.ref">sheets.filter.ref </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The active range for the filter, e.g. "B1:D8".</p>
+
+<h3 id="configuration-sheets.frozenColumns">
+<a href="#configuration-sheets.frozenColumns">sheets.frozenColumns </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The number of frozen columns in this sheet.</p>
+
+<h3 id="configuration-sheets.frozenRows">
+<a href="#configuration-sheets.frozenRows">sheets.frozenRows </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The number of frozen rows in this sheet.</p>
+
+<h3 id="configuration-sheets.mergedCells">
+<a href="#configuration-sheets.mergedCells">sheets.mergedCells </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h3>
+
+<p>An array of merged cell ranges, e.g. "B1:D2".</p>
+
+<h3 id="configuration-sheets.rows">
+<a href="#configuration-sheets.rows">sheets.rows </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h3>
+
+<p>The row data for this sheet.</p>
+
+<h3 id="configuration-sheets.rows.cells">
+<a href="#configuration-sheets.rows.cells">sheets.rows.cells </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h3>
+
+<p>The cells for this row.</p>
+
+<h3 id="configuration-sheets.rows.cells.background">
+<a href="#configuration-sheets.rows.cells.background">sheets.rows.cells.background </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The background color of the cell.</p>
+
+<p>Many standard CSS formats are supported, but the canonical form is "#ccff00".</p>
+
+<h3 id="configuration-sheets.rows.cells.borderBottom">
+<a href="#configuration-sheets.rows.cells.borderBottom">sheets.rows.cells.borderBottom </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>The style information for the bottom border of the cell.</p>
+
+<h3 id="configuration-sheets.rows.cells.borderBottom.color">
+<a href="#configuration-sheets.rows.cells.borderBottom.color">sheets.rows.cells.borderBottom.color </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The bottom border color of the cell.</p>
+
+<p>Many standard CSS formats are supported, but the canonical form is "#ccff00".</p>
+
+<h3 id="configuration-sheets.rows.cells.borderBottom.size">
+<a href="#configuration-sheets.rows.cells.borderBottom.size">sheets.rows.cells.borderBottom.size </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The width of the border in pixels.</p>
+
+<h3 id="configuration-sheets.rows.cells.borderLeft">
+<a href="#configuration-sheets.rows.cells.borderLeft">sheets.rows.cells.borderLeft </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>The style information for the left border of the cell.</p>
+
+<h3 id="configuration-sheets.rows.cells.borderLeft.color">
+<a href="#configuration-sheets.rows.cells.borderLeft.color">sheets.rows.cells.borderLeft.color </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The left border color of the cell.</p>
+
+<p>Many standard CSS formats are supported, but the canonical form is "#ccff00".</p>
+
+<h3 id="configuration-sheets.rows.cells.borderLeft.size">
+<a href="#configuration-sheets.rows.cells.borderLeft.size">sheets.rows.cells.borderLeft.size </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The width of the border in pixels.</p>
+
+<h3 id="configuration-sheets.rows.cells.borderTop">
+<a href="#configuration-sheets.rows.cells.borderTop">sheets.rows.cells.borderTop </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>The style information for the top border of the cell.</p>
+
+<h3 id="configuration-sheets.rows.cells.borderTop.color">
+<a href="#configuration-sheets.rows.cells.borderTop.color">sheets.rows.cells.borderTop.color </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The top border color of the cell.</p>
+
+<p>Many standard CSS formats are supported, but the canonical form is "#ccff00".</p>
+
+<h3 id="configuration-sheets.rows.cells.borderTop.size">
+<a href="#configuration-sheets.rows.cells.borderTop.size">sheets.rows.cells.borderTop.size </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The width of the border in pixels.</p>
+
+<h3 id="configuration-sheets.rows.cells.borderRight">
+<a href="#configuration-sheets.rows.cells.borderRight">sheets.rows.cells.borderRight </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>The style information for the right border of the cell.</p>
+
+<h3 id="configuration-sheets.rows.cells.borderRight.color">
+<a href="#configuration-sheets.rows.cells.borderRight.color">sheets.rows.cells.borderRight.color </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The right border color of the cell.</p>
+
+<p>Many standard CSS formats are supported, but the canonical form is "#ccff00".</p>
+
+<h3 id="configuration-sheets.rows.cells.borderRight.size">
+<a href="#configuration-sheets.rows.cells.borderRight.size">sheets.rows.cells.borderRight.size </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The width of the border in pixels.</p>
+
+<h3 id="configuration-sheets.rows.cells.color">
+<a href="#configuration-sheets.rows.cells.color">sheets.rows.cells.color </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The font color of the cell.</p>
+
+<p>Many standard CSS formats are supported, but the canonical form is "#ccff00".</p>
+
+<h3 id="configuration-sheets.rows.cells.fontFamily">
+<a href="#configuration-sheets.rows.cells.fontFamily">sheets.rows.cells.fontFamily </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The font family for the cell.</p>
+
+<h3 id="configuration-sheets.rows.cells.fontSize">
+<a href="#configuration-sheets.rows.cells.fontSize">sheets.rows.cells.fontSize </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The font size of the cell in pixels.</p>
+
+<h3 id="configuration-sheets.rows.cells.italic">
+<a href="#configuration-sheets.rows.cells.italic">sheets.rows.cells.italic </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h3>
+
+<p>Sets the cell font to italic, if set to <code>true</code>.</p>
+
+<h3 id="configuration-sheets.rows.cells.bold">
+<a href="#configuration-sheets.rows.cells.bold">sheets.rows.cells.bold </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h3>
+
+<p>Sets the cell font to bold, if set to <code>true</code>.</p>
+
+<h3 id="configuration-sheets.rows.cells.enable">
+<a href="#configuration-sheets.rows.cells.enable">sheets.rows.cells.enable </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h3>
+
+<p>Disables the cell, if set to <code>false</code>.</p>
+
+<h3 id="configuration-sheets.rows.cells.format">
+<a href="#configuration-sheets.rows.cells.format">sheets.rows.cells.format </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The format of the cell text.</p>
+
+<p>See <a href="https://support.office.com/en-au/article/Create-or-delete-a-custom-number-format-78f2a361-936b-4c03-8772-09fab54be7f4">Create or delete a custom number format on MS Office</a>.</p>
+
+<h3 id="configuration-sheets.rows.cells.formula">
+<a href="#configuration-sheets.rows.cells.formula">sheets.rows.cells.formula </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The cell formula <strong>without the leading equals</strong> sign, e.g. <code>A1 * 10</code>.</p>
+
+<h3 id="configuration-sheets.rows.cells.index">
+<a href="#configuration-sheets.rows.cells.index">sheets.rows.cells.index </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The zero-based index of the cell. Required to ensure correct positioning.</p>
+
+<h3 id="configuration-sheets.rows.cells.link">
+<a href="#configuration-sheets.rows.cells.link">sheets.rows.cells.link </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The hyperlink (URL) of the cell.</p>
+
+<h3 id="configuration-sheets.rows.cells.textAlign">
+<a href="#configuration-sheets.rows.cells.textAlign">sheets.rows.cells.textAlign </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The text align setting for the cell content.</p>
+
+<p>Available options are:</p>
+
+<ul>
+<li>left</li>
+<li>center</li>
+<li>right</li>
+<li>justify</li>
+</ul>
+
+<h3 id="configuration-sheets.rows.cells.underline">
+<a href="#configuration-sheets.rows.cells.underline">sheets.rows.cells.underline </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h3>
+
+<p>Sets the cell font to underline, if set to <code>true</code>.</p>
+
+<h3 id="configuration-sheets.rows.cells.value">
+<a href="#configuration-sheets.rows.cells.value">sheets.rows.cells.value </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" class="type-link"><code>Date</code></a>
+</h3>
+
+<p>The cell value.</p>
+
+<h3 id="configuration-sheets.rows.cells.validation">
+<a href="#configuration-sheets.rows.cells.validation">sheets.rows.cells.validation </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>The validation rule applied to the cell.</p>
+
+<h4>Initialize Spreadsheet with validation data, using <code>sheets.rows</code> configuration option</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+
+    &lt;script type="text/javascript" charset="utf-8"&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [
+                {
+                    name: "Populated" ,
+                    rows: [
+                        {
+                            index: 2,
+                            cells: [
+                                { index: 3, background: "red", color: "green", value: "D3" },
+                                { index: 10, color: "blue", value: "a value" }
+                            ]
+                        },
+                        {
+                            index: 5,
+                            cells: [
+                                {
+                                    index: 0,
+                                    color: "red",
+                                    value: "A6",
+                                    validation: {
+                                        from: "1",
+                                        to: "2",
+                                        comparerType: "between",
+                                        dataType: "number",
+                                        messageTemplate: "Number should match the validation."
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        });
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-sheets.rows.cells.validation.type">
+<a href="#configuration-sheets.rows.cells.validation.type">sheets.rows.cells.validation.type </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Defines the validation type. The acceptable options are <em>reject</em> or <em>warning</em></p>
+
+<h3 id="configuration-sheets.rows.cells.validation.comparerType">
+<a href="#configuration-sheets.rows.cells.validation.comparerType">sheets.rows.cells.validation.comparerType </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Defines the comparer type used to validate the cell value, e.g. "greaterThan", "between" and etc.</p>
+
+<h3 id="configuration-sheets.rows.cells.validation.dataType">
+<a href="#configuration-sheets.rows.cells.validation.dataType">sheets.rows.cells.validation.dataType </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Defines the data type of the cell value.</p>
+
+<h3 id="configuration-sheets.rows.cells.validation.from">
+<a href="#configuration-sheets.rows.cells.validation.from">sheets.rows.cells.validation.from </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Defines a <em>formula</em> or <em>value</em> used for the comparison process. Used as <em>only</em> if comparer type does not require second argument.</p>
+
+<h3 id="configuration-sheets.rows.cells.validation.showButton">
+<a href="#configuration-sheets.rows.cells.validation.showButton">sheets.rows.cells.validation.showButton </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h3>
+
+<p>A boolean value indicating if a button for selecting list items (dataType set to <code>list</code>) should be displayed.</p>
+
+<h3 id="configuration-sheets.rows.cells.validation.to">
+<a href="#configuration-sheets.rows.cells.validation.to">sheets.rows.cells.validation.to </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Defines a <em>formula</em> or <em>value</em> used for the comparison process. Will be used if comparer type requires second argument.</p>
+
+<h3 id="configuration-sheets.rows.cells.validation.allowNulls">
+<a href="#configuration-sheets.rows.cells.validation.allowNulls">sheets.rows.cells.validation.allowNulls </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h3>
+
+<p>Specifies whether to allow nulls.</p>
+
+<h3 id="configuration-sheets.rows.cells.validation.messageTemplate">
+<a href="#configuration-sheets.rows.cells.validation.messageTemplate">sheets.rows.cells.validation.messageTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Defines the <em>hint</em> message that will be displayed if value is invalid.</p>
+
+<p>The template is giving an access to the following variables: from{0}, to{1}, fromFormula{2}, toFormula{3}, dataType{4}, type{5} and comparerType{6}.</p>
+
+<h4>Example - use validation template variables</h4>
+
+<pre><code>&lt;div id="example"&gt;
+      &lt;div id="spreadsheet" style="width: 100%;"&gt;&lt;/div&gt;
+      &lt;script&gt;
+        $(function() {
+          $("#spreadsheet").kendoSpreadsheet({
+            columns: 26,
+            rows: 30,
+            sheetsbar: false,
+            excel: {
+              // Required to enable Excel Export in some browsers
+              proxyURL: "//demos.telerik.com/kendo-ui/service/export"
+            },
+            sheets: [
+              {
+                name: "Validation Template",
+
+                rows: [
+                  {
+                    height: 25,
+                    cells: [
+                      {
+                        value: "15",
+                        validation: {
+                          dataType: "number",
+                          from: "B1",
+                          to:"C1",
+                          allowNulls: true,
+                          comparerType:"between" ,
+                          type: "reject",
+                          titleTemplate: "Number validation error",
+                          messageTemplate: "The number have to be between {0} and {1}"
+                        }
+
+                      },
+                      {
+                        value: "10",
+
+                      },
+                      {
+                        value: "20",
+
+                      },
+
+                    ]
+                  },
+                ],
+                columns: [
+                  {
+                    width: 100
+                  },
+                  {
+                    width: 215
+                  },
+                  {
+                    width: 115
+                  },
+                  {
+                    width: 115
+                  },
+                  {
+                    width: 115
+                  }
+                ]
+              },
+              {
+                name: "ListValues",
+                rows: [ //A1:B1
+                  {
+                    cells: [
+                      {
+                        value: true
+                      },
+                      {
+                        value: false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          });
+        });
+      &lt;/script&gt;
+    &lt;/div&gt;
+</code></pre>
+
+<h3 id="configuration-sheets.rows.cells.validation.titleTemplate">
+<a href="#configuration-sheets.rows.cells.validation.titleTemplate">sheets.rows.cells.validation.titleTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Defines the <em>hint</em> title that will be displayed if value is invalid.</p>
+
+<h3 id="configuration-sheets.rows.cells.verticalAlign">
+<a href="#configuration-sheets.rows.cells.verticalAlign">sheets.rows.cells.verticalAlign </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The vertical align setting for the cell content.</p>
+
+<p>Available options are:</p>
+
+<ul>
+<li>top</li>
+<li>center</li>
+<li>bottom</li>
+</ul>
+
+<h3 id="configuration-sheets.rows.cells.wrap">
+<a href="#configuration-sheets.rows.cells.wrap">sheets.rows.cells.wrap </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h3>
+
+<p>Will wrap the cell content if set to <code>true</code>.</p>
+
+<h3 id="configuration-sheets.rows.height">
+<a href="#configuration-sheets.rows.height">sheets.rows.height </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The row height in pixels. Defaults to <a href="#configuration-rowHeight">rowHeight</a>.</p>
+
+<h3 id="configuration-sheets.rows.index">
+<a href="#configuration-sheets.rows.index">sheets.rows.index </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The absolute row index. Required to ensure correct positioning.</p>
+
+<h3 id="configuration-sheets.rows.type">
+<a href="#configuration-sheets.rows.type">sheets.rows.type </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The table row element role, in the context of the Grid table structure.</p>
+
+<h3 id="configuration-sheets.selection">
+<a href="#configuration-sheets.selection">sheets.selection </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The selected range in the sheet, e.g. "A1:B10".</p>
+
+<h3 id="configuration-sheets.showGridLines">
+<a href="#configuration-sheets.showGridLines">sheets.showGridLines </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
+</h3>
+
+<p>A boolean value indicating if the sheet grid lines should be displayed.</p>
+
+<h3 id="configuration-sheets.sort">
+<a href="#configuration-sheets.sort">sheets.sort </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>Defines the sort criteria for the sheet.</p>
+
+<h3 id="configuration-sheets.sort.columns">
+<a href="#configuration-sheets.sort.columns">sheets.sort.columns </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h3>
+
+<p>Specifies the sort options for individual columns.</p>
+
+<h3 id="configuration-sheets.sort.columns.ascending">
+<a href="#configuration-sheets.sort.columns.ascending">sheets.sort.columns.ascending </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h3>
+
+<p>Indicates if the data in the cell should be sorted ascending (<code>true</code>) or descending or (<code>false</code>).</p>
+
+<h3 id="configuration-sheets.sort.columns.index">
+<a href="#configuration-sheets.sort.columns.index">sheets.sort.columns.index </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The index of the column <strong>within the sheet</strong>.</p>
+
+<p>For example, column C will have index 2.</p>
+
+<h3 id="configuration-sheets.sort.ref">
+<a href="#configuration-sheets.sort.ref">sheets.sort.ref </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The sorted range, e.g. "A1:D5".</p>
+
+<h3 id="configuration-sheetsbar">
+<a href="#configuration-sheetsbar">sheetsbar </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
+</h3>
+
+<p>A boolean value indicating if the sheetsbar should be displayed.</p>
+
+<h3 id="configuration-toolbar">
+<a href="#configuration-toolbar">toolbar </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a> <em>(default: true)</em>
+</h3>
+
+<p>A boolean value indicating if the toolbar should be displayed.</p>
+
+<h3 id="configuration-toolbar.home">
+<a href="#configuration-toolbar.home">toolbar.home </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a> <em>(default: true)</em>
+</h3>
+
+<p>A boolean value indicating if the "home" tab should be displayed or a collection of tools that will be shown in the "home" tab.</p>
+
+<p>The available tools are:</p>
+
+<ul>
+<li><strong>open</strong></li>
+<li><strong>exportAs</strong></li>
+<li>[<strong>cut</strong>, <strong>copy</strong>, <strong>paste</strong>]</li>
+<li>[<strong>bold</strong>, <strong>italic</strong>, <strong>underline</strong>]</li>
+<li>
+<strong>backgroundColor</strong>, <strong>textColor</strong>
+</li>
+<li><strong>borders</strong></li>
+<li>
+<strong>fontSize</strong>, <strong>fontFamily</strong>
+</li>
+<li><strong>alignment</strong></li>
+<li><strong>textWrap</strong></li>
+<li>[<strong>formatDecreaseDecimal</strong>, <strong>formatIncreaseDecimal</strong>]</li>
+<li><strong>format</strong></li>
+<li><strong>merge</strong></li>
+<li><strong>freeze</strong></li>
+<li><strong>filter</strong></li>
+</ul>
+
+<p>Those tools which are part of a tool group are defined as array. For example <code>["bold", "italic", "underline"]</code></p>
+
+<h4>Example - customize home tab</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            toolbar: {
+                home: [ ["bold", "italic"], "format" ]
+            }
+        });
+    &lt;/script&gt;
+</code></pre>
+
+<h4>Example - disable home tab</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            toolbar: {
+                home: false
+            }
+        });
+    &lt;/script&gt;
+</code></pre>
+
+<h4>Example - show a custom tool</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            toolbar: {
+                home: [
+                    // for all available options, see the toolbar items configuration
+                    // http://docs.telerik.com/kendo-ui/api/javascript/ui/toolbar#configuration-items
+                    {
+                        type: "button",
+                        text: "Custom",
+                        spriteCssClass: "k-icon k-i-cog",
+                        click: function() {
+                            window.alert("custom tool");
+                        }
+                    }
+                ]
+            }
+        });
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-toolbar.insert">
+<a href="#configuration-toolbar.insert">toolbar.insert </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a> <em>(default: true)</em>
+</h3>
+
+<p>A boolean value indicating if the "insert" tab should be displayed or a collection of tools that will be shown in the "insert" tab.</p>
+
+<p>The available tools are:</p>
+
+<ul>
+<li>[ <strong>addColumnLeft</strong>, <strong>addColumnRight</strong>, <strong>addRowBelow</strong>, <strong>addRowAbove</strong> ]</li>
+<li>[ <strong>deleteColumn</strong>, <strong>deleteRow</strong> ]</li>
+</ul>
+
+<p>Those tools which are part of a tool group are defined as array. For example <code>["deleteColumn", "deleteRow"]</code></p>
+
+<h4>Example - customize insert tab</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            toolbar: {
+                insert: [ ["deleteColumn", "deleteRow"] ]
+            }
+        });
+    &lt;/script&gt;
+</code></pre>
+
+<h4>Example - disable insert tab</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            toolbar: {
+                insert: false
+            }
+        });
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-toolbar.data">
+<a href="#configuration-toolbar.data">toolbar.data </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a> <em>(default: true)</em>
+</h3>
+
+<p>A boolean value indicating if the "insert" tab should be displayed or a collection of tools that will be shown in the "insert" tab.</p>
+
+<p>The available tools are:</p>
+
+<ul>
+<li><strong>sort</strong></li>
+<li><strong>filter</strong></li>
+<li><strong>validation</strong></li>
+</ul>
+
+<h4>Example - customize data tab</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            toolbar: {
+                data: ["validation"]
+            }
+        });
+    &lt;/script&gt;
+</code></pre>
+
+<h4>Example - disable data tab</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            toolbar: {
+                data: false
+            }
+        });
+    &lt;/script&gt;
+</code></pre>
+
+<h2 id="methods"><a href="#methods">Methods</a></h2>
+
+<h3 id="methods-activeSheet"><a href="#methods-activeSheet">activeSheet</a></h3>
+
+<p>Gets or sets the active sheet.</p>
+
+<h4>Parameters</h4>
+
+<h5>sheet <code>kendo.spreadsheet.Sheet</code> <em>optional</em>
+</h5>
+
+<p>The sheet to set as active.</p>
+
+<h4>Returns</h4>
+
+<p><code>kendo.spreadsheet.Sheet</code> the active sheet.</p>
+
+<h4>Example - change the active Sheet</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{ name: "Sheet1" }, { name: "Sheet2" }]
+        });
+        var sheets = $("#spreadsheet").data("kendoSpreadsheet").sheets();
+        $("#spreadsheet").data("kendoSpreadsheet").activeSheet(sheets[1]);
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-cellContextMenu"><a href="#methods-cellContextMenu">cellContextMenu</a></h3>
+
+<p>Gets the cell contextMenu instance.</p>
+
+<h4>Returns</h4>
+
+<p><code>kendo.ui.ContextMenu</code> The menu instance.</p>
+
+<h4>Example - dynamically adding a context menu item and associating a selection command</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        $(function() {
+            var spreadsheet = $("#spreadsheet").kendoSpreadsheet().data("kendoSpreadsheet"),
+                cellContextMenu = spreadsheet.cellContextMenu();
+
+            cellContextMenu.append([{ text: "Highlight", cssClass: "highlight" }]);
+
+            cellContextMenu.bind("select", function(e) {
+               var command = $(e.item).text();
+
+              if(command == "Highlight") {
+                var sheet = spreadsheet.activeSheet(),
+                    selection = sheet.selection();
+
+                selection.background("green");
+              }
+           });
+        });
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-rowHeaderContextMenu"><a href="#methods-rowHeaderContextMenu">rowHeaderContextMenu</a></h3>
+
+<p>Gets the row header contextMenu instance.</p>
+
+<h4>Returns</h4>
+
+<p><code>kendo.ui.ContextMenu</code> The menu instance.</p>
+
+<h3 id="methods-colHeaderContextMenu"><a href="#methods-colHeaderContextMenu">colHeaderContextMenu</a></h3>
+
+<p>Gets the column header contextMenu instance.</p>
+
+<h4>Returns</h4>
+
+<p><code>kendo.ui.ContextMenu</code> The menu instance.</p>
+
+<h3 id="methods-sheets"><a href="#methods-sheets">sheets</a></h3>
+
+<p>Returns an array with the sheets in the workbook.</p>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a> the available sheets.</p>
+
+<h3 id="methods-fromFile"><a href="#methods-fromFile">fromFile</a></h3>
+
+<p>Clears the spreadsheets and populates it with data from the specified Excel (.xlsx) file.</p>
+
+<blockquote>
+<p>Requires Internet Explorer 10 or a recent version of other browsers. The JSZip library is a <a href="/intro/installation/prerequisites#jszip-library"><code>prerequisite</code></a> for the import from file functionality.</p>
+</blockquote>
+
+<h4>Parameters</h4>
+
+<h5>blob <a href="https://developer.mozilla.org/en/docs/Web/API/Blob" class="type-link"><code>Blob |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/File" class="type-link"><code>File</code></a>
+</h5>
+
+<p>The file or blob, usually obtained through a file input.</p>
+
+<h4>Returns</h4>
+
+<p><a href="http://api.jquery.com/Types/#Promise" class="type-link"><code>Promise</code></a> a promise that will be resolved when the import operation completes.</p>
+
+<h4>Example - import file</h4>
+
+<pre><code>    &lt;input id="file" type="file" /&gt;
+    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet();
+
+        $("#file").on("change", function() {
+            var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+            spreadsheet.fromFile(this.files[0]);
+        });
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-saveAsExcel"><a href="#methods-saveAsExcel">saveAsExcel</a></h3>
+
+<p>Initiates the Excel export. Also fires the <a href="#events-excelExport"><code>excelExport</code></a> event.</p>
+
+<blockquote>
+<p>Calling this method could trigger the browser built-in popup blocker in some cases. To avoid that, always call it as a response to an end-user action e.g. button click.</p>
+</blockquote>
+
+<h4>Example - manually initiate Excel export</h4>
+
+<pre><code>    &lt;button id="export"&gt;Export to Excel&lt;/button&gt;
+    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                name: "Food Order",
+                mergedCells: [
+                    "A1:G1"
+                ],
+                rows: [{
+                    height: 70,
+                    cells: [{
+                        value: "My Company", fontSize: 32, textAlign: "center"
+                    }]
+                }],
+            }]
+        });
+        $("#export").click(function(e) {
+            var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+            spreadsheet.saveAsExcel();
+        });
+    &lt;/script&gt;
+
+    &lt;!-- Load JSZIP library to enable Excel export --&gt;
+    &lt;script src="http://kendo.cdn.telerik.com/2017.3.1026/js/jszip.min.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-saveAsPDF"><a href="#methods-saveAsPDF">saveAsPDF</a></h3>
+
+<p>Initiates the PDF export. Also fires the <a href="#events-pdfExport"><code>pdfExport</code></a> event.</p>
+
+<blockquote>
+<p>Calling this method could trigger the browser built-in popup blocker in some cases. To avoid that, always call it as a response to an end-user action e.g. button click.</p>
+</blockquote>
+
+<h4>Parameters</h4>
+
+<h5>options <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h5>
+
+<p>An options object with the same structure as the <a href="#configuration-pdf">pdf</a> options.</p>
+
+<h4>Returns</h4>
+
+<p><a href="http://api.jquery.com/Types/#Promise" class="type-link"><code>Promise</code></a> A promise that will be resolved when the export completes. The same promise is available in the <a href="#events-pdfExport">pdfExport</a> event arguments.</p>
+
+<h4>Example - manually initiate PDF export</h4>
+
+<pre><code>    &lt;button id="export"&gt;Export to PDF&lt;/button&gt;
+    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdf: {
+                fileName: "Test.pdf"
+            }
+        });
+        $("#export").click(function(e) {
+            var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+            spreadsheet.saveAsPDF({ area: "selection" });
+        });
+    &lt;/script&gt;
+
+    &lt;!-- Load Pako library to enable PDF compression --&gt;
+    &lt;script src="http://kendo.cdn.telerik.com/2017.3.1026/js/pako_deflate.min.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-sheetByName"><a href="#methods-sheetByName">sheetByName</a></h3>
+
+<p>Returns a sheet matching the specified name, if any.</p>
+
+<h4>Parameters</h4>
+
+<h5>name <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The name of the sheet to locate.</p>
+
+<h4>Returns</h4>
+
+<p><code>kendo.spreadsheet.Sheet</code> the sheet that match the name.</p>
+
+<h3 id="methods-sheetIndex"><a href="#methods-sheetIndex">sheetIndex</a></h3>
+
+<p>Returns the index of the specified sheet.</p>
+
+<h4>Parameters</h4>
+
+<h5>sheet <code>kendo.spreadsheet.Sheet</code>
+</h5>
+
+<p>The sheet to determine the index of.</p>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> the sheet index.</p>
+
+<h3 id="methods-sheetByIndex"><a href="#methods-sheetByIndex">sheetByIndex</a></h3>
+
+<p>Locates a sheet by its index in the workbook.</p>
+
+<h4>Parameters</h4>
+
+<h5>index <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The index of the sheet to locate.</p>
+
+<h4>Returns</h4>
+
+<p><code>kendo.spreadsheet.Sheet</code> the sheet that match the index.</p>
+
+<h3 id="methods-insertSheet"><a href="#methods-insertSheet">insertSheet</a></h3>
+
+<p>Inserts a sheet with the specified options.</p>
+
+<h4>Parameters</h4>
+
+<h5>options <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h5>
+
+<p>The configuration options for the sheet.</p>
+
+<h5>options.rows <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The number of rows in this sheet.</p>
+
+<h5>options.columns <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The number of columns in this sheet.</p>
+
+<h5>options.rowHeight <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The row height in this sheet in pixels.</p>
+
+<h5>options.columnWidth <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The column width in this sheet in pixels.</p>
+
+<h5>options.headerHeight <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The header row height in pixels.</p>
+
+<h5>options.headerWidth <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The header column width in pixels.</p>
+
+<h5>options.dataSource  <a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+</h5>
+
+<p>The data source for this sheet.</p>
+
+<h5>options.data <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h5>
+
+<p>The sheet state and data as <code>Object</code>.  The schema follows the same structure as the <a href="/api/javascript/ui/spreadsheet#configuration">widget configuration</a>.</p>
+
+<h4>Returns</h4>
+
+<p><code>kendo.spreadsheet.Sheet</code> the inserted sheet.</p>
+
+<h3 id="methods-moveSheetToIndex"><a href="#methods-moveSheetToIndex">moveSheetToIndex</a></h3>
+
+<p>Moves the sheet to the specified index.</p>
+
+<h4>Parameters</h4>
+
+<h5>sheet <code>kendo.spreadsheet.Sheet</code>
+</h5>
+
+<p>The sheet instance to move.</p>
+
+<h5>index <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The new zero-based index of the sheet.</p>
+
+<h3 id="methods-removeSheet"><a href="#methods-removeSheet">removeSheet</a></h3>
+
+<p>Removes the specified sheet.</p>
+
+<h4>Parameters</h4>
+
+<h5>sheet <code>kendo.spreadsheet.Sheet</code>
+</h5>
+
+<p>The sheet instance to remove.</p>
+
+<h3 id="methods-renameSheet"><a href="#methods-renameSheet">renameSheet</a></h3>
+
+<p>Renames the specified sheet.</p>
+
+<h4>Parameters</h4>
+
+<h5>sheet <code>kendo.spreadsheet.Sheet</code>
+</h5>
+
+<p>The sheet instance to rename.</p>
+
+<h5>newSheetName <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The new name of the sheet.</p>
+
+<h4>Returns</h4>
+
+<p><code>kendo.spreadsheet.Sheet</code> the renamed sheet.</p>
+
+<h3 id="methods-toJSON"><a href="#methods-toJSON">toJSON</a></h3>
+
+<p>Serializes the workbook in the format defined in the <a href="#configuration">configuration</a>.</p>
+
+<h4>Example - Store spreadsheet to JSON</h4>
+
+<pre><code>&lt;div id="spreadsheet"&gt;&lt;/div&gt;
+&lt;pre id="result"&gt;&lt;/pre&gt;
+&lt;script&gt;
+    $("#spreadsheet").kendoSpreadsheet({
+        sheets: [{
+            name: "Food Order",
+            mergedCells: [
+                "A1:G1"
+            ],
+            rows: [{
+                height: 70,
+                cells: [{
+                    value: "My Company", fontSize: 32, textAlign: "center"
+                }]
+            }]
+        }]
+    });
+
+    var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+    var data = spreadsheet.toJSON();
+    var json = JSON.stringify(data, null, 2);
+
+    $("#spreadsheet").remove();
+    $("#result").text(json);
+&lt;/script&gt;
+</code></pre>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a> the serialized workbook.</p>
+
+<h3 id="methods-fromJSON"><a href="#methods-fromJSON">fromJSON</a></h3>
+
+<p>Loads the workbook data from an object with the format defined in the <a href="#configuration">configuration</a>.</p>
+
+<blockquote>
+<p>All existing sheets and their data will be lost.</p>
+</blockquote>
+
+<h4>Parameters</h4>
+
+<h5>data <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h5>
+
+<p>The object to load data from.  This should be <strong>the deserialized object</strong>, not the JSON string.</p>
+
+<h4>Example - Load spreadsheet from JSON</h4>
+
+<pre><code>&lt;div id="spreadsheet"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#spreadsheet").kendoSpreadsheet();
+
+    var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+    spreadsheet.fromJSON({
+        sheets: [{
+            name: "Food Order",
+            mergedCells: [
+                "A1:G1"
+            ],
+            rows: [{
+                height: 70,
+                cells: [{
+                    value: "My Company", fontSize: 32, textAlign: "center"
+                }]
+            }]
+        }]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-defineName"><a href="#methods-defineName">defineName</a></h3>
+
+<p>Define a custom name to be available and used in formulas. If the function is not able to parse the name of the value, it will throw an error.</p>
+
+<h4>Parameters</h4>
+
+<h5>name <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>A new name to be defined. The names are case-insensitive.</p>
+
+<p>It is possible to provide a name that already exists. In such cases, the value is silently updated.</p>
+
+<p>To make the name available only in one sheet, qualify it in the way demonstrated in the next example.</p>
+
+<h5>value <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The value has to be a valid formula in the form of a string, that is, without a leading <code>=</code> sign.</p>
+
+<p>Generally, a name points to a reference. For maximum compatibility, it is recommended for you to use references here that are fully qualified (include the name of the sheet they refer to) and absolute (prefix both row and column with the <code>$</code> sign).</p>
+
+<h5>hidden <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h5>
+
+<p>To hide this name from the custom names dropdown in the toolbar, pass <code>true</code>. Even if <code>hidden</code> is set to <code>false</code>, only reference names will be displayed in the dropdown.</p>
+
+<h4>Example - define a few names</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet();
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+
+        // cell reference
+        spreadsheet.defineName("MyCell", "Sheet1!$A$1");
+
+        // range reference
+        spreadsheet.defineName("MyRange", "Sheet1!$A$1:$C$3");
+
+        // qualified name
+        spreadsheet.defineName("Sheet1!Foo", "Sheet1!$B$2");
+
+        // relative reference (incompatible with other programs).
+        // relative refs in A1 notation are ambiguous, unless we know
+        // the cell where they are used, so we use the RC notation here:
+        spreadsheet.defineName("CellsAbove", "R1C[0]:R[-1]C[0]");
+
+        // arbitrary formula
+        spreadsheet.defineName("GoldenRatio", "(1+SQRT(5))/2");
+    &lt;/script&gt;
+</code></pre>
+
+<p>After that, it is possible to use any of those names in formulas. For example, a formula like <code>=SUM(CellsAbove)</code> will return the sum of the cells above it, no matter where it sits. Relative references, such as the <code>CellsAbove</code> example, are not compatible with other spreadsheets, such as Excel, LibreOffice, or Google Sheets.</p>
+
+<p>The "qualified" <code>Sheet1!Foo</code> name is visible without qualification only in formulas in <strong>Sheet1</strong> and, for example, you can type <code>=Foo * Foo</code>.  If you need the name in formulas from other sheets, you have to refer to it as <code>=Sheet1!Foo</code>.</p>
+
+<h3 id="methods-undefineName"><a href="#methods-undefineName">undefineName</a></h3>
+
+<p>Delete a name.</p>
+
+<h4>Parameters</h4>
+
+<h5>name <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> - the name to remove</h5>
+
+<p>To delete a fully qualified name, prefix the name of the sheet - for example, <code>spreadsheet.undefineName("Sheet1!Foo")</code>.</p>
+
+<h2 id="events"><a href="#events">Events</a></h2>
+
+<h3 id="events-insertSheet"><a href="#events-insertSheet">insertSheet</a></h3>
+
+<p>Triggered when sheet is inserted. Introduced in 2017 Q1.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>If invoked the spreadsheet will not insert the sheet.</p>
+
+<h3 id="events-removeSheet"><a href="#events-removeSheet">removeSheet</a></h3>
+
+<p>Triggered when sheet will be removed. Introduced in 2017 Q1.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.sheet <code>kendo.spreadsheet.Sheet</code>
+</h5>
+
+<p>The sheet instance which will be removed.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>If invoked the spreadsheet will not remove the sheet.</p>
+
+<h3 id="events-renameSheet"><a href="#events-renameSheet">renameSheet</a></h3>
+
+<p>Triggered when sheet will be renamed. Introduced in 2017 Q1.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.sheet <code>kendo.spreadsheet.Sheet</code>
+</h5>
+
+<p>The sheet instance which will be renamed.</p>
+
+<h5>e.newSheetName <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The new sheet name.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>If invoked the spreadsheet will not rename the sheet.</p>
+
+<h3 id="events-selectSheet"><a href="#events-selectSheet">selectSheet</a></h3>
+
+<p>Triggered when sheet will be activated. Introduced in 2017 Q1.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.sheet <code>kendo.spreadsheet.Sheet</code>
+</h5>
+
+<p>The sheet instance which will be activated.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>If invoked the spreadsheet will not activate the sheet.</p>
+
+<h3 id="events-unhideColumn"><a href="#events-unhideColumn">unhideColumn</a></h3>
+
+<p>Triggered when column will be shown. Introduced in 2017 Q1.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.sheet <code>kendo.spreadsheet.Sheet</code>
+</h5>
+
+<p>The sheet instance which will be affected.</p>
+
+<h5>e.index <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The index of the column.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>If invoked the spreadsheet will execute the change.</p>
+
+<h3 id="events-unhideRow"><a href="#events-unhideRow">unhideRow</a></h3>
+
+<p>Triggered when row will be shown. Introduced in 2017 Q1.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.sheet <code>kendo.spreadsheet.Sheet</code>
+</h5>
+
+<p>The sheet instance which will be affected.</p>
+
+<h5>e.index <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The index of the row.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>If invoked the spreadsheet will execute the change.</p>
+
+<h3 id="events-hideColumn"><a href="#events-hideColumn">hideColumn</a></h3>
+
+<p>Triggered when column will be hidden. Introduced in 2017 Q1.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.sheet <code>kendo.spreadsheet.Sheet</code>
+</h5>
+
+<p>The sheet instance which will be affected.</p>
+
+<h5>e.index <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The index of the column.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>If invoked the spreadsheet will execute the change.</p>
+
+<h3 id="events-hideRow"><a href="#events-hideRow">hideRow</a></h3>
+
+<p>Triggered when row will be hidden. Introduced in 2017 Q1.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.sheet <code>kendo.spreadsheet.Sheet</code>
+</h5>
+
+<p>The sheet instance which will be affected.</p>
+
+<h5>e.index <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The index of the row.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>If invoked the spreadsheet will execute the change.</p>
+
+<h3 id="events-deleteColumn"><a href="#events-deleteColumn">deleteColumn</a></h3>
+
+<p>Triggered when column will be deleted. Introduced in 2017 Q1.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.sheet <code>kendo.spreadsheet.Sheet</code>
+</h5>
+
+<p>The sheet instance which will be affected.</p>
+
+<h5>e.index <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The index of the column.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>If invoked the spreadsheet will execute the change.</p>
+
+<h3 id="events-deleteRow"><a href="#events-deleteRow">deleteRow</a></h3>
+
+<p>Triggered when row will be deleted. Introduced in 2017 Q1.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.sheet <code>kendo.spreadsheet.Sheet</code>
+</h5>
+
+<p>The sheet instance which will be affected.</p>
+
+<h5>e.index <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The index of the row.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>If invoked the spreadsheet will execute the change.</p>
+
+<h3 id="events-insertColumn"><a href="#events-insertColumn">insertColumn</a></h3>
+
+<p>Triggered when column will be inserted. Introduced in 2017 Q1.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.sheet <code>kendo.spreadsheet.Sheet</code>
+</h5>
+
+<p>The sheet instance which will be affected.</p>
+
+<h5>e.index <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The index of the column.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>If invoked the spreadsheet will execute the change.</p>
+
+<h3 id="events-insertRow"><a href="#events-insertRow">insertRow</a></h3>
+
+<p>Triggered when row will be inserted. Introduced in 2017 Q1.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.sheet <code>kendo.spreadsheet.Sheet</code>
+</h5>
+
+<p>The sheet instance which will be affected.</p>
+
+<h5>e.index <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The index of the row.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>If invoked the spreadsheet will execute the change.</p>
+
+<h3 id="events-select"><a href="#events-select">select</a></h3>
+
+<p>Triggered when spreadsheet selection is changed. Introduced in 2017 Q1.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.range <code>kendo.spreadsheet.Range</code>
+</h5>
+
+<p>The <a href="/api/javascript/spreadsheet/range">Range</a> that is selected.</p>
+
+<h3 id="events-changeFormat"><a href="#events-changeFormat">changeFormat</a></h3>
+
+<p>Triggered when range format is changed from the UI. Introduced in 2017 Q1.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.range <code>kendo.spreadsheet.Range</code>
+</h5>
+
+<p>The <a href="/api/javascript/spreadsheet/range">Range</a> which format is changed.</p>
+
+<h3 id="events-change"><a href="#events-change">change</a></h3>
+
+<p>Triggered when a value in the spreadsheet has been changed. Introduced in 2016.Q1.SP1.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.range <code>kendo.spreadsheet.Range</code>
+</h5>
+
+<p>The <a href="/api/javascript/spreadsheet/range">Range</a> that has triggered the change.</p>
+
+<h3 id="events-render"><a href="#events-render">render</a></h3>
+
+<p>Triggered after the widget has completed rendering.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h3 id="events-excelExport"><a href="#events-excelExport">excelExport</a></h3>
+
+<p>Fired when the user clicks the "Export to Excel" toolbar button.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.data <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h5>
+
+<p>The array of data items used to create the Excel workbook.</p>
+
+<h5>e.workbook <code>kendo.ooxml.Workbook</code>
+</h5>
+
+<p>The Excel <a href="/api/javascript/ooxml/workbook#configuration">workbook configuration object</a>. Used to initialize a <code>kendo.ooxml.Workbook</code> class. Modifications of the workbook will reflect in the output Excel document.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>If invoked the spreadsheet will not save the generated file.</p>
+
+<h4>Example - subscribe to the "excelExport" event during initialization</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                name: "Food Order",
+                mergedCells: [
+                    "A1:G1"
+                ],
+                rows: [{
+                    height: 70,
+                    cells: [{
+                        value: "My Company", fontSize: 32, textAlign: "center"
+                    }]
+                }],
+            }],
+            excelExport: function(e) {
+            e.workbook.fileName = "Spreadsheet1.xlsx";
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsExcel();
+    &lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "excelExport" event after initialization</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                name: "Food Order",
+                mergedCells: [
+                    "A1:G1"
+                ],
+                rows: [{
+                    height: 70,
+                    cells: [{
+                        value: "My Company", fontSize: 32, textAlign: "center"
+                    }]
+                }],
+            }]
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.bind("excelExport", function(e) {
+            e.workbook.fileName = "Spreadsheet1.xlsx";
+        });
+
+        spreadsheet.saveAsExcel();
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="events-excelImport"><a href="#events-excelImport">excelImport</a></h3>
+
+<p>Fired when the user clicks the "Open" toolbar button.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.file <a href="https://developer.mozilla.org/en/docs/Web/API/Blob" class="type-link"><code>Blob |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/File" class="type-link"><code>File</code></a>
+</h5>
+
+<p>The file that is being imported.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>If invoked the spreadsheet will not import the file.</p>
+
+<h5>e.progress <a href="http://api.jquery.com/Types/#Promise" class="type-link"><code>Promise</code></a>
+</h5>
+
+<p>A promise that will be resolved when the import operation completes.</p>
+
+<p>The promise <a href="http://api.jquery.com/deferred.progress/">progress handler</a> will be called periodically with the following arguments:</p>
+
+<ul>
+<li>sheet - The current sheet. An instance of <a href="/api/javascript/spreadsheet/sheet">kendo.spreadsheet.Sheet</a>
+</li>
+<li>progress - Number if the range 0 to 1, indicating the progress of the current import operation</li>
+</ul>
+
+<h4>Example - monitor the progress of an import operation</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            excelImport: function(e) {
+                e.promise
+                .progress(function(e) {
+                    console.log(kendo.format("{0:P} complete", e.progress));
+                })
+                .done(function() {
+                    alert("Export completed!");
+                });
+            }
+        });
+
+        // Click the Open command and select a file to import
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="events-pdfExport"><a href="#events-pdfExport">pdfExport</a></h3>
+
+<p>Fired when the user initiates PDF export.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sender <code>kendo.ui.Spreadsheet</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>If invoked the spreadsheet will not save the generated file.</p>
+
+<h5>e.promise <a href="http://api.jquery.com/Types/#Promise" class="type-link"><code>Promise</code></a>
+</h5>
+
+<p>A promise that will be resolved when the export completes.</p>
+
+<h4>Example - Monitor export progress</h4>
+
+<pre><code>    &lt;div id="spreadsheet"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $("#spreadsheet").kendoSpreadsheet({
+            sheets: [{
+                rows: [{
+                    cells: [{ value: "A" }, { value: "B" }, { value: "C" }]
+                }, {
+                    cells: [{ value: "1" }, { value: "2" }, { value: "3" }]
+                }, {
+                    cells: [{ value: "4" }, { value: "5" }, { value: "6" }]
+                }]
+            }],
+            pdfExport: function(e) {
+                e.promise.done(function() {
+                    alert("Export completed!");
+                });
+            }
+        });
+
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        spreadsheet.saveAsPDF();
+    &lt;/script&gt;
+</code></pre> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

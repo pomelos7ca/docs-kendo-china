@@ -1,0 +1,667 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="documentation">
+        <meta name="product" content="kendo-ui">
+        
+        <title>Part 5 - Hello CRUD Data Operations | Kendo UI Third-Party Frameworks</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Learn how to enable CRUD operations, handle the editing functionality and failed requests in the Kendo UI Grid widget.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("third-party/tutorials/webforms/asp-net-hello-kendo-ui-part-2.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//third-party/tutorials/webforms/asp-net-hello-kendo-ui-part-2.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="part-5---hello-crud-data-operations"><a href="#part-5---hello-crud-data-operations">Part 5 - Hello CRUD Data Operations</a></h1>
+
+<p>In this tutorial, you will learn how to fully enable the Create, Read, Update, Destroy (CRUD) data operations in the Grid and how to additionally handle errors on your server and bubble them up to the browser.</p>
+
+<h2 id="screencast"><a href="#screencast">Screencast</a></h2>
+
+<iframe height="360" src="http://www.youtube.com/embed/BRv7Gvf1w6A?rel=0" frameborder="0" width="640"></iframe>
+
+<h2 id="written-summary"><a href="#written-summary">Written Summary</a></h2>
+
+<p>You can build off of <a href="https://github.com/telerik/html5-dev-for-aspnet-devs/tree/master/hello-kendo-ui-part-1">Part 1</a>, or you can download the completed code for Part 2 <a href="https://github.com/telerik/html5-dev-for-aspnet-devs/tree/master/hello-kendo-ui-part-2">here</a>.</p>
+
+<h2 id="create-sample-application"><a href="#create-sample-application">Create Sample Application</a></h2>
+
+<p>To start with, return some additional data from the database. Add in the <strong>Title</strong>, <strong>BirthDate</strong> and <strong>City</strong> fields to the <code>Employee</code> model object. Add a constructor that takes in a <code>Data.Employee</code> object and maps that object to the model properties. This makes the code in the <code>EmployeesController</code> cleaner.</p>
+
+<p>The example below demonstrates how the <code>Employee</code> model object now looks like.</p>
+
+<h6>Example</h6>
+
+<pre><code>public class Employee {
+
+    public int Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string Title { get; set; }
+    public DateTime BirthDate { get; set; }
+    public string City { get; set; }
+
+    public Employee(hello_kendo_ui.Data.Employee employee) {
+        this.Id = employee.EmployeeID;
+        this.FirstName = employee.FirstName;
+        this.LastName = employee.LastName;
+        this.Title = employee.Title;
+        this.BirthDate = employee.BirthDate;
+        this.City = employee.City;
+    }
+}
+</code></pre>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>Modify the LinqToSQL context to make BirthDate a non- nullable field. That should be fixed in the database. While it is more than possible to handle nullable dates, having a nullable BirthDate column lacks a strong use case.</p>
+</blockquote>
+
+<p>The <code>EmployeesController</code> <code>Get</code> method now looks a bit different. Notice that it is now quite slim and consists mostly of comments, as demonstrated in the example below.</p>
+
+<h6>Example</h6>
+
+<pre><code>// WebAPI will respond to an HTTP GET with this method
+public Models.Response Get() {
+
+    // the the take and skip parameters off of the incoming request
+    int take = _request["take"] == null ? 10 : int.Parse(_request["take"]);
+    int skip = _request["skip"] == null ? 0 : int.Parse(_request["skip"]);
+
+    // get all of the records from the employees table in the
+    // northwind database.  return them in a collection of user
+    // defined model objects for easy serialization. skip and then
+    // take the appropriate number of records for paging.
+    var employees = (from e in _context.Employees
+                     select new Models.Employee(e)).Skip(skip).Take(take).ToArray();
+
+    // returns the generic response object which will contain the
+    // employees array and the total count
+    return new Models.Response(employees, _context.Employees.Count());
+}
+</code></pre>
+
+<!--_-->
+
+<h3 id="enable-editing-in-grid"><a href="#enable-editing-in-grid">Enable Editing in Grid</a></h3>
+
+<p>To enable full CRUD operations in the Grid, add the interactive bit of UI. Kendo UI has several options for how to do this. You can edit grid rows in a <a href="http://demos.telerik.com/kendo-ui/web/grid/editing-popup.html">popup</a>, or <a href="http://demos.telerik.com/kendo-ui/web/grid/editing-inline.html">inline</a>. You can get very granular control over the look and feel of the editing experience with <a href="http://demos.telerik.com/kendo-ui/web/grid/editing-custom.html">custom editors</a>.</p>
+
+<p>This example uses the built-in <a href="http://demos.telerik.com/kendo-ui/web/grid/editing-inline.html">inline</a> editing that comes with the Kendo UI Grid widget.</p>
+
+<p>To start, open the <code>Default.aspx</code> file. Specify <code>editable: true</code> in the Grid, as demonstrated in the example below. With this change, you can now save the page and launch it with Visual Studio. When you click on a row, it becomes editable.</p>
+
+<h6>Example</h6>
+
+<pre><code>editable: true
+</code></pre>
+
+<p><strong>Figure 1: An editable Grid</strong></p>
+
+<p><img src="/images/webforms/grid_is_editable.png" alt="grid_is_editable"></p>
+
+<h3 id="use-command-columns"><a href="#use-command-columns">Use Command Columns</a></h3>
+
+<p>To get a better editing experience, use a <a href="http://demos.telerik.com/kendo-ui/web/grid/editing-inline.html">command column</a> in the grid.</p>
+
+<p>In the <code>Default.aspx</code> file, add a column to the columns definition that specifies the commands that you want to include. For this example, specify <code>edit</code> and <code>destroy</code> Make the <code>title</code> an empty string. Also, format the DateTime that will be coming back as the <code>BirthDate</code> to make the date cleaner.</p>
+
+<p>The example below demonstrates how to specify command columns.</p>
+
+<h6>Example</h6>
+
+<pre><code>// specify the columns on the grid
+columns: [
+    { field: "FirstName", title: "First Name" },
+    { field: "LastName", title: "Last Name" },
+    "Address",
+    "City",
+    { field: "BirthDate", title: "Birthday", format: "{0:MM/dd/yyyy}" },
+    { command: ["edit", "destroy"], title: " " }
+],
+</code></pre>
+
+<h3 id="use-inline-edit-mode"><a href="#use-inline-edit-mode">Use Inline Edit Mode</a></h3>
+
+<p>This will create the <strong>Edit</strong> and <strong>Delete</strong> buttons in the last column of the Grid with no title on the column. At this point, the application shows the buttons. However, if you click them, nothing happens, because the Grid is expecting you to click on the cell to edit the field. To fix this, change the <code>editable: true</code> to <code>editable: "inline"</code>, as demonstrated in the example below.</p>
+
+<h6>Example</h6>
+
+<pre><code>editable: "inline"
+</code></pre>
+
+<p>With this change, the Grid puts the entire row in edit mode when you click the <strong>Edit</strong> button. Notice that the Grid automatically gives you <strong>Cancel</strong> and <strong>Update</strong> buttons when you go into the edit mode. If you click <strong>Delete</strong>, you get a prompt asking you if you are sure you want to delete this item.</p>
+
+<h3 id="specify-model-for-datasource"><a href="#specify-model-for-datasource">Specify Model for DataSource</a></h3>
+
+<p>However, you will notice that the Grid currently has the <code>BirthDate</code> field as a textbox and allows you to completely null out the <strong>LastName</strong>. This is not ideal. You can add constraints for column editing by specifying a model in the schema on the DataSource. The <a href="http://api/framework/model"><code>Model</code></a> object specifies a client-side model structure that can describe the data in terms of type and validation rules.</p>
+
+<p>Add a <code>model</code> to the <code>schema</code> declaration specifying that the <code>id</code> is mapped to the <strong>Id</strong> field from the database. Then specify a <code>fields</code> object. Each object in the fields can be either a simple string, or an object that provides some more information about the <code>model</code> field. To specify that fields are required, add a <code>validation</code> object. Also, specify that its type is <code>date</code>, so that the Grid gives you a <a href="http://demos.telerik.com/kendo-ui/web/datepicker">DatePicker</a> for the <strong>BirthDate</strong> column when in edit mode.</p>
+
+<p>The example below demonstrates how to specify a model for the DataSource.</p>
+
+<h6>Example</h6>
+
+<pre><code>// the schema defines the schema of the JSON coming
+// back from the server so the datasource can parse it
+schema: {
+// the array of repeating data elements (employees)
+data: "Data",
+// the total count of records in the whole dataset. used
+// for paging.
+total: "Count",
+model: {
+    id: "Id",
+    fields: {
+        FirstName: { editable: false },
+        LastName: { editable: true, nullable: false, validation: { required: true} },
+        Address: { editable: true, nullable: false, validation: { required: true} },
+        City: { editable: true, nullable: false, validation: { required: true} },
+        BirthDate: { editable: true, type: "date" }
+    }
+}
+</code></pre>
+
+<p>In the above declaration, the <code>FirstName</code> field is additionally marked as being not editable.</p>
+
+<p>Run the application now and notice that when you put the grid into edit mode you get a Kendo UI <a href="http://demos.telerik.com/kendo-ui/web/datepicker">DatePicker</a> for the <strong>BirthDate</strong> column. You cannot edit the <strong>FirstName</strong> column either. If you try and null out the <strong>LastName</strong> field, the Grid displays a popup message telling you that the <strong>LastName</strong> is required.</p>
+
+<p><strong>Figure 2: An editable Grid with a model</strong></p>
+
+<p><img src="/images/webforms/grid_is_editable_with_model.png" alt="grid_is_editable_with_model"></p>
+
+<p>If you want to tweak this validation message, change the model definition for the <strong>LastName</strong> so it looks like the one demonstrated in the example below.</p>
+
+<h6>Example</h6>
+
+<pre><code>LastName: {
+    editable: true,
+    nullable: false,
+    validation: {
+        required: {
+            message: "Please enter a last name for this employee"
+        }
+    }
+}
+</code></pre>
+
+<h3 id="set-crud-endpoints-in-grid"><a href="#set-crud-endpoints-in-grid">Set CRUD Endpoints in Grid</a></h3>
+
+<p>Right now the Grid seems to be editable, but is actually not, because it is not connected to the server in any way. The first step in doing that is specifying the <code>update</code> and <code>destroy</code> objects on the transport. The endpoints that you are going to call are very RESTful. This means that the <code>update</code> action is at <code>api/employees/id</code> with an HTTP verb of <code>POST</code>. See an example request <a href="http://myapp.com/api/employees/31">here</a>. This updates the employee with an <code>Id</code> of 31, sending in all of the information to update.</p>
+
+<p>The <code>delete</code> method needs to be handled in much the same way, except that its <code>type</code> is <code>DELETE</code>. Do not use <code>delete</code> as the object name because <code>delete</code> is a reserved keyword in JavaScript. Use <code>destroy</code> instead.</p>
+
+<p>The required <code>Id</code> parameter can be retrieved by setting the <code>url</code> portion of the transport to a function. Kendo UI automatically passes in the current model item to these functions off of which you can get the <code>Id</code>.</p>
+
+<p>The example below demonstrates how to add updates, create, and destroy to the transport.</p>
+
+<h6>Example</h6>
+
+<pre><code>// the transport tells the datasource what endpoints
+// to use for CRUD actions
+transport: {
+    read: "api/employees",
+    update: {
+        url: function (employee) {
+            return "api/employees/" + employee.Id
+        },
+        type: "POST"
+    },
+    destroy: {
+        url: function (employee) {
+            return "api/employees/" + employee.Id
+        },
+        type: "DELETE"
+    }
+}
+</code></pre>
+
+<h2 id="handle-crud-operations-server-side"><a href="#handle-crud-operations-server-side">Handle CRUD Operations Server-Side</a></h2>
+
+<p>The next step is to handle the different HTTP request types in the <code>EmployeesController</code>. Since this project builds off of <a href="/third-party/tutorials/webforms/asp-net-hello-services">Hello Services</a>, the <code>DELETE</code> type is already handled. Just add one for <code>update</code>. In this method, you are going to select the employee that needs to be updated from the database based on the <code>id</code> parameter that is passed in. Then set the fields one by one based on the request parameters.</p>
+
+<p>Since you cannot rely on client-side validation, as anything in the browser can be circumvented, check to make sure the fields are not null before you assign them to the database object. Also, make sure that the date is valid. Return a status message of <strong>OK</strong> or <strong>200</strong> to the Grid for it to know that the update succeeded. You can do that by using the <code>HTTPResponseMessage</code> object. If the update succeeds, return a <strong>200</strong>. If it fails, return a <strong>500</strong> and give a little more info in the response body about what went wrong.</p>
+
+<p>The example below demonstrates how to add <code>POST</code> to the transport.</p>
+
+<h6>Example</h6>
+
+<pre><code>public HttpResponseMessage Post(int id) {
+    // create a response message to send back
+    var response = new HttpResponseMessage();
+    try {
+        // select the employee from the database where the id
+        // matches the one passed in at api/employees/id
+        var employeeToUpdate = (from e in _context.Employees
+                                where e.EmployeeID == id
+                                select e).FirstOrDefault();
+
+        // if there was an employee returned from the database
+        if (employeeToUpdate != null) {
+
+            // update the employee object handling null values or empty strings
+            employeeToUpdate.LastName = string.IsNullOrEmpty(_request["LastName"]) ? employeeToUpdate.LastName : _request["LastName"];
+            employeeToUpdate.Address = string.IsNullOrEmpty(_request["Address"]) ? employeeToUpdate.Address : _request["Address"];
+            employeeToUpdate.City = string.IsNullOrEmpty(_request["City"]) ? employeeToUpdate.City : _request["City"];
+            employeeToUpdate.BirthDate = string.IsNullOrEmpty(_request["BirthDate"]) ? employeeToUpdate.BirthDate : Convert.ToDateTime(_request["BirthDate"]);
+
+            // submit the changes to the database
+            _context.SubmitChanges();
+
+            // set the server response to OK
+            response.StatusCode = HttpStatusCode.OK;
+        }
+        else {
+            // we couldn't find the employee with the passed in id
+            // set the response status to error and return a message
+            // with some more info.
+            response.StatusCode = HttpStatusCode.InternalServerError;
+            response.Content = new StringContent(string.Format("The employee with id {0} was not found in the database", id.ToString()));
+        }
+    } catch (Exception ex) {
+        // something went wrong - possibly a database error. return a
+        // 500 server error and send the details of the exception.
+        response.StatusCode = HttpStatusCode.InternalServerError;
+        response.Content = new StringContent(string.Format("The database updated failed: {0}", ex.Message));
+    }
+
+    // return the HTTP Response.
+    return response;
+}
+</code></pre>
+
+<!--_-->
+
+<p>Test this method out by going to the Grid and editing an item. If you do not make any changes, the Grid is not going to make a request to the server. Open the Developer Tools by pressing <code>F12</code>, and switch to the <strong>Network</strong> tab. If it tells you to refresh to start capturing requests, do so. Place the Grid in edit mode and make an update to a field. Click <strong>Update</strong>.</p>
+
+<p>You are expected to see an error in the Network requests. If you click into the error, it tells you that it was unable to convert the BirthDate to a valid DateTime. If you examine the parameters of the request, you see that some strange date format has been sent back by the server.</p>
+
+<p><strong>Figure 3: A strange date format appearing in the Grid</strong></p>
+
+<p><img src="/images/webforms/grid_bad_datetime.png" alt="grid_bad_datetime"></p>
+
+<p>This is because Dates are formatted for JavaScript and you need to get the date formatted correctly. To do so, add a <code>parameterMap</code> method to the <code>transport</code> on the DataSource. The <code>parameterMap</code> takes in two parameters: <code>options</code> and <code>operation</code>. <code>options</code> are the parameters as Kendo UI is about to try to send them. <code>operation</code> is <code>read</code>, <code>update</code>, <code>create</code>, or <code>destroy</code>. You must always return at least <code>options</code> out of this function when you specify it. In this case, check for the <code>update</code> operation. If the current operation is indeed an update, format the date and reset the parameter value on the options.</p>
+
+<p>The example below demonstrates how to cleanse the  BirthDate in the parameter map.</p>
+
+<h6>Example</h6>
+
+<pre><code>// the transport tells the datasource what endpoints
+// to use for CRUD actions
+transport: {
+    read: "api/employees",
+    update: {
+        url: function (employee) {
+            return "api/employees/" + employee.Id
+        },
+        type: "POST"
+    },
+    destroy: {
+        url: function (employee) {
+            return "api/employees/" + employee.Id
+        },
+        type: "DELETE"
+    },
+    parameterMap: function (options, operation) {
+
+        // if the current operation is an update
+        if (operation === "update") {
+            // create a new JavaScript date object based on the current
+            // BirthDate parameter value
+            var d = new Date(options.BirthDate);
+            // overwrite the BirthDate value with a formatted value that WebAPI
+            // will be able to convert
+            options.BirthDate = kendo.toString(new Date(options.BirthDate), "MM/dd/yyyy");
+        }
+
+        // ALWAYS return options
+        return options;
+    }
+}
+</code></pre>
+
+<p>The <code>update</code> is now expected to work flawlessly.</p>
+
+<h3 id="raise-errors-in-other-ways"><a href="#raise-errors-in-other-ways">Raise Errors in Other Ways</a></h3>
+
+<p>There is more than one way to tell Kendo UI that there has been an error. All you must do is provide a return value for an <code>errors</code> field in the model. Modify the <code>Models.Response</code> object to have an <code>Errors</code> field. Additionally, add a constructor that takes in just an <code>error</code> parameter and sets the value, and a constructor that takes no parameters.</p>
+
+<p>The example below demonstrates how to add an <code>Errors</code> field  to the response object.</p>
+
+<h6>Example</h6>
+
+<pre><code>public class Response {
+
+    public Array Data { get; set; }
+    public int Count { get; set; }
+    public string Errors { get; set; }
+
+    public Response(Array data, int count) {
+        this.Data = data;
+        this.Count = count;
+    }
+
+    public Response(string errors) {
+        this.Errors = errors;
+    }
+}
+</code></pre>
+
+<p>If the update succeeds, you can return an empty <code>Models.Response</code> object. If it fails, set the value of the <code>Errors</code> field on the <code>Models.Response</code> object.</p>
+
+<p>The example below demonstrates how to return an <code>Errors</code> property on error.</p>
+
+<h6>Example</h6>
+
+<pre><code>public Models.Response Delete(int id) {
+
+    try {
+        // retrieve the employee to update from the database
+        // based on the parameter passed in from api/employees/id
+        var employeeToDelete = (from e in _context.Employees
+                                where e.EmployeeID == id
+                                select e).FirstOrDefault();
+
+        // if a valid employee object was found by id
+        if (employeeToDelete != null) {
+            // mark the object for deletion
+            _context.Employees.DeleteOnSubmit(employeeToDelete);
+            // delete the object from the database
+            _context.SubmitChanges();
+
+            // return an empty Models.Response object (this returns a 200 OK)
+            return new Models.Response();
+        } else {
+            // otherwise set the error field of a response object and return it.
+            return new Models.Response(string.Format("The employee with id {0} was not found in the database", id.ToString()));
+        }
+    }
+    catch (Exception ex) {
+        // something went wrong. set the errors field of
+        return new Models.Response(string.Format("There was an error updating employee with id {0}: {1}", id.ToString(), ex.Message));
+    }
+}
+</code></pre>
+
+<!--_-->
+
+<p>Now modify the <code>schema</code> to map the <code>Errors</code> property of the response to the <code>Errors</code> field. When this field has a value, it will automatically raise the <code>error</code> event on the DataSource. Specify an action here for that as well.</p>
+
+<p>This demonstration is made for the sake of showing how to do things differently on the <code>update</code> and <code>delete</code> for accomplishing the same thing. The example below demonstrates how to map the <code>errors</code> field int he <code>schema</code>.  </p>
+
+<h6>Example</h6>
+
+<pre><code>// the schema defines the schema of the JSON coming
+// back from the server so the datasource can parse it
+schema: {
+    // the array of repeating data elements (employees)
+    data: "Data",
+    // the total count of records in the whole dataset. used
+    // for paging.
+    total: "Count",
+    model: {
+        id: "Id",
+        fields: {
+            FirstName: { editable: false },
+            LastName: { editable: true, nullable: false, validation: { required: true} };
+            Address: { editable: true, nullable: false, validation: { required: true} },
+            City: { editable: true, nullable: false, validation: { required: true} },
+            BirthDate: { editable: true, type: "date" }
+        }
+    },
+    // map the errors if there are any. this automatically raises the "error"
+    // event
+    errors: "Errors"
+    }
+}
+error: function (e) {
+    alert(e.errors);
+}
+</code></pre>
+
+<h3 id="handle-errors"><a href="#handle-errors">Handle Errors</a></h3>
+
+<p>In the above scenario, the error is thrown out to the screen. If you try to delete certain people from the <strong>Employees</strong> table, i.e. Nancy Davalio, you get an error back from the server.</p>
+
+<p><strong>Figure 4: A sample server error</strong></p>
+
+<p><img src="/images/webforms/sample_error.png" alt="sample_error"></p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>You must never expose so much information about your database to the user.</p>
+</blockquote>
+
+<p>Pick a notification strategy and a standard error platform. It is better to just log the error and give the user only the information that they need. The deletion failed because Nancy has related records in the <strong>Orders</strong> table.</p>
+
+<p>If you did not throw the error, the user is not aware that the <code>delete</code> failed because the row has disappeared from the grid. This is not what you want. However, the DataSource needs to know how to handle this situation. It is currently storing the object as dirty and is going to try and sync it again when it gets the chance. In this situation, it is best to rollback the change by calling <code>cancelChanges</code> on the DataSource. This can also be called directly on the Grid.</p>
+
+<p>The example below demonstrates how to cancel changes on a failed request.</p>
+
+<h6>Example</h6>
+
+<pre><code>error: function (e) {
+    alert("The action failed. Please see the logs.");
+    this.cancelChanges();
+}
+</code></pre>
+
+<p>The code above roll backs the changes made to the Grid and puts the row back.</p>
+
+<h2 id="further-reading"><a href="#further-reading">Further Reading</a></h2>
+
+<p>Download the finished code for this module from <a href="https://github.com/telerik/html5-dev-for-aspnet-devs/tree/master/hello-kendo-ui-part-2">here</a>.</p>
+
+<p>Build on this tutorial by gradually adding more advanced functionalities to this application and consider the information from these pages:</p>
+
+<ul>
+<li><a href="https://github.com/telerik/html5-dev-for-aspnet-devs/tree/master/hello-kendo-ui-part-1">Hello Kendo UI Tutorial Part 1 on GitHub</a></li>
+<li><a href="https://github.com/telerik/html5-dev-for-aspnet-devs/tree/master/hello-kendo-ui-part-2">Hello Kendo UI Tutorial Part 2 on GitHub</a></li>
+<li><a href="http://demos.telerik.com/kendo-ui/web/grid/editing-popup.html">Kendo UI Grid Editing Functionality in Popups</a></li>
+<li><a href="http://demos.telerik.com/kendo-ui/web/grid/editing-inline.html">Kendo UI Grid Editing Functionality Inline</a></li>
+<li><a href="http://demos.telerik.com/kendo-ui/web/grid/editing-custom.html">Kendo UI Grid Custom Editing</a></li>
+<li><a href="/api/javascript/data/model">JavaScript <code>model</code> API</a></li>
+<li><a href="http://demos.telerik.com/kendo-ui/web/datepicker">Kendo UI DatePicker Demo Online</a></li>
+</ul>
+
+<h2 id="see-also"><a href="#see-also">See Also</a></h2>
+
+<p>Tutorials on how to build an HTML application in ASP.NET:</p>
+
+<ul>
+<li><a href="/third-party/tutorials/webforms/asp-net-hello-jquery">Part 1 - Hello jQuery</a></li>
+<li><a href="/third-party/tutorials/webforms/asp-net-hello-services">Part 2 - Hello Services</a></li>
+<li><a href="/third-party/tutorials/webforms/asp-net-hello-html5">Part 3 - Hello HTML5</a></li>
+<li><a href="/third-party/tutorials/webforms/asp-net-hello-kendo-ui-part-1">Part 4 - Hello Kendo UI</a></li>
+</ul> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

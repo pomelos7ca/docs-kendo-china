@@ -1,0 +1,2417 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="api">
+        <meta name="product" content="kendo-ui">
+        <meta name="subproduct" content="treeview">
+        <title>Configuration, methods and events of Kendo UI TreeView</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Documentation guide that helps the developer configure TreeView UI widget in a few quick steps, apply methods and trigger events.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("api/javascript/ui/treeview.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//api/javascript/ui/treeview.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    <div id="markdown-toc"></div>
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="kendouitreeview"><a href="#kendouitreeview">kendo.ui.TreeView</a></h1>
+
+<p>Represents the Kendo UI TreeView. Inherits from <a href="/api/javascript/ui/widget">Widget</a>.</p>
+
+<h2 id="configuration"><a href="#configuration">Configuration</a></h2>
+
+<h3 id="configuration-animation">
+<a href="#configuration-animation">animation </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>A collection of visual animations used when items are expanded or collapsed through user interaction.
+Setting this option to <strong>false</strong> will disable all animations.</p>
+
+<p><code>animation:true</code> is not a valid configuration.</p>
+
+<h4>Example - disable animation of subnodes</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  animation: false,
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-animation.collapse">
+<a href="#configuration-animation.collapse">animation.collapse </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>The animation that will be used when collapsing items.</p>
+
+<h4>Example - disable the collapse animation</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  animation: {
+    collapse: false
+  },
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-animation.collapse.duration">
+<a href="#configuration-animation.collapse.duration">animation.collapse.duration </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 200)</em>
+</h3>
+
+<p>The number of milliseconds used for the animation when a node is expanded.</p>
+
+<h4>Example - specify a collapse animation duration</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  animation: {
+    collapse: {
+      duration: 400
+    }
+  },
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-animation.collapse.effects">
+<a href="#configuration-animation.collapse.effects">animation.collapse.effects </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>A whitespace-delimited string of animation effects that are used when collapsing nodes.
+The supported effects are <strong>fadeOut</strong> and <strong>collapseVertical</strong>.</p>
+
+<h4>Example - make sub-levels fade out and collapse vertically</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  animation: {
+    collapse: {
+      effects: "fadeOut collapseVertical"
+    }
+  },
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-animation.expand">
+<a href="#configuration-animation.expand">animation.expand </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>The animation that will be used when expanding items.</p>
+
+<h4>Example - disable expand animation</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  animation: {
+    expand: false
+  },
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-animation.expand.duration">
+<a href="#configuration-animation.expand.duration">animation.expand.duration </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 200)</em>
+</h3>
+
+<p>The number of milliseconds used for the animation when a
+node is expanded.</p>
+
+<h4>Example - specify a slow expand animation</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  animation: {
+    expand: {
+      duration: 600
+    }
+  },
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-animation.expand.effects">
+<a href="#configuration-animation.expand.effects">animation.expand.effects </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: "expandVertical")</em>
+</h3>
+
+<p>A whitespace-delimited string of animation effects that are used when expanding nodes.
+The supported effects are <strong>"expandVertical"</strong> and <strong>"fadeIn"</strong>.</p>
+
+<h4>Example - make sub-levels fade in and expand vertically</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  animation: {
+    expand: {
+      effects: "fadeIn expandVertical"
+    }
+  },
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-autoBind">
+<a href="#configuration-autoBind">autoBind </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
+</h3>
+
+<p>If set to <code>false</code> the widget will not bind to the data source during initialization. In this case data binding will occur when the <a href="/api/javascript/data/datasource#events-change">change</a> event of the
+data source is fired. By default the widget will bind to the data source specified in the configuration.</p>
+
+<blockquote>
+<p>Setting <code>autoBind</code> to <code>false</code> is useful when multiple widgets are bound to the same data source. Disabling automatic binding ensures that the shared data source does not make more than one request to the remote service.</p>
+</blockquote>
+
+<h4>Example - disable automatic binding</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+var dataSource = new kendo.data.HierarchicalDataSource({
+  data: [ { text: "Jane Doe" }, { text: "John Doe" }]
+});
+$("#treeview").kendoTreeView({
+  autoBind: false,
+  dataSource: dataSource
+});
+dataSource.read(); // "read()" will fire the "change" event of the dataSource and the widget will be bound
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-autoScroll">
+<a href="#configuration-autoScroll">autoScroll </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a><em>(default: false)</em>
+</h3>
+
+<p>If set to <code>true</code> the widget will auto-scroll the containing element when the mouse/finger is close to the top/bottom of it.</p>
+
+<blockquote>
+<p>If the scroll container is different than the TreeView container, set <code>overflow: hidden</code> on the TreeView container.</p>
+</blockquote>
+
+<h4>Example - use autoScroll in a scrollable container</h4>
+
+<pre><code>&lt;div style="height:100px; overflow: auto"&gt;
+  &lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  var dataSource = new kendo.data.HierarchicalDataSource({
+    data: [
+      { text: "Apple" },
+      { text: "Banana" },
+      { text: "Orange" },
+      { text: "Tomato" },
+      { text: "Melon" },
+      { text: "Ananas" },
+      { text: "Cucumber" }
+    ]
+  });
+
+  var treeView = $("#treeview").kendoTreeView({
+    autoScroll: true,
+    dragAndDrop: true,
+    dataSource: dataSource
+  });
+&lt;/script&gt;
+
+&lt;style&gt;
+  .k-widget.k-treeview {
+    overflow: hidden;
+  }
+&lt;/style&gt;
+</code></pre>
+
+<h3 id="configuration-checkboxes">
+<a href="#configuration-checkboxes">checkboxes </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>If <code>true</code> or an object, renders checkboxes beside each node.</p>
+
+<h4>Example - show node checkboxes</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  checkboxes: true,
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-checkboxes.checkChildren">
+<a href="#configuration-checkboxes.checkChildren">checkboxes.checkChildren </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a><em>(default: false)</em>
+</h3>
+
+<p>Indicates whether checkboxes of child items should get checked when the checkbox of a parent item is checked. This
+also enables tri-state checkboxes with an indeterminate state.</p>
+
+<h4>Example - enable tri-state checkboxes and propagate checked state to children</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  checkboxes: {
+    checkChildren: true
+  },
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-checkboxes.name">
+<a href="#configuration-checkboxes.name">checkboxes.name </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Sets the name attribute of the checkbox inputs. That name will be posted to the server.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  checkboxes: {
+    name: "checkedItems[]"
+  },
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-checkboxes.template">
+<a href="#configuration-checkboxes.template">checkboxes.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h3>
+
+<p>The <a href="/api/javascript/kendo#methods-template">template</a> which renders the checkboxes. Can be used to allow posting of
+additional information along the TreeView checkboxes.</p>
+
+<p>The fields which can be used in the template are:</p>
+
+<ul>
+<li>item - the data item of the given node</li>
+<li>treeview - the TreeView options</li>
+</ul>
+
+<h4>Example - specify a different name for each checkbox, bound to the item id</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  checkboxes: {
+    template: "&lt;input type='checkbox' name='checkedFiles[#= item.id #]' value='true' /&gt;"
+  },
+  dataSource: [
+    { id: 1, text: "foo", items: [
+      { id: 2, text: "bar" }
+    ] }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-dataImageUrlField">
+<a href="#configuration-dataImageUrlField">dataImageUrlField </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: null)</em>
+</h3>
+
+<p>Sets the field of the data item that provides the image URL of the TreeView nodes.</p>
+
+<h4>Example - specify custom image URL field</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+var items = [
+  { text: "Mail", image: "https://demos.telerik.com/kendo-ui/content/web/treeview/mail.png" },
+  { text: "Search", image: "https://demos.telerik.com/kendo-ui/content/web/treeview/search.png" }
+];
+$("#treeview").kendoTreeView({
+  dataImageUrlField: "image",
+  dataSource: items
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-dataSource">
+<a href="#configuration-dataSource">dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><code>kendo.data.HierarchicalDataSource</code>
+</h3>
+
+<p>The data source of the widget which is used render nodes. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/api/javascript/data/hierarchicaldatasource">kendo.data.HierarchicalDataSource</a> instance.</p>
+
+<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/api/javascript/data/hierarchicaldatasource">kendo.data.HierarchicalDataSource</a> instance using that value as data source configuration.</p>
+
+<p>If the <code>dataSource</code> option is an existing <a href="/api/javascript/data/hierarchicaldatasource">kendo.data.HierarchicalDataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
+
+<h4>Example - set dataSource as a JavaScript object</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: {
+    data: [
+      { text: "foo", items: [
+        { text: "bar" }
+      ] }
+    ]
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - set dataSource as a JavaScript array</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - set dataSource as an existing kendo.data.HierarchicalDataSource instance</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+var dataSource = new kendo.data.HierarchicalDataSource({
+  transport: {
+    read: {
+      url: "https://demos.telerik.com/kendo-ui/service/Employees",
+      dataType: "jsonp"
+    }
+  },
+  schema: {
+    model: {
+      id: "EmployeeId",
+      hasChildren: "HasEmployees"
+    }
+  }
+});
+
+$("#treeview").kendoTreeView({
+  dataSource: dataSource,
+  dataTextField: "FullName"
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-dataSpriteCssClassField">
+<a href="#configuration-dataSpriteCssClassField">dataSpriteCssClassField </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: null)</em>
+</h3>
+
+<p>Sets the field of the data item that provides the sprite CSS class of the nodes.
+If an array, each level uses the field that is at the same index in the array, or the last item in the array.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;style&gt;
+  #treeview .k-sprite {
+    background-image: url("https://demos.telerik.com/kendo-ui/content/web/treeview/coloricons-sprite.png");
+  }
+
+  .folder { background-position: 0 -16px; }
+  .html { background-position: 0 -48px; }
+&lt;/style&gt;
+
+&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+var items = [
+  { text: "assets", sprite: "folder" },
+  { text: "index.html", sprite: "html" }
+];
+$("#treeview").kendoTreeView({
+  dataSpriteCssClassField: "sprite",
+  dataSource: items
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-dataTextField">
+<a href="#configuration-dataTextField">dataTextField </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a> <em>(default: null)</em>
+</h3>
+
+<p>Sets the field of the data item that provides the text content of the nodes.
+If an array, each level uses the field that is at the same index in the array, or the last item in the array.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+var items = [
+  { ProductName: "Tea", items: [
+    { ProductName: "Green Tea" },
+    { ProductName: "Black Tea" }
+  ] },
+  { ProductName: "Coffee" }
+];
+$("#treeview").kendoTreeView({
+  dataTextField: "ProductName",
+  dataSource: items
+});
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - using different fields on different levels</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+var items = [
+  { CategoryName: "Tea", items: [
+    { ProductName: "Green Tea" },
+    { ProductName: "Black Tea" }
+  ] },
+  { CategoryName: "Coffee" }
+];
+$("#treeview").kendoTreeView({
+  dataTextField: [ "CategoryName", "ProductName" ],
+  dataSource: items
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-dataUrlField">
+<a href="#configuration-dataUrlField">dataUrlField </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: null)</em>
+</h3>
+
+<p>Sets the field of the data item that provides the link URL of the nodes.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+var items = [
+  { text: "Tea", LinksTo: "http://tea.example.com" },
+  { text: "Coffee", LinksTo: "http://coffee.example.com" }
+];
+$("#treeview").kendoTreeView({
+  dataUrlField: "LinksTo",
+  dataSource: items
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-dragAndDrop">
+<a href="#configuration-dragAndDrop">dragAndDrop </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h3>
+
+<p>Disables (<strong>false</strong>) or enables (<strong>true</strong>) drag-and-drop of the nodes.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dragAndDrop: true,
+  dataSource: [
+    { text: "foo" },
+    { text: "bar" }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-loadOnDemand">
+<a href="#configuration-loadOnDemand">loadOnDemand </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
+</h3>
+
+<p>Indicates whether the child DataSources should be fetched lazily when parent groups get expanded.
+Setting this to false causes all child DataSources to be loaded at initialization time.</p>
+
+<blockquote>
+<p>Note: when initializing the widget from an array (rather than from a HierarchicalDataSource instance), this option defaults to false, rather than true.</p>
+</blockquote>
+
+<h4>Example - force lazy loading of sublevels</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  loadOnDemand: true,
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-messages">
+<a href="#configuration-messages">messages </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>The text messages displayed in the widget. Use it to customize or localize the messages.</p>
+
+<h4>Example - customize TreeView messages</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: {
+    transport: {
+      read: function(options) {
+        // request always fails after 1s
+        setTimeout(function() {
+          options.error({});
+        }, 1000);
+      }
+    }
+  },
+  messages: {
+    retry: "Wiederholen",
+    requestFailed: "Anforderung fehlgeschlagen.",
+    loading: "Laden..."
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-messages.loading">
+<a href="#configuration-messages.loading">messages.loading </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: "Loading...")</em>
+</h3>
+
+<p>The text message shown while the root level items are loading.</p>
+
+<h4>Example - customize loading message</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: {
+    transport: {
+      read: function(options) {
+        // request always fails after 1s
+        setTimeout(function() {
+          options.error({});
+        }, 1000);
+      }
+    }
+  },
+  messages: {
+    loading: "Laden..."
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-messages.requestFailed">
+<a href="#configuration-messages.requestFailed">messages.requestFailed </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: "Request failed.")</em>
+</h3>
+
+<p>The text message shown when an error occurs while fetching the content.</p>
+
+<h4>Example - customize requestFailed message</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: {
+    transport: {
+      read: function(options) {
+        // request always fails after 1s
+        setTimeout(function() {
+          options.error({});
+        }, 1000);
+      }
+    }
+  },
+  messages: {
+    requestFailed: "Anforderung fehlgeschlagen."
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-messages.retry">
+<a href="#configuration-messages.retry">messages.retry </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: "Retry")</em>
+</h3>
+
+<p>The text message shown in the retry button.</p>
+
+<h4>Example - customize retry message</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: {
+    transport: {
+      read: function(options) {
+        // request always fails after 1s
+        setTimeout(function() {
+          options.error({});
+        }, 1000);
+      }
+    }
+  },
+  messages: {
+    retry: "Wiederholen"
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-template">
+<a href="#configuration-template">template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h3>
+
+<p>Template for rendering each node.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  template: "#= item.text # (#= item.inStock #)",
+  dataSource: [
+    { text: "foo", inStock: 7, items: [
+      { text: "bar", inStock: 2 },
+      { text: "baz", inStock: 5 }
+    ] }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="methods"><a href="#methods">Methods</a></h2>
+
+<h3 id="methods-append"><a href="#methods-append">append</a></h3>
+
+<p>Appends a node to any level of the TreeView . This method may also be used to reorder nodes.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo" }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+// appends a new node to the root level
+treeview.append({ text: "bar" });
+
+// appends a new node to the first treeview item
+treeview.append({ text: "baz" }, $("#treeview .k-item:first"));
+
+// move the item with text "bar" within the item with text "foo"
+treeview.append(treeview.findByText("bar"), treeview.findByText("foo"));
+
+// append two items to the root level
+treeview.append([
+  { text: "qux" },
+  { text: "cat" }
+]);
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>nodeData <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>A JSON-formatted string or selector that specifies the node to be appended.
+If the argument is a plain JavaScript object, a new item will be created.
+If the argument is a jQuery element that holds a node, the TreeView node will be moved.
+If the argument is an array of objects, each item of the array will be appended.</p>
+
+<h5>parentNode <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a> <em>(optional)</em>
+</h5>
+
+<p>The node that will contain the newly appended node. If not specified, the new node will be appended to the
+root group of the TreeView.</p>
+
+<h5>success <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a> <em>(optional)</em>
+</h5>
+
+<p>A success callback that will be called once the new node has been appended.
+Useful in the case of remote binding where an item is appended to an unfetched node. The callback is called
+once the siblings have been fetched.</p>
+
+<h4>Returns</h4>
+
+<p><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a> The inserted <code>&lt;li&gt;</code> element, wrapped in a jQuery object,
+or <code>null</code> if the new model has not been inserted immediately.</p>
+
+<h3 id="methods-collapse"><a href="#methods-collapse">collapse</a></h3>
+
+<p>Collapses nodes.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", expanded: true, items: [
+      { text: "bar" }
+    ] },
+    { text: "baz", expanded: true, items: [
+      { text: "qux" }
+    ] }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+// collapse the item with text "foo"
+treeview.collapse(treeview.findByText("foo"));
+
+// collapse all items
+treeview.collapse(".k-item");
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>nodes <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The nodes that will be collapsed.</p>
+
+<h3 id="methods-dataItem"><a href="#methods-dataItem">dataItem</a></h3>
+
+<p>Returns the data item to which the specified node is bound.</p>
+
+<h4>Parameters</h4>
+
+<h5>node <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>A string, DOM element or jQuery object which represents the node. A string is treated as a jQuery selector.</p>
+
+<h4>Returns</h4>
+
+<p><code>kendo.data.Node</code> The model of the item that was passed as a parameter.</p>
+
+<h4>Example - get the data item of the first node</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { id: 1, text: "foo" },
+    { id: 2, text: "bar" }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+var dataItem = treeview.dataItem(".k-item:first");
+console.log(dataItem.text); // displays "foo"
+&lt;/script&gt;
+</code></pre>
+
+<p>See also: <a href="/web/treeview/overview#get-node-data-in-select-event-handler">getting the node data in the select event handler</a></p>
+
+<h3 id="methods-destroy"><a href="#methods-destroy">destroy</a></h3>
+
+<p>Prepares the widget for safe removal from DOM. Detaches all event handlers and removes jQuery.data attributes to avoid memory leaks. Calls destroy method of any child Kendo widgets.</p>
+
+<blockquote>
+<p>This method does not remove the widget element from DOM.</p>
+</blockquote>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { id: 1, text: "foo" },
+    { id: 2, text: "bar" }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+treeview.destroy();
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-detach"><a href="#methods-detach">detach</a></h3>
+
+<p>Removes a node from a TreeView, but keeps its jQuery.data() objects.</p>
+
+<h4>Parameters</h4>
+
+<h5>node <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The node that is to be detached.</p>
+
+<h4>Returns</h4>
+
+<p><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a> The node that has been detached.</p>
+
+<h4>Example - remove the node with ID, firstItem</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { id: 1, text: "foo" },
+    { id: 2, text: "bar" }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+var item = treeview.findByText("foo");
+item.data("id", "abc");
+treeview.detach(item);
+console.log(item.data("id")); // logs "abc"
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-enable"><a href="#methods-enable">enable</a></h3>
+
+<p>Enables or disables nodes.</p>
+
+<h4>Parameters</h4>
+
+<h5>nodes <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The nodes that are to be enabled/disabled.</p>
+
+<h5>enable <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(optional, default: true)</em>
+</h5>
+
+<p>Whether the nodes should be enabled or disabled.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", enabled: false },
+    { text: "bar", enabled: false }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+// enable the item with text "foo"
+treeview.enable(treeview.findByText("foo"));
+
+// enable all items
+treeview.enable(".k-item");
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-expand"><a href="#methods-expand">expand</a></h3>
+
+<p>Expands collapsed nodes.</p>
+
+<h4>Parameters</h4>
+
+<h5>nodes <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The nodes that are to be expanded.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] },
+    { text: "baz", items: [
+      { text: "biz" }
+    ] }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+// expand the item with text "foo"
+treeview.expand(treeview.findByText("foo"));
+
+// expand all loaded items
+treeview.expand(".k-item");
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-expandPath"><a href="#methods-expandPath">expandPath</a></h3>
+
+<p>Expands all nodes from a provided path array, including the last node. Nodes may be loaded from a remote end-point.</p>
+
+<h4>Parameters</h4>
+
+<h5>path <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h5>
+
+<p>The IDs of the nodes that need to be expanded.</p>
+
+<h5>complete <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>Callback function that will be called once the path has been expanded.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { id: 1, text: "foo", items: [
+      { id: 2, text: "bar", items: [
+        { id: 3, text: "baz" }
+      ] }
+    ] }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+
+// expand the path of nodes with IDs 1, 2, and 3
+treeview.expandPath([1, 2, 3]);
+
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example of expanding a remote loaded path</h4>
+
+<pre><code>&lt;button class="k-button"&gt;Expand&lt;/button&gt;
+&lt;div id="treeview"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  var datasource = new kendo.data.HierarchicalDataSource({
+    transport: {
+      read: {
+        url: "https://demos.telerik.com/kendo-ui/service/Employees",
+        dataType: "jsonp"
+      }
+    },
+    schema: {
+      model: {
+        id: "EmployeeId",
+        hasChildren: "HasEmployees"
+      }
+    }
+  });
+
+  $("#treeview").kendoTreeView({
+    dataSource: datasource,
+    dataTextField: "FullName"
+  });
+
+  $("button").click(function() {
+    var treeview = $("#treeview").data("kendoTreeView");
+
+    treeview.expandPath([2, 5]);
+  });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-expandTo"><a href="#methods-expandTo">expandTo</a></h3>
+
+<p>Expands all nodes up to a given element. The element needs to be already loaded.</p>
+
+<h4>Parameters</h4>
+
+<h5>targetNode <code>kendo.data.Node |</code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h5>
+
+<p>The dataItem of the node up to which to expand. Can also be the node ID</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { id: 1, text: "foo", items: [
+      { id: 2, text: "bar", items: [
+        { id: 3, text: "baz" }
+      ] }
+    ] },
+    { text: "one", items: [
+      { text: "two", items: [
+        { text: "three" }
+      ] }
+    ] }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+
+// expand all nodes up to "baz" (with id = 3)
+treeview.expandTo(3);
+
+
+// expand all nodes up to "three"
+var three = treeview.dataItem(treeview.findByText("three"));
+treeview.expandTo(three);
+
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-findByText"><a href="#methods-findByText">findByText</a></h3>
+
+<p>Searches for a node that has specific text.</p>
+
+<h4>Parameters</h4>
+
+<h5>text <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The text that is being searched for.</p>
+
+<h4>Returns</h4>
+
+<p><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a> All nodes that have the text.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo" },
+    { text: "bar" }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+// find the node with text "foo"
+var foo = treeview.findByText("foo");
+console.log(foo);
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-findByUid"><a href="#methods-findByUid">findByUid</a></h3>
+
+<p>Searches for a node with the given unique identifier.
+Applicable when the widget is bound to a <a href="/api/javascript/data/hierarchicaldatasource">HierarchicalDataSource</a>.
+If you want to find a node by its <code>id</code>, use the <a href="/api/javascript/data/datasource#get">dataSource.get()</a> method and supply its uid to the <code>findByUid</code> method.</p>
+
+<h4>Parameters</h4>
+
+<h5>text <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The text that is being searched for.</p>
+
+<h4>Returns</h4>
+
+<p><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a> All nodes that have the text.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { id: 1, text: "foo" },
+    { id: 2, text: "bar" }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+var barDataItem = treeview.dataSource.get(2);
+var barElement = treeview.findByUid(barDataItem.uid);
+console.log(barElement);
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-focus"><a href="#methods-focus">focus</a></h3>
+
+<p>Sets the focus to the TreeView</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo" },
+    { text: "bar" },
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+treeview.focus();
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-insertAfter"><a href="#methods-insertAfter">insertAfter</a></h3>
+
+<p>Inserts a node after a specified node.
+This method may also be used to reorder nodes.</p>
+
+<h4>Parameters</h4>
+
+<h5>nodeData <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h5>
+
+<p>A JSON-formatted string or selector that specifies the node to be inserted.</p>
+
+<h5>referenceNode <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>The node that will precede the newly-appended node.</p>
+
+<h4>Returns</h4>
+
+<p><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a> The inserted <code>&lt;li&gt;</code> element, wrapped in a jQuery object.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo" }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+var foo = treeview.findByText("foo");
+
+// insert "bar" after "foo"
+treeview.insertAfter({ text: "bar" }, foo);
+
+// move the node "foo" after the node "bar"
+treeview.insertAfter(foo, treeview.findByText("bar"));
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-insertBefore"><a href="#methods-insertBefore">insertBefore</a></h3>
+
+<p>Inserts a node before another node. This method may also be used to reorder nodes.</p>
+
+<h4>Parameters</h4>
+
+<h5>nodeData <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h5>
+
+<p>A JSON-formatted string or selector that specifies the node to be inserted.</p>
+
+<h5>referenceNode <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>The node that follows the inserted node.</p>
+
+<h4>Returns</h4>
+
+<p><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a> The inserted <code>&lt;li&gt;</code> element, wrapped in a jQuery object.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo" }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+var foo = treeview.findByText("foo");
+
+// insert "bar" before "foo"
+treeview.insertBefore({ text: "bar" }, foo);
+
+// move the node "foo" before the node "bar"
+treeview.insertBefore(foo, treeview.findByText("bar"));
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-items"><a href="#methods-items">items</a></h3>
+
+<p>Obtains an Array of the DOM elements, which correspond to the data items from the Kendo UI DataSource <a href="/api/javascript/data/datasource#methods-view">view</a>.</p>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a> The currently rendered tree items (<code>&lt;div&gt;</code> elements, that are children of the <code>&lt;li&gt;</code> elements).</p>
+
+<h3 id="methods-parent"><a href="#methods-parent">parent</a></h3>
+
+<p>Gets the parent node of the item</p>
+
+<h4>Parameters</h4>
+
+<h5>node <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The child node whose parent will be returned.</p>
+
+<h4>Returns</h4>
+
+<p><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a> The parent node of the given parameter node.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+
+var parent = treeview.parent(treeview.findByText("bar"));
+console.log(treeview.text(parent)); // logs "foo"
+
+parent = treeview.parent(parent);
+console.log(parent.length); // logs 0
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-remove"><a href="#methods-remove">remove</a></h3>
+
+<p>Removes a node from the widget.</p>
+
+<h4>Parameters</h4>
+
+<h5>node <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The node that is to be removed.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+
+var bar = treeview.findByText("bar");
+
+treeview.remove(bar);
+
+console.log($("#treeview").find(".k-item").length); // logs 1
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-select"><a href="#methods-select">select</a></h3>
+
+<p>Gets or sets the selected node.</p>
+
+<h4>Parameters</h4>
+
+<h5>node <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(optional)</em>
+</h5>
+
+<p>If provided, the node that should be selected.</p>
+
+<h4>Returns</h4>
+
+<p><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a> The currently selected node.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+
+var bar = treeview.findByText("bar");
+treeview.select(bar);
+
+console.log(treeview.text(treeview.select())); // logs "bar"
+
+treeview.select($()); // clears selection
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-setDataSource"><a href="#methods-setDataSource">setDataSource</a></h3>
+
+<p>Sets and binds a dataSource to the widget.</p>
+
+<blockquote>
+<p>Note: Calling this method with an array will not change the loadOnDemand flag, unlike initialization with an array option.</p>
+</blockquote>
+
+<h4>Parameters</h4>
+
+<h5>dataSource <code>kendo.data.HierarchicalDataSource</code>
+</h5>
+
+<p>The new dataSource that the widget will bind to</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+
+treeview.setDataSource(new kendo.data.HierarchicalDataSource({
+  data: [
+    { text: "bar", items: [
+      { text: "baz" }
+    ] }
+  ]
+}));
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-text"><a href="#methods-text">text</a></h3>
+
+<p>Gets or sets the text of a node in a TreeView.</p>
+
+<h4>Parameters</h4>
+
+<h5>node <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The node of which the text is being retrieved or set.</p>
+
+<h5>newText <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>Optional. When passed, sets the node text to the specified string</p>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> The text of a node.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+
+var firstItem = treeview.element.find(".k-item:first");
+console.log(treeview.text(firstItem)); // logs "foo"
+
+treeview.text(".k-item:last", "qux"); // sets text to "qux"
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-toggle"><a href="#methods-toggle">toggle</a></h3>
+
+<p>Toggles the node of a TreeView between its expanded and collapsed states.</p>
+
+<h4>Parameters</h4>
+
+<h5>node <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The node that should be toggled.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] },
+    { text: "baz", items: [
+      { text: "qux" }
+    ] }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+
+treeview.toggle(".k-item:first");
+
+var baz = treeview.findByText("baz");
+treeview.toggle(baz);
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-updateIndeterminate"><a href="#methods-updateIndeterminate">updateIndeterminate</a></h3>
+
+<p>Updates the indeterminate state of the TreeView checkboxes.
+Call it after using the insert / remove API on TreeViews with <a href="#configuration-checkboxes.checkChildren">checkChildren: true</a>.
+Use to improve performance when checking multiple checkboxes through code.</p>
+
+<h4>Parameters</h4>
+
+<h5>node <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>Optional. The root of the hierarchy that will be looped through. Allows only a subtree to be processed. The default value is the TreeView root.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  checkboxes: {
+    checkChildren: true
+  },
+  dataSource: [
+    { text: "foo", expanded: true, items: [
+      { text: "bar" },
+      { text: "baz" },
+      { text: "qux" }
+    ] }
+  ]
+});
+
+$(":checkbox").filter(function() {
+  var text = $(this).parent().next().text();
+  return text != "bar" &amp;&amp; text != "foo";
+}).prop("checked", true);
+
+var treeview = $("#treeview").data("kendoTreeView");
+treeview.updateIndeterminate();
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="events"><a href="#events">Events</a></h2>
+
+<h3 id="events-change"><a href="#events-change">change</a></h3>
+
+<p>Triggered when the selection has changed (either by the user or through the <code>select</code> method).</p>
+
+<h4>Example - subscribe to the "change" event during initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ],
+  change: function(e) {
+    console.log("Change", this.select());
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "change" event after initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+function tree_change(e) {
+  console.log("Change", this.select());
+}
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+var treeview = $("#treeview").data("kendoTreeView");
+treeview.bind("change", tree_change);
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="events-check"><a href="#events-check">check</a></h3>
+
+<p>Triggered after the user has checked or unchecked a checkbox.
+If <a href="#checkboxes.checkChildren">checkChildren</a> is <code>true</code>, the event is triggered after all checked states are updated.
+This event has been introduced in internal builds after 2014.2.828.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.node <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<p>The node whose the checkbox has been checked.</p>
+
+<h4>Example - subscribe to the "check" event during initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  checkboxes: true,
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ],
+  check: function(e) {
+    console.log("Checking", e.node);
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "check" event after initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+function tree_check(e) {
+  console.log("Checking", e.node);
+}
+$("#treeview").kendoTreeView({
+  checkboxes: true,
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+var treeview = $("#treeview").data("kendoTreeView");
+treeview.bind("check", tree_check);
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="events-collapse"><a href="#events-collapse">collapse</a></h3>
+
+<p>Triggered before a subgroup gets collapsed. Cancellable.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.node <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<p>The collapsed node</p>
+
+<h4>Example - subscribe to the "collapse" event during initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ],
+  collapse: function(e) {
+    console.log("Collapsing", e.node);
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "collapse" event after initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+function tree_collapse(e) {
+  console.log("Collapsing", e.node);
+}
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+var treeview = $("#treeview").data("kendoTreeView");
+treeview.bind("collapse", tree_collapse);
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="events-dataBound"><a href="#events-dataBound">dataBound</a></h3>
+
+<p>Triggered after the dataSource change event has been processed (adding/removing items);</p>
+
+<h4>Event Data</h4>
+
+<h5>e.node <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>The node whose children have been changed. If the changes have occurred on the root level, this parameter is undefined.</p>
+
+<h4>Example - subscribe to the "dataBound" event during initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ],
+  dataBound: function(e) {
+    console.log("DataBound", e.node);
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "dataBound" event after initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+function tree_dataBound(e) {
+  console.log("DataBound", e.node);
+}
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+var treeview = $("#treeview").data("kendoTreeView");
+treeview.bind("dataBound", tree_dataBound);
+
+treeview.setDataSource(new kendo.data.HierarchicalDataSource({
+  data: [
+    { text: "bar", items: [
+      { text: "baz" }
+    ] }
+  ]
+}));
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - show an empty message when no items have been loaded from the server</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+  $("#treeview").kendoTreeView({
+    dataSource: [],
+    dataBound: function(e) {
+      if (!this.dataSource.data().length) {
+        this.element.append("&lt;p class='no-items'&gt;No items yet.&lt;/p&gt;");
+      } else {
+        this.element.find(".no-items").remove();
+      }
+    }
+  });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="events-drag"><a href="#events-drag">drag</a></h3>
+
+<p>Triggered while a node is being dragged.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sourceNode <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<p>The node that is being dragged.</p>
+
+<h5>e.dropTarget <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<p>The element that the node is placed over.</p>
+
+<h5>e.pageX <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The x coordinate of the mouse.</p>
+
+<h5>e.pageY <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h5>
+
+<p>The y coordinate of the mouse.</p>
+
+<h5>e.statusClass <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The status that the drag clue shows (<strong>add</strong>, <strong>denied</strong>, <strong>insert-top</strong>, <strong>insert-middle</strong> or <strong>insert-bottom</strong>).</p>
+
+<h5>e.setStatusClass <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>Allows a custom drag clue status to be set.</p>
+
+<p>Pre-defined status classes are:</p>
+
+<ul>
+<li>  <strong>k-insert-top</strong>
+    - Indicates that the item will be inserted on top.</li>
+<li>  <strong>k-insert-middle</strong>
+    - Indicates that the item will be inserted in the middle.</li>
+<li>  <strong>k-insert-bottom</strong>
+    - Indicates that the item will be inserted at the bottom.</li>
+<li>  <strong>k-add</strong>
+    - Indicates that the item will be added/appended.</li>
+<li>  <strong>k-denied</strong>
+    - Indicates an invalid operation. Using this class will automatically
+      make the drop operation invalid, so there will be no need to call
+      <code>setValid(false)</code> in the <code>drop</code> event.</li>
+</ul>
+
+<blockquote>
+<p>Please note that from version 2016.3.914 the naming convention for pre-defined status classes is k-i-className. Since version 2017.1.118 the following status classes are used: <code>k-i-insert-up</code>, <code>k-i-insert-down</code>, <code>k-i-insert-middle</code>, <code>k-i-plus</code>, <code>k-i-cancel</code>. </p>
+
+<p>Note that status classes are returned without the <code>k-</code> prefix by <code>e.statusClass</code>, but this prefix is required when setting a predefined status class via <code>e.setStatusClass</code>. A prefix is not required if setting a custom status CSS class.</p>
+</blockquote>
+
+<h4>Example - subscribe to the "drag" event during initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dragAndDrop: true,
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ],
+  drag: function(e) {
+    console.log("Drag", e.sourceNode, "over", e.dropTarget);
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "drag" event after initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+function tree_drag(e) {
+  console.log("Drag", e.sourceNode, "over", e.dropTarget);
+}
+$("#treeview").kendoTreeView({
+  dragAndDrop: true,
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+var treeview = $("#treeview").data("kendoTreeView");
+treeview.bind("drag", tree_drag);
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - disable node reordering</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dragAndDrop: true,
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" },
+      { text: "baz" }
+    ] }
+  ]
+});
+
+var treeview = $("#treeview").data("kendoTreeView");
+
+treeview.bind("drag", function(e) {
+  // if the current status is "insert-top/middle/bottom"
+  if (e.statusClass.indexOf("insert") &gt;= 0) {
+    // deny the operation
+    e.setStatusClass("k-i-cancel");
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="events-dragend"><a href="#events-dragend">dragend</a></h3>
+
+<p>Triggered after a node has been dropped.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sourceNode <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<p>The node that is being dropped.</p>
+
+<h5>e.destinationNode <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<p>The node that the sourceNode is being dropped upon.</p>
+
+<h5>e.dropPosition <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>Shows where the source has been dropped. One of the values <strong>over</strong>, <strong>before</strong>, or <strong>after</strong>.</p>
+
+<h4>Example - subscribe to the "dragend" event during initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dragAndDrop: true,
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ],
+  dragend: function(e) {
+    console.log("Drag end", e.sourceNode, e.dropPosition, e.destinationNode);
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "dragend" event after initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+function tree_dragend(e) {
+  console.log("Drag end", e.sourceNode, e.dropPosition, e.destinationNode);
+}
+$("#treeview").kendoTreeView({
+  dragAndDrop: true,
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+var treeview = $("#treeview").data("kendoTreeView");
+treeview.bind("dragend", tree_dragend);
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="events-dragstart"><a href="#events-dragstart">dragstart</a></h3>
+
+<p>Triggered before the dragging of a node starts.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sourceNode <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<p>The node that will be dragged.</p>
+
+<h4>Example - subscribe to the "dragstart" event during initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dragAndDrop: true,
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ],
+  dragstart: function(e) {
+    console.log("Drag start", e.sourceNode);
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "dragstart" event after initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+function tree_dragstart(e) {
+  console.log("Drag start", e.sourceNode);
+}
+$("#treeview").kendoTreeView({
+  dragAndDrop: true,
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+var treeview = $("#treeview").data("kendoTreeView");
+treeview.bind("dragstart", tree_dragstart);
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - disable dragging of root nodes</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dragAndDrop: true,
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ],
+  dragstart: function(e) {
+    if ($(e.sourceNode).parentsUntil(".k-treeview", ".k-item").length == 0) {
+      e.preventDefault();
+    }
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="events-drop"><a href="#events-drop">drop</a></h3>
+
+<p>Triggered when a node is being dropped.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.sourceNode <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<p>The node that is being dropped.</p>
+
+<h5>e.destinationNode <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<p>The node that the sourceNode is being dropped upon.</p>
+
+<h5>e.valid <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h5>
+
+<p>Whether this drop operation is permitted.</p>
+
+<h5>e.setValid <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>Allows the drop to be prevented.</p>
+
+<h5>e.dropTarget <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<p>The element that the node is placed over.</p>
+
+<h5>e.dropPosition <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>Shows where the source will be dropped. One of the values <strong>over</strong>, <strong>before</strong>, or <strong>after</strong>.</p>
+
+<h4>The difference between e.setValid(false) and e.preventDefault()</h4>
+
+<p>Both operations cancel the default drag operation, but the indication to the user is different.
+<code>e.setValid(false)</code> indicates that the operation was unsuccessful by animating the drag clue to its original position.
+<code>e.preventDefault()</code> simply removes the clue, as if it has been dropped.
+As a general rule, use <code>preventDefault</code> to manually handle the drag&amp;drop operation, and <code>setValid(false)</code> to indicate unsuccessful drag&amp;drops.</p>
+
+<h4>Example - subscribe to the "drop" event during initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dragAndDrop: true,
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ],
+  drop: function(e) {
+    console.log("Dropped", e.sourceNode);
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "drop" event after initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+function tree_drop(e) {
+  console.log("Dropped", e.sourceNode);
+}
+$("#treeview").kendoTreeView({
+  dragAndDrop: true,
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+var treeview = $("#treeview").data("kendoTreeView");
+treeview.bind("drop", tree_drop);
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="events-expand"><a href="#events-expand">expand</a></h3>
+
+<p>Triggered before a subgroup gets expanded.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.node <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<p>The expanded node</p>
+
+<h4>Example - subscribe to the "expand" event during initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ],
+  expand: function(e) {
+    console.log("Expand", e.node);
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "expand" event after initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+function tree_expand(e) {
+  console.log("Expand", e.node);
+}
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+var treeview = $("#treeview").data("kendoTreeView");
+treeview.bind("expand", tree_expand);
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="events-navigate"><a href="#events-navigate">navigate</a></h3>
+
+<p>Triggered when the user moves the focus on another node</p>
+
+<h4>Event Data</h4>
+
+<h5>e.node <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<p>The focused node</p>
+
+<h4>Example - subscribe to the "navigate" event during initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ],
+  navigate: function(e) {
+    console.log("Navigated to", e.node);
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "navigate" event after initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+function tree_navigate(e) {
+  console.log("Navigating to", e.node);
+}
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+var treeview = $("#treeview").data("kendoTreeView");
+treeview.bind("navigate", tree_navigate);
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="events-select"><a href="#events-select">select</a></h3>
+
+<p>Triggered when a node is being selected by the user. Cancellable.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.node <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element</code></a>
+</h5>
+
+<p>The selected node</p>
+
+<h4>Example - subscribe to the "select" event during initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ],
+  select: function(e) {
+    console.log("Selecting", e.node);
+  }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "select" event after initialization</h4>
+
+<pre><code>&lt;div id="treeview"&gt;&lt;/div&gt;
+&lt;script&gt;
+function tree_select(e) {
+  console.log("select", e.node);
+}
+$("#treeview").kendoTreeView({
+  dataSource: [
+    { text: "foo", items: [
+      { text: "bar" }
+    ] }
+  ]
+});
+var treeview = $("#treeview").data("kendoTreeView");
+treeview.bind("select", tree_select);
+&lt;/script&gt;
+</code></pre> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

@@ -1,0 +1,2123 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="api">
+        <meta name="product" content="kendo-ui">
+        <meta name="subproduct" content="toolbar">
+        <title>Configuration, methods and events of Kendo UI ToolBar</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("api/javascript/ui/toolbar.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//api/javascript/ui/toolbar.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    <div id="markdown-toc"></div>
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="kendouitoolbar"><a href="#kendouitoolbar">kendo.ui.ToolBar</a></h1>
+
+<p>Represents the Kendo UI ToolBar. Inherits from <a href="/api/javascript/ui/widget">Widget</a>.</p>
+
+<h2 id="configuration"><a href="#configuration">Configuration</a></h2>
+
+<h3 id="configuration-resizable">
+<a href="#configuration-resizable">resizable </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
+</h3>
+
+<p>If <code>resizable</code> is set to <code>true</code> the widget will detect changes in the viewport width and hides the overflowing controls in the command overflow popup.</p>
+
+<blockquote>
+<p>When set to <code>true</code>, the resizable configuration triggers <code>overflow: hidden;</code> CSS property.</p>
+</blockquote>
+
+<h4>Example - Resizable and Non-Resizable ToolBar</h4>
+
+<pre><code>&lt;div style="width: 350px; border: 1px solid #ccc; padding: 10px 10px 50px;"&gt;
+
+    &lt;h5&gt;Non-Resizable ToolBar&lt;/h5&gt;
+    &lt;div id="toolbar-non-resizable"&gt;&lt;/div&gt;
+
+    &lt;h5&gt;Resizable ToolBar&lt;/h5&gt;
+    &lt;div id="toolbar-resizable"&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar-non-resizable").kendoToolBar({
+        resizable: false,
+        items: [
+            { type: "button", text: "Button 1" },
+            { type: "button", text: "Button 2" },
+            { type: "button", text: "Button 3" },
+            { type: "button", text: "Button 4" }
+        ]
+    });
+
+    $("#toolbar-resizable").kendoToolBar({
+        resizable: true,
+        items: [
+            { type: "button", text: "Button 1" },
+            { type: "button", text: "Button 2" },
+            { type: "button", text: "Button 3" },
+            { type: "button", text: "Button 4" }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items">
+<a href="#configuration-items">items </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h3>
+
+<p>A JavaScript array that contains the ToolBar's commands configuration.</p>
+
+<blockquote>
+<p>For more information regarding supported commands and their configuration properties check the <a href="/web/toolbar/overview#command-types">Getting Started topic</a>.</p>
+</blockquote>
+
+<h4>Example - initialize ToolBar with Button, Toggle Button and SplitButton</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", text: "Button" },
+            { type: "button", text: "Toggle", togglable: true },
+            { type: "splitButton", text: "SplitButton", menuButtons: [{text: "Option 1"}, {text: "Option 2"}] }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.attributes">
+<a href="#configuration-items.attributes">items.attributes </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>Specifies the HTML attributes of a ToolBar button.</p>
+
+<blockquote>
+<p>HTML attributes which are JavaScript keywords (e.g. class) must be quoted.</p>
+</blockquote>
+
+<h4>Example - adding custom class to a button</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        { type: "button", text: "My Button", attributes: { "class": "red" } }
+        ]
+    });
+&lt;/script&gt;
+
+&lt;style&gt;
+    .red { background-color: red; }
+&lt;/style&gt;
+</code></pre>
+
+<h3 id="configuration-items.buttons">
+<a href="#configuration-items.buttons">items.buttons </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h3>
+
+<p>Specifies the buttons of ButtonGroup.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+$("#toolbar").kendoToolBar({
+  items: [
+    {
+      type: "buttonGroup",
+      buttons: [
+        { text: "foo" },
+        { text: "bar" },
+        { text: "baz" }
+      ]
+    }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.buttons.attributes">
+<a href="#configuration-items.buttons.attributes">items.buttons.attributes </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>Specifies the HTML attributes of a ButtonGroup's button.</p>
+
+<blockquote>
+<p>HTML attributes which are JavaScript keywords (e.g. class) must be quoted.</p>
+</blockquote>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        { type: "buttonGroup", buttons: [
+            { text: "foo", attributes: { "class": "red" } },
+            { text: "bar", attributes: { "class": "blue" } }
+        ] }
+        ]
+    });
+&lt;/script&gt;
+&lt;style&gt;
+    .red { background-color: red; }
+    .blue { background-color: blue; }
+&lt;/style&gt;
+</code></pre>
+
+<h3 id="configuration-items.buttons.click">
+<a href="#configuration-items.buttons.click">items.buttons.click </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h3>
+
+<p>Specifies the click event handler of the button. Applicable only for the children of a ButtonGroup.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+function onClick() {
+  console.log("click");
+}
+
+$("#toolbar").kendoToolBar({
+  items: [
+    {
+      type: "buttonGroup",
+      buttons: [
+        { text: "foo", click: onClick },
+        { text: "bar", click: onClick },
+        { text: "baz", click: onClick }
+      ]
+    }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.buttons.enable">
+<a href="#configuration-items.buttons.enable">items.buttons.enable </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
+</h3>
+
+<p>Specifies whether the button is initially enabled or disabled.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+$("#toolbar").kendoToolBar({
+  items: [
+    {
+      type: "buttonGroup",
+      buttons: [
+        { text: "foo", enable: false },
+        { text: "bar" },
+        { text: "baz" }
+      ]
+    }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.buttons.group">
+<a href="#configuration-items.buttons.group">items.buttons.group </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Assigns the button to a group. Applicable only for the children of a ButtonGroup that has togglable true.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+$("#toolbar").kendoToolBar({
+  items: [
+    {
+      type: "buttonGroup",
+      buttons: [
+        { text: "foo", togglable: true, group: "myGroup" },
+        { text: "bar", togglable: true, group: "myGroup" },
+        { text: "baz", togglable: true, group: "myGroup" }
+      ]
+    }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.buttons.hidden">
+<a href="#configuration-items.buttons.hidden">items.buttons.hidden </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h3>
+
+<p>Determines if the button is visible or hidden. By default the buttons are visible.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+$("#toolbar").kendoToolBar({
+  items: [
+    {
+      type: "buttonGroup",
+      buttons: [
+        { text: "foo" },
+        { text: "bar" },
+        { text: "baz", hidden: true }
+      ]
+    }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.buttons.icon">
+<a href="#configuration-items.buttons.icon">items.buttons.icon </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Sets icon for the menu button. The icon should be one of the existing in the Kendo UI theme sprite.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+$("#toolbar").kendoToolBar({
+  items: [
+    {
+      type: "buttonGroup",
+      buttons: [
+        { text: "foo", icon: "clock" },
+        { text: "bar", icon: "note" },
+        { text: "baz", icon: "refresh" }
+      ]
+    }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.buttons.id">
+<a href="#configuration-items.buttons.id">items.buttons.id </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Specifies the ID of the button.</p>
+
+<blockquote>
+<p>By design the widget will render two buttons - the one located in the ToolBar container will receive the specified ID, the one located in the Overflow Popup container will receive the specified ID but with <em>_overflow</em> suffix. If the ID will be used for determining which button is clicked in the <code>click</code> or <code>toggle</code> event handler, the developer should use the ID property of the event data which always contains the specified ID without suffix.</p>
+</blockquote>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+$("#toolbar").kendoToolBar({
+  items: [
+    {
+      type: "buttonGroup",
+      buttons: [
+        { text: "foo", id: "foo" },
+        { text: "bar", id: "bar" },
+        { text: "baz", id: "baz" }
+      ]
+    }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.buttons.imageUrl">
+<a href="#configuration-items.buttons.imageUrl">items.buttons.imageUrl </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>If set, the ToolBar will render an image with the specified URL in the button.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+var baseUrl = "https://demos.telerik.com/kendo-ui/content/shared/icons";
+$("#toolbar").kendoToolBar({
+  items: [
+    {
+      type: "buttonGroup",
+      buttons: [
+        { text: "foo", imageUrl: baseUrl + "/sports/snowboarding.png" },
+        { text: "bar", imageUrl: baseUrl + "/sports/snowboarding.png" }
+      ]
+    }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.buttons.selected">
+<a href="#configuration-items.buttons.selected">items.buttons.selected </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h3>
+
+<p>Specifies if the toggle button is initially selected. Applicable only for the children of a ButtonGroup that has togglable true.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        {
+            type: "buttonGroup",
+            buttons: [
+            { text: "foo", togglable: true, selected: true },
+            { text: "bar", togglable: true },
+            ]
+        }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.buttons.showIcon">
+<a href="#configuration-items.buttons.showIcon">items.buttons.showIcon </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: "both")</em>
+</h3>
+
+<p>Applicable only for the buttons of a ButtonGroup. Specifies where the icon of the button will be displayed. Whether it should be displayed always (<em>both</em>), only when the button is visible on the ToolBar (<em>toolbar</em>), or only when the button is overflowed (<em>overflow</em>).</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [{
+            type: "button",
+            text: "This button has a very long text so the ButtonGroup would be collapsed on larger screen"
+        },{
+            type: "buttonGroup",
+            buttons: [
+                { text: "foo", icon: "clock", showIcon: "overflow" },
+                { text: "bar", icon: "error", showIcon: "both" },
+                { text: "baz", icon: "refresh", showIcon: "toolbar" }
+            ]
+        }]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.buttons.showText">
+<a href="#configuration-items.buttons.showText">items.buttons.showText </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: "both")</em>
+</h3>
+
+<p>Applicable only for the buttons of a ButtonGroup. Specifies where the text of the button will be displayed. Whether it should be displayed always (<em>both</em>), only when the button is visible on the ToolBar (<em>toolbar</em>), or only when the button is overflowed (<em>overflow</em>).</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [{
+            type: "button",
+            text: "This button has a very long text so the ButtonGroup would be collapsed on larger screen"
+        },{
+            type: "buttonGroup",
+            buttons: [
+                { text: "foo", icon: "clock", showText: "overflow" },
+                { text: "bar", icon: "error", showText: "both" },
+                { text: "baz", icon: "refresh", showText: "toolbar" }
+            ]
+        }]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.buttons.spriteCssClass">
+<a href="#configuration-items.buttons.spriteCssClass">items.buttons.spriteCssClass </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Defines a CSS class (or multiple classes separated by spaces) which will be used for button icon.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+      items: [
+        {
+          type: "buttonGroup",
+          buttons: [
+            { text: "foo", spriteCssClass: "foo, bar" },
+            { text: "bar", spriteCssClass: "bar" },
+            { text: "baz", spriteCssClass: "baz" }
+          ]
+        }
+      ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.buttons.toggle">
+<a href="#configuration-items.buttons.toggle">items.buttons.toggle </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h3>
+
+<p>Specifies the toggle event handler of the button. Applicable only for the children of a ButtonGroup.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    function toggle(e) {
+        console.log(e.group);
+    }
+
+    $("#toolbar").kendoToolBar({
+        items: [
+        {
+            type: "buttonGroup",
+            buttons: [
+            { text: "foo", togglable: true, group: "myGroup", toggle: toggle },
+            { text: "bar", togglable: true, group: "myGroup", toggle: toggle }
+            ]
+        }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.buttons.togglable">
+<a href="#configuration-items.buttons.togglable">items.buttons.togglable </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h3>
+
+<p>Specifies if the button is togglable, e.g. has a selected and unselected state. Applicable only for the children of a ButtonGroup.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        {
+            type: "buttonGroup",
+            buttons: [
+            { text: "foo", togglable: true },
+            { text: "bar", togglable: true }
+            ]
+        }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.buttons.text">
+<a href="#configuration-items.buttons.text">items.buttons.text </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Specifies the text of the menu button.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        {
+            type: "buttonGroup",
+            buttons: [
+            { text: "foo" },
+            { text: "bar" }
+            ]
+        }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.buttons.url">
+<a href="#configuration-items.buttons.url">items.buttons.url </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Specifies the url of the button to navigate to.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        {
+            type: "buttonGroup",
+            buttons: [
+            { text: "foo", url: "http://www.telerik.com" },
+            { text: "bar", url: "http://www.google.com" },
+            ]
+        }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.click">
+<a href="#configuration-items.click">items.click </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h3>
+
+<p>Specifies the click event handler of the button. Applicable only for commands of type <code>button</code> and <code>splitButton</code>.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        {
+            type: "button",
+            text: "foo",
+            click: function(e) {
+                console.log(e.target.text() + " is clicked");
+            }
+        }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.enable">
+<a href="#configuration-items.enable">items.enable </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
+</h3>
+
+<p>Specifies whether the control is initially enabled or disabled. Default value is "true".</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        {
+            type: "button",
+            text: "foo",
+            enable: false
+        }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.group">
+<a href="#configuration-items.group">items.group </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Assigns the button to a group. Applicable only for buttons with <code>togglable: true</code>.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        { type: "button", text: "foo", togglable: true, group: "myGroup" },
+        { type: "button", text: "bar", togglable: true, group: "myGroup" },
+        { type: "button", text: "baz", togglable: true, group: "myGroup" }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.hidden">
+<a href="#configuration-items.hidden">items.hidden </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h3>
+
+<p>Determines if a button is visible or hidden. By default buttons are visible.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+$("#toolbar").kendoToolBar({
+  items: [
+    { type: "button", text: "MyButton 1", hidden: true },
+    { type: "button", text: "MyButton 2" }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.icon">
+<a href="#configuration-items.icon">items.icon </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Sets icon for the item. The icon should be one of the existing in the Kendo UI theme sprite.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        { type: "button", text: "foo", icon: "clock" },
+        { type: "button", text: "bar", icon: "note" },
+        { type: "button", text: "baz", icon: "refresh" }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.id">
+<a href="#configuration-items.id">items.id </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Specifies the ID of the button.</p>
+
+<blockquote>
+<p>By design the widget will render two buttons - the one located in the ToolBar container will receive the specified ID, the one located in the Overflow Popup container will receive the specified ID but with <em>_overflow</em> suffix. If the ID will be used for determining which button is clicked in the <code>click</code> or <code>toggle</code> event handler, the developer should use the ID property of the event data which always contains the specified ID without suffix.</p>
+</blockquote>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        { type: "button", text: "foo", id: "foo" },
+        { type: "button", text: "bar", id: "bar" },
+        { type: "button", text: "baz", id: "baz" }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.imageUrl">
+<a href="#configuration-items.imageUrl">items.imageUrl </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>If set, the ToolBar will render an image with the specified URL in the button.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    var baseUrl = "https://demos.telerik.com/kendo-ui/content/shared/icons";
+    $("#toolbar").kendoToolBar({
+      items: [
+          { type: "button", text: "foo", imageUrl: "/sports/snowboarding.png" },
+          { type: "button", text: "bar", imageUrl: "/sports/snowboarding.png" }
+      ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.menuButtons">
+<a href="#configuration-items.menuButtons">items.menuButtons </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h3>
+
+<p>Specifies the menu buttons of a SplitButton.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [ {
+            type: "splitButton",
+            text: "splitButton",
+            menuButtons: [
+                { id: "foo", text: "Foo" },
+                { id: "bar", text: "Bar" },
+                { id: "baz", text: "Baz" }
+            ]
+        } ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.menuButtons.attributes">
+<a href="#configuration-items.menuButtons.attributes">items.menuButtons.attributes </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>Specifies the HTML attributes of a menu button.</p>
+
+<blockquote>
+<p>HTML attributes which are JavaScript keywords (e.g. class) must be quoted.</p>
+</blockquote>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        {
+            type: "splitButton",
+            id: "hello",
+            text: "Insert",
+            attributes: { "class": "red" },
+            menuButtons: [
+                { text: "Insert above", icon: "insert-n", attributes: { "class": "blue" } },
+                { text: "Insert between", icon: "insert-m" },
+                { text: "Insert below", icon: "insert-s" }
+            ]
+        }
+        ]
+    });
+&lt;/script&gt;
+&lt;style&gt;
+    .red { background-color: red; }
+    .blue { color: blue; }
+&lt;/style&gt;
+</code></pre>
+
+<h3 id="configuration-items.menuButtons.enable">
+<a href="#configuration-items.menuButtons.enable">items.menuButtons.enable </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h3>
+
+<p>Specifies whether the menu button is initially enabled or disabled.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        {
+            type: "splitButton",
+            text: "splitButton",
+            menuButtons: [
+                { id: "foo", text: "Foo", enable: false },
+                { id: "bar", text: "Bar" },
+                { id: "baz", text: "Baz" }
+            ]
+        }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.menuButtons.hidden">
+<a href="#configuration-items.menuButtons.hidden">items.menuButtons.hidden </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h3>
+
+<p>Determines if a button is visible or hidden. By default buttons are visible.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+$("#toolbar").kendoToolBar({
+  items: [
+    {
+      type: "splitButton",
+      text: "MyButton",
+      menuButtons: [
+        { text: "foo" },
+        { text: "bar" },
+        { text: "baz", hidden: true }
+      ]
+    }
+  ]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.menuButtons.icon">
+<a href="#configuration-items.menuButtons.icon">items.menuButtons.icon </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Sets icon for the menu buttons. The icon should be one of the existing in the Kendo UI theme sprite.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        {
+            type: "splitButton",
+            text: "splitButton",
+            menuButtons: [
+                { id: "foo", text: "Foo", icon: "tick" },
+                { id: "bar", text: "Bar", icon: "note" },
+                { id: "baz", text: "Baz", icon: "clock" }
+            ]
+        }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.menuButtons.id">
+<a href="#configuration-items.menuButtons.id">items.menuButtons.id </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Specifies the ID of the menu buttons.</p>
+
+<blockquote>
+<p>By design the widget will render two buttons - the one located in the ToolBar container will receive the specified ID, the one located in the Overflow Popup container will receive the specified ID but with <em>_overflow</em> suffix. If the ID will be used for determining which button is clicked in the <code>click</code> or <code>toggle</code> event handler, the developer should use the ID property of the event data which always contains the specified ID without suffix.</p>
+</blockquote>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [ {
+            type: "splitButton",
+            text: "splitButton",
+            menuButtons: [
+                { id: "foo", text: "Foo" },
+                { id: "bar", text: "Bar" },
+                { id: "baz", text: "Baz" }
+            ]
+        } ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.menuButtons.imageUrl">
+<a href="#configuration-items.menuButtons.imageUrl">items.menuButtons.imageUrl </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>If set, the ToolBar will render an image with the specified URL in the menu button.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    var baseUrl = "https://demos.telerik.com/kendo-ui/content/shared/icons";
+    $("#toolbar").kendoToolBar({
+        items: [
+        {
+            type: "splitButton",
+            text: "splitButton",
+            menuButtons: [
+                { id: "foo", text: "Foo", imageUrl: "/sports/snowboarding.png" },
+                { id: "bar", text: "Bar", imageUrl: "/sports/snowboarding.png" }
+            ]
+        }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.menuButtons.spriteCssClass">
+<a href="#configuration-items.menuButtons.spriteCssClass">items.menuButtons.spriteCssClass </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Defines a CSS class (or multiple classes separated by spaces) which will be used for menu button icon.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        {
+            type: "splitButton",
+            text: "splitButton",
+            menuButtons: [
+                { id: "foo", text: "Foo", spriteCssClass: "foo" },
+                { id: "bar", text: "Bar", spriteCssClass: "bar" },
+                { id: "baz", text: "Baz", spriteCssClass: "baz" }
+            ]
+        }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.menuButtons.text">
+<a href="#configuration-items.menuButtons.text">items.menuButtons.text </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Specifies the text of the menu buttons.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        {
+            type: "splitButton",
+            text: "splitButton",
+            menuButtons: [
+                { id: "foo", text: "Foo" },
+                { id: "bar", text: "Bar" },
+                { id: "baz", text: "Baz" }
+            ]
+        }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.menuButtons.url">
+<a href="#configuration-items.menuButtons.url">items.menuButtons.url </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Specifies the url of the menu button to navigate to.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        {
+            type: "splitButton",
+            text: "splitButton",
+            menuButtons: [
+                { id: "foo", text: "Telerik", url: "http://www.telerik.com" },
+                { id: "bar", text: "Google", url: "http://www.google.com" }
+            ]
+        }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.overflow">
+<a href="#configuration-items.overflow">items.overflow </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: "auto")</em>
+</h3>
+
+<p>Specifies how the button behaves when the ToolBar is resized. Possible values are: "always", "never" or "auto" (default).</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            {
+                type: "splitButton",
+                text: "splitButton",
+                menuButtons: [
+                    { id: "foo", text: "Foo" },
+                    { id: "bar", text: "Bar" }
+                ],
+                overflow: "never"
+            },
+            {
+                type: "button",
+                text: "Button",
+                overflow: "auto"
+            },
+            {
+                type: "buttonGroup",
+                buttons: [
+                    { text: "Option 1", togglable: true },
+                    { text: "Option 2", togglable: true },
+                    { text: "Option 3", togglable: true }
+                ],
+                overflow: "always"
+            }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.overflowTemplate">
+<a href="#configuration-items.overflowTemplate">items.overflowTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h3>
+
+<p>Specifies what element will be added in the command overflow popup. Applicable only for items that have a template.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            {
+                template: "&lt;span&gt;Toolbar template&lt;/span&gt;",
+                overflowTemplate: "&lt;span&gt;Overflow template&lt;/span&gt;"
+            }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.primary">
+<a href="#configuration-items.primary">items.primary </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h3>
+
+<p>Specifies whether the button is primary. Primary buttons receive different styling.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        { type: "button", text: "Primary", primary: true },
+        { type: "button", text: "Standard" }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.selected">
+<a href="#configuration-items.selected">items.selected </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h3>
+
+<p>Specifies if the toggle button is initially selected. Applicable only for buttons with <code>togglable: true</code>.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        { type: "button", text: "Foo", togglable: true, selected: true }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.showIcon">
+<a href="#configuration-items.showIcon">items.showIcon </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: "both")</em>
+</h3>
+
+<p>Specifies where the button icon will be displayed. Possible values are: "toolbar", "overflow" or "both" (default).</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", text: "Foo", icon: "tick", showIcon: "toolbar" }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.showText">
+<a href="#configuration-items.showText">items.showText </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: "both")</em>
+</h3>
+
+<p>Specifies where the text will be displayed. Possible values are: "toolbar", "overflow" or "both" (default).</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", text: "Foo", icon: "tick", showText: "overflow" }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.spriteCssClass">
+<a href="#configuration-items.spriteCssClass">items.spriteCssClass </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Defines a CSS class (or multiple classes separated by spaces) which will be used for button icon.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", text: "Foo", spriteCssClass: "tick" }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.template">
+<a href="#configuration-items.template">items.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h3>
+
+<p>Specifies what element will be added in the ToolBar wrapper. Items with template does not have a type.</p>
+
+<blockquote>
+<p>If <code>overflowTemplate</code> is not defined for a template command, than the command will be treated as <code>overflow: "never"</code>.</p>
+</blockquote>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            {
+                template: "&lt;span&gt;Toolbar template&lt;/span&gt;"
+            }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.text">
+<a href="#configuration-items.text">items.text </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Sets the text of the button.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", text: "Foo" }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.togglable">
+<a href="#configuration-items.togglable">items.togglable </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h3>
+
+<p>Specifies if the button is togglable, e.g. has a selected and unselected state.</p>
+
+<blockquote>
+<p>Buttons with <code>togglable: true</code> will fire the <code>toggle</code> event. <code>click</code> event will <strong>not</strong> be fired.</p>
+</blockquote>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", text: "Foo", togglable: true }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.toggle">
+<a href="#configuration-items.toggle">items.toggle </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h3>
+
+<p>Specifies the toggle event handler of the button. Applicable only for commands of type <code>button</code> and <code>togglable: true</code>.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        {
+            type: "button",
+            text: "Foo",
+            togglable: true,
+            toggle: function() {
+                console.log("toggle!");
+            }
+        }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.type">
+<a href="#configuration-items.type">items.type </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Specifies the command type. Supported types are "button", "splitButton", "buttonGroup", "separator".</p>
+
+<blockquote>
+<p>Specifying the type is <strong>mandatory</strong>. Only commands that have a <code>template</code> do not need a <code>type</code>.</p>
+</blockquote>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            {
+                type: "splitButton",
+                text: "splitButton",
+                menuButtons: [
+                    { id: "foo", text: "Foo" },
+                    { id: "bar", text: "Bar" }
+                ]
+            },
+            {
+                type: "separator"
+            },
+            {
+                type: "button",
+                text: "Button"
+            },
+            {
+                type: "buttonGroup",
+                buttons: [
+                    { text: "Option 1", togglable: true },
+                    { text: "Option 2", togglable: true },
+                    { text: "Option 3", togglable: true }
+                ]
+            }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-items.url">
+<a href="#configuration-items.url">items.url </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Specifies the url to navigate to.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+        {
+            type: "button",
+            text: "Foo",
+            url: "http://www.google.com"
+        }
+        ]
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="methods"><a href="#methods">Methods</a></h2>
+
+<h3 id="methods-add"><a href="#methods-add">add</a></h3>
+
+<p>Adds new command to the ToolBar widget. Accepts object with <a href="/web/toolbar/overview#command-types">valid command configuration options</a>.</p>
+
+<h4>Parameters</h4>
+
+<h5>command <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h5>
+
+<p>An object with valid command configuration options.</p>
+
+<h4>Example - add button to the ToolBar</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", text: "MyButton" }
+        ]
+    });
+
+    var toolbar = $("#toolbar").data("kendoToolBar");
+    toolbar.add({
+        type: "button",
+        text: "Just added",
+        togglable: true
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-destroy"><a href="#methods-destroy">destroy</a></h3>
+
+<p>Prepares the widget for safe removal from DOM. Detaches all event handlers and removes jQuery.data attributes to avoid memory leaks. Calls destroy method of any child Kendo widgets.</p>
+
+<blockquote>
+<p>This method does not remove the widget element from DOM.</p>
+</blockquote>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+      items: [
+        { type: "button", text: "MyButton" }
+      ]
+    });
+    var toolbar = $("#toolbar").data("kendoToolBar");
+    toolbar.destroy();
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-enable"><a href="#methods-enable">enable</a></h3>
+
+<p>Enables or disables the specified command. If the second parameter is omitted it will be treated as <code>true</code> and the command will be enabled.</p>
+
+<h4>Parameters</h4>
+
+<h5>command <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element |</code></a><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>A string, DOM element or jQuery object which represents the command to be enabled or disabled. A string is treated as jQuery selector.</p>
+
+<h5>enable <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h5>
+
+<p>A boolean flag that determines whether the command should be enabled (true) or disabled (false). If omitted the command will be enabled.</p>
+
+<h4>Example - enable command</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", id: "btn1", text: "Button 1", enable: false }
+        ]
+    });
+
+    var toolbar = $("#toolbar").data("kendoToolBar");
+    toolbar.enable("#btn1"); //enables the initially disabled command
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - disable command</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", id: "btn1", text: "Button 1", enable: true }
+        ]
+    });
+
+    var toolbar = $("#toolbar").data("kendoToolBar");
+    toolbar.enable("#btn1", false); //disables the initially disabled command
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-getSelectedFromGroup"><a href="#methods-getSelectedFromGroup">getSelectedFromGroup</a></h3>
+
+<p>Returns the selected toggle button from the specified group.</p>
+
+<h4>Parameters</h4>
+
+<h5>groupName <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The name of the group.</p>
+
+<h4>Example - get selected button from group with name "radio"</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            {
+                type: "buttonGroup",
+                buttons: [
+                    { type: "button", id: "btn1", text: "Button 1", togglable: true, group: "radio" },
+                    { type: "button", id: "btn2", text: "Button 2", togglable: true, group: "radio", selected: true },
+                    { type: "button", id: "btn3", text: "Button 3", togglable: true, group: "radio" }
+                ]
+            }
+        ]
+    });
+
+    var toolbar = $("#toolbar").data("kendoToolBar");
+    var selected = toolbar.getSelectedFromGroup("radio");
+
+    console.log(selected.attr("id"));
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-hide"><a href="#methods-hide">hide</a></h3>
+
+<p>Hides a command from the ToolBar widget. The command is hidden from the ToolBar container and overflow popup (if resizable is enabled).</p>
+
+<h4>Parameters</h4>
+
+<h5>command <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element |</code></a><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>A string, DOM element or jQuery object which represents the command to be hidden. A string is treated as jQuery selector.</p>
+
+<h4>Example - removed button from the ToolBar</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", id: "btn1", text: "Button 1" },
+            { type: "button", id: "btn2", text: "Button 2" }
+        ]
+    });
+
+    var toolbar = $("#toolbar").data("kendoToolBar");
+    toolbar.hide($("#btn2"));
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-remove"><a href="#methods-remove">remove</a></h3>
+
+<p>Removes a command from the ToolBar widget. The command is removed from the ToolBar container and overflow popup (if resizable is enabled).</p>
+
+<h4>Parameters</h4>
+
+<h5>command <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element |</code></a><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>A string, DOM element or jQuery object which represents the command to be removed. A string is treated as jQuery selector.</p>
+
+<h4>Example - removed button from the ToolBar</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", id: "btn1", text: "Button 1" },
+            { type: "button", id: "btn2", text: "Button 2" }
+        ]
+    });
+
+    var toolbar = $("#toolbar").data("kendoToolBar");
+    toolbar.remove($("#btn2"));
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-show"><a href="#methods-show">show</a></h3>
+
+<p>Shows a hidden command in the ToolBar widget. The command is shown in the ToolBar container and overflow popup (if resizable is enabled).</p>
+
+<h4>Parameters</h4>
+
+<h5>command <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element |</code></a><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>A string, DOM element or jQuery object which represents the command to be shown. A string is treated as jQuery selector.</p>
+
+<h4>Example - show button from the ToolBar</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", id: "btn1", text: "Button 1" },
+            { type: "button", id: "btn2", text: "Button 2", hidden: true }
+        ]
+    });
+
+    var toolbar = $("#toolbar").data("kendoToolBar");
+    toolbar.show($("#btn2"));
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-toggle"><a href="#methods-toggle">toggle</a></h3>
+
+<p>Change the state of a togglable button.</p>
+
+<blockquote>
+<p>This method does <strong>not</strong> trigger the <code>toggle</code> event!</p>
+</blockquote>
+
+<h4>Parameters</h4>
+
+<h5>command <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element |</code></a><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>A string, DOM element or jQuery object which represents the togglable button which state will be changed. A string is treated as jQuery selector.</p>
+
+<h5>state <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h5>
+
+<p>A boolean flag that determines whether the button will be toggled or not.</p>
+
+<h4>Example - change the state of togglable buttons using the API</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+      items: [
+        { type: "buttonGroup", buttons: [
+          { type: "button", togglable: true, id: "foo", text: "foo", group: "group1" },
+          { type: "button", togglable: true, id: "bar", text: "bar", group: "group1" }
+          ]
+        }
+      ]
+    });
+
+    var toolbar = $("#toolbar").data("kendoToolBar");
+    toolbar.toggle("#foo", true); //select button with id: "foo"
+    toolbar.toggle("#bar", true); //select button with id: "bar" (also deselects "#foo" as the buttons are from the same group
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="events"><a href="#events">Events</a></h2>
+
+<h3 id="events-click"><a href="#events-click">click</a></h3>
+
+<p>Fires when the user clicks a command button.</p>
+
+<blockquote>
+<p>The event does not fire for togglable buttons. If the button has <code>togglable: true</code> use the <code>toggle</code> event.</p>
+</blockquote>
+
+<h4>Event Data</h4>
+
+<h5>e.target <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>The jQuery object that represents the command element.</p>
+
+<h5>e.id <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The id of the command element.</p>
+
+<h5>e.sender <code>kendo.ui.ToolBar</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h4>Example - subscribe to the "click" event during initialization</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", id: "btn1", text: "Button 1" },
+            { type: "button", id: "btn2", text: "Button 2" }
+        ],
+        click: function(e) {
+            console.log("click", e.target.text());
+        }
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "click" event after initialization</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", id: "btn1", text: "Button 1" },
+            { type: "button", id: "btn2", text: "Button 2" }
+        ]
+    });
+
+    var toolbar = $("#toolbar").data("kendoToolBar");
+    toolbar.bind("click", function(e){
+        console.log("click", e.target.text());
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="events-close"><a href="#events-close">close</a></h3>
+
+<p>Fires when the SplitButton's popup closes.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.SplitButton <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>The jQuery object that represents the SplitButton element.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>Prevents the close action if called. The popup will remain open.</p>
+
+<h5>e.sender <code>kendo.ui.ToolBar</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h4>Example - subscribe to the "close" event during initialization</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "splitButton", id: "splitButton", name: "splitButton", text: "Split Button", menuButtons: [
+                { id: "option1", text: "Option 1" },
+                { id: "option2", text: "Option 2" },
+                { id: "option3", text: "Option 3" },
+                { id: "option4", text: "Option 4" }
+            ] }
+        ],
+        close: function(e) {
+            console.log("close", e);
+        }
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "close" event after initialization and prevent the popup closing</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "splitButton", id: "splitButton", name: "splitButton", text: "Split Button", menuButtons: [
+                { id: "option1", text: "Option 1" },
+                { id: "option2", text: "Option 2" },
+                { id: "option3", text: "Option 3" },
+                { id: "option4", text: "Option 4" }
+            ] }
+        ]
+    });
+
+    var toolbar = $("#toolbar").data("kendoToolBar");
+    toolbar.bind("close", function(e){
+        console.log("close", e);
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="events-open"><a href="#events-open">open</a></h3>
+
+<p>Fires when the Split Button's popup opens.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.SplitButton <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>The jQuery object that represents the SplitButton element.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>Prevents the open action if called. The popup will remain closed.</p>
+
+<h5>e.sender <code>kendo.ui.ToolBar</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h4>Example - subscribe to the "open" event during initialization</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "splitButton", id: "splitButton", name: "splitButton", text: "Split Button", menuButtons: [
+                { id: "option1", text: "Option 1" },
+                { id: "option2", text: "Option 2" },
+                { id: "option3", text: "Option 3" },
+                { id: "option4", text: "Option 4" }
+            ] }
+        ],
+        open: function(e) {
+            console.log("open", e);
+        }
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "open" event after initialization and prevent the popup closing</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "splitButton", id: "splitButton", name: "splitButton", text: "Split Button", menuButtons: [
+                { id: "option1", text: "Option 1" },
+                { id: "option2", text: "Option 2" },
+                { id: "option3", text: "Option 3" },
+                { id: "option4", text: "Option 4" }
+            ] }
+        ]
+    });
+
+    var toolbar = $("#toolbar").data("kendoToolBar");
+    toolbar.bind("open", function(e){
+        console.log("open", e);
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="events-toggle"><a href="#events-toggle">toggle</a></h3>
+
+<p>Fires when the user changes the checked state of a toggle button.</p>
+
+<blockquote>
+<p><strong>Important</strong> <code>click</code> event does not fire for buttons that have <code>togglable: true</code></p>
+</blockquote>
+
+<h4>Event Data</h4>
+
+<h5>e.target <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>The jQuery object that represents the command element.</p>
+
+<h5>e.checked <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a>
+</h5>
+
+<p>Boolean flag that indicates the button state.</p>
+
+<h5>e.id <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The id of the command element.</p>
+
+<h5>e.sender <code>kendo.ui.ToolBar</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h4>Example - subscribe to the "toggle" event during initialization</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", id: "btn1", text: "Button 1", togglable: true },
+            { type: "button", id: "btn2", text: "Button 2", togglable: true }
+        ],
+        toggle: function(e) {
+            console.log("toggle", e.target.text(), e.checked);
+        }
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "toggle" event after initialization</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", id: "btn1", text: "Button 1", togglable: true },
+            { type: "button", id: "btn2", text: "Button 2", togglable: true }
+        ]
+    });
+
+    var toolbar = $("#toolbar").data("kendoToolBar");
+    toolbar.bind("toggle", function(e){
+        console.log("toggle", e.target.text(), e.checked);
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="events-overflowClose"><a href="#events-overflowClose">overflowClose</a></h3>
+
+<p>Fires when the overflow popup container is about to close.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>Prevents the close action if called. The popup will remain open.</p>
+
+<h5>e.sender <code>kendo.ui.ToolBar</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h4>Example - subscribe to the "overflowClose" event during initialization</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", id: "btn1", text: "Button 1" },
+            { type: "button", id: "btn2", text: "Button 2", overflow: "always" }
+        ],
+        overflowClose: function(e) {
+            console.log("close");
+        }
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "overflowClose" event after initialization</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", id: "btn1", text: "Button 1" },
+            { type: "button", id: "btn2", text: "Button 2", overflow: "always" }
+        ]
+    });
+
+    var toolbar = $("#toolbar").data("kendoToolBar");
+    toolbar.bind("overflowClose", function(e){
+        console.log("close");
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="events-overflowOpen"><a href="#events-overflowOpen">overflowOpen</a></h3>
+
+<p>Fires when the overflow popup container is about to open.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>Prevents the close action if called. The popup will remain closed.</p>
+
+<h5>e.sender <code>kendo.ui.ToolBar</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h4>Example - subscribe to the "overflowOpen" event during initialization</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", id: "btn1", text: "Button 1" },
+            { type: "button", id: "btn2", text: "Button 2", overflow: "always" }
+        ],
+        overflowOpen: function(e) {
+            console.log("open");
+        }
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - subscribe to the "overflowOpen" event after initialization</h4>
+
+<pre><code>&lt;div id="toolbar"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#toolbar").kendoToolBar({
+        items: [
+            { type: "button", id: "btn1", text: "Button 1" },
+            { type: "button", id: "btn2", text: "Button 2", overflow: "always" }
+        ]
+    });
+
+    var toolbar = $("#toolbar").data("kendoToolBar");
+    toolbar.bind("overflowOpen", function(e){
+        console.log("open");
+    });
+&lt;/script&gt;
+</code></pre> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

@@ -1,0 +1,1236 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="api">
+        <meta name="product" content="kendo-ui">
+        <meta name="subproduct" content="gauge">
+        <title>Configuration, methods and events of Kendo UI DataViz RadialGauge</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Learn the configuration options for Radial Gauge widget, set the color and size of the border, use methods properly.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("api/javascript/dataviz/ui/radialgauge.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//api/javascript/dataviz/ui/radialgauge.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    <div id="markdown-toc"></div>
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="kendodatavizuiradialgauge"><a href="#kendodatavizuiradialgauge">kendo.dataviz.ui.RadialGauge</a></h1>
+
+<h2 id="configuration"><a href="#configuration">Configuration</a></h2>
+
+<h3 id="configuration-gaugeArea">
+<a href="#configuration-gaugeArea">gaugeArea </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>The gauge area configuration options.
+This is the entire visible area of the gauge.</p>
+
+<h3 id="configuration-gaugeArea.background">
+<a href="#configuration-gaugeArea.background">gaugeArea.background </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a><em>(default: "white")</em>
+</h3>
+
+<p>The background of the gauge area.
+Any valid CSS color string will work here, including hex and rgb.</p>
+
+<h3 id="configuration-gaugeArea.border">
+<a href="#configuration-gaugeArea.border">gaugeArea.border </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>The border of the gauge area.</p>
+
+<h3 id="configuration-gaugeArea.border.color">
+<a href="#configuration-gaugeArea.border.color">gaugeArea.border.color </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a><em>(default: "black")</em>
+</h3>
+
+<p>The color of the border. Any valid CSS color string will work here, including hex and rgb.</p>
+
+<h3 id="configuration-gaugeArea.border.dashType">
+<a href="#configuration-gaugeArea.border.dashType">gaugeArea.border.dashType </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a><em>(default: "solid")</em>
+</h3>
+
+<p>The dash type of the border.</p>
+
+<h4><em>"solid"</em></h4>
+
+<p>Specifies a solid line.</p>
+
+<h4><em>"dot"</em></h4>
+
+<p>Specifies a line consisting of dots.</p>
+
+<h4><em>"dash"</em></h4>
+
+<p>Specifies a line consisting of dashes.</p>
+
+<h4><em>"longDash"</em></h4>
+
+<p>Specifies a line consisting of a repeating pattern of long-dash.</p>
+
+<h4><em>"dashDot"</em></h4>
+
+<p>Specifies a line consisting of a repeating pattern of dash-dot.</p>
+
+<h4><em>"longDashDot"</em></h4>
+
+<p>Specifies a line consisting of a repeating pattern of long-dash-dot.</p>
+
+<h4><em>"longDashDotDot"</em></h4>
+
+<p>Specifies a line consisting of a repeating pattern of long-dash-dot-dot.</p>
+
+<h3 id="configuration-gaugeArea.border.opacity">
+<a href="#configuration-gaugeArea.border.opacity">gaugeArea.border.opacity </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 1)</em>
+</h3>
+
+<p>The opacity of the border. By default the border is opaque.</p>
+
+<h3 id="configuration-gaugeArea.border.width">
+<a href="#configuration-gaugeArea.border.width">gaugeArea.border.width </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a><em>(default: 0)</em>
+</h3>
+
+<p>The width of the border.</p>
+
+<h3 id="configuration-gaugeArea.height">
+<a href="#configuration-gaugeArea.height">gaugeArea.height </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The height of the gauge area.  By default, the vertical gauge is 200px and
+the horizontal one is 60px.</p>
+
+<h3 id="configuration-gaugeArea.margin">
+<a href="#configuration-gaugeArea.margin">gaugeArea.margin </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a><em>(default: 5)</em>
+</h3>
+
+<p>The margin of the gauge area.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="gauge"&gt;&lt;/div&gt;
+&lt;script&gt;
+ $("#gauge").kendoRadialGauge({
+     pointer: [{
+        value: 20
+        gaugeArea:{ 
+            margin:50 
+     }
+  }]
+ });
+</code></pre>
+
+<p></p>
+
+<h3 id="configuration-gaugeArea.margin.top">
+<a href="#configuration-gaugeArea.margin.top">gaugeArea.margin.top </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The top margin of the gauge area.</p>
+
+<h3 id="configuration-gaugeArea.margin.bottom">
+<a href="#configuration-gaugeArea.margin.bottom">gaugeArea.margin.bottom </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The bottom margin of the gauge area.</p>
+
+<h3 id="configuration-gaugeArea.margin.left">
+<a href="#configuration-gaugeArea.margin.left">gaugeArea.margin.left </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The left margin of the gauge area.</p>
+
+<h3 id="configuration-gaugeArea.margin.right">
+<a href="#configuration-gaugeArea.margin.right">gaugeArea.margin.right </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The right margin of the gauge area.</p>
+
+<h3 id="configuration-gaugeArea.width">
+<a href="#configuration-gaugeArea.width">gaugeArea.width </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The width of the gauge area.  By default the vertical gauge is 60px
+and horizontal gauge is 200px.</p>
+
+<h3 id="configuration-pointer">
+<a href="#configuration-pointer">pointer </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h3>
+
+<p>The pointer configuration options. It accepts an <code>Array</code> of pointers, each with it's own configuration options.</p>
+
+<h4>Example - specify single pointer</h4>
+
+<pre><code>&lt;div id="gauge"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#gauge").kendoRadialGauge({
+    pointer: [{
+    value: 20
+    }]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - specify multiple pointers</h4>
+
+<pre><code>&lt;div id="gauge"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#gauge").kendoRadialGauge({
+    pointer: [{
+    value: 20
+    }, {
+    value: 40
+    }]
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-pointer.cap">
+<a href="#configuration-pointer.cap">pointer.cap </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>The cap configuration options.</p>
+
+<h3 id="configuration-pointer.cap.color">
+<a href="#configuration-pointer.cap.color">pointer.cap.color </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The color of the cap.
+Any valid CSS color string will work here, including hex and rgb.</p>
+
+<h3 id="configuration-pointer.cap.size">
+<a href="#configuration-pointer.cap.size">pointer.cap.size </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The size of the cap in percents. (from 0 to 1)</p>
+
+<h3 id="configuration-pointer.color">
+<a href="#configuration-pointer.color">pointer.color </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The color of the pointer.
+Any valid CSS color string will work here, including hex and rgb.</p>
+
+<h3 id="configuration-pointer.value">
+<a href="#configuration-pointer.value">pointer.value </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The value of the gauge.</p>
+
+<h3 id="configuration-renderAs">
+<a href="#configuration-renderAs">renderAs </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>Sets the preferred rendering engine.
+If it is not supported by the browser, the Gauge will switch to the first available mode.</p>
+
+<p>The supported values are:</p>
+
+<ul>
+<li>"svg" - renders the widget as inline SVG document, if available</li>
+<li>"canvas" - renders the widget as a Canvas element, if available.</li>
+</ul>
+
+<h4>Example - Render as Canvas, if supported</h4>
+
+<pre><code>&lt;div id="gauge"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#gauge").kendoRadialGauge({
+    renderAs: "canvas",
+    pointer: {
+        value: 50
+    },
+    scale: {
+        min: 0,
+        max: 100
+    }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-scale">
+<a href="#configuration-scale">scale </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>Configures the scale.</p>
+
+<h3 id="configuration-scale.endAngle">
+<a href="#configuration-scale.endAngle">scale.endAngle </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a><em>(default: 210)</em>
+</h3>
+
+<p>The end angle of the gauge.
+The gauge is rendered clockwise(0 degrees are the 180 degrees in the polar coordinate system)</p>
+
+<h3 id="configuration-scale.labels">
+<a href="#configuration-scale.labels">scale.labels </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>Configures the scale labels.</p>
+
+<h3 id="configuration-scale.labels.background">
+<a href="#configuration-scale.labels.background">scale.labels.background </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The background color of the labels.
+Any valid CSS color string will work here, including hex and rgb</p>
+
+<h3 id="configuration-scale.labels.border">
+<a href="#configuration-scale.labels.border">scale.labels.border </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>The border of the labels.</p>
+
+<h3 id="configuration-scale.labels.border.color">
+<a href="#configuration-scale.labels.border.color">scale.labels.border.color </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a><em>(default: "black")</em>
+</h3>
+
+<p>The color of the border. Any valid CSS color string will work here, including hex and rgb.</p>
+
+<h3 id="configuration-scale.labels.border.dashType">
+<a href="#configuration-scale.labels.border.dashType">scale.labels.border.dashType </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a><em>(default: "solid")</em>
+</h3>
+
+<p>The dash type of the border.</p>
+
+<h4><em>"solid"</em></h4>
+
+<p>Specifies a solid line.</p>
+
+<h4><em>"dot"</em></h4>
+
+<p>Specifies a line consisting of dots.</p>
+
+<h4><em>"dash"</em></h4>
+
+<p>Specifies a line consisting of dashes.</p>
+
+<h4><em>"longDash"</em></h4>
+
+<p>Specifies a line consisting of a repeating pattern of long-dash.</p>
+
+<h4><em>"dashDot"</em></h4>
+
+<p>Specifies a line consisting of a repeating pattern of dash-dot.</p>
+
+<h4><em>"longDashDot"</em></h4>
+
+<p>Specifies a line consisting of a repeating pattern of long-dash-dot.</p>
+
+<h4><em>"longDashDotDot"</em></h4>
+
+<p>Specifies a line consisting of a repeating pattern of long-dash-dot-dot.</p>
+
+<h3 id="configuration-scale.labels.border.opacity">
+<a href="#configuration-scale.labels.border.opacity">scale.labels.border.opacity </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a> <em>(default: 1)</em>
+</h3>
+
+<p>The opacity of the border. By default the border is opaque.</p>
+
+<h3 id="configuration-scale.labels.border.width">
+<a href="#configuration-scale.labels.border.width">scale.labels.border.width </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a><em>(default: 0)</em>
+</h3>
+
+<p>The width of the border.</p>
+
+<h3 id="configuration-scale.labels.color">
+<a href="#configuration-scale.labels.color">scale.labels.color </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The text color of the labels.
+Any valid CSS color string will work here, including hex and rgb.</p>
+
+<h3 id="configuration-scale.labels.font">
+<a href="#configuration-scale.labels.font">scale.labels.font </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a><em>(default: "12px Arial,Helvetica,sans-serif")</em>
+</h3>
+
+<p>The font style of the labels.</p>
+
+<h3 id="configuration-scale.labels.format">
+<a href="#configuration-scale.labels.format">scale.labels.format </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The format of the labels.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="gauge"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#gauge").kendoRadialGauge({
+    renderAs: "canvas",
+    pointer: {
+    value: 50
+    },
+    scale: {
+    min: 0,
+    max: 100, 
+    labels: {
+        // set the format to currency
+        format: "C"
+    }
+    }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-scale.labels.margin">
+<a href="#configuration-scale.labels.margin">scale.labels.margin </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a><em>(default: 0)</em>
+</h3>
+
+<p>The margin of the labels.</p>
+
+<h3 id="configuration-scale.labels.margin.top">
+<a href="#configuration-scale.labels.margin.top">scale.labels.margin.top </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The top margin of the labels.</p>
+
+<h3 id="configuration-scale.labels.margin.bottom">
+<a href="#configuration-scale.labels.margin.bottom">scale.labels.margin.bottom </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The bottom margin of the labels.</p>
+
+<h3 id="configuration-scale.labels.margin.left">
+<a href="#configuration-scale.labels.margin.left">scale.labels.margin.left </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The left margin of the labels.</p>
+
+<h3 id="configuration-scale.labels.margin.right">
+<a href="#configuration-scale.labels.margin.right">scale.labels.margin.right </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The right margin of the labels.</p>
+
+<h3 id="configuration-scale.labels.padding">
+<a href="#configuration-scale.labels.padding">scale.labels.padding </a><code>Number  |</code><code> Object</code><em>(default: 0)</em>
+</h3>
+
+<p>The padding of the labels.</p>
+
+<h3 id="configuration-scale.labels.padding.top">
+<a href="#configuration-scale.labels.padding.top">scale.labels.padding.top </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The top padding of the labels.</p>
+
+<h3 id="configuration-scale.labels.padding.bottom">
+<a href="#configuration-scale.labels.padding.bottom">scale.labels.padding.bottom </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The bottom padding of the labels.</p>
+
+<h3 id="configuration-scale.labels.padding.left">
+<a href="#configuration-scale.labels.padding.left">scale.labels.padding.left </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The left padding of the labels.</p>
+
+<h3 id="configuration-scale.labels.padding.right">
+<a href="#configuration-scale.labels.padding.right">scale.labels.padding.right </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The right padding of the labels.</p>
+
+<h3 id="configuration-scale.labels.position">
+<a href="#configuration-scale.labels.position">scale.labels.position </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a><em>(default: "inside")</em>
+</h3>
+
+<p>The labels positions.</p>
+
+<h4><em>"inside"</em></h4>
+
+<p>The labels are positioned inside.</p>
+
+<h4><em>"outside"</em></h4>
+
+<p>The labels are positioned outside.</p>
+
+<h3 id="configuration-scale.labels.template">
+<a href="#configuration-scale.labels.template">scale.labels.template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h3>
+
+<p>The label template.
+Template variables:</p>
+
+<ul>
+<li>  <strong>value</strong> - the value</li>
+</ul>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="gauge"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#gauge").kendoRadialGauge({
+    renderAs: "canvas",
+    pointer: {
+    value: 50
+    },
+    scale: {
+    min: 0,
+    max: 100, 
+    labels: {
+        // set the format to currency
+        template: "#= value #%"
+    }
+    }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-scale.labels.visible">
+<a href="#configuration-scale.labels.visible">scale.labels.visible </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a><em>(default: true)</em>
+</h3>
+
+<p>The visibility of the labels.</p>
+
+<h3 id="configuration-scale.majorTicks">
+<a href="#configuration-scale.majorTicks">scale.majorTicks </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>Configures the scale major ticks.</p>
+
+<h3 id="configuration-scale.majorTicks.color">
+<a href="#configuration-scale.majorTicks.color">scale.majorTicks.color </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The color of the major ticks.</p>
+
+<h3 id="configuration-scale.majorTicks.size">
+<a href="#configuration-scale.majorTicks.size">scale.majorTicks.size </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The major tick size.
+This is the length of the line in pixels that is drawn to indicate the tick on the scale.</p>
+
+<h3 id="configuration-scale.majorTicks.visible">
+<a href="#configuration-scale.majorTicks.visible">scale.majorTicks.visible </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a><em>(default: true)</em>
+</h3>
+
+<p>The visibility of the major ticks.
+Any valid CSS color string will work here, including hex and rgb.</p>
+
+<h3 id="configuration-scale.majorTicks.width">
+<a href="#configuration-scale.majorTicks.width">scale.majorTicks.width </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a><em>(default: 0.5)</em>
+</h3>
+
+<p>The width of the major ticks.</p>
+
+<h3 id="configuration-scale.majorUnit">
+<a href="#configuration-scale.majorUnit">scale.majorUnit </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The interval between major divisions.</p>
+
+<h3 id="configuration-scale.max">
+<a href="#configuration-scale.max">scale.max </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a><em>(default: 100)</em>
+</h3>
+
+<p>The maximum value of the scale.</p>
+
+<h3 id="configuration-scale.min">
+<a href="#configuration-scale.min">scale.min </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a><em>(default: 0)</em>
+</h3>
+
+<p>The minimum value of the scale.</p>
+
+<h3 id="configuration-scale.minorTicks">
+<a href="#configuration-scale.minorTicks">scale.minorTicks </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h3>
+
+<p>Configures the scale minor ticks.</p>
+
+<h3 id="configuration-scale.minorTicks.color">
+<a href="#configuration-scale.minorTicks.color">scale.minorTicks.color </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The color of the minor ticks.
+Any valid CSS color string will work here, including hex and rgb.</p>
+
+<h3 id="configuration-scale.minorTicks.size">
+<a href="#configuration-scale.minorTicks.size">scale.minorTicks.size </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The minor tick size.
+This is the length of the line in pixels that is drawn to indicate the tick on the scale.</p>
+
+<h3 id="configuration-scale.minorTicks.visible">
+<a href="#configuration-scale.minorTicks.visible">scale.minorTicks.visible </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a><em>(default: true)</em>
+</h3>
+
+<p>The visibility of the minor ticks.</p>
+
+<h3 id="configuration-scale.minorTicks.width">
+<a href="#configuration-scale.minorTicks.width">scale.minorTicks.width </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a><em>(default: 0.5)</em>
+</h3>
+
+<p>The width of the minor ticks.</p>
+
+<h3 id="configuration-scale.minorUnit">
+<a href="#configuration-scale.minorUnit">scale.minorUnit </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The interval between minor divisions.</p>
+
+<h3 id="configuration-scale.ranges">
+<a href="#configuration-scale.ranges">scale.ranges </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a>
+</h3>
+
+<p>The ranges of the scale.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="gauge"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#gauge").kendoRadialGauge({
+    renderAs: "canvas",
+    pointer: {
+    value: 50
+    },
+    scale: {
+    min: 0,
+    max: 100, 
+    ranges: [{
+        from: 10,
+        to: 20,
+        color: "green"
+    }]
+    }
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-scale.ranges.from">
+<a href="#configuration-scale.ranges.from">scale.ranges.from </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The start position of the range in scale units.</p>
+
+<h3 id="configuration-scale.ranges.to">
+<a href="#configuration-scale.ranges.to">scale.ranges.to </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The end position of the range in scale units.</p>
+
+<h3 id="configuration-scale.ranges.opacity">
+<a href="#configuration-scale.ranges.opacity">scale.ranges.opacity </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The opacity of the range.</p>
+
+<h3 id="configuration-scale.ranges.color">
+<a href="#configuration-scale.ranges.color">scale.ranges.color </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The color of the range.
+Any valid CSS color string will work here, including hex and rgb.</p>
+
+<h3 id="configuration-scale.rangePlaceholderColor">
+<a href="#configuration-scale.rangePlaceholderColor">scale.rangePlaceholderColor </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h3>
+
+<p>The default color for the ranges.</p>
+
+<h3 id="configuration-scale.rangeSize">
+<a href="#configuration-scale.rangeSize">scale.rangeSize </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The width of the range indicators.</p>
+
+<h3 id="configuration-scale.rangeDistance">
+<a href="#configuration-scale.rangeDistance">scale.rangeDistance </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a>
+</h3>
+
+<p>The distance from the range indicators to the ticks.</p>
+
+<h3 id="configuration-scale.reverse">
+<a href="#configuration-scale.reverse">scale.reverse </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a><em>(default: false)</em>
+</h3>
+
+<p>Reverses the scale direction - values are increase anticlockwise.</p>
+
+<h3 id="configuration-scale.startAngle">
+<a href="#configuration-scale.startAngle">scale.startAngle </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="type-link"><code>Number</code></a><em>(default: -30)</em>
+</h3>
+
+<p>The start angle of the gauge.
+The gauge is rendered clockwise(0 degrees are the 180 degrees in the polar coordinate system)</p>
+
+<h3 id="configuration-transitions">
+<a href="#configuration-transitions">transitions </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a><em>(default: true)</em>
+</h3>
+
+<p>A value indicating if transition animations should be played.</p>
+
+<h2 id="methods"><a href="#methods">Methods</a></h2>
+
+<h3 id="methods-allValues"><a href="#methods-allValues">allValues</a></h3>
+
+<p>Allows setting or getting multiple Gauge values at once.</p>
+
+<h4>Parameters</h4>
+
+<h5>values <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a> <em>(optional)</em>
+</h5>
+
+<p>An array of values to be set.</p>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a> An array of the Gauge pointer values will be returned if no parameter is passed.</p>
+
+<h4>Example - setting multiple values</h4>
+
+<pre><code>&lt;div id="gauge"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#gauge").kendoRadialGauge({
+    pointer: [{
+    value: 20
+    }, {
+    value: 40
+    }]
+});
+
+setTimeout(function(){
+    var gauge = $("#gauge").data("kendoRadialGauge");
+    gauge.allValues([60, 10]);
+},1000)
+
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - retrieving all values</h4>
+
+<pre><code>&lt;div id="gauge"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#gauge").kendoRadialGauge({
+    pointer: [{
+    value: 20
+    }, {
+    value: 40
+    }]
+});
+
+var gauge = $("#gauge").data("kendoRadialGauge");
+var allValues = gauge.allValues();
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-destroy"><a href="#methods-destroy">destroy</a></h3>
+
+<p>Prepares the Gauge for safe removal from the DOM.</p>
+
+<p>Detaches event handlers and removes data entries in order to avoid memory leaks.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="gauge"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#gauge").kendoRadialGauge({
+    pointer: {
+    value: 50
+    },
+    scale: {
+    min: 0,
+    max: 100
+    }
+});
+setTimeout(function(){
+    kendo.destroy($("#gauge"));
+    $("#gauge").remove();
+},1000)     
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-exportImage"><a href="#methods-exportImage">exportImage</a></h3>
+
+<p>Exports the Gauge as an image.
+The result can be saved using <a href="/api/javascript/kendo#methods-saveAs">kendo.saveAs</a>.</p>
+
+<p>The export operation is asynchronous and returns a <a href="http://api.jquery.com/Types/#Promise">promise</a>.
+The promise will be resolved with a PNG image encoded as a <a href="https://developer.mozilla.org/en-US/docs/data_URIs">Data URI</a>.</p>
+
+<h4>Parameters</h4>
+
+<h5>options <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a> <em>(optional)</em>
+</h5>
+
+<p>Parameters for the exported image.</p>
+
+<h5>options.width <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The width of the exported image. Defaults to the Gauge width.</p>
+
+<h5>options.height <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a>
+</h5>
+
+<p>The height of the exported image. Defaults to the Gauge height.</p>
+
+<h4>Returns</h4>
+
+<p><a href="http://api.jquery.com/Types/#Promise" class="type-link"><code>Promise</code></a> A promise that will be resolved with a PNG image encoded as a Data URI.</p>
+
+<h4>Example - Exporting a Gauge to an image</h4>
+
+<pre><code>&lt;div id="gauge"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#gauge").kendoRadialGauge({
+        pointer: {
+            value: 50
+        },
+        scale: {
+            min: 0,
+            max: 100
+        }
+    });
+
+    var gauge = $("#gauge").data("kendoRadialGauge");
+    gauge.exportImage().done(function(data) {
+        kendo.saveAs({
+            dataURI: data,
+            fileName: "gauge.png"
+        });
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-exportPDF"><a href="#methods-exportPDF">exportPDF</a></h3>
+
+<p>Exports the Gauge as a PDF file.
+The result can be saved using <a href="/api/javascript/kendo#methods-saveAs">kendo.saveAs</a>.</p>
+
+<p>The export operation is asynchronous and returns a <a href="http://api.jquery.com/Types/#Promise">promise</a>.
+The promise will be resolved with a PDF file encoded as a <a href="https://developer.mozilla.org/en-US/docs/data_URIs">Data URI</a>.</p>
+
+<h4>Parameters</h4>
+
+<h5>options <a href="/api/javascript/drawing/pdfoptions" class="type-link"><code>kendo.drawing.PDFOptions</code></a> <em>(optional)</em>
+</h5>
+
+<p>Parameters for the exported PDF file.</p>
+
+<h4>Returns</h4>
+
+<p><a href="http://api.jquery.com/Types/#Promise" class="type-link"><code>Promise</code></a> A promise that will be resolved with a PDF file encoded as a Data URI.</p>
+
+<h4>Example - Exporting a chart to a PDF file</h4>
+
+<pre><code>&lt;div id="gauge"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#gauge").kendoRadialGauge({
+        pointer: {
+            value: 50
+        },
+        scale: {
+            min: 0,
+            max: 100
+        }
+    });
+
+    var gauge = $("#gauge").data("kendoRadialGauge");
+    gauge.exportPDF({ paperSize: "A5", landscape: true }).done(function(data) {
+        kendo.saveAs({
+            dataURI: data,
+            fileName: "gauge.pdf"
+        });
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-exportSVG"><a href="#methods-exportSVG">exportSVG</a></h3>
+
+<p>Exports the Gauge as an SVG document.
+The result can be saved using <a href="/api/javascript/kendo#methods-saveAs">kendo.saveAs</a>.</p>
+
+<p>The export operation is asynchronous and returns a <a href="http://api.jquery.com/Types/#Promise">promise</a>.
+The promise will be resolved with a SVG document encoded as a <a href="https://developer.mozilla.org/en-US/docs/data_URIs">Data URI</a>.</p>
+
+<h4>Parameters</h4>
+
+<h5>options <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a> <em>(optional)</em>
+</h5>
+
+<p>Export options.</p>
+
+<h5>options.raw <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h5>
+
+<p>Resolves the promise with the raw SVG document without the Data URI prefix.</p>
+
+<h4>Returns</h4>
+
+<p><a href="http://api.jquery.com/Types/#Promise" class="type-link"><code>Promise</code></a> A promise that will be resolved with a SVG document encoded as a Data URI.</p>
+
+<h4>Example - Exporting a chart to an SVG document</h4>
+
+<pre><code>&lt;div id="gauge"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#gauge").kendoRadialGauge({
+        pointer: {
+            value: 50
+        },
+        scale: {
+            min: 0,
+            max: 100
+        }
+    });
+
+    var gauge = $("#gauge").data("kendoRadialGauge");
+    gauge.exportSVG().done(function(data) {
+        kendo.saveAs({
+            dataURI: data,
+            fileName: "gauge.svg"
+        });
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-redraw"><a href="#methods-redraw">redraw</a></h3>
+
+<p>Redraws the gauge.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="gauge"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#gauge").kendoRadialGauge({
+    pointer: {
+    value: 50
+    },
+    scale: {
+    min: 0,
+    max: 100
+    }
+});
+setTimeout(function(){
+    var gauge = $("#gauge").data("kendoRadialGauge");
+    gauge.redraw();
+},1000)     
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-resize"><a href="#methods-resize">resize</a></h3>
+
+<p>Adjusts the widget layout to match the size of the container.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="gauge" style="width: 100px; height: 100px;"&gt;&lt;/div&gt;
+&lt;script&gt;
+    $("#gauge").kendoRadialGauge({
+        pointer: {
+            value: 50
+        },
+        scale: {
+            min: 0,
+            max: 100
+        }
+    });
+
+    $("#gauge")
+    .css({ width: "200px", height: "200px" })
+    .data("kendoRadialGauge").resize();
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>force <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>optional</em>
+</h5>
+
+<p>Defines whether the widget should proceed with resizing even if the element dimensions have not changed.</p>
+
+<h3 id="methods-svg"><a href="#methods-svg">svg</a></h3>
+
+<p>Returns the <a href="http://www.w3.org/Graphics/SVG/">SVG</a> representation of the gauge.
+The returned string is a self-contained SVG document that can be used as is or
+converted to other formats using tools like <a href="http://inkscape.org/">Inkscape</a> and
+<a href="http://www.imagemagick.org/">ImageMagick</a>.
+Both programs provide command-line interface suitable for server-side processing.</p>
+
+<blockquote>
+<p>This method is obsoleted by <a href="#methods-exportSVG">exportSVG</a>, but will remain fully functional.</p>
+</blockquote>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="gauge"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#gauge").kendoRadialGauge({
+    pointer: {
+        value: 50
+    },
+    scale: {
+        min: 0,
+        max: 100
+    }
+});
+var gauge = $("#gauge").data("kendoRadialGauge");
+var svg = gauge.svg();
+console.log(svg); // displays the SVG string
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-imageDataURL"><a href="#methods-imageDataURL">imageDataURL</a></h3>
+
+<p>Returns a PNG image of the gauge encoded as a <a href="https://developer.mozilla.org/en-US/docs/data_URIs">Data URL</a>.</p>
+
+<blockquote>
+<p>This method is obsoleted and replaced by <a href="#methods-exportImage">exportImage</a>, but will remain fully functional.</p>
+</blockquote>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> A data URL with <code>image/png</code> MIME type. Will be <code>null</code> if the browser does not support the <code>canvas</code> element.</p>
+
+<h4>Example - show a snapshot of the gauge</h4>
+
+<pre><code>&lt;div id="gauge"&gt;&lt;/div&gt;
+&lt;a download="export.png" id="export" class="k-button"&gt;Export PNG&lt;/a&gt;
+&lt;script&gt;
+$("#gauge").kendoRadialGauge({
+    pointer: {
+        value: 50
+    },
+    scale: {
+        min: 0,
+        max: 100
+    }
+});
+
+$("#export").on("click", function() {
+var gauge = $("#gauge").data("kendoRadialGauge");
+var imageDataURL = gauge.imageDataURL();
+
+if (navigator.msSaveBlob) {
+    var blob = toBlob(imageDataURL, "image/png");
+    navigator.msSaveBlob(blob, this.getAttribute("download"));
+} else {
+    this.href = imageDataURL;
+}
+});
+
+// See: http://goo.gl/qlg5dd
+function toBlob(base64, type) {
+var rawData = base64.substring(base64.indexOf("base64,") + 7);
+var data = atob(rawData);
+var arr = new Uint8Array(data.length);
+
+for (var i = 0; i &lt; data.length; ++i) {
+    arr[i] = data.charCodeAt(i);
+}
+
+return new Blob([ arr.buffer ], { type: type });
+}
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-value"><a href="#methods-value">value</a></h3>
+
+<p>Change the value of the gauge.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="gauge"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#gauge").kendoRadialGauge({
+    pointer: {
+    value: 50
+    },
+    scale: {
+    min: 0,
+    max: 100
+    }
+});
+setTimeout(function(){
+    $("#gauge").data("kendoRadialGauge").value(20);
+},1000)     
+&lt;/script&gt;
+</code></pre> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

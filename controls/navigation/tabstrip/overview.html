@@ -1,0 +1,443 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="documentation">
+        <meta name="product" content="kendo-ui">
+        <meta name="subproduct" content="tabstrip">
+        <title>Overview | Kendo UI TabStrip</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Learn how to initialize the Kendo UI TabStrip widget and configure its behaviors.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("controls/navigation/tabstrip/overview.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//controls/navigation/tabstrip/overview.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="tabstrip-overview"><a href="#tabstrip-overview">TabStrip Overview</a></h1>
+
+<p>The <a href="http://demos.telerik.com/kendo-ui/tabstrip/index">Kendo UI TabStrip widget</a> displays a collection of tabs with associated content. It is composed of an unordered list of items, representing tabs, and a collection of <code>div</code> elements, which contain the content for each tab.</p>
+
+<h2 id="getting-started"><a href="#getting-started">Getting Started</a></h2>
+
+<h3 id="initialize-the-tabstrip"><a href="#initialize-the-tabstrip">Initialize the TabStrip</a></h3>
+
+<p>The Kendo UI TabStrip widget can be initialized in two ways:</p>
+
+<ul>
+<li>From HTML markup</li>
+<li>From a JSON data object</li>
+</ul>
+
+<blockquote>
+<p><strong>Important</strong>  </p>
+
+<ul>
+<li>As TabStrip should be initialized after the DOM is fully loaded, make sure you create it within a $(document).ready() statement.</li>
+<li>It is not required for the tabs of the widget to have content. Therefore, if you need to have tabs with no content, it is safe to omit their associated <code>div</code> elements.</li>
+</ul>
+</blockquote>
+
+<h4>Using HTML Markup</h4>
+
+<p>The example below demonstrates how to initialize Kendo UI TabStrip from HTML markup.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div id="tabstrip"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;First tab&lt;/li&gt;
+        &lt;li&gt;Second tab&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div&gt;First tab content&lt;/div&gt;
+    &lt;div&gt;Second tab content&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    $(document).ready(function() {
+        $("#tabstrip").kendoTabStrip();
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h4>Using JSON Data Object</h4>
+
+<p>The example below demonstrates how to initialize Kendo UI TabStrip from a JSON data object.</p>
+
+<h6>Example</h6>
+
+<pre><code> &lt;div id="tabstrip"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  $(document).ready(function() {
+    $("#tabstrip").kendoTabStrip({
+      dataTextField: "text",
+      dataContentField: "content",
+      dataUrlField: "url",
+      dataImageUrlField: "imageUrl",
+      dataSpriteCssClass: "spriteCssClass",
+      dataContentUrlField: "contentUrl",
+      dataSource:
+      [{
+        text: "Item 1",
+        url: "http://www.telerik.com"               // (Optional) Link URL if navigation is needed
+      },
+       {
+         text: "Item 2",
+         content: "text"                             // Content for the content element
+       },
+       {
+         text: "Item 3",
+         contentUrl: "partialContent.html"           // From where to load the item content
+       },
+       {
+         text: "Item 4",
+         imageUrl: "http://www.telerik.com/test.jpg" // (Optional) Item image URL
+       },
+       {
+         text: "Item 5",
+         spriteCssClass: "imageClass3"               // (Optional) Item image sprite CSS class
+       }]
+    });
+  });
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="configuration-tips"><a href="#configuration-tips">Configuration Tips</a></h2>
+
+<h3 id="load-content-with-ajax"><a href="#load-content-with-ajax">Load Content with AJAX</a></h3>
+
+<p>Kendo UI TabStrip provides built-in support for asynchronously loading content from remote URLs. These URLs return HTML content that can be loaded in the TabStrip item content area. Content <code>div</code> elements must be empty for the AJAX loading to work.</p>
+
+<p>The example below demonstrates how to load content asynchronously using AJAX.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div id="tabstrip"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;First Tab&lt;/li&gt;
+        &lt;li&gt;Second Tab&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+ &lt;/div&gt;
+
+ &lt;script&gt;
+    $(document).ready(function(){
+        $("#tabstrip").kendoTabStrip({
+            contentUrls: [null, "html-content-snippet.html"]
+        });
+    });
+ &lt;/script&gt;
+</code></pre>
+
+<h3 id="dynamic-tabs"><a href="#dynamic-tabs">Dynamic Tabs</a></h3>
+
+<p>The TabStrip API provides methods for dynamically adding or removing TabStrip bars. To add items, provide the new item as a JSON object along with a reference item. A reference item is a target TabStrip tab HTML element that already exists in the TabStrip. The reference item will be used to determine the placement in the hierarchy of the new tab. Any valid jQuery selector can be used to obtain a reference to the target item.</p>
+
+<p>For more information on configuring TabStrip items, see the <a href="http://demos.telerik.com/kendo-ui/tabstrip/api">TabStrip API demos</a>.</p>
+
+<p>The example below demonstrates how to add a new TabStrip tab.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div id="tabstrip"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;First Tab&lt;/li&gt;
+        &lt;li&gt;Second Tab&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    var tabstrip = $("#tabstrip").data("kendoTabStrip");
+    tabstrip.insertAfter(
+        { text: "New Tab" },
+        tabstrip.tabGroup.children("li:last")
+    );
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="scrollable-tabs"><a href="#scrollable-tabs">Scrollable Tabs</a></h3>
+
+<p>As of 2015 Q2 (2015.2.624) version Kendo UI TabStrip supports scrollable tabs for <code>tabPosition</code> of <code>"top"</code> and <code>"bottom"</code>. During initialization, the widget checks if the tabs fit in the available horizontal space and if not, scroll buttons will appear on the widget sides. This behavior is enabled by default, but <a href="/api/javascript/ui/tabstrip#configuration-scrollable">can be disabled</a>.</p>
+
+<p>If the TabStrip has no fixed width and is placed in a fluid layout, it can re-check whether tab scrolling is necessary, or is no longer required. To achieve this, execute the widget's <a href="/using-kendo-in-responsive-web-pages#individual-widget-resizing"><code>resize()</code> method</a>, e.g. in <code>window.resize</code>. The <code>resize</code> method will also show the right scroll button if the last and selected tab becomes invisible as a result of TabStrip shrinking.</p>
+
+<p>For additional information on the configuration, events, and methods of the widget, check the <a href="/api/javascript/ui/tabstrip">TabStrip API</a>.</p>
+
+<h3 id="scrollable-content"><a href="#scrollable-content">Scrollable Content</a></h3>
+
+<p>The TabStrip content containers are scrollable by default. This allows the widget to display scrollbars if it has a fixed height and holds large content that cannot fit. If needed, it is possible to disable TabStrip content scrolling. This can help in scenarios where the TabStrip hosts a widget such as a Menu that needs to overflow outside the TabStrip. For more information and a runnable example, check the following how-to article: <a href="/controls/navigation/tabstrip/how-to/disable-content-scrolling">Disable TabStrip Content Scrolling</a></p>
+
+<p>Depending on the browser, the content's scroll position may be reset when changing the active tab. If persisting the scroll position is required, use the <a href="/api/javascript/ui/tabstrip#events-select"><code>select</code></a> event to save the current scroll position, and the <a href="/api/javascript/ui/tabstrip#events-activate"><code>activate</code></a> event to restore it. Here is an example: <a href="/controls/navigation/tabstrip/how-to/save-content-scroll-position">Save TabStrip Content Scroll Position</a></p>
+
+<h3 id="select-tab-on-initial-load"><a href="#select-tab-on-initial-load">Select Tab on Initial Load</a></h3>
+
+<p>It is possible to select a tab and display its associated content upon the initial load. There are two ways to accomplish this task:</p>
+
+<ol>
+<li> Add a <code>"k-state-active"</code> class to the DOM element of the tab</li>
+<li> Use <code>select()</code> to target and select a tab either by selector, or index</li>
+</ol>
+
+<p>Both approaches produce the same result.</p>
+
+<p>The example below demonstrates how to manually select a default tab using HTML.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div id="tabstrip"&gt;
+    &lt;ul&gt;
+        &lt;li class="k-state-active"&gt;First Tab&lt;/li&gt;
+        &lt;li&gt;Second Tab&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>The example below demonstrates how to initialize a TabStrip and select the first tab via <code>select</code> (element).  </p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div id="tabstrip"&gt;
+    &lt;ul&gt;
+        &lt;li class="k-state-active"&gt;First Tab&lt;/li&gt;
+        &lt;li&gt;Second Tab&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    $(document).ready(function(){
+        var tabstrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
+        tabstrip.select(tabstrip.tabGroup.children("li:first"));
+    });
+&lt;/script&gt;
+</code></pre>
+
+<p>The example below demonstrates how to initialize a TabStrip and select the first tab via <code>select</code> (index).</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div id="tabstrip"&gt;
+    &lt;ul&gt;
+        &lt;li class="k-state-active"&gt;First Tab&lt;/li&gt;
+        &lt;li&gt;Second Tab&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    $(document).ready(function(){
+        var tabstrip = $("#tabstrip").kendoTabStrip().data("kendoTabStrip");
+        tabstrip.select(0);
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="see-also"><a href="#see-also">See Also</a></h2>
+
+<p>Other articles on Kendo UI TabStrip:</p>
+
+<ul>
+<li><a href="/aspnet-mvc/helpers/tabstrip/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the TabStrip Widget</a></li>
+<li><a href="/jsp/tags/tabstrip/overview">Overview of the TabStrip JSP Tag</a></li>
+<li><a href="/php/widgets/tabstrip/overview">Overview of the TabStrip PHP Class</a></li>
+<li><a href="/controls/navigation/tabstrip/how-to/show-tabs-at-bottom">How to Display Buttons at the Bottom</a></li>
+<li><a href="/controls/navigation/tabstrip/how-to/expand-height">How to Expand to 100% Height and Auto-Resize</a></li>
+<li><a href="/controls/navigation/tabstrip/how-to/initiliaze-grid-in-tabstrip">How to Initialize the Grid in Kendo UI TabStrip</a></li>
+<li><a href="/controls/navigation/tabstrip/how-to/vertical-keyboard-scroll">How to Scroll TabStrip with Keyboard</a></li>
+<li><a href="/api/javascript/ui/tabstrip">TabStrip JavaScript API Reference</a></li>
+</ul> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

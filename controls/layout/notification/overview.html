@@ -1,0 +1,513 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="documentation">
+        <meta name="product" content="kendo-ui">
+        <meta name="subproduct" content="notification">
+        <title>Overview | Kendo UI Notification</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Learn how to initialize the Kendo UI Notification widget and customize it functionalities.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("controls/layout/notification/overview.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//controls/layout/notification/overview.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="notification-overview"><a href="#notification-overview">Notification Overview</a></h1>
+
+<p>The <a href="http://demos.telerik.com/kendo-ui/notification/index">Kendo UI Notification widget</a> provides a styled UI widget with arbitrary content, which can provide information to the user on various occasions.</p>
+
+<p>This article assumes that you are familiar with the <a href="/intro/widget-basics/events-and-methods">fundamental Kendo UI widget concepts</a>.</p>
+
+<h2 id="getting-started"><a href="#getting-started">Getting Started</a></h2>
+
+<h3 id="initialize-the-notification"><a href="#initialize-the-notification">Initialize the Notification</a></h3>
+
+<p>Kendo UI Notification can be initialized from any element, because it does not manipulate the element's content.</p>
+
+<p>The element will be hidden if the widget is used with popup notifications, or if static notifications are not appended to the Notification element. In these two cases it is assumed that the element will not be needed. However, if the Notification element is meant to contain static (non-popup) notifications, then its tag is recommended to be such so as to allow nesting the elements inside the notifications' template. For example, inline elements, such as <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;em&gt;</code>, etc. cannot contain block elements, such as <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>, headings, etc. It is perfectly fine to use a <code>&lt;div&gt;</code> element for initiating the widget.</p>
+
+<p>The example below demonstrates how to initialize the Notification and what its basic usage is.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;span id="notification"&gt;&lt;/span&gt;
+
+&lt;script&gt;
+$(function(){
+    var notificationElement = $("#notification");
+
+    // initialize the widget
+    notificationElement.kendoNotification();
+
+    // get the widget object
+    var notificationWidget = notificationElement.data("kendoNotification");
+
+    // display a "foo" message
+    notificationWidget.show("foo");
+});
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="configuration"><a href="#configuration">Configuration</a></h2>
+
+<h3 id="configuration-Notification"><a href="#configuration-Notification">Notification Types</a></h3>
+
+<p>Kendo UI Notification provides the following built-in notification types: <code>"info"</code>, <code>"success"</code>, <code>"warning"</code> and <code>"error"</code>. By using them, you can apply different templates and looks for each type. The built-in types provide ready-to-use shorthand display methods and styling functionalities. The shorthand method names match the listed notification types. If you do not specify a notification type, the widget assumes that the default <code>"info"</code> should be invoked and will display it. You can also defines an unlimited amount of custom notification types and corresponding templates.</p>
+
+<p>For more information on Notification templates, refer to the <a href="/controls/layout/notification/overview#templates">Templates section of this article</a>.</p>
+
+<p>The example below demonstrates how to apply built-in notification types.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;span id="notification"&gt;&lt;/span&gt;
+
+&lt;script&gt;
+$(function(){
+    var notificationElement = $("#notification");
+    notificationElement.kendoNotification();
+    var notificationWidget = notificationElement.data("kendoNotification");
+
+    // display a "foo" warning message
+    notificationWidget.show("foo", "warning");
+    // the above line is equivalent to
+    notificationWidget.warning("foo");
+
+    // display a "bar" info message
+    notificationWidget.show("bar", "info");
+    // the above line is equivalent to
+    notificationWidget.show("bar");
+    // and also to
+    notificationWidget.info("bar");
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-Hide"><a href="#configuration-Hide">Hide Notifications</a></h3>
+
+<p>By default, Kendo UI Notifications remain visible for 5 seconds and then disappear. Clicking anywhere on a notification hides it right away. You can delay hiding, which is an option configurable in milliseconds. If you set a zero value, the automatic hiding is disabled. After its hiding animation is completed, the dismissed notification is removed from the DOM.</p>
+
+<p>If you want to make the notification more intuitive for the end user, the widget allows for displaying a visible <strong>Close</strong> button.</p>
+
+<p>The default behavior of hiding a notification by clicking anywhere on it can be disabled. In this case, the notification can be dismissed only by clicking the <strong>Close</strong> button, if present.</p>
+
+<p>The option of hiding a notification manually can also be postponed, which is useful if you want to prevent users from accidentally hiding a notification, which has just appeared. Note that by default the option to postpone the hiding of a notification is disabled.</p>
+
+<p>The example below demonstrates how to manage the hiding settings of a notification.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;span id="notification"&gt;&lt;/span&gt;
+
+&lt;script&gt;
+$(function(){
+    $("#notification").kendoNotification({
+        // hide automatically after 7 seconds
+        autoHideAfter: 7000,
+        // prevent accidental hiding for 1 second
+        allowHideAfter: 1000,
+        // show a hide button
+        button: true,
+        // prevent hiding by clicking on the notification content
+        hideOnClick: false
+    });
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-Position"><a href="#configuration-Position">Position and Stack Notifications</a></h3>
+
+<h4>Popup messages</h4>
+
+<p>By default, Kendo UI Notification creates popups, which overlay the other page content. If you do not define any position settings, the first popup will be displayed near the bottom-right corner of the browser viewport and subsequent popups will stack upwards.</p>
+
+<p>You can independently control positioning and stacking. If you do not define any stacking settings, the popups will stack upwards or downwards, depending on the positioning settings. For example, popups displayed at the top of the viewport will stack downwards and vice versa. The automatic settings of the stacking functionality comply with a common preference among users. However, you can render leftward or rightward stacking by explicitly defining the respective settings.  </p>
+
+<p>Popups are <a href="/api/javascript/ui/notification#configuration-position.pinned">pinned</a> by default, which means that they do not change their position when users scroll the page. The pinned functionality is achieved by applying a <code>position:fixed</code> style to the popups. If you want to let the popups move together with the scrolled page, use the <code>position:absolute</code> style.</p>
+
+<p>If the popup content is expected to vary and stacking is likely to occur, it is a good idea to define explicit dimensions. In this way, the popups are aligned and look better when stacked next to one another.</p>
+
+<p>The example below demonstrates how to manage the positioning, stacking, and sizing functionalities of notifications.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;span id="notification"&gt;&lt;/span&gt;
+
+&lt;script&gt;
+$(function(){
+    $("#notification").kendoNotification({
+        position: {
+            // notification popup will scroll together with the other content
+            pinned: false,
+            // the first notification popup will appear 30px from the viewport's top and right edge
+            top: 30,
+            right: 30
+        },
+        // new notifications will appear below old ones
+        stacking: "down",
+        // set appropriate size
+        width: 300,
+        height: 50
+    });
+});
+&lt;/script&gt;
+</code></pre>
+
+<p>There may be cases when the popup notifications appear too quickly or occupy too much space on the screen, so that there is not enough room on the screen. In such cases the subsequent popups will appear outside of the visible viewport area and will be inaccessible (if pinned). If such scenarios are likely to occur, it is recommended to consider using shorter hide delay or static notifications (see below), for better usability.</p>
+
+<p>Stacking works with the help of a Globally Unique Identifier (GUID), which is generated by the widget upon initialization and appended as a CSS class to each notification element. In this way every Notification instance can recognize and manage its own currently visible notifications independently.</p>
+
+<p>When a popup notification message from a given stack is hidden, the remaining visible popups do not move. If automatic moving and repositioning is desired, it can be achieved, as shown in the <a href="/controls/layout/notification/how-to/move-on-notification-hide">Move Visible Notifications after Hiding Others</a> how-to article.</p>
+
+<blockquote>
+<p><strong>Important</strong>  </p>
+
+<p>The usage of more than one Notification widget instances, which display notifications at the same place on the page, is not recommended because the notifications from the multiple instances will overlap.</p>
+</blockquote>
+
+<h4>Static messages</h4>
+
+<p>Kendo UI Notification also allows for displaying static notifications, which do not overlay other elements, but instead take part in the so-called normal flow of the page content. In such cases, the positioning settings are ignored as they do not make sense. When you use static notifications, the stacking direction can only be set to <code>down</code>, which is the default setting, or <code>up</code>, depending on whether new messages should appear after or before the existing ones. Static notifications are displayed if a target container is specified. One widget instance can display either popup, or static notifications, but not both of them at one time.</p>
+
+<p>The example below demonstrates how to enable static notifications.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div id="notification"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+$(function(){
+    $("#notification").kendoNotification({
+        // insert all notifications to the widget's originating element
+        appendTo: "#notification",
+        // new notifications will appear above old ones
+        stacking: "up"
+    });
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-Change"><a href="#configuration-Change">Change Settings for Specific Notification Messages</a></h3>
+
+<p>It is possible for a single Notification widget instance to display different messages with different settings, e.g. messages related to automatic hiding, hide timeouts, etc. To apply the desired configuration options, use the <a href="/api/javascript/ui/widget#methods-setOptions"><code>setOptions</code></a> method. The new options will apply to all messages displayed later on. To restore or change the widget settings again, use <code>setOptions</code> as many times as necessary.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;span id="notification"&gt;&lt;/span&gt;
+&lt;script&gt;
+    var notificationWidget = $("#notification").kendoNotification({
+        autoHideAfter: 1000
+    }).data("kendoNotification");
+
+    notificationWidget.show("foo text"); // message will auto hide after 1 second
+
+    notificationWidget.setOptions({
+        autoHideAfter: 2000
+    });
+
+    notificationWidget.show("bar text"); // message will auto hide after 2 seconds
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="html-output"><a href="#html-output">HTML Output</a></h2>
+
+<p>Each notification is rendered inside the <code>&lt;div&gt;</code> wrapper element:</p>
+
+<pre><code>&lt;div class="k-widget k-notification k-notification-TYPE" data-role="popup"&gt;
+    &lt;!-- ... default or custom template content ... --&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><code>TYPE</code> denotes the <a href="#configuration-Types">notification type</a>, either built-in, or custom, for example <code>k-notification-info</code> or <code>k-notification-success</code>, etc.</p>
+
+<p>When the widget displays popups, the above <code>div.k-notification</code> is nested inside a positioned, either <code>absolute</code>, or <code>fixed</code>, <code>div.k-animation-container</code>, which is an element that wraps every Kendo UI popup.</p>
+
+<p>When the widget displays static notifications, the above <code>div.k-notification</code> is a child of the element specified by the widget's <a href="#configuration-appendTo"><code>appendTo</code></a> setting.</p>
+
+<p>The default template of Kendo UI Notification is shown below. This markup is rendered inside the <code>div.k-notification</code> element.</p>
+
+<pre><code>&lt;div class="k-notification-wrap"&gt;
+    &lt;span class="k-icon k-i-note"&gt;#=typeIcon#&lt;/span&gt;
+        #=content#
+    &lt;span class="k-icon k-i-close"&gt;Hide&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2 id="notification-api"><a href="#notification-api">Notification API</a></h2>
+
+<h3 id="events"><a href="#events">Events</a></h3>
+
+<p>Kendo UI Notification exposes two events: <code>show</code> and <code>hide</code>. The <code>show</code> event is fired when the showing animation starts. The <code>hide</code> event is fired when the hiding animation starts.</p>
+
+<p>For more information on the configuration options, refer to the <a href="/api/javascript/ui/notification">Kendo UI Notification API section</a>.</p>
+
+<h2 id="templates"><a href="#templates">Templates</a></h2>
+
+<blockquote>
+<p><strong>Important</strong>  </p>
+
+<p>The content of this section is intended to users that are familiar with <a href="/framework/templates/overview">Kendo UI templates</a>.</p>
+</blockquote>
+
+<p>Kendo UI Notification allows configuring multiple templates. Each template will be used together with its corresponding <a href="#configuration-Types">notification type</a>, either build-in, or custom. If you define a custom template for a built-in notification type, you will no longer be able to use the corresponding built-in template, but you will still be able to use the shorthand show methods, as demonstrated in the example below.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;span id="notification"&gt;&lt;/span&gt;
+
+&lt;script id="myAlertTemplate" type="text/x-kendo-template"&gt;
+    &lt;div class="myAlert"&gt;System alert generated at #= time # : #= myMessage #&lt;/div&gt;
+&lt;/script&gt;
+
+&lt;script&gt;
+$(function(){
+    var notificationElement = $("#notification");
+
+    notificationElement.kendoNotification({
+        templates: [{
+                // define a custom template for the built-in "warning" notification type
+                type: "warning",
+                template: "&lt;div class='myWarning'&gt;Warning: #= myMessage #&lt;/div&gt;"
+            }, {
+                // define a template for the custom "timeAlert" notification type
+                type: "timeAlert",
+                template: "&lt;div class='myAlert'&gt;System alert generated at #= time # : #= myMessage #&lt;/div&gt;"
+                // template content can also be defined separately
+                //template: $("#myAlertTemplate").html()
+        }]
+    });
+
+    var n = notificationElement.data("kendoNotification");
+
+    // show a warning message using the built-in shorthand method
+    n.warning({
+        myMessage: "some warning message here"
+    });
+
+    // show a "timeAlert" message using the default show() method
+    n.show({
+        time: new Date().toLocaleTimeString(),
+        myMessage: "Server will be restarted."
+    }, "timeAlert");
+});
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="rtl-support"><a href="#rtl-support">RTL Support</a></h2>
+
+<p>Proper right-to-left support for the popup notifications, when using the built-in notification templates, requires the originating element of the Notification widget to be a descendant of an element with a <code>k-rtl</code> class. Static notifications using built-in templates should also be descendants of such a <code>.k-rtl</code> element.</p>
+
+<p>For more information on right-to-left language support, refer to the <a href="http://docs.telerik.com/kendo-ui/web/appearance-rtl">general RTL Support help article</a>.</p>
+
+<h2 id="reference"><a href="#reference">Reference</a></h2>
+
+<h3 id="existing-instances"><a href="#existing-instances">Existing Instances</a></h3>
+
+<p>To access an existing Notification instance, use the <code>.data("kendoNotification")</code> jQuery method, executed by the jQuery object of the originating element.</p>
+
+<p>For detailed information on how to get a reference to a Kendo UI widget, see <a href="/intro/installation/jquery-initialization#getting-reference-to-a-kendo-ui-widget">this help topic</a>.</p>
+
+<p>For further reading on Kendo UI Notification settings, refer to <a href="/api/javascript/ui/notification">Kendo UI Notification API</a>.</p>
+
+<h2 id="see-also"><a href="#see-also">See Also</a></h2>
+
+<p>Other articles on Kendo UI Notification:</p>
+
+<ul>
+<li><a href="/api/javascript/ui/notification">Notification JavaScript API Reference</a></li>
+<li><a href="/controls/layout/notification/how-to/move-on-window-resize">How to Move Popup Notifications on Window Resize</a></li>
+<li><a href="/controls/layout/notification/how-to/move-on-notification-hide">How to Move Visible Notifications after Hiding Others</a></li>
+<li><a href="/controls/layout/notification/how-to/stacking-left-right">How to Stack Static Notifications to the Left or Right</a></li>
+<li><a href="/aspnet-mvc/helpers/notification/overview">Overview of the ASP.NET MVC HtmlHelper Extension for the Notification Widget</a></li>
+<li><a href="/jsp/tags/notification/overview">Overview of the Notification JSP Tag</a></li>
+<li><a href="/php/widgets/notification/overview">Overview of the Notification PHP Class</a></li>
+</ul> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

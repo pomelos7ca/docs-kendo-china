@@ -1,0 +1,488 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="documentation">
+        <meta name="product" content="kendo-ui">
+        
+        <title>Charts | Kendo UI Accessibility Support</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Learn more tips and tricks how to make Kendo UI Charts accessible.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("accessibility/five-tips-for-accessible-charts-with-dataviz.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//accessibility/five-tips-for-accessible-charts-with-dataviz.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="charts"><a href="#charts">Charts</a></h1>
+
+<p>This article provides practical tips, code samples, and illustrative videos for making Kendo UI charts and graphs more accessible so that disabled users can seamlessly interact with the content.</p>
+
+<h2 id="accessibility-case"><a href="#accessibility-case">Accessibility Case</a></h2>
+
+<p>The basic accessibility standards are:</p>
+
+<ul>
+<li>WAI_ARIA</li>
+<li>Section 508</li>
+<li>W3C Web Content Accessibility Guidelines (WCAG) 2.0</li>
+</ul>
+
+<p>Section 508 specifies the law which governs the creation of accessible software for government entities in the United States. WCAG and WAI-ARIA contain a comprehensive set of guidelines for creating accessible web sites and applications.</p>
+
+<p>The fundamental requirement that refers to and is fulfilled by the Kendo UI data visualization components is:</p>
+
+<ul>
+<li>(Section 508) "(a) A text equivalent for every non-text element shall be provided (e.g., via <code>alt</code>, <code>longdesc</code>, or in-element content)."</li>
+<li>(WCAG 2.0) "Guideline 1.1 Text Alternatives: Provide text alternatives for any non-text content so that it can be changed into other forms people need, such as large print, braille, speech, symbols or simpler language."</li>
+</ul>
+
+<p>Providing text equivalents for non-text content is a key tenant of accessibility. Visual content, such as images, animations, video, and audio, is a valuable asset for each web application and web site. However, these visual elements are impossible to parse by screen readers and other assistive technologies and cannot be enjoyed by disabled users. That is why, both Section 508 and WCAG require that all non-decorative and non-text content has to be made accessible to assistive technologies.</p>
+
+<h2 id="data-visualization"><a href="#data-visualization">Data Visualization</a></h2>
+
+<p>The Kendo UI charts and graphs definitely fit the bill of "non-text content". By definition, Kendo UI allows you to create visual charts and graphs that enhance textual or tabular data. These cannot possibly be accessible, out-of-the-box, right?</p>
+
+<p>Actually, they can be. And with a little bit of work as you add charts and graphs to your applications, they can be made even more accessible.</p>
+
+<p>First, take a look at the out-of-the-box experience with Kendo UI. The <a href="http://www.youtube.com/watch?v=lymGnquNxBg&amp;feature=youtu.be">video below</a>, uses the popular VoiceOver screen reader on Apple OS X to navigate a Donut chart.</p>
+
+<iframe width="853" height="480" src="http://www.youtube.com/embed/lymGnquNxBg" frameborder="0" allowfullscreen></iframe>
+
+<p>As you can see from the video, you are able to use a screen reader to hear both the title of the chart, as well as the values in the legend. Because Kendo UI creates charts using inline SVG elements, and SVG is just markup, VoiceOver is able to drill into the chart and piece together a reasonable representation of the content. Had we instead used a Canvas element to create the chart, we would be out of luck. Score one for SVG!</p>
+
+<p>Of course, if you watched the video, you may have also noticed that the screen reader did not select the chart exactly, it just started reading the title. What is more, while it is great that the reader can access and read legend values, much more can be done to make this chart even more consumable and accessible for disabled users.</p>
+
+<p>In the next section look at five steps you can take to improve the accessibility of your charts. Each takes only minutes to add to your apps, and you can adopt any or all of these as long as they make sense. You might as well find that not only do these steps make your charts more accessible to disabled users, but also that the improvements enhance the value of your content for all of your users regardless of their abilities.</p>
+
+<h2 id="tips-for-accessible-charts"><a href="#tips-for-accessible-charts">Tips for Accessible Charts</a></h2>
+
+<h3 id="1-provide-text-description"><a href="#1-provide-text-description">1. Provide Text Description</a></h3>
+
+<p>The simplest thing you can do is add a pure-text description of your chart to the page. Here is an example of the markup for such a chart:</p>
+
+<pre><code>&lt;figure&gt;
+    &lt;div id="chart" role="img" title="Sources of Electricity Produced in Spain, 2008"&gt;&lt;/div&gt;
+    &lt;figcaption&gt;
+        In 2008, Spain produced electricity for its residents in four ways.
+        Chief among these was Nuclear power, which accounted for approximately 49% of production.
+        Next were Wind and Hydro-electric power, which produced
+        27% and 22% of the nation's electricity, respectively.
+        In a distant fourth was solor power,
+        which accounted for only 2% of all electricity produced by the country.
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+
+<p>Create the chart with the following JavaScript:</p>
+
+<pre><code>function createChart() {
+    $("#chart").kendoChart({
+      title: {
+        text: "Sources of Electricity Produced in Spain, 2008"
+      },
+      legend: {
+        position: "bottom",
+        labels: {
+          template: "#= text # (#= value #%)"
+        }
+      },
+      seriesDefaults: {
+        labels: {
+          visible: true,
+          position: "outsideEnd",
+          format: "{0}%"
+        }
+      },
+      series: [{
+        type: "donut",
+        data: [{
+          category: "Hydro",
+          value: 22
+        }, {
+          category: "Solar",
+          value: 2
+        }, {
+          category: "Nuclear",
+          value: 49
+        }, {
+          category: "Wind",
+          value: 27
+        }]
+    }],
+    tooltip: {
+      visible: true,
+      format: "{0}%"
+    }
+  });
+}
+
+createChart();
+</code></pre>
+
+<p>If you take a look at the above HTML, you will see that the <code>div</code> chart is wrapped in a <code>figure</code> element and then a <code>figcaption</code> that explains the chart in detail is added. You can also visit <a href="http://jsbin.com/odowud/9/edit">jsbin.com/odowud/9</a> for a complete working example.</p>
+
+<p>Here is a <a href="http://www.youtube.com/watch?v=QyB3sTVRd3E&amp;feature=youtu.be">brief video</a> of VoiceOver interacting with the <code>figcaption</code> element:</p>
+
+<pre><code>&lt;iframe width="853" height="480" src="http://www.youtube.com/embed/QyB3sTVRd3E" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+</code></pre>
+
+<p>In this example the description is detailed, but it might as well not be. The goal is to provide disabled users with the key information found in your chart, which will vary depending on the data.</p>
+
+<h3 id="2-add-role-and-title-to-chart-element">
+<a href="#2-add-role-and-title-to-chart-element">2. Add </a><code>role</code> and <code>title</code> to Chart Element</h3>
+
+<p>Another simple step you can take is to add a WAI-ARIA role and a title to the <code>div</code> that contains your chart. This can be as simple as doing the following:</p>
+
+<pre><code>    &lt;div id="chart" role="img" title="Sources of Electricity Produced in Spain, 2008"&gt;&lt;/div&gt;
+</code></pre>
+
+<p>In the first video, even though VoiceOver could read the chart title and legend to it, it could not select the container, or even tell you were interacting with an HTML element. By adding a role of <code>img</code> and a title, VoiceOver can do both, which you can see in the first 15 seconds of the video for step 1.</p>
+
+<h3 id="3-add-title-and-desc-to-the-root-of-the-svg-element">
+<a href="#3-add-title-and-desc-to-the-root-of-the-svg-element">3. Add </a><code>title</code> and <code>desc</code> to the Root of the <code>svg</code> Element</h3>
+
+<p>The next step we can take is to manually add title and description elements to the SVG element created by Kendo UI. These elements can be leveraged by screen readers as fallback content to be read to disabled users.</p>
+
+<p>First, create a template script block for the <code>&lt;title&gt;</code> and <code>&lt;desc&gt;</code> fields:</p>
+
+<pre><code>    &lt;script id="chartTmpl" type="text/x-kendo-tmpl"&gt;
+        &lt;title&gt;#= title #&lt;/title&gt;
+        &lt;desc&gt;#= description #&lt;/desc&gt;
+    &lt;/script&gt;
+</code></pre>
+
+<p>Then, load the <code>html</code> for that block to a <code>kendo.template</code> and render the template using a <code>chartDetails</code> object. Finally, use jQuery to select the <code>svg</code> element inside of your chart <code>div</code> and prepend the title and description to the beginning of that element.</p>
+
+<pre><code>    var chartDetails = {
+      title: "Sources of Electricity Produced in Spain, 2008",
+      description: "Graphic illustrating, by percentage, the four primary electricity sources for Spain in 2008."
+    };
+
+    function createChart() { ... }
+
+    function makeChartAccessible() {
+      var template = kendo.template($("#chartTmpl").html());
+
+      $('#chart svg').prepend(template(chartDetails));
+    }
+
+    createChart();
+    makeChartAccessible();
+</code></pre>
+
+<p>For a complete working sample, check out <a href="http://jsbin.com/odowud/19/edit">jsbin.com/odowud/19</a>.</p>
+
+<p>At the time of this writing, VoiceOver (as well as probably all other major screen readers) does not do anything with the <code>title</code> and <code>desc</code> elements, but since this technique is explicitly called out in the W3C <a href="http://www.w3.org/TR/SVG-access/">guidelines for accessible SVG</a>, this step is recommended even if for a future-proofing technique.</p>
+
+<h3 id="4-generate-accessible-data-tables-from-datasource"><a href="#4-generate-accessible-data-tables-from-datasource">4. Generate Accessible Data Tables from DataSource</a></h3>
+
+<p>The last two steps deal with creating a data table to serve as an alternative or supplement to the chart or graph. Assuming you are using a DataSource to populate your chart, you can use the same DataSource and Kendo UI templates to create a tabular representation of the same data.</p>
+
+<p>First, create a template script block for your table.</p>
+
+<pre><code>    &lt;script id="tableScript" type="text/x-kendo-tmpl"&gt;
+        &lt;table id="chartTable"&gt;
+          &lt;caption&gt;Sources of Electricity Produced in Spain, 2008&lt;/caption&gt;
+          &lt;tr&gt;
+            &lt;th scope="col"&gt;Category&lt;/th&gt;
+            &lt;th scope="col"&gt;Percentage&lt;/th&gt;
+          &lt;/tr&gt;
+          # for(var i = 0, len = data.length; i &lt; len; i++) { #
+            &lt;tr&gt;
+              &lt;th scope="row"&gt;#= data[i].category #&lt;/th&gt;
+              &lt;td&gt;#= data[i].value #%&lt;/td&gt;
+            &lt;/tr&gt;
+           # } #
+        &lt;/table&gt;
+    &lt;/script&gt;
+</code></pre>
+
+<p>Next, declare a <code>createTable</code> function, where you will pass the template script into a Kendo UI template, render it with the DataSource, and then add the table to the page.</p>
+
+<pre><code>var chartData = new kendo.data.DataSource({
+  data: [{
+    category: "Hydro",
+    value: 22
+  }, {
+    category: "Solar",
+    value: 2
+  }, {
+    category: "Nuclear",
+    value: 49
+  }, {
+    category: "Wind",
+    value: 27
+  }]
+});
+
+function createTable() {
+  var template = kendo.template($("#tableScript").html());
+   $("body").prepend(template(chartData.data()));
+}
+</code></pre>
+
+<p>The result is a simple, accessible table based on the same data as the chart itself. Here is a <a href="http://www.youtube.com/watch?v=0xdrBjwiFVA&amp;feature=plcp">quick video</a> of how VoiceOver allows you to interact with the table:</p>
+
+<pre><code>&lt;iframe width="853" height="480" src="http://www.youtube.com/embed/0xdrBjwiFVA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+</code></pre>
+
+<p>For a complete working sample of this example, see <a href="http://jsbin.com/odowud/15/edit">http://jsbin.com/odowud/15</a>.</p>
+
+<h3 id="5-create-off-screen-tables-and-swapped-on-screen-tables-and-charts"><a href="#5-create-off-screen-tables-and-swapped-on-screen-tables-and-charts">5. Create Off-Screen Tables and Swapped On-Screen Tables and Charts</a></h3>
+
+<p>Generating a data table is nice, but you may not want to display the raw data on-screen with the chart for all users. In that case, you have two options. You can either 1) place the table off-screen, invisible to sighted users, but available to screen readers, or 2) provide all users with the ability to switch between the chart and the table.</p>
+
+<p>To make the first option work, start by creating a CSS class called <code>hidden</code>, which positions any element 10,000px to the left and off-screen.</p>
+
+<pre><code>.hidden {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+</code></pre>
+
+<p>Now, your data table is no longer on the screen, but it is accessible to screen readers as shown in the <a href="http://www.youtube.com/watch?v=0xdrBjwiFVA&amp;feature=youtu.be">following video</a>:</p>
+
+<pre><code>&lt;iframe width="853" height="480" src="http://www.youtube.com/embed/0xdrBjwiFVA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+</code></pre>
+
+<p>For a complete working sample of this example, see <a href="http://jsbin.com/odowud/20/edit">http://jsbin.com/odowud/20</a>.</p>
+
+<p>For an alternative approach, place a link or button on the screen that allows the user to swap between the table and the chart. The advantage of this approach is that it enhances the experience for all users by giving them a choice as to which presentation of the data they prefer.</p>
+
+<p>In this case, place a <strong>Show Table</strong> link on the screen. When the user clicks this link, the chart is hidden, the table is displayed, and the link text changes to <strong>Show Chart</strong>.</p>
+
+<pre><code>var toggle = $('#toggle'); // HTML Link Element ID
+toggle.on('click', function() {
+  if (chartTable.hasClass('hidden')) {
+    chart.addClass('hidden');
+    chartTable.removeClass('hidden');
+    toggle.text("Show Chart");
+  } else {
+    chartTable.addClass('hidden');
+    chart.removeClass('hidden');
+    toggle.text("Show Table");
+  }
+});
+</code></pre>
+
+<p>VoiceOver users can now choose which representation they wish to interact with as displayed in the <a href="http://www.youtube.com/watch?v=kZNz1H2Zp3U&amp;feature=relmfu">following video</a>:</p>
+
+<pre><code>&lt;iframe width="853" height="480" src="http://www.youtube.com/embed/kZNz1H2Zp3U" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+</code></pre>
+
+<p>For a complete working sample of this example, see <a href="http://jsbin.com/odowud/21/edit">http://jsbin.com/odowud/21</a>.</p>
+
+<p>SVG (the technology used to power Kendo UI charts) is pretty accessible out of the box, but the tips above can help you make your charts and graphs even more consumable, and thus more accessible, to disabled users. Better still, following these tips and having an accessible mindset as you build your websites and applications can help you create content that is more accessible to all your users.</p>
+
+<h2 id="resources"><a href="#resources">Resources</a></h2>
+
+<ul>
+<li><a href="http://section508.gov/">Section 508</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/">WCAG 2.0</a></li>
+<li><a href="http://www.w3.org/TR/SVG-access/">W3C SVG Accessibility Guidelines</a></li>
+<li><a href="http://www.paciellogroup.com/blog/2011/08/html5-accessibility-chops-interactive-image-example/">HTML5 Accessibility: SVG Text (Paciello Group Blog Post)</a></li>
+</ul>
+
+<h2 id="see-also"><a href="#see-also">See Also</a></h2>
+
+<ul>
+<li><a href="/accessibility/accessibility-overview">Overview of Accessibility Features in Kendo UI</a></li>
+<li><a href="/accessibility/section-508">Section 508 Support in Kendo UI</a></li>
+<li><a href="/accessibility/section-508-wcag">Section 508 and WCAG 2.0 Compliance of Kendo UI Widgets</a></li>
+<li><a href="/accessibility/wai-aria-support-in-kendo">WAI-ARIA Support in Kendo UI</a></li>
+<li><a href="/accessibility/keyboard-support">Keyboard Support in Kendo UI</a></li>
+<li><a href="/accessibility/supporting-rtl-languages">Right-to-Left Language Support in Kendo UI</a></li>
+<li><a href="/accessibility/high-contrast-theme">Working with the Kendo UI High-Contrast Theme</a></li>
+</ul> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

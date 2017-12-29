@@ -1,0 +1,654 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="documentation">
+        <meta name="product" content="kendo-ui">
+        <meta name="subproduct" content="mvvm">
+        <title>Value | Kendo UI MVVM</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Learn how to keep the value of a DOM widget and the value of a View-Model field in sync by using the value binding in Kendo UI MVVM.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("framework/mvvm/bindings/value.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//framework/mvvm/bindings/value.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="value-binding"><a href="#value-binding">Value Binding</a></h1>
+
+<p>The <code>value</code> binding keeps the value of a DOM element or widget and the value of a View-Model field in sync. When the end-user changes the value of the DOM element or widget, the bound View-Model value is updated. If the View-Model value is updated from code, then the value of the bound DOM element or widget is updated visually.</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<p>Value binding supports only DOM elements with a <code>value</code> property and widgets that have a <code>value()</code> method. The DOM element or widget also must fire a <code>change</code> event when the user changes its value. Changing the widget's value programmatically via the <code>value()</code> method must not fire the <code>change</code> event.</p>
+</blockquote>
+
+<p>The elements that are supported are <code>input</code>, <code>textarea</code>, and <code>select</code>. The widgets that are supported are all that have the notion of a value—Kendo UI AutoComplete, ColorPicker, ComboBox, DropDownList, DatePicker, DateTimePicker, Editor, MaskedTextBox, MultiSelect, NumericTextBox, Slider, TimePicker, and Upload.</p>
+
+<p>If you want to set the text or HTML content of a DOM element, use the <code>text</code> or <code>html</code> bindings instead of the <code>value</code> binding.</p>
+
+<p>Checkboxes (<code>&lt;input type="checkbox" /&gt;</code>) and radio buttons (<code>&lt;input type="radio" /&gt;</code>) should use the <a href="/framework/mvvm/bindings/checked"><code>checked</code></a> binding instead.</p>
+
+<h2 id="value-binding-of-elements-input-and-textarea"><a href="#value-binding-of-elements-input-and-textarea">Value Binding of Elements: input and textarea</a></h2>
+
+<p>Kendo UI MVVM displays the View-Model value as the value of an <code>input</code> or <code>textarea</code> element.</p>
+
+<p>The example below demonstrates how to use the <code>value</code> binding with an <code>input</code> or <code>textarea</code> element.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div id="view"&gt;
+    &lt;input data-bind="value: inputValue" /&gt;
+    &lt;textarea data-bind="value: textareaValue"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;script&gt;
+var viewModel = kendo.observable({
+    inputValue: "Input value",
+    textareaValue: "Textarea value"
+});
+
+kendo.bind($("#view"), viewModel);
+&lt;/script&gt;
+</code></pre>
+
+<p>After calling <code>kendo.bind</code> the <code>input</code> element displays the value of the <code>inputValue</code> field. The <code>textarea</code> displays the value of the <code>textareaValue</code> field. If the value of the <code>input</code> changes, the <code>inputValue</code> field changes as well. Likewise, if the value of the <code>textarea</code> changes, so is <code>textareaValue</code>. Changing <code>inputValue</code> or <code>textareaValue</code> View-Model fields from code visually updates the value of the bound elements.</p>
+
+<h3 id="control-upon-view-model-update"><a href="#control-upon-view-model-update">Control upon View-Model Update</a></h3>
+
+<p>By default the <code>value</code> binding relies on the <code>change</code> DOM event, which is raised after blurring the element whose value has changed. This means that the value from the View-Model is updated when the element loses focus. The <code>data-value-update</code> attribute can be used to specify a different DOM event, such as <code>keyup</code> or <code>keypress</code>. The <code>keydown</code> event is not supported, because the DOM element value is not yet updated when that event triggers.</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<ul>
+<li>The <a href="https://developer.mozilla.org/en-US/docs/Web/Events/input"><code>input</code> DOM event</a> may be used if you need to update the ViewModel value on each keypress and when the user pastes content in the field. Keep in mind that the input event is supported in Internet Explorer 9 and later.</li>
+<li>This is applicable only when the <code>value</code> binding is applied to a DOM element. The widgets do not support this attribute, because they do not expose a specific <code>keyup</code> event.</li>
+</ul>
+</blockquote>
+
+<p>The example below demonstrates how to use the data-value-update attribute.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;div id="view"&gt;
+    &lt;input data-value-update="keyup" data-bind="value: inputValue" /&gt;
+&lt;/div&gt;
+&lt;script&gt;
+var viewModel = kendo.observable({
+    inputValue: "Input value"
+});
+
+kendo.bind($("#view"), viewModel);
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="value-binding-of-elements-select"><a href="#value-binding-of-elements-select">Value Binding of Elements: select</a></h2>
+
+<p>When the <code>select</code> element has a set of predefined options, Kendo UI MVVM selects the <code>option</code> whose <code>value</code> attribute is equal to the value of the View-Model field.</p>
+
+<h3 id="select-with-predefined-options"><a href="#select-with-predefined-options">Select with Predefined Options</a></h3>
+
+<p>The example below demonstrates how to use the <code>value</code> binding with a <code>select</code> element with predefined options.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;select data-bind="value: selectedColor"&gt;
+    &lt;option value="red"&gt;Red&lt;/option&gt;
+    &lt;option value="green"&gt;Green&lt;/option&gt;
+    &lt;option value="blue"&gt;Blue&lt;/option&gt;
+&lt;/select&gt;
+&lt;script&gt;
+var viewModel = kendo.observable({
+    selectedColor: "green"
+});
+
+kendo.bind($("select"), viewModel);
+&lt;/script&gt;
+</code></pre>
+
+<p>In the example, the second <code>option</code> is selected because its <code>value</code> attribute is equal to the value of the <code>selectedColor</code> View-Model field. Changing the selected <code>option</code> updates the value of the <code>selectedColor</code> View-Model field.</p>
+
+<h3 id="select-with-non-value-predefined-options"><a href="#select-with-non-value-predefined-options">Select with Non-Value Predefined Options</a></h3>
+
+<p>If the <code>value</code> attribute of an <code>option</code> is not set, its text content is used instead.</p>
+
+<p>The example below demonstrates how to use the <code>value</code> binding with a <code>select</code> element with predefined options that have no value.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;select data-bind="value: selectedColor"&gt;
+    &lt;option&gt;Red&lt;/option&gt;
+    &lt;option&gt;Green&lt;/option&gt;
+    &lt;option&gt;Blue&lt;/option&gt;
+&lt;/select&gt;
+&lt;script&gt;
+var viewModel = kendo.observable({
+    selectedColor: "Blue"
+});
+
+kendo.bind($("select"), viewModel);
+&lt;/script&gt;
+</code></pre>
+
+<p>In this case, the third <code>option</code> is selected because its text content is equal to the value of the <code>selectedColor</code> View-Model field.</p>
+
+<h3 id="select-with-options-created-by-source-binding"><a href="#select-with-options-created-by-source-binding">Select with Options Created by Source Binding</a></h3>
+
+<p>When the <code>select</code> element options are created by the <a href="/framework/mvvm/bindings/source"><code>source</code> binding</a>, Kendo UI MVVM selects the <code>option</code> which corresponds to the View-Model value specified by the <code>value</code> binding. The <code>data-value-field</code> attribute specifies the field of the current item to which the <code>option</code> value is bound.</p>
+
+<p>The example below demonstrates how to use the <code>value</code> binding with a <code>select</code> element, whose options are created by the <code>source</code> binding.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;select data-value-field="id" data-text-field="name"
+       data-bind="value: selectedProduct, source: products"&gt;
+&lt;/select&gt;
+&lt;script&gt;
+var viewModel = kendo.observable({
+    selectedProduct: null,
+    products: [
+        { id: 1, name: "Coffee" },
+        { id: 2, name: "Tea" },
+        { id: 3, name: "Juice" }
+    ]
+});
+
+viewModel.selectedProduct = viewModel.products[1];
+
+kendo.bind($("select"), viewModel);
+&lt;/script&gt;
+</code></pre>
+
+<p>In the example, the second <code>option</code> is selected after calling the <code>kendo.bind</code> method. Its <code>value</code> attribute is equal to the value of the <code>id</code> field of the <code>selectedProduct</code>. If the user selects another option, the <code>selectedProduct</code> is set to the corresponding item from the <code>products</code> array.</p>
+
+<p>Below is another example that demonstrates how to use the <code>value</code> binding with a <code>select</code> element whose options are created by the <code>source</code> binding.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;select data-value-field="id" data-text-field="name"
+    data-bind="value: selectedProduct, source: products"&gt;
+&lt;/select&gt;
+&lt;script&gt;
+var viewModel = kendo.observable({
+    selectedProduct: 2, // note that the "id" of the second product is 2\. Thus the second product will be selected
+    products: [
+        { id: 1, name: "Coffee" },
+        { id: 2, name: "Tea" },
+        { id: 3, name: "Juice" }
+    ]
+});
+
+kendo.bind($("select"), viewModel);
+&lt;/script&gt;
+</code></pre>
+
+<p>Again the second <code>option</code> is selected because its <code>value</code> is equal to the <code>selectedProduct</code> View-Model field. If the user selects another option, the <code>id</code> field of the corresponding item from the <code>products</code> array is set as the <code>selectedProduct</code>.</p>
+
+<h2 id="data-bound-widgets-and-value-binding"><a href="#data-bound-widgets-and-value-binding">Data-Bound Widgets and Value Binding</a></h2>
+
+<p>Kendo UI <code>select</code> widgets, such as <code>AutoComplete</code>, <code>DropDownList</code>, <code>ComboBox</code>, and <code>MultiSelect</code>, have a built-in <a href="/api/javascript/ui/dropdownlist#configuration-autoBind">auto-binding</a> feature that defers the data loading. The <code>value</code> binding honors that option and behaves differently when the widget is forced to defer its loading.</p>
+
+<p>There are two basic cases based on the <code>autoBind</code> configuration value—<code>autoBind: true</code> (default) and <code>autoBind: false</code>.</p>
+
+<h3 id="basic-caseautobind-true"><a href="#basic-caseautobind-true">Basic Case—autoBind: true</a></h3>
+
+<p>The <code>autoBind: true</code> is the default basic case configuration. When the <a href="/api/javascript/ui/dropdownlist#configuration-autoBind"><code>autoBind</code> option</a> is set to <code>true</code>, the <code>value</code> binding sets the widget value using its <a href="/api/javascript/ui/dropdownlist#methods-value"><code>value</code></a> method. If the data is not loaded, then the widget first loads the data.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;select data-role="dropdownlist"
+        data-value-field="id"
+        data-text-field="name"
+        data-value-primitive="true"
+        data-bind="value: selectedProductId, source: products, events: { dataBound: widgetBound }"&gt;
+&lt;/select&gt;
+&lt;script&gt;
+var viewModel = kendo.observable({
+    selectedProductId: 2,
+    products: new kendo.data.DataSource({
+        data: [
+            { id: 1, name: "Coffee" },
+            { id: 2, name: "Tea" },
+            { id: 3, name: "Juice" }
+        ]
+    }),
+    widgetBound: function() {
+        alert("Widget is bound!");
+    }
+});
+
+kendo.bind($("select"), viewModel);
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="basic-caseautobind-false"><a href="#basic-caseautobind-false">Basic Case—autoBind: false</a></h3>
+
+<p>When the <a href="/api/javascript/ui/dropdownlist#configuration-autoBind"><code>autoBind</code> option</a> is set to <code>false</code>, the <code>value</code> binding does not force the data loading, unless the <code>model</code> field is a <a href="#use-the-value-binding-with-a-select-widget-to-update-the-view-model-field-with-the-value-field-when-the-initial-value-is-null">primitive value</a>. In other words, if the <code>model</code> field, bound to the widget, is a complex object, then the <code>value</code> binding retrieves the <a href="/api/javascript/ui/dropdownlist#configuration-dataTextField"><code>dataValueField</code></a> and <a href="/api/javascript/ui/dropdownlist#configuration-dataValueField"><code>dataTextField</code></a> values without forcing the widget to request its data. If the <code>model</code> field is a primitive value, however, then the binding forces the data loading, it calls the widget's <a href="/api/javascript/ui/dropdownlist#methods-value"><code>value</code></a> method.</p>
+
+<h4>Object Value Not Forcing Binding</h4>
+
+<p>The example demonstrates a widget with the <code>autoBind: false</code> configuration when the object value does not force binding.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;!-- widget is not bound on load, even though the selected item is shown --&gt;
+&lt;select data-role="dropdownlist"
+        data-value-field="id"
+        data-text-field="name"
+        data-auto-bind="false"
+        data-bind="value: selectedProductId, source: products, events: { dataBound: widgetBound }"&gt;
+&lt;/select&gt;
+&lt;script&gt;
+var viewModel = kendo.observable({
+    selectedProductId: { id: 2, name: "Tea" },
+    products: new kendo.data.DataSource({
+        data: [
+            { id: 1, name: "Coffee" },
+            { id: 2, name: "Tea" },
+            { id: 3, name: "Juice" }
+        ]
+    }),
+    widgetBound: function() {
+        alert("Widget is bound!");
+    }
+});
+
+kendo.bind($("select"), viewModel);
+&lt;/script&gt;
+</code></pre>
+
+<h4>Primitive Value Forcing Binding</h4>
+
+<p>The example demonstrates a widget with the <code>autoBind: false</code> when the primitive value forces binding.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;!-- widget is not bound on load, even though the selected item is shown --&gt;
+&lt;select data-role="dropdownlist"
+        data-value-field="id"
+        data-text-field="name"
+        data-auto-bind="false"
+        data-value-primitive="true"
+        data-bind="value: selectedProductId, source: products, events: { dataBound: widgetBound }"&gt;
+&lt;/select&gt;
+&lt;script&gt;
+var viewModel = kendo.observable({
+    selectedProductId: 2,
+    products: new kendo.data.DataSource({
+        data: [
+            { id: 1, name: "Coffee" },
+            { id: 2, name: "Tea" },
+            { id: 3, name: "Juice" }
+        ]
+    }),
+    widgetBound: function() {
+        alert("Widget is bound!");
+    }
+});
+
+kendo.bind($("select"), viewModel);
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="view-model-fields-with-value-field-of-primitive-value"><a href="#view-model-fields-with-value-field-of-primitive-value">View-Model Fields with Value Field of Primitive Value</a></h3>
+
+<p>You can also use the <code>value</code> binding with a View-Model field which is of primitive type.</p>
+
+<p>The example below demonstrates how to use the <code>value</code> binding with <code>select</code> to update the View-Model field with the value field when the initial value is <code>null</code>.</p>
+
+<h6>Example</h6>
+
+<pre><code>&lt;select data-role="dropdownlist" data-option-label="Select product..." data-value-primitive="true"
+  data-value-field="id" data-text-field="name" data-bind="value: selectedProductId, source: products"&gt;
+&lt;/select&gt;
+&lt;script&gt;
+var viewModel = kendo.observable({
+    selectedProductId: null,
+    products: [
+        { id: 1, name: "Coffee" },
+        { id: 2, name: "Tea" },
+        { id: 3, name: "Juice" }
+    ]
+});
+
+kendo.bind($("select"), viewModel);
+&lt;/script&gt;
+</code></pre>
+
+<p>By default, the <code>value</code> binding for the <code>select</code> widgets—<code>AutoComplete</code>, <code>DropDownList</code>, <code>ComboBox</code>, <code>MultiSelect</code>—uses the selected item from the data to update the View-Model field when the initial value is <code>null</code>.
+The <code>data-value-primitive</code> attribute, that sets <a href="/api/javascript/ui/dropdownlist#configuration-valuePrimitive">valuePrimitive</a> option, can be used to specify that the View-Model field should be updated with the item value field instead.</p>
+
+<h2 id="multiple-selections"><a href="#multiple-selections">Multiple Selections</a></h2>
+
+<p>Kendo UI MVVM supports <code>select</code> elements with multiple selection enabled. The bound View-Model field should be an array. Here are a few examples showing different configuration scenarios—with and without the <code>source</code> binding.</p>
+
+<h3 id="multiple-selection-with-predefined-options"><a href="#multiple-selection-with-predefined-options">Multiple Selection with Predefined Options</a></h3>
+
+<h6>Example</h6>
+
+<pre><code>&lt;select data-bind="value: selectedColors" multiple="multiple"&gt;
+    &lt;option&gt;Red&lt;/option&gt;
+    &lt;option&gt;Green&lt;/option&gt;
+    &lt;option&gt;Blue&lt;/option&gt;
+&lt;/select&gt;
+&lt;script&gt;
+var viewModel = kendo.observable({
+    selectedColors: ["Blue"];
+});
+
+kendo.bind($("select"), viewModel);
+&lt;/script&gt;
+</code></pre>
+
+<p>The third <code>option</code> is displayed as selected. Selecting another <code>option</code> appends its <code>value</code>, or text content if the value is not set, to the <code>selectedColors</code> array. Unselecting an <code>option</code> removes it from the <code>selectedColors</code> array.</p>
+
+<h3 id="multiple-selection-with-options-created-by-source-binding"><a href="#multiple-selection-with-options-created-by-source-binding">Multiple Selection with Options Created by Source Binding</a></h3>
+
+<h6>Example</h6>
+
+<pre><code>&lt;select data-value-field="id" data-text-field="name"
+   data-bind="value: selectedProducts, source: products" multiple="multiple"&gt;
+&lt;/select&gt;
+var viewModel = kendo.observable({
+    selectedProducts: [],
+    products: [
+        { id: 1, name: "Coffee" },
+        { id: 2, name: "Tea" },
+        { id: 3, name: "Juice" }
+    ]
+});
+
+viewModel.selectedProducts.push(viewModel.products[1]);
+
+kendo.bind($("select"), viewModel);
+&lt;/script&gt;
+</code></pre>
+
+<p>The second <code>option</code> is displayed as selected. Selecting another <code>option</code> appends the corresponding item from the <code>products</code> array to the <code>selectedProducts</code> array. Unselecting an <code>option</code> removes its corresponding item from the <code>selectedProducts</code> array.</p>
+
+<h2 id="strongly-typed-value-binding"><a href="#strongly-typed-value-binding">Strongly Typed Value Binding</a></h2>
+
+<p>By default, the View-Model fields are updated with string values as this is what the <code>value</code> property of the DOM element contains. Since the 2015 Q1 release, Kendo UI MVVM allows strongly-typed <code>value</code> binding by parsing the value of the element before updating the View-Model field bound to it. The supported types are <code>text</code>, <code>number</code>, <code>date</code>, <code>datetime-local</code>, and <code>boolean</code>.</p>
+
+<blockquote>
+<p><strong>Important</strong></p>
+
+<ul>
+<li>To be correctly parsed, the <code>date</code> and <code>datetime-local</code> values should use strict formatting rules, including the leading zeroes:
+
+<ul>
+<li>
+<code>date</code>—"yyyy-MM-dd"</li>
+<li>
+<code>datetime-local</code>—"yyyy-MM-ddTHH:mm:ss"</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+<h3 id="use-the-type-attribute"><a href="#use-the-type-attribute">Use the type Attribute</a></h3>
+
+<p>Kendo UI MVVM automatically uses strongly-typed <code>value</code> binding based on the <code>type</code> attribute of the <code>input</code> element.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div id="view"&gt;
+        &lt;input type="number" data-bind="value: Quantity"/&gt;
+        &lt;input type="date" data-bind="value: ArrivalDate"/&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        var viewModel = kendo.observable({
+            Quantity: 22,
+            ArrivalDate : new Date()
+        });
+        kendo.bind($("#view"), viewModel);
+        viewModel.bind("change", function(e){
+            console.log(e.field, "=", this.get(e.field));
+        });
+    &lt;/script&gt;
+</code></pre>
+
+<h3 id="use-the-data-type-attribute"><a href="#use-the-data-type-attribute">Use the data-type Attribute</a></h3>
+
+<p>Explicitly specifying the <code>data-type</code> is also supported via the <code>data-type</code> attribute.</p>
+
+<h6>Example</h6>
+
+<pre data-lang="html"><code>    &lt;div id="view"&gt;
+        &lt;input type="text" data-type="number" data-bind="value: Quantity"/&gt;
+        &lt;input type="date" data-type="text" data-bind="value: ArrivalDate"/&gt;
+
+        &lt;select multiple="multiple" data-type="number" data-bind="value: number"&gt;
+            &lt;option value="3.14"&gt;Pi&lt;/option&gt;
+            &lt;option value="1.41"&gt;Pythagoras' constant&lt;/option&gt;
+            &lt;option value="1.61"&gt;Golden ratio&lt;/option&gt;
+        &lt;/select&gt;
+
+        &lt;select data-type="date" data-bind="value: Birthday"&gt;
+            &lt;option value="2015-01-01"&gt;John&lt;/option&gt;
+            &lt;option value="2014-12-31"&gt;Jane&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        var viewModel = kendo.observable({
+            Quantity: 22,
+            ArrivalDate : kendo.toString(new Date(), "yyyy-MM-dd"),
+            Birthday: kendo.parseDate("2014-12-31", "yyyy-MM-dd"),
+            number: [1.61, 3.14]
+        });
+        kendo.bind($("#view"), viewModel);
+        viewModel.bind("change", function(e){
+            console.log(e.field, "=", this.get(e.field));
+        });
+    &lt;/script&gt;
+</code></pre>
+
+<h2 id="see-also"><a href="#see-also">See Also</a></h2>
+
+<p>Other articles on the Kendo UI MVVM component and bindings:</p>
+
+<ul>
+<li><a href="/framework/mvvm/overview">MVVM Overview</a></li>
+<li><a href="/framework/mvvm/bindings/attr">Overview of the Attribute Binding</a></li>
+<li><a href="/framework/mvvm/bindings/checked">Overview of the Checked Binding</a></li>
+<li><a href="/framework/mvvm/bindings/click">Overview of the Click Binding</a></li>
+<li><a href="/framework/mvvm/bindings/css">Overview of the CSS Binding</a></li>
+<li><a href="/framework/mvvm/bindings/custom">Overview of the Custom Binding</a></li>
+<li><a href="/framework/mvvm/bindings/disabled">Overview of the Disabled Binding</a></li>
+<li><a href="/framework/mvvm/bindings/enabled">Overview of the Enabled Binding</a></li>
+<li><a href="/framework/mvvm/bindings/events">Overview of the Events Binding</a></li>
+<li><a href="/framework/mvvm/bindings/html">Overview of the HTML Binding</a></li>
+<li><a href="/framework/mvvm/bindings/invisible">Overview of the Invisible Binding</a></li>
+<li><a href="/framework/mvvm/bindings/source">Overview of the Source Binding</a></li>
+<li><a href="/framework/mvvm/bindings/style">Overview of the Style Binding</a></li>
+<li><a href="/framework/mvvm/bindings/text">Overview of the Text Binding</a></li>
+<li><a href="/framework/mvvm/bindings/visible">Overview of the Visible Binding</a></li>
+</ul> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+

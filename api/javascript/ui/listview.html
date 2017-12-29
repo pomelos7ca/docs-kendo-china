@@ -1,0 +1,1337 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="restype" content="api">
+        <meta name="product" content="kendo-ui">
+        <meta name="subproduct" content="listview">
+        <title>Configuration, methods and events of Kendo UI ListView</title>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <meta name="description" content="Step-by-step instructions and samples for Kendo UI ListView widget configuration, methods and event handling.">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="http://oygy5legq.bkt.clouddn.com/kendo.common.min.css">
+        <link rel="stylesheet" href="/assets/styles.css?cb=8338967476da1c756a6defe19c1f9984">
+        <link rel="stylesheet" href="/assets/icon-font.css?cb=25d8b9593057297c278fcd6d7d263c8e">
+        <link rel="stylesheet" href="/assets/theme.css?cb=d82da02940126146560da1ae3bb0bf64">
+        
+        <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.web.min.js"></script> -->
+        <script src="http://oygy5legq.bkt.clouddn.com/kendo.web.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/mode/htmlmixed/htmlmixed.min.js"></script> -->
+        <script src="/assets/prettify.js?cb=9671553084e1962263b152af1f563c3c"></script>
+        <script src="/assets/app.js?cb=c577f29da14c3752a8c4ba001dde39e5"></script>
+        
+        <script src="/assets/dojo.js?cb=545f7f252dd3279c5a236b777c1668f1"></script>
+        
+        
+
+        <!--[if lt IE 9]>
+        <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-6X92" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script> -->
+        <!-- End Google Tag Manager -->
+        <aside class="TK-Hat">
+    <figure class="TK-Hat-Brand">
+        <a href="https://www.progress.com" class="TK-PRGS-Logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="40" viewBox="0 0 512 120">
+                <path fill="#5ce500" d="M95.52 29.33v51a3.93 3.93 0 0 1-1.78 3.08l-1.67 1-12.72 7.35-8.59 5-1.78 1V42.6L21.23 15 43.91 1.93 46 .74a3.94 3.94 0 0 1 3.56 0L81 18.9l14.51 8.38v2.05zM58.36 48.72l-9.79-5.66-22.91-13.23a4 4 0 0 0-3.56 0L1.77 41.57 0 42.6l34.49 19.91v39.83l20.3-11.73 1.79-1a3.94 3.94 0 0 0 1.78-3.08V48.72zM0 82.43l23.86 13.78V68.63z"></path>
+                <path fill="#4b4e52" d="M148.09 27.28h-26v70.48h11.55V70.1h14.57c15.77 0 24.45-7.7 24.45-21.69 0-6.35-2.4-21.12-24.55-21.12m12.78 21.31c0 7.95-4.12 11.19-14.24 11.19h-13v-22.1h14.57c8.56 0 12.71 3.57 12.71 10.91M207 46.41l.87.42-2 10.42-1.35-.42a11.32 11.32 0 0 0-3.34-.51c-10.79 0-11.67 8.59-11.67 19v22.44h-10.64V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.55 14.55 0 0 1 7.76 1.07M233.29 45c-8.42 0-15.16 3.2-19.5 9.27-4.56 6.37-5.23 13.85-5.23 17.74 0 16.36 9.7 26.92 24.73 26.92 18.26 0 24.73-14.71 24.73-27.3 0-7.25-2.15-13.82-6-18.51-4.41-5.31-10.87-8.12-18.7-8.12m0 44.38c-8.37 0-13.57-6.66-13.57-17.37s5.2-17.55 13.57-17.55S247 61.23 247 71.78c0 10.83-5.24 17.56-13.66 17.56m114.55-42.93l.87.42-2 10.42-1.35-.42a11.26 11.26 0 0 0-3.33-.51c-10.78 0-11.66 8.59-11.66 19v22.44h-10.66V46h10v6.24c2.73-4.2 6-6.37 10.37-6.9a14.54 14.54 0 0 1 7.73 1.06m38.4 34.76l-.2.57c-2.23 6.36-7.57 7.7-11.65 7.7-8.09 0-13.3-5.37-13.81-14.09h36.59l.13-1a31.26 31.26 0 0 0 .12-4.12v-.93C396.93 54.78 387.48 45 374 45c-7.9 0-14.37 3.1-18.73 9a30.85 30.85 0 0 0-5.54 18c0 16 9.95 26.74 24.74 26.74 11.45 0 19.33-5.82 22.2-16.38l.33-1.2h-10.7zM361 66.05c.9-7.17 5.81-11.73 12.79-11.73 5.33 0 11.64 3.1 12.52 11.73H361zm-60.7-15.71c-3.45-3.58-8.06-5.39-13.76-5.39-15.69 0-22.83 13.81-22.83 26.63 0 13.16 7.06 26.44 22.83 26.44a18.33 18.33 0 0 0 13.35-5.42c0 2.28-.1 4.45-.16 5.38-.58 8.54-4.68 12.51-12.91 12.51-4.47 0-9.61-1.59-10.6-6l-.22-1h-10.54l.17 1.41c1.1 9.12 9.11 14.79 20.9 14.79 10.34 0 17.7-3.9 21.28-11.26 1.73-3.55 2.6-8.72 2.6-15.37V46h-10.13v4.34zm-13.11 38.15c-3.74 0-12.43-1.69-12.43-17.37 0-10.3 4.87-16.7 12.71-16.7 6.06 0 12.52 4.39 12.52 16.7 0 10.87-4.79 17.37-12.81 17.37m159.67-6.31c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.15-1.1h10.52l.21.84c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.73-5.16-1.86-.55-4.15-1.2-6.56-1.87-4.16-1.16-8.47-2.38-11.12-3.29-6.56-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.3 15.49l.09 1.07H434.5l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-10 .53-10 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.59 2.32 9.93 6.67 9.93 13m49.39 0c0 8.23-6.83 16.53-22.09 16.53-13.5 0-21.53-5.85-22.61-16.45l-.11-1.09H462l.12.74c1.29 6.38 7.37 7.72 12.24 7.72 5.34 0 11-1.72 11-6.54 0-2.44-1.59-4.18-4.72-5.16-1.86-.55-4.15-1.2-6.57-1.87-4.16-1.16-8.46-2.38-11.11-3.29-6.57-2.35-10.33-6.93-10.33-12.56 0-10.43 10.16-15.11 20.22-15.11 13.46 0 20.42 5.07 21.29 15.49l.09 1.07H483.9l-.14-.82c-1-6-7-6.9-10.48-6.9-3 0-9.95.53-9.95 5.5 0 2.25 1.93 3.91 5.89 5.06 1.18.33 2.94.78 5 1.31 4.22 1.09 9.48 2.46 12.13 3.37 6.58 2.32 9.93 6.67 9.93 13m8.43-30.78a7.37 7.37 0 1 1 7.29-7.37 7.23 7.23 0 0 1-7.29 7.37m0-13.49a6.12 6.12 0 1 0 6 6.12 5.91 5.91 0 0 0-6-6.12m-.85 7.49v2.46h-2.17v-7.74h3.62a2.58 2.58 0 0 1 2.86 2.7 2.26 2.26 0 0 1-1.49 2.34l1.77 2.7H506l-1.49-2.46h-.68zm1.21-3.49h-1.21v1.73h1.21a.86.86 0 0 0 1-.85.88.88 0 0 0-1-.89"></path>
+            </svg>
+        </a>
+    </figure>
+</aside>
+<header id="page-header">
+    <div class="toggle-nav"><span class="k-icon k-i-menu"></span></div>
+
+
+    <div id="logo-bar">
+        <a href="/introduction">
+            <img alt="Kendo UI logo" class="logo" src="/images/kendo-ui.svg">
+        </a>
+    </div>
+
+    
+    <span class="show-search">
+        <span class="k-icon k-i-search"></span>
+    </span>
+    
+    <div class="nav-buttons">
+        <a href="http://demos.telerik.com/kendo-ui/" class="btn demos-btn">Demos</a>
+        <a href="http://www.telerik.com/kendo-ui" class="btn about-btn">About</a>
+        <a href="http://www.telerik.com/purchase/kendo-ui" class="btn pricing-btn">Pricing</a>
+        <a href="http://www.telerik.com/download/kendo-ui" class="btn btn-primary">Try now</a>
+    </div>
+</header>
+        <div id="page-inner-content">
+    <div id="page-nav">
+        <div id="page-tree"></div>
+        <script>
+        $("#page-tree").kendoTreeView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/default.json",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "path",
+                        children: "items",
+                        hasChildren: "items"
+                    }
+                }
+            },
+            messages: {
+                loading: " "
+            },
+            select: preventParentSelection,
+            template: navigationTemplate("/"),
+            dataBound: expandNavigation("api/javascript/ui/listview.html")
+        });
+        </script>
+    </div>
+
+    <a id="page-edit-link" href="https://github.com/telerik/kendo-ui-core/edit/master/docs//api/javascript/ui/listview.md"><span class="k-icon k-i-pencil"></span> Edit this page</a>
+    <div id="markdown-toc"></div>
+
+    <div id="page-article">
+        <article>
+            
+             <h1 id="kendouilistview"><a href="#kendouilistview">kendo.ui.ListView</a></h1>
+
+<p>Represents the Kendo UI ListView widget. Inherits from <a href="/api/javascript/ui/widget">Widget</a>.</p>
+
+<h2 id="configuration"><a href="#configuration">Configuration</a></h2>
+
+<h3 id="configuration-autoBind">
+<a href="#configuration-autoBind">autoBind </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: true)</em>
+</h3>
+
+<p>If set to <code>false</code> the widget will not bind to the data source during initialization. In this case data binding will occur when the <a href="/api/javascript/data/datasource#events-change">change</a> event of the
+data source is fired. By default the widget will bind to the data source specified in the configuration.</p>
+
+<blockquote>
+<p>Setting <code>autoBind</code> to <code>false</code> is useful when multiple widgets are bound to the same data source. Disabling automatic binding ensures that the shared data source does not make more than one request to the remote service.</p>
+</blockquote>
+
+<h4>Example - disable automatic binding</h4>
+
+<pre><code>&lt;div id ="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+var dataSource = new kendo.data.DataSource({
+  data: [ { name: "Jane Doe" }, { name: "John Doe" }]
+});
+$("#listView").kendoListView({
+     dataSource: dataSource,
+     template: "&lt;div&gt;#:name#&lt;/div&gt;",
+     autoBind: false
+ });
+dataSource.read(); // "read()" will fire the "change" event of the dataSource and the widget will be bound
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-dataSource">
+<a href="#configuration-dataSource">dataSource </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array |</code></a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+</h3>
+
+<p>The data source of the widget which is used render table rows. Can be a JavaScript object which represents a valid data source configuration, a JavaScript array or an existing <a href="/api/javascript/data/datasource">kendo.data.DataSource</a>
+instance.</p>
+
+<p>If the <code>dataSource</code> option is set to a JavaScript object or array the widget will initialize a new <a href="/api/javascript/data/datasource">kendo.data.DataSource</a> instance using that value as data source configuration.</p>
+
+<p>If the <code>dataSource</code> option is an existing <a href="/api/javascript/data/datasource">kendo.data.DataSource</a> instance the widget will use that instance and will <strong>not</strong> initialize a new one.</p>
+
+<h4>Example - set dataSource as a JavaScript object</h4>
+
+<pre><code>&lt;div id ="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+     dataSource: {
+        data: [
+            { name: "Jane Doe" },
+            { name: "John Doe" }
+        ]
+    },
+    template: "&lt;div&gt;#:name#&lt;/div&gt;"
+});
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - set dataSource as a JavaScript array</h4>
+
+<pre><code>&lt;div id ="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+     dataSource: [
+        { name: "Jane Doe" },
+        { name: "John Doe" }
+    ],
+    template: "&lt;div&gt;#:name#&lt;/div&gt;"
+});
+&lt;/script&gt;
+</code></pre>
+
+<h4>Example - set dataSource as an existing kendo.data.DataSource instance</h4>
+
+<pre><code>&lt;div id ="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+var dataSource = new kendo.data.DataSource({
+  data: [ { name: "Jane Doe" }, { name: "John Doe" }]
+});
+$("#listView").kendoListView({
+    dataSource: dataSource,
+    template: "&lt;div&gt;#:name#&lt;/div&gt;"
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-editTemplate">
+<a href="#configuration-editTemplate">editTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h3>
+
+<p>Specifies ListView item template in edit mode.</p>
+
+<h4>Example of</h4>
+
+<pre><code>&lt;script type="text/x-kendo-tmpl" id="template"&gt;
+     &lt;div&gt;
+       &lt;dl&gt;
+         &lt;dt&gt;Name&lt;/dt&gt; &lt;dd&gt;#:name#&lt;/dd&gt;
+         &lt;dt&gt;Age&lt;/dt&gt; &lt;dd&gt;#:age#&lt;/dd&gt;
+       &lt;/dl&gt;
+       &lt;div&gt;
+           &lt;a class="k-button k-edit-button" href="\\#"&gt;&lt;span class="k-icon k-edit"&gt;&lt;/span&gt;&lt;/a&gt;
+           &lt;a class="k-button k-delete-button" href="\\#"&gt;&lt;span class="k-icon k-delete"&gt;&lt;/span&gt;&lt;/a&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+ &lt;/script&gt;
+
+ &lt;script type="text/x-kendo-tmpl" id="editTemplate"&gt;
+     &lt;div&gt;
+       &lt;dl&gt;
+         &lt;dt&gt;Name&lt;/dt&gt;
+         &lt;dd&gt;&lt;input type="text" data-bind="value:name" name="name" required="required" /&gt;&lt;/dd&gt;
+         &lt;dt&gt;Age&lt;/dt&gt;
+         &lt;dd&gt;&lt;input type="text" data-bind="value:age" data-role="numerictextbox" data-type="number" name="age" required="required" /&gt;&lt;/dd&gt;
+       &lt;/dl&gt;
+       &lt;div&gt;
+           &lt;a class="k-button k-update-button" href="\\#"&gt;&lt;span class="k-icon k-update"&gt;&lt;/span&gt;&lt;/a&gt;
+           &lt;a class="k-button k-cancel-button" href="\\#"&gt;&lt;span class="k-icon k-cancel"&gt;&lt;/span&gt;&lt;/a&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+ &lt;/script&gt;
+
+ &lt;div id="listView"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ $("#listView").kendoListView({
+    template: kendo.template($("#template").html()),
+    editTemplate: kendo.template($("#editTemplate").html()),
+    dataSource: {
+        data: [
+            { id: 1, name: "Jane Doe", age: 47 },
+            { id: 2, name: "John Doe", age: 50 }
+        ],
+        schema: {
+            model: {
+                id: "id",
+                fields: {
+                    id: { type: "number" },
+                    name: { type: "string" },
+                    age: { type: "number" }
+                }
+            }
+        }
+    }
+ });
+ &lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-navigatable">
+<a href="#configuration-navigatable">navigatable </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean</code></a> <em>(default: false)</em>
+</h3>
+
+<p>Indicates whether keyboard navigation is enabled/disabled.</p>
+
+<h4>Example</h4>
+
+<pre><code> &lt;div id ="listView"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ $("#listView").kendoListView({
+    dataSource: {
+        data: [
+            { name: "Jane Doe" },
+            { name: "John Doe" }
+        ]
+    },
+    template: "&lt;div&gt;#:name#&lt;/div&gt;",
+    navigatable: true
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-selectable">
+<a href="#configuration-selectable">selectable </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="type-link"><code>Boolean |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String</code></a> <em>(default: false)</em>
+</h3>
+
+<p>Indicates whether selection is enabled/disabled. Possible values:</p>
+
+<h4><em>true</em></h4>
+
+<p>Single item selection.</p>
+
+<h4><em>"single"</em></h4>
+
+<p>Single item selection.</p>
+
+<h4><em>"multiple"</em></h4>
+
+<p>Multiple item selection.</p>
+
+<h4>Example of ListView with multiple selection enabled</h4>
+
+<pre><code> &lt;div id ="listView"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ $("#listView").kendoListView({
+    dataSource: {
+        data: [
+            { name: "Jane Doe" },
+            { name: "John Doe" }
+        ]
+    },
+    template: "&lt;div&gt;#:name#&lt;/div&gt;",
+    selectable: "multiple"
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-template">
+<a href="#configuration-template">template </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h3>
+
+<p>Specifies ListView item template.</p>
+
+<h4>Example</h4>
+
+<pre><code> &lt;script type="text/kendo-x-tmpl" id="template"&gt;
+    &lt;div&gt;
+        Item template for #:name#
+    &lt;/div&gt;
+ &lt;/script&gt;
+
+ &lt;div id ="listView"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ $("#listView").kendoListView({
+    dataSource: {
+        data: [
+            { name: "Jane Doe" },
+            { name: "John Doe" }
+        ]
+    },
+    template: kendo.template($("#template").html())
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="configuration-altTemplate">
+<a href="#configuration-altTemplate">altTemplate </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h3>
+
+<p>Template to be used for rendering the alternate items in the ListView.</p>
+
+<h4>Example of alternate item template</h4>
+
+<pre><code> &lt;script type="text/kendo-x-tmpl" id="template"&gt;
+    &lt;div&gt;
+        Item template for #:name#
+    &lt;/div&gt;
+ &lt;/script&gt;
+
+ &lt;script type="text/kendo-x-tmpl" id="altTemplate"&gt;
+    &lt;div&gt;
+        Alternate item template for #:name#
+    &lt;/div&gt;
+ &lt;/script&gt;
+
+ &lt;div id ="listView"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ $("#listView").kendoListView({
+    dataSource: {
+        data: [
+            { name: "Jane Doe" },
+            { name: "John Doe" }
+        ]
+    },
+    template: kendo.template($("#template").html()),
+    altTemplate: kendo.template($("#altTemplate").html())
+});
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="fields"><a href="#fields">Fields</a></h2>
+
+<h3 id="fields-dataSource">
+<a href="#fields-dataSource">dataSource </a><a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+</h3>
+
+<p>The <a href="/api/javascript/data/datasource">data source</a> of the widget. Configured via the <a href="#configuration-dataSource">dataSource</a> option.</p>
+
+<blockquote>
+<p>Changes of the data source will be reflected in the widget.</p>
+
+<p><strong>Important:</strong> Assigning a new data source would have no effect. Use the <a href="#methods-setDataSource">setDataSource</a> method instead.</p>
+</blockquote>
+
+<h2 id="methods"><a href="#methods">Methods</a></h2>
+
+<h3 id="methods-add"><a href="#methods-add">add</a></h3>
+
+<p>Inserts empty item as first item on the current view and prepare it for editing.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id ="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+     dataSource: {
+        data: [
+            { name: "Jane Doe" },
+            { name: "John Doe" }
+        ]
+    },
+    template: "&lt;div&gt;#:name#&lt;/div&gt;",
+    editTemplate: '&lt;div&gt;&lt;input type="text" name="name" data-bind="value:name" /&gt;&lt;/div&gt;'
+});
+// get a reference to the list view widget
+var listView = $("#listView").data("kendoListView");
+// add item
+listView.add();
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-cancel"><a href="#methods-cancel">cancel</a></h3>
+
+<p>Cancels changes in currently edited item.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id ="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+     dataSource: {
+        data: [
+            { name: "Jane Doe" },
+            { name: "John Doe" }
+        ]
+    },
+    template: "&lt;div&gt;#:name#&lt;/div&gt;",
+    editTemplate: '&lt;div&gt;&lt;input type="text" name="name" data-bind="value:name" /&gt;&lt;/div&gt;'
+});
+// get a reference to the list view widget
+var listView = $("#listView").data("kendoListView");
+// add item
+listView.add();
+// cancel changes in currently edited item
+listView.cancel();
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-clearSelection"><a href="#methods-clearSelection">clearSelection</a></h3>
+
+<p>Clears ListView selected items and triggers change event.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id ="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+     dataSource: {
+        data: [
+            { name: "Jane Doe" },
+            { name: "John Doe" }
+        ]
+    },
+    template: "&lt;div&gt;#:name#&lt;/div&gt;",
+    selectable: true
+});
+// get a reference to the list view widget
+var listView = $("#listView").data("kendoListView");
+listView.clearSelection();
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-dataItem"><a href="#methods-dataItem">dataItem</a></h3>
+
+<p>Returns the specified data item.</p>
+
+<h4>Parameters</h4>
+
+<h5>row <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="type-link"><code>String |</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" class="type-link"><code>Element |</code></a><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>A string, DOM element or jQuery object which represents the listview item. A string is treated as a jQuery selector.</p>
+
+<h4>Returns</h4>
+
+<p><code>kendo.data.ObservableObject</code> the data item to which the specified listview item is bound. <a href="/api/javascript/data/observableobject">More information about the ObservableObject type...</a></p>
+
+<h4>Example - get the data item to which the first listview element is bound</h4>
+
+<pre><code>&lt;div id ="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+  var dataSource = new kendo.data.DataSource({
+    data: [ { name: "Jane Doe" }, { name: "John Doe" }]
+  });
+  var listview = $("#listView").kendoListView({
+    dataSource: dataSource,
+    template: "&lt;div&gt;#:name#&lt;/div&gt;"
+  }).data("kendoListView")
+
+  var row = $('#listView &gt; div').first();
+  console.log(listview.dataItem(row));
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-dataItems"><a href="#methods-dataItems">dataItems</a></h3>
+
+<h4>Returns</h4>
+
+<p><code>kendo.data.ObservableArray</code> Returns the observable array that is bound to the widget</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id ="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+  var dataSource = new kendo.data.DataSource({
+    data: [ { name: "Jane Doe" }, { name: "John Doe" }]
+  });
+  var listview = $("#listView").kendoListView({
+    dataSource: dataSource,
+    template: "&lt;div&gt;#:name#&lt;/div&gt;"
+  }).data("kendoListView")
+  console.log(listview.dataItems()) //will output the bound array
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-destroy"><a href="#methods-destroy">destroy</a></h3>
+
+<p>Prepares the <strong>ListView</strong> for safe removal from DOM. Detaches all event handlers and removes jQuery.data attributes to avoid memory leaks. Calls destroy method of any child Kendo widgets.</p>
+
+<blockquote>
+<p><strong>Important:</strong> This method does not remove the ListView element from DOM.</p>
+</blockquote>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id ="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+     dataSource: {
+        data: [
+            { name: "Jane Doe" },
+            { name: "John Doe" }
+        ]
+    },
+    template: "&lt;div&gt;#:name#&lt;/div&gt;"
+});
+// get a reference to the list view widget
+var listView = $("#listView").data("kendoListView");
+listView.destroy();
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-edit"><a href="#methods-edit">edit</a></h3>
+
+<p>Edit specified ListView item. Fires the <a href="#events-edit">edit</a> event.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id ="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+     dataSource: {
+        data: [
+            { name: "Jane Doe" },
+            { name: "John Doe" }
+        ]
+    },
+    template: "&lt;div&gt;#:name#&lt;/div&gt;",
+    editTemplate: '&lt;div&gt;&lt;input type="text" name="name" data-bind="value:name" /&gt;&lt;/div&gt;'
+});
+// get a reference to the list view widget
+var listView = $("#listView").data("kendoListView");
+// edit first list view item
+listView.edit(listView.element.children().first());
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>item <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>jQuery object which represents the item to be edited.</p>
+
+<h3 id="methods-items"><a href="#methods-items">items</a></h3>
+
+<p>Obtains an Array of the DOM elements, which correspond to the data items from the Kendo UI DataSource <a href="/api/javascript/data/datasource#methods-view">view</a>.</p>
+
+<h4>Returns</h4>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="type-link"><code>Array</code></a> The currently rendered ListView items (<code>&lt;div&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;tr&gt;</code> elements, etc., depending on the item template).</p>
+
+<h3 id="methods-refresh"><a href="#methods-refresh">refresh</a></h3>
+
+<p>Reloads the data and repaints the list view.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id ="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+     dataSource: {
+        data: [
+            { name: "Jane Doe" },
+            { name: "John Doe" }
+        ]
+    },
+    template: "&lt;div&gt;#:name#&lt;/div&gt;"
+});
+var listView = $("#listView").data("kendoListView");
+// refreshes the list view
+listView.refresh();
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-remove"><a href="#methods-remove">remove</a></h3>
+
+<p>Removes specified ListView item. Triggers <a href="#events-remove">remove</a> event and if not prevented calls DataSource <a href="/api/javascript/data/datasource#methods-sync">sync</a> method.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id ="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+     dataSource: {
+        data: [
+            { name: "Jane Doe" },
+            { name: "John Doe" }
+        ]
+    },
+    template: "&lt;div&gt;#:name#&lt;/div&gt;"
+});
+// get a reference to the list view widget
+var listView = $("#listView").data("kendoListView");
+// remove first list view item
+listView.remove(listView.element.children().first());
+&lt;/script&gt;
+</code></pre>
+
+<h4>Parameters</h4>
+
+<h5>item <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type-link"><code>Object</code></a>
+</h5>
+
+<p>jQuery object which represents the item to be removed.</p>
+
+<h3 id="methods-save"><a href="#methods-save">save</a></h3>
+
+<p>Saves edited ListView item. Triggers <a href="#events-save">save</a> event. If save event is not prevented and validation succeeds will call DataSource <a href="/api/javascript/data/datasource#methods-sync">sync</a> method.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+    dataSource: {
+        data: [
+            { id: 1, name: "Jane Doe", age: 47 },
+            { id: 2, name: "John Doe", age: 50 }
+        ],
+        schema: {
+            model: {
+                id: "id",
+                fields: {
+                    id: { type: "number" },
+                    name: { type: "string" },
+                    age: { type: "number" }
+                }
+            }
+        }
+    },
+    template: "&lt;div&gt;#:name#&lt;/div&gt;",
+    editTemplate: '&lt;div&gt;&lt;input type="text" name="name" data-bind="value:name" /&gt;&lt;/div&gt;'
+ });
+// get a reference to the list view widget
+var listView = $("#listView").data("kendoListView");
+// edit first list view item
+listView.edit(listView.element.children().first());
+// save edited item
+listView.save();
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="methods-select"><a href="#methods-select">select</a></h3>
+
+<p>Get/set the selected ListView item(s).</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+    dataSource: {
+        data: [
+            { id: 1, name: "Jane Doe", age: 47 },
+            { id: 2, name: "John Doe", age: 50 }
+        ]
+    },
+    template: "&lt;div&gt;#:name#&lt;/div&gt;",
+    selectable: true
+});
+// get a reference to the list view widget
+var listView = $("#listView").data("kendoListView");
+// selects first list view item
+listView.select(listView.element.children().first());
+&lt;/script&gt;
+</code></pre>
+
+<h4>Returns</h4>
+
+<p><a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a> the selected items if called without arguments.</p>
+
+<h4>Parameters</h4>
+
+<h5>items <code>jQuery  |</code><code> Array</code>
+</h5>
+
+<p>Items to select.</p>
+
+<h3 id="methods-setDataSource"><a href="#methods-setDataSource">setDataSource</a></h3>
+
+<p>Sets the dataSource of an existing ListView and rebinds it.</p>
+
+<h4>Parameters</h4>
+
+<h5>dataSource <a href="/api/javascript/data/datasource" class="type-link"><code>kendo.data.DataSource</code></a>
+</h5>
+
+<p>The data source to which the widget should be bound.</p>
+
+<h4>Example - set the data source</h4>
+
+<pre><code>&lt;div id="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+    template: "&lt;div&gt;#: name#&lt;/div&gt;",
+    dataSource: [
+        { name: "Jane Doe", age: 30 }
+    ]
+});
+var dataSource = new kendo.data.DataSource({
+  data: [
+    { name: "John Doe", age: 33 }
+  ]
+});
+var listView = $("#listView").data("kendoListView");
+listView.setDataSource(dataSource);
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="events"><a href="#events">Events</a></h2>
+
+<h3 id="events-cancel"><a href="#events-cancel">cancel</a></h3>
+
+<p>Fired when the user clicks the "cancel" button.</p>
+
+<p>The event handler function context (available via the <code>this</code> keyword) will be set to the widget instance.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;script type="text/x-kendo-tmpl" id="template"&gt;
+    &lt;div&gt; #:name# &lt;/div&gt;
+&lt;/script&gt;
+
+&lt;script type="text/x-kendo-tmpl" id="editTemplate"&gt;
+     &lt;div&gt;
+       Name: &lt;input type="text" data-bind="value:name" name="name" required="required" /&gt;
+       &lt;div&gt;
+           &lt;a class="k-button k-update-button" href="\\#"&gt;&lt;span class="k-icon k-update"&gt;&lt;/span&gt;&lt;/a&gt;
+           &lt;a class="k-button k-cancel-button" href="\\#"&gt;&lt;span class="k-icon k-cancel"&gt;&lt;/span&gt;&lt;/a&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+&lt;/script&gt;
+
+&lt;div id="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+    template: kendo.template($("#template").html()),
+    editTemplate: kendo.template($("#editTemplate").html()),
+    dataSource: {
+        data: [
+            { id: 1, name: "Jane Doe", age: 47 },
+            { id: 2, name: "John Doe", age: 50 }
+        ],
+        schema: {
+            model: {
+                id: "id",
+                fields: {
+                    id: { type: "number" },
+                    name: { type: "string" },
+                    age: { type: "number" }
+                }
+            }
+        }
+    },
+    cancel: function(e) {
+        e.preventDefault();
+    }
+});
+var listView = $("#listView").data("kendoListView");
+listView.edit(listView.element.children().first());
+&lt;/script&gt;
+</code></pre>
+
+<h4>To set after initialization</h4>
+
+<pre><code>&lt;script type="text/x-kendo-tmpl" id="template"&gt;
+    &lt;div&gt; #:name# &lt;/div&gt;
+&lt;/script&gt;
+
+&lt;script type="text/x-kendo-tmpl" id="editTemplate"&gt;
+     &lt;div&gt;
+       Name: &lt;input type="text" data-bind="value:name" name="name" required="required" /&gt;
+       &lt;div&gt;
+           &lt;a class="k-button k-update-button" href="\\#"&gt;&lt;span class="k-icon k-update"&gt;&lt;/span&gt;&lt;/a&gt;
+           &lt;a class="k-button k-cancel-button" href="\\#"&gt;&lt;span class="k-icon k-cancel"&gt;&lt;/span&gt;&lt;/a&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+&lt;/script&gt;
+
+&lt;div id="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+    template: kendo.template($("#template").html()),
+    editTemplate: kendo.template($("#editTemplate").html()),
+    dataSource: {
+        data: [
+            { id: 1, name: "Jane Doe", age: 47 },
+            { id: 2, name: "John Doe", age: 50 }
+        ],
+        schema: {
+            model: {
+                id: "id",
+                fields: {
+                    id: { type: "number" },
+                    name: { type: "string" },
+                    age: { type: "number" }
+                }
+            }
+        }
+    }
+});
+var listView = $("#listView").data("kendoListView");
+// bind to the cancel event
+listView.bind("cancel", function(e) {
+    e.preventDefault();
+});
+listView.edit(listView.element.children().first());
+&lt;/script&gt;
+</code></pre>
+
+<h4>Event Data</h4>
+
+<h5>e.container <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>The jQuery object that represents the edit form container element.</p>
+
+<h5>e.model <code>kendo.data.Model</code>
+</h5>
+
+<p>The model to which the current grid row is bound to.</p>
+
+<h5>e.preventDefault <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type-link"><code>Function</code></a>
+</h5>
+
+<p>If invoked prevents the cancel action. The row remains in edit mode.</p>
+
+<h3 id="events-change"><a href="#events-change">change</a></h3>
+
+<p>Fires when the list view selection has changed.</p>
+
+<p>The event handler function context (available via the <code>this</code> keyword) will be set to the widget instance.</p>
+
+<h4>Example</h4>
+
+<pre><code> &lt;div id="listView"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ $("#listView").kendoListView({
+    template: "&lt;div&gt;#: name#&lt;/div&gt;",
+    dataSource: [
+        { name: "John Doe", age: 30 }
+    ],
+    selectable: true,
+    change: function() {
+        //handle event
+    }
+ });
+ &lt;/script&gt;
+</code></pre>
+
+<h4>To set after initialization</h4>
+
+<pre><code> &lt;div id="listView"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ $("#listView").kendoListView({
+    template: "&lt;div&gt;#: name#&lt;/div&gt;",
+    dataSource: [
+        { name: "John Doe", age: 30 }
+    ],
+    selectable: true
+ });
+ // get a reference to the list view
+ var listView = $("#listView").data("kendoListView");
+ // bind to the change event
+ listView.bind("change", function(e) {
+     // handle event
+ });
+ &lt;/script&gt;
+</code></pre>
+
+<h3 id="events-dataBound"><a href="#events-dataBound">dataBound</a></h3>
+
+<p>Fires when the list view has received data from the data source and it is already rendered.</p>
+
+<p>The event handler function context (available via the <code>this</code> keyword) will be set to the widget instance.</p>
+
+<h4>Example</h4>
+
+<pre><code> &lt;div id="listView"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ $("#listView").kendoListView({
+    template: "&lt;div&gt;#: name#&lt;/div&gt;",
+    dataSource: [
+        { name: "John Doe", age: 30 }
+    ],
+    dataBound: function() {
+        //handle event
+    }
+ });
+ &lt;/script&gt;
+</code></pre>
+
+<h3 id="events-dataBinding"><a href="#events-dataBinding">dataBinding</a></h3>
+
+<p>Fires when the list view is about to be rendered.</p>
+
+<p>The event handler function context (available via the <code>this</code> keyword) will be set to the widget instance.</p>
+
+<h4>Example</h4>
+
+<pre><code> &lt;div id="listView"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ $("#listView").kendoListView({
+    template: "&lt;div&gt;#: name#&lt;/div&gt;",
+    dataSource: [
+        { name: "John Doe", age: 30 }
+    ],
+    dataBinding: function() {
+        //handle event
+    }
+ });
+ &lt;/script&gt;
+</code></pre>
+
+<h4>To set after initialization</h4>
+
+<pre><code> &lt;div id="listView"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ $("#listView").kendoListView({
+    template: "&lt;div&gt;#: name#&lt;/div&gt;",
+    dataSource: [
+        { name: "John Doe", age: 30 }
+    ]
+ });
+ // get a reference to the ListView
+ var listview = $("#listView").data("kendoListView");
+ // bind to the dataBinding event
+ listview.bind("dataBinding", function(e) {
+     // handle event
+ });
+ &lt;/script&gt;
+</code></pre>
+
+<h3 id="events-edit"><a href="#events-edit">edit</a></h3>
+
+<p>Fires when the list view enters edit mode.</p>
+
+<p>The event handler function context (available via the <code>this</code> keyword) will be set to the widget instance.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;script type="text/x-kendo-tmpl" id="template"&gt;
+    &lt;div&gt; #:name# &lt;/div&gt;
+&lt;/script&gt;
+
+&lt;script type="text/x-kendo-tmpl" id="editTemplate"&gt;
+     &lt;div&gt;
+       Name: &lt;input type="text" data-bind="value:name" name="name" required="required" /&gt;
+       &lt;div&gt;
+           &lt;a class="k-button k-update-button" href="\\#"&gt;&lt;span class="k-icon k-update"&gt;&lt;/span&gt;&lt;/a&gt;
+           &lt;a class="k-button k-cancel-button" href="\\#"&gt;&lt;span class="k-icon k-cancel"&gt;&lt;/span&gt;&lt;/a&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+&lt;/script&gt;
+
+&lt;div id="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+    template: kendo.template($("#template").html()),
+    editTemplate: kendo.template($("#editTemplate").html()),
+    dataSource: {
+        data: [
+            { id: 1, name: "Jane Doe", age: 47 },
+            { id: 2, name: "John Doe", age: 50 }
+        ],
+        schema: {
+            model: {
+                id: "id",
+                fields: {
+                    id: { type: "number" },
+                    name: { type: "string" },
+                    age: { type: "number" }
+                }
+            }
+        }
+    },
+    edit: function(e) {
+        //handle event
+    }
+});
+var listView = $("#listView").data("kendoListView");
+listView.edit(listView.element.children().first());
+&lt;/script&gt;
+</code></pre>
+
+<h4>To set after initialization</h4>
+
+<pre><code>&lt;script type="text/x-kendo-tmpl" id="template"&gt;
+    &lt;div&gt; #:name# &lt;/div&gt;
+&lt;/script&gt;
+
+&lt;script type="text/x-kendo-tmpl" id="editTemplate"&gt;
+     &lt;div&gt;
+       Name: &lt;input type="text" data-bind="value:name" name="name" required="required" /&gt;
+       &lt;div&gt;
+           &lt;a class="k-button k-update-button" href="\\#"&gt;&lt;span class="k-icon k-update"&gt;&lt;/span&gt;&lt;/a&gt;
+           &lt;a class="k-button k-cancel-button" href="\\#"&gt;&lt;span class="k-icon k-cancel"&gt;&lt;/span&gt;&lt;/a&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+&lt;/script&gt;
+
+&lt;div id="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+    template: kendo.template($("#template").html()),
+    editTemplate: kendo.template($("#editTemplate").html()),
+    dataSource: {
+        data: [
+            { id: 1, name: "Jane Doe", age: 47 },
+            { id: 2, name: "John Doe", age: 50 }
+        ],
+        schema: {
+            model: {
+                id: "id",
+                fields: {
+                    id: { type: "number" },
+                    name: { type: "string" },
+                    age: { type: "number" }
+                }
+            }
+        }
+    }
+});
+// get a reference to the list view
+var listView = $("#listView").data("kendoListView");
+// bind to the edit event
+listView.bind("edit", function(e) {
+    // handle event
+});
+listView.edit(listView.element.children().first());
+&lt;/script&gt;
+</code></pre>
+
+<h4>Event Data</h4>
+
+<h5>e.item <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>The jQuery element to be edited.</p>
+
+<h5>e.model <code>kendo.data.Model</code>
+</h5>
+
+<p>The model to be edited.</p>
+
+<h3 id="events-remove"><a href="#events-remove">remove</a></h3>
+
+<p>Fires before the list view item is removed. If it is not prevented will call DataSource <a href="/api/javascript/data/datasource#methods-sync">sync</a> method.</p>
+
+<p>The event handler function context (available via the <code>this</code> keyword) will be set to the widget instance.</p>
+
+<h4>Example</h4>
+
+<pre><code>&lt;div id="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+    template: "&lt;div&gt;#: name#&lt;/div&gt;",
+    dataSource: {
+        data: [
+            { id: 1, name: "Jane Doe", age: 47 },
+            { id: 2, name: "John Doe", age: 50 }
+        ],
+        schema: {
+            model: {
+                id: "id",
+                fields: {
+                    id: { type: "number" },
+                    name: { type: "string" },
+                    age: { type: "number" }
+                }
+            }
+        }
+    },
+    remove: function(e) {
+        //handle event
+        e.preventDefault();
+    }
+});
+// get a reference to the list view
+var listView = $("#listView").data("kendoListView");
+listView.remove(listView.element.children().first());
+&lt;/script&gt;
+</code></pre>
+
+<h4>To set after initialization</h4>
+
+<pre><code>&lt;div id="listView"&gt;&lt;/div&gt;
+&lt;script&gt;
+$("#listView").kendoListView({
+    template: "&lt;div&gt;#: name#&lt;/div&gt;",
+    dataSource: {
+        data: [
+            { id: 1, name: "Jane Doe", age: 47 },
+            { id: 2, name: "John Doe", age: 50 }
+        ],
+        schema: {
+            model: {
+                id: "id",
+                fields: {
+                    id: { type: "number" },
+                    name: { type: "string" },
+                    age: { type: "number" }
+                }
+            }
+        }
+    }
+});
+// get a reference to the list view
+var listView = $("#listView").data("kendoListView");
+// bind to the remove event
+listView.bind("remove", function(e) {
+    // handle event
+    e.preventDefault();
+});
+listView.remove(listView.element.children().first());
+&lt;/script&gt;
+</code></pre>
+
+<h4>Event Data</h4>
+
+<h5>e.item <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>The item element to be deleted.</p>
+
+<h5>e.model <code>kendo.data.Model</code>
+</h5>
+
+<p>The model which to be deleted.</p>
+
+<h3 id="events-save"><a href="#events-save">save</a></h3>
+
+<p>Fired when a data item is saved.</p>
+
+<p>The event handler function context (available via the <code>this</code> keyword) will be set to the widget instance.</p>
+
+<h4>Event Data</h4>
+
+<h5>e.model <code>kendo.data.Model</code>
+</h5>
+
+<p>The data item to which the ListView item is bound.</p>
+
+<h5>e.item <a href="http://api.jquery.com/Types/#jQuery" class="type-link"><code>jQuery</code></a>
+</h5>
+
+<p>The jQuery object representing the current ListView item.</p>
+
+<h5>e.sender <code>kendo.ui.ListView</code>
+</h5>
+
+<p>The widget instance which fired the event.</p>
+
+<h4>Example - subscribe to the "save" event</h4>
+
+<pre><code>&lt;div id="listview"&gt;&lt;/div&gt;
+
+&lt;script type="text/x-kendo-tmpl" id="template"&gt;
+  &lt;div class="item"&gt;
+    &lt;p&gt;#: name # || #: age #&lt;/p&gt;
+      &lt;div class="edit-buttons"&gt;
+        &lt;a class="k-button k-button-icontext k-edit-button" href="\\#"&gt;&lt;span class="k-icon k-edit"&gt;&lt;/span&gt;&lt;/a&gt;
+        &lt;a class="k-button k-button-icontext k-delete-button" href="\\#"&gt;&lt;span class="k-icon k-delete"&gt;&lt;/span&gt;&lt;/a&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/script&gt;
+
+&lt;script type="text/x-kendo-tmpl" id="editTemplate"&gt;
+  &lt;div class="item"&gt;
+    &lt;div class="edit-buttons"&gt;
+        &lt;a class="k-button k-button-icontext k-update-button" href="\\#"&gt;&lt;span class="k-icon k-update"&gt;&lt;/span&gt;&lt;/a&gt;
+        &lt;a class="k-button k-button-icontext k-cancel-button" href="\\#"&gt;&lt;span class="k-icon k-cancel"&gt;&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;input type="text" class="k-textbox" data-bind="value:name" name="name" required="required" validationMessage="required" /&gt;
+    &lt;span data-for="name" class="k-invalid-msg"&gt;&lt;/span&gt;
+    &lt;br /&gt;
+    &lt;input type="text" data-role="numerictextbox" data-bind="value:age" name="age" required="required" validationMessage="required" /&gt;
+    &lt;span data-for="age" class="k-invalid-msg"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/script&gt;
+
+&lt;script&gt;
+$("#listview").kendoListView({
+  dataSource: {
+    data:[
+      { id: 1, name: "Jane Doe", age: 30},
+      { id: 2, name: "John Doe", age: 33}
+    ],
+    schema: {
+      model: { id: "id" }
+    }
+  },
+  template: kendo.template($("#template").html()),
+  editTemplate: kendo.template($("#editTemplate").html()),
+  save: function(e) {
+    console.log("record is modified");
+    //handle event
+  }
+});
+&lt;/script&gt;
+</code></pre> 
+        </article>
+    </div>
+    <div id="feedback-container">
+  <div id="feedback-section">
+    <script src="/assets/feedback.js?cb=e99a3802c754fe2425831d58312c7c8b"></script>
+    <span id="popupNotification"></span>
+    <div id="feedback-menu-container">
+      <div id="helpful-buttons-container">
+        <span class="side-title">Is this article helpful?</span>
+        <a class="button" id="yesButton">Yes</a> /
+        <a class="button" id="noButton">No</a>
+      </div>
+      <div id="feedback-submitted-container">
+        <span class="side-title">Thank you for your feedback!</span>
+      </div>
+    </div>
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" style="background-color: white;">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+        <p>Tell us how we can improve this article</p>
+        <span id="feedback-form-popup-container"></span>
+        <form id="feedback-form">
+          <div id="feedback-checkbox-area">
+            <input id="hidden-sheet-id" type="hidden" value="14zzclhdh7dMLpg0iq4-2hweCdEiuxxqP3tHdr42-_Cs">
+            <label>
+              <input type="checkbox" data-bind="checked: outdatedSample" /> Code samples are inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: outdatedSample"></span>
+            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details ..." class="feedback-extw__textarea"
+              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherMoreInformation" /> I expected to find other / more information.
+            </label>
+            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added ..."
+              data-bind="visible: otherMoreInformation, value: otherMoreInformationText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: textErrors" /> There are typos / broken links / broken page elements.
+            </label>
+            <span class="required-field" data-bind="visible: textErrors"></span>
+            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed ..."
+              data-bind="visible: textErrors, value: typosLinksElementsText">
+          </textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: inaccurateContent" /> Content is inaccurate / outdated.
+            </label>
+            <span class="required-field" data-bind="visible: inaccurateContent"></span>
+            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent ..."
+              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText"></textarea>
+            <label>
+              <input type="checkbox" data-bind="checked: otherFeedback" /> Other
+            </label>
+            <span class="required-field" data-bind="visible: otherFeedback"></span>
+            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback ..." class="feedback-extw__textarea"
+              data-bind="visible: otherFeedback, value: textFeedback">
+          </textarea>
+            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid."
+              class="feedback-extw__input input" data-bind="value: email" />
+          </div>
+        </form>
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <a id="close-button" class="button">
+      <img src="/images/close-btn.svg" alt="close" />
+    </a>
+  </div>
+  <div id="feedback-section-dummy">Dummy</div>
+</div>
+    <footer>
+    <p>Copyright &copy; 2017 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+</footer>
+
+</div>
+    </body>
+</html>
+
